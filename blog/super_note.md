@@ -13,7 +13,7 @@ authors: [Steven]
 
 ## Wonderful
 
-$$ 2^{\pi}$$
+$$ 2^{\pi} $$
 
 ```python
 print("It's amazing")
