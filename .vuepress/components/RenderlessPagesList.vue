@@ -179,7 +179,7 @@ export default {
       return string.toLowerCase().replace(/ /g, "-")
     },
     formatDate(date) {
-      return format(date, 'P', { locale: fr })
+      return format(toDate(date), 'P', { locale: fr })
     }
   },
   render() {
