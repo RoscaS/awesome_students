@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/RoscaS/awesome_students#readme",
   "dependencies": {
-    "vuepress": "^0.14.4"
+    "vuepress": "^0.14.4",
+    "date-fns": "^1.29.0",
   },
   "devDependencies": {}
 }
