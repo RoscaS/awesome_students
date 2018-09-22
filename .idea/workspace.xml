@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ab9b9ff-0163-4213-acdc-8ae54b12313f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vuepress/theme/styles/theme.styl" beforeDir="false" afterPath="$PROJECT_DIR$/.vuepress/theme/styles/theme.styl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,7 +29,7 @@
           <entry key="js" value="9" />
           <entry key="json" value="3" />
           <entry key="md" value="31" />
-          <entry key="styl" value="1" />
+          <entry key="styl" value="2" />
           <entry key="vue" value="31" />
         </counts>
       </usages-collector>
@@ -40,7 +39,7 @@
           <entry key="JavaScript" value="9" />
           <entry key="Markdown" value="32" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Stylus" value="1" />
+          <entry key="Stylus" value="2" />
           <entry key="Vue.js" value="31" />
         </counts>
       </usages-collector>
@@ -50,7 +49,7 @@
           <entry key="js" value="95" />
           <entry key="json" value="74" />
           <entry key="md" value="323" />
-          <entry key="styl" value="2" />
+          <entry key="styl" value="6" />
           <entry key="vue" value="535" />
         </counts>
       </usages-collector>
@@ -60,7 +59,7 @@
           <entry key="JavaScript" value="95" />
           <entry key="Markdown" value="323" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Stylus" value="2" />
+          <entry key="Stylus" value="6" />
           <entry key="Vue.js" value="535" />
         </counts>
       </usages-collector>
@@ -124,8 +123,17 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/package.json">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="575">
-                      <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+                    <state relative-caret-position="483">
+                      <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/theme.styl">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="543">
+                      <caret line="190" column="39" lean-forward="true" selection-start-line="190" selection-start-column="39" selection-end-line="190" selection-end-column="39" />
                     </state>
                   </provider>
                 </entry>
@@ -194,7 +202,6 @@
         <option value="$PROJECT_DIR$/.vuepress/components/blogPageListProps.js" />
         <option value="$PROJECT_DIR$/.vuepress/config.js" />
         <option value="$PROJECT_DIR$/.vuepress/theme/Navbar.vue" />
-        <option value="$PROJECT_DIR$/.vuepress/theme/styles/theme.styl" />
         <option value="$PROJECT_DIR$/.vuepress/theme/NavLinks.vue" />
         <option value="$PROJECT_DIR$/blog/CPP_Polymorphisme.md" />
         <option value="$PROJECT_DIR$/blog/README.md" />
@@ -202,6 +209,7 @@
         <option value="$PROJECT_DIR$/blog/nouvel_article.md" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/.vuepress/theme/styles/theme.styl" />
       </list>
     </option>
   </component>
@@ -216,6 +224,7 @@
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/.vuepress/theme/styles/fontawesome/package.json" />
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
@@ -236,6 +245,24 @@
             <path>
               <item name="00_AwesomeStudents2" type="b2602c69:ProjectViewProjectNode" />
               <item name="00_AwesomeStudents2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="00_AwesomeStudents2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_AwesomeStudents2" type="462c0819:PsiDirectoryNode" />
+              <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="00_AwesomeStudents2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_AwesomeStudents2" type="462c0819:PsiDirectoryNode" />
+              <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="00_AwesomeStudents2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_AwesomeStudents2" type="462c0819:PsiDirectoryNode" />
+              <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -282,12 +309,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537615202800</updated>
-      <workItem from="1537615204088" duration="10831000" />
+      <workItem from="1537615204088" duration="11649000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10831000" />
+    <option name="totallyTimeSpent" value="11649000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1196" y="-8" width="2637" height="1052" extended-state="6" />
@@ -432,13 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/theme.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="127" column="2" lean-forward="true" selection-start-line="127" selection-start-column="2" selection-end-line="127" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/theme/Layout.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -533,10 +553,17 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/theme.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="190" column="39" lean-forward="true" selection-start-line="190" selection-start-column="39" selection-end-line="190" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="483">
+          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
         </state>
       </provider>
     </entry>
