@@ -1,7 +1,9 @@
 let blogSideBarPaths = ["/blog/", "/blog/categories/", "/blog/tags/", "/blog/authors/"]
 module.exports = {
   title: 'Awesome students',
-  base: '/blog/',
+  markdown: {
+    lineNumbers: true,
+  },
   themeConfig: {
     repo: 'RoscaS/awesome_students',
     repoLabel: 'github',
@@ -17,8 +19,6 @@ module.exports = {
       // fallback
       "/": []
     },
-    markdown: {
-      lineNumbers: true,
-    },
+
   }
 }

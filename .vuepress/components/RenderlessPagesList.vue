@@ -10,7 +10,8 @@ import {
   includes,
   sortBy
 } from "lodash"
-import { format, toDate } from "date-fns"
+import { format, toDate } from 'date-fns'
+import { fr } from 'date-fns/esm/locale'
 export default {
   props: {
     byTags: {
@@ -161,7 +162,9 @@ export default {
       })
     },
     sortByMostRecent() {
-      this.pages = sortBy(this.pages, [(page) => { return format(toDate(page.frontmatter.date), 'S'); }]).reverse()
+      this.pages = sortBy(this.pages, [(page) => {
+        return format(toDate(page.frontmatter.date), 'S');
+      }]).reverse()
     },
     categories() {
       return compact(uniq(flatMap(this.pages, "frontmatter.categories"))).sort()
@@ -176,7 +179,7 @@ export default {
       return string.toLowerCase().replace(/ /g, "-")
     },
     formatDate(date) {
-      return format(toDate(date), 'P')
+      return format(date, 'P', { locale: fr })
     }
   },
   render() {

@@ -1,5 +1,5 @@
 ---
-title: Blog Posts by Date
+title: Trié par date
 ---
 
 # {{ $page.title }}

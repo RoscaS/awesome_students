@@ -1,5 +1,5 @@
 ---
-title: Blog Posts by Author
+title: Trié par auteur
 ---
 
 # {{ $page.title }}

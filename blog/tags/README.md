@@ -1,5 +1,5 @@
 ---
-title: Blog Posts by Tag
+title: Trié par tag
 ---
 
 # {{ $page.title }}
