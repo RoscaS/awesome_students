@@ -1,19 +1,11 @@
 {
-  "devDependencies": {
-    "date-fns": "^2.0.0-alpha.11",
-    "lodash": "^4.17.10",
-    "vuepress": "^0.12.0"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-pro": "^5.3.1"
-  },
-
   "name": "AwesomeStudents",
   "version": "1.0.0",
   "description": "We take it seriously",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:build": "vuepress build"
   },
   "repository": {
     "type": "git",
@@ -25,5 +17,7 @@
   "bugs": {
     "url": "https://github.com/RoscaS/awesome_students/issues"
   },
-  "homepage": "https://github.com/RoscaS/awesome_students#readme"
+  "homepage": "https://github.com/RoscaS/awesome_students#readme",
+  "dependencies": {},
+  "devDependencies": {}
 }
