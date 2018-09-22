@@ -4,8 +4,8 @@ module.exports = {
   themeConfig: {
     repo: 'RoscaS/awesome_students',
     repoLabel: 'github',
-    // editLinks: true,
-    // editLinkText: 'Editer cette page',
+    editLinks: true,
+    editLinkText: 'Editer cette page',
 
     nav: [{ text: "Blog", link: "/blog/" }],
     sidebar: {
