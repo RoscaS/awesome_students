@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "devDependencies": {
+    "date-fns": "^2.0.0-alpha.11",
+    "lodash": "^4.17.10",
+    "vuepress": "^0.12.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-pro": "^5.3.1"
+  }
+}
