@@ -10,13 +10,15 @@ module.exports = {
     editLinks: true,
     editLinkText: 'Editer cette page',
 
-    nav: [{ text: "Blog", link: "/blog/" }],
+    nav: [
+      {text: "Blog", link: "/blog/" },
+      {text: "Tuto", link: "/tuto/"}
+    ],
     sidebar: {
       "/blog/": blogSideBarPaths,
       "/blog/tags/": blogSideBarPaths,
       "/blog/categories/": blogSideBarPaths,
       "/blog/authors/": blogSideBarPaths,
-      // fallback
       "/": []
     },
 
