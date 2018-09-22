@@ -2,41 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ab9b9ff-0163-4213-acdc-8ae54b12313f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.vuepress/components/BlogPostsByAuthors.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/CPP_Polymorphisme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/authors/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/nouvel_article.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/components/BlogPosts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/.vuepress/components/BlogPosts.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/components/BlogPostsByCategory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/.vuepress/components/BlogPostsByCategory.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/components/BlogPostsByTag.vue" beforeDir="false" afterPath="$PROJECT_DIR$/.vuepress/components/BlogPostsByTag.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/components/RenderlessPagesList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/.vuepress/components/RenderlessPagesList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/components/blogPageListProps.js" beforeDir="false" afterPath="$PROJECT_DIR$/.vuepress/components/blogPageListProps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/.vuepress/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/css/2.styles.ec1d7b02.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/img/search.83621669.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/js/0.b32e6dcc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/js/1.21553943.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/js/10.7509b748.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/js/11.2eb36dd8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/js/12.fbb8e2c3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/js/13.3c866eb5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/js/3.0943e9e9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/js/4.16e5757c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/js/5.15f57a2a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/js/6.e42fd793.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/js/7.2ef1ee36.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/js/8.0f8b72bb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/js/9.0e8d8091.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/assets/js/app.567abb2d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/blog/an-example-blog-post/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/blog/categories/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/blog/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/blog/tags/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/an-example-blog-post/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/blog/an-example-blog-post/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -61,6 +26,7 @@
           <entry key="LICENSE" value="1" />
           <entry key="MD" value="1" />
           <entry key="js" value="9" />
+          <entry key="json" value="3" />
           <entry key="md" value="31" />
           <entry key="styl" value="1" />
           <entry key="vue" value="31" />
@@ -68,6 +34,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="JSON" value="3" />
           <entry key="JavaScript" value="9" />
           <entry key="Markdown" value="32" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -78,6 +45,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="js" value="95" />
+          <entry key="json" value="16" />
           <entry key="md" value="323" />
           <entry key="styl" value="2" />
           <entry key="vue" value="535" />
@@ -85,6 +53,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="JSON" value="16" />
           <entry key="JavaScript" value="95" />
           <entry key="Markdown" value="323" />
           <entry key="Stylus" value="2" />
@@ -117,8 +86,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/.vuepress/components/BlogPosts.vue">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="230">
-                      <caret line="10" column="54" lean-forward="true" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+                    <state relative-caret-position="598">
+                      <caret line="27" selection-start-line="27" selection-end-line="27" />
                     </state>
                   </provider>
                 </entry>
@@ -132,18 +101,27 @@
                   <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                     <state split_layout="FIRST">
                       <first_editor relative-caret-position="253">
-                        <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+                        <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
                       </first_editor>
                       <second_editor />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/.vuepress/components/BlogPostMeta.vue">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="391">
-                      <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+                      <caret line="17" selection-start-line="17" selection-end-line="17" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/package.json">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="46">
+                      <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
                     </state>
                   </provider>
                 </entry>
@@ -218,6 +196,7 @@
         <option value="$PROJECT_DIR$/blog/README.md" />
         <option value="$PROJECT_DIR$/.vuepress/components/BlogPosts.vue" />
         <option value="$PROJECT_DIR$/blog/nouvel_article.md" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -252,28 +231,6 @@
             <path>
               <item name="00_AwesomeStudents2" type="b2602c69:ProjectViewProjectNode" />
               <item name="00_AwesomeStudents2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="00_AwesomeStudents2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="00_AwesomeStudents2" type="462c0819:PsiDirectoryNode" />
-              <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="00_AwesomeStudents2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="00_AwesomeStudents2" type="462c0819:PsiDirectoryNode" />
-              <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="00_AwesomeStudents2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="00_AwesomeStudents2" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="00_AwesomeStudents2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="00_AwesomeStudents2" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="an-example-blog-post" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -319,12 +276,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537615202800</updated>
-      <workItem from="1537615204088" duration="8244000" />
+      <workItem from="1537615204088" duration="9168000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8244000" />
+    <option name="totallyTimeSpent" value="9168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1196" y="-8" width="2637" height="1317" extended-state="6" />
@@ -504,7 +461,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="253">
-            <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+            <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
           </first_editor>
           <second_editor />
         </state>
@@ -542,15 +499,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/BlogPosts.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="54" lean-forward="true" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+        <state relative-caret-position="598">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/BlogPostMeta.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -561,6 +518,16 @@
             <caret line="10" selection-start-line="10" selection-end-line="10" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
         </state>
       </provider>
     </entry>
