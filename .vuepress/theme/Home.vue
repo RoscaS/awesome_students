@@ -10,7 +10,7 @@
       <h1>{{ data.heroText || $title || 'Hello' }}</h1>
 
       <p class="description">
-        {{ data.tagline || $description || "Bienvenue dans ton classeur" }}
+        Bienvenue dans <router-link to="/blog/" class="home-link">le classeur</router-link> !
       </p>
 
       <p

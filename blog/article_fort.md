@@ -7,7 +7,7 @@ tags: [Java, Ecole, Code]
 authors: [Sol]
 ---
 
-# La Java c'est la vie
+# {{ $page.title }}
 <BlogPostMeta/>
 
 Introduction

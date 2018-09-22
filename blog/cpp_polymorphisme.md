@@ -7,7 +7,7 @@ tags: [C++]
 authors: [Sol]
 ---
 
-# Le Polymorphisme en C++
+# {{ $page.title }}
 
 <BlogPostMeta/>
 

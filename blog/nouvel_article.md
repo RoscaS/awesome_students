@@ -7,7 +7,7 @@ tags: [Qt, Ecole]
 authors: [Sol]
 ---
 
-# J'aime la viande
+# {{ $page.title }}
 <BlogPostMeta/>
 
 Introduction
