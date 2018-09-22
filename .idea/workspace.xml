@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ab9b9ff-0163-4213-acdc-8ae54b12313f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tuto/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/linux_ranger.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/.vuepress/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tuto/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/tuto/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,7 +30,7 @@
           <entry key="gitignore" value="3" />
           <entry key="js" value="13" />
           <entry key="json" value="6" />
-          <entry key="md" value="62" />
+          <entry key="md" value="63" />
           <entry key="styl" value="2" />
           <entry key="vue" value="45" />
         </counts>
@@ -40,7 +39,7 @@
         <counts>
           <entry key="JSON" value="6" />
           <entry key="JavaScript" value="13" />
-          <entry key="Markdown" value="59" />
+          <entry key="Markdown" value="60" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="Stylus" value="2" />
           <entry key="Vue.js" value="45" />
@@ -51,7 +50,7 @@
           <entry key="gitignore" value="15" />
           <entry key="js" value="161" />
           <entry key="json" value="87" />
-          <entry key="md" value="3182" />
+          <entry key="md" value="3440" />
           <entry key="styl" value="6" />
           <entry key="vue" value="1566" />
         </counts>
@@ -60,7 +59,7 @@
         <counts>
           <entry key="JSON" value="87" />
           <entry key="JavaScript" value="161" />
-          <entry key="Markdown" value="3073" />
+          <entry key="Markdown" value="3331" />
           <entry key="PLAIN_TEXT" value="124" />
           <entry key="Stylus" value="6" />
           <entry key="Vue.js" value="1566" />
@@ -90,32 +89,11 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/RenderlessPagesList.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="822">
-                  <caret line="103" column="6" lean-forward="true" selection-start-line="103" selection-start-column="6" selection-end-line="103" selection-end-column="6" />
+                <state relative-caret-position="751">
+                  <caret line="162" column="6" lean-forward="true" selection-start-line="162" selection-start-column="6" selection-end-line="162" selection-end-column="6" />
                   <folding>
                     <element signature="e#9#117#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/blog/nouvel_article.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="FIRST">
-                  <first_editor relative-caret-position="207">
-                    <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-                  </first_editor>
-                  <second_editor />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/blog/article_fort.md">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="207">
-                  <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -126,18 +104,6 @@
                 <state split_layout="FIRST">
                   <first_editor relative-caret-position="207">
                     <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="19" />
-                  </first_editor>
-                  <second_editor />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/blog/exemple_article.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="FIRST">
-                  <first_editor relative-caret-position="667">
-                    <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
                   </first_editor>
                   <second_editor />
                 </state>
@@ -181,12 +147,24 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tuto/README.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="FIRST">
-                  <first_editor relative-caret-position="1517">
-                    <caret line="114" column="3" selection-start-line="114" selection-start-column="3" selection-end-line="114" selection-end-column="3" />
+                  <first_editor relative-caret-position="368">
+                    <caret line="16" selection-start-line="16" selection-end-line="27" selection-end-column="15" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/blog/linux_ranger.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="115">
+                    <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
                   </first_editor>
                   <second_editor />
                 </state>
@@ -264,6 +242,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.vuepress/config.js" />
         <option value="$PROJECT_DIR$/tuto/README.md" />
+        <option value="$PROJECT_DIR$/blog/linux_ranger.md" />
       </list>
     </option>
   </component>
@@ -312,12 +291,6 @@
               <item name="00_AwesomeStudents2" type="462c0819:PsiDirectoryNode" />
               <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="00_AwesomeStudents2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="00_AwesomeStudents2" type="462c0819:PsiDirectoryNode" />
-              <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="00_AwesomeStudents2" type="b2602c69:ProjectViewProjectNode" />
@@ -391,12 +364,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537615202800</updated>
-      <workItem from="1537615204088" duration="27636000" />
+      <workItem from="1537615204088" duration="29639000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27636000" />
+    <option name="totallyTimeSpent" value="29639000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1196" y="-8" width="2637" height="1735" extended-state="6" />
@@ -687,8 +660,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/RenderlessPagesList.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="822">
-          <caret line="103" column="6" lean-forward="true" selection-start-line="103" selection-start-column="6" selection-end-line="103" selection-end-column="6" />
+        <state relative-caret-position="751">
+          <caret line="162" column="6" lean-forward="true" selection-start-line="162" selection-start-column="6" selection-end-line="162" selection-end-column="6" />
           <folding>
             <element signature="e#9#117#0" expanded="true" />
           </folding>
@@ -698,8 +671,18 @@
     <entry file="file://$PROJECT_DIR$/tuto/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="1517">
-            <caret line="114" column="3" selection-start-line="114" selection-start-column="3" selection-end-line="114" selection-end-column="3" />
+          <first_editor relative-caret-position="368">
+            <caret line="16" selection-start-line="16" selection-end-line="27" selection-end-column="15" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/linux_ranger.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="115">
+            <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
           </first_editor>
           <second_editor />
         </state>

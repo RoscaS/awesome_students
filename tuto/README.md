@@ -20,7 +20,7 @@ title: Exemple d'article
 date: 2018-07-18
 sidebar: auto
 categories: [Blog]
-tags: [Exemple]
+tags: [Exemple, poule, poney]
 authors: [Martin]
 ---
 
