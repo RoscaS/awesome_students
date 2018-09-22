@@ -1,7 +1,7 @@
 let blogSideBarPaths = ["/blog/", "/blog/categories/", "/blog/tags/", "/blog/authors/"]
 module.exports = {
   title: 'Awesome students',
-  base: 'blog',
+  base: '/blog/',
   themeConfig: {
     repo: 'RoscaS/awesome_students',
     repoLabel: 'github',

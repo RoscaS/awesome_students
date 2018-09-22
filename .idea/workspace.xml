@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0ab9b9ff-0163-4213-acdc-8ae54b12313f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.vuepress/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/.vuepress/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vuepress/theme/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/.vuepress/theme/Home.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,7 +46,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="15" />
-          <entry key="js" value="109" />
+          <entry key="js" value="111" />
           <entry key="json" value="87" />
           <entry key="md" value="422" />
           <entry key="styl" value="6" />
@@ -57,7 +56,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="87" />
-          <entry key="JavaScript" value="109" />
+          <entry key="JavaScript" value="111" />
           <entry key="Markdown" value="323" />
           <entry key="PLAIN_TEXT" value="114" />
           <entry key="Stylus" value="6" />
@@ -87,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/.vuepress/config.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="69">
-              <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+              <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -107,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.vuepress/theme/Home.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="49" lean-forward="true" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+            <state relative-caret-position="276">
+              <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -291,12 +290,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537615202800</updated>
-      <workItem from="1537615204088" duration="16477000" />
+      <workItem from="1537615204088" duration="16632000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16477000" />
+    <option name="totallyTimeSpent" value="16632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1196" y="-8" width="2637" height="1052" extended-state="6" />
@@ -574,13 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/theme/Home.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="49" lean-forward="true" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -591,10 +583,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/theme/Home.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
         </state>
       </provider>
     </entry>
