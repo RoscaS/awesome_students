@@ -9,12 +9,12 @@
         class="edit-link"
         v-if="editLink"
       >
-        <a
+        <a v-if="$auth.isAuthenticated()"
           :href="editLink"
           target="_blank"
           rel="noopener noreferrer"
         >{{ editLinkText }}</a>
-        <OutboundLink/>
+        <OutboundLink v-if="$auth.isAuthenticated()"/>
       </div>
 
       <div

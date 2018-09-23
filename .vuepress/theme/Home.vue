@@ -10,7 +10,7 @@
       <h1>{{ data.heroText || $title || 'Hello' }}</h1>
 
       <p class="description">
-        Bienvenue dans <router-link to="/blog/" class="home-link">le classeur</router-link> !
+        {{ data.tagline || $description || 'Welcome to your VuePress site' }}
       </p>
 
       <p
