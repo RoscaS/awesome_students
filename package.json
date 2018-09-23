@@ -21,6 +21,7 @@
   "dependencies": {
     "auth0-js": "^9.7.3",
     "vue": "^2.5.17",
+    "vue-cookies": "^1.5.7",
     "vuepress": "^0.14.4"
   }
 }
