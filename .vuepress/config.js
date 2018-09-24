@@ -38,6 +38,7 @@ module.exports = {
         title: 'Articles',
         // collapsable: false,
         children: [
+          '/articles/algo/',
           '/articles/programmation/',
           '/articles/linux/',
           '/articles/cpp/',
