@@ -5,6 +5,7 @@
 @require './arrow'
 @require './wrapper'
 @require './toc'
+@import url('https://fonts.googleapis.com/css?family=Cardo');
 
 html, body
   padding 0
@@ -90,7 +91,9 @@ kbd
   padding 0 0.15em
 
 blockquote
-  font-size 1.2rem
+  font-family: 'Cardo', serif;
+  font-size 1rem
+  font-style italic
   color #999
   border-left .25rem solid #dfe2e5
   margin-left 0
@@ -140,6 +143,7 @@ a.header-anchor
 
 code, kbd, .line-number
   font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+
 
 p, ul, ol
   line-height 1.7

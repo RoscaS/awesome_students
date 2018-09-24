@@ -56,7 +56,7 @@ Pour publier un article il suffit de choisir le folder approprié et d'y créér
 * Dans le doute, demandez moi de créér la nouvelle sous-branche !
 :::
 
-Disons que je veux une nouvelle sous branche popotte pour le **cours** de popotte. 
+Disons que je veux une nouvelle sous branche popotte pour le **cours** de popotte.
 ```bash
 $ pwd
 /home/vanessa/blog/AwesomeStudents
@@ -69,7 +69,7 @@ $ touch poulet_aux_herbes.md
 
 Il faut maintenant dire au site qu'on veut que cette nouvelle branche soit indexée:
 ```bash
-$ pwd 
+$ pwd
 /home/vanessa/blog/AwesomeStudents
 $ nano .vuepress/config.js
 ```
@@ -139,6 +139,13 @@ Pour le reste c'est comme d'habitude. Les header de `#` à `###` sont repris dan
 #### Expressions mathématiques
 Gérées via [katex](https://katex.org/docs/supported.html) il suffit d'enfermer les expressions entre `$`
 
+
+#### Définitions on hover
+Un mot <definition def="pas facile">compliqué</definition> par exemple:
+
+```md
+Un mot <definition def="pas facile">compliqué</definition> par exemple:
+```
 
 #### Insérer un gif
 * `![](http://i.imgur.com/OUkLi.gif)` : notez le `.gif` à la fin.

@@ -8,6 +8,7 @@
 
 ### CheatSheets
 * [devhints.io](https://devhints.io/) TL;DR for developers
+* [tldrlegal.com](tldrlegal.com) Legal overview
 
 ### Tools
 * [python tutor](http://www.pythontutor.com/) but not only python
