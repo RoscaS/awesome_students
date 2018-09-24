@@ -29,4 +29,4 @@ Idem que la source précédente. *pour se convaincre (poser symbole = 01)*
 Pareil que la première source à la différence qu'un alphabet de 32 symboles se code sur 5 bits ($2^5 = 32$). (→ cours: notion de quantité de décision)
 
 ### Quatre états probabilistes
->[A-D] ne sont pas <definition def="Même chance d'apparaitre">équiprobable</definition>
+>[A-D] ne sont pas <Def def="Même chance d'apparaitre">équiprobable</Def>

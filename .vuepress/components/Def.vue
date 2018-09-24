@@ -8,7 +8,7 @@
 <script>
   export default {
     props: {def : {type: String}},
-    name: 'définition',
+    name: 'Def',
   }
 </script>
 
