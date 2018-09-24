@@ -7,8 +7,6 @@ tags: algo tri
 sidebar: auto
 ---
 
-# Algorithmes de tri
-
 ## Liens
 
 * [repo](https://github.com/RoscaS/algo_sort)

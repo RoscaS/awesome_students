@@ -2,13 +2,9 @@
 title: Ranger CheatSheet
 date: 2018-09-22
 sidebar: auto
-categories: [Os]
-tags: [Linux, CheatSheet]
-authors: [Sol]
+author: Sol
 ---
 
-# {{ $page.title }}
-<BlogPostMeta/>
 
 Ranger est un navigateur de fichiers dans le le shell.
 * [repo](https://ranger.github.io/)

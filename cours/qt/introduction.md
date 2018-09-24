@@ -1,3 +1,10 @@
+---
+title: Introduction à Qt
+date: 2018-09-22
+sidebar: auto
+author: Sol
+---
+
 ## En vrac
 * [tldrlegal.com](tldrlegal.com)
 * 

@@ -2,11 +2,8 @@
 title: Polymorphisme en C++
 date: 2018-09-22
 sidebar: auto
+author: Sol
 ---
-
-# {{ $page.title }}
-
-<BlogPostMeta/>
 
 Ok, rien de plus facile contrairement à ce que les explications de 5 pages des divers cours et tutos tentent de nous faire croire. On oublie tout et on ne garde en tête que la phrase suivante:
 

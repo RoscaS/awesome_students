@@ -24,7 +24,7 @@ module.exports = {
     sidebar: [
       {
         title: 'Cours',
-        // collapsable: false,
+        collapsable: true,
         children: [
           '/cours/qt/',
           '/cours/java/',
@@ -40,7 +40,7 @@ module.exports = {
       },
       {
         title: 'Articles',
-        // collapsable: false,
+        collapsable: true,
         children: [
           '/articles/algo/',
           '/articles/programmation/',

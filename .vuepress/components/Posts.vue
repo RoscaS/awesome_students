@@ -20,7 +20,7 @@ export default {
         })
         .sort((a, b) => {
           return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
-        });
+        }).reverse();
       return posts;
     }
   }
