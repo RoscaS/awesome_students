@@ -3,16 +3,11 @@ import auth0 from 'auth0-js'
 import siteSettings from './siteSettings'
 import Vue from 'vue'
 
-// const localStorage = localStorage;
-
-// SSR => pas de localStorage, trouver une alternative
-
 let webAuth = new auth0.WebAuth({
   domain: 'jrosk.eu.auth0.com',
   clientID: 'iYpiLCeqkqX5eOEJ2l7veh9KwCsuEOb0',
-  redirectUri: 'http://localhost:8080/callback',
-  // redirectUri: 'https://www.intra.jrosk.ch/callback',
-  // audience: settings.audience,
+  // redirectUri: 'http://localhost:8080/callback',
+  redirectUri: 'https://www.intra.jrosk.ch/callback',
   responseType: 'token id_token',
   scope: 'openid profile',
 })

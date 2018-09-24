@@ -4,74 +4,6 @@
     <list default="true" id="0ab9b9ff-0163-4213-acdc-8ae54b12313f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../00_AwesomeStudents/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/components/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/components/SiteTitle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/components/SiteTitle.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/css/0.styles.c5749161.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/css/1.styles.34ae0e32.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/css/2.styles.c235ef29.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/css/4.styles.81a25398.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/css/5.styles.37f49932.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/css/6.styles.52444f79.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/css/7.styles.4c297cd7.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/css/8.styles.e2da0baf.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/css/styles.df08c6e4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-brands-400.0ea9a391.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-brands-400.4e8b58f9.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-brands-400.9833d094.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-brands-400.b461d060.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-light-300.41dc641e.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-light-300.431555eb.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-light-300.548f2ded.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-light-300.cb05ac47.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-regular-400.0950f9f6.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-regular-400.2a84b559.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-regular-400.6e691687.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-regular-400.aae23368.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-solid-900.22a46b2f.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-solid-900.47386344.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-solid-900.6897be18.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/fonts/fa-solid-900.cc6067cc.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/img/fa-brands-400.f7a61c17.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/img/fa-light-300.ad4a3b4d.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/img/fa-regular-400.d62b4167.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/img/fa-solid-900.9c7a5a98.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/img/search.83621669.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/0.c5749161.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/1.34ae0e32.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/10.12d5d63d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/11.cb8098df.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/12.d959039e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/13.5ed72bbb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/14.9366ef15.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/15.e8e6e9af.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/16.6241bb12.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/17.ec98d9b8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/18.a3e9778c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/19.4a042c7d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/2.c235ef29.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/20.d1bae3fb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/21.9cc78682.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/22.2e3160f0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/23.939464d7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/24.b40a6a36.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/25.c69d811a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/26.c9f1aa6d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/27.b0b15f1d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/28.78321027.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/29.c9acdd8a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/30.6c73da3c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/31.3e5fc231.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/32.0e098173.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/4.81a25398.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/5.37f49932.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/6.52444f79.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/7.4c297cd7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/8.e2da0baf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/9.316c0125.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/dist/assets/js/app.df08c6e4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/enhanceApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/enhanceApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/theme/NavLink.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/theme/NavLink.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/theme/NavLinks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/theme/NavLinks.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -117,7 +49,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="15" />
-          <entry key="js" value="720" />
+          <entry key="js" value="725" />
           <entry key="json" value="87" />
           <entry key="md" value="3529" />
           <entry key="styl" value="6" />
@@ -127,7 +59,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="87" />
-          <entry key="JavaScript" value="720" />
+          <entry key="JavaScript" value="725" />
           <entry key="Markdown" value="3420" />
           <entry key="PLAIN_TEXT" value="124" />
           <entry key="Stylus" value="6" />
@@ -146,11 +78,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/auth.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="736">
-                  <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+                <state relative-caret-position="115">
+                  <caret line="5" selection-start-line="5" selection-end-line="5" />
                   <folding>
                     <element signature="e#1#29#0" expanded="true" />
                   </folding>
@@ -185,7 +117,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/theme/NavLinks.vue">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="184">
@@ -214,7 +146,7 @@
             <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/components/Login.vue">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="276">
-                  <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+                  <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
@@ -291,6 +223,7 @@
       <find>$auth</find>
       <find>Vue.prototype.$auth</find>
       <find>auth</find>
+      <find>isAuth</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/.vuepress</dir>
@@ -349,9 +282,9 @@
         <option value="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/theme/Page.vue" />
         <option value="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/theme/NavLink.vue" />
         <option value="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/enhanceApp.js" />
-        <option value="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/auth.js" />
         <option value="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/components/Login.vue" />
         <option value="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/theme/NavLinks.vue" />
+        <option value="$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/auth.js" />
       </list>
     </option>
   </component>
@@ -471,12 +404,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537615202800</updated>
-      <workItem from="1537615204088" duration="55471000" />
+      <workItem from="1537615204088" duration="55587000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55471000" />
+    <option name="totallyTimeSpent" value="55587000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1552" y="-8" width="2281" height="1784" extended-state="6" />
@@ -846,13 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/theme/Page.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="874">
@@ -867,10 +793,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/theme/NavLink.vue">
+    <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/enhanceApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        <state relative-caret-position="161">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/components/Login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/theme/NavLinks.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding>
+            <element signature="e#956#1001#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/theme/Page.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
         </state>
       </provider>
     </entry>
@@ -881,36 +831,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/enhanceApp.js">
+    <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/theme/NavLink.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        <state relative-caret-position="713">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/auth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        <state relative-caret-position="115">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#1#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/components/Login.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../00_AwesomeStudents/.vuepress/theme/NavLinks.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-          <folding>
-            <element signature="e#956#1001#0" expanded="true" />
           </folding>
         </state>
       </provider>
