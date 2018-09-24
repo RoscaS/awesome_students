@@ -181,3 +181,7 @@ export default {
 
 <style src="prismjs/themes/prism-tomorrow.css"></style>
 <style src="./styles/theme.styl" lang="stylus"></style>
+<style>
+  @import "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css";
+  @import "https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css";
+</style>

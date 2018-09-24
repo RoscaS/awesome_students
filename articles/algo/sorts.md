@@ -7,10 +7,12 @@ tags: algo tri
 sidebar: auto
 ---
 
+# Algorithmes de tri
+
 ## Liens
 
-[repo](https://github.com/RoscaS/algo_sort)
-[VisuAlgo](https://visualgo.net/en)
+* [repo](https://github.com/RoscaS/algo_sort)
+* [VisuAlgo](https://visualgo.net/en)
 
 ## 1 Tri-Bulle (Bubble-sort)
 
@@ -64,7 +66,7 @@ de parcours du tableau a sa variable d'itération qui est égale au nombre de ca
 La boucle intérieur qui est responsable du nombre de comparaisons par parcours a sa variable d'itération
 que est également égale au nombre de cases du tableau `-1`.
 
-$ (n-1) \cdot (n-1)^2 $  comparaisons La complexité de cet version de l'algorithme 
+$(n-1) \cdot (n-1)^2$  comparaisons La complexité de cet version de l'algorithme 
 est de:
 
 $$ \bbox[20px,border:2px solid red]
@@ -361,7 +363,7 @@ void triExtract(int *t, int g, int d)
 ### Complexité:
 L'algorithme `placerMinimumAGauche()` est exécuté $n-1$ fois pour un tableau de $n$ éléments et ceci indépendamment de l'ordre initial des clés. A chaque exécution, cet algorithme effectue $Droite - Gauche$ comparaisons.  
 
-$ n-1 + n-2 +  ...  + 3 + 2 + 1 = \bbox[20px,border:2px solid red] {\frac{(n(n-1))}{2}}$  
+$n-1 + n-2 +  ...  + 3 + 2 + 1 = \bbox[20px,border:2px solid red] {\frac{(n(n-1))}{2}}$  
 
 
 Le tri par extraction est aussi lent que le tri bulle dans le cas d'un tableau à clés aléatoirement dispersées. Des différences en plus ou en moins peuvent apparaître dans des cas particuliers. Le tri par extraction est innefficace sur un tableau déjà ordonné puisqu'il n'est ps capable de s'en appercevoir.
@@ -481,7 +483,7 @@ Comme le principe du **fifo** est requis, nous pouvons utiliser des _files_ (_qu
 
 Le second parcours fera la même chose mais en classant les nombres par la valeur du chiffre qui représente l'unité des dizaines. Le 3e parcours l'unité des centaines...
 
-Dans les exemples qui suivent, je vais utiliser une classe `Queue` dont l'imlémentation est spécifiées [ici](/algo/Algo-Structures-de-donnees.html)
+Dans les exemples qui suivent, je vais utiliser une classe `Queue`.
 
 Le tableau d'éléments à ordonner dans l'ordre croissant de cet exemple contient $n$ éléments et ses indices vont de $Gauche$ à $Droite$ ($0$ à $n-1$)
 
@@ -562,7 +564,7 @@ Il y a plusieurs façons de déterminer le nième chiffre d’un nombre. Parmi l
 Pour compléter le tri il suffit de faire autant de passes que de nombre de chiffres dans la valeur maximale.
 
 
-La `file` que j'utilise est issu la classe générique `Queue` qui hérite de la classe `List` (liste chainée) toutes deux détaillées [ici](/algo/Algo-Structures-de-donnees.html).
+La `file` que j'utilise est issu la classe générique `Queue` qui hérite de la classe `List` (liste chainée).
 
 ##### a. sans gestion de la mémoire
 
@@ -641,14 +643,10 @@ Pour trier un tableau de taille _n_ on doit effectuer _k_ passes, avec  _k_ le n
 
 Lors de chaque parcours, on va recopier les _n_ valeurs dans les files temporaires fileS[x] \(**_n_ affectations**), puis les recopier dans le tableau initial. On aura donc 2 x _n_ opérations élémentaires.
 
-Pour _k_ passes, la fonction de complexité sera donc: $ f(n)=2kn$
+Pour _k_ passes, la fonction de complexité sera donc: $f(n)=2kn$
 Si _k_ est constant, notre algorithne est donc linéaire: 
 
-$$ \bbox[20px,border:2px solid red]
-{
-    O(n) 
-}
-$$
+$\bbox[20px,border:2px solid red]{O(n)}$
 
 
 ![Image](https://i.imgur.com/Fos6Hyn.png)
@@ -664,10 +662,10 @@ Cette méthode de tri est stable, les valeurs rentrent dans les filles dans un c
 
 | Algorithme | Complexité au pire | Stabilité | Famille* | Remarques
 | --- | --- | --- | --- | --- |
-| Bulles et améliorations | $ O(n^2) $  | oui | Echange | Sait détecter un tableau trié | 
-| Extraction | $ O(n^2) $ | non | Sélection | Inefficace sur un tableau déja trié (le pire) | 
-| Insertion | $ O(n^2) $ | oui | Insertion | Intéressant pour insérer des vleurs dans un tableau déjà trié*  | 
-| Base | $ O(n) $ | oui | Distribution | Intéressant pour les petites valeurs ("petit" nombre de chiffres) | 
+| Bulles et améliorations | $O(n^2)$ | oui | Echange | Sait détecter un tableau trié | 
+| Extraction |$O(n^2)$| non | Sélection | Inefficace sur un tableau déja trié (le pire) | 
+| Insertion |$O(n^2)$| oui | Insertion | Intéressant pour insérer des vleurs dans un tableau déjà trié*  | 
+| Base |$O(n)$| oui | Distribution | Intéressant pour les petites valeurs ("petit" nombre de chiffres) | 
 
 <br>
 

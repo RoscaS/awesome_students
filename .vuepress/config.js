@@ -1,6 +1,11 @@
 module.exports = {
   title: 'Awesome Students',
-  markdown: {lineNumbers: true},
+  markdown: {
+    lineNumbers: true,
+    config: md => {
+      md.use(require("markdown-it-katex"));
+    }
+  },
   extraPages: [
     '/callback',
     '/login',
