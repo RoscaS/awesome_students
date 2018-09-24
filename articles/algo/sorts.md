@@ -360,7 +360,7 @@ void triExtract(int *t, int g, int d)
 ```
 > Lorsque les N-1 éléments ayant les clés les plus petites sont à leur place, le dernier élément qui a la plus grande clé l'est aussi.
 
-### Complexité:
+### Complexité
 L'algorithme `placerMinimumAGauche()` est exécuté $n-1$ fois pour un tableau de $n$ éléments et ceci indépendamment de l'ordre initial des clés. A chaque exécution, cet algorithme effectue $Droite - Gauche$ comparaisons.  
 
 $n-1 + n-2 +  ...  + 3 + 2 + 1 = \bbox[20px,border:2px solid red] {\frac{(n(n-1))}{2}}$  

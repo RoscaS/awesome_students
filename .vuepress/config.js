@@ -19,7 +19,7 @@ module.exports = {
     lastUpdated: 'Dernière mise à jour',
     nav: [
       {text: 'Home', link: '/'},
-      {text: 'About', link: '/about'},
+      {text: 'Tutos', link: '/tutos'},
     ],
 
     sidebar: [
