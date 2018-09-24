@@ -3,15 +3,16 @@ import auth0 from 'auth0-js'
 import siteSettings from './siteSettings'
 import Vue from 'vue'
 
-import VueCookies from 'vue-cookies'
-Vue.use(VueCookies)
+// const localStorage = localStorage;
 
+// SSR => pas de localStorage, trouver une alternative
 
 let webAuth = new auth0.WebAuth({
   domain: 'jrosk.eu.auth0.com',
   clientID: 'iYpiLCeqkqX5eOEJ2l7veh9KwCsuEOb0',
   redirectUri: 'http://localhost:8080/callback',
   // redirectUri: 'https://www.intra.jrosk.ch/callback',
+  // audience: settings.audience,
   responseType: 'token id_token',
   scope: 'openid profile',
 })
@@ -19,47 +20,53 @@ let webAuth = new auth0.WebAuth({
 let auth = new Vue({
   data: () => ({
     tokenIsSet: false,
+    _id_token: '',
+    _access_token: '',
+    _expires_at: '',
+    _user: '',
+    _scope: ''
+
+
   }),
   computed: {
     token: {
       get () {
-        return this.$cookies.get('id_token')
+        return this._id_token
       },
       set (id_token) {
-        this.$cookies.set('id_token', id_token)
+        this._id_token = id_token
       },
     },
     accessToken: {
       get () {
-        return this.$cookies.get('access_token')
+        return this._access_token
       },
       set (accessToken) {
-        this.$cookies.set('access_token', accessToken)
+        this._access_token = accessToken
       },
     },
     expiresAt: {
       get () {
-        return this.$cookies.get('expires_at')
+        return this._expires_at
       },
       set (expiresIn) {
-        let expiresAt = JSON.stringify(expiresIn * 1000 + new Date().getTime())
-        this.$cookies.set('expires_at', expiresAt)
+        this._expires_at = JSON.stringify(expiresIn * 1000 + new Date().getTime())
       },
     },
     user: {
       get () {
-        return this.$cookies.get('user')
+        return JSON.parse(this._user)
       },
       set (user) {
-        this.$cookies.set('user', JSON.stringify(user))
+        this._user = JSON.stringify(user)
       },
     },
     scope: {
       get () {
-        return JSON.parse(this.$cookies.get('scope'))
+        return JSON.parse(this._scope)
       },
       set (scope) {
-        this.$cookies.set('scope', JSON.stringify(scope))
+        this._scope = JSON.stringify(scope)
       },
     },
   },
@@ -74,10 +81,10 @@ let auth = new Vue({
     },
     logout () {
       return new Promise((resolve, reject) => {
-        this.$cookies.remove('access_token')
-        this.$cookies.remove('id_token')
-        this.$cookies.remove('expires_at')
-        this.$cookies.remove('user')
+        this.access_token = null
+        this.id_token = null
+        this.expires_at = null
+        this.user = null
         this.tokenIsSet = false
         webAuth.logout()
       })
@@ -114,8 +121,3 @@ let auth = new Vue({
 
 
 export default auth
-// export default {
-//   install: function (Vue) {
-//     Vue.prototype.$auth = auth
-//   },
-// }

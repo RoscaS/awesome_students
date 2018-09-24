@@ -10,5 +10,5 @@ export default ({Vue, options, router}) => {
     {path: '/callback', component: Callback},
     {path: '/login', component: Login},
     {path: '/logout', component: Logout},
-  ])
+  ]);
 }

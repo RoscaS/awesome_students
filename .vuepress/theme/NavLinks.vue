@@ -10,10 +10,12 @@
       <DropdownLink :item="loggedInUser" :picture="gravatar"/>
     </div>
 
+
     <i v-if="!$auth.isAuthenticated()"
        class="nav-item sign-in fa fa-key"
        title="Authentification"
-       @click="login"></i>
+       @click="login">
+    </i>
 
     <!-- repo link -->
     <a v-if="repoLink"
@@ -33,8 +35,6 @@
   import DropdownLink from './DropdownLink.vue'
   import { resolveNavLinkItem } from './util'
   import NavLink from './NavLink.vue'
-
-  // import auth from '../auth';
 
   export default {
     components: {NavLink, DropdownLink},
@@ -75,7 +75,7 @@
         return this.userNav
       },
 
-      loggedInUser() {
+      loggedInUser () {
         return {
           items: [
             {text: 'Déconnexion', link: '/logout', type: 'link'},
@@ -85,19 +85,17 @@
         }
       },
 
-      gravatar() {
+      gravatar () {
         return this.$auth.user.picture
                ? this.$auth.user.picture
-               : ""
+               : ''
       },
 
-      nickname() {
+      nickname () {
         return this.$auth.user.nickname
                ? this.$auth.user.nickname
                : this.$auth.user.name
       },
-
-
 
       userLinks () {
         return (this.nav || []).map(link => {
@@ -135,8 +133,8 @@
       },
     },
     methods: {
-      login() {
-        this.$auth.login();
+      login () {
+        this.$auth.login()
       }
     },
   }
