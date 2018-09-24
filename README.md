@@ -11,8 +11,11 @@
 * [tldrlegal.com](tldrlegal.com) Legal overview
 
 ### Tools
+#### Code
 * [python tutor](http://www.pythontutor.com/) but not only python
 
+#### Web
+* [ninjamock](https://ninjamock.com) quick mockups
 
 ## Last articles
 

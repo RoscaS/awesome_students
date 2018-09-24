@@ -1,8 +1,7 @@
 <template>
-  <span class="definition"
-        v-tooltip.auto="def">
+  <span class="definition" v-tooltip.auto="def">
     <slot></slot>
-    <i class="far fa-info-circle book"></i>
+    <i class="far fa-info-circle info-icon"></i>
   </span>
 </template>
 
@@ -14,10 +13,9 @@
 </script>
 
 <style>
-  .book {
-    position: absolute;
-    margin-left: 0px;
-    margin-top: -2px;
+  .info-icon {
+    position: relative;
+    margin-left: -2px;
     font-size: 14px;
     color: rgba(0, 112, 183, 0.24);
   }
@@ -27,7 +25,7 @@
 
   .tooltip {
     display: block !important;
-    z-index: 10000;
+    z-index: 10;
   }
 
   .tooltip .tooltip-inner {

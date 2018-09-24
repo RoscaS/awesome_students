@@ -1,5 +1,6 @@
 const authorised_users = [
   'sol.rosca@gmail.com',
+  'steven.jeanneret@outlook.com',
 ]
 
 const siteSettings = {
