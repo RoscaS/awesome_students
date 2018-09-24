@@ -13,6 +13,100 @@ Consultation libre de la majorité des articles.
 ### Répo
 `git clone https://github.com/RoscaS/awesome_students`
 
+#### Folder tree
+```bash
+├── articles
+│   ├── algo
+│   │    ├── README.md
+│   │    ├── recursivite.md
+│   │    ├── algo_tri.md
+│   │    └── ...
+│   └── ...
+├── cours
+│   ├── base_de_donnees
+│   │    ├── README.md
+│   │    ├── tables.md
+│   │    ├── sql.md
+│   │    └── ...
+│   └── ...
+├── projets
+│   ├── p2
+│   │    ├── README.md
+│   │    ├── plan.md
+│   │    ├── echeances.md
+│   │    └── ...
+│   └── ...
+├── .git
+│   └── ...
+├── .gitignore
+├── package.json
+├── package-lock.json
+
+├── README.md
+├── tutos.md
+└── .vuepress
+    └── ...
+```
+#### Publication
+Pour publier un article il suffit de choisir le folder approprié et d'y créér un fichier `*.md` (**nom en minuscules**) dans la sous branche appropriée. Pour le publier il suffit de push sur le répo. Il se retrouvera en ligne dans les minutes qui suivent (tout est géré automatiquement).
+
+#### Nouvelle sous-branche
+
+::: danger ATTENTION!
+* Dans le doute, demandez moi de créér la nouvelle sous-branche !
+:::
+
+Disons que je veux une nouvelle sous branche popotte pour le **cours** de popotte. 
+```bash
+$ pwd
+/home/vanessa/blog/AwesomeStudents
+$ cd cours
+$ mkdir popotte
+$ cd popotte
+$ printf "# Popotte\n<Categories/>\n" > README.md
+$ touch poulet_aux_herbes.md
+```
+
+Il faut maintenant dire au site qu'on veut que cette nouvelle branche soit indexée:
+```bash
+$ pwd 
+/home/vanessa/blog/AwesomeStudents
+$ nano .vuepress/config.js
+```
+Tout en bas dans `themeConfig.sideBar` se trouve une ramification similaire à celle du site.
+Trouvez l'objet qui a pour `title` **cours**. Sous le meme format que le reste, ajoutez  dans son children une entrée `popotte`:
+
+```javascript{19}
+    // ../AwesomeStudents/.vuepress/config.js
+
+    // ...
+    sidebar: [
+      {
+        title: 'Cours',
+        collapsable: true,
+        children: [
+          '/cours/qt/',
+          '/cours/java/',
+          '/cours/algo/',
+          '/cours/programmation_concurente/',
+          '/cours/genie_logiciel/',
+          '/cours/traitement_signal/',
+          '/cours/base_de_donnees/',
+          '/cours/protocoles_reseaux/',
+          '/cours/developpement_web/',
+          '/cours/analyse/',
+          '/cours/popotte/',
+        ],
+      },
+    //  ...
+```
+::: danger ATTENTION!
+* Ne pas oublier le `/` à la fin de la string et la `,` en fin de ligne
+* Ne rien changer d'autre
+* Dans le doute, demandez moi de créér la nouvelle sous-branche
+:::
+
+
 Tout nouvel article créé dans `/blog` est mirror sur le site après un push.
 Ne pas toucher aux dossiers sous `/blog`. Vous pouvez éditer, créér mais pas changer la structure.
 

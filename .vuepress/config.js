@@ -21,7 +21,6 @@ module.exports = {
       {text: 'Home', link: '/'},
       {text: 'Tutos', link: '/tutos'},
     ],
-
     sidebar: [
       {
         title: 'Cours',
