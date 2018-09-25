@@ -27,14 +27,9 @@ sidebar: auto
 * Pour que la connexion signal-slot soit valide, ils doivent avoir la même signature (le même type).
 
 **Etablir une connection :**
-```c++	
-connect( slider, &QSlider::valueChanged, spinbox, &QSpinBox::setValue);
-```
+`connect( slider, &QSlider::valueChanged, spinbox, &QSpinBox::setValue);`
 
-```c++
-connect( slider, SIGNAL(valueChanged(int), spinbox, SLOT(setValue(int)));
-```
-
+`connect( slider, SIGNAL(valueChanged(int), spinbox, SLOT(setValue(int)));`
 **Custom Signal et Slot**
 * myclass.h:
 ```c++
