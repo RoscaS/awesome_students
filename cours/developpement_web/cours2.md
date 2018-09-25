@@ -38,7 +38,7 @@ PHP Hypertext Preprocessor
 //TODO
 
 #### Exemple PHP
-```PHP
+```php
 $variable = 4;              #c'est un entier
 $variable ="texte";         #c'est une chaine
 $variable = "1 texte";      #c'est une autre chaine.
@@ -85,7 +85,7 @@ Press Ctrl-C to quit.*
 * `=` affectation, retourne la valeur
 
 #### Exemple du triple-égal
-```PHP
+```php
 if (3=='3'){
     //ça passe
 }
@@ -106,7 +106,7 @@ classique :
 pratique sur les tableaux : itérateur foreach ($tab as $elt)
 
 exemple switch:
-```PHP
+```php
 <?php switch ($i) {
     case 0:
     case 1:
@@ -140,7 +140,7 @@ maintenabilité, réutilisabilité, configurabilité, déploiement, sécurité
 * on peut forcer le type si nécessaire (typecast)
 
 #### exemple
-```PHP
+```php
 $chaine = ’toto’;
 echo gettype($chaine), "<br />";
 $chaine = 42;
@@ -170,7 +170,7 @@ Pour formater et traiter des chaines :
 
 En PHP, les tableaux sont des structures de données fort utiles.
 
-```PHP
+```php
 $a = array("premier", "deuxieme", "troisieme");
 // PHP >= 5.4
 $a = [ "premier", "deuxieme", "troisieme" ];
