@@ -31,7 +31,7 @@ Pareil que la première source à la différence qu'un alphabet de 32 symboles s
 ### Quatre états probabilistes
 >[A-D] ne sont pas <Def def="Même chance d'apparaitre">équiprobable</Def>:
 
-| symbole  |nombre d'apparitions   | codé comme...  |
+| symbole  |nombre d'apparitions | codé comme...  |
 |---|---|---|
 |A   |20   | **0**  |
 |B   |10   |  **10** |
