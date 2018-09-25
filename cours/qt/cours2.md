@@ -26,13 +26,15 @@ sidebar: auto
 * Pour communiquer entres objets en QT on va utiliser les signaux et slots.
 * Pour que la connexion signal-slot soit valide, ils doivent avoir la même signature (le même type).
 
-**Etablir une connection :**
-`connect( slider, &QSlider::valueChanged, spinbox, &QSpinBox::setValue);`
+#### Etablir une connection :
+* `connect( slider, &QSlider::valueChanged, spinbox, &QSpinBox::setValue);`
+* `connect( slider, SIGNAL(valueChanged(int), spinbox, SLOT(setValue(int)));`
 
-`connect( slider, SIGNAL(valueChanged(int), spinbox, SLOT(setValue(int)));`
-**Custom Signal et Slot**
-* myclass.h:
-```c++
+
+#### Custom Signal et Slot
+```cpp
+// myclass.h
+
 class MyClass : public QObject
 {
     Q_OBJECT // marker for moc
@@ -41,12 +43,13 @@ signals:
     void valueChanged(int value);
 };
 ```
-* myclass.cpp
-```c++
-//no implementation for a signal
-```
-* Sending a signal
-```c++
+
+
+* myclass.cpp: `// no implementation for a signal`
+  
+
+#### Sending a signal
+```cpp
 emit valueChanged(value);
 ```
 
