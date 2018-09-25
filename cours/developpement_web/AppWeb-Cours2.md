@@ -1,5 +1,5 @@
 ---
-title: Applications web - Cours
+title: Cours n°2
 date: 2018-09-25
 author: Michael Kneuss
 sidebar: auto
