@@ -106,6 +106,32 @@ Pas plus loin !
 Pas plus loin !
 :::
 
+### Format d'un nouvel article
+**Merci de respecter ce format (noter la date) pour ne pas casser l'affichage et les mécanismes du site.**
+* Tout nouvel article créé est mirror sur le site après un push
+* Le titre spécifé dans `title` est automatiquement affiché en haut de la page donc pas besoin de le réécrire
+
+```md
+---
+title: J'aime la viande
+date: 2018-09-22
+author: George
+sidebar: auto
+---
+
+## Sous Titre
+
+Se retrouve dans le menu de gauche
+
+### Sous titre principal
+
+Se retrouve dans le menu de gauche aussi
+```
+
+* Les lignes 1 à 6 sont le **frontmatter** (les méta données de l'article). L'ordre n'est pas important mais le format des données l'est. Le field `sidebar: auto` permet d'afficher ou non la table des matières dynamique dans le menu de gauche.
+
+Pour le reste c'est comme d'habitude. Les header de `##` à `###` sont repris dans le menu de gauche automatiquement.
+
 
 ### Répo
 `git clone https://github.com/RoscaS/awesome_students`
@@ -138,7 +164,6 @@ Pas plus loin !
 ├── .gitignore
 ├── package.json
 ├── package-lock.json
-
 ├── README.md
 ├── tutos.md
 └── .vuepress
@@ -202,32 +227,3 @@ Trouvez l'objet qui a pour `title` **cours**. Sous le meme format que le reste, 
 * Ne rien changer d'autre
 * Dans le doute, demandez moi de créér la nouvelle sous-branche
 :::
-
-
-Tout nouvel article créé dans `/blog` est mirror sur le site après un push.
-Ne pas toucher aux dossiers sous `/blog`. Vous pouvez éditer, créér mais pas changer la structure.
-
-### Format d'un nouvel article
-**Merci de respecter ce format pour ne pas casser l'affichage et les mécanismes du site.**
-
-```md
----
-title: J'aime la viande
-date: 2018-09-22
-author: George
-sidebar: auto
----
-
-## Titre principal
-
-Se retrouve dans le menu de gauche
-
-### Sous titre principal
-
-Se retrouve dans le menu de gauche aussi
-```
-
-* Les lignes 1 à 6 sont le **frontmatter** (les méta données de l'article). L'ordre n'est pas important mais le format des données l'est. Le field `sidebar: auto` permet d'afficher ou non la table des matières dynamique dans le menu de gauche.
-
-Pour le reste c'est comme d'habitude. Les header de `#` à `###` sont repris dans le menu de gauche mais ça se fait automatiquement.
-

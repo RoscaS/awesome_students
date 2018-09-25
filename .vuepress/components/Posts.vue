@@ -2,7 +2,9 @@
   <div class="posts" v-if="posts.length">
     <div class="post" v-for="post in posts">
       <router-link :to="post.path">
-        <p>{{post.frontmatter.title}}</p>
+        <span class="post-name">
+          <p>{{post.frontmatter.title}}</p>
+        </span>
       </router-link>
     </div>
   </div>
@@ -28,5 +30,16 @@ export default {
 </script>
 
 <style scoped>
+  .post-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  p {
+    line-height: 10px;
+  }
+
+
 
 </style>

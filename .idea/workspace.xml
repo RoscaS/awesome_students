@@ -89,36 +89,36 @@
         <counts>
           <entry key="js" value="4" />
           <entry key="json" value="2" />
-          <entry key="md" value="15" />
+          <entry key="md" value="16" />
           <entry key="styl" value="3" />
-          <entry key="vue" value="17" />
+          <entry key="vue" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="4" />
-          <entry key="Markdown" value="11" />
+          <entry key="Markdown" value="12" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Stylus" value="3" />
-          <entry key="Vue.js" value="17" />
+          <entry key="Vue.js" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="js" value="43" />
-          <entry key="md" value="658" />
+          <entry key="md" value="675" />
           <entry key="styl" value="32" />
-          <entry key="vue" value="3670" />
+          <entry key="vue" value="4029" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JavaScript" value="43" />
-          <entry key="Markdown" value="352" />
+          <entry key="Markdown" value="369" />
           <entry key="PLAIN_TEXT" value="306" />
           <entry key="Stylus" value="32" />
-          <entry key="Vue.js" value="3670" />
+          <entry key="Vue.js" value="4029" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -132,7 +132,7 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.46582735">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.42052194">
+        <splitter split-orientation="vertical" split-proportion="0.5172089">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file pinned="false" current-in-tab="false">
@@ -144,19 +144,19 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/.vuepress/components/Categories.vue">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state>
-                      <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+                    <state relative-caret-position="644">
+                      <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/.vuepress/components/ArticleContent.vue">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="25">
+                    <state>
                       <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
                     </state>
                   </provider>
@@ -166,11 +166,20 @@
           </split-first>
           <split-second>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/.vuepress/components/ArticleDate.vue">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="288">
+                    <state relative-caret-position="368">
                       <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/.vuepress/components/Posts.vue">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="299">
+                      <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
                     </state>
                   </provider>
                 </entry>
@@ -185,7 +194,7 @@
             <entry file="file://$PROJECT_DIR$/articles/algo/sorts.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="FIRST">
-                  <first_editor relative-caret-position="288">
+                  <first_editor relative-caret-position="368">
                     <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="41" />
                   </first_editor>
                   <second_editor />
@@ -193,11 +202,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/Media.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="524">
-                  <caret line="38" selection-start-line="38" selection-end-line="38" />
+                <state>
+                  <caret column="1" selection-start-column="1" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -205,7 +214,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.vuepress/theme/Navbar.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
+                <state>
                   <caret line="89" selection-start-line="89" selection-end-line="89" />
                   <folding>
                     <element signature="e#957#1004#0" expanded="true" />
@@ -215,37 +224,22 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/theme.styl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="252">
-                  <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="151" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.vuepress/components/Posts.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="576">
-                  <caret line="32" selection-start-line="32" selection-end-line="32" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tutos.md">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1548">
-                  <caret line="86" column="3" selection-start-line="86" selection-start-column="3" selection-end-line="86" selection-end-column="3" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/Def.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="18">
-                  <caret line="1" column="47" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="47" />
+                <state relative-caret-position="345">
+                  <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/README.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="FIRST">
+                  <first_editor relative-caret-position="437">
+                    <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+                  </first_editor>
+                  <second_editor />
                 </state>
               </provider>
             </entry>
@@ -338,16 +332,13 @@
         <option value="$PROJECT_DIR$/articles/algo/sorts.md" />
         <option value="$PROJECT_DIR$/.vuepress/components/ArticleMeta.vue" />
         <option value="$PROJECT_DIR$/articles/linux/ranger.md" />
-        <option value="$PROJECT_DIR$/.vuepress/components/Categories.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/ArticleContent.vue" />
         <option value="$PROJECT_DIR$/articles/cpp/polymorphisme.md" />
         <option value="$PROJECT_DIR$/.vuepress/components/ArticleDate.vue" />
-        <option value="$PROJECT_DIR$/.vuepress/components/Posts.vue" />
         <option value="$PROJECT_DIR$/.vuepress/theme/styles/theme.styl" />
         <option value="$PROJECT_DIR$/.vuepress/components/définition.vue" />
         <option value="$PROJECT_DIR$/.vuepress/enhanceApp.js" />
         <option value="$PROJECT_DIR$/.vuepress/components/Definition.vue" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.vuepress/siteSettings.js" />
         <option value="$PROJECT_DIR$/.vuepress/components/Def.vue" />
         <option value="$PROJECT_DIR$/tutos.md" />
@@ -355,6 +346,9 @@
         <option value="$PROJECT_DIR$/.vuepress/components/Image.vue" />
         <option value="$PROJECT_DIR$/.vuepress/theme/Navbar.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/Media.vue" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.vuepress/components/Posts.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/components/Categories.vue" />
       </list>
     </option>
   </component>
@@ -440,38 +434,6 @@
               <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
-              <item name="00_AwesomeStudents" type="462c0819:PsiDirectoryNode" />
-              <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
-              <item name="00_AwesomeStudents" type="462c0819:PsiDirectoryNode" />
-              <item name="articles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
-              <item name="00_AwesomeStudents" type="462c0819:PsiDirectoryNode" />
-              <item name="articles" type="462c0819:PsiDirectoryNode" />
-              <item name="algo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
-              <item name="00_AwesomeStudents" type="462c0819:PsiDirectoryNode" />
-              <item name="cours" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
-              <item name="00_AwesomeStudents" type="462c0819:PsiDirectoryNode" />
-              <item name="cours" type="462c0819:PsiDirectoryNode" />
-              <item name="qt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -537,15 +499,15 @@
       <updated>1537615202800</updated>
       <workItem from="1537615204088" duration="58184000" />
       <workItem from="1537775126372" duration="18373000" />
-      <workItem from="1537820776377" duration="12917000" />
+      <workItem from="1537820776377" duration="15878000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89474000" />
+    <option name="totallyTimeSpent" value="92435000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="-9" width="1906" height="1055" extended-state="6" />
+    <frame x="7" y="-9" width="3826" height="2162" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -564,7 +526,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.17507887" />
+      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.08712716" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -776,41 +738,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/Categories.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/ArticleContent.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
+        <state>
           <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/ArticleDate.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
+        <state relative-caret-position="368">
           <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/articles/algo/sorts.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="288">
-            <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="41" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/Posts.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
@@ -838,30 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="396">
-            <caret line="22" selection-start-line="22" selection-end-line="22" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tutos.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1548">
-          <caret line="86" column="3" selection-start-line="86" selection-start-column="3" selection-end-line="86" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/Def.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="47" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/theme.styl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -869,9 +783,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tutos.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="106" column="3" selection-start-line="106" selection-start-column="3" selection-end-line="106" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/theme/Navbar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state>
           <caret line="89" selection-start-line="89" selection-end-line="89" />
           <folding>
             <element signature="e#957#1004#0" expanded="true" />
@@ -881,8 +802,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/Media.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/articles/algo/sorts.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="368">
+            <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="41" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/Def.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="437">
+            <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/Categories.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/Posts.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
         </state>
       </provider>
     </entry>

@@ -2,7 +2,9 @@
   <div class="articles" v-if="categories.length">
     <div class="post" v-for="category in categories">
       <router-link :to="category.path">
-        <h3>{{category.frontmatter.title}}</h3>
+        <span class="post-name">
+          <p>{{category.frontmatter.title}}</p>
+        </span>
       </router-link>
     </div>
   </div>
@@ -26,5 +28,13 @@
 </script>
 
 <style scoped>
+  .post-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
+  p {
+    line-height: 10px;
+  }
 </style>

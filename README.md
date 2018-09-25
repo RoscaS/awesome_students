@@ -17,6 +17,6 @@
 #### Web
 * [ninjamock](https://ninjamock.com) quick mockups
 
-## Last articles
+## Derniers articles
 
 <Posts />
