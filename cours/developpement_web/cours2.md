@@ -1,7 +1,7 @@
 ---
 title: Cours n°2
 date: 2018-09-25
-author: Michael Kneuss
+author: Michael
 sidebar: auto
 ---
 
@@ -48,7 +48,7 @@ echo $variable              #affichera 43
 ### Fonctionnement
 #### Principe général
 * le serveur reçoit la requete du client et PHP construit son environnement
-* délimiteurs <?php ... ?> embarqués dans l'HTML
+* délimiteurs `<?php ... ?>` embarqués dans l'HTML
     * templating!
     * on peut ouvrir et refermer "le php", ce qui peut éviter les echo HTML
 * le contenu des balises est interprété
@@ -71,8 +71,8 @@ Document root is /home/me/public_html
 Press Ctrl-C to quit.*
 
 ### Erreurs
-* utiliser @ avant une instruction pour en ignorer les erreurs
-* error_reporting() permet de configurer quelles erreurs doivent etre reportées
+* utiliser `@` avant une instruction pour en ignorer les erreurs
+* `error_reporting()` permet de configurer quelles erreurs doivent etre reportées
 * dès PHP5 : concept d'exceptions
 
 ### Syntaxe
@@ -80,11 +80,9 @@ Press Ctrl-C to quit.*
 
 ### Opérateurs
 
-=== comparaison des valeurs et des types
-
-== comparaison des valeurs
-
-= affectation, retourne la valeur
+* `===` comparaison des valeurs et des types
+* `==` comparaison des valeurs
+* `=` affectation, retourne la valeur
 
 #### Exemple du triple-égal
 ```PHP
@@ -96,9 +94,9 @@ if (3==='3'){
 }
 ```
 ### Structures de controle
-if {} elseif {} else {}
-opérateur ternaire ?
-sélection de cas : switch
+* `if {} elseif {} else {}`
+* opérateur ternaire: `?`
+* sélection de cas: `switch`
 
 classique :
 * while

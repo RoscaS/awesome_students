@@ -1,7 +1,7 @@
 ---
 title: Cours n°3
 date: 2018-09-25
-author: Michael Kneuss
+author: Michael
 sidebar: auto
 ---
 
@@ -11,7 +11,7 @@ sidebar: auto
    1. utilisé pour l'affichage d'un texte ou d'une image
    2. Aucune intéraction avec l'utilisateur n'est prévue
 2. QLCDNumber
-   1. Permet d'afficher des chiffres avec l'apparence d'un afficheur à cristaux liquides
+   3. Permet d'afficher des chiffres avec l'apparence d'un afficheur à cristaux liquides
 #### Saisie de caractères
 1. QLineEdit
     1. Fournit un éditeur sur une seule ligne
@@ -19,7 +19,7 @@ sidebar: auto
     1. Permet de travailler avec une grande zone de texte
 #### Boutons
 1. QPushButton
-```c++
+```cpp
 #include <QApplication>
 #include <QPushButton>
 int main(int argc, char *argv[])
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 #### Listes
 1. QListWidget
     1. Permet à l'utilisateur de sélectionner une ou plusieurs entrées dans une liste d'éléments
-   ```c++
+   ```cpp
    QListWidget* listWidget = new QListWidget(this);
    new QListWidgetItem("un", listeWidget);
    new QListWidgetItem("deux", listeWidget);
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
     1. Liste déroulante
 
 #### Widget personnalisé
-```c++
+```cpp
 #ifndef HEXSPINBOX_H
 #define HEXSPINBOX_H
 

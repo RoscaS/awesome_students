@@ -1,7 +1,7 @@
 ---
 title: Cours n°2
 date: 2018-09-24
-author: Michael Kneuss
+author: Michael
 sidebar: auto
 ---
 ## Bibliotèques et Frameworks
