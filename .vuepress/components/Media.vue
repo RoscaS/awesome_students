@@ -10,11 +10,13 @@
         </a>
         <img  v-else :src="src" :style="setWidth"/>
       </div>
-      <blockquote v-if="caption"
-                  :style="`max-width:${width}px;`"
-                  class="caption">
-        <b>fig {{imgCount}}: </b>{{caption}}
-      </blockquote>
+        <blockquote v-if="caption"
+                    :style="`max-width:${width}px;`"
+                    class="caption">
+          <ClientOnly>
+            <b>fig {{imgCount}}: </b>{{caption}}
+          </ClientOnly>
+        </blockquote>
     </div>
   </div>
 </template>
