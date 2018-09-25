@@ -8,7 +8,7 @@
 
 ### CheatSheets
 * [devhints.io](https://devhints.io/) TL;DR for developers
-* [tldrlegal.com](tldrlegal.com) Legal overview
+* [tldrlegal.com](https://tldrlegal.com/) Legal overview
 
 ### Tools
 #### Code
