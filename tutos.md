@@ -1,3 +1,7 @@
+---
+sidebar: auto
+---
+
 # Comment utiliser le wiki
 
 ## Visiteurs
