@@ -164,7 +164,7 @@ pour défnir une chaine de caractères :
     * attention au délimiteur backtick ` qui a une fonction précise (exécuter une commande système)
 
 Pour formater et traiter des chaines :
-* *printf()* et *sprintf()*
+* `printf()` et `sprintf()`
   
 ### Tableaux et tableaux associatifs
 
