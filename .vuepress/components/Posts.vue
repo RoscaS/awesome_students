@@ -3,7 +3,7 @@
     <div class="post" v-for="post in posts">
       <router-link :to="post.path">
         <span class="post-name">
-          <p>{{post.frontmatter.title}}</p>
+          <p>[{{getCategory(post.path)}}]: <b>{{post.frontmatter.title}}</b></p>
         </span>
       </router-link>
     </div>
@@ -12,18 +12,23 @@
 
 <script>
 export default {
-  props: ["page"],
+  props: {
+    pages: {type: String}
+  },
   computed: {
     posts() {
-      let currentPage = this.page ? this.page : this.$page.path;
-      let posts = this.$site.pages
-        .filter(x => {
-          return x.path.match(new RegExp(`(${currentPage})(?=.*html)`));
-        })
-        .sort((a, b) => {
-          return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
-        }).reverse();
-      return posts;
+      let allPosts = this.$site.pages.filter(x => {
+        return x.path.startsWith(`/${this.pages}/`) && x.path.endsWith('.html')
+      })
+      return allPosts.sort((a, b) => {
+        return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+      })
+    },
+  },
+  methods: {
+    getCategory(path) {
+      let cat = path.split('/')[2].replace('_', ' ')
+      return cat[0].toUpperCase() + cat.slice(1, cat.length)
     }
   }
 };

@@ -19,4 +19,10 @@
 
 ## Derniers articles
 
-<Posts />
+<Posts pages='articles' />
+
+## Derniers cours
+
+<Posts pages='cours' />
+
+
