@@ -1,5 +1,5 @@
 ---
-title: Introduction au codage et à la compression de l'information
+title: Introduction
 date: 2018-09-24
 sidebar: auto
 author: Sol
