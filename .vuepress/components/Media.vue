@@ -13,9 +13,7 @@
         <blockquote v-if="caption"
                     :style="`max-width:${width}px;`"
                     class="caption">
-          <ClientOnly>
-            <b>fig {{imgCount}}: </b>{{caption}}
-          </ClientOnly>
+            {{caption}}
         </blockquote>
     </div>
   </div>
@@ -38,9 +36,6 @@
       setCenter() {
         if (this.center === 'true') { return `justify-content: center; `}
       },
-      imgCount() {
-        return document.getElementsByTagName('img').length
-      }
     },
   }
 </script>
