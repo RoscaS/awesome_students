@@ -22,8 +22,28 @@ Un mot <Def def="pas facile">compliqué</Def> par exemple:
 Un mot <Def def="pas facile">compliqué</Def> par exemple
 ```
 
-#### Insérer un gif
-* `![](http://i.imgur.com/OUkLi.gif)` : notez le `.gif` à la fin.
+#### Controle avancé sur les médias
+
+<Media 
+  src="https://imgur.com/z4U3kwu.gif" 
+  url="https://www.google.com"
+  caption="Une image qui bouge"
+  center="true" 
+  width="250"
+/>
+
+
+```md
+<Media 
+  src="https://imgur.com/z4U3kwu.gif" 
+  url="https://www.google.com"
+  caption="Une image qui bouge
+  center="true" 
+  width=350
+/>
+```
+Tous les paramètres sont optionnels.
+
 
 #### Highlight une ligne de code:
 

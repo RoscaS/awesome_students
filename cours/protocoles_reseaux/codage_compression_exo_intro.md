@@ -68,11 +68,3 @@ Intuitivement sur 8 bits. Mais chaque lettre a une probabilité différente: On 
 
 De plus, on peut aussi réduire la redondance **inter-symbole** en tenant compte du fait que certaines lettres sont plus probables après d'autres (→ cours: réduction de la redondance inter-symbole: sources avec mémoire, algorithme de Lempel-Ziv).
 
-
-<Media 
-  src="https://imgur.com/z4U3kwu.gif" 
-  url="https://www.google.com"
-  caption="petit teste"
-  center="true" 
-  width=350 
-/>
