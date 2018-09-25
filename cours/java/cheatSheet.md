@@ -6,6 +6,7 @@ author: Sol
 ---
 
 ## Workspace DreamTeam
+**basel2018**
 ### Elève au projecteur
 À la fin du cours:
 * `commit` & `push`
@@ -24,6 +25,7 @@ Au début du cours
 * `ctrl` `shift` `7`: comment line
 * `ctrl` `shift` `r`: refactor
 * `ctrl` `shift` `l`: open shortcut list
+* `ctrl` `shift` `o`: organise import
 * `ctrl` `f11`: rexec last (last build?)
 * `ctrl` `t`: quicl type hierarchy
 * `ctrl` `o`: quick outline
