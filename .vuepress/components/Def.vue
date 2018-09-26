@@ -9,6 +9,9 @@
   export default {
     props: {def : {type: String}},
     name: 'Def',
+    data: () => ({
+      show: false,
+    })
   }
 </script>
 
@@ -32,6 +35,7 @@
     background: rgba(0, 112, 183, 0.91);
     color: white;
     padding: 5px 10px 5px;
+    width: 220px;
   }
 
   .tooltip .tooltip-arrow {
