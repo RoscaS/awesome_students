@@ -135,3 +135,7 @@ L'opération de changement de contexte d'un processus ou d'un thread comporte le
 5. Activation du processus élu
 
 **Tout se passe comme si le processus préalablement interrompu n'avait pas cessé de s'exécuter.**
+
+## Implémentation en C 
+
+> Soon...
