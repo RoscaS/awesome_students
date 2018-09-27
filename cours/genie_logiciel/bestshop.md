@@ -17,7 +17,7 @@ Travail de présentation "BestShop":
 * Votre site est en ligne entre 2 et 7 jours après entretient avec notre équipe.
 * Profitez d'un design qui a fait ses preuves:
   * Épuré, l'accent est mis sur **votre** contenu
-  * Recherches gérées par [Agolina](https://www.google.com)
+  * Recherches gérées par [Algolia](https://community.algolia.com/docsearch/)
 
 
 ## Personnalisation & rigidité
