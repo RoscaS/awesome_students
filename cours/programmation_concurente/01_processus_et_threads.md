@@ -70,7 +70,8 @@ Un processus peut contenir un ou plusieurs threads.
 
 * Un thread est une unité d'execution, un processus léger (lightweight process)
 * **Les threads s'exécutent en parallèle**
-  * Monocoeur: <Def def="Donne l'illusion de s'exécuter en parallèle en switchant rapidement d'un thread à l'autre.">preamptif</Def>
+  * Monocoeur: <Def def="En informatique, le multitâche préemptif désigne la capacité d'un système d'exploitation à exécuter ou arrêter une tâche planifiée en cours.
+Un ordonnanceur préemptif présente l'avantage d'une meilleure réactivité du système et de son évolution, mais l'inconvénient vient des situations de compétition (lorsque le processus d'exécution accède à la même ressource avant qu'un autre processus (préempté) ait terminé son utilisation)">preamptif</Def>
   * Multicoeur: execution parallèle.
   * L'**ordonnanceur** est responsable de l'ordre d'exécution.
 
