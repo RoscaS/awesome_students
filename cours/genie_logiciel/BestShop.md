@@ -10,7 +10,7 @@ author: "Nathan, Michael, Sol"
 ## Générique & Rapidite
 * Votre site est en ligne entre 2 et 7 jours après entretient avec notre équipe.
 * Profitez d'un design qui a fait ses preuves:
-  * Épuré, l'accent sur **votre** contenu
+  * Épuré, l'accent est mis sur **votre** contenu
   * Recherches gérées par [Agolina](https://www.google.com)
 
 
