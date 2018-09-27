@@ -32,12 +32,12 @@ author: "Nathan, Michael, Sol"
 
 ## Goodies
 En 2018, il n'y a nullement besoin de préciser que le site est:
-  * **responsive**
+  * **Responsive**
   * Profite de la meilleur **SEO** (Search Engin Optimization)
 
 ## Tecky
 Bleeding edge de la technologie: Ce qui se fait de mieux au moment où c'est approuvé par la communauté des développeurs.
 * **Backend**: API restfull (Django rest framework)
   * Utilisez vos données pour d'autres services
-  * Une idée d'application? Faites nous signe, on se charge de la réaliser
 * **Frontend**: VueJS
+  * Le framework JavaScript open-source avec la plus grosse croissance jamais enregistrée.
