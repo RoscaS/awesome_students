@@ -6,7 +6,7 @@ author: L'équipe
 ---
 
 ## Meta
-Travail de présentation "BestShop":
+Travail de présentation "**BestShop**":
 * Nathan Latino
 * Michael Kneuss
 * Sol Rosca

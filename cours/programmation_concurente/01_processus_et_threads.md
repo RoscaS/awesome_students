@@ -183,3 +183,26 @@ void *func(void *arg) {
 ### Terminaison d'un thread
 La terminaison d'un thread peut être exécutée depuis:
 1. Le thread lui-même:
+  * Instruction `return`
+  * Fonction `pthread_cancel`
+2. Un autre thread (annulation):
+  * Fonction `pthread_cancel`
+
+```c
+void pthread_exit(void *value);
+int pthread_cancel(pthread_t thread);
+```
+
+### Rendre le processeur
+Il est possible de forcer le thread appelant à relacher le processeur avec la fonction:
+
+```c
+#include <scheld.h>
+int scheld_yield()
+```
+
+* Suite à ce call, le thread est placé à la fin de la file d'attente des threads en attente du processeur
+* Le thread suivant en attente du processeur est activé
+* Renvoie `0` en cas de succès
+
+## Exercices
