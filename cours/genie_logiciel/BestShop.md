@@ -7,6 +7,13 @@ author: "Nathan, Michael, Sol"
 
 ![Image](https://i.imgur.com/LC8QQd8.png)
 
+## Générique & Rapidite
+* Votre site est en ligne entre 2 et 7 jours après entretient avec notre équipe.
+* Profitez d'un design qui a fait ses preuves:
+  * Épuré, l'accent sur **votre** contenu
+  * Recherches gérées par [Agolina](https://www.google.com)
+
+
 ## Personnalisation & rigidité
 * Aucune assistance nécessaire. Vous savez utiliser le chat de facebook? Alors vous avez les prérequis pour utiliser votre site.
 * Personnalisation des éléments clés de façon intuitive
