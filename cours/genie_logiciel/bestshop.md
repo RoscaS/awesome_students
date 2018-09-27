@@ -5,7 +5,11 @@ sidebar: auto
 author: L'équipe
 ---
 
-Nathan Latino, Michael Kneuss, Sol Rosca
+## Meta
+Travail de présentation "BestShop":
+* Nathan Latino
+* Michael Kneuss
+* Sol Rosca
 
 ![Image](https://i.imgur.com/LC8QQd8.png)
 
