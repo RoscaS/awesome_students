@@ -44,7 +44,7 @@ On reste calme et on lit la suite, c'est tout aussi simple.
 
 
 ## Early binding, late binding et méthodes virtuelles
-Binding ça veut dire assigner, dans le présent contexte, on parle de bind la bonne métode à un objet.
+Binding ça veut dire assigner, dans le présent contexte, on parle de bind la bonne méthode à un objet.
 
 Le mécanisme utilisé par défaut par le compilateur est celui du **early binding**  (il fait le bind au moment de la compilation). Au moment de la compilation il détecte que `a` est un pointeur sur un objet de type `Animals` et lui bind tout naturellement les méthods d'`Animals` d'où l'output du précédent snippet.
 
