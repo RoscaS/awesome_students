@@ -139,4 +139,47 @@ L'opération de changement de contexte d'un processus ou d'un thread comporte le
 
 ## Implémentation en C 
 
-> Soon...
+### Creation d'un thread
+
+```c
+#include <pthread.h>
+
+int pthread_create(pthread_t *thread,
+                   const pthread_attr_t *attr,
+                   void *(*start_routine)(void *),
+                   void *arg);
+```
+
+* `*thread` est un pointeur sur une variable de type `pthread_t`, il s'agit de l 'identifient du thread créé (argument de sortie)
+* `*attr` permet de définir les attributs du thread (valeur `NULL` par défaut)
+* `*start_routine` correspond à la fonction qui est exécutée par le thread créé. La fonction exécutée par le thread créé doit avoir le prototype suivant:
+
+```c
+void *function(void *data)
+```
+
+* `*arg` est un argument passé à la fonction (peut valoir `NULL`)
+
+Si la création est un succès, `pthread_create` renvoie `0`
+
+### Passage d'arguments
+
+```c
+pthread_create(&thread, NULL, func, msg)
+
+void *func(void *arg) {
+  char *msg = (atoi) arg;
+  printf("Msg: %s\n", msg);
+  return NULL;
+}
+```
+
+### Jointure
+* C'est une forme de communication entre threads
+* **Joindre** un thread signifie le bloquer jusqu'à sa terminsaison.
+* `value_ptr` contient la valeur de retour du thread terminé (en principe set sur `NULL`)
+* Renvoie `0` en cas de succès
+
+### Terminaison d'un thread
+La terminaison d'un thread peut être exécutée depuis:
+1. Le thread lui-même:
