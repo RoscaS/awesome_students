@@ -31,7 +31,7 @@ author: "Nathan, Michael, Sol"
 ![Image](https://i.imgur.com/QJMxPBy.png)
 
 ## Goodies
-En 2018, nullement besoin de préciser que le site est 
+En 2018, il n'y a nullement besoin de préciser que le site est:
   * **responsive**
   * Profite de la meilleur **SEO** (Search Engin Optimization)
 
