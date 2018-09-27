@@ -1,5 +1,3 @@
-
-
 ---
 title: Serie01
 date: 2018-09-20

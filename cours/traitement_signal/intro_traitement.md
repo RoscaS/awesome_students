@@ -1,5 +1,3 @@
-
-
 ---
 title: Introduction au traitement de signal
 date: 2018-09-20
