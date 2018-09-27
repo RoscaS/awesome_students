@@ -25,7 +25,7 @@ author: "Nathan, Michael, Sol"
   * Local: qualité made in .ch
   * Respectueux de l'environement
 
-* Résilient aux pannes, le site est automatiquement mirror en cas de panne du serveur principale. Aucune différence pour l'end-user.
+* Résilient aux pannes, le site est automatiquement mirror en cas de panne du serveur principal. Aucune différence pour l'end-user.
 * Sécurité des données personnelles assurées par [Auth0](https://auth0.com) leader mondial de l'authentification.
 
 ![Image](https://i.imgur.com/QJMxPBy.png)
