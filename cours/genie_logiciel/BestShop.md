@@ -31,8 +31,11 @@ author: "Nathan, Michael, Sol"
 ![Image](https://i.imgur.com/QJMxPBy.png)
 
 ## Goodies
+* Traduction en It, Fr, De
 En 2018, il n'y a nullement besoin de préciser que le site est:
   * **Responsive**
+  * Utilisable sur tous les navigateurs modernes
+    * (*Fallback pour les utilisateurs de IE <i class="fas fa-less-than-equal"></i> 8*)
   * Profite de la meilleur **SEO** (Search Engin Optimization)
 
 ## Tecky
