@@ -1,4 +1,5 @@
 
+
 ---
 title: Serie01
 date: 2018-09-20
@@ -6,7 +7,9 @@ author: Michael
 sidebar: auto
 ---
 ## Série 1
+
 ### Exercice 1.1: Estimation, filtrage
+
 **a)**
 * x(1) : 0,0,0
     * xmedian(1) = 0

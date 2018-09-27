@@ -1,10 +1,12 @@
 
+
 ---
 title: Introduction au traitement de signal
 date: 2018-09-20
 author: Michael
 sidebar: auto
 ---
+
 ## Introduction au traitement de signal
 
 1. Prétraitement du signal
