@@ -2,8 +2,10 @@
 title: BestShop
 date: 2018-09-27
 sidebar: auto
-author: "Nathan, Michael, Sol"
+author: L'équipe
 ---
+
+Nathan Latino, Michael Kneuss, Sol Rosca
 
 ![Image](https://i.imgur.com/LC8QQd8.png)
 
