@@ -13,6 +13,7 @@ author: "Steven, Sol"
 
 ## Préambule
 
+
 Inspiré de la console du jeux d'action Quake, certains terminaux proposent un affichage *Quake-mode*. L'idée est de reprendre le même concept mais pour un éditeur de type VsCode, Sublime Text,... Dans le but d'avoir un éditeur md au bout d'un shortcut peu importe le workspace utilisé.
 
 ![Image](https://i.imgur.com/UpW1yXs.png)
@@ -42,6 +43,7 @@ I3 window manager + Arch Linux
 * Fixed
 
 ## Inspirations
+
 * Quakemode de [Tilix](https://github.com/gnunn1/tilix)
   * Son behave dans i3:
     * Quand hide il n'apparait sur aucun workspace (n'est pas caché sur un workspace lointain)
