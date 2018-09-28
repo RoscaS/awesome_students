@@ -1,0 +1,12 @@
+{
+    "cSpell.enabled": true,
+    "spellright.language": [
+        "English (American)",
+        "French"
+    ],
+    "spellright.documentTypes": [
+        "latex",
+        "plaintext",
+        "markdown"
+    ]
+}
