@@ -9,6 +9,7 @@ author: "Steven, Sol"
 * [Tilix](https://github.com/gnunn1/tilix)
 * [i3](https://i3wm.org/docs/)
 * [compton](https://wiki.archlinux.org/index.php/compton)
+* [i3ipc](https://i3ipc-python.readthedocs.io/en/latest/#some-examples)
 
 ## Préambule
 
