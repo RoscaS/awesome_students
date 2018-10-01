@@ -1,5 +1,5 @@
 ---
-title: Cours n°2
+title: Introduction à php
 date: 2018-09-25
 author: Michael
 sidebar: auto
