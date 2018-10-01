@@ -1,5 +1,5 @@
 ---
-title: Cours n°2
+title: Signaux et slots
 date: 2018-09-24
 author: Michael
 sidebar: auto

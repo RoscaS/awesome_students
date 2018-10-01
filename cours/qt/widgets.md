@@ -1,5 +1,5 @@
 ---
-title: Cours n°3
+title: Widgets
 date: 2018-09-25
 author: Michael
 sidebar: auto
