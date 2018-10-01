@@ -118,7 +118,7 @@
           <entry key="json" value="1" />
           <entry key="md" value="1283" />
           <entry key="styl" value="32" />
-          <entry key="vue" value="8751" />
+          <entry key="vue" value="8769" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -128,7 +128,7 @@
           <entry key="Markdown" value="469" />
           <entry key="PLAIN_TEXT" value="821" />
           <entry key="Stylus" value="32" />
-          <entry key="Vue.js" value="8751" />
+          <entry key="Vue.js" value="8769" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -246,8 +246,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.vuepress/theme/Page.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="891">
-                  <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+                <state relative-caret-position="986">
+                  <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
                   <folding>
                     <element signature="e#1363#1406#0" expanded="true" />
                   </folding>
@@ -489,30 +489,6 @@
             <path>
               <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
               <item name="00_AwesomeStudents" type="462c0819:PsiDirectoryNode" />
-              <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
-              <item name="00_AwesomeStudents" type="462c0819:PsiDirectoryNode" />
-              <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
-              <item name="00_AwesomeStudents" type="462c0819:PsiDirectoryNode" />
-              <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
-              <item name="00_AwesomeStudents" type="462c0819:PsiDirectoryNode" />
-              <item name=".vuepress" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
-              <item name="00_AwesomeStudents" type="462c0819:PsiDirectoryNode" />
               <item name="cours" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -593,12 +569,12 @@
       <workItem from="1538233996053" duration="158000" />
       <workItem from="1538236844988" duration="1671000" />
       <workItem from="1538398807208" duration="7691000" />
-      <workItem from="1538418687296" duration="8657000" />
+      <workItem from="1538418687296" duration="8792000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121815000" />
+    <option name="totallyTimeSpent" value="121950000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="7" y="-8" width="3826" height="2161" extended-state="6" />
@@ -956,8 +932,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/theme/Page.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+        <state relative-caret-position="986">
+          <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
           <folding>
             <element signature="e#1363#1406#0" expanded="true" />
           </folding>

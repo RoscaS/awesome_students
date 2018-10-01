@@ -207,9 +207,10 @@ function find (page, items, offset) {
   width 100%
   .footer-text {
     padding-top 25px
-    /*padding-bottom 25px*/
   }
-  /*color red*/
+  .jrosk {
+    font-weight bold
+  }
 
 .page
   padding-bottom 2rem
