@@ -35,7 +35,7 @@
     background: rgba(0, 112, 183, 0.91);
     color: white;
     padding: 5px 10px 5px;
-    width: 220px;
+    max-width: 220px;
   }
 
   .tooltip .tooltip-arrow {

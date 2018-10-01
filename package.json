@@ -24,7 +24,7 @@
     "markdown-it-katex": "^2.0.3",
     "v-tooltip": "^2.0.0-rc.33",
     "vue": "^2.5.17",
-    "vue-cookies": "^1.5.7",
+    "vue-slide-toggle": "^1.1.0",
     "vuepress": "^0.14.4"
   }
 }

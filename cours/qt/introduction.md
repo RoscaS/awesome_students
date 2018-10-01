@@ -7,7 +7,7 @@ author: Sol
 
 ## En vrac
 * [tldrlegal.com](tldrlegal.com)
-* 
+
 
 ## Framework vs bibliothèque
 ### Framework
@@ -16,6 +16,9 @@ Application à trou, de nombreuses fonctionnalités se passent en background gé
 * C'est le framework qui gère le flow du programme et non le programmeur
 * Apporte un ensemble de bibliothèques
 * Conventions de nommage
+
+
+
 
 ### Bibliothèque (API)
 * Collection de fonction et de classes
@@ -26,7 +29,6 @@ Application à trou, de nombreuses fonctionnalités se passent en background gé
 ### Design pattern
 * Une bonne solution à un problème récurent
 * nombreux
-
 
 
 # Introduction Qt avec QtCreator

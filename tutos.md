@@ -26,23 +26,59 @@ Un mot <Def def="pas facile">compliqué</Def> par exemple:
 Un mot <Def def="pas facile">compliqué</Def> par exemple
 ```
 
+#### Balise spoiler
+
+<Spoiler>
+
+* lala
+* poule
+* poney
+
+$f(x) = 4x^2 + 2x - 3$
+
+Adipisci beatae consectetur distinctio doloremque ea excepturi id, impedit itaque iure neque nihil placeat quae, quaerat qui quis rem soluta. Ad, obcaecati!
+
+```js
+  sortByPosition() {
+    this.images.sort((a, b) => {
+      return a.position - b.position;
+    });
+  }
+```
+Adipisci beatae consectetur distinctio doloremque ea excepturi id, impedit itaque iure neque nihil placeat quae, quaerat qui quis rem soluta. Ad, obcaecati!
+
+</Spoiler>
+
+```md{2,4}
+<Spoiler>
+
+N'importe quel type de contenu md habituel
+
+</Spoiler>
+
+```
+
+::: danger ATTENTION !
+**Une ligne vide est requise après l'ouverture et avant la fermeture!**
+:::
+
 #### Controle avancé sur les médias
 
-<Media 
-  src="https://imgur.com/z4U3kwu.gif" 
+<Media
+  src="https://imgur.com/z4U3kwu.gif"
   url="https://www.google.com"
   caption="Une image qui bouge"
-  center="true" 
+  center="true"
   width="250"
 />
 
 
 ```md
-<Media 
-  src="https://imgur.com/z4U3kwu.gif" 
+<Media
+  src="https://imgur.com/z4U3kwu.gif"
   url="https://www.google.com"
   caption="Une image qui bouge
-  center="true" 
+  center="true"
   width=350
 />
 ```
@@ -65,6 +101,8 @@ fetchData() {
 ```
 
 Vous pouvez highlight autant de lignes que vous voulez en les séparant par des `,`.
+
+ex: `cpp{2,5,14}`. **Sans espace!**
 
 #### Custom containers
 

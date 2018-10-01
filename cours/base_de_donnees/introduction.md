@@ -56,5 +56,6 @@ Série de commandes pour assurer que la totalités des commandes soient faites s
 * [install-tuto](https://hub.docker.com/_/postgres/)
 * [psql-tuto](https://www.tutorialspoint.com/postgresql/postgresql_create_database.htm)
 
-* `[sudo] docker exec -it containerName [ls -al]`
-* `[sudo] docker cp poule.txt containerName:poule.txt`
+* `[sudo] docker exec -it postresJoe bash`: rentre dans le container
+* `[sudo] docker exec -it containerName [ls -al]`: exemple de commande de l'extérieur
+* `[sudo] docker cp poule.txt containerName:poule.txt`: transfère dehors -> dedans
