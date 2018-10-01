@@ -202,7 +202,7 @@ function find (page, items, offset) {
 @require './styles/wrapper.styl'
 
 .custom-footer
-  padding-top 150px
+  padding-top 75px
   text-align center
   width 100%
   .footer-text {
