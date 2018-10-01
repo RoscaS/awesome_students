@@ -19,7 +19,6 @@
     },
     methods: {
       formatDate (date) {
-        console.log(this.frontmatter)
         let split = date.split('-')
         let day = parseInt(split[2].split('T')[0])
         let f = {month: 'long', day: 'numeric', year: 'numeric'};

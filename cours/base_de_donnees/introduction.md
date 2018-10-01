@@ -40,3 +40,22 @@ Série de commandes pour assurer que la totalités des commandes soient faites s
 ## 2. Implementation des données (schéma logique)
 
 * Traduction du schéma conceptuel en un shéma logique.
+
+# Docker & Postgres on Arch
+
+## Docker
+
+* [info](https://linuxhint.com/arch-linux-docker-tutorial/)
+
+* `pacman -S docker`
+* `systemctl start docker.service` (session)
+* `systemctl enable docker.service` (perma)
+* `docker info`
+
+
+* [install-tuto](https://hub.docker.com/_/postgres/)
+* [psql-tuto](https://www.tutorialspoint.com/postgresql/postgresql_create_database.htm)
+
+* `[sudo] docker exec -it postresJoe bash`: rentre dans le container
+* `[sudo] docker exec -it containerName [ls -al]`: exemple de commande de l'extérieur
+* `[sudo] docker cp poule.txt containerName:poule.txt`: transfère dehors -> dedans
