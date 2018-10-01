@@ -5,7 +5,7 @@ author: Michael
 sidebar: auto
 ---
 
-### Positionnement des widgets: Absolu
+## Positionnement des widgets: Absolu
 
 * taille et position fixées dans le code avec :
     * la méthode `move`
@@ -15,7 +15,7 @@ sidebar: auto
     * Ne s'adapte pas au redimensionnement (solution: taille fixe avec `setFixedSize`)
     * Nécessite de calculer  la position de tous les widgets. A refaire à chaque modification
 
-### Positionnements des widgets: Layout
+## Positionnements des widgets: Layout
 
 * Widgets ajoutés à un conteneur: Layout
 * Les layouts se chargent d'ajuster la disposition des widgets automatiquement:
@@ -37,7 +37,7 @@ sidebar: auto
    w->setLayout(ppal); //w étant le widget parent
    ```
 
-#### Politiques de dimensionnement
+### Politiques de dimensionnement
 
 * La propriété `sizePolicy` de `QWidget` défini le comportement au redimensionnement
 * SizePolicy par défaut défini pour les widgets de Qt
@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
 
 ```
 
-#### Modifier l'apparence avec des feuilles de style
+### Modifier l'apparence avec des feuilles de style
 
 * Appliqué avec la méthode `setStyleSheet` de `QWidget` ou `QApplication`
 * Syntaxe: `selecteur {propriété: valeur}`
