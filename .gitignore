@@ -1,3 +1,7 @@
 node_modules
 .idea
+<<<<<<< HEAD
 .vscode
+=======
+.vscode
+>>>>>>> 0fef808750866c33de62e34d37186a91e341e289
