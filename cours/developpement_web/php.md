@@ -1,5 +1,5 @@
 ---
-title: php
+title: CheatSheet PHP
 date: 2018-09-29
 sidebar: auto
 author: "Sol"
