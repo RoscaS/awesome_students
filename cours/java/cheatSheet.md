@@ -6,7 +6,6 @@ author: Sol
 ---
 
 ## Workspace DreamTeam
-**basel2018**
 ### Elève au projecteur
 À la fin du cours:
 * `commit` & `push`
@@ -35,6 +34,12 @@ Au début du cours
 * `ctrl` `shift` `p`: jump to bracket
 
 ### En vrac
+* `git clone ssh://javab@157.26.83.27/home/javab/git/WCoursJava.git`
+* **basel2018**
+*  Formatter original setting: BibiEclipseFormatter
+
+
+
 #### Syntaxe tableaux
 ```cpp
 // cpp
