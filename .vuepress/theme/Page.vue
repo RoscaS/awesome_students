@@ -40,10 +40,25 @@
     </div>
 
     <slot name="bottom"/>
+
+    <div class="custom-footer">
+      <hr>
+      <div class="footer-text">
+      <p>
+        Copyright &copy; {{ getCopyright() }}
+        <br>
+        Code:
+        <a class="jrosk" href="mailto:jrosk.managment@gmail.com"
+           title="With  by Sol Rosca">JrosK</a>
+      </p>
+      </div>
+    </div>
   </div>
+
 </template>
 
 <script>
+import { DateTime } from "luxon";
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
 import ArticleContent from '../components/ArticleContent'
 
@@ -148,7 +163,11 @@ export default {
         (docsDir ? '/' + docsDir.replace(endingSlashRE, '') : '') +
         path
       )
-    }
+    },
+    getCopyright() {
+      let year = DateTime.local().year
+      return year + " " + "AwesomeStudents";
+    },
   },
 }
 
@@ -181,6 +200,17 @@ function find (page, items, offset) {
 <style lang="stylus">
 @import './styles/config.styl'
 @require './styles/wrapper.styl'
+
+.custom-footer
+  padding-top 75px
+  text-align center
+  width 100%
+  .footer-text {
+    padding-top 25px
+  }
+  .jrosk {
+    font-weight bold
+  }
 
 .page
   padding-bottom 2rem
