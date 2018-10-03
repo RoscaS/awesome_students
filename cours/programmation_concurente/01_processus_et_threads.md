@@ -227,5 +227,3 @@ int scheld_yield()
 * Le thread suivant en attente du processeur est activé
 * Renvoie `0` en cas de succès
 
-## Exercices
-

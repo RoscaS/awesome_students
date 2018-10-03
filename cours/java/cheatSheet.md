@@ -5,6 +5,25 @@ sidebar: auto
 author: Sol
 ---
 
+## Devoirs pour le 10 octobre
+1. Revisiter sur la dualité objet référence en Java.
+
+2. Problème du dé
+* Combien de fois dois-on en <Def def="pas hésiter à poser un gros échantillion $10^9$+">moyenne</Def> lancer un dé pour obtenir une fois toutes les faces. La moyenne doit être un entier (penser à `ceill`).
+* Pareil pour un dé à $n$ faces.
+
+3. Utiliser Quadratique clavier (finir)
+
+#### Indication
+* Le code est très simple ($\approx$ 10 lignes)
+* Utiliser la classe `Random`
+
+#### Détails d'implémentation
+* Nouveau package
+* Une classe et un UseCase
+* Class (**statique**): le job
+* UseCase: print
+
 ## Workspace DreamTeam
 ### Elève au projecteur
 À la fin du cours:
@@ -33,14 +52,19 @@ Au début du cours
 
 * `ctrl` `shift` `p`: jump to bracket
 
-### En vrac
+
+## En vrac
 * `git clone ssh://javab@157.26.83.27/home/javab/git/WCoursJava.git`
 * **basel2018**
 *  Formatter original setting: BibiEclipseFormatter
 
+### Jar
+* Jar: Java ARchive
+Container qui contient des fichiers compilés. On peut réutiliser tous les `jar` qu'on trouve.
 
 
-#### Syntaxe tableaux
+
+### Syntaxe tableaux
 ```cpp
 // cpp
 double* tab = new double[2];
@@ -51,41 +75,76 @@ double[] tab = new double[2];
 tab[1] = 2;
 ```
 
-#### Use class
+
+### Use class
 Si une classe est préfixée par `Use` comme dans `UseNomDeClass` c'est une classe qui possède un `main` et qui sert à utiliser `NomDeClass`.
 
-#### Ramification 
+### Ramification 
 ```sh
 └── Wxxxx (workspace)
       └── Pxxxx (projet)
             └──  nomDePackage
 ```
 
-#### Garbage collector
+### Garbage collector
 * Clean les objets sans références
 * Défragmente (les adresses des objets encore référencés changent)
   
 
-#### Get Set
+### Get Set
 * Get
   * on retourne un attribut, jamais de calcule!
 
-#### Wrappers de types simples
+### Wrappers de types simples
 > Lié à la notion de boxing
 Il n'est pas possible d'utiliser les types simples dans les conteneurs. Java implémente des variantes de tous les types simples:
 * **int -> Integer**
 * string -> String
 * double -> Double
 
-#### Programmation par contract
+### Programmation par contract
 Lié aux <Def def="Classe purement abstraite">interfaces</Def>. Les methodes de l'interface ne sont pas implémentées. Le contract veut dire qu'on s'engage à les implémenter pour satisfaire le standard.
 
-#### List & LinkedList
+### List & LinkedList
 * LinkedList: performant quand on a beaucoup d'insertions suppressions
 * ArrayList: performant si on doit souvent itérer dessus
 
 
-#### HashSet & TreeSet
+### HashSet & TreeSet
 Les sets contiennent une collection d'objets uniques.
 * HashSet: unordered, le plus performant des deux
 * TreeSet: ordered 
+
+### Maps
+Collection de couples `Key` `Value` dont la `key` et unique.
+
+* Quand on y pense, toutes les entrées d'un dictionnaire forment un set de clés **uniques** qui pointent sur des valeurs.
+
+### Type effectif et type local
+
+`Set s = new TriSet<Double>()`
+* Le type de `s` effectif est `TriSet`
+* Le type local de `s` est `Set` mais égallement `Object` qui est la classe dont tous les objects en java dérivent.
+
+### Inférence de type
+
+```java {2}
+private static List<Double> create(int n) {
+		return new ArrayList<>(n); // equivalent à return new ArrayList<Double>(n)
+}
+```
+
+En ligne 2 on pourrait préciser le type entre chevrons mais ce n'est pas nécéssaire comme le compilateur est capable d'**inférer** tout seul le type grace à la signature de la méthode.
+
+### Passage d'argument en Java
+* Une seul façon: **passage par valeur** pour tous les types (simples et complexes)
+* `b = new B()`: `b` est une référence qui réfère l'objet `B`
+En Java le GC passe et fait deux chose, il `delete` les objets qui n'ont plus de référence **et** défragmente le tas (heap). Après défragmentation, l'adresse de l'objet change et donc on ne peux pas dire que `b` est un pointeur car un pointeur par définition est une adresse. En conclusion **En Java tout est Référence**
+::: warning Détail
+De la même façon qu'en C/C++
+* `b` se retrouvera souvent sur la pile (stack)
+* `B` se retrouvera toujours sur le tas (heap)
+:::
+
+* A chaque fois qu'on veut modifier un contenu, on passe par des méthode.
+* Quand on travail sans méthodes on fait de l'algèbre de référence.
