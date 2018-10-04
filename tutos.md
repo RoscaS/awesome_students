@@ -156,7 +156,7 @@ Dans vsCode:
 3. Choisissez `Preferences: Configure User Snippets`
 4. Tappez: `markdown`
 
-Dans le <Def def="markdown.json">document qui vient de s'ouvrir</Def> effacez tout ajoutez le contenu de la balise spoiler qui suit:
+Dans le <Def def="markdown.json">document qui vient de s'ouvrir</Def> effacez tout et ajoutez le contenu de la balise spoiler qui suit:
 
 <Spoiler>
 
