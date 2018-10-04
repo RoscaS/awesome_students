@@ -8,6 +8,8 @@ author: Sol
 Ok, rien de plus facile contrairement à ce que les explications de 5 pages des divers cours et tutos tentent de nous faire croire. On oublie tout et on ne garde en tête que la phrase suivante:
 
 >Le polymorphisme ça veut dire override une méthode dans une classe dérivée.
+>> Explication du prof de Java: Un objet polymorphique c'est un objet qui peut être vu de plusieurs façons en fonction de ce qui arrange la situation.
+
 
 Rien de plus rien de moins. On le fait tout le temps dans tous les languages et sans en faire tout un foin:
 
