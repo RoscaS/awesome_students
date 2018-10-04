@@ -62,7 +62,7 @@ Au début du cours
 * Jar: Java ARchive
 Container qui contient des fichiers compilés. On peut réutiliser tous les `jar` qu'on trouve.
 
-
+![Image](https://i.imgur.com/7zEjhZI.png)
 
 ### Syntaxe tableaux
 ```cpp
