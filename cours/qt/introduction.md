@@ -6,8 +6,9 @@ author: Sol
 ---
 
 ## En vrac
-* [tldrlegal.com](tldrlegal.com)
 
+### Fenetre modale
+Fenetre qui bloque l'accès à sa fenetre parent
 
 ## Framework vs bibliothèque
 ### Framework
