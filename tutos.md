@@ -52,7 +52,7 @@ Adipisci beatae consectetur distinctio doloremque ea excepturi id, impedit itaqu
 ```md{2,4}
 <Spoiler>
 
-N'importe quel type de contenu md habituel
+N'importe quel type de contenu md habituel **à l'exception d'une autre balise spoiler!**
 
 </Spoiler>
 
@@ -148,6 +148,68 @@ Pas plus loin !
 Pas plus loin !
 :::
 
+### Snippets vsCode
+
+Dans vsCode:
+1. Ouvrez la <Def def="Ctrl + Shift + p">palette de commandes</Def>
+2. Tappez: `snippets` 
+3. Choisissez `Preferences: Configure User Snippets`
+4. Tappez: `markdown`
+
+Dans le <Def def="markdown.json">document qui vient de s'ouvrir</Def> effacez tout ajoutez le contenu de la balise spoiler qui suit:
+
+<Spoiler>
+
+```json
+{
+	"meta": {
+		"prefix": "meta",
+		"body": "```\ntitle: ${1:titre de l'article affiché}\ndate: ${2:YYYY-MM-DD}\nauthor: ${3: ton prénom}\nsidebar: auto\n---\n\n## ${4: Premier sous-titre}\n\n"
+	},
+	"code": {
+		"prefix": "code",
+		"body": "```${1:language}\n${2:contenu}\n```\n"
+	},
+	"tip": {
+		"prefix": "tip",
+		"body": "::: tip ${1:titre}\n${2:contenu}\n:::\n"
+	},
+	"warning": {
+		"prefix": "warning",
+		"body": "::: warning ${1:titre}\n${2:contenu}\n:::\n"
+	},
+	"danger": {
+		"prefix": "danger",
+		"body": "::: danger ${1:titre}\n${2:contenu}\n:::\n"
+	},
+	"def": {
+		"prefix": "def",
+		"body": "<Def def=\"${1:définition}\">${2:mot}</Def>"
+	},
+	"spoiler": {
+		"prefix": "spoiler",
+		"body": "<Spoiler>\n\n${1:contenu (ne pas supprimer les lignes vides)}\n\n</Spoiler>\n"
+	},
+	"media": {
+		"prefix": "media",
+		"body": "\n<Media\n\tsrc=\"$1\"\n\turl=\"${2:supprimer cette ligne si pas de contenu}\"\n\tcaption=\"${3:supprimer cette ligne si pas de contenu}\"\n\tcenter=\"${4:true}\"\n\twidth=${5:450}\n/>\n\n"
+	}
+}
+```
+
+</Spoiler>
+
+À la suite de cette manipulation, dans n'importe quel fichier markdown les mot clés suivants seront disponible et vont trigger l'autocompletion:
+
+* `meta`: frontmater
+* `def`
+* `spoiler`
+* `code`: balises de code
+* `tip`: highlight vert
+* `warning`: highlight jaune
+* `danger`: highlight rouge
+
+
 ### Format d'un nouvel article
 **Merci de respecter ce format (noter la date) pour ne pas casser l'affichage et les mécanismes du site.**
 * Tout nouvel article créé est mirror sur le site après un push
@@ -179,7 +241,10 @@ Pour le reste c'est comme d'habitude. Les header de `##` à `###` sont repris da
 `git clone https://github.com/RoscaS/awesome_students`
 
 #### Folder tree
-```bash
+
+<Spoiler>
+
+```shell
 ├── articles
 │   ├── algo
 │   │    ├── README.md
@@ -211,6 +276,10 @@ Pour le reste c'est comme d'habitude. Les header de `##` à `###` sont repris da
 └── .vuepress
     └── ...
 ```
+
+</Spoiler>
+
+
 #### Publication
 Pour publier un article il suffit de choisir le folder approprié et d'y créér un fichier `*.md` (**nom en minuscules**) dans la sous branche appropriée. Pour le publier il suffit de push sur le répo. Il se retrouvera en ligne dans les minutes qui suivent (tout est géré automatiquement).
 

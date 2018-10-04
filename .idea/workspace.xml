@@ -83,11 +83,12 @@
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -120,7 +121,7 @@
           <entry key="json" value="1" />
           <entry key="md" value="1283" />
           <entry key="styl" value="32" />
-          <entry key="vue" value="8774" />
+          <entry key="vue" value="8795" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -130,7 +131,7 @@
           <entry key="Markdown" value="469" />
           <entry key="PLAIN_TEXT" value="821" />
           <entry key="Stylus" value="32" />
-          <entry key="Vue.js" value="8774" />
+          <entry key="Vue.js" value="8795" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -145,20 +146,20 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/Spoiler.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="690">
-                  <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+                <state relative-caret-position="598">
+                  <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/Media.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1334">
-                  <caret line="58" selection-start-line="58" selection-end-line="58" />
+                <state relative-caret-position="1219">
+                  <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -179,8 +180,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/Def.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1219">
-                  <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+                <state relative-caret-position="483">
+                  <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -267,7 +268,6 @@
         <option value="$PROJECT_DIR$/.vuepress/components/Definition.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/Format.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/Image.vue" />
-        <option value="$PROJECT_DIR$/.vuepress/components/Media.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/Categories.vue" />
         <option value="$PROJECT_DIR$/.vuepress/siteSettings.js" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -278,7 +278,6 @@
         <option value="$PROJECT_DIR$/.vuepress/components/Tags.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/Spoiler/Spoiler.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/SpoilerTags.vue" />
-        <option value="$PROJECT_DIR$/.vuepress/components/Def.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/Spoiler.vue" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -291,6 +290,8 @@
         <option value="$PROJECT_DIR$/cours/qt/Layouts.md" />
         <option value="$PROJECT_DIR$/.vuepress/theme/Page.vue" />
         <option value="$APPLICATION_CONFIG_DIR$/idea.properties" />
+        <option value="$PROJECT_DIR$/.vuepress/components/Def.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/components/Media.vue" />
       </list>
     </option>
   </component>
@@ -462,14 +463,16 @@
       <workItem from="1538508602763" duration="4085000" />
       <workItem from="1538652051163" duration="259000" />
       <workItem from="1538652325451" duration="34000" />
+      <workItem from="1538661780941" duration="1888000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126860000" />
+    <option name="totallyTimeSpent" value="128748000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="7" y="-8" width="3826" height="2161" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24973711" />
@@ -797,20 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/Spoiler.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/Media.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1334">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/SpoilerTags.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -818,10 +807,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/Def.vue">
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/Spoiler.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/Media.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1219">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/Def.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
         </state>
       </provider>
     </entry>
