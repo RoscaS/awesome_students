@@ -10,7 +10,7 @@
 * [devhints.io](https://devhints.io/) TL;DR for developers
 * [learnxiny.com](https://learnxinyminutes.com) Gold
 * [tldrlegal.com](https://tldrlegal.com/) Legal overview
-* [total.com](https://www.toptal.com/developers/sorting-algorithms) Sorting comparaison
+* [toptal.com](https://www.toptal.com/developers/sorting-algorithms) Sorting comparaison
 
 ### Tools
 #### Code
