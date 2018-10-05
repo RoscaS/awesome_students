@@ -164,7 +164,7 @@ Dans le <Def def="markdown.json">document qui vient de s'ouvrir</Def> effacez to
 {
 	"meta": {
 		"prefix": "meta",
-		"body": "```\ntitle: ${1:titre de l'article affiché}\ndate: ${2:YYYY-MM-DD}\nauthor: ${3: ton prénom}\nsidebar: auto\n---\n\n## ${4: Premier sous-titre}\n\n"
+		"body": "---\ntitle: ${1:titre de l'article affiché}\ndate: ${2:YYYY-MM-DD}\nauthor: ${3: ton prénom}\nsidebar: auto\n---\n\n## ${4: Premier sous-titre}\n\n"
 	},
 	"code": {
 		"prefix": "code",
