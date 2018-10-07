@@ -51,6 +51,8 @@ Série de commandes pour assurer que la totalités des commandes soient faites s
 * `systemctl start docker.service` (session)
 * `systemctl enable docker.service` (perma)
 * `docker info`
+* create instance: `docker run --name postgresSQL -e POSTGRES_PASSWORD=mysecretpassword -d postgres`
+* psql: `docker run -it --rm --link postgresSQL:postgres postgres psql -h postgres -U postgres`
 
 
 * [install-tuto](https://hub.docker.com/_/postgres/)
