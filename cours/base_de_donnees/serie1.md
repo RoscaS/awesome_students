@@ -1,5 +1,5 @@
 ---
-title: Srie 1
+title: Série 1
 date: 2018-10-07
 author: sol
 sidebar: auto
