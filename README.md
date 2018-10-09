@@ -10,6 +10,7 @@
 * [devhints.io](https://devhints.io/) TL;DR for developers
 * [learnxiny.com](https://learnxinyminutes.com) Gold
 * [tldrlegal.com](https://tldrlegal.com/) Legal overview
+* [dodgy-blog.com](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/) Stay safe
 * [toptal.com](https://www.toptal.com/developers/sorting-algorithms) Sorting comparaison
 
 ### Tools
