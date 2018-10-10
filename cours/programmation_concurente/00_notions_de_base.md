@@ -185,3 +185,298 @@ En général le système réserve un processus à chaque application sauf quelqu
 ::: tip Info
 Le terme "thread" peut se traduire par "fil d'exécution". L'appellation de "processus léger" est également utilisée.
 :::
+
+### Compilation 
+Les fonctions relatives aux threads sont incluses dans le fichier d'en-tête `<pthread.h>` et dans la bibliothèque `libthread.a` (soit `-lpthread` à la compilation et include de `<pthread.h>`):
+
+```shell
+gcc -lpthread main.c -o main.c
+```
+
+### Manipulations
+#### Création
+
+Pour créér un thread, il faut premièrement déclarer une variable le repésentant de type `pthread_t` ( qui est sur la majorité des systèmes un `typedef` d'un `unsigned long int`). Pour créer la tache en elle-même il faut utiliser la fonction:
+
+```c
+#include <pthread.h>
+
+int pthread_create(
+    pthread_t* thread, 
+    pthread_attr_t * attr,
+    void *(*start_routine) (void*),
+    void *arg
+)
+```
+
+* La fonction renvoie une valeur de type `int` : 0 si la création est un succès, et une autre valeur si il y a erreur
+* Le premier argument est un pointeur vers l'identifiant du thread (valeur de type `thread_t`)
+* Le second argument désigne les attributs du thread (état joignable (par défaut) ou détaché, et choisir sa politique d'ordonnancement (usuelle, temps-réel...), ou... NULL)
+* Le troisième argument est un pointeur vers la fonction à exécuter dans le thread. Cette dernière devra être de la forme `void *fonction(void* arg)` et **contiendra le code à exécuter par le thread**
+* Le quatrième argument est l'argument à passer au thread.
+
+#### Suppression
+```c
+#include <pthread.h>
+
+void pthread_exit(void *ret);
+```
+
+Cette fonction prend en argument **la valeur qui doit être retourné e par le thread et doit être placée en dernière position** dans la fonction concernée.
+
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <pthread.h>
+
+void* thread_handler(void* arg) {
+    printf("Bonjour monde du thread\n");
+    // Enleve le warning
+    (void) arg;
+    pthread_exit(NULL);
+}
+
+int main(int argc, int** argv) {
+    pthread_t thread;
+    printf("Avant la création du thread.\n");
+    if (pthread_create(&thread, NULL, thread_handler, NULL) == -1) {
+        perror("pthread_create");
+        return EXIT_FAILURE;
+    }
+    printf("Après la création du thread. \n");
+    return EXIT_SUCCESS;
+}
+```
+
+Le résultat de ce code est variable. Dans certains cas il affichera (en dernier) le message du thread, dans d'autres cas il non. Ce qui est tout à fait normal, celà veut dire que le return s'exécute avant le thread comme le thread principal ne va pas attendre de lui même que le thread se termine avant d'exécuter le reste de son code.
+Pour qu'il le face il faut en faire la demande explicite avec `pthread_join`.
+
+#### Attendre la fin d'un thread (jointure?)
+Se fait avec `pthread_join` dont voici la signature:
+
+```c
+int pthread_join(pthread_t thread, void** thread_return);
+```
+ * Le premier paramètre est l'identifiant du thread
+ * Le second un pointeur qui permet de récupérer la valeur retournée par la fonction dans laquelle s'exécute le thread (**c'est à dire l'argument de `pthread_exit`**)
+
+Notre main va donc ressembler à
+
+```c    
+int main(int argc, int** argv) {
+    pthread_t thread;
+    printf("Avant la création du thread.\n");
+
+    if (pthread_create(&thread, NULL, thread_handler, NULL)) {
+        perror("pthread_create");
+        return EXIT_FAILURE;
+    }
+    if (pthread_join(thread, NULL)) {
+        perror("pthread_join");
+        return EXIT_FAILURE;
+    }
+    printf("Après la création du thread. \n");
+    return EXIT_SUCCESS;
+}
+```
+
+Et maintenant l'output est uniforme:
+
+    Avant la création du thread.
+    Nous sommes dans le thread.
+    Après la création du thread.
+
+### Inconvénients
+Avec les threads, toutes les variables sont partagées (concepte de **mémoire partagée**) et ça pose problème quand:
+
+* **Deux** threads cherchent à modifier **deux** variables en même temps
+* Un thread lit une variable alors qu'un autre la modifie
+
+Il est donc nécessaire d'utiliser des mécanismes de synchronisation pour gérer ces situations.
+
+### Les mutex
+C'est un outil qui permet l'**exclusion mutuelle**. Concrètement en C, un **mutex** est une variable de type `pthread_mutex_t` qui nous sert de **verrou** pour protéger des données. Ce verrou peut prendre deux états:
+
+* **Disponible**
+* **Vérouillé**
+
+> Quand un thread a accès à une variable protégée par un mutex, on dit qu'il *tient le mutex*. Il est évident qu'il ne peut y avoir qu'un seul thread qui tient le mutex en même temps.
+
+Il faut que le mutex soit accesible en même temps que la variable et pour tout le fichier (comme les différents threads s'exécutent dans différentes fonctions). Il existe plusieurs solutions pour permettre ça:
+
+* Déclarer le mutex en variable globale
+* Déclarer le mutex dans une structure avec la donnée à protéger et passer cette structure en paramêtre à nos threads via la fonction `pthread_create`
+
+Exemple de mutex dans un struct:
+
+```c
+typedef struct data {
+    int var;
+    pthread_mutex_t mutex;
+} data;
+```
+
+#### Initialiser un mutex
+La convention voudrait qu'on initialise un mutex avec la valeur de la constante `PTHREAD_MUTEX_INITIALIZER` déclarée dans `pthread.h`
+
+```c
+#include <stdlib.h>
+#include <pthread.h>
+
+typedef struct data {
+    int var;
+    pthread_mutex_t mutex;
+} data;
+
+int main(int argc, int** argv) {
+    data new_data;
+    new_data.mutex = PTHREAD_MUTEX_INITIALIZER;
+
+    return EXIT_SUCCESS;
+}
+```
+
+#### Vérouiller un mutex
+L'étape suivante consiste à établire une **zone critique**, c'est à dire une zone où plusieurs threads ont l'occasion de modifier ou de lire une même variable en même temps. Une fois cela fait, on vérouille le mutex via la fonction suivante:
+
+```c
+int pthread_mutex_lock(pthread_mutex_t* mut);
+```
+
+#### Déverouiller un mutex
+À la fin de la zone critique, il suffit de déverrouiller le mutex.
+à l'aide de la fonction suivante:
+
+```c
+int pthread_mutex_unlock(pthread_mutex_t* mut);
+```
+
+#### Détruire un mutex
+Une fois le travail du mutex terminé on peut le détruire avec:
+
+```c
+int pthread_mutex_destroy(pthread_mutex_t *mut);
+```
+
+### Les conditions
+Lorsqu'un thread doit patienter jusqu'à ce qu'un événement survienne dans un autre thread, on emploie une technique appelée "la condition".
+
+Quand un thread est en attente d'une condition, il reste bloqué tant que celle-ci n'est pas réalisée par un autre thread.
+
+Comme avec les mutex, on déclare la condition en variable globale de la façon suivante:
+
+```c
+pthread_cond_t nomCondition = PTHREAD_COND_INITIALIZER;
+```
+
+Pour attendre une condition, il faut utiliser un mutex:
+
+```c
+int pthread_cond_wait(pthread_cond_t* nomCondition, pthread_mutex_t* nomMutex);
+```
+
+Pour réveiller un thread en attente d'une condition, on utilise la fonction:
+
+```c
+int pthread_cond_signal(pthread_cont_d* nomCondition);
+```
+
+### Exemple
+
+Dans ce code on crée un premier thread qui incrémente une variable compteur par un nombre tiré au hasard entre 0 et 10, et l'autre qui affiche un message lorsque la variable compteur dépasse 20.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <unistd.h>
+
+pthread_cond_t condition = PTHREAD_COND_INITIALIZER; // creation de la condition
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER; // creation du mutex
+
+void* threadAlarme(void* arg);
+void* threadCompteur(void* arg);
+
+int main(int argc, int** argv) {
+    pthread_t monThreadCompteur;
+    pthread_t monThreadAlarme;
+
+    pthread_create(&monThreadCompteur, NULL, threadCompteur, (void*)NULL);
+    pthread_create(&monThreadAlarme, NULL, threadAlarme, (void*)NULL);
+
+    pthread_join(monThreadCompteur, NULL);
+    pthread_join(monThreadAlarme, NULL);
+
+    return 0;
+}
+
+void* threadCompteur(void* arg) {
+    int compteur = 0;
+    int nombre = 0;
+    srand(time(NULL));
+
+    while(1) {
+        nombre = rand()%10; // randint(0,10)
+        compteur += nombre;
+        printf("\n%d", compteur);
+
+        if (compteur >= 20) {
+            pthread_mutex_lock(&mutex); // on verouille le mutex
+            pthread_cond_signal(&condition); // on délivre le signal: condition remplie
+            pthread_mutex_unlock(&mutex); // on déverouille le mutex
+            compteur = 0; // reset du compteur
+        }
+        sleep(1);
+    }
+    pthread_exit(NULL); // fin du thread
+}
+
+void* threadAlarme (void* arg) {
+    while(1) {
+        pthread_mutex_lock(&mutex); // on verouille le mutex
+        pthread_cond_wait(&condition, &mutex); // on attend que la condition soit remplie
+        printf("\nCOMPTEUR >= 20.");
+        pthread_mutex_unlock(&mutex); // on déverouille le mutex
+    }
+    pthread_exit(NULL); // fin du thread
+}
+```
+
+output:
+
+    2
+    2
+    3
+    12
+    21
+    COMPTEUR >= 20.
+    9
+    9
+    16
+    17
+    22
+    COMPTEUR >= 20.
+    8
+    12
+    20
+    COMPTEUR >= 20.
+    ...
+
+### À retenir
+
+* `pthread_create`
+* `pthread_exit`
+* `pthread_join`: pour que le main attende que les threads soient finits avant d'exit.
+* `PTHREAD_MUTEX_INITIALIZER`:
+* `pthread_mutex_lock`
+* `pthread_cond_wait`
+
+
+
+
+
+
+
+
+

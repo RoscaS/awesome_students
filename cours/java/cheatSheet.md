@@ -5,6 +5,10 @@ sidebar: auto
 author: Sol
 ---
 
+
+	const int poule = 10;
+	const int cochon = 12;
+
 ## Devoirs pour le 10 octobre
 1. Revisiter sur la dualité objet référence en Java.
 
@@ -192,3 +196,7 @@ Des classes compilées zipées et renommées en JAR. A la place d'avoir des tas 
 Equivalent de **DLL** en linux **SO**
 :::
 
+### Tableaux multiD
+* Java est un language **row major**
+* N'est pas forcément consistant au niveau de la longueur des sous tableaux
+  * permet de stoquer des matrices symétriques, creuses ou pleine
