@@ -137,8 +137,14 @@ private static List<Double> create(int n) {
 En ligne 2 on pourrait préciser le type entre chevrons mais ce n'est pas nécéssaire comme le compilateur est capable d'**inférer** tout seul le type grace à la signature de la méthode.
 
 ### Passage d'argument en Java
-* Une seul façon: **passage par valeur** pour tous les types (simples et complexes)
-* `b = new B()`: `b` est une référence qui réfère l'objet `B`
+
+::: warning Attention
+En Java tout se passe par **COPIE** de référence (tout se retourne aussi par **COPIE** de référence).
+:::
+
+
+* Une seul façon: **passage par COPIE** (de référence, 4 bytes) pour tous les types (simples et complexes). Le retour de la même façon se fait par **COPIE** (de référence, 4 bytes)
+* `b = new B()`: `b` est une référence vers l'objet `B`
 En Java le GC passe et fait deux chose, il `delete` les objets qui n'ont plus de référence **et** défragmente le tas (heap). Après défragmentation, l'adresse de l'objet change et donc on ne peux pas dire que `b` est un pointeur car un pointeur par définition est une adresse. En conclusion **En Java tout est Référence**
 ::: warning Détail
 De la même façon qu'en C/C++
@@ -148,3 +154,41 @@ De la même façon qu'en C/C++
 
 * A chaque fois qu'on veut modifier un contenu, on passe par des méthode.
 * Quand on travail sans méthodes on fait de l'algèbre de référence.
+
+### Algèbre de référence vs algèbre sur les contenus
+Faite avec des opérateurs simples (==, +, -,...) et sur des références. Pour oppérer sur le contenu des références on utilise des méthodes.
+
+```java
+Integer C1 = 1000;
+Integer C2 = 1000;
+
+C1 == C2 // => False (comparaison des adresses où se trouve l'objet référencé)
+C1.equals(C2) // => True (comparaison des contenus)
+
+C1 = C2 
+
+C1 == C2 // => True (comparaison des adresses où se trouve l'objet référencé)
+```
+
+### Fonctions et méthodes
+
+D'après le prof de Java:
+* **methode**: une "fonction" sans valeur de retour
+* **fonction**: Domaine de départ et d'arrivée (input output)
+* **procédure**: monde procédural (non objet), désigne une fonction
+
+Donc rien à voir avec le fait d'être déclaré dans le corp d'une classe. (A VERIFIER)
+En gros (en java du moins) on peut toujours appeler toutes les procédures (méthode)
+
+
+### JAR
+* Fichiers compilés
+* Enemble de classes compilés (Java est né objet, on n'y fait que des classes)
+* Analogue à un zip,
+
+Des classes compilées zipées et renommées en JAR. A la place d'avoir des tas de fichiers à déplacé. Équivalent d'un dll ou d'un SO.
+
+::: warning Attention
+Equivalent de **DLL** en linux **SO**
+:::
+
