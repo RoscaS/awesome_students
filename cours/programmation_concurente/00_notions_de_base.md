@@ -27,7 +27,7 @@ La définition exacte d'un processus c'est:
 
 Lorsqu'un processus est lancé, le système doit gérer la mémoire et l'allocation du processeur lui étant accordée. Il fait appel à l'ordonnanceur (*Scheduler*).
 
-Un système gère le multi tache de façon:
+Un système gère le multi tâche de façon:
 * **Préemptive**: Lorsqu'il peut arrêter (mettre en stand-by) à tout moment n'importe quelle application pour passer à la suivante (XP, 7, GNU/Linux).
 * **Coopérative**: Quand il permet à plusieurs applications de fonctionner et d'occuper la mémoire en leurs laissant le soin de se gérer elles mêmes (95, 98, Millenium).
 
@@ -70,7 +70,7 @@ Après son chargement, le programme initial gère le reste du démarrage: Initia
 Les différents états d'un processus sont les suivants:
 
 * **Exécution** (**R**unning)
-* **Sommeil** (**S**leeping): Dans un multitache coopératif, quand il rend la main ou dans un multitache préemptif, quand il est interrompu au bout d'un quantum de temps.
+* **Sommeil** (**S**leeping): Dans un multitâche coopératif, quand il rend la main ou dans un multitâche préemptif, quand il est interrompu au bout d'un quantum de temps.
 * **Arrêt** (s**T**opped): Temporairement arrêté par un signal. Il ne s'exécute plus et ne réagira qu'à un signal de redémarrage.
 * **Zombie** (**Z**ombie): Le processus s'est terminé mais son père n'as pas encore lu son code de retour.
 
@@ -171,36 +171,90 @@ Dans la majorité des systèmes d'exploitation, **chaque processus** possède un
 
 En général le système réserve un processus à chaque application sauf quelques  exceptions. Beaucoup de programmes exécutent plusieurs activités en parallèle (pseudo-parallélisme ou vrai parallélisme).
 
-### Avantages vis à vis des processus
-
-* La facilité et la rapidité de leur création. Tous les threads d'un même processus partagent le même espace d'adressage, et donc toutes les variables.
-Évite l'allocation de tous ces espaces lors de la création. 
-
-> Sur de nombreux systèmes la création d'un thread est environs 100 fois plus rapide.
-
-* La superposition de l'exécution des activités dans une même application permet une importante accélération quand au fonctionnement de cette dernière.
-
-* La communication entre threads est plus aisée que celle entre les processus (les processus communiquent via pipes (`|`)).
-
 ::: tip Info
 Le terme "thread" peut se traduire par "fil d'exécution". L'appellation de "processus léger" est également utilisée.
 :::
 
-### Compilation 
+### Avantages
+
+Vis à vis d'un processus les avantages d'un thread sont:
+
+* La facilité et la rapidité de leur création. Tous les threads d'un même processus partagent le même espace d'adressage, et donc toutes les variables.
+Évite l'allocation de tous ces espaces lors de la création. 
+> Sur de nombreux systèmes la création d'un thread est environs 100 fois plus rapide.
+
+* La superposition de l'exécution des activités dans une même application permet une importante accélération quand au fonctionnement de cette dernière.
+* La communication entre threads est plus aisée que celle entre les processus (les processus communiquent via pipes (`|`)).
+
+De plus les threads ont les avantages suivants:
+
+* Optimisation de l'utilisation du/des coeur
+* Évite de bloquer sur les in/out
+* Tire profit du multi coeur
+* Permet le parallélisme (Répartition des calculs)
+* Attente sur plusieurs entrées
+* Permet l'utilisation de programmes multitâche (ex: Un thread gère l'affichage et un autre écoute sur un socket réseau)
+
+
+
+### Inconvénients
+Avec les threads, toutes les variables sont partagées (concepte de **mémoire partagée**) et ça pose problème quand:
+
+* **Deux** threads cherchent à modifier **deux** variables en même temps
+* Un thread lit une variable alors qu'un autre la modifie
+
+Il est donc nécessaire d'utiliser des mécanismes de synchronisation pour gérer ces situations (voir Mutex plus bas).
+
+De façon générale les incovénients des threads sont les suivants:
+
+* Partage des ressources et leur gestion
+* Difficulté à synchroniser les taches
+* Le contrôle de l'ordre d'exécution des taches est très important
+* Programme moins prédictible...
+* ... et reproductible
+
+
+## Implémentation d'un thread en C
+
 Les fonctions relatives aux threads sont incluses dans le fichier d'en-tête `<pthread.h>` et dans la bibliothèque `libthread.a` (soit `-lpthread` à la compilation et include de `<pthread.h>`):
 
 ```shell
-gcc -lpthread main.c -o main.c
+gcc -pthread main.c -o main.c
 ```
 
-### Manipulations
-#### Création
+Il y a 3 étapes principales à la mise en place d'un thread:
+1. Création d'un identifiant
+2. Définition de la tâche à éffectuer par le thread
+3. Création du thread
 
-Pour créér un thread, il faut premièrement déclarer une variable le repésentant de type `pthread_t` ( qui est sur la majorité des systèmes un `typedef` d'un `unsigned long int`). Pour créer la tache en elle-même il faut utiliser la fonction:
+### Identifiant
 
-```c
+Déclaration d'une variable de type `pthread_t`. Cette variable contiendra l'identifiant du thread qu'on va créér.
+> Sur la majorité des systèmes ce type est un `typedef` d'un `unsigned long int`)
+
+```C{4}
 #include <pthread.h>
 
+int main(int argc, char **argv) {
+    pthread_t thread;
+    return EXIT_SUCCESS;
+```
+
+### Tâche à éxecuter
+
+Définition d'une fonction qui contient la tâche à éxécuter par le thread. 
+Cette fonction doit avoir la signature suivante: `void* maFonction(void *data)` et la ligne qui la cloture doit être de la forme suivante: `pthread_exit(NULL);` dans le cas où rien n'est retourné.
+
+```C{1,3}
+void* func(void *arg) {
+    printf("Bonjour monde d'un thread");
+    pthread_exit(NULL);
+}
+```
+### Création du thread
+La créaction du thread se fait via la fonction `pthread_create` qui a la signature suivante:
+
+```c
 int pthread_create(
     pthread_t* thread, 
     pthread_attr_t * attr,
@@ -211,92 +265,214 @@ int pthread_create(
 
 * La fonction renvoie une valeur de type `int` : 0 si la création est un succès, et une autre valeur si il y a erreur
 * Le premier argument est un pointeur vers l'identifiant du thread (valeur de type `thread_t`)
-* Le second argument désigne les attributs du thread (état joignable (par défaut) ou détaché, et choisir sa politique d'ordonnancement (usuelle, temps-réel...), ou... NULL)
-* Le troisième argument est un pointeur vers la fonction à exécuter dans le thread. Cette dernière devra être de la forme `void *fonction(void* arg)` et **contiendra le code à exécuter par le thread**
+* Le second argument désigne les attributs du thread (état joignable (par défaut) ou détaché, et  sa politique d'ordonnancement (usuelle, temps-réel...), ou... NULL)
+* Le troisième argument est un pointeur vers la fonction à exécuter par le thread.
 * Le quatrième argument est l'argument à passer au thread.
 
-#### Suppression
-```c
-#include <pthread.h>
-
-void pthread_exit(void *ret);
-```
-
-Cette fonction prend en argument **la valeur qui doit être retourné e par le thread et doit être placée en dernière position** dans la fonction concernée.
-
-```C
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <pthread.h>
-
-void* thread_handler(void* arg) {
-    printf("Bonjour monde du thread\n");
-    // Enleve le warning
-    (void) arg;
-    pthread_exit(NULL);
-}
-
-int main(int argc, int** argv) {
+```C{3}
+int main(int argc, char *argv[]) {
     pthread_t thread;
-    printf("Avant la création du thread.\n");
-    if (pthread_create(&thread, NULL, thread_handler, NULL) == -1) {
-        perror("pthread_create");
-        return EXIT_FAILURE;
-    }
-    printf("Après la création du thread. \n");
+    pthread_create(&thread, NULL, func, NULL);
     return EXIT_SUCCESS;
 }
 ```
 
-Le résultat de ce code est variable. Dans certains cas il affichera (en dernier) le message du thread, dans d'autres cas il non. Ce qui est tout à fait normal, celà veut dire que le return s'exécute avant le thread comme le thread principal ne va pas attendre de lui même que le thread se termine avant d'exécuter le reste de son code.
-Pour qu'il le face il faut en faire la demande explicite avec `pthread_join`.
+Il est de bonne pratique de wrapper `pthread_create` dans un test:
 
-#### Attendre la fin d'un thread (jointure?)
-Se fait avec `pthread_join` dont voici la signature:
+```c
+if (pthread_create(&thread, NULL, func, NULL) != 0) {
+    perror("thread creation error");
+    return EXIT_FAILURE;
+}
+```
+
+Tout ensemble:
+
+<Spoiler>
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+void* func(void *arg) {
+    printf("Dans le thread\n");
+    pthread_exit(NULL);
+}
+
+int main(int argc, char *argv[]) {
+    pthread_t thread;
+    printf("Avant la création du thread\n");
+    if (pthread_create(&thread, NULL, func, NULL) != 0) {
+        perror("thread creation error");
+        return EXIT_FAILURE;
+    }
+    printf("Fin du main\n");
+    return EXIT_SUCCESS;
+}
+```
+</Spoiler>
+
+Le résultat de ce code est variable. Dans certains cas il affichera le message du thread, dans d'autres cas il non. C'est normal, cela veut dire que le return du main thread s'exécute avant que le thread n'arrive au `printf`. **Sans qu'on ne lui dise explicitement, le main thread n'attend pas les autres threads pour se terminer.**
+
+### Join
+
+La fonction `pthread_join` suspend l'éxécution du thread appelant jusqu'à ce que le thread cible se termine. Voici la signature de cette fonction:
 
 ```c
 int pthread_join(pthread_t thread, void** thread_return);
 ```
  * Le premier paramètre est l'identifiant du thread
- * Le second un pointeur qui permet de récupérer la valeur retournée par la fonction dans laquelle s'exécute le thread (**c'est à dire l'argument de `pthread_exit`**)
+ * Le second, un pointeur qui permet de récupérer une éventuelle valeur retournée par `pthread_exit`.
 
 Notre main va donc ressembler à
 
 ```c    
-int main(int argc, int** argv) {
+int main(int argc, char *argv[]) {
     pthread_t thread;
-    printf("Avant la création du thread.\n");
-
-    if (pthread_create(&thread, NULL, thread_handler, NULL)) {
-        perror("pthread_create");
+    printf("Avant la création du thread\n");
+    if (pthread_create(&thread, NULL, func, NULL) != 0) {
+        perror("thread creation error");
         return EXIT_FAILURE;
     }
-    if (pthread_join(thread, NULL)) {
-        perror("pthread_join");
-        return EXIT_FAILURE;
-    }
-    printf("Après la création du thread. \n");
+    pthread_join(thread, NULL);
+    printf("Fin du main\n");
     return EXIT_SUCCESS;
 }
 ```
 
-Et maintenant l'output est uniforme:
+Et maintenant l'output sera toujours le même:
 
-    Avant la création du thread.
-    Nous sommes dans le thread.
-    Après la création du thread.
+    Avant la création du thread
+    Dans le thread
+    Fin du main
 
-### Inconvénients
-Avec les threads, toutes les variables sont partagées (concepte de **mémoire partagée**) et ça pose problème quand:
 
-* **Deux** threads cherchent à modifier **deux** variables en même temps
-* Un thread lit une variable alors qu'un autre la modifie
+### Exemples complets
+Le code suivant illustre une utilisation plus avancée avec un argument passés à la fonction qui exécute le thread ainsi qu'une valeur de retour:
 
-Il est donc nécessaire d'utiliser des mécanismes de synchronisation pour gérer ces situations.
+<Spoiler>
 
-### Les mutex
-C'est un outil qui permet l'**exclusion mutuelle**. Concrètement en C, un **mutex** est une variable de type `pthread_mutex_t` qui nous sert de **verrou** pour protéger des données. Ce verrou peut prendre deux états:
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+void* func(void *arg) {
+    printf("Dans le thread\n");
+
+    char *msg = (char *) arg;
+    printf("%s\n", msg);
+
+    char *return_msg = "Str declaree dans le thread.";
+
+    pthread_exit(return_msg);
+}
+
+int main(int argc, char *argv[]) {
+    pthread_t t_msg;
+    char *msg = "Str declaree dans le main.";
+
+    printf("Avant la création du thread\n");
+    if (pthread_create(&t_msg, NULL, func, msg) != 0) {
+        perror("t_msg error");
+        return EXIT_FAILURE;
+    }
+    char* return_value;
+
+    pthread_join(t_msg, (void**)&return_value);
+    printf("Fin de l'execution du thread, retour dans le main.\n");
+
+    printf("%s\n", return_value);
+
+    printf("Fin du main\n");
+
+    return EXIT_SUCCESS;
+}
+
+```
+Output:
+
+    Avant la création du thread
+    Dans le thread
+    Str declaree dans le main.
+    Fin de l'execution du thread, retour dans le main.
+    Str declaree dans le thread.
+    Fin du main
+    
+</Spoiler>
+
+Le code suivant illustre comment gérer **plusieurs arguments** ainsi que **plusieurs valeurs de retour** sans utiliser de variables globales:
+
+<Spoiler>
+
+```C{16,38}
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+typedef struct data {
+    char* msg;
+    int value;
+} data;
+
+void* func(void *arg) {
+    printf("Dans le thread\n");
+
+    data *passed_stuff = (data*) arg;
+    printf("%s\t%d\n", passed_stuff->msg, passed_stuff->value);
+
+    data *stuff = malloc(sizeof(data));
+    stuff->msg = "Str declaree dans le thread.";
+    stuff->value = 5678;
+
+    pthread_exit(stuff);
+}
+
+int main(int argc, char *argv[]) {
+    pthread_t t_data;
+
+    data stuff;
+    stuff.msg = "Str declaree dans le main.";
+    stuff.value = 1234;
+
+    printf("Avant la création du thread\n");
+    if (pthread_create(&t_data, NULL, func, &stuff) != 0) {
+        perror("t_data error");
+        return EXIT_FAILURE;
+    }
+
+    data *returned_stuff;
+
+    pthread_join(t_data, (void**)&returned_stuff);
+    printf("Fin de l'execution du thread, retour dans le main.\n");
+
+    printf("%s\t%d\n", returned_stuff->msg, returned_stuff->value);
+
+    printf("Fin du main\n");
+    
+    return EXIT_SUCCESS;
+}
+```
+Output:
+
+    Avant la création du thread
+    Dans le thread
+    Str declaree dans le main.      1234
+    Fin de l'execution du thread, retour dans le main.
+    Str declaree dans le thread.    5678
+    Fin du main
+
+::: danger Attention
+L'utilisation du `malloc` en ligne 16 est indispensable. Elle permet de déplacer la struct `data` de la pile au tas ce qui fait que la référence n'est pas perdue à la fin du contexte de `func`. En ligne 18 on récupère donc un pointeur sur un pointeur dont la référence éxiste toujours.
+:::
+
+</Spoiler>
+
+## Les mutex
+Pour palier aux inconvénients que pourrait causer un accès simultanné aux mêmes ressources nous avons plusieurs outils. 
+
+Le **mutex** est un outil qui permet l'**exclusion mutuelle**. Concrètement en C, un **mutex** est une variable de type `pthread_mutex_t` qui nous sert de **verrou** pour protéger des données. Ce verrou peut prendre deux états:
 
 * **Disponible**
 * **Vérouillé**
@@ -471,12 +647,4 @@ output:
 * `PTHREAD_MUTEX_INITIALIZER`:
 * `pthread_mutex_lock`
 * `pthread_cond_wait`
-
-
-
-
-
-
-
-
 
