@@ -39,9 +39,9 @@ On parle de:
 * **Pseudo-parallélisme**: (monocoeur)Quand le processeur passe d'un programme à un autre en quelques ms, ce qui donne à l'utilisateur une impression de simultanéité.
 * **Parallélisme**: (multi-coeur) Quand plusieurs programmes s'éxécutent réellement en même temps.
 
-### Processus sous Unix
+### Processus
 
-Sur la majorité des OS à l'exception des systèmes Unix, **processus = nouveau programme**. Autrement dit, la majorité des OS offrent un seul appel-sytème pour exécuter un nouveau programme. Unix en possède deux `fork` et `exec`.
+Sur la majorité des OS à l'exception des systèmes Unix, **processus = nouveau programme**. Autrement dit, la majorité des OS offrent un seul appel sytème pour exécuter un nouveau programme à l'exception des systèmes Unix qui en possède deux `fork` et `exec`.
 
 <Spoiler>
 
@@ -54,7 +54,17 @@ A la création d'un nouveau processus, on utilise une fonction qui permet de dup
 
 </Spoiler>
 
-Les processus sont organisés en hiérarchie. **Chaque processus doit être lancé par un autre**. La racine de cette hiérarchie est le **programme initial**
+Les processus sont organisés en hiérarchie. **Chaque processus doit être lancé par un autre**. La racine de cette hiérarchie est le **programme initial**. Plusieurs processus peuvent s'exécuter en parallèle et sont tous gérés par l'os. 
+
+Un processus possède:
+
+* Un espace d'adressage
+* Un code à éxecuter (chargé dans le segment texte)
+* Un contexte d'exécution
+* Une priorité
+* Un identifiant
+
+<Spoiler>
 
 Le **Processus inactif du système** (System idle process) il a le PID 0. C'est le processus que le noyau exécute tant qu'il n'y a pas d'autres processus en cours d'éxecution. C'est lui qui est en charge de lancer le premier processus que le noyau exécute: Le **programme initial**. Généralement appelé **init** et de PID 1 sur les systèmes Unix.
 
@@ -67,12 +77,15 @@ Si les quatre programmes n'ont pas pu être exécutés, le système s'arrête : 
 
 Après son chargement, le programme initial gère le reste du démarrage: Initialisation du système, lanchement du programme de connexion... Il se charge également de lancer les <Def def="Processus qui est constamment en activité et fournit des services au système.">daemons</Def>. 
 
-Les différents états d'un processus sont les suivants:
+</Spoiler>
 
-* **Exécution** (**R**unning)
-* **Sommeil** (**S**leeping): Dans un multitâche coopératif, quand il rend la main ou dans un multitâche préemptif, quand il est interrompu au bout d'un quantum de temps.
-* **Arrêt** (s**T**opped): Temporairement arrêté par un signal. Il ne s'exécute plus et ne réagira qu'à un signal de redémarrage.
-* **Zombie** (**Z**ombie): Le processus s'est terminé mais son père n'as pas encore lu son code de retour.
+### Cycle de vie d'un processus
+
+1. **Prêt**: Le processus est prêt à être exécuté. Cas d'un processus nouvellement créé, débloqué ou, d'un ou plusieurs processus occupant le ou les coeurs disponibles.
+2. **En exécution** (**R**unning): Le processus est en cours d'exécution sur un coeur. Plusieurs processus peuvent être en exécution dans le cas d'une machine multicoeur.
+3. **Bloqué** (**S**leeping): Le processus est en attente sur une synchronisation ou sur la fin d'une opération d'entrée/sortie.
+4. **Zombie** (**Z**ombie): Le processus a terminé son exécution, mais son processus parent doit encore récupérer sa valeur de terminaison.
+5. **Terminé (s**T**opped)**: Le processus a terminé son exécution ou a été annulé. Les ressources du processus sont libérées et le processus disparaît.
 
 Sur Unix, un processus peut évoluer dans deux modes différents: Le mode **noyau** et le mode **utilisateur**. Généralement un processus utilisateur entre dans le mode noyau quand il effectue un appel-système.
 
@@ -82,7 +95,6 @@ Sur Unix, un processus peut évoluer dans deux modes différents: Le mode **noya
     center="true"
 />
 
-<Spoiler>
 
 * `$ ps`: Affiche ses propres processus en cours d'exécution
     * `-a`: processus de tous les utilisateurs
@@ -96,7 +108,9 @@ Sur Unix, un processus peut évoluer dans deux modes différents: Le mode **noya
 
         > **command** correspond au chemin complet de la commande lancée
 
-</Spoiler>
+
+<Spoiler>
+#### Implémentation des processus
 
 Pour implémenter les processus, l'os utilise un tableau de <Def def="Oui, oui, C">structures</Def> appelé **table des processus**. Cette dernière comprend une entrée par processus allouée dynamiquement qui correspond au processus associé à ce programme. C'est le **Bloc de controle du processus** (**PCB** Process Control Block) qui contient:
 
@@ -110,7 +124,7 @@ Pour implémenter les processus, l'os utilise un tableau de <Def def="Oui, oui, 
 
 > Grace à ces informations, un processus bloqué poura redémarrer ulterieurement avec les mêmes caractéristiques.
 
-## Fonction fork
+#### Fonction fork
 Pour créer un nouveau processus à partir d'un <Def def="dans le code">programme</Def>, on utilise la fonction `fork` (appel-système).
 Le processus père et le nouveau processus créé (processus fils) qui possède un nouveau PID. **Les deux ont le même code source**. C'est la valeur retournée par `fork` qui nous permet de savoir si l'on est dans le processus père ou fils. Ceci permet de faire deux choses différentes en fonction de dans quel process on se trouve (via structure de condition `if`, `switch`).
 
@@ -122,13 +136,10 @@ Lors de l'exécution de l'appel système `fork`, le noyau effectue les opératio
 * Associe au processus fils un segment de texte dans son espece d'adressage. Le segment de données (tas) ne lui seront attribués que lorsque celui-ci tentera de les modifier. Cette technique est nommée **Copie on write** et permet de réduire le temps nécessaire à la création du processus
 * L'état du processus est mis à l'état *exécution*
 
-Plus de détails programmatiques concernant le fork 
-
 ::: danger Attention
 Il est essentiel de comprendre le lien entre les précédentes notions et les notions programmatiques rattachées. C est au coeur du système. Plus d'informations [ici](http://www.commentcamarche.net/faq/10611-que-fait-un-fork). Ainsi qu'en seconde partie de ce [lien](https://openclassrooms.com/fr/courses/1513891-la-programmation-systeme-en-c-sous-unix/1514339-les-processus)
 :::
 
-<Spoiler>
 
 #### Exemple d'implémentation
 Un programme qui crée un fils. Le père affiche "je suis père" et le fils afiche "Je suis fils":
@@ -167,13 +178,28 @@ int main(int argc, int **argv) {
 
 ## Thread
 
-Dans la majorité des systèmes d'exploitation, **chaque processus** possède un espace d'adressage et un **thread** de contrôle unique, le **thread principal**. Du point de vue programmation, c'est le **thread principal** qui exécute le main.
+Sur la majorité des OS, **chaque processus** possède un espace d'adressage et un **thread** de contrôle unique, le **thread principal**. D'un point de vue programmatique, c'est le **thread principal** qui exécute le `main`, on parle alors de **main thread**.
 
-En général le système réserve un processus à chaque application sauf quelques  exceptions. Beaucoup de programmes exécutent plusieurs activités en parallèle (pseudo-parallélisme ou vrai parallélisme).
+En général le système réserve **un processus à chaque application**. Beaucoup de programmes exécutent plusieurs activités en **parallèle** (pseudo-parallélisme ou vrai parallélisme) et une ramification de threads apparait. Programmatiquement, **le code qu'éxécute un thread se trouve dans une fonction**. Un processus contient donc généralement plusieurs threads.
+
+* Un thread est une unité d’exécution
+* **Les threads s'exécutent en parallèle**
+    * Monocoeur: préamptif 
+    * Multicoeur: execution parallèle.
+        * L'ordonnanceur est responsable de l'ordre d'exécution.
 
 ::: tip Info
-Le terme "thread" peut se traduire par "fil d'exécution". L'appellation de "processus léger" est également utilisée.
+Le terme "thread" peut se traduire par "fil d'exécution". L'appellation de "processus léger" (lightweigt process) est également utilisée.
 :::
+
+### Différences vis à vis d'un processus
+* Les threads d'un même processus se partagent l'espace d'adressage du processus
+* Ils sont <Def def="rythmés par l'ordonnanceur">ordonnancés</Def>
+* Ils possèdent
+  * Leur propre pile
+  * Leur propre contexte d'exécution (**IP** (Instruction Pointer) + registres)
+  
+![Image](https://i.imgur.com/ZEWury7.png)
 
 ### Avantages
 
@@ -184,9 +210,9 @@ Vis à vis d'un processus les avantages d'un thread sont:
 > Sur de nombreux systèmes la création d'un thread est environs 100 fois plus rapide.
 
 * La superposition de l'exécution des activités dans une même application permet une importante accélération quand au fonctionnement de cette dernière.
-* La communication entre threads est plus aisée que celle entre les processus (les processus communiquent via pipes (`|`)).
+* La communication entre threads est plus aisée que celle entre les processus (Sur les systèmes Unix les processus communiquent via pipes (`|`)).
 
-De plus les threads ont les avantages suivants:
+De façon générale les threads ont les avantages suivants:
 
 * Optimisation de l'utilisation du/des coeur
 * Évite de bloquer sur les in/out
@@ -196,14 +222,13 @@ De plus les threads ont les avantages suivants:
 * Permet l'utilisation de programmes multitâche (ex: Un thread gère l'affichage et un autre écoute sur un socket réseau)
 
 
-
 ### Inconvénients
-Avec les threads, toutes les variables sont partagées (concepte de **mémoire partagée**) et ça pose problème quand:
+Comme l'espace d'adressage d'un même processus est partagé entre plusieurs threads, des problèmes apparaissent quand:
 
 * **Deux** threads cherchent à modifier **deux** variables en même temps
 * Un thread lit une variable alors qu'un autre la modifie
 
-Il est donc nécessaire d'utiliser des mécanismes de synchronisation pour gérer ces situations (voir Mutex plus bas).
+Il sera donc nécessaire d'utiliser des mécanismes de synchronisation pour gérer ces situations.
 
 De façon générale les incovénients des threads sont les suivants:
 
@@ -212,9 +237,57 @@ De façon générale les incovénients des threads sont les suivants:
 * Le contrôle de l'ordre d'exécution des taches est très important
 * Programme moins prédictible...
 * ... et reproductible
+* Cohérence des données en cas de mauvaise terminaison d'un thread
 
+### Design patterns
 
-## Implémentation d'un thread en C
+Comment décomposer un programme en plusieurs threads?
+
+#### Boss & workers
+C'est une délégation des taches
+* Un thread principal crée les autres threads et leur assigne une tache
+* Il peut (mais ne doit pas) attendre jusqu'à ce que la tache soit complétée
+
+<Media
+  src="https://i.imgur.com/gDzSllg.png"
+  center="true"
+/>
+
+Deux approches possibles:
+1. Le boss crée pour chaque requête un nouveau thread
+2. Le boss crée un pool de threads
+   
+#### Peer to peer
+* Tous les threads ont un status de travail égale
+* Un thread pair crée tous les threads nécessaires à une tache mais il ne délègue pas de responsabilités
+* Les threads pair peuvent traiter des requêtes d'un simple *input stream* partagé par tous les threads ou avoir chacun leur propre *input stream*
+
+<Media
+  src="https://i.imgur.com/nup6mxC.png"
+  center="true"
+/>
+
+#### Pipeline
+* Approche semblable à une ligne de production pour traiter des données par étapes (**stages**)
+* Chaque stage est un thread qui fait du travail sur une unité d'entrée. Lorsque l'unité d'entrée passe par tous les stages, le traitement est complété.
+
+<Media
+  src="https://i.imgur.com/RNwX1qG.png"
+  center="true"
+/>
+
+#### Changement de contexte
+L'opération de changement de contexte d'un processus ou d'un thread comporte les séquences suivantes:
+
+1. Mise en attente du processus actif dans la liste des processus bloqués ou prêts
+2. Sauvegarde de son contexte d'exécution
+3. Recherche du processus éligible ayant la plus haute priorité
+4. Restauration du contexte d'exécution du processus élu et restauration de la valeur de ses registres lorsqu'il s'exécutait précédemment
+5. Activation du processus élu
+
+**Tout se passe comme si le processus préalablement interrompu n'avait pas cessé de s'exécuter.**
+
+## Threads en C
 
 Les fonctions relatives aux threads sont incluses dans le fichier d'en-tête `<pthread.h>` et dans la bibliothèque `libthread.a` (soit `-lpthread` à la compilation et include de `<pthread.h>`):
 
@@ -317,7 +390,20 @@ Le résultat de ce code est variable. Dans certains cas il affichera le message 
 
 ### Join
 
-La fonction `pthread_join` suspend l'éxécution du thread appelant jusqu'à ce que le thread cible se termine. Voici la signature de cette fonction:
+* La fonction `pthread_join` suspend l'éxécution du thread appelant jusqu'à ce que le thread cible se termine. 
+* Il peut être vu comme une forme de communication entre threads.
+* Le thread terminé peut retourner une valeur au thread ayant effectué la jointure
+
+
+<Media
+    src="https://i.imgur.com/nV7fVjS.png"
+    center="true"
+    width=450
+/>
+
+
+
+Voici la signature de cette fonction:
 
 ```c
 int pthread_join(pthread_t thread, void** thread_return);
@@ -325,17 +411,23 @@ int pthread_join(pthread_t thread, void** thread_return);
  * Le premier paramètre est l'identifiant du thread
  * Le second, un pointeur qui permet de récupérer une éventuelle valeur retournée par `pthread_exit`.
 
-Notre main va donc ressembler à
+Il est égallement de bonne pratique que de wrapper le `pthread_join` dans un test:
 
 ```c    
 int main(int argc, char *argv[]) {
     pthread_t thread;
     printf("Avant la création du thread\n");
+
     if (pthread_create(&thread, NULL, func, NULL) != 0) {
-        perror("thread creation error");
+        perror("pthread_create error");
         return EXIT_FAILURE;
     }
-    pthread_join(thread, NULL);
+
+    if (pthread_join(thread, NULL) != 0) {
+        perror("pthread_join error");
+        return EXIT_FAILURE;
+    }
+
     printf("Fin du main\n");
     return EXIT_SUCCESS;
 }
@@ -347,38 +439,46 @@ Et maintenant l'output sera toujours le même:
     Dans le thread
     Fin du main
 
-
 ### Exemples complets
 Le code suivant illustre une utilisation plus avancée avec un argument passés à la fonction qui exécute le thread ainsi qu'une valeur de retour:
 
 <Spoiler>
 
-```c
+```C{13,31}
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
 
-void* func(void *arg) {
+void* func(void* arg) {
     printf("Dans le thread\n");
 
-    char *msg = (char *) arg;
+    // Traitement argument 
+    char* msg = (char *) arg;
     printf("%s\n", msg);
 
-    char *return_msg = "Str declaree dans le thread.";
+    // Traitement de la valeur de retour
+    char* return_msg = (char *) malloc(sizeof(char));
+    return_msg = "Str declaree dans le thread.";
 
     pthread_exit(return_msg);
 }
 
-int main(int argc, char *argv[]) {
-    pthread_t t_msg;
-    char *msg = "Str declaree dans le main.";
+int main(int argc, char* argv[]) {
+    pthread_t t_msg; 
+    char* msg = "Str declaree dans le main.";
 
     printf("Avant la création du thread\n");
     if (pthread_create(&t_msg, NULL, func, msg) != 0) {
-        perror("t_msg error");
+        perror("pthread_create error");
         return EXIT_FAILURE;
     }
+
     char* return_value;
+
+    if (pthread_join(t_msg, (void**)&return_value) != 0) {
+        perror("pthread_join error");
+        return EXIT_FAILURE;
+    }
 
     pthread_join(t_msg, (void**)&return_value);
     printf("Fin de l'execution du thread, retour dans le main.\n");
@@ -389,7 +489,6 @@ int main(int argc, char *argv[]) {
 
     return EXIT_SUCCESS;
 }
-
 ```
 Output:
 
@@ -400,6 +499,10 @@ Output:
     Str declaree dans le thread.
     Fin du main
     
+::: danger Attention
+Noter l'utilisation du `malloc` en ligne 13 . Elle permet de déplacer la le tableau de char de la pile au tas ce qui fait que la référence n'est pas perdue à la fin du contexte de `func`. En ligne 31 on récupère donc un pointeur sur un pointeur dont la référence éxiste toujours.
+:::
+
 </Spoiler>
 
 Le code suivant illustre comment gérer **plusieurs arguments** ainsi que **plusieurs valeurs de retour** sans utiliser de variables globales:
@@ -463,11 +566,21 @@ Output:
     Str declaree dans le thread.    5678
     Fin du main
 
-::: danger Attention
-L'utilisation du `malloc` en ligne 16 est indispensable. Elle permet de déplacer la struct `data` de la pile au tas ce qui fait que la référence n'est pas perdue à la fin du contexte de `func`. En ligne 18 on récupère donc un pointeur sur un pointeur dont la référence éxiste toujours.
-:::
+De la même façon que dans le code précédent, notez l'utilisation du `malloc` en ligne 16 ainsi que la gestion de la valeur de retour en ligne 38.
 
 </Spoiler>
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Les mutex
 Pour palier aux inconvénients que pourrait causer un accès simultanné aux mêmes ressources nous avons plusieurs outils. 
