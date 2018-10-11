@@ -4,29 +4,24 @@ sidebar: auto
 
 # Comment utiliser le wiki
 
-## Visiteurs
-Consultation libre de la majorité des articles.
-
-## L'équipe
-
-### Liens utilises
+## Liens utilises
 * [Tuto md](https://devhints.io/markdown)
 * [Tuto katex (maths)](https://katex.org/docs/supported.html)
 
-### Complément syntaxique
+## Complément syntaxique
 
-#### Expressions mathématiques
+### Expressions mathématiques
 Gérées via [katex](https://katex.org/docs/supported.html) il suffit d'enfermer les expressions entre `$`
 
 
-#### Définitions on hover
+### Définitions on hover
 Un mot <Def def="pas facile">compliqué</Def> par exemple:
 
 ```md
 Un mot <Def def="pas facile">compliqué</Def> par exemple
 ```
 
-#### Balise spoiler
+### Balise spoiler
 
 <Spoiler>
 
@@ -62,7 +57,7 @@ N'importe quel type de contenu md habituel **à l'exception d'une autre balise s
 **Une ligne vide est requise après l'ouverture et avant la fermeture!**
 :::
 
-#### Controle avancé sur les médias
+### Controle avancé sur les médias
 
 <Media
   src="https://imgur.com/z4U3kwu.gif"
@@ -73,7 +68,7 @@ N'importe quel type de contenu md habituel **à l'exception d'une autre balise s
 />
 
 
-```md
+```html
 <Media
   src="https://imgur.com/z4U3kwu.gif"
   url="https://www.google.com"
@@ -84,8 +79,46 @@ N'importe quel type de contenu md habituel **à l'exception d'une autre balise s
 ```
 Tous les paramètres sont optionnels.
 
+### Colonnes
 
-#### Highlight une ligne de code:
+<Col spacer="1">
+<template slot="left">
+
+![Image](https://i.imgur.com/6XRQj3h.png)
+
+</template>
+<template slot="right">
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta doloribus facilis, illum maxime perspiciatis quasi sed.
+    
+</template>
+</Col>
+
+```html{3,5,8,10}
+<Col spacer="1">
+<template slot="left">
+
+![Image](https://i.imgur.com/6XRQj3h.png)
+
+</template>
+<template slot="right">
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta doloribus facilis, illum maxime perspiciatis quasi sed.
+    
+</template>
+</Col>
+```
+
+* Le paramètre `spacer` est optionnel et peut prendre une valeur entre 1 et 3. 
+
+::: danger Attention !
+Une ligne vide est requise avant et après le contenu de chaque balise `template`
+:::
+
+
+
+
+### Highlight une ligne de code
 
 Quand vous commencez un bloc de code, dans la partie ` ```language`, si vous ajoutez `{n}` collé à `language` ça va highlight la ligne demandée:
 
@@ -104,7 +137,7 @@ Vous pouvez highlight autant de lignes que vous voulez en les séparant par des 
 
 ex: `cpp{2,5,14}`. **Sans espace!**
 
-#### Custom containers
+### Custom containers
 
 Dans le md:
 
@@ -148,7 +181,7 @@ Pas plus loin !
 Pas plus loin !
 :::
 
-### Snippets vsCode
+## Snippets vsCode
 
 Dans vsCode:
 1. Ouvrez la <Def def="Ctrl + Shift + p">palette de commandes</Def>
@@ -210,7 +243,7 @@ Dans le <Def def="markdown.json">document qui vient de s'ouvrir</Def> effacez to
 * `danger`: highlight rouge
 
 
-### Format d'un nouvel article
+## Format d'un nouvel article
 **Merci de respecter ce format (noter la date) pour ne pas casser l'affichage et les mécanismes du site.**
 * Tout nouvel article créé est mirror sur le site après un push
 * Le titre spécifé dans `title` est automatiquement affiché en haut de la page donc pas besoin de le réécrire
@@ -227,20 +260,20 @@ sidebar: auto
 
 Se retrouve dans le menu de gauche
 
-### Sous titre principal
+## Sous titre principal
 
 Se retrouve dans le menu de gauche aussi
 ```
 
 * Les lignes 1 à 6 sont le **frontmatter** (les méta données de l'article). L'ordre n'est pas important mais le format des données l'est. Le field `sidebar: auto` permet d'afficher ou non la table des matières dynamique dans le menu de gauche.
 
-Pour le reste c'est comme d'habitude. Les header de `##` à `###` sont repris dans le menu de gauche automatiquement.
+Pour le reste c'est comme d'habitude. Les header de `##` à `##` sont repris dans le menu de gauche automatiquement.
 
 
-### Répo
+## Répo
 `git clone https://github.com/RoscaS/awesome_students`
 
-#### Folder tree
+### Folder tree
 
 <Spoiler>
 
@@ -280,10 +313,10 @@ Pour le reste c'est comme d'habitude. Les header de `##` à `###` sont repris da
 </Spoiler>
 
 
-#### Publication
+### Publication
 Pour publier un article il suffit de choisir le folder approprié et d'y créér un fichier `*.md` (**nom en minuscules**) dans la sous branche appropriée. Pour le publier il suffit de push sur le répo. Il se retrouvera en ligne dans les minutes qui suivent (tout est géré automatiquement).
 
-#### Nouvelle sous-branche
+### Nouvelle sous-branche
 
 ::: danger ATTENTION!
 * Dans le doute, demandez moi de créér la nouvelle sous-branche !
