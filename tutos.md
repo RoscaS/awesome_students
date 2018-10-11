@@ -95,7 +95,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta dolor
 </Col>
 
 ```html{3,5,8,10}
-<Col spacer="1">
+<Col spacer="1" proportions="5/5" vAlign="0">
 <template slot="left">
 
 ![Image](https://i.imgur.com/6XRQj3h.png)
@@ -108,8 +108,10 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta dolor
 </template>
 </Col>
 ```
-
-* Le paramètre `spacer` est optionnel et peut prendre une valeur entre 1 et 3. 
+* Paramètres:
+  * `spacer` string "n" $|\;n \in \;$[0,3], default "1" $\quad$ optionnel
+  * `proportions` string "n/m" $|\;n$ et $m \in$ [0, 10] $\quad$ optionnel
+  * `vAlign` string "n" $|\;n \in \;$[-200, 200] $\quad$ optionnel
 
 ::: danger Attention !
 Une ligne vide est requise avant et après le contenu de chaque balise `template`
@@ -198,6 +200,10 @@ Dans le <Def def="markdown.json">document qui vient de s'ouvrir</Def> effacez to
 	"meta": {
 		"prefix": "meta",
 		"body": "---\ntitle: ${1:titre de l'article affiché}\ndate: ${2:YYYY-MM-DD}\nauthor: ${3: ton prénom}\nsidebar: auto\n---\n\n## ${4: Premier sous-titre}\n\n"
+  },
+  "columns": {
+		"prefix": "col",
+		"body": "<Col spacer=\"1\">\n<template slot=\"left\">\n\n${1:Colonne de gauche (ne pas supprimer les lignes vides!)}\n\n</template>\n<template slot=\"right\">\n\n${2:Collonne de droite (ne pas supprimer les lignes vides!)}\n\n</template>\n</Col>"
 	},
 	"code": {
 		"prefix": "code",
