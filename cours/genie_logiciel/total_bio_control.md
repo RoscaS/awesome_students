@@ -1,91 +1,121 @@
 ---
-title: "Demande de projet: TotalBioControl"
-date: 2018-10-11
+title: "Exercice 2: Total Bio Control"
+date: 2018-10-10
 author:  "Nathan Latino, Michael Kneuss, Sol Rosca"
 sidebar: auto
 ---
 
+## Meta
+> * Nathan Latino
+> * Michael Kneuss
+> * Sol Rosca
 
-# Génie logiciel. Demande de projet: TotalBioControl
+>### Consigne
+>Rédiger (par groupe de 3-4) une proposition de projet au sein de la société TotalBioControl ([model](https://www.biocontrol.ch/fr_bc/)) sur le modèle de la proposition CDSelection. La société produit et commercialise pour le moment des pièges traditionnels avec papier collant, relevé et comptage manuel. Elle équipe 75% des vignobles du canton et réalise un chiffre d’affaire annuel de 500’000SFR, (40%) par la vente du papier autocollant, 40% (vente du parfum), 20% vente des pièges. Ses ventes diminuent car les vignerons achètent de plus en plus papier et parfum sur Internet. 
+>
+>Votre proposition sera constituée de deux documents:
+>* Une demande de projet
+>* Une étude de faisabilité
+>
+>Ces deux documents seront réalisés sur le modèle de l’exemple de CDSelection en prenant le cas d’une initiation interne chez TotalBioControl. Cette société compte 4.5 >employés: le patron (biologiste), un vendeur, un mécanicien, une employée de commerce, et un informaticien(50%) en charge du site Internet.
+
+<br>
+
+::: danger Questions
+* C'est quoi le département "IS" ?
+:::
+
+
+## TotalBioControl: Demande de projet
 
 ### Nom du projet
-* TotalBioControl: **Site de vente sur Internet**
+
+* Vente en ligne
+
 ### Initiateur du projet
 
-TotalBioControl - Patron
-* Services demandés
-    * Hausse des ventes
-        * Rebranding
-        * Remise en question du public cible
-        * Application web/boutique en ligne
-* Fonctionnalités
-    * Interface intuitive
-    * Catalogue dynamique
-    * Liste de souhaits
-    * Recherche par critères
-    * Suggestion intélligente via "Google ads suggestion"
-    
-    * Analyse des habitudes de consomation via "Google analytics"
-    * Possibilité de création de compte 
-        * **non-obligatoire**. Les informations d'analytics nous permettent de ne pas assomer l'utilisateur qui ne veut pas un compte. Favorise les ventes rapides
-    * Achat sécurisé sans obligation d'inscription
-    * Commande à volée
-    * Gestion des stocks dynamique automatiquement synchronisée avec les fournisseurs
-        * Virtuellement aucune rupture de stock pour l'utilisateur
-    
-    * Contacter la société via un formulaire
-    * Chatbot discret pour guider l'utisateur
-    * Système fidélité (bons de réductions,...)
-        * Possibilité de souscrire à un abonement qui donne accès à des promotions régulièrement renouvellées. 
-            * Plusieurs formules
-    * Système d'évaluation des produits par les clients
-        * fil de discussion centré sur un produit
+* Patron
 
-* Apports attendus
-    * Tangibles
-        * ~167'000CHF/an après 1 an de démarrage
-        * Eviter la faillite
-    * Non tangibles
-        * Améliorer la réputation
-        * Concurrencer le marché sur Internet
-* Contraintes et autres
-    * Entreprise en régression (apports de fonds)
-* Argumentation
-    * atteindre les 25% de vignerons qui achète leurs produits sur Internet
-    * société moderne (notoriété)
-    * relancer l'entreprise
+### Services demandés
+Insertion de l'entreprise dans le secteur de la vente en ligne
 
-### Etude de faisabilité
+### Fonctionnalités
 
-#### Faisabilité *techniques* (excellente)
+* Consultation et vente de produits en ligne
+* Recherche dans le catalogue de produits
+* Commandes
+* Payement et confirmation
+* Estimation des délai de livraison
+* Suivi de commande
 
+### Apports attendus
+
+#### Tangibles
+* ~167'000CHF/an après 1 an de démarrage
+* Restauration de la balance économique  
+* Positionnement stable sur le secteur de la vente en ligne de produits spécialisé dans l'optimisation de la production viticole
+
+#### Non tangibles
+* Gain de notoriété
+* Gain de popularité des produits vendu
+* Gain de satisfaction de la clientièle
+
+### Contraintes et autres
+* Régression du chiffre d'affaires
+* Secteur peu populaire
+* Risques de changements législatifs vis à vis de certains produits
+
+* Engagement d'un expert marketing 
+* Formation du personnel IT sur les technologies utilisés
+* Formation du personnel IT à la maintenance des nouveaux systèmes
+
+### Argumentation
+#### Rapports et avis des experts
+* Projections pour le marché du bio optimistes
+* Projections pour le secteur de la vente en ligne très optimistes
+* Sous secteur niche peu représenté et concurence peu agressive
+
+* Projections pour le marché des produits chimique à usage agricole pessimistes
+
+* Secteur stagnant, 
+* Prévisions optimistes à l'issue d'une implémentation hypotétiquement fructueuse du projet: Retour à une situation équilibrée mais préquaire grace au recouvrement du secteur de vente non couvert
+
+
+* Estimations du rapport sur investissement optimiste
+
+* atteindre les 25% de vignerons qui achète leurs produits sur Internet
+* société moderne (notoriété)
+* relancer l'entreprise
+
+## Etude de faisabilité
+
+### Faisabilité *techniques* (excellente)
 * Connaissance du domaine d'application : bonne
-    * Département Marketing : bonne connaissance de la vente sur Internet
+    * Département Marketing : bonne connaissance de la vente en ligne
     * Département IS : bonne connaissance des application eCommerce
 * Connaissance des technologies : haute
     * Dépt Is : bonne connaissance des technologies eCommerce
-    * Bases de données sécurisée déjà en place
+    * Composants modulaires réutilisables avec peu de modifications
 * Taille du projet
-    * Taille petite
+    * Petite à moyenne taille
     * Utilisation de technologies existantes
 
-#### Faisabilité *économique* (moyenne)
-
+### Faisabilité *économique* (moyenne)
 * Bénéfices tangibles
     * 167'000 CHF de revenu supplémentaire générés par l'augmentation des ventes sur internet
+    > balance un pourcentage de gain bordel
 * Bénéfices non tangibles
     * Amélioration de l'image de la société
-    * Visibilité de la société (référencement)
+    * Visibilité de la société (référencement viral)
     * Extension du public cible
 * Inconvénients
     * Coût supplémentaires (services externes utilisés pour la mise en place du site)
 
-#### Faisabilité *organisationnelle* (moyenne)
+### Faisabilité *organisationnelle* (moyenne)
 * Initiateur et suivi du projet
     * Patron TotalBioControl
-    * Suivi par l'informaticien et l'employée de commerce
+    * Suivi par l'informaticien
 * Autres intervenants
     * Utilisation de services externes pour le site
 * Les utilisateurs
-    * Les clients sont de plus en plus sur internet pour l'achat de ce type de produit
-
+    * Le pool de clients potentiel reste peu changé mais manque à gagné vis à vis de la préférence acrue des anciens clients pour le confort de l'achat en ligne.

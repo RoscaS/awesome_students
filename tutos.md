@@ -109,9 +109,13 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta dolor
 </Col>
 ```
 * Paramètres:
-  * `spacer` string "n" $|\;n \in \;$[0,3], default "1" $\quad$ optionnel
-  * `proportions` string "n/m" $|\;n$ et $m \in$ [0, 10] $\quad$ optionnel
-  * `vAlign` string "n" $|\;n \in \;$[-200, 200] $\quad$ optionnel
+
+|               | type   | format | default |
+| ------------- | ------ | ------ | ------- |
+| `spacer`      | string | "n"    | 1       |
+| `proportions` | string | "n/m"  | 5/5     |
+| `vAlign`      | string | "n"    | 0       |
+
 
 ::: danger Attention !
 Une ligne vide est requise avant et après le contenu de chaque balise `template`

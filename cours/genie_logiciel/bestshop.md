@@ -6,6 +6,9 @@ author: "Nathan Latino, Michael Kneuss, Sol Rosca"
 ---
 
 ## Meta
+> * Nathan Latino
+> * Michael Kneuss
+> * Sol Rosca
 
 >### Consigne
 >* Le magasin de CD «BestShop» a décidé de se lancer dans le e-commerce en mettant à disposition de ses clients un site de vente en ligne (web).
@@ -13,7 +16,6 @@ author: "Nathan Latino, Michael Kneuss, Sol Rosca"
 >* Aguerri en matière de projets informatiques et en génie logiciel, le responsable informatique de «BestShop» évaluera la consistance des différentes offres en essayant d’identifier le degré de maturité et d’expertise du prestataires à travers le contenu de l’offre.
 >* Afin de convaincre le responsable informatique de "BestShop" de votre expertise, quels sont les éléments indispensables à mettre dans votre offre?
 
----
 <br><br><br>
 
 <Media
