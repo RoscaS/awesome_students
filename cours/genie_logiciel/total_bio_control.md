@@ -21,26 +21,22 @@ sidebar: auto
 
 <br>
 
-::: danger Questions
-* C'est quoi le département "IS" ?
-:::
-
-
 ## TotalBioControl: Demande de projet
 
 ### Nom du projet
 
-* Vente en ligne
+Vente en ligne
 
 ### Initiateur du projet
 
-* Patron
+Patron
 
 ### Services demandés
 Insertion de l'entreprise dans le secteur de la vente en ligne
 
 ### Fonctionnalités
 
+#### Permettre la consultation et la vente des produits en ligne
 * Consultation et vente de produits en ligne
 * Recherche dans le catalogue de produits
 * Commandes
@@ -61,31 +57,10 @@ Insertion de l'entreprise dans le secteur de la vente en ligne
 * Gain de satisfaction de la clientièle
 
 ### Contraintes et autres
-* Régression du chiffre d'affaires
-* Secteur peu populaire
-* Risques de changements législatifs vis à vis de certains produits
-
+* Chiffre d'affaires en baisse
 * Engagement d'un expert marketing 
 * Formation du personnel IT sur les technologies utilisés
 * Formation du personnel IT à la maintenance des nouveaux systèmes
-
-### Argumentation
-#### Rapports et avis des experts
-* Projections pour le marché du bio optimistes
-* Projections pour le secteur de la vente en ligne très optimistes
-* Sous secteur niche peu représenté et concurence peu agressive
-
-* Projections pour le marché des produits chimique à usage agricole pessimistes
-
-* Secteur stagnant, 
-* Prévisions optimistes à l'issue d'une implémentation hypotétiquement fructueuse du projet: Retour à une situation équilibrée mais préquaire grace au recouvrement du secteur de vente non couvert
-
-
-* Estimations du rapport sur investissement optimiste
-
-* atteindre les 25% de vignerons qui achète leurs produits sur Internet
-* société moderne (notoriété)
-* relancer l'entreprise
 
 ## Etude de faisabilité
 
@@ -94,7 +69,7 @@ Insertion de l'entreprise dans le secteur de la vente en ligne
     * Département Marketing : bonne connaissance de la vente en ligne
     * Département IS : bonne connaissance des application eCommerce
 * Connaissance des technologies : haute
-    * Dépt Is : bonne connaissance des technologies eCommerce
+    * Département IS : bonne connaissance des technologies eCommerce
     * Composants modulaires réutilisables avec peu de modifications
 * Taille du projet
     * Petite à moyenne taille

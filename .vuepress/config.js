@@ -16,7 +16,7 @@ module.exports = {
     repoLabel: 'github',
     editLinks: true,
     editLinkText: 'Editer cette page',
-    lastUpdated: 'Dernière mise à jour',
+    lastUpdated: 'Dernière mise à jour du wiki',
     nav: [
       {text: 'Home', link: '/'},
       {text: 'Tutos', link: '/tutos'},
