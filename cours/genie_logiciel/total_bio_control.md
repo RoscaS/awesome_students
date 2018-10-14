@@ -47,7 +47,6 @@ Insertion de l'entreprise dans le secteur de la vente en ligne
 ### Apports attendus
 
 #### Tangibles
-* ~167'000CHF/an après 1 an de démarrage
 * Restauration de la balance économique  
 * Positionnement stable sur le secteur de la vente en ligne de produits spécialisé dans l'optimisation de la production viticole
 
@@ -64,33 +63,28 @@ Insertion de l'entreprise dans le secteur de la vente en ligne
 
 ## Etude de faisabilité
 
-### Faisabilité *techniques* (excellente)
-* Connaissance du domaine d'application : bonne
-    * Département Marketing : bonne connaissance de la vente en ligne
-    * Département IS : bonne connaissance des application eCommerce
-* Connaissance des technologies : haute
-    * Département IS : bonne connaissance des technologies eCommerce
-    * Composants modulaires réutilisables avec peu de modifications
-* Taille du projet
-    * Petite à moyenne taille
-    * Utilisation de technologies existantes
+### Faisabilité *techniques* (<span style="color: green;">excellente</span>)
+#### Connaissance du domaine d'application : <span style="color: green;">bonne</span>
+* Département Marketing : bonne connaissance de la vente en ligne
+* Département IS : bonne connaissance des application eCommerce
+#### Connaissance des technologies : <span style="color: green;">bonne</span>
+* Département IS : bonne connaissance des technologies eCommerce
+* Composants modulaires réutilisables avec peu de modifications
+#### Taille du projet
+* Petite à moyenne taille
 
-### Faisabilité *économique* (moyenne)
-* Bénéfices tangibles
-    * 167'000 CHF de revenu supplémentaire générés par l'augmentation des ventes sur internet
-    > balance un pourcentage de gain bordel
-* Bénéfices non tangibles
-    * Amélioration de l'image de la société
-    * Visibilité de la société (référencement viral)
-    * Extension du public cible
-* Inconvénients
-    * Coût supplémentaires (services externes utilisés pour la mise en place du site)
+### Faisabilité *économique* (<span style="color: green;">bonne</span>)
+#### Bénéfices tangibles
+* 25% (167'000 CHF) de revenu annuel supplémentaire générés par l'augmentation des ventes sur internet
+#### Bénéfices non tangibles
+* Amélioration de l'image de la société
+* Visibilité de la société
 
-### Faisabilité *organisationnelle* (moyenne)
-* Initiateur et suivi du projet
-    * Patron TotalBioControl
-    * Suivi par l'informaticien
-* Autres intervenants
-    * Utilisation de services externes pour le site
-* Les utilisateurs
-    * Le pool de clients potentiel reste peu changé mais manque à gagné vis à vis de la préférence acrue des anciens clients pour le confort de l'achat en ligne.
+### Faisabilité *organisationnelle* (<span style="color: orange;">moyenne</span>)
+#### Initiateur et suivi du projet
+* Patron TotalBioControl
+* Suivi par l'informaticien
+#### Autres intervenants
+* Utilisation de services externes pour le site
+#### Les utilisateurs
+* Le pool de clients potentiel reste peu changé mais manque à gagné vis à vis de la préférence acrue des anciens clients pour le confort de l'achat en ligne.

@@ -42,7 +42,7 @@
         <!--get () { return this.str },-->
         <!--set (value) {-->
 
-          <!--let md = require('markdown-it')(),-->
+          <!--let md = require('markdown-it'),-->
             <!--mk = require('markdown-it-katex')-->
 
           <!--md.use(mk)-->
