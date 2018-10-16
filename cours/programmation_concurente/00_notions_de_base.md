@@ -1,5 +1,5 @@
 ---
-title: Overview de la notion de thread
+title: Introduction aux threads
 date: 2018-09-01
 author:  Sol
 sidebar: auto
@@ -411,7 +411,7 @@ int pthread_join(pthread_t thread, void** thread_return);
  * Le premier paramètre est l'identifiant du thread
  * Le second, un pointeur qui permet de récupérer une éventuelle valeur retournée par `pthread_exit`.
 
-Il est égallement de bonne pratique que de wrapper le `pthread_join` dans un test:
+Il est également de bonne pratique que de wrapper le `pthread_join` dans un test:
 
 ```c    
 int main(int argc, char *argv[]) {
@@ -438,6 +438,161 @@ Et maintenant l'output sera toujours le même:
     Avant la création du thread
     Dans le thread
     Fin du main
+
+
+### Terminaison d'un thread
+Il est important de correctement terminer un thread pour ne pas laisser le système dans un état incohérent. 
+Il existe deux façon de terminer un thread:
+
+#### Auto terminaison
+```c
+void pthread_exit(void *value);
+```
+* Cette fonction met fin au thread et retourne `value` au thread appelant (peut être le main biensur). Le thread appelant récupère la valeur de retour via un join (`pthread_join`)
+* Il est également possible d'utiliser le mot clé `return value` de la même façon
+* Lorsque `pthread_exit` est appelé depuis le thread principal (main), ce dernier **se bloque et attend que tous ses threads enfants soient terminés avant de se terminer** lui-même.
+* La fonction `exit(int status)` permet de terminer le processus, ce qui a pour effet de terminer instantanément tous les threads du processus. **Quel que soit le thread ayant appelé `exit`**
+
+#### Annulation
+```c
+int pthread_cancel(pthread_t thread);
+```
+* Cette fonction permet de terminer un thread depuis un autre thread
+* `thread` est le thread à terminer
+* **Le seul moyen pour savoir si un thread a été annulé est de faire un `pthread_join` puis d'inspecter la valeur de retour du thread. En cas d'annulation cette dernière est alors `PTHREAD_CANCELED`**
+* Si la fonction du thread s'est terminée avant l'appel à `pthread_cancel`, alors la valeur `ESRCH` est retournée (thread non trouvé); la constant `ESRCH` est définie dans le header `errno.h`
+* La fonction renvoie `0` en cas de succès
+
+```c
+#include <errno.h>
+
+void* func(void* arg) {
+    int static return_code = 77;
+    sleep(3);
+    printf("thread finished\n");
+    pthread_exit(&return_code);
+}
+
+int main(int argc, int** argv) {
+    pthread_t th;
+    pthread_create(&th, NULL, func, NULL);
+    sleep(1);
+
+    int code = pthread_cancel(th);
+    if (code == ESRCH) printf("cancel: thread already finished!\n");
+    else if (code != 0) perror("cancel: pthread_cancel FAILED");
+
+    int *v;
+    pthread_join(th, (void **)&v);
+
+    if (v == PTHREAD_CANCELED) printf("thread canceled\n");
+    else printf("thread return code %d\n", *v);
+
+    return EXIT_SUCCESS;
+}
+```
+
+
+#### Politique d'annulation
+```c
+int pthread_setcancelstate(int state, int *oldstate);
+```
+Cette fonction permet à un thread de définir sa politique d'annulation
+* `state` peut prendre les valeurs suivantes:
+    * `PTHREAD_CANCEL_ENABLE`: Autorise l'annulation (par défaut)
+    * `PTHREAD_CANCEL_DISABLE`: Interdit l'annulation
+* `oldstate` contient ensuite l'ancienne politique d'annulation
+* Renvoie 0 en cas de succès
+
+Si Le thread autorise l'annulation, il peut alors définir son type d'annulation avec:
+```c
+int pthread_setcanceltype(int type, int *oldtype);
+```
+
+* `type` peut prendre les valeurs suivantes:
+    * `PTHREAD_CANCEL_DEFERRED`: Autorise l'annulation en des points précis (par défaut)
+    * `PTHREAD_CANCEL_ASYNCHRONOUS`: Autorise l'annulation n'importe quand
+* `oldtype` contient ensuite l'ancien type d'annulation
+* Renvoie 0 en cas de succès
+
+Un thread peut placer ses points d'annulation avec:
+```c
+void pthread_testcancel(void);
+```
+
+* L'annulation est donc permise en ces points
+
+::: danger Attention !
+Certains appels systèmes sont des points d'annulation, en particulier les fonctions d'entrée/sortie car potentiellement bloquantes. Ex: `fopen`, `write`, `fprintf`, ...
+:::
+
+
+```c
+#include <errno.h>
+
+int counter = 0;
+
+void *func(void *arg) {
+    int old_state, old_type;
+    pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, &old_state);
+    pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, &old_type);
+    while (counter < 100000) {
+        counter++;
+        // if (counter == 50000) {
+        pthread_testcancel();
+        // }
+    }
+}
+
+int main(int argc, char *argv[]) {
+    pthread_t th;
+    pthread_create(&th, NULL, func, NULL);
+    pthread_cancel(th);
+    pthread_join(th, NULL);
+    printf("Counter: %d\n", counter);
+    return EXIT_SUCCESS;
+}
+```
+
+### Auto identification
+```c
+pthread_t pthread_self();
+```
+Cette fonction appelée depuis la fonction associée à un thread permet d'identier le thread.
+
+* Même valeur d'identifiant que celle retournée en premier argument de la fonction `pthread_create`
+* Chaque thread dispose d'un ID unique
+* Sur linux (x64) l'ID est un `unsigned long int`
+* Il n'est pas garanti que l'identifiant d'un thread soit un entier! Le type est propre à l'implémentation
+
+### Comparaison d'identification
+```c
+int pthread_equal(pthread_t t1, pthread_t t2);
+```
+Cette fonction permet de comparer deux identifiants.
+
+* Si `t1` et `t2` sont égaux, alors la fonction renvoie une valeur différente de zéro
+* Il est nécessaire d'utiliser cette fonction pour comparer le identifiants, car **rien ne garenti que les types pthread_t soient des valeurs comparable avec l'opérateur d'égalité `=`.**
+
+### Rendre le processeur
+```c
+#include <sched.h>
+int scheld_yield();
+```
+
+Cette fonction permet de forcer le thread appelant à relacher le processeur
+
+* Après l'appel à cette fonction, le thread est placé à la fin de la file d'attente des threads en attente du processeur
+* Le thread suivant en attente du processeur est alors activité
+* Renvoie zéro en cas de succès
+
+### Fonctions async-cancel-safe
+
+Une fonction est dite _async-cancel-safe_ si elle peut être annulée de manière asynchrone (de façon concurrente donc). Si une fonction n'est pas considérée _async-cancel-safe_ peut potentiellement **engendrer un crash du programme!** Parmi toutes les fonctions de la librairie POSIX Threads, seules les 3 fonctions suivantes sont garanties d'être _async-cancel-safe_:
+* `pthread_cancel`
+* `pthread_setcancelstate`
+* `pthread_setcanceltype`
+
 
 ### Exemples complets
 Le code suivant illustre une utilisation plus avancée avec un argument passés à la fonction qui exécute le thread ainsi qu'une valeur de retour:
@@ -569,13 +724,6 @@ Output:
 De la même façon que dans le code précédent, notez l'utilisation du `malloc` en ligne 16 ainsi que la gestion de la valeur de retour en ligne 38.
 
 </Spoiler>
-
-
-
-
-
-
-
 
 
 
