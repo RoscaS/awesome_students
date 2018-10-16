@@ -1,24 +1,30 @@
 <script>
-  // import VueCharts from "vue-chartjs"
-  // export default {
-  //   name: 'Charts',
-  // }
-
-  import { Bar } from 'vue-chartjs'
+  import { Line } from 'vue-chartjs'
 
   export default {
-    extends: Bar,
+    data: () => ({
+      options: {responsive: false, maintainAspectRatio: false}
+    }),
+    props: {
+      x: {type: Array},
+      y: {type: Array},
+      height: {type: Number, default: 200},
+    },
+    extends: Line,
     mounted () {
-      // Overwriting base render method with actual data.
       this.renderChart({
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        labels: this.x,
+        xAxisID: 'x',
+        yAxisID: 'y',
         datasets: [
           {
-            label: 'GitHub Commits',
-            backgroundColor: '#f87979',
-            data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
+            data: this.y,
+            label: 'Sin(x)',
+            backgroundColor: '#3eaf7c',
+            borderColor: '#3eaf7c',
+            fill: false,
           }
-        ]
+        ],
       })
     }
   }

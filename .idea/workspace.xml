@@ -79,39 +79,41 @@
     <session id="672386787">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="30" />
+          <entry key="project.closed" value="33" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.5" value="5" />
-          <entry key="project.open.time.6" value="15" />
-          <entry key="project.open.time.7" value="5" />
+          <entry key="project.open.time.6" value="16" />
+          <entry key="project.open.time.7" value="6" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="31" />
+          <entry key="project.opened" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
           <entry key="gitignore" value="2" />
-          <entry key="js" value="6" />
+          <entry key="js" value="8" />
           <entry key="json" value="6" />
-          <entry key="md" value="26" />
+          <entry key="md" value="30" />
           <entry key="properties" value="1" />
-          <entry key="styl" value="8" />
-          <entry key="vue" value="58" />
+          <entry key="scss" value="2" />
+          <entry key="styl" value="9" />
+          <entry key="vue" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="6" />
-          <entry key="Markdown" value="21" />
+          <entry key="JavaScript" value="8" />
+          <entry key="Markdown" value="25" />
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Stylus" value="8" />
-          <entry key="Vue.js" value="58" />
+          <entry key="SCSS" value="2" />
+          <entry key="Stylus" value="9" />
+          <entry key="Vue.js" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -119,19 +121,19 @@
           <entry key="gitignore" value="25" />
           <entry key="js" value="130" />
           <entry key="json" value="1" />
-          <entry key="md" value="1466" />
+          <entry key="md" value="1505" />
           <entry key="styl" value="52" />
-          <entry key="vue" value="12853" />
+          <entry key="vue" value="14556" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="130" />
-          <entry key="Markdown" value="652" />
+          <entry key="Markdown" value="691" />
           <entry key="PLAIN_TEXT" value="839" />
           <entry key="Stylus" value="52" />
-          <entry key="Vue.js" value="12853" />
+          <entry key="Vue.js" value="14556" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -143,79 +145,43 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7302861">
+    <splitter split-orientation="horizontal" split-proportion="0.7231183">
       <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.45936903">
+        <splitter split-orientation="horizontal" split-proportion="0.5">
           <split-first>
-            <splitter split-orientation="vertical" split-proportion="0.5">
-              <split-first>
-                <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-                  <file pinned="false" current-in-tab="true">
-                    <entry file="file://$PROJECT_DIR$/.vuepress/components/Spoiler.vue">
-                      <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="874">
-                          <caret line="38" selection-start-line="38" selection-end-line="38" />
-                          <folding>
-                            <element signature="e#383#432#0" expanded="true" />
-                          </folding>
-                        </state>
-                      </provider>
-                    </entry>
-                  </file>
-                </leaf>
-              </split-first>
-              <split-second>
-                <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-                  <file pinned="false" current-in-tab="true">
-                    <entry file="file://$PROJECT_DIR$/.vuepress/components/Media.vue">
-                      <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="69">
-                          <caret line="3" column="32" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="32" />
-                        </state>
-                      </provider>
-                    </entry>
-                  </file>
-                </leaf>
-              </split-second>
-            </splitter>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/.vuepress/components/Col.vue">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="1087">
+                      <caret line="131" column="28" lean-forward="true" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/config.styl">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state>
+                      <caret line="20" selection-start-line="20" selection-end-line="20" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
           </split-first>
           <split-second>
-            <splitter split-orientation="vertical" split-proportion="0.5">
-              <split-first>
-                <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-                  <file pinned="false" current-in-tab="false">
-                    <entry file="file://$PROJECT_DIR$/.vuepress/components/Col.vue">
-                      <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="276">
-                          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-                        </state>
-                      </provider>
-                    </entry>
-                  </file>
-                  <file pinned="false" current-in-tab="true">
-                    <entry file="file://$PROJECT_DIR$/cours/algo/binary_heap.md">
-                      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                        <state split_layout="FIRST">
-                          <first_editor relative-caret-position="207">
-                            <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-                          </first_editor>
-                          <second_editor />
-                        </state>
-                      </provider>
-                    </entry>
-                  </file>
-                </leaf>
-              </split-first>
-              <split-second>
-                <leaf>
-                  <file pinned="false" current-in-tab="true">
-                    <entry file="file://$PROJECT_DIR$/.vuepress/components/Charts.vue">
-                      <provider selected="true" editor-type-id="text-editor" />
-                    </entry>
-                  </file>
-                </leaf>
-              </split-second>
-            </splitter>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/.vuepress/components/Tree.vue">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="575">
+                      <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="31" selection-end-column="20" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
           </split-second>
         </splitter>
       </split-first>
@@ -224,8 +190,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/SpoilerTags.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+                <state relative-caret-position="736">
+                  <caret line="32" selection-start-line="32" selection-end-line="32" />
                 </state>
               </provider>
             </entry>
@@ -244,11 +210,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>léments et ceci indépendamment de l'o</find>
-      <find>customCont</find>
-      <find>Article</find>
-      <find>header-anc</find>
-      <find>page</find>
       <find>meta</find>
       <find>spotli</find>
       <find>code</find>
@@ -274,6 +235,11 @@
       <find>MQMobile</find>
       <find>katex</find>
       <find>markdown-it</find>
+      <find>treed</find>
+      <find>border</find>
+      <find>background</find>
+      <find>node</find>
+      <find>img</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/.vuepress</dir>
@@ -285,13 +251,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.vuepress/components/Login.vue" />
-        <option value="$PROJECT_DIR$/.vuepress/theme/NavLinks.vue" />
-        <option value="$PROJECT_DIR$/.vuepress/auth.js" />
-        <option value="$PROJECT_DIR$/articles/algo/README.md" />
-        <option value="$PROJECT_DIR$/articles/algo/bubble.md" />
-        <option value="$PROJECT_DIR$/articles/algo/Sorts.md" />
-        <option value="$PROJECT_DIR$/.vuepress/config.js" />
         <option value="$PROJECT_DIR$/.vuepress/config.js" />
         <option value="$PROJECT_DIR$/.vuepress/components/Article.vue" />
         <option value="$PROJECT_DIR$/articles/dev_ops/test.md" />
@@ -326,16 +285,23 @@
         <option value="$APPLICATION_CONFIG_DIR$/idea.properties" />
         <option value="$PROJECT_DIR$/.vuepress/components/Def.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/Media.vue" />
-        <option value="$PROJECT_DIR$/.vuepress/components/SpoilerTags.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/Spoiler.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/liveKatex.vue" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/.vuepress/components/Col.vue" />
         <option value="$PROJECT_DIR$/.vuepress/theme/styles/config.styl" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.vuepress/components/LiveKatex.vue" />
         <option value="$PROJECT_DIR$/cours/algo/binary_heap.md" />
         <option value="$PROJECT_DIR$/.vuepress/components/Charts.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/components/Nomnoml.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/components/Mermaid.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/components/TreeCharts.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/components/Graphs.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/components/TreeChart.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/components/__TreeChart.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/components/SpoilerTags.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/components/Col.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/components/Tree.vue" />
       </list>
     </option>
   </component>
@@ -355,10 +321,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="7" />
-    <option name="y" value="-8" />
-    <option name="width" value="1911" />
-    <option name="height" value="2161" />
+    <option name="x" value="968" />
+    <option name="y" value="5" />
+    <option name="width" value="1905" />
+    <option name="height" value="2150" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -411,6 +377,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -432,6 +399,23 @@
             <path>
               <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
               <item name="00_AwesomeStudents" type="462c0819:PsiDirectoryNode" />
+              <item name="articles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_AwesomeStudents" type="462c0819:PsiDirectoryNode" />
+              <item name="articles" type="462c0819:PsiDirectoryNode" />
+              <item name="algo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_AwesomeStudents" type="462c0819:PsiDirectoryNode" />
+              <item name="articles" type="462c0819:PsiDirectoryNode" />
+              <item name="divers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="00_AwesomeStudents" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_AwesomeStudents" type="462c0819:PsiDirectoryNode" />
               <item name="cours" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -444,12 +428,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../00_Awesome_students2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../05_SNASE/SNASE-Frontend" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -536,12 +519,14 @@
       <workItem from="1539361455527" duration="1762000" />
       <workItem from="1539448889597" duration="1864000" />
       <workItem from="1539467212827" duration="3018000" />
-      <workItem from="1539520251641" duration="2840000" />
+      <workItem from="1539520251641" duration="21139000" />
+      <workItem from="1539593744461" duration="2632000" />
+      <workItem from="1539687253008" duration="1531000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166768000" />
+    <option name="totallyTimeSpent" value="189230000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="7" y="-8" width="3826" height="2161" extended-state="6" />
@@ -563,7 +548,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.11145997" />
+      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.07195186" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,51 +568,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/blog/_Os/_Linux/linux_ranger.md" />
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/RenderlessPagesList.vue" />
-    <entry file="file://$PROJECT_DIR$/.vuepress/theme/AlgoliaSearchBox.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1076">
-          <caret line="17170" column="21" lean-forward="true" selection-start-line="17170" selection-start-column="21" selection-end-line="17170" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/Auth.vue" />
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/Login.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/SiteTitle.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/theme/NavLinks.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
-          <caret line="69" column="49" lean-forward="true" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/Logout.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -852,9 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="874">
           <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="e#383#432#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -862,13 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" column="32" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/config.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -900,32 +830,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/SpoilerTags.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/Col.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cours/algo/binary_heap.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="207">
-            <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cours/algo/shell_sort.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/articles/divers/chartJS_example.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/nomnoml/dist/nomnoml.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/mermaid/src/themes/class.scss" />
+    <entry file="file://$PROJECT_DIR$/node_modules/mermaid/dist/mermaid.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/vue-tree-chart/lib/components/TreeChart.vue" />
     <entry file="file://$PROJECT_DIR$/.vuepress/components/Charts.vue">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/Graphs.vue" />
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/__TreeChart.vue" />
+    <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/config.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/SpoilerTags.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/Col.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1087">
+          <caret line="131" column="28" lean-forward="true" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/Tree.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="31" selection-end-column="20" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

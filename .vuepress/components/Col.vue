@@ -120,6 +120,7 @@
 
   @media (max-width: 1150px){
     .column {
+      margin-top: 0 !important;
       width: auto;
     }
   }
@@ -130,11 +131,12 @@
   }
   @media (max-width: 720px){
     .column {
-      /*width: 50vw;*/
+      margin-top: inherit !important;
     }
   }
   @media (max-width: 650px){
     .column {
+      margin-top: 0 !important;
       width: auto;
     }
   }
