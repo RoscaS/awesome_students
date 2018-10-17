@@ -5,6 +5,12 @@ author:  Sol
 sidebar: auto
 ---
 
+## Source
+
+* Cours de madame Aïcha Rizzotti (He-Arc Neuchâtel)
+* [Openclassrooms](https://openclassrooms.com/)
+* [Wikipedia](https://en.wikipedia.org)
+
 ##  Notions de base
 
 * Un **programme** est une suite d'instructions (notion statique). On peut le voir comme une classe.
@@ -908,4 +914,5 @@ output:
 * `PTHREAD_MUTEX_INITIALIZER`:
 * `pthread_mutex_lock`
 * `pthread_cond_wait`
+
 

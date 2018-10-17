@@ -7,8 +7,13 @@ sidebar: auto
 
 Cet article vise à introduire la **corruption de données** qui est un problème clé de la programmation concurrente.
 
-##  Problématique
+## Source
 
+* Cours de madame Aïcha Rizzotti (He-Arc Neuchâtel)
+* [Wikipedia](https://en.wikipedia.org)
+
+
+##  Problématique
 
 ```C
 void *func1(void *arg) {
@@ -130,4 +135,5 @@ Ce programme est essentiellement le même que le premier et est tout autant ind�
 Nous voici face à un des problèmes de la programmation concurrente: **La corruption de données**.
 
 Les prochains articles détailleront comment gérer cette situation.
+
 
