@@ -730,7 +730,7 @@ De la même façon que dans le code précédent, notez l'utilisation du `malloc`
 
 
 
-## Les mutex
+## Les mutex TEMPORAIRE EN ATTENTE D UNE REECRITURE
 Pour palier aux inconvénients que pourrait causer un accès simultanné aux mêmes ressources nous avons plusieurs outils. 
 
 Le **mutex** est un outil qui permet l'**exclusion mutuelle**. Concrètement en C, un **mutex** est une variable de type `pthread_mutex_t` qui nous sert de **verrou** pour protéger des données. Ce verrou peut prendre deux états:

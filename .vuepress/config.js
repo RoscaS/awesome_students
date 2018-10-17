@@ -20,6 +20,7 @@ module.exports = {
     nav: [
       {text: 'Home', link: '/'},
       {text: 'Tutos', link: '/tutos'},
+      {text: 'Archives', link: 'https://roscas.github.io/'},
     ],
     sidebar: [
       {
