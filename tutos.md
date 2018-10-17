@@ -235,10 +235,14 @@ Dans le <Def def="markdown.json">document qui vient de s'ouvrir</Def> effacez to
 	"danger": {
 		"prefix": "danger",
 		"body": "::: danger ${1:titre}\n${2:contenu}\n:::\n"
+  },
+  "style": {
+		"prefix": "style",
+		"body": "<st c=\"${2:rgb}\">$1</st>"
 	},
 	"def": {
 		"prefix": "def",
-		"body": "<Def def=\"${1:définition}\">${2:mot}</Def>"
+		"body": "<Def def=\"${2:définition}\">${1:mot}</Def>"
 	},
 	"spoiler": {
 		"prefix": "spoiler",
@@ -364,31 +368,32 @@ Tout en bas dans `themeConfig.sideBar` se trouve une ramification similaire à c
 Trouvez l'objet qui a pour `title` **cours**. Sous le meme format que le reste, ajoutez  dans son children une entrée `popotte`:
 
 ```javascript{19}
-    // ../AwesomeStudents/.vuepress/config.js
+// ../AwesomeStudents/.vuepress/config.js
 
-    // ...
-    sidebar: [
-      {
-        title: 'Cours',
-        collapsable: true,
-        children: [
-          '/cours/qt/',
-          '/cours/java/',
-          '/cours/algo/',
-          '/cours/programmation_concurente/',
-          '/cours/genie_logiciel/',
-          '/cours/traitement_signal/',
-          '/cours/base_de_donnees/',
-          '/cours/protocoles_reseaux/',
-          '/cours/developpement_web/',
-          '/cours/analyse/',
-          '/cours/popotte/',
-        ],
-      },
-    //  ...
+// ...
+sidebar: [
+  {
+    title: 'Cours',
+    collapsable: true,
+    children: [
+      '/cours/qt/',
+      '/cours/java/',
+      '/cours/algo/',
+      '/cours/programmation_concurente/',
+      '/cours/genie_logiciel/',
+      '/cours/traitement_signal/',
+      '/cours/base_de_donnees/',
+      '/cours/protocoles_reseaux/',
+      '/cours/developpement_web/',
+      '/cours/analyse/',
+      '/cours/popotte/',
+    ],
+  },
+//  ...
 ```
 ::: danger ATTENTION!
 * Ne pas oublier le `/` à la fin de la string et la `,` en fin de ligne
 * Ne rien changer d'autre
 * Dans le doute, demandez moi de créér la nouvelle sous-branche
 :::
+
