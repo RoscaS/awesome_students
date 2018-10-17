@@ -42,14 +42,13 @@
       },
       leftWidth() {
         let left = parseInt(this.listProportions[0])*10;
-        return `width: ${left}vw !important;`;
+        return `width: ${left}vw;`;
       },
       rightWidth() {
         let right = parseInt(this.listProportions)[1]*10;
-        return `width: ${right}vw !important;`;
+        return `width: ${right}vw;`;
       },
       rightVAlign() {
-        console.log(this.vAlign)
         return `margin-top: ${this.vAlign}px;`;
       }
     },
@@ -93,12 +92,12 @@
 
   @media (max-width: 1150px){
     .column {
-      width: auto;
+      width: 100% !important;
     }
   }
   @media (max-width: 650px){
     .column {
-      width: auto;
+      width: 100% !important;
     }
   }
   @media (max-width: 720px){
@@ -108,7 +107,7 @@
   }
   @media (max-width: 650px){
     .column {
-      width: auto;
+      width: 100% !important;
     }
   }
 
@@ -121,12 +120,12 @@
   @media (max-width: 1150px){
     .column {
       margin-top: 0 !important;
-      width: auto;
+      width: 100% !important;
     }
   }
   @media (max-width: 650px){
     .column {
-      width: auto;
+      width: 100% !important;
     }
   }
   @media (max-width: 720px){
@@ -137,7 +136,7 @@
   @media (max-width: 650px){
     .column {
       margin-top: 0 !important;
-      width: auto;
+      width: 100% !important;
     }
   }
 

@@ -145,6 +145,21 @@ code, kbd, .line-number
   font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
 
 
+//code :not(token)
+//  color $codeTextColor !important
+
+  code {
+    color: $codeTextColor !important;
+    font-weight: bold !important;
+  }
+
+  pre>code {
+    color: white !important;
+    font-weight: normal !important
+  }
+
+
+
 p, ul, ol
   line-height 1.7
 

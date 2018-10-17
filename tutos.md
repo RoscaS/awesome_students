@@ -44,37 +44,50 @@ Adipisci beatae consectetur distinctio doloremque ea excepturi id, impedit itaqu
 
 </Spoiler>
 
-```md{2,4}
+```md{2,5}
 <Spoiler>
 
-N'importe quel type de contenu md habituel **à l'exception d'une autre balise spoiler!**
+N'importe quel type de contenu md habituel 
+**à l'exception d'une autre balise spoiler!**
 
 </Spoiler>
 
 ```
 
-::: danger ATTENTION !
-**Une ligne vide est requise après l'ouverture et avant la fermeture!**
-:::
+<st c="r">Les lignes vides avant et après le contenu sont requises! </st>
+
+
+### Couleurs dans le text
+Un mot <st c="g">vert</st>, un mot <st c="r">rouge</st> et une <st c="b"> fin de phrase bien bleu</st>.
+
+```html
+Un mot <st c="g">vert</st>, un mot <st c="r">rouge</st> et 
+une <st c="b"> fin de phrase bien bleu</st>.
+```
+
+|     | type   | values              | default |
+| --- | ------ | ------------------- | :-----: |
+| `c` | string | `"r"`: red <br> `"g"`: green <br> `"b"`: blue | `"r"`   |
+
 
 ### Controle avancé sur les médias
 
 <Media
-  src="https://imgur.com/z4U3kwu.gif"
+  src="https://v1.vuejs.org/images/logo.png"
   url="https://www.google.com"
-  caption="Une image qui bouge"
+  caption="Un beau logo"
   center="true"
-  width="250"
+  width="150"
 />
 
 
 ```html
 <Media
-  src="https://imgur.com/z4U3kwu.gif"
+  src="https://v1.vuejs.org/images/logo.png"
   url="https://www.google.com"
-  caption="Une image qui bouge
+  caption="Un beau logo
   center="true"
-  width=350
+  width=150
 />
 ```
 Tous les paramètres sont optionnels.
@@ -90,11 +103,11 @@ Tous les paramètres sont optionnels.
 <template slot="right">
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta doloribus facilis, illum maxime perspiciatis quasi sed.
-    
+
 </template>
 </Col>
 
-```html{3,5,8,10}
+```html{3,5,8,12}
 <Col spacer="1" proportions="5/5" vAlign="0">
 <template slot="left">
 
@@ -103,11 +116,14 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta dolor
 </template>
 <template slot="right">
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta doloribus facilis, illum maxime perspiciatis quasi sed.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Aspernatur dicta doloribus facilis, 
+illum maxime perspiciatis quasi sed.
     
 </template>
 </Col>
 ```
+<st c="r">Les lignes vides avant et après le contenu des colonnes sont requises! </st>
 * Paramètres:
 
 |               | type   | format | default |
@@ -115,12 +131,6 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta dolor
 | `spacer`      | string | "n"    | 1       |
 | `proportions` | string | "n/m"  | 5/5     |
 | `vAlign`      | string | "n"    | 0       |
-
-
-::: danger Attention !
-Une ligne vide est requise avant et après le contenu de chaque balise `template`
-:::
-
 
 
 
@@ -139,9 +149,10 @@ fetchData() {
 },
 ```
 
-Vous pouvez highlight autant de lignes que vous voulez en les séparant par des `,`.
+Vous pouvez highlight autant de lignes que vous voulez en les séparant par des `,`:
 
-ex: `cpp{2,5,14}`. **Sans espace!**
+<code>```cpp{2,5,14}</code> (Sans espace après les `,`).
+
 
 ### Custom containers
 
