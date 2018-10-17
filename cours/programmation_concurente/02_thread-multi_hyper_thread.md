@@ -1,6 +1,6 @@
 ---
 title: Threads, multi/hyper threading et multiprocessing
-date: 2018-10-17
+date: 2018-10-14
 author: Sol
 sidebar: auto
 ---
@@ -23,8 +23,8 @@ sidebar: auto
 </Spoiler>
 
 
-* Le **multithreading** est une architecture qui vise à optimiser l'utilisation d'un coeur unique en mettant en parallèle plusieurs threads
-* Le **multiprocessing** est le fait d'avoir plusieurs coeurs dans le même CPU
+* Le **multithreading** est une architecture qui vise à optimiser l'utilisation d'un coeur unique en mettant en parallèle plusieurs threads.
+* Le **multiprocessing** est le fait **d'utiliser** plusieurs CPU dans la même machine (Une machine qui **utilise** un CPU multi-coeur satisfait cette définition).
 * L'**hyperthreading** est une technologie propriétaire qui vise à améliorer les performances du multithreading en simulant (virtualisant) deux coeurs distincts à partir d'un seul.
 
 Extrais de la commande `lscpu` sur un i7-8550U
@@ -36,8 +36,30 @@ Extrais de la commande `lscpu` sur un i7-8550U
     Core(s) per socket:  4
     Socket(s):           1
 
-Nous avons donc **4 coeurs physiques** divisés en 2 coeurs logiques chacun ce qui nous donne un total **8 coeurs logiques**.
+* Le fait d'utiliser plusieurs coeurs physiques est appellé **multiprocessing**, 
+* Chaque coeur est capable de gérer 2 threads c'est du **multithreading**
+* Chaque coeur est virtuellement divisé en deux CPUs distincts grace à l'**hyperthreading**
 
-Le fait d'avoir plusieurs coeurs physiques est appellé **multiprocessing**, chaque coeur est capable de gérer plusieurs threads 
+::: danger Moment phylosophie 
+Un processeur qui contient et utilise plusieurs coeurs satisfait la définition du multiprocessing (Comme chaque coeur est lui même un processeur). 
+
+Si on prend à part un de ces coeurs, le coeur en lui même ne fait pas de multiprocessing...
+
+...Sauf si il est hyperthreadé et donc est logiquement divisé en deux coeurs distincts qui sont eux même des processeurs et donc un de ces coeurs unique hyperthreadé satisfait à nouveau la définition du multiprocessing.
+:::
+
+
+<Spoiler>
+
+>Poser la question en cours!
+
+`$htop` est un gestionnaire de processus sur Linux dont voici une capture d'écran:
+![Image](https://i.imgur.com/GJFE16J.png)
+
+L'information en haut à droite `Tasks: 104, 649 thr; 1 running` est déroutante. Elle ne veut pas dire que 104 taches étalées sur 649 threads fonctionnent en ce moment. Elle indique que 104 taches **idle** sont réparties sur 649 threads **potentiels** et qu'il y a actuellement 1 de ces threads qui est en cours d'exécution sur les 8 possibles.
+
+
+</Spoiler>
+
 
 
