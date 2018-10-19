@@ -14,6 +14,8 @@
 * [toptal.com](https://www.toptal.com/developers/sorting-algorithms) Sorting comparaison
 
 ### Tools
+
+
 #### Code
 * [python tutor](http://www.pythontutor.com/) but not only python
 

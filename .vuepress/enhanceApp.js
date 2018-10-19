@@ -1,7 +1,6 @@
 import auth from './auth'
 import VTooltip from 'v-tooltip'
 
-
 const Callback = () => import('./components/Callback')
 const Login = () => import('./components/Login')
 const Logout = () => import('./components/Logout')

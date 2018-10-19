@@ -2,7 +2,7 @@
 title: "Exercice 1: BestShop"
 date: 2018-09-27
 sidebar: auto
-author: "Nathan Latino, Michael Kneuss, Sol Rosca"
+author: "Nathan, Michael, Sol"
 ---
 
 ## Meta

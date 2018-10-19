@@ -10,7 +10,6 @@ sidebar: auto
 * Cours de madame Aïcha Rizzotti (He-Arc Neuchâtel)
 * [Openclassrooms](https://openclassrooms.com/)
 * [developpez.com](https://franckh.developpez.com/tutoriels/posix/pthreads/)
-* [computing.llnl](https://computing.llnl.gov/tutorials/pthreads/)
 * [Wikipedia](https://en.wikipedia.org)
 
 ##  Notions de base

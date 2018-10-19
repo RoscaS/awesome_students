@@ -35,6 +35,6 @@
   }
 
   p {
-    line-height: 10px;
+    /*line-height: 10px;*/
   }
 </style>

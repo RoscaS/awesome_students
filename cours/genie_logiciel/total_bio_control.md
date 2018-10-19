@@ -1,7 +1,7 @@
 ---
 title: "Exercice 2: Total Bio Control"
 date: 2018-10-10
-author:  "Nathan Latino, Michael Kneuss, Sol Rosca"
+author:  "Nathan, Michael, Sol"
 sidebar: auto
 ---
 
