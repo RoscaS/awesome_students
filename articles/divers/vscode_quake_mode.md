@@ -52,7 +52,7 @@ I3 window manager + Arch Linux
 * Gestion on th fly de la transparence d'une fenetre de KDE (avec la molette de la souris par ex). Vérifier si c'est [compton](https://wiki.archlinux.org/index.php/compton) qui gère la transparence de KDE aussi.
 
 ## Piste settings i3
-```sh
+```shell
 for_window [class="Peek"] floating enable
 for_window [class="albert"] floating enable
 for_window [class="Xfce4-appfinder"] floating enable

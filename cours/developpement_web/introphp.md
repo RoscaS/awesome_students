@@ -60,7 +60,7 @@ echo $variable              #affichera 43
 //TODO
 
 #### Serveur Web interne PHP
-```sh
+```shell
 $ cd ~/public_html
 $ php -S localhost:8000
 ```

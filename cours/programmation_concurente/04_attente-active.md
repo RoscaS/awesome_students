@@ -366,6 +366,9 @@ void *T1(void *arg) {
 #### Algorithme de Peterson
 
 ```c
+bool enter[2] = { false, false };
+int turn = 0;
+
 void *T0(void *arg) {
     while (true) {
         enter[0] = true;

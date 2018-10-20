@@ -49,7 +49,7 @@ On pourrait se dire que comme nous avons 2 threads qui gonflent la même variabl
 
 L'instruction `n++` est composée de 3 instructions distinctes en langage machine:
 
-```assembly
+```
 mov1 n, eax
 addl 1, eax
 mov1 eax, n

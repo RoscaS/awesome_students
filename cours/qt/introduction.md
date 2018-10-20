@@ -59,7 +59,7 @@ La plupart des applications écrites avec Qt ont la même structure :
 ### fichier pro
 Pour avoir accès à `QApplication` il faut ajouter dans le fichier `*.pro` les lignes suivantes:
 
-```pro
+```
 QT += widgets
 SOURCES +=\
     main.cpp \

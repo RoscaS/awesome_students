@@ -84,7 +84,7 @@ tab[1] = 2;
 Si une classe est préfixée par `Use` comme dans `UseNomDeClass` c'est une classe qui possède un `main` et qui sert à utiliser `NomDeClass`.
 
 ### Ramification 
-```sh
+```shell
 └── Wxxxx (workspace)
       └── Pxxxx (projet)
             └──  nomDePackage
