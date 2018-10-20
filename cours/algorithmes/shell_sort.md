@@ -90,9 +90,12 @@ Alors on échange les deux éléments:
 | index   | **0**  | 1     | 2     | 3               | **4**  | 5     | 6     | 7                              | **8**  |
 | elément | **14** | 18    | 19    | *30*            | **23** | 40    | 29    | 37                             | **11** |
 
-::: warning Attention
+
+<Container type="warning">
+
 Tout comme dans le tri par insertion, on devrait maintenant vérifier que la clé à l'élément d'indexe précédent n'est pas plus grand que celui de l'indexe actuel mais comme nous avons un **gap** de 4, l'élément d'indexe précédent est n'existe pas.
-:::
+
+</Container>
 
 On se décalle d'une position vers la droite:
 

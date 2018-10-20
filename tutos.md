@@ -65,8 +65,8 @@ Un mot <st c="g">vert</st>, un mot <st c="r">rouge</st> et
 une <st c="b"> fin de phrase bien bleu</st>.
 ```
 
-|     | type   | values              | default |
-| --- | ------ | ------------------- | :-----: |
+|     | type   | values                                        | default |
+| --- | ------ | --------------------------------------------- | :-----: |
 | `c` | string | `"r"`: red <br> `"g"`: green <br> `"b"`: blue | `"r"`   |
 
 
@@ -156,47 +156,43 @@ Vous pouvez highlight autant de lignes que vous voulez en les séparant par des 
 
 ### Custom containers
 
-Dans le md:
+<Container type="info">
 
-```md
-::: tip
-success
-:::
+Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 
-::: warning
-warning
-:::
+</Container>
 
-::: danger
-danger
-:::
+
+<Container type="warning">
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+</Container>
+
+
+<Container type="danger">
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+</Container>
+
+```md{2,4}
+<Container type="info">
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+</Container>
 ```
 
-Output:
+<st c="r">Les lignes vides avant et après le contenu sont requises! </st>
+* Paramètres:
 
-::: tip
-success
-:::
+|          | type   | values                                    | default  |
+| -------- | ------ | ----------------------------------------- | :------: |
+| `type`   | string | `"info"` <br> `"warning"` <br> `"danger"` | `"info"` |
+| `header` | string | `"complément au titre"`                   | `""`     |
 
-::: warning
-warning
-:::
 
-::: danger
-danger
-:::
-
-Custom:
-
-```md
-::: danger STOP
-Pas plus loin !
-:::
-```
-
-::: danger STOP
-Pas plus loin !
-:::
 
 ## Snippets vsCode
 
@@ -224,18 +220,10 @@ Dans le <Def def="markdown.json">document qui vient de s'ouvrir</Def> effacez to
 		"prefix": "code",
 		"body": "```${1:language}\n${2:contenu}\n```\n"
 	},
-	"tip": {
-		"prefix": "tip",
-		"body": "::: tip ${1:titre}\n${2:contenu}\n:::\n"
+	"container": {
+		"prefix": "container",
+		"body": "<Container type=\"${1:info-warning-danger}\">\n\n${2:contenu (ne pas supprimer les lignes vides!)}\n\n</Container>"
 	},
-	"warning": {
-		"prefix": "warning",
-		"body": "::: warning ${1:titre}\n${2:contenu}\n:::\n"
-	},
-	"danger": {
-		"prefix": "danger",
-		"body": "::: danger ${1:titre}\n${2:contenu}\n:::\n"
-  },
   "style": {
 		"prefix": "style",
 		"body": "<st c=\"${2:rgb}\">$1</st>"
@@ -343,9 +331,11 @@ Pour publier un article il suffit de choisir le folder approprié et d'y créér
 
 ### Nouvelle sous-branche
 
-::: danger ATTENTION!
-* Dans le doute, demandez moi de créér la nouvelle sous-branche !
-:::
+<Container type="danger">
+
+Dans le doute, demandez moi de créér la nouvelle sous-branche !
+
+</Container>
 
 Disons que je veux une nouvelle sous branche popotte pour le **cours** de popotte.
 ```bash
@@ -391,9 +381,11 @@ sidebar: [
   },
 //  ...
 ```
-::: danger ATTENTION!
+<Container type="danger">
+
 * Ne pas oublier le `/` à la fin de la string et la `,` en fin de ligne
 * Ne rien changer d'autre
 * Dans le doute, demandez moi de créér la nouvelle sous-branche
-:::
+
+</Container>
 

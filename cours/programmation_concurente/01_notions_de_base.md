@@ -38,9 +38,11 @@ Un système gère le multi tâche de façon:
 * **Préemptive**: Lorsqu'il peut arrêter (mettre en stand-by) à tout moment n'importe quelle application pour passer à la suivante (XP, 7, GNU/Linux).
 * **Coopérative**: Quand il permet à plusieurs applications de fonctionner et d'occuper la mémoire en leurs laissant le soin de se gérer elles mêmes (95, 98, Millenium).
 
-::: warning Info
+<Container type="info">
+
 Les systèmes basés sur Unix sont des systèmes préemptifs.
-:::
+
+</Container>
 
 On parle de:
 * **Pseudo-parallélisme**: (monocoeur)Quand le processeur passe d'un programme à un autre en quelques ms, ce qui donne à l'utilisateur une impression de simultanéité.
@@ -75,12 +77,14 @@ Un processus possède:
 
 Le **Processus inactif du système** (System idle process) il a le PID 0. C'est le processus que le noyau exécute tant qu'il n'y a pas d'autres processus en cours d'éxecution. C'est lui qui est en charge de lancer le premier processus que le noyau exécute: Le **programme initial**. Généralement appelé **init** et de PID 1 sur les systèmes Unix.
 
-::: tip Tip
+<Container type="info">
+
 Si l'utilisateur indique au noyau le programme initial à exécuter, celui-ci tente alors de le faire avec quatre exécutables, dans l'ordre suivant : `/sbin/init`, `/etc/init` puis `/bin/init`.
 
 Le premier de ces processus qui existe est exécuté en tant que programme initial. 
 Si les quatre programmes n'ont pas pu être exécutés, le système s'arrête : **panique du noyau**...
-:::
+
+</Container>
 
 Après son chargement, le programme initial gère le reste du démarrage: Initialisation du système, lanchement du programme de connexion... Il se charge également de lancer les <Def def="Processus qui est constamment en activité et fournit des services au système.">daemons</Def>. 
 
@@ -143,9 +147,11 @@ Lors de l'exécution de l'appel système `fork`, le noyau effectue les opératio
 * Associe au processus fils un segment de texte dans son espece d'adressage. Le segment de données (tas) ne lui seront attribués que lorsque celui-ci tentera de les modifier. Cette technique est nommée **Copie on write** et permet de réduire le temps nécessaire à la création du processus
 * L'état du processus est mis à l'état *exécution*
 
-::: danger Attention
+<Container type="danger">
+
 Il est essentiel de comprendre le lien entre les précédentes notions et les notions programmatiques rattachées. C est au coeur du système. Plus d'informations [ici](http://www.commentcamarche.net/faq/10611-que-fait-un-fork). Ainsi qu'en seconde partie de ce [lien](https://openclassrooms.com/fr/courses/1513891-la-programmation-systeme-en-c-sous-unix/1514339-les-processus)
-:::
+
+</Container>
 
 
 #### Exemple d'implémentation
@@ -195,9 +201,13 @@ En général le système réserve **un processus à chaque application**. Beauco
     * Multicoeur: execution parallèle.
         * L'ordonnanceur est responsable de l'ordre d'exécution.
 
-::: tip Info
-Le terme "thread" peut se traduire par "fil d'exécution". L'appellation de "processus léger" (lightweigt process) est également utilisée.
-:::
+<Container type="info">
+
+Le terme "thread" peut se traduire par "fil d'exécution". 
+
+L'appellation de _processus léger_ (lightweigt process) est également utilisée.
+
+</Container>
 
 ### Différences vis à vis d'un processus
 * Les threads d'un même processus se partagent l'espace d'adressage du processus
@@ -529,9 +539,11 @@ void pthread_testcancel(void);
 
 * L'annulation est donc permise en ces points
 
-::: danger Attention !
+<Container type="danger">
+
 Certains appels systèmes sont des points d'annulation, en particulier les fonctions d'entrée/sortie car potentiellement bloquantes. Ex: `fopen`, `write`, `fprintf`, ...
-:::
+
+</Container>
 
 
 ```c
@@ -661,9 +673,13 @@ Output:
     Str declaree dans le thread.
     Fin du main
     
-::: danger Attention
+
+<Container type="danger">
+
 Noter l'utilisation du `malloc` en ligne 13 . Elle permet de déplacer la le tableau de char de la pile au tas ce qui fait que la référence n'est pas perdue à la fin du contexte de `func`. En ligne 31 on récupère donc un pointeur sur un pointeur dont la référence éxiste toujours.
-:::
+
+</Container>
+
 
 </Spoiler>
 

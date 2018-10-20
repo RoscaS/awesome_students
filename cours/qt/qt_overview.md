@@ -46,9 +46,11 @@ Pour chaque propriété d'un widget, on a:
 ### Widgets conteneurs
 **Un widget peut en contenir un autre**. Par exemple, une fenêtre `unQWidget` peut contenir trois boutons `QPushButton`, une case à cocher `QCheckBox`, une barre de progression `QProgressBar`, etc.
 
-::: danger Attention!
+<Container type="danger">
+
 Ce n'est pas là de l'héritage, juste une histoire de **contenant et de contenu**.
-:::
+
+</Container>
 
 <Media
     src="https://i.imgur.com/Su0XILN.png"
@@ -78,10 +80,12 @@ Les widgets sont donc imbriqués les uns dans les autres suivant cette hiérarch
         *QCheckBox
         *QProgressBar
 
-::: danger Attention!
+<Container type="danger">
+
 Il ne faut pas confondre ceci avec l'héritage !
 Ici, on découvre qu'un widget peut en contenir d'autres, indépendamment du fait que ce soit une classe mère ou une classe fille.
-:::
+
+</Container>
 
 Les avantages de cette façon de faire sont:
 * Possibilité d'ajouter ultérieurement d'autres widgets à l'intérieur de la fenêtre
@@ -153,9 +157,11 @@ myWidget.setGeometry(x, y, width, height);
 
 Dans le précédent exemple, on utilise la **classe** `QWidget` alors qu'il n'est pas include. En principe il est nécéssaire d'include toues les fichiers d'en-tête des classes qu'on utilise. L'exemple précédent compile car `QPushButton` hérite de `QWidget`, il l'avait lui même include dans son header. Il n'est pas nécéssaire d'être trop à cheval sur le fait de tout importer, on pourrait même éventuellement include le **module** `QtWidgets` pour ne plus se soucier des imports mais ce n'est pas la meilleur des pratiques.
 
-::: danger Attention!
+<Container type="danger">
+
 Importer `QtWidget` augmente le temps de compilation et c'est un overkill pour utiliser un ou deux widgets.
-:::
+
+</Container>
 
 ### Héritage
 Nous allons ici aller plus loin dans la personnalisation des widgets en créant un nouveau type de widget. Nous allons donc créer une nouvelle classe qui hérite de `QWidget` et représente notre fenêtre. 
@@ -208,9 +214,11 @@ MaFenetre::MaFenetre() : QWidget()
     this->m_bouton->move(60, 50);
 }
 ```
-::: warning Info
+<Container type="warning">
+
 L'utilisation de `this->...` pour faire référence aux membres et aux méthodes dans la classe est superflue en C++. Je le met uniquement pour rendre les choses plus clair et me faciliter la tache après un an de JS et de Python où l'équivalent de `this->` n'est pas implicite.
-:::
+
+</Container>
 
 
 * [5] L'en-tête du constructeur. `QWidget()` sert à appeler le constructeur de `QWidget` en premier lieu.
@@ -238,7 +246,8 @@ Lors de la création de l'objet `fenetre`, le constructeur de la classe `MaFenet
 
 ### Destruction automatique des widgets enfants
 
-::: danger Attention!
+<Container type="danger">
+
 Tout objet créé dynamiquement avec un `new` implique forcément un `delete` quelque part. 
 Normalement, on devrait écrire le **destructeur** de `MaFenetre`, qui contiendrait ceci :
 ```CPP
@@ -247,7 +256,8 @@ MaFenetre::~MaFenetre()
     delete m_bouton;
 }
 ```
-:::
+
+</Container>
 
 C'est comme cela qu'on doit faire en temps normal. Toutefois, Qt supprimera automatiquement le bouton lors de la destruction de la fenêtre (à la fin du `main`).
 En effet, quand on supprime un widget <Def def="qui contient qui">parent</Def> (ici notre fenêtre), Qt supprime automatiquement tous les widgets qui se trouvent à l'intérieur (tous les widgets <Def def="qui contient qui">enfants</Def> ). C'est un des avantages d'avoir dit que le `QPushButton` avait pour "parent" la fenêtre. Dès qu'on supprime la fenêtre, Qt supprime tout ce qu'elle contient et donc, fait le `delete` nécessaire du bouton.
@@ -289,9 +299,11 @@ Avec Qt, on dit que l'on connecte des signaux et des slots entre eux. Supposons 
     width=450
 />
 
-::: tip Tip
+<Container type="info">
+
 Il est possible de connecter **un signal** à **plusieurs slots**. Ainsi, un clic sur un bouton pourrait appeler non pas une mais plusieurs méthodes. Il est aussi possible de connecter un signal à un autre signal. Le signal d'un bouton peut donc provoquer la création du signal d'un autre widget, qui peut à son tour appeler des slots (voire appeler d'autres signaux pour provoquer une réaction en chaîne).
-:::
+
+</Container>
 
 ### Connexion d'un signal à un slot simple
 Pour connecter le **signal** "bouton cliqué" au slot "quiter l'application" et ainsi provoquer l'arrêt de l'application lors du clique du bouton comme sur le schéma suivant:
@@ -329,9 +341,11 @@ MaFenetre::MaFenetre() : QWidget()
 }
 ```
 
-::: warning Info
+<Container type="warning">
+
 Comme notre classe hérite de `QObject` il n'est pas nécessaire de préfixer `connect` par le namespace mais dans un soucis de clarté et comme il s'agit d'une méthode statique je l'ai quand même ajouté.
-:::
+
+</Container>
 
 Passons en revue le call de connect en ligne 11:
 
@@ -415,11 +429,13 @@ Il suffit d'indiquer le type du paramètre envoyé, ici un int, **sans donner de
 />
 
 
-::: warning Attention!
+<Container type="warning>
+
 **Le type des paramètres doit absolument correspondre !**
 Il est impératif que les signatures soient identiques entre le signal et le slot.
 En revanche, un signal peut envoyer plus de paramètres à un slot que celui-ci ne peut en recevoir. Dans ce cas, **les paramètres supplémentaires seront ignorés**.
-:::
+
+</Container>
 
 ### Slots perso
 
@@ -439,9 +455,11 @@ class MaFenetre : public QWidget
     QSlider *m_slider;
 };
 ```
-::: warning Attention
+<Container type="warning">
+
 `Q_OBJECT` permet à Qt de prendre en compte que nous utilisons des signaux ou slots personnalisés et nous permet d'utiliser le nouveau mot clé `slot`.
-:::
+
+</Container>
 
 #### mafenetre.cpp
 ```CPP
@@ -606,9 +624,11 @@ Ici nous créons donc une fenetre qui contient un bouton que nous plaçons aux c
     width=250
 />
 
-::: danger Attention !
+<Container type="danger">
+
 On garde en tête que (0, 0) se trouve en haut à gauche de l'élément conteneur.
-:::
+
+</Container>
 
 Le problème de cette façon de faire est son **manque de souplesse**, si l'utilisateur change la taille de la fenêtre on peut rapidement se retrouver dans des situations comme celle de la prochaine figure:
 
@@ -646,9 +666,11 @@ Toutes ces classes héritent de `QLayout` qui est une <Def def="Une classe avec 
 * `QFormLayout`: Associe des champs de saisie à des labels labels (comme un form sur le web)
 * `QStackedLayout`: Pile de widget où un seul est visible à la fois (tabs, pages, ...)
 
-::: danger Attention!
+<Container type="danger">
+
 Les layouts ne sont pas des widgets !
-:::
+
+</Container>
 
 L'utilisation d'un layout se fait en 3 temps:
 
@@ -751,9 +773,11 @@ Schématiquement, la fenêtre **contient** le layout qui **contient** les widget
 
 `QVBoxLayout`  fait la même chose à la différence qu'il alligne les choses verticalement. Dans notre code il suffit de changer `QHBoxLayout` par `QVBoxLayout` et d'inclure ce layout.
 
-::: tip Info !
+<Container type="info">
+
 Comme les boutons sont contenu par un layout et que le layout est contenu par la fenêtre, lors de la supresion de la fenêtre (ici à la fin du programme) Qt se chargera de faire les `delete` des boutons et puis du layout.
-:::
+
+</Container>
 
 ### Layout grille
 
@@ -803,9 +827,11 @@ Nomber de colonnes qu'occupe le widget:
     width=350
 />
 
-::: warning Attention !
+<Container type="warning">
+
 L'espace pris par le widget au final dépend de la nature du widget (les boutons s'agrandissent en largeur mais pas en hauteur par exemple) et du nombre de widgets sur la grille. Go tester !
-:::
+
+</Container>
 
 Le code suivant permet à notre bouton "Trois" de s'étalle sur 2 colonnes:
 

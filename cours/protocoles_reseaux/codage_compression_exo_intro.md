@@ -52,11 +52,13 @@ Code fixe à 2 bits/symbole (4 symboles): 1000 symboles par seconde * 2 bits par
 
 A est arrivé 20 fois. B C et D, ensemble, sont arrivés 20 fois également. Il est donc facile de répartir en deux ensembles équiprobables: [A] et [BCD]. Ensuite, on découpe [BCD] en [B] et [CD], puis [C] et [D]. Cela fait donc au minimum 1 décision et au maximum 3 décisions. Ce code est donc un **code à longueur variable non ambigu**.
 
-::: tip
+<Container type="info">
+
 * Code variable (compressé): 1000 synboles par seconde * la longueur moyenne = 1750 bps
 * Longueur moyenne: $\frac{20\cdot1+10\cdot2+5\cdot(3+3)}{40}=1.75$ bit/symbole
 > → cours: notions de: quantité de décision et débit binaire, longueur moyenne, algorithmes de compression Shanon-Fano et Huffman
-:::
+
+</Container>
 
 ### Le français
 >Un texte dans une langue naturelle (p.ex. le français), codé en ISO-8859-1 (Latin-1).

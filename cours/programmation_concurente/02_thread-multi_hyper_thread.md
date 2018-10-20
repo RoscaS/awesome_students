@@ -40,13 +40,13 @@ Extrais de la commande `lscpu` sur un i7-8550U
 * Chaque coeur est capable de gérer 2 threads c'est du **multithreading**
 * Chaque coeur est virtuellement divisé en deux CPUs distincts grace à l'**hyperthreading**
 
-::: danger Moment phylosophie 
-Un processeur qui contient et utilise plusieurs coeurs satisfait la définition du multiprocessing (Comme chaque coeur est lui même un processeur). 
+<Container type="info" header="Instant phylosophie">
 
-Si on prend à part un de ces coeurs, le coeur en lui même ne fait pas de multiprocessing...
+* Un processeur qui contient et utilise plusieurs coeurs satisfait la définition du multiprocessing (Comme chaque coeur est lui même un processeur). 
+* Si on prend à part un de ces coeurs, le coeur en lui même ne fait pas de multiprocessing...
+* ...Sauf si il est hyperthreadé et donc est logiquement divisé en deux coeurs distincts qui sont eux même des processeurs et donc un de ces coeurs unique hyperthreadé satisfait à nouveau la définition du multiprocessing.
 
-...Sauf si il est hyperthreadé et donc est logiquement divisé en deux coeurs distincts qui sont eux même des processeurs et donc un de ces coeurs unique hyperthreadé satisfait à nouveau la définition du multiprocessing.
-:::
+</Container>
 
 
 <Spoiler>

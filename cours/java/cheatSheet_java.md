@@ -142,19 +142,26 @@ En ligne 2 on pourrait préciser le type entre chevrons mais ce n'est pas nécé
 
 ### Passage d'argument en Java
 
-::: warning Attention
+<Container type="warning">
+
 En Java tout se passe par **COPIE** de référence (tout se retourne aussi par **COPIE** de référence).
-:::
+
+</Container>
 
 
 * Une seul façon: **passage par COPIE** (de référence, 4 bytes) pour tous les types (simples et complexes). Le retour de la même façon se fait par **COPIE** (de référence, 4 bytes)
 * `b = new B()`: `b` est une référence vers l'objet `B`
 En Java le GC passe et fait deux chose, il `delete` les objets qui n'ont plus de référence **et** défragmente le tas (heap). Après défragmentation, l'adresse de l'objet change et donc on ne peux pas dire que `b` est un pointeur car un pointeur par définition est une adresse. En conclusion **En Java tout est Référence**
-::: warning Détail
+
+
+<Container type="info">
+
 De la même façon qu'en C/C++
 * `b` se retrouvera souvent sur la pile (stack)
 * `B` se retrouvera toujours sur le tas (heap)
-:::
+
+</Container>
+
 
 * A chaque fois qu'on veut modifier un contenu, on passe par des méthode.
 * Quand on travail sans méthodes on fait de l'algèbre de référence.
@@ -192,9 +199,11 @@ En gros (en java du moins) on peut toujours appeler toutes les procédures (mét
 
 Des classes compilées zipées et renommées en JAR. A la place d'avoir des tas de fichiers à déplacé. Équivalent d'un dll ou d'un SO.
 
-::: warning Attention
+<Container type="danger">
+
 Equivalent de **DLL** en linux **SO**
-:::
+
+</Container>
 
 ### Tableaux multiD
 * Java est un language **row major**

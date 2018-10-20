@@ -8,9 +8,12 @@ sidebar: auto
 ## Fourre tout temp
 
 * deph = $floor(log_2(n))$
-::: tip Tip
+
+<Container type="info">
+
 `depth % 2 == 0 ?` alors l'arbre est parfaitement équilibré
-:::
+
+</Container>
 
 
 ## Start
