@@ -5,6 +5,11 @@ author:  Sol
 sidebar: auto
 ---
 
+## Meta
+* Élèves: Kneuss Michael, Latino Nathan, Rosca Sol
+* [Répo git](https://github.com/RoscaS/prog-conc_Labo1)
+
+
 ## Objectifs
 * Prise en main des threads POSIX
 * Réalisation d'un programme utilisant la librairie Pthread
