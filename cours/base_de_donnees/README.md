@@ -1,3 +1,3 @@
 # Base de données
 
-<Categories/>
+<Posts/>

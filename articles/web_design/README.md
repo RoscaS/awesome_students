@@ -1,3 +1,3 @@
 # Web design
 
-<Categories/>
+<Posts/>

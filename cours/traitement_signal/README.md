@@ -1,3 +1,3 @@
 # Traitement du signal
 
-<Categories/>
+<Posts/>

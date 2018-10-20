@@ -1,3 +1,4 @@
 # Algo
 
-<Categories/>
+<Posts/>
+

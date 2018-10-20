@@ -1,21 +1,44 @@
 <template>
 
   <div class="wrapper">
-    <a class="box" :href="article.path" v-for="article in articles">
-      <div class="top-row">
-        <span class="title">{{article.title}}</span>
-        <span class="category">{{article.category}}</span>
-      </div>
-        <small class="bottom-row">
-          posté le
-          <span class="date">{{article.date}}</span>
-          par
-          <span class="author">{{article.author}}</span>
-        </small>
-    </a>
+    <h2 v-if="!pages">Articles</h2>
+
+    <section class="section">
+      <router-link class="box"
+                   v-for="(article, key) in articles"
+                   :key="key"
+                   :to="article.path">
+
+
+        <vs-row vs-w="12">
+          <vs-col class="enumerate" vs-w="1" v-if="!pages">
+            <span class="diez">#</span>
+            <span class="number">{{articles.length - key}}</span>
+          </vs-col>
+          <vs-col :vs-w="pages ? '12' : '11'">
+              <vs-col  vs-w="7" vs-xs="12" vs-type="flex">
+                <span class="title">{{article.title}}</span>
+              </vs-col>
+
+            <vs-col class="category" vs-w="5" vs-xs="12" vs-type="flex">
+              <small class="category" v-if="pages">{{article.category}}
+              </small>
+            </vs-col>
+
+            <vs-col vs-w="12" vs-type="flex" vs-justify="flex-start">
+              <small class="date-author">
+                <span>Posté le&nbsp;</span>
+                <span class="date">{{article.date}}&nbsp;</span>
+                <span>par&nbsp;</span>
+                <span class="author">{{article.author}}</span>
+              </small>
+            </vs-col>
+          </vs-col>
+        </vs-row>
+
+      </router-link>
+    </section>
   </div>
-
-
 
 
 </template>
@@ -29,15 +52,12 @@
     props: {
       pages: {type: String},
     },
-    data: () => ({
-      selected: [],
-    }),
     computed: {
       articles () {
         let articles = []
         let allPosts = this.$site.pages.filter(x => {
-          return x.path.startsWith(`/${this.pages}/`) &&
-            x.path.endsWith('.html')
+          return x.path.includes(this.pages ? this.pages : this.$page.path)
+            && x.path.endsWith('.html')
         })
         let sortedPosts = allPosts.sort((a, b) => {
           return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
@@ -62,108 +82,83 @@
         let cat = path.split('/')[2].replace('_', ' ')
         return cat[0].toUpperCase() + cat.slice(1, cat.length)
       },
-      handleSelected () {
-
-      },
     },
   }
 </script>
 
-<style scoped>
-  @import url('https://fonts.googleapis.com/css?family=Montserrat:600');
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+<style lang="scss" scoped>
+  @import "../theme/styles/config";
+
+  h2 {
+    margin-top: 40px;
+  }
+
+  a:hover {
+    text-decoration: none !important;
+  }
+
+  .section {
+    margin: 40px 0 40px 0;
+  }
 
   .box {
     transition: .5s ease;
     background-color: white;
     border-radius: 6px;
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    color: #4a4a4a;
+    border: 1px solid #f1f1f1;
     display: block;
     padding: 5px 20px 5px 20px;
     margin-top: 6px;
     cursor: pointer;
-  }
-
-  .box:hover {
-    transition: .5s ease;
-    /*box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);*/
-  }
-
-
-  .top-row {
-    display: flex;
-    flex-direction: row;
-  }
-
-  @media (max-width: 500px){
-    .top-row {
-      flex-direction: column;
+    &:hover {
+      transition: .5s ease;
+      border-color: $StyleBlue;
     }
   }
 
-  .bottome-row {
-    display: flex;
-    font-family: 'Open Sans', sans-serif;
-  }
-  .category {
-    margin-left: auto;
-    font-weight: bold;
-  }
-  @media (max-width: 500px){
-    .category {
-      margin-left: inherit;
+  .enumerate {
+    width: 30px !important;
+    margin-top: 4px;
+
+    .diez {
+      color: rgba(133, 133, 133, 0.68);
+      font-size: 15px;
+      font-style: italic;
+      margin-left: -10px;
+    }
+    .number {
+      color: black;
+      font-weight: 400;
+      font-size: 20px;
+      margin-left: -1px;
+      z-index: 4;
     }
   }
+
   .title {
     font-family: 'Montserrat', sans-serif;
-    min-width: 300px;
-    color: #3eaf7c;
-
-  }
-  .author {
-    color: #2973b7;
-  }
-  .date {
-
-  }
-
-
-
-
-  a.box:hover, a.box:focus {
-    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px #3273dc;
-  }
-
-  a.box:active {
-    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2), 0 0 0 1px #3273dc;
-  }
-
-  .post-name {
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
   }
 
-  .wrapper {
-    margin-top: 20px;
-  }
-
-  .card-title {
-    font-weight: 700;
-    line-height: 1.25;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-  }
-
-  .post-title {
+  .category {
+    margin-left: auto;
+    color: #2c3e50;
     font-family: 'Open Sans', sans-serif;
-    font-size: .9rem;
+    @media (max-width: $MQMobile) {
+      margin-left: inherit;
+      margin-right: auto;
+    }
   }
 
-  p {
-    /*line-height: 10px;*/
-  }
+  .date-author {
+    color: #858585;
+    font-family: 'Open Sans', sans-serif;
+    .author {
+      color: $StyleBlue;
+    }
 
+  }
 
 </style>

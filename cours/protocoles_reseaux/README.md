@@ -1,3 +1,3 @@
 # Protocoles et réseaux
 
-<Categories/>
+<Posts/>

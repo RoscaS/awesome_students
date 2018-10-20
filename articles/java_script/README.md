@@ -1,3 +1,3 @@
 # Java script
 
-<Categories/>
+<Posts/>

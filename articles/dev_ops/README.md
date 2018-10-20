@@ -1,3 +1,3 @@
 # Dev ops
 
-<Categories/>
+<Posts/>

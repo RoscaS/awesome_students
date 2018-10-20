@@ -69,7 +69,7 @@ export default {
   computed: {
     lastUpdated () {
       if (this.$page.lastUpdated) {
-        return new Date(this.$page.lastUpdated).toLocaleString(this.$lang)
+        return new Date(this.$page.lastUpdated).toLocaleString('fr')
       }
     },
 

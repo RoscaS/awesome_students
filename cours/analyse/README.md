@@ -1,3 +1,3 @@
 # Analyse
 
-<Categories/>
+<Posts/>

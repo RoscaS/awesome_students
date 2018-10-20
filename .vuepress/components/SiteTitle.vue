@@ -5,7 +5,6 @@
     <i class="title-icon far fa-integral"></i>
     <span>tudents</span>
   </h1>
-
 </template>
 
 <script>
@@ -16,6 +15,8 @@
 </script>
 
 <style lang="stylus" scoped>
+  @import '../theme/styles/config.styl'
+
   .site-name
     font-size 35.2px
     font-weight 600
@@ -29,6 +30,10 @@
       &.fa-integral
         margin-right -10px
         transform rotateZ(-20deg)
+
+  @media (max-width: $MQMobile)
+    .site-name
+      display none
 
 
 </style>

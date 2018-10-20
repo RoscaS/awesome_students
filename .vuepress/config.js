@@ -16,7 +16,7 @@ module.exports = {
     repoLabel: 'github',
     editLinks: true,
     editLinkText: 'Editer cette page',
-    lastUpdated: 'Dernière mise à jour du wiki',
+    lastUpdated: 'Dernière mise à jour de cette page',
     nav: [
       {text: 'Home', link: '/'},
       {text: 'Tutos', link: '/tutos'},
@@ -29,7 +29,7 @@ module.exports = {
         children: [
           '/cours/qt/',
           '/cours/java/',
-          '/cours/algo/',
+          '/cours/algorithmes/',
           '/cours/programmation_concurente/',
           '/cours/genie_logiciel/',
           '/cours/traitement_signal/',

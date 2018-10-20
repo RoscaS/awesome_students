@@ -1,5 +1,5 @@
 ---
-title: CheatSheet cours de Java
+title: CheatSheet Java
 date: 2018-09-25
 sidebar: auto
 author: Sol

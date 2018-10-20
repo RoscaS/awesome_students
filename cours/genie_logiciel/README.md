@@ -1,3 +1,3 @@
 # Génie logiciel
 
-<Categories/>
+<Posts/>

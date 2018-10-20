@@ -6,6 +6,8 @@
 @require './wrapper'
 @require './toc'
 @import url('https://fonts.googleapis.com/css?family=Cardo');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 html, body
   padding 0
@@ -106,10 +108,11 @@ strong
   font-weight 600
 
 h1, h2, h3, h4, h5, h6
+  font-family: 'Montserrat', sans-serif;
   font-weight 600
   line-height 1.25
   .content:not(.custom) > &
-    margin-top (0.5rem - $navbarHeight)
+    margin-top (1rem - $navbarHeight)
     padding-top ($navbarHeight + 1rem)
     margin-bottom 0
     &:first-child
@@ -126,7 +129,18 @@ h1
 h2
   font-size 1.65rem
   padding-bottom .3rem
+  margin-bottom 20px !important
   border-bottom 1px solid $borderColor
+  border-image linear-gradient(to right, rgba(178, 178, 178, 0.45) 0%,#ffffff 100%)
+  border-image-slice 1
+
+
+.poule{
+  color: black;
+}
+
+
+
 
 h3
   font-size 1.35rem

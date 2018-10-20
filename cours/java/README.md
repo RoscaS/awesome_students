@@ -1,3 +1,3 @@
 # Java
 
-<Categories/>
+<Posts/>

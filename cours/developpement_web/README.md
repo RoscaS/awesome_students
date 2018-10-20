@@ -1,3 +1,3 @@
 # Développement Web
 
-<Categories/>
+<Posts/>
