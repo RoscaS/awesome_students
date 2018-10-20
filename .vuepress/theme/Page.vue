@@ -58,9 +58,11 @@
 </template>
 
 <script>
-import { DateTime } from "luxon";
+import { DateTime, Settings } from "luxon";
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
 import ArticleContent from '../components/ArticleContent'
+
+Settings.defaultLocale = "fr";
 
 export default {
   components: {ArticleContent},
@@ -69,7 +71,8 @@ export default {
   computed: {
     lastUpdated () {
       if (this.$page.lastUpdated) {
-        return new Date(this.$page.lastUpdated).toLocaleString('fr')
+        let date = this.$page.lastUpdated;
+        return DateTime.fromMillis(date).toLocaleString(DateTime.DATETIME_MED)
       }
     },
 

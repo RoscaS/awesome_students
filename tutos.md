@@ -60,7 +60,7 @@ N'importe quel type de contenu md habituel
 ### Couleurs dans le text
 Un mot <st c="g">vert</st>, un mot <st c="r">rouge</st> et une <st c="b"> fin de phrase bien bleu</st>.
 
-```html
+```md
 Un mot <st c="g">vert</st>, un mot <st c="r">rouge</st> et 
 une <st c="b"> fin de phrase bien bleu</st>.
 ```
@@ -81,7 +81,7 @@ une <st c="b"> fin de phrase bien bleu</st>.
 />
 
 
-```html
+```md
 <Media
   src="https://v1.vuejs.org/images/logo.png"
   url="https://www.google.com"
@@ -94,7 +94,7 @@ Tous les paramètres sont optionnels.
 
 ### Colonnes
 
-<Col spacer="1">
+<Col>
 <template slot="left">
 
 ![Image](https://i.imgur.com/6XRQj3h.png)
@@ -107,8 +107,8 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta dolor
 </template>
 </Col>
 
-```html{3,5,8,12}
-<Col spacer="1" proportions="5/5" vAlign="0">
+```md{3,5,8,12}
+<Col proportions="6/6" vAlign="0">
 <template slot="left">
 
 ![Image](https://i.imgur.com/6XRQj3h.png)
@@ -126,11 +126,10 @@ illum maxime perspiciatis quasi sed.
 <st c="r">Les lignes vides avant et après le contenu des colonnes sont requises! </st>
 * Paramètres:
 
-|               | type   | format | default |
-| ------------- | ------ | ------ | ------- |
-| `spacer`      | string | "n"    | 1       |
-| `proportions` | string | "n/m"  | 5/5     |
-| `vAlign`      | string | "n"    | 0       |
+|               | type   | format  | default |
+| ------------- | ------ | ------- | ------- |
+| `proportions` | string | `"n/m"` | `"6/6"` |
+| `vAlign`      | string | `"n"`   | `"0"`   |
 
 
 

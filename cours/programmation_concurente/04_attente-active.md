@@ -31,7 +31,7 @@ Illustrons ces conditions par des exemples où plusieurs threads tentent d'accé
 
 #### Algorithme 1
 
-<Col spacer="1" proportions="4/6" vAlign="0">
+<Col spacer="1" proportions="6/5" vAlign="0">
 <template slot="left">
 
 ```C
@@ -65,18 +65,22 @@ Ce code pourrait s'exécuter de la façon suivante:
 
 * `T0` lit `busy` à `false`
 
----
+<br> <hr> <br>
 
 * `T1` lit `busy` à `false`
 * `T1` set `busy` à `true`
 * `T1` entre dans la section critique
 
----
+<br> <hr> <br>
 
 * `T0` set `busy` à `true`
 * `T0` **entre aussi** en section critique
 
-<st c="r">Les deux threads se trouvent en section critique ! </st> $\quad$
+<br>
+<st c="r">Les deux threads se trouvent en section critique ! </st>
+<br>
+<br>
+
 Il n'y a donc **pas** exclusion mutuelle.
 
 </template>
@@ -84,7 +88,7 @@ Il n'y a donc **pas** exclusion mutuelle.
 
 #### Algorithme 2
 
-<Col spacer="1" proportions="3/7" vAlign="0">
+<Col spacer="1" proportions="6/5" vAlign="0">
 <template slot="left">
 
 ```C
@@ -117,17 +121,17 @@ void *T1(void *arg) {
 * `T0` lit `turn` à `0`
 * `T0` entre dans la section critique 
 
-----------
+<br> <hr> <br>
 
 * `T1` lit `turn` à `0`
 
-----------
+<br> <hr> <br>
 
 * `T0` set `turn` à `1` 
 * `T0` sort de la section critique
 * `t0` lit `turn` à `1`
 
-----------
+<br> <hr> <br>
 
 * `T1` lit `turn` à `1`
 * `T1` entre dans la section critique
@@ -147,7 +151,7 @@ Cette situation est intéressante. Toutefois, nous observons un phénomène inte
 
 #### Algorithme 3
 
-<Col spacer="1" proportions="4/6" vAlign="0">
+<Col spacer="1" proportions="6/5" vAlign="0">
 <template slot="left">
 
 ```c
@@ -178,12 +182,18 @@ void *T1(void *arg) {
 </template>
 <template slot="right">
 
-Ce code identique dans sa logique au premier ne fonctionne pas car il peut se passer un temps arbitrairement long entre l'expression:
+Ce code identique dans sa logique au premier ne fonctionne pas car il peut se passer un temps arbitrairement long entre l'expression: <br><br>
 * `while (enter[1]) {}`
 
-et l'affectation
+<br>
+
+et l'affectation:
+
+<br>
 
 * `enter[0] = true;`
+
+<br>
 
 Le prochain algorithme tentera de remédier à ce problème en avançant l'affectation pour la placer avant le `while` pour signaler que le thread est en section critique.
 
@@ -193,7 +203,7 @@ Le prochain algorithme tentera de remédier à ce problème en avançant l'affec
 
 #### Algorithme 4
 
-<Col spacer="1" proportions="5/5" vAlign="0">
+<Col spacer="1" proportions="6/5" vAlign="0">
 <template slot="left">
 
 ```c
@@ -225,17 +235,21 @@ void *T1(void *arg) {
 
 `T0` set `enter[0]` à `true`
 
-----------
+<br> <hr> <br>
 
 `T1` set `enter[1]` à `true`
 `T1` bloque car `enter[0]` est `true`
 
-----------
+<br> <hr> <br>
 
 `T[0]` bloque car `enter[1]` est `true`
 
+<br>
+
 * <st c="g">Un seul thread en section critique!</st>
 * <st c="r">Interblocage !</st>
+
+<br>
 
 * Chaque thread signale son intention d'entrer en section critique et cela entraine un **interblocage**
 
@@ -246,7 +260,7 @@ Ici, Chaque thread signal son intention d'entrer en section critique mais ça a 
 
 #### Algorithme 4
 
-<Col spacer="1" proportions="3/7" vAlign="0">
+<Col spacer="1" proportions="6/5" vAlign="0">
 <template slot="left">
 
 ```c
@@ -288,7 +302,7 @@ void *T1(void *arg) {
 
 * `t[0]` set `enter[0]` à `true`
 
-----------
+<br> <hr> <br>
 
 * `T1` set `enter[1]` à `true`
 * `T1` entre dans la `while`
@@ -296,15 +310,18 @@ void *T1(void *arg) {
 * <st c="b">`T1` temporise</st>
 * `T1` set `enter[1]` à `true
 
-----------
+<br> <hr> <br>
 
 * `T0` entre dans la `while`
 * `T0` set `enter[0]` à `false`
 * <st c="b">`t[0]` temporise</st>
 * `T0` set `enter[0]` à `true`
 
-----------
+<br> <hr> <br>
 * ...
+
+<br>
+
 * <st c="g">Un seul thread en section critique!</st>
 * <st c="b">?? Interblocage possible ??</st>
 * <st c="r">Nous nous retrouvons avec une situation de famine!</st>

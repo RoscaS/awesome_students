@@ -27,9 +27,8 @@
 
             <vs-col vs-w="12" vs-type="flex" vs-justify="flex-start">
               <small class="date-author">
-                <span>Posté le&nbsp;</span>
                 <span class="date">{{article.date}}&nbsp;</span>
-                <span>par&nbsp;</span>
+                <span>par</span>
                 <span class="author">{{article.author}}</span>
               </small>
             </vs-col>
@@ -45,7 +44,6 @@
 
 <script>
   import { DateTime, Settings } from 'luxon'
-
   Settings.defaultLocale = 'fr'
 
   export default {
@@ -76,7 +74,7 @@
     },
     methods: {
       getDate (date) {
-        return DateTime.fromISO(date).toLocaleString(DateTime)
+        return DateTime.fromISO(date).toLocaleString(DateTime.DATE_FULL)
       },
       getCategory (path) {
         let cat = path.split('/')[2].replace('_', ' ')

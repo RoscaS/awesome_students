@@ -18,7 +18,7 @@ sidebar: auto
 
 ## Start
 
-<Col spacer="1" proportions="4/6" vAlign="0">
+<Col spacer="1" proportions="6/6" vAlign="10">
 <template slot="left">
 
 <Media
@@ -41,7 +41,7 @@ sidebar: auto
 </Col>
 
 
-<Col spacer="1" proportions="4/6" vAlign="0">
+<Col spacer="1" proportions="6/6" vAlign="10">
 <template slot="left">
 
 <Media
@@ -60,7 +60,7 @@ sidebar: auto
 </Col>
 
 
-<Col spacer="1" proportions="9/1" vAlign="0">
+<Col spacer="1" proportions="6/6" vAlign="10">
 <template slot="left">
 
 <Media
@@ -78,7 +78,7 @@ sidebar: auto
 </Col>
 
 
-<Col spacer="1" proportions="7/3" vAlign="0">
+<Col spacer="1" proportions="6/6" vAlign="10">
 <template slot="left">
 
 <Media
@@ -97,7 +97,7 @@ sidebar: auto
 </Col>
 
 
-<Col spacer="1" proportions="7/3" vAlign="0">
+<Col spacer="1" proportions="6/6" vAlign="10">
 <template slot="left">
 
 <Media
@@ -156,10 +156,7 @@ Sur la précédente figure on voit la patterne récurive se dessiner, tous les s
 
 Il est donc aisé d'insérer la valeur 21 dans l'arbre suivant:
 
-
-
-
-<Col spacer="1" proportions="7/3" vAlign="0">
+<Col spacer="1" proportions="7/4" vAlign="0">
 <template slot="left">
 
 <Media
@@ -202,7 +199,7 @@ L'éxemple précédent réorganisait la BST dans une liste pour visualiser les c
 ## Les Tas (Heaps)
 Un tas est un arbre binaire avec deux caractéristiques particulières: 
 
-<Col spacer="1" proportions="5/5" vAlign="80">
+<Col spacer="1" proportions="6/6" vAlign="80">
 <template slot="left">
 
 <Media
@@ -250,7 +247,7 @@ Quand nous manipulons un tas il est cruciale de toujours garder en tête la faç
 
 #### Ajouter
 
-<Col spacer="2" proportions="7/3" vAlign="25">
+<Col spacer="2" proportions="6/6" vAlign="25">
 <template slot="left">
 
 <Media
@@ -275,7 +272,7 @@ Dans cet exemple, nous avons affaire à un max-heap. Chaque élément descendent
 
 #### Retirer
 
-<Col spacer="2" proportions="7/3" vAlign="25">
+<Col spacer="2" proportions="6/6" vAlign="25">
 <template slot="left">
 
 <Media
@@ -302,6 +299,7 @@ Le plus souvent, quand nous retirons un élément d'un tas, il s'aggit de la rac
     src="https://cdn-images-1.medium.com/max/1000/1*6bCR-NtCtEh9IfRHTzDn_Q.jpeg"
     url="https://cdn-images-1.medium.com/max/1000/1*6bCR-NtCtEh9IfRHTzDn_Q.jpeg"
     caption="Retirer dans le cas d'un min-heap 1/2"
+    center='true'
     width=450
 />
 
@@ -316,7 +314,7 @@ En effet, un tas est une structure de données _partiellement triée_, ils suive
 
 #### Comment?
 
-<Col spacer="1" proportions="5/5" vAlign="0">
+<Col spacer="1" proportions="6/6" vAlign="0">
 <template slot="left">
 
 <Media
@@ -339,7 +337,7 @@ En effet, un tas est une structure de données _partiellement triée_, ils suive
 </template>
 </Col>
 
-<Col spacer="1" proportions="4/6" vAlign="0">
+<Col spacer="1" proportions="6/6" vAlign="0">
 <template slot="left">
 
 <Media
@@ -370,6 +368,7 @@ L'illustration suivante permet d'enfoncer encore un peu le clou:
     src="https://cdn-images-1.medium.com/max/1000/1*PIY7aOhvUeDV5PJNboPv0A.jpeg"
     url="https://cdn-images-1.medium.com/max/1000/1*PIY7aOhvUeDV5PJNboPv0A.jpeg"
     width=550
+    center='true'
 />
 
 #### Pourquoi?
@@ -384,7 +383,7 @@ Une queue est une structure de donnée qui suit le principe du **FIFO** (First i
 
 > Heaps are often implemented as arrays because they are a super efficient way of representing **priority queues** [basecs](https://medium.com/basecs/learning-to-love-heaps-cef2b273a238)
 
-<Col spacer="1" proportions="4/6" vAlign="0">
+<Col spacer="1" proportions="6/6" vAlign="0">
 <template slot="left">
 
 <Media
@@ -409,6 +408,7 @@ Un ordre de priorité (priority queue) est une queue avec 3 propriétés supplé
 <Media
     src="https://cdn-images-1.medium.com/max/1000/1*4rG1Dxt18Y5p0FefQDf-1A.jpeg"
     url="https://cdn-images-1.medium.com/max/1000/1*4rG1Dxt18Y5p0FefQDf-1A.jpeg"
+    center="true"
     width=450
 />
 
@@ -439,7 +439,7 @@ Cet algorithme se répète ainsi jusqu'au tri complet du tas. Décorticons maint
 
 ### Première étape: Mise en forme
 
-<Col spacer="1" proportions="5/5" vAlign="50">
+<Col spacer="1" proportions="7/4" vAlign="0">
 <template slot="left">
 
 
@@ -464,7 +464,7 @@ Cet algorithme se répète ainsi jusqu'au tri complet du tas. Décorticons maint
 
 ### Seconde étape: Extraction d'une valeur extrème
 
-<Col spacer="1" proportions="10/0" vAlign="0">
+<Col spacer="1" proportions="7/4" vAlign="0">
 <template slot="left">
 
 <Media
@@ -477,12 +477,12 @@ Cet algorithme se répète ainsi jusqu'au tri complet du tas. Décorticons maint
 </template>
 <template slot="right">
 
-1. On échange la racine avec le dernier noeud, ce qui a pour effet que le dernier noeud aura la valeur la plus élevée du tas et est donc considérée triée. **Logiquement nous la retirons donc du tas, programmatquement elle se retrouve au dernier indexe du tableau**.
+4. On échange la racine avec le dernier noeud, ce qui a pour effet que le dernier noeud aura la valeur la plus élevée du tas et est donc considérée triée. **Logiquement nous la retirons donc du tas, programmatquement elle se retrouve au dernier indexe du tableau**.
 
 </template>
 </Col>
 
-<Col spacer="1" proportions="5/5" vAlign="50">
+<Col spacer="1" proportions="7/4" vAlign="0">
 <template slot="left">
 
 <Media
@@ -505,7 +505,7 @@ Cet algorithme se répète ainsi jusqu'au tri complet du tas. Décorticons maint
 
 ### Troisième étape: Réarrangement du tas
 
-<Col spacer="1" proportions="5/5" vAlign="0">
+<Col spacer="1" proportions="7/4" vAlign="0">
 <template slot="left">
 
 <Media
@@ -534,7 +534,7 @@ L'illustration suivante décortique un tour de tri supplémentaire:
     width=450
 />
 
-Le gif suivant illustre la totalité du processus:
+Et finalement, la totalité du processus:
 
 <Media
     src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Heapsort-example.gif"

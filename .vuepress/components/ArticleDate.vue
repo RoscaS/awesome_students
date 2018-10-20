@@ -1,7 +1,7 @@
 <template>
   <small>
     <div v-if="$page.frontmatter.date">
-      Publié le {{ formatDate(frontmatter.date) }}
+      Publié le {{ getDate(frontmatter.date) }}
       par
       <a href="#">{{ formatName(frontmatter.author) }}</a>
     </div>
@@ -18,12 +18,8 @@
       frontmatter: {type: Object}
     },
     methods: {
-      formatDate (date) {
-        let split = date.split('-')
-        let day = parseInt(split[2].split('T')[0])
-        let f = {month: 'long', day: 'numeric', year: 'numeric'};
-        let _date = DateTime.local(parseInt(split[0]), parseInt(split[1]), day, 12, 0)
-        return _date.toLocaleString(f)
+      getDate (date) {
+        return DateTime.fromISO(date).toLocaleString(DateTime.DATE_FULL)
       },
       formatName (name) {
         return name[0].toUpperCase() + name.slice(1, name.length)

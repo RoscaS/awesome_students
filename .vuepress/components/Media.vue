@@ -34,7 +34,8 @@
         if (this.width) { return `width: ${this.width}px; `}
       },
       setCenter() {
-        if (this.center === 'true') { return `justify-content: center; `}
+        return `justify-content: ${this.center === 'true' ? 'center' : 'left'}`;
+        // if (this.center === 'true') { return `justify-content: center;`}
       },
     },
   }

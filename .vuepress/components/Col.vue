@@ -1,17 +1,17 @@
 <template>
-  <div class="columns-bloc">
-    <div class="column left" :style="leftWidth">
-      <slot name="left">
 
-      </slot>
-    </div>
-    <div class="spacer" :class="spacerClass"></div>
-    <div class="column right" :style="rightWidth+rightVAlign">
-      <slot name="right" >
-
-      </slot>
-    </div>
-  </div>
+  <vs-row class="wrapper" vs-type="flex" vs-justify="space-between" vs-w="12">
+    <vs-col vs-type="flex" :vs-w="leftWidth" vs-sm="12" vs-justify="center">
+      <div>
+        <slot name="left"></slot>
+      </div>
+    </vs-col>
+    <vs-col vs-type="flex" :vs-w="rightWidth" vs-sm="12" vs-justify="center">
+      <div :style="rightVAlign">
+        <slot name="right"></slot>
+      </div>
+    </vs-col>
+  </vs-row>
 
 </template>
 
@@ -19,150 +19,32 @@
   export default {
     name: 'Col',
     props: {
-      spacer: {default: "1"},
-      proportions: {type: String, default: "5/5"},
+      proportions: {type: String, default: "6/6"},
       vAlign: {default: 0},
     },
     computed: {
-      spacerClass() {
-        switch (this.spacer) {
-          case ("0"):
-            return "spacer-size-0";
-          case ("1"):
-            return "spacer-size-1";
-          case ("2"):
-            return "spacer-size-2";
-          case ("3"):
-            return "spacer-size-3";
-        }
-      },
-
       listProportions() {
-        return this.proportions.split("/")
+        return this.proportions.split("/");
       },
       leftWidth() {
-        let left = parseInt(this.listProportions[0])*10;
-        return `width: ${left}vw;`;
+        console.log(this.listProportions[0]);
+        return this.listProportions[0];
       },
       rightWidth() {
-        let right = parseInt(this.listProportions)[1]*10;
-        return `width: ${right}vw;`;
+        console.log(this.listProportions[1]);
+        return this.listProportions[1];
       },
       rightVAlign() {
-        return `margin-top: ${this.vAlign}px;`;
+        return `padding-top: ${this.vAlign}px;`;
       }
     },
   }
 </script>
 
 <style scoped>
-  .columns-bloc {
-    /*padding: 10px 0 10px;*/
-    display: flex;
-    flex-direction: row;
-  }
 
-  @media (max-width: 1150px){
-    .columns-bloc {
-      flex-direction: column;
-    }
+  .wrapper {
+    padding: 20px 0 20px 0;
   }
-  @media (max-width: 650px){
-    .columns-bloc {
-      flex-direction: column;
-    }
-  }
-  @media (max-width: 720px){
-    .columns-bloc {
-      flex-direction: row;
-    }
-  }
-  @media (max-width: 650px){
-    .columns-bloc {
-      flex-direction: column;
-    }
-  }
-
-
-  .column.left {
-    /*width: 50vw;*/
-
-    padding-top: 16px !important;
-  }
-
-  @media (max-width: 1150px){
-    .column {
-      width: 100% !important;
-    }
-  }
-  @media (max-width: 650px){
-    .column {
-      width: 100% !important;
-    }
-  }
-  @media (max-width: 720px){
-    .column {
-      /*width: 50vw;*/
-    }
-  }
-  @media (max-width: 650px){
-    .column {
-      width: 100% !important;
-    }
-  }
-
-
-  .column.right {
-    /*width: 50vw;*/
-    padding-top: 16px !important;
-  }
-
-  @media (max-width: 1150px){
-    .column {
-      margin-top: 0 !important;
-      width: 100% !important;
-    }
-  }
-  @media (max-width: 650px){
-    .column {
-      width: 100% !important;
-    }
-  }
-  @media (max-width: 720px){
-    .column {
-      margin-top: inherit !important;
-    }
-  }
-  @media (max-width: 650px){
-    .column {
-      margin-top: 0 !important;
-      width: 100% !important;
-    }
-  }
-
-
-
-
-  @media (max-width: 720px){
-    .spacer {
-      width: 20px !important;
-    }
-  }
-
-
-  .spacer-size-1 {
-    width: 0;
-  }
-  .spacer-size-1 {
-    width: 20px;
-  }
-  .spacer-size-2 {
-    width: 50px;
-  }
-  .spacer-size-3 {
-    width: 100px;
-  }
-
-
 
 </style>
