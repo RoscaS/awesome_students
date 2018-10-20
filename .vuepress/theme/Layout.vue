@@ -156,5 +156,4 @@ export default {
   @import "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css";
   @import "https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css";
   @import "~vuesax/dist/vuesax.css";
-  @import "~v-calendar/lib/v-calendar.min.css";
 </style>
