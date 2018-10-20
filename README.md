@@ -5,6 +5,8 @@
 
 ## Spotlight
 
+<Calendar/>
+
 
 #### CheatSheets
 
