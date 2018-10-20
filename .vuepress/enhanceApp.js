@@ -4,9 +4,6 @@ import Vuesax from 'vuesax'
 import VCalendar from 'v-calendar'
 
 
-import 'vuesax/dist/vuesax.css'
-import 'v-calendar/lib/v-calendar.min.css'
-
 const Callback = () => import('./components/Callback')
 const Login = () => import('./components/Login')
 const Logout = () => import('./components/Logout')

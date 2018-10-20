@@ -93,7 +93,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="4" />
+          <entry key="css" value="5" />
           <entry key="gitignore" value="4" />
           <entry key="js" value="13" />
           <entry key="json" value="6" />
@@ -106,7 +106,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="4" />
+          <entry key="CSS" value="5" />
           <entry key="JSON" value="6" />
           <entry key="JavaScript" value="13" />
           <entry key="Markdown" value="34" />
@@ -119,23 +119,23 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="25" />
-          <entry key="js" value="228" />
+          <entry key="js" value="233" />
           <entry key="json" value="1" />
           <entry key="md" value="2111" />
           <entry key="scss" value="19" />
           <entry key="styl" value="665" />
-          <entry key="vue" value="19843" />
+          <entry key="vue" value="19871" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="228" />
+          <entry key="JavaScript" value="233" />
           <entry key="Markdown" value="1297" />
           <entry key="PLAIN_TEXT" value="839" />
           <entry key="SCSS" value="19" />
           <entry key="Stylus" value="665" />
-          <entry key="Vue.js" value="19843" />
+          <entry key="Vue.js" value="19871" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -218,8 +218,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/Calendar.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+                <state relative-caret-position="230">
+                  <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
                 </state>
               </provider>
             </entry>
@@ -231,8 +231,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.vuepress/theme/Layout.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1915">
-                  <caret line="156" column="76" selection-start-line="156" selection-start-column="76" selection-end-line="156" selection-end-column="76" />
+                <state relative-caret-position="1938">
+                  <caret line="157" column="36" selection-start-line="157" selection-start-column="36" selection-end-line="157" selection-end-column="36" />
                   <folding>
                     <element signature="e#847#868#0" expanded="true" />
                   </folding>
@@ -275,8 +275,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.vuepress/enhanceApp.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="161">
-                  <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+                <state relative-caret-position="92">
+                  <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -387,7 +387,6 @@
         <option value="$PROJECT_DIR$/.vuepress/components/LiveKatex.vue" />
         <option value="$PROJECT_DIR$/.vuepress/theme/styles/config.styl" />
         <option value="$PROJECT_DIR$/.vuepress/theme/Sidebar.vue" />
-        <option value="$PROJECT_DIR$/.vuepress/theme/Layout.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/ArticleContent.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/TestComp.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/SiteTitle.vue" />
@@ -400,6 +399,7 @@
         <option value="$PROJECT_DIR$/.vuepress/components/StylishTitle.vue" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.vuepress/components/Calendar.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/theme/Layout.vue" />
         <option value="$PROJECT_DIR$/.vuepress/enhanceApp.js" />
       </list>
     </option>
@@ -623,12 +623,12 @@
       <workItem from="1539797644569" duration="10104000" />
       <workItem from="1539847471023" duration="828000" />
       <workItem from="1539887490385" duration="1238000" />
-      <workItem from="1539903502908" duration="30321000" />
+      <workItem from="1539903502908" duration="30725000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233663000" />
+    <option name="totallyTimeSpent" value="234067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1414" y="-8" width="2419" height="2161" extended-state="6" />
@@ -670,16 +670,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cours/qt/introduction.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="115">
-            <caret line="5" selection-start-line="5" selection-end-line="5" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tutos.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -949,16 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/theme/Layout.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1915">
-          <caret line="156" column="76" selection-start-line="156" selection-start-column="76" selection-end-line="156" selection-end-column="76" />
-          <folding>
-            <element signature="e#847#868#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/Posts.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="709">
@@ -985,17 +965,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/vuesax/dist/vuesax.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/Calendar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+        <state relative-caret-position="230">
+          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/theme/Layout.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="157" column="36" selection-start-line="157" selection-start-column="36" selection-end-line="157" selection-end-column="36" />
+          <folding>
+            <element signature="e#847#868#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/enhanceApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        <state relative-caret-position="92">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

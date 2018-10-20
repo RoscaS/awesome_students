@@ -16,7 +16,10 @@
           highlight: {
             backgroundColor: '#ff8080',
           },
-          dates: new Date(2018, 0, 1)
+          contentStyle: {
+            color: '#fafafa',
+          },
+          dates: new Date(2018, 9, 1)
         }
       ]
     }),
