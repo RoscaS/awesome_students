@@ -1,12 +1,12 @@
 <template>
 
   <vs-row class="wrapper" vs-type="flex" vs-justify="space-between" vs-w="12">
-    <vs-col vs-type="flex" :vs-w="leftWidth" vs-sm="12" vs-justify="center">
+    <vs-col vs-type="flex" :vs-w="leftWidth" vs-sm="12">
       <div>
         <slot name="left"></slot>
       </div>
     </vs-col>
-    <vs-col vs-type="flex" :vs-w="rightWidth" vs-sm="12" vs-justify="center">
+    <vs-col vs-type="flex" :vs-w="rightWidth" vs-sm="12">
       <div :style="rightVAlign">
         <slot name="right"></slot>
       </div>
@@ -44,7 +44,7 @@
 <style scoped>
 
   .wrapper {
-    padding: 20px 0 20px 0;
+    /*padding: 20px 0 20px 0;*/
   }
 
 </style>

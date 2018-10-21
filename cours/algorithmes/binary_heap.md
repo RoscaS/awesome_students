@@ -40,6 +40,9 @@ sidebar: auto
 </template>
 </Col>
 
+<br>
+<br>
+<br>
 
 <Col spacer="1" proportions="6/6" vAlign="10">
 <template slot="left">

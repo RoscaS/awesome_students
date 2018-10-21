@@ -19,7 +19,7 @@
         datasets: [
           {
             data: this.y,
-            label: 'Sin(x)',
+            label: '',
             backgroundColor: '#3eaf7c',
             borderColor: '#3eaf7c',
             fill: false,

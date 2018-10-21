@@ -77,7 +77,9 @@
         return DateTime.fromISO(date).toLocaleString(DateTime.DATE_FULL)
       },
       getCategory (path) {
-        let cat = path.split('/')[2].replace('_', ' ')
+        let cat = path.split('/')[2];
+        cat = cat.replace(/_/gi, ' ');
+        console.log(cat)
         return cat[0].toUpperCase() + cat.slice(1, cat.length)
       },
     },

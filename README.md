@@ -5,12 +5,10 @@
 
 ## Spotlight
 
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
 
-#### CheatSheets
-
-<br>
-
-<vs-card style="max-width: 300px">
+<Card header="CheatSheets">
 
 * [devhints.io](https://devhints.io/) TL;DR for developers
 * [learnxiny.com](https://learnxinyminutes.com) Gold
@@ -18,23 +16,27 @@
 * [dodgy-blog.com](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/) Stay safe
 * [toptal.com](https://www.toptal.com/developers/sorting-algorithms) Sorting comparaison
 
+</Card>
 
-</vs-card>
+</template>
+<template slot="right">
 
-#### Tools
-
-<br>
-
-<vs-card style="max-width: 300px">
+<Card header="Tools">
 
 #### Code
 * [python tutor](http://www.pythontutor.com/) but not only python
 
+<br>
+
 #### Web
 * [ninjamock](https://ninjamock.com) quick mockups
 
-</vs-card>
+</Card>
 
+</template>
+</Col>
+
+<br>
 <br>
 
 ## Derniers articles
