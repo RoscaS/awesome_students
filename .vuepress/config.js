@@ -3,7 +3,8 @@ module.exports = {
   markdown: {
     lineNumbers: true,
     config: md => {
-      md.use(require("markdown-it-katex"));
+      md.use(require("markdown-it-katex"))
+      md.use(require("markdown-it-plantuml"))
     }
   },
   extraPages: [
@@ -49,6 +50,7 @@ module.exports = {
           '/articles/cpp/',
           '/articles/java/',
           '/articles/java_script/',
+          '/articles/vuejs/',
           '/articles/developpement_web/',
           '/articles/web_design/',
           '/articles/dev_ops/',

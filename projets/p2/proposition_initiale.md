@@ -5,8 +5,6 @@ author: Michael, Nathan, Sol
 sidebar: auto
 ---
 
-# QT projet HConnect
-
 Interface graphique pour se connecter au VPN de l'école sous linux.
 
 ## Collaborateurs

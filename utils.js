@@ -19,6 +19,7 @@ let dict = {
   cpp: 'Cpp',
   // java: 'java',
   java_script: 'JS',
+  vuejs: 'VueJS',
   // developpement_web: 'developpement_web',
   web_design: 'Web',
   dev_ops: 'Dev Ops',
