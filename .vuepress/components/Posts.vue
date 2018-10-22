@@ -3,7 +3,7 @@
   <div class="wrapper">
     <h2 v-if="!pages">Articles</h2>
 
-    <section class="section">
+    <section class="section" v-if="articles.length">
       <router-link class="box"
                    v-for="(article, key) in articles"
                    :key="key"
@@ -36,6 +36,11 @@
         </vs-row>
 
       </router-link>
+    </section>
+    <section class="section" v-else>
+      <span class="empty">
+        Aucun article pour le moment...
+      </span>
     </section>
   </div>
 
@@ -95,6 +100,12 @@
 
   a:hover {
     text-decoration: none !important;
+  }
+
+  .empty {
+    font-family: 'Cardo', serif;
+    font-style: italic;
+    font-size: 18px;
   }
 
   .section {

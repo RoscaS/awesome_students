@@ -8,7 +8,7 @@
 <Col proportions="6/6" vAlign="0">
 <template slot="left">
 
-<Card header="CheatSheets">
+<Card header="CheatSheets" max-width="270">
 
 * [devhints.io](https://devhints.io/) TL;DR for developers
 * [learnxiny.com](https://learnxinyminutes.com) Gold
@@ -21,7 +21,7 @@
 </template>
 <template slot="right">
 
-<Card header="Tools">
+<Card header="Tools" max-width="270">
 
 #### Code
 * [python tutor](http://www.pythontutor.com/) but not only python

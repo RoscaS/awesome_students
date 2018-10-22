@@ -2,7 +2,9 @@
   <div class="wrapper">
     <h4>{{ header }}</h4>
     <vs-card :style="setMaxWidth">
-      <slot></slot>
+      <div class="body">
+        <slot></slot>
+      </div>
     </vs-card>
   </div>
 </template>
@@ -33,5 +35,9 @@
 
   h4 {
     margin-bottom: 20px;
+  }
+
+  .body {
+    font-size: 14px !important;
   }
 </style>
