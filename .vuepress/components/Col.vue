@@ -27,11 +27,9 @@
         return this.proportions.split("/");
       },
       leftWidth() {
-        console.log(this.listProportions[0]);
         return this.listProportions[0];
       },
       rightWidth() {
-        console.log(this.listProportions[1]);
         return this.listProportions[1];
       },
       rightVAlign() {

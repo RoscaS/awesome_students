@@ -57,8 +57,9 @@ module.exports = {
       },
       {
         title: 'Projets',
-        // collapsable: false,
+        collapsable: true,
         children: [
+          '/projets/archives/',
           '/projets/p2/',
         ],
       },

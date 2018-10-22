@@ -21,8 +21,13 @@
               </vs-col>
 
             <vs-col class="category" vs-w="5" vs-xs="12" vs-type="flex">
-              <small class="category" v-if="pages">{{article.category}}
-              </small>
+              <div v-if="pages" class="tag">
+                <div class="chip" style="color: #5B3CC4;">
+                  <i v-if="article.tag === 'cours'" class="fal fa-fw fa-pen"></i>
+                  <i v-else class="fal fa-fw fa-newspaper"></i>
+                  <span class="cat-text">{{ dict[article.category] }}</span>
+                </div>
+              </div>
             </vs-col>
 
             <vs-col vs-w="12" vs-type="flex" vs-justify="flex-start">
@@ -48,6 +53,7 @@
 </template>
 
 <script>
+  import { dict } from '../../utils';
   import { DateTime, Settings } from 'luxon'
   Settings.defaultLocale = 'fr'
 
@@ -55,6 +61,9 @@
     props: {
       pages: {type: String},
     },
+    data: () => ({
+      dict: dict,
+    }),
     computed: {
       articles () {
         let articles = []
@@ -68,7 +77,8 @@
         sortedPosts.forEach(i => {
           articles.push({
             author: i.frontmatter.author,
-            category: this.getCategory(i.path),
+            tag: i.path.split('/')[1],
+            category: i.path.split('/')[2],
             title: i.frontmatter.title,
             path: i.path,
             date: this.getDate(i.frontmatter.date),
@@ -84,7 +94,6 @@
       getCategory (path) {
         let cat = path.split('/')[2];
         cat = cat.replace(/_/gi, ' ');
-        console.log(cat)
         return cat[0].toUpperCase() + cat.slice(1, cat.length)
       },
     },
@@ -124,6 +133,7 @@
     &:hover {
       transition: .5s ease;
       border-color: $StyleBlue;
+      //border-color: $isPurple;
     }
   }
 
@@ -160,6 +170,25 @@
     @media (max-width: $MQMobile) {
       margin-left: inherit;
       margin-right: auto;
+    }
+  }
+
+  .tag {
+    margin-left: auto;
+    font-family: 'Open Sans', sans-serif;
+    @media (max-width: $MQMobile) {
+      margin-left: inherit;
+      margin-right: auto;
+    }
+  }
+
+  .chip {
+    border-radius: 5px;
+    font-size: 10px;
+    background-color: #eeeeee;
+    padding: 5px 10px 5px 10px;
+    i{
+      margin-right: 5px;
     }
   }
 
