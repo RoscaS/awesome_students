@@ -2,7 +2,6 @@
 
 <SiteTitle />
 
-
 ## Spotlight
 
 <Col proportions="6/6" vAlign="0">
