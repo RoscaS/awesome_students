@@ -5,6 +5,8 @@ author:  Sol
 sidebar: auto
 ---
 
+https://www.intra.jrosk.ch/cours/programmation_concurente/05_tp1-posix.html
+
 ## Meta
 * Élèves: Kneuss Michael, Latino Nathan, Rosca Sol
 * [Répo git](https://github.com/RoscaS/prog-conc_Labo1)
@@ -85,7 +87,7 @@ DataStore init(int argc, char *argv[]) {
 void stats(DataStore* data) {
     int expected = data->increments * data->total_threads;
     int delta = expected - data->count;
-    double ratio = (double) expected / data->count;
+    double ratio = (double) data->count/expected ;
     printf("\nThreads created:\t\t%d\n", data->total_threads);
     printf("Incrementation/thread:\t%d\n", data->increments);
     printf("Expected count value:\t%d\n", expected);
@@ -390,7 +392,7 @@ DataStore init(int argc, char *argv[]) {
 void stats(DataStore* data) {
     int expected = data->increments * data->total_threads;
     int delta = expected - data->count;
-    double ratio = (double) expected / data->count;
+    double ratio = (double) data->count/expected ;
     printf("\nThreads created:\t\t%d\n", data->total_threads);
     printf("Incrementation/thread:\t%d\n", data->increments);
     printf("Expected count value:\t%d\n", expected);
