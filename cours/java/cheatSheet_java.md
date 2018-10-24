@@ -5,42 +5,139 @@ sidebar: auto
 author: Sol
 ---
 
+## Todo:
 
-	const int poule = 10;
-	const int cochon = 12;
+```
 
-## Devoirs pour le 10 octobre
-1. Revisiter sur la dualité objet référence en Java.
+-----------------------------------
+Commandes
+-----------------------------------
 
-2. Problème du dé
-* Combien de fois dois-on en <Def def="pas hésiter à poser un gros échantillion $10^9$+">moyenne</Def> lancer un dé pour obtenir une fois toutes les faces. La moyenne doit être un entier (penser à `ceill`).
-* Pareil pour un dé à $n$ faces.
+sysout
+syserr
+sysexit
 
-3. Utiliser Quadratique clavier (finir)
+-----------------------------------
+Instructions
+-----------------------------------
 
-#### Indication
-* Le code est très simple ($\approx$ 10 lignes)
-* Utiliser la classe `Random`
+fori0
+fori1
 
-#### Détails d'implémentation
-* Nouveau package
-* Une classe et un UseCase
-* Class (**statique**): le job
-* UseCase: print
+forj0
+forj1
 
-## Workspace DreamTeam
-### Elève au projecteur
-À la fin du cours:
-* `commit` & `push`
-### Les autres
-Au début du cours
-* Clone le repo
-À la fin du cours (ou plus tard)
-* Effacer ou déplacer l'archive en dehors du working folder
-* Clone la version de la personne au projecteur
+forij0
+forij1
+
+whilec
+
+ife
+
+-----------------------------------
+Methodes
+-----------------------------------
+
+cmain
+cseria
+cclasse
+
+cloneOf
+isEquals
+
+paintj2d
+
+-----------------------------------
+Canvas Atome
+-----------------------------------
+
+cc		Constructeur
+cmpu	methode publique
+cmpr	methode private
+ca		attribut
+
+cma		methode abstraite
+
+cg		get
+cs		set
+ci		is
+
+csa		static
+
+cxx			custom
+cxx_small	custom small
+
+-----------------------------------
+Canvas Full
+-----------------------------------
+
+cjunit
+
+cjframe
+cjpanel
+cboxv
+cboxh
+cj2d
+
+csingleton
+csingleton_init
+
+-----------------------------------
+Memo
+-----------------------------------
+
+cjvm
+
+-----------------------------------
+end
+-----------------------------------
+```
+
+#### En vrac
+
+##### Assurer qu'on sait import un jar
+
+##### Bin
+* Après les tests, effacer le folder `bin`
+* Les build ne fonctionnent plus
+* `ctrl` `shift` `p`: clean
+* build
+
+##### Asserts
+* Si on fait un assert automatiquement on ajoute un doc à la classe
+* Thumb rule: À chaque fois qu'on assume qqch, on ajoute un assert
+
+##### Erreurs (Epsilon)
+
+En informatique, mis à part quand on teste des entiers, tester les égalités sont tricky.
+Il faut trouver des façons adaptées pour tester les égalités.
+par exemple:
+
+> Une machine calcule faux dans une certaine mesure c'est au dev de compenser
+
+* `a = b`
+* $\frac{a-b}{a} \leq E$
+* avec $E$ = 1e-6: en informatique
 
 
-## Eclipse cheatSheet
+##### Import statique
+```java
+import static org.junit.Assert.assertTrue;
+// permet de call assertTrue sans sa classe:
+assertTrue(test);
+```
+
+
+### import jar
+
+![Image](https://i.imgur.com/NOpeOSH.png)
+
+## Utils
+
+<Col proportions="7/5" vAlign="0">
+<template slot="left">
+
+<Card header="Templates" max-width="300">
 
 * `ctrl` `shift` `s`: save all & compile
 * `ctrl` `shift` `f`: format
@@ -53,20 +150,146 @@ Au début du cours
 * `ctrl` `o`: quick outline
 * `ctrl` `t`: quick type hierrachy
 * `ctrl` `d`: delete line
-
 * `ctrl` `shift` `p`: jump to bracket
 
+</Card>
 
-## En vrac
+</template>
+<template slot="right">
+
+<Card header="Shortcuts" max-width="270">
+
+* `cmain`: Create main methodes
+* `cmpu`: Public method component
+* `cmpr`: Private methods comment
+* `ci`: IS-methods comment
+* `csa`: Static methods comment
+* `sysout`: Print line
+* `cjunit`: Create Junit Canvas
+
+</Card>
+
+</template>
+</Col>
+
+<Card header="Workspace" max-width="550">
+
 * `git clone ssh://javab@157.26.83.27/home/javab/git/WCoursJava.git`
 * **basel2018**
 *  Formatter original setting: BibiEclipseFormatter
 
-### Jar
-* Jar: Java ARchive
-Container qui contient des fichiers compilés. On peut réutiliser tous les `jar` qu'on trouve.
+</Card>
 
-![Image](https://i.imgur.com/7zEjhZI.png)
+## En vrac
+
+### Lexique
+|          |                           |
+| -------- | ------------------------- |
+| **JRE**  | Java Runtime Environement |
+| **JDK**  | Java Development Kit      |
+| **JVM**  | Java Virtual Machine      |
+| **.jar** | Java Archive              |
+
+* **Jar**: Java ARchive
+Container qui contient des fichiers compilés. Un jar est facile à décompiler pour retrouver les sources. On peut réutiliser tous les jar qu'on trouve.
+
+### Types primitfs
+
+|         |               |         |
+| ------- | ------------- | ------- |
+| byte    | number        | 1 byte  |
+| short   | number        | 2 bytes |
+| int     | number        | 4 bytes |
+| long    | number        | 8 bytes |
+| float   | float number  | 4 bytes |
+| double  | float number  | 8 bytes |
+| char    | a character   | 2 bytes |
+| boolean | true or false | 1 byte  |
+
+
+### Tableaux
+
+#### Déclaration
+```java
+type[] tabName = new type[size];
+int[] intTab = new int[5];
+```
+#### Opérations
+
+* `static void sort(type[] tab)`: Trie un tableau in place
+
+```java
+double[] tab = {1.2, -2.7, 0.4, 3.1};
+Array.sort(tab); // tab = {-2.7, 0.4, 1.2, 3.1}
+```
+
+* `static String toString(type[] tab)`: Donne une représentation sous forme de string de `tab`
+
+```java
+int[] tab = {1, 2, 3, 7};
+String s = Arrray.toString(tab); // s = "[1, 2, 3, 7]"
+```
+
+* `static void fill(type[] tab, type v)`: Templi tab avec la valeur v
+
+```java
+float[]tab = new float[3];
+Arrays.fill(tab, (float)3.14); // tab = {3.14, 3.14, 3.14}
+```
+
+### Base template
+
+```java
+package ch.hearc.coursjava.kitbase.hello;
+public class Hello
+  {
+  public static void main(String[] args)
+    {
+    main();
+    }
+
+  public static void main()
+    {
+    System.out.println("Hello");
+    }
+  }
+```
+
+### Flux de sorties
+
+* `System.out.println()`: print avec retour à la ligne
+* `System.out.print()`: Ecriture sans retour à la ligne
+* `System.err.println(): Ecriture sur le flux d'erreur
+
+### Collections
+
+<br>
+
+<img src="https://i.imgur.com/vNObpHV.png" style="border: 1px solid black">
+
+<br>
+
+| Collection      | Spécialité                                                      |
+| --------------- | --------------------------------------------------------------- |
+| **LinkedList**  | performant pour les manipulations (insertion, suppression, ...) |
+| **ArrayList**   | performant pour les parcours (accès aléatoire)                  |
+| **Set**         | garantit l’unicité des éléments                                |
+| **Map**         | comme un dictionnaire (tableau à deux colonne, clé-valeur)      |
+| **HashMap/Set** | pas de relation d’ordre entre les éléments (pas ordonnée)      |
+| **TreeMap/Set** | relation d’ordre entre les éléments (ordonnée)                 |
+
+<br>
+
+<Container type="info">
+
+**Choix entre Hash et Tree**
+* **HashMap ou HashSet**: pas de relation d'ordre, performant
+  * <Fa fa="arrow-right"/> À privilégier
+* **TreeMap ou TreeSet**: relation d'ordre, peu performant   
+  * <Fa fa="arrow-right"/> À éviter si l'ordre n'est pas important
+
+</Container>
+
 
 ### Syntaxe tableaux
 ```cpp

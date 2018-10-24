@@ -5,9 +5,48 @@ author: Sol
 sidebar: auto
 ---
 
+## Awesome Students
+
+### Extensions utilisées
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+<Card header="Système" max-width="270">
+
+* [auth0]()
+* [luxon]()
+* [node-sass]()
+
+</Card>
+
+</template>
+<template slot="right">
+
+<Card header="Esthétique" max-width="270">
+
+* [v-tooltip]()
+* [vuesax]()
+* [vue-slide-toggle]()
+
+</Card>
+
+</template>
+</Col>
+
+<Card header="Utils" max-width="270">
+
+* [asciitree]()
+* [chartsJs]()
+* [markdown-it-katex]()
+* [markdown-it-plantuml](https://www.npmjs.com/package/markdown-it-plantuml)
+    * [plantuml](http://plantuml.com/PlantUML_Language_Reference_Guide.pdf)
+
+</Card>
+
 ## Integrations
 
-### Nomnoml
+### Nomnoml <small><st c="r">remplacé par plantuml</st></small>
 
 * [Web app](http://www.nomnoml.com/)
 * [Repo](https://github.com/skanaar/nomnoml)

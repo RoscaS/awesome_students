@@ -111,4 +111,3 @@ void MonWidget::paintEvent(QPaintEvent *) {
 <br>
 
 ![Image](https://i.imgur.com/uR4gPT7.png)
-
