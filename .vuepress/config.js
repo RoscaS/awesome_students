@@ -4,7 +4,6 @@ module.exports = {
     lineNumbers: true,
     config: md => {
       md.use(require("markdown-it-katex"))
-      md.use(require("markdown-it-plantuml"))
     }
   },
   extraPages: [

@@ -19,6 +19,8 @@ sidebar: auto
 * **Exclusion mutuelle**: Garantie que si un thread entre dans une section critique accédant à des ressources partagées, alors aucun autre thread ne peut accéder à ces mêmes ressources partagées.
 * **Situation de concurrence (race condition)**: Situation où plusieurs threads lisent et écrivent une ressource partagée et le résultat final dépend du timing de l'exécution.
 * **Famine (starvation)**: Situation où un thread prêt à être exécuté n'est jamais élu par l'ordonnanceur.
+* **Fonction réantrante**: 
+* **Thread safe**: Une fonction est dite thread-safe si elle peut être appelée simultanément par plusieurs threads et qu'elle retourne toujours un même résultat.
 
 ## Algorithme d'exclusion mutuelle
 Selon [Edsger Wybe Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) (11 mai 1930 – 6 aout 2002), tout algorithme d'**exclusion mutuelle** devrait satisfaire les propriétés suivantes:
