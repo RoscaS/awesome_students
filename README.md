@@ -51,7 +51,11 @@ Pour tout $(x,y) \in D$
 
 Et de la même façon: $f_{xyz} = f_{zyx}$ 
 
+<br>
+
 Exemple:
+
+<br>
 
 Soit $f(x, y, z) = xy^2z^3 + arcsin(x\sqrt{z}) \quad$ calculer $f_{xzy}$
 
