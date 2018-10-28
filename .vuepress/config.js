@@ -53,6 +53,7 @@ module.exports = {
           '/articles/developpement_web/',
           '/articles/web_design/',
           '/articles/dev_ops/',
+          '/articles/reseaux/',
           '/articles/divers/',
         ],
       },

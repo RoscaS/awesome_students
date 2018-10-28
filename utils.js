@@ -23,6 +23,7 @@ let dict = {
   // developpement_web: 'developpement_web',
   web_design: 'Web',
   dev_ops: 'Dev Ops',
+  reseaux: 'Reseaux',
   divers: 'Divers',
 
   // P
