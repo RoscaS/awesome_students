@@ -21,6 +21,23 @@ Un mot <Def def="pas facile">compliqué</Def> par exemple:
 Un mot <Def def="pas facile">compliqué</Def> par exemple
 ```
 
+### Checkbox
+
+<br>
+
+<Check state="true">Trouver le dahu</Check>
+<Check state="false">Fermer la porte</Check>
+
+```md
+<Check state="true">Trouver le dahu</Check>
+<Check state="false">Fermer la porte</Check>
+```
+
+|     | type   | values                                        | default |
+| --- | ------ | --------------------------------------------- | :-----: |
+| `state` | string | `"r"`: red <br> `"g"`: green <br> `"b"`: blue | `"r"`   |
+
+
 ### Balise spoiler
 
 <Spoiler>
@@ -65,9 +82,9 @@ Un mot <st c="g">vert</st>, un mot <st c="r">rouge</st> et
 une <st c="b"> fin de phrase bien bleu</st>.
 ```
 
-|     | type   | values                                        | default |
-| --- | ------ | --------------------------------------------- | :-----: |
-| `c` | string | `"r"`: red <br> `"g"`: green <br> `"b"`: blue | `"r"`   |
+|         | type   | values                                        | default |
+| ------- | ------ | --------------------------------------------- | :-----: |
+| `state` | string | `"true"` <br> `"false"`| `"false"`   |
 
 
 ### Controle avancé sur les médias

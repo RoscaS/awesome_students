@@ -79,3 +79,9 @@ Dans une hiérarchie (isa), seule la racine définit l'identifiant
 ### En vrac
 
 si entre deux entités il y a certaines relations qui reviennent mais ne sont pas la norme, on tend à créér une table associative qui sera beaucoup moins peuplée que les deux autres.
+
+### Solution exercice de projection
+
+#### Entités
+* Personnes (nom, prenom, numeroAVS, adresse)
+* Etudiants(numeroAVS, )
