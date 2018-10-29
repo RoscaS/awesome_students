@@ -84,4 +84,5 @@ si entre deux entités il y a certaines relations qui reviennent mais ne sont pa
 
 #### Entités
 * Personnes (nom, prenom, numeroAVS, adresse)
-* Etudiants(numeroAVS, )
+* Etudiants(numeroAVS, 
+

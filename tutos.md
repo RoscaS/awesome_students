@@ -235,6 +235,10 @@ Dans le <Def def="markdown.json">document qui vient de s'ouvrir</Def> effacez to
 	"code": {
 		"prefix": "code",
 		"body": "```${1:language}\n${2:contenu}\n```\n"
+  },
+  "check": {
+		"prefix": "check",
+		"body": "<Check state=\"false\">${1:label}</Check>\n",
 	},
 	"container": {
 		"prefix": "container",
