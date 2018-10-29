@@ -4,7 +4,7 @@
 
 <h2>Tests</h2>
 
-* 16 Novembre
+* **16 Novembre**
     * Tous les tri vu
 
 <h2>Liens utiles</h2>

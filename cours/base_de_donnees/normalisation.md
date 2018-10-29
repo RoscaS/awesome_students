@@ -152,3 +152,118 @@ R(A, B, C, D, E)
 </template>
 </Col>
 
+
+## Normalisation
+
+### Procédure
+
+* Vérifier que la relation soit, au départ en 1ere forme normale
+* Déterminer à l'aide du graphe tous ses identifiants
+* Déterminer la forme normale
+* Si la relation n'est pas normalisée, la décomposer à l'aide du graphe en relations mieux normalisées
+* Aller au moins à la 3e forme normale
+
+
+### Première forme normale (1FN)
+
+Une relationes t en 1FN si **chaque valeur** de **chaque attribut** de **chaque n-uplet** est une valeur simple (autrement dit, tous les attributs sont simples et mono-valeur).
+
+#### Exemple
+Livraison (numFournisseur, adrFournisseur, numProduit, prixProduit, qté) est en 1FN.
+
+<Container type="info">
+
+En pratique, dans le modèle relationnel, toutes les relations sont 1FN
+
+</Container>
+
+### Seconde forme normale (2FN)
+
+Permet d'éliminer les attributs qui ne décrivent pas l'objet représenté par la relation.
+Une relation est en 2FN si:
+* Chaque attribut qui ne fait pas partie de l'identifiant dépend de **tous les attributs** de l'identifiant (et non pas d'un composant de l'identifiant)
+
+#### Exemple
+Livraison (numFournisseur, adrFournisseur, numProduit, prixProduit, qté)
+
+![image](https://i.imgur.com/MyW9Ml7.png)
+
+Livraison mélange la description de:
+* la livraison (numFournisseur, numProduit, qté)
+* fourniseeur (numFournisseur, adrFournisseur)
+* produit (numProduit, prixProduit)
+
+Livraison n'est donc pas en 2FN car des DFs parent de composants de l'identifiant
+
+#### Décomposition en 2FN
+
+* Créer une nouvelle relation avec chaque identifiant partiel et les attributs qui en dépendent
+* Garder la relation originale avec l'identifiant complet et les attributs qui en dépendent
+
+![Image](https://i.imgur.com/3k8CPiN.png)
+
+### Troisième forme normale (3FN)
+
+Permet d'éliminer les sous-relations incluses dans une relation.
+
+<br>
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+![Image](https://i.imgur.com/WxTj8ly.png)
+
+</template>
+<template slot="right">
+
+Une relation est en 3FN si:
+* Elle est en 2FN et
+* Chaque attribut qui ne fait partie d'aucun identifiant dépend directement de tous les attributs de l'identifiant
+
+</template>
+</Col>
+
+<Container type="info">
+
+Autrement dit, si la profondeur de l'arbre des DFs est > 1, la relation n'est pas en 3FN
+
+</Container>
+
+#### Exemple
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+![Image](https://i.imgur.com/Ds1kOGD.png)
+
+</template>
+<template slot="right">
+
+Fournisseur (numFournisseur, ville, pays)
+* Fournisseur doit être décomposé en:
+    * Fournisseur (numFournisseur, ville)
+    * Ville (**ville**, pays)
+
+</template>
+</Col>
+
+> La pk est en bold et non pas sous-ligné comme dans le cours
+
+#### Décomposition en 3FN
+* Créer une novuelle relation pour chaque attribut qui n'est pas un identifiant mais qui détermine d'autres attributs non-identifiants.
+* Garder dans la relation originale l'identifiant des nouvelles relations
+
+![Image](https://i.imgur.com/yixV8AP.png)
+
+#### Importance de la 3FN
+* Toute relation peut toujours être décomposée en relation 3FN
+    * Sans perte de DF
+    * Sans perte d'information
+
+<Container type="warning">
+
+Ce n'est pas vrai pour les formes supérieures
+
+</Container>
+
+**Il faut donc toujours faire des schémas au moins en 3FN**
