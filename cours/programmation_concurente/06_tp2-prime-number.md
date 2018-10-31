@@ -5,7 +5,28 @@ author:  "Latino Nathan, Kneuss Michael, Rosca Sol"
 sidebar: auto
 ---
 
-##  Meta
+
+
+<Charts :x="x1" :y="y1" :height="200" label="Temps d'exécution en fonction du nombre de threads"/>
+
+<script>
+export default {
+    data: () => ({
+        y1: [ 2.661176, 1.364409, 0.930129, 0.706613, 0.669448, 0.572811, 0.497749, 0.467328, 0.647309, 0.529038, 0.486498, 0.538177, 0.567060, 0.480755, 0.510905, 0.506464, 0.477538, 0.513075, 0.458260, 0.454990 ]
+
+
+    }),
+    computed: {
+        x1() {
+            let a = [];
+            for (let i of [...Array(20).keys()]) a.push(i + 1);
+            return a;
+        }
+    }
+}
+</script>
+
+
 
 ## Meta
 * Élèves: Kneuss Michael, Latino Nathan, Rosca Sol

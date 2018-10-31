@@ -9,6 +9,7 @@
       x: {type: Array},
       y: {type: Array},
       height: {type: Number, default: 200},
+      label: {type: String}
     },
     extends: Line,
     mounted () {
@@ -19,7 +20,7 @@
         datasets: [
           {
             data: this.y,
-            label: '',
+            label: this.label,
             backgroundColor: '#3eaf7c',
             borderColor: '#3eaf7c',
             fill: false,
