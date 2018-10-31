@@ -1,7 +1,7 @@
 ---
 title: "TP-1:  Librairie POSIX"
 date: 2018-10-19
-author:  Sol
+author:  "Latino Nathan, Kneuss Michael, Rosca Sol"
 sidebar: auto
 ---
 

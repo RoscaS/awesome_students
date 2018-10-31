@@ -5,6 +5,45 @@ sidebar: auto
 author: Sol
 ---
 
+## Idee
+**Comme pour les classes containeurs (Pojo != classe container) une fois que les attributs sont définits, le reste est générable automatiquement. Pourquoi ne pas pas créér un petit soft pour générér ça. Ou éventuellement un template.**
+
+
+
+## Attention
+
+```java
+return "ax^2 + bx + c = 0 /n a =" + a + "\nb = " + b + "\nc = \n";
+```
+Ici on a 13 instantiations.
+* Chaque string est une instance
+* chaque conversion de int à string
+* à chaque `+` un nouvel object est instancié qui est le resultat de la concatenation
+
+
+
+## autoToString
+
+```java
+@Override
+public String toString()
+    {
+    final StringBuilder sb = new StringBuilder("Linear{");
+    sb.append("a=").append(a);
+    sb.append(", b=").append(b);
+    sb.append(", x=").append(x);
+    sb.append('}');
+    return sb.toString();
+    }
+```
+Généré automatiquement par Eclipse ou Inteliji (insert)
+
+## Tests unitaires
+Analogie du casque:
+* Tant qu'on met pas de casque on se demande à quoi ça sert
+* Une fois qu'on en met un 
+
+
 ## Todo:
 
 ```
