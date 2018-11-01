@@ -25,7 +25,7 @@ Ces comparaisons se font sur un processeur Intel® Core™ i7-4710HQ (3.50 GHz, 
 
 <br>
 
-Pour tester si un nombre $n$ entré par l'utilisateur est un nombre premier, les programmes de ce rapport tentent de diviser $n$ par un nombre $x, \{x \in  | 2 \leq x \leq \sqrt{n}\}$. Si le résultat de cette opération est un nombre entier, alors $n$ n'est pas premier.
+Pour tester si un nombre $n$ entré par l'utilisateur est un nombre premier, les programmes de ce rapport tentent de diviser $n$ par un nombre $x, \{x \in \mathbb{N} | 2 \leq x \leq \sqrt{n}\}$. Si le résultat de cette opération est un nombre entier, alors $n$ n'est pas premier.
 
 ## Utilisation des programmes
 ```shell
