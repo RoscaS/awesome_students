@@ -15,10 +15,10 @@
         <OutboundLink v-if="$auth.isAuthenticated()"/>
       </div>
 
-      <div class="last-updated" v-if="lastUpdated">
-        <span class="prefix">{{ lastUpdatedText }}: </span>
-        <span class="time">{{ lastUpdated }}</span>
-      </div>
+      <!--<div class="last-updated" v-if="lastUpdated">-->
+        <!--<span class="prefix">{{ lastUpdatedText }}: </span>-->
+        <!--<span class="time">{{ lastUpdated }}</span>-->
+      <!--</div>-->
     </div>
 
     <div class="page-nav" v-if="prev || next">

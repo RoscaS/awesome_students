@@ -36,9 +36,9 @@ gcc -pthread -lm sequentielle.c -o sequentielle && ./sequentielle <n>
 gcc -pthread -lm multiThread.c -o multiThread && ./multiThread <n> <n_threads>
 ```
 
-## Premier programme: sequentielle
+## Premier programme: sequentiel
 Cette première implémentation est triviale et se base sur la technique décrite dans le [contexte](https://www.intra.jrosk.ch/cours/programmation_concurente/06_tp2-prime-number.html#contexte) pour vérifier si un nombre est premier.
-Les valeurs proposées dans la consigne nous retournent les résultats suivants sur un moyenne de 50 itérations du programme.
+Les valeurs proposées dans la consigne retournent les résultats suivants sur un moyenne de 50 itérations du programme.
 
 
 | $n$               | Temps (sec) | Est premier |
@@ -53,13 +53,13 @@ Les valeurs proposées dans la consigne nous retournent les résultats suivants 
 | 433494438         | 0.000013    | Non         |
 
 
-Quand un nombre n'est pas premier l'execution s'arrête immédiatement. Plus la valeur est grande plus le temps d'execution est long.
+Si un nombre est premier, le programme doit tester toutes les valeurs comprises dans l'interval $i = [2, $\sqrt{n}]$ ce qui est le cas de presque tous les valeurs proposées dans la consigne mis à part le dernier. Les résultats indiquent que plus l'interval $i$ est grand plus le temps d'exécution est long. Si un nombre n'est pas premier l'execution s'arrête dés que le test de la condition en ligne 29 échoue (cliquer sur la balise _spoiler_ suivante pour afficher l'implémentation).
 
-### Implémentation
+### Première implémentation
 
 <Spoiler>
 
-```cpp
+```cpp{29}
 #define DEFAULT_VALUE 433494438
 
 typedef struct {
@@ -107,10 +107,10 @@ int main(int argc, char *argv[]) {
 
 ## Second programme: multi-thread
 
-Cette seconde implémentation est une version multi-thread du même code. 
-Le nombre $n$ entré par l'utilisateur est partitionné de façon équitable entre les différents thdreads qui vont chacun se charger d'une plage de  valeurs. Si un thread découvre que le nombre n'est pas premier, les thdreads stopent leur exécution et le main reprend la main pour finir le programme.
+Cette seconde implémentation est une version multi-thread du premier programme. 
+Le nombre $n$ entré par l'utilisateur est partitionné de façon _presque_ équitable entre les différents thdreads qui se chargent de tester une plage de valeurs de façon concurente. Si l'un d'eux passe avec succès la condition en ligne 98 (voir prochaine [implémantation](https://www.intra.jrosk.ch/cours/programmation_concurente/06_tp2-prime-number.html#seconde-implementation)), un flag permet de stoper l'exécution de tous les threads à l'exception du `main` qui reprend la main pour terminer le programme.
 
-Pour la plus petite valeur ainsi que la plus grande valeur données dans la consigne, par nombre de threads (de 1 à 20) le temps enregistré correspond à la moyenne de 10 executions du programme.
+Pour la plus petite valeur ainsi que la plus grande valeur donnés dans la consigne, par nombre de threads (de 1 à 20) le temps enregistré correspond à la moyenne de 10 executions du programme.
 
 ### Première valeur (grande)
 
@@ -120,7 +120,7 @@ Pour la plus petite valeur ainsi que la plus grande valeur données dans la cons
 
 | Threads | Temps (s) | Threads | Temps (s) |
 |---------|-----------|---------|-----------|
-| 1       | 2.661176  | 11      | 0.486498  |
+| 1       | 2.861176  | 11      | 0.486498  |
 | 2       | 1.364409  | 12      | 0.538177  |
 | 3       | 0.930129  | 13      | 0.567060  |
 | 4       | 0.706613  | 14      | 0.480755  |
@@ -136,7 +136,13 @@ Pour la plus petite valeur ainsi que la plus grande valeur données dans la cons
 
 <Charts :x="x1" :y="y1" :height="200" label="y = time(threads)"/>
 
-Dans cette première situation, le temps d'éxécution diminue plus le nombre de threads augmente et se stabilise une fois que tous les threads du processeurs sont solicités (8).
+Dans cette première situation, le temps d'execution diminue en fonction du nombre de threads utilisés et se stabilise une fois que les 8 threads du processeur sont solicités. Une seconde observation remarquable est le fait que le temps d'exécution sur un thread est plus faible que sur le programme séquentiel pour la même valeur malgré une complexité plus elevée. 
+
+<Container type="warning">
+
+La seconde observation nécessiterait des tests particuliers pour être confirmée, elle ne sera donc pas prise en compte dans la conclusion.
+
+</Container>
 
 
 <br>
@@ -171,11 +177,11 @@ Dans cette première situation, le temps d'éxécution diminue plus le nombre de
 Dans cette seconde situation, l'amplitude entre les résultats semble plus grande entre les différents nombre de threads utlisés mais les écarts sont en réalité très faibles et il est difficile de juger si ces écarts sont significatifs. La tendance semble être la même que lors du test sur un grand nombre jusque 6 threads.
 
 
-### Implémentation
+### Seconde implémentation
 
 <Spoiler>
 
-```cpp
+```cpp{98}
 typedef unsigned long int uli;
 
 static bool isPrime = true;
@@ -285,24 +291,21 @@ void *thread(void *arg) {
 </Spoiler>
 
 # Conclusion
-Ces résultats nous indiquent **une différence importante** entre le temps d'exécution de la version séquentielle du programme et celle multi-thread. Pour le même nombre (le plus grand) on passe d'un temps de $\approx 3.05$ secondes en version séquentielle à un temps de $\approx 0.48$ sur 8 threads. 
+Ces résultats nous indiquent **une différence importante** entre le temps d'exécution de la version séquentielle du programme et celle multi-thread. Pour le même nombre $n$(le plus grand) on passe d'un temps de $\approx 3.05$ secondes en version séquentielle à un temps de $\approx 0.48$ sur 8 threads. 
 
 <br>
 
-Il est également notable que le temps d'éxécution diminue en fonction du nombre de threads utilisés pour atteindre son plein potentiel sur le nombre maximum de thdreads de la machine si le nombre à tester est suffisament grand pour laisser au processeur le temps d'atteindre sa vitesse maximum.
+Il est également notable que le temps d'éxécution diminue en fonction du nombre de threads utilisés pour **atteindre son plein potentiel sur le nombre maximum de thdreads de la machine** si le nombre à tester est suffisament grand pour laisser au processeur le temps d'atteindre sa vitesse maximum.
 
 <br>
 
 La conclusion de ce travail est que la programmation concurrente peut être un choix juticieux et facile à implémenter pour optimiser l'éfficacité des algorithmes ne nécéssitant pas d'accès concurent aux mêmes données.
 
 
-
-
-
 <script>
 export default {
     data: () => ({
-        y1: [ 2.661176, 1.364409, 0.930129, 0.706613, 0.669448, 0.572811, 0.497749, 0.467328, 0.647309, 0.529038, 0.486498, 0.538177, 0.567060, 0.480755, 0.510905, 0.506464, 0.477538, 0.513075, 0.458260, 0.454990 ],
+        y1: [ 2.861176, 1.364409, 0.930129, 0.706613, 0.669448, 0.572811, 0.497749, 0.467328, 0.647309, 0.529038, 0.486498, 0.538177, 0.567060, 0.480755, 0.510905, 0.506464, 0.477538, 0.513075, 0.458260, 0.454990 ],
 
         y2: [ 0.000305, 0.000171, 0.000109, 0.000100, 0.000094, 0.000111, 0.000216, 0.000229, 0.000170,0.000205, 0.000224, 0.000252, 0.000240, 0.000220, 0.000241, 0.000244, 0.000270, 0.000266,0.000270, 0.000286 ]
     }),
