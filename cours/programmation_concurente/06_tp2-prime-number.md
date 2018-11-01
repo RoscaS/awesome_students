@@ -287,7 +287,11 @@ void *thread(void *arg) {
 # Conclusion
 Ces résultats nous indiquent **une différence importante** entre le temps d'exécution de la version séquentielle du programme et celle multi-thread. Pour le même nombre (le plus grand) on passe d'un temps de $\approx 3.05$ secondes en version séquentielle à un temps de $\approx 0.48$ sur 8 threads. 
 
+<br>
+
 Il est également notable que le temps d'éxécution diminue en fonction du nombre de threads utilisés pour atteindre son plein potentiel sur le nombre maximum de thdreads de la machine si le nombre à tester est suffisament grand pour laisser au processeur le temps d'atteindre sa vitesse maximum.
+
+<br>
 
 La conclusion de ce travail est que la programmation concurrente peut être un choix juticieux et facile à implémenter pour optimiser l'éfficacité des algorithmes ne nécéssitant pas d'accès concurent aux mêmes données.
 
