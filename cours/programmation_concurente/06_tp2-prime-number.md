@@ -53,7 +53,7 @@ Les valeurs proposées dans la consigne retournent les résultats suivants sur u
 | 433494438         | 0.000013    | Non         |
 
 
-Si un nombre est premier, le programme doit tester toutes les valeurs comprises dans l'interval $i = [2, $\sqrt{n}]$ ce qui est le cas de presque tous les valeurs proposées dans la consigne mis à part le dernier. Les résultats indiquent que plus l'interval $i$ est grand plus le temps d'exécution est long. Si un nombre n'est pas premier l'execution s'arrête dés que le test de la condition en ligne 29 échoue (cliquer sur la balise _spoiler_ suivante pour afficher l'implémentation).
+Si un nombre est premier, le programme doit tester toutes les valeurs comprises dans l'interval $i = [2, \sqrt{n}]$ ce qui est le cas de presque tous les valeurs proposées dans la consigne mis à part le dernier. Les résultats indiquent que plus l'interval $i$ est grand plus le temps d'exécution est long. Si un nombre n'est pas premier l'execution s'arrête dés que le test de la condition en ligne 29 échoue (cliquer sur la balise _spoiler_ suivante pour afficher l'implémentation).
 
 ### Première implémentation
 
