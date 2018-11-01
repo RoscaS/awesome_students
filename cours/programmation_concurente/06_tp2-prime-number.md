@@ -6,28 +6,6 @@ sidebar: auto
 ---
 
 
-
-<Charts :x="x1" :y="y1" :height="200" label="Temps d'exécution en fonction du nombre de threads"/>
-
-<script>
-export default {
-    data: () => ({
-        y1: [ 2.661176, 1.364409, 0.930129, 0.706613, 0.669448, 0.572811, 0.497749, 0.467328, 0.647309, 0.529038, 0.486498, 0.538177, 0.567060, 0.480755, 0.510905, 0.506464, 0.477538, 0.513075, 0.458260, 0.454990 ]
-
-
-    }),
-    computed: {
-        x1() {
-            let a = [];
-            for (let i of [...Array(20).keys()]) a.push(i + 1);
-            return a;
-        }
-    }
-}
-</script>
-
-
-
 ## Meta
 * Élèves: Kneuss Michael, Latino Nathan, Rosca Sol
 
@@ -36,33 +14,36 @@ export default {
 * Vérifier si un nombre est premier de manière sequentielle et multi-threadée.
 * Comparer les performances (temps d'execution) et trouver le nombre de thread optimale pour l'execution.
 
+<Container type="info">
+
 Ces comparaisons se font sur un processeur Intel® Core™ i7-4710HQ (3.50 GHz, 4 coeurs, 8 threads), OS : Ubuntu 18.04.1 LTS
-### sequentielle
-La première partie du laboratoire est de développer un code sequentielle et regarder le temps d'execution pour plusieurs nombres différents.
+
+</Container>
+
+## Sequentielle
+
+Une première implémentation séquentielle nous donne les valeurs suivantes:
 
 
+| Value             | Temps (sec) | Est premier |
+|-------------------|-------------|-------------|
+| 99194853094755497 | 3.053615    | Oui         |
+| 18014398241046527 | 1.300335    | Oui         |
+| 70368760954879    | 0.083977    | Oui         |
+| 4398050705407     | 0.021344    | Oui         |
+| 68720001023       | 0.002695    | Oui         |
+| 2971215073        | 0.000657    | Oui         |
+| 433494437         | 0.000234    | Oui         |
+| 433494438         | 0.000013    | Non         |
 
-| Value | Temps (sec) | Nombre premier |
-| -------- | -------- | -------- |
-| 99194853094755497| 3.053615     | Oui |
-|18014398241046527 |1.300335| Oui|
-|70368760954879| 0.083977 | Oui|
-| 4398050705407 | 0.021344 | Oui|
-| 68720001023 | 0.002695| Oui|
-| 2971215073 | 0.000657|Oui|
-| 433494437 | 0.000234 | Oui|
-| 433494438 | 0.000013 | Non|
 
+Quand un nombre n'est pas premier l'execution s'arrête immédiatement. Plus la valeur est grande plus le temps d'execution est long.
 
-Quand une valeur est nombre premier comme le dernier nombre (divisible par 2) l'execution s'arrête immédiatement. Plus la valeur est grande plus le temps d'execution est long et évolue de manière linéaire.
+### Implémentation
+
+<Spoiler>
 
 ```cpp
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <stdbool.h>
-#include <time.h>
-
 #define DEFAULT_VALUE 433494438
 
 typedef struct {
@@ -103,49 +84,69 @@ int main(int argc, char *argv[]) {
     return EXIT_SUCCESS;
 }
 ```
-### multi-thread
-Pour la deuxième partie du laboratoire nous allons tester avec le plus grand et le plus petit nombre premier donner dans le cahier des charges (99194853094755497, 433494437).
 
-Le temps est la moyenne de 10 essais.
-
-#### Grand nombre premier
-nombre : 99194853094755497
-
-| Nombre thread | Temps (sec)| 
-| -------- | -------- |
-| 1     | 2.694806 |
-| 2     | 1.379081 |
-| 3     | 0.938333 |
-| 4     | 0.707305 |
-| 5     | 0.670699 |
-| 6     | 0.574488 |
-| 7     | 0.491242 |
-| 8     | 0.445238 |
-| 9     | 0.519160 |
-| 10     | 0.525504 |
-| 11 		| 0.501730|
-
-![](https://i.imgur.com/mtMJ30M.png)
+</Spoiler>
 
 
-#### Petit nombre premier
-nombre : 433494437
 
-| Nombre thread | Temps (sec)| 
-| -------- | -------- |
-| 1     | 0.000466 |
-| 2     | 0.000334 |
-| 3     | 0.000307 |
-| 4     | 0.000284 |
-| 5     | 0.000270 |
-| 6     | 0.000276 |
-| 7     | 0.000272 |
-| 8     | 0.000383 |
-| 9     | 0.000361 |
-| 10     | 0.000396 |
-| 11 		| 0.000427 |
+## Multi-thread
 
-![](https://i.imgur.com/EB0sSIi.png)
+Cette seconde implémentation est une version multi-thread du même code. 
+Pour la plus petite valeur ainsi que la plus grande valeur donnée dans le cahier des charge, par nombre de threads (de 1 à 20) le temps enregistré correspond à la moyenne de 10 execution du programme.
+
+### Première valeur (grande)
+
+**Value = 99 194 853 094 755 497**
+
+<br>
+
+| Threads | Temps (s) | Threads | Temps (s) |
+|---------|-----------|---------|-----------|
+| 1       | 2.661176  | 11      | 0.486498  |
+| 2       | 1.364409  | 12      | 0.538177  |
+| 3       | 0.930129  | 13      | 0.567060  |
+| 4       | 0.706613  | 14      | 0.480755  |
+| 5       | 0.669448  | 15      | 0.510905  |
+| 6       | 0.572811  | 16      | 0.506464  |
+| 7       | 0.497749  | 17      | 0.477538  |
+| 8       | 0.467328  | 18      | 0.513075  |
+| 9       | 0.647309  | 19      | 0.458260  |
+| 10      | 0.529038  | 20      | 0.454990  |
+
+<br>
+<br>
+
+<Charts :x="x1" :y="y1" :height="200" label="y = time(threads)"/>
+
+
+<br>
+
+### Seconde valeur (petite)
+
+**Value = 433 494 437**
+
+
+| Threads | Temps (s) | Threads | Temps (s) |
+|---------|-----------|---------|-----------|
+| 1       | 0.000305  | 11      | 0.000224  |
+| 2       | 0.000171  | 12      | 0.000252  |
+| 3       | 0.000109  | 13      | 0.000240  |
+| 4       | 0.000100  | 14      | 0.000220  |
+| 5       | 0.000094  | 15      | 0.000241  |
+| 6       | 0.000111  | 16      | 0.000244  |
+| 7       | 0.000216  | 17      | 0.000270  |
+| 8       | 0.001229  | 18      | 0.000266  |
+| 9       | 0.000170  | 19      | 0.000270  |
+| 10      | 0.000205  | 20      | 0.000286  |
+
+<br>
+<br>
+
+
+<Charts :x="x2" :y="y2" :height="200" label="y = time(threads)"/>
+
+
+<br>
 
 On peut voir dans la première comparaison l'utilisation des huit threads du processeur est optimale. Plus de thread augmente le temps d'execution et permet en efficacité.
 
@@ -258,3 +259,31 @@ int main(int argc, char *argv[]) {
     return EXIT_SUCCESS;
 }
 ```
+
+
+
+
+<script>
+export default {
+    data: () => ({
+        y1: [ 2.661176, 1.364409, 0.930129, 0.706613, 0.669448, 0.572811, 0.497749, 0.467328, 0.647309, 0.529038, 0.486498, 0.538177, 0.567060, 0.480755, 0.510905, 0.506464, 0.477538, 0.513075, 0.458260, 0.454990 ],
+
+        y2: [ 0.000305, 0.000171, 0.000109, 0.000100, 0.000094, 0.000111, 0.000216, 0.000229, 0.000170,0.000205, 0.000224, 0.000252, 0.000240, 0.000220, 0.000241, 0.000244, 0.000270, 0.000266,0.000270, 0.000286 ]
+    }),
+    computed: {
+        x1() {
+            return this.range(20);
+        },
+        x2() {
+            return this.range(20);
+        }
+    },
+    methods: {
+        range(n) {
+            let a = [];
+            for (let i of [...Array(n).keys()]) a.push(i + 1);
+            return a;
+        }
+    }
+}
+</script>

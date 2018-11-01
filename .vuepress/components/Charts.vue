@@ -14,9 +14,11 @@
     extends: Line,
     mounted () {
       this.renderChart({
+
         labels: this.x,
         xAxisID: 'x',
         yAxisID: 'y',
+        label: 'Poule',
         datasets: [
           {
             data: this.y,
@@ -24,7 +26,7 @@
             backgroundColor: '#3eaf7c',
             borderColor: '#3eaf7c',
             fill: false,
-          }
+          },
         ],
       })
     }
