@@ -60,7 +60,7 @@ Si un nombre est premier, le programme doit tester toutes les valeurs comprises 
 <Spoiler>
 
 ```cpp{29}
-#define DEFAULT_VALUE 433494438
+#define DEFAULT_VALUE 433494437
 
 typedef struct {
     unsigned long int value;
@@ -288,6 +288,99 @@ void *thread(void *arg) {
 }
 ```
 
+</Spoiler>
+
+### Implémentation de test
+<Spoiler>
+```cpp{98}
+typedef unsigned long int uli;
+
+static bool isPrime;
+
+typedef struct {
+    pthread_t id;
+    uli start;
+    uli end;
+    uli max;
+    uli value;
+} T_data;
+
+
+void *thread(void *arg) {
+    T_data *t = arg;
+    for (uli i = t->start; (i < t->end); i++) {
+        if (t->value % i == 0 || isPrime == false) {
+            isPrime = false;
+            break;
+        }
+    }
+    pthread_exit(NULL);
+}
+
+double testMulti(uli value, int threads_count) {
+
+    struct timeval tv1, tv2;
+
+    isPrime = true;
+    T_data *t_tab = malloc(sizeof(T_data) * threads_count);
+    uli length = (uli) ceil(sqrt(value));
+    uli range = (uli) ceil(length / threads_count) + 1;
+
+
+    for (int i = 0; i < threads_count; i++) {
+        pthread_t id;
+        T_data t;
+        t.id = id;
+        t.start = (uli) (i * range < 2 ? 2 : i * range);
+        t.end = (uli) ((i + 1) * range);
+        t.max = length;
+        t.value = value;
+
+        t_tab[i] = t;
+    }
+
+    gettimeofday(&tv1, NULL);
+
+    for (int i = 0; i < threads_count; i++) {
+        if (pthread_create(&t_tab[i].id, NULL, thread, &t_tab[i]) != 0) {
+            perror("pthread_create error");
+            return EXIT_FAILURE;
+        }
+    }
+
+    for (int i = 0; i < threads_count; i++) {
+        if (pthread_join(t_tab[i].id, NULL) != 0) {
+            perror("pthread_join error");
+            return EXIT_FAILURE;
+        }
+    }
+
+    gettimeofday(&tv2, NULL);
+
+    double temps = (double) (tv2.tv_usec - tv1.tv_usec) / 1000000 +
+                   (double) (tv2.tv_sec - tv1.tv_sec);
+
+    return temps;
+}
+
+int main(int argc, char *argv[]) {
+    uli value = 4398050705407;
+    int threadMax = 20;
+    int testMax = 10;
+    for(int i = 1; i <= threadMax; i++) {
+        double temps = 0;
+        for(int j = 0; j < testMax; j++) {
+            temps += testMulti(value,i);
+        }
+        temps = temps/testMax;
+        printf("%f, ",temps);
+
+    }
+
+    return EXIT_SUCCESS;
+}
+
+```
 </Spoiler>
 
 # Conclusion
