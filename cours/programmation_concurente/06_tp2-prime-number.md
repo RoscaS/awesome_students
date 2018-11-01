@@ -1,5 +1,5 @@
 ---
-title: "TP-2: Prime-number"
+title: "TP-2: Nombres premiers"
 date: 2018-10-31
 author:  "Latino Nathan, Kneuss Michael, Rosca Sol"
 sidebar: auto
@@ -7,12 +7,12 @@ sidebar: auto
 
 
 ## Meta
-* Élèves: Kneuss Michael, Latino Nathan, Rosca Sol
+* Élèves: Latino Nathan, Kneuss Michael, Rosca Sol
+* Classe: INF2B
 
-
-## Objectifs :
+## Objectifs
 * Vérifier si un nombre est premier de manière sequentielle et multi-threadée.
-* Comparer les performances (temps d'execution) et trouver le nombre de thread optimale pour l'execution.
+* Comparer les performances (temps d'execution) et trouver le nombre de thread pour une exécution optimale.
 
 <Container type="info">
 
@@ -20,12 +20,28 @@ Ces comparaisons se font sur un processeur Intel® Core™ i7-4710HQ (3.50 GHz, 
 
 </Container>
 
-## Sequentielle
+## Contexte
+> Un nombre premier est un entier naturel qui admet exactement deux diviseurs distincts entiers et positifs: 1 et lui-même.
 
-Une première implémentation séquentielle nous donne les valeurs suivantes:
+<br>
+
+Pour tester si un nombre $n$ entré par l'utilisateur est un nombre premier, les programmes de ce rapport tentent de diviser $n$ par un nombre $x, \{x \in  | 2 \leq x \leq \sqrt{n}\}$. Si le résultat de cette opération est un nombre entier, alors $n$ n'est pas premier.
+
+## Utilisation des programmes
+```shell
+// sequentielle.c
+gcc -pthread -lm sequentielle.c -o sequentielle && ./sequentielle <n>
+
+// multiThread.c
+gcc -pthread -lm multiThread.c -o multiThread && ./multiThread <n> <n_threads>
+```
+
+## Premier programme: sequentielle
+Cette première implémentation est triviale et se base sur la technique décrite dans le [contexte](https://www.intra.jrosk.ch/cours/programmation_concurente/06_tp2-prime-number.html#contexte) pour vérifier si un nombre est premier.
+Les valeurs proposées dans la consigne nous retournent les résultats suivants sur un moyenne de 50 itérations du programme.
 
 
-| Value             | Temps (sec) | Est premier |
+| $n$               | Temps (sec) | Est premier |
 |-------------------|-------------|-------------|
 | 99194853094755497 | 3.053615    | Oui         |
 | 18014398241046527 | 1.300335    | Oui         |
@@ -89,14 +105,16 @@ int main(int argc, char *argv[]) {
 
 
 
-## Multi-thread
+## Second programme: multi-thread
 
 Cette seconde implémentation est une version multi-thread du même code. 
-Pour la plus petite valeur ainsi que la plus grande valeur donnée dans le cahier des charge, par nombre de threads (de 1 à 20) le temps enregistré correspond à la moyenne de 10 execution du programme.
+Le nombre $n$ entré par l'utilisateur est partitionné de façon équitable entre les différents thdreads qui vont chacun se charger d'une plage de  valeurs. Si un thread découvre que le nombre n'est pas premier, les thdreads stopent leur exécution et le main reprend la main pour finir le programme.
+
+Pour la plus petite valeur ainsi que la plus grande valeur données dans la consigne, par nombre de threads (de 1 à 20) le temps enregistré correspond à la moyenne de 10 executions du programme.
 
 ### Première valeur (grande)
 
-**Value = 99 194 853 094 755 497**
+**$n$ = 99 194 853 094 755 497**
 
 <br>
 
@@ -118,12 +136,14 @@ Pour la plus petite valeur ainsi que la plus grande valeur donnée dans le cahie
 
 <Charts :x="x1" :y="y1" :height="200" label="y = time(threads)"/>
 
+Dans cette première situation, le temps d'éxécution diminue plus le nombre de threads augmente et se stabilise une fois que tous les threads du processeurs sont solicités (8).
+
 
 <br>
 
 ### Seconde valeur (petite)
 
-**Value = 433 494 437**
+**$n$ = 433 494 437**
 
 
 | Threads | Temps (s) | Threads | Temps (s) |
@@ -148,97 +168,59 @@ Pour la plus petite valeur ainsi que la plus grande valeur donnée dans le cahie
 
 <br>
 
-On peut voir dans la première comparaison l'utilisation des huit threads du processeur est optimale. Plus de thread augmente le temps d'execution et permet en efficacité.
+Dans cette seconde situation, l'amplitude entre les résultats semble plus grande entre les différents nombre de threads utlisés mais les écarts sont en réalité très faibles et il est difficile de juger si ces écarts sont significatifs. La tendance semble être la même que lors du test sur un grand nombre jusque 6 threads.
 
-Pour le plus petit nombre premier de la liste, cinq threads sont suffisants pour être optimals.
 
-On peut voir que moins il y a de valeur à tester, moins il y a besoin de thread pour avoir une execution performante.
+### Implémentation
 
-Une variable global permet d'arrêter tous les thread si la valeur n est divisible par un nombre qui se situe entre 2 et racine de n.
+<Spoiler>
 
 ```cpp
-#include <stdio.h>
-#include <stdlib.h>
-#include <pthread.h>
-#include <stdbool.h>
-#include <math.h>
-
-#include <sys/time.h>
-
 typedef unsigned long int uli;
 
-static bool isPrime;
+static bool isPrime = true;
+
+int threads_count;
+uli value;
+
+struct timeval tv1, tv2;
 
 typedef struct {
     pthread_t id;
-    uli start;
-    uli end;
-    uli max;
-    uli value;
-} T_data;
+    uli       start;
+    uli       end;
+    uli       max;
+    uli       value;
+}   T_data;
 
 
-void *thread(void *arg) {
-    T_data *t = arg;
-    for (uli i = t->start; (i < t->end); i++) {
-        if (t->value % i == 0 || isPrime == false) {
-            isPrime = false;
-            break;
-        }
-    }
-    pthread_exit(NULL);
-}
+void *thread(void* );
+int capture(int, char**);
+void init_T_data_objects(T_data*, uli, uli);
+void recap();
 
 
-int main(int argc, char *argv[]) {
+int main(int argc, char **argv) {
+    capture(argc, argv);
 
-    uli value;
-    int threads_count;
+    T_data *threads_tab = malloc(sizeof(T_data) * threads_count);
+    uli    length       = (uli) ceil(sqrt(value));
+    uli    range        = (uli) ceil(length / threads_count) + 1;
 
-    if (argc < 3) {
-        printf("usage: main <value> <threads number>");
-        return EXIT_FAILURE;
-    } else {
-        value = (uli) strtol(argv[1], NULL, 10);
-        threads_count = (int) strtol(argv[2], NULL, 10);
-    }
-
-    struct timeval tv1, tv2;
-    /* stuff to do! */
-
-    isPrime = true;
-    T_data *t_tab = malloc(sizeof(T_data) * threads_count);
-    uli length = (uli) ceil(sqrt(value));
-    uli range = (uli) ceil(length / threads_count) + 1;
-
-    printf("sqrt(value): %lu\n", length);
-    printf("threads: %d\n", threads_count);
-    printf("ranges: %lu\n", range);
-
-    for (int i = 0; i < threads_count; i++) {
-        pthread_t id;
-        T_data t;
-        t.id = id;
-        t.start = (uli) (i * range < 2 ? 2 : i * range);
-        t.end = (uli) ((i + 1) * range);
-        t.max = length;
-        t.value = value;
-
-        t_tab[i] = t;
-    }
+    init_T_data_objects(threads_tab, range, length);
 
     // Timed opperations START
     gettimeofday(&tv1, NULL);
 
     for (int i = 0; i < threads_count; i++) {
-        if (pthread_create(&t_tab[i].id, NULL, thread, &t_tab[i]) != 0) {
+        if (pthread_create(&threads_tab[i].id, NULL, thread, &threads_tab[i]) != 0) {
             perror("pthread_create error");
             return EXIT_FAILURE;
         }
     }
 
     for (int i = 0; i < threads_count; i++) {
-        if (pthread_join(t_tab[i].id, NULL) != 0) {
+        if (pthread_join(threads_tab[i].id, NULL) != 0) {
             perror("pthread_join error");
             return EXIT_FAILURE;
         }
@@ -246,19 +228,69 @@ int main(int argc, char *argv[]) {
 
     // Timed opperations END
     gettimeofday(&tv2, NULL);
-
-
-    printf("%lu %s\n", value, isPrime ? "est premier" : "n'est pas premier");
-    printf(
-            "Total time = %f seconds\n",
-            (double) (tv2.tv_usec - tv1.tv_usec) / 1000000 +
-            (double) (tv2.tv_sec - tv1.tv_sec)
-    );
-
-
+    recap();
     return EXIT_SUCCESS;
 }
+
+int capture(int argc, char **argv) {
+    if (argc < 3) {
+        printf("usage: main <value> <threads number>");
+        exit(1);
+    }
+    value         = (uli) strtol(argv[1], NULL, 10);
+    threads_count = (int) strtol(argv[2], NULL, 10);
+}
+
+void init_T_data_objects(T_data* threads_tab, uli range, uli length) {
+    printf(
+        "Value: %lu\nsqrt(value): %lu\nThreads: %d\nRanges: %lu\n",
+        value, length, threads_count, range
+    );
+    for (int i = 0; i < threads_count; i++) {
+        pthread_t id;
+        T_data    t;
+
+        t.id    = id;
+        t.start = (uli) (i * range < 2 ? 2 : i * range);
+        t.end   = (uli) ((i + 1) * range);
+        t.max   = length;
+        t.value = value;
+
+        threads_tab[i] = t;
+    }
+}
+
+void recap() {
+    printf(
+        "\n%lu%s\nTotal time: %f s\n",
+        value,
+        isPrime ? " is prime" : " isn't prime",
+        (double) (tv2.tv_usec - tv1.tv_usec) / 1000000 +
+        (double) (tv2.tv_sec - tv1.tv_sec)
+    );
+}
+
+void *thread(void *arg) {
+    T_data   *t = arg;
+    for (uli i  = t->start; ((i < t->end) && (i <= t->max)) && isPrime != false; i++) {
+        if (t->value % i == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+    pthread_exit(NULL);
+}
 ```
+
+</Spoiler>
+
+# Conclusion
+Ces résultats nous indiquent **une différence importante** entre le temps d'exécution de la version séquentielle du programme et celle multi-thread. Pour le même nombre (le plus grand) on passe d'un temps de $\approx 3.05$ secondes en version séquentielle à un temps de $\approx 0.48$ sur 8 threads. 
+
+Il est également notable que le temps d'éxécution diminue en fonction du nombre de threads utilisés pour atteindre son plein potentiel sur le nombre maximum de thdreads de la machine si le nombre à tester est suffisament grand pour laisser au processeur le temps d'atteindre sa vitesse maximum.
+
+La conclusion de ce travail est que la programmation concurrente peut être un choix juticieux et facile à implémenter pour optimiser l'éfficacité des algorithmes ne nécéssitant pas d'accès concurent aux mêmes données.
+
 
 
 
