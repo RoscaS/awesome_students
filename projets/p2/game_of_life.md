@@ -19,13 +19,13 @@ sidebar: auto
 
 ### À rendre pour le 12 novembre
 
-* **Analyse**
+* **Analyse** (quoi?)
 <Check state="true">Besoins (cahier des charges)</Check>
 <Check state="false">Spécifications détaillées</Check>
 <Check state="false">Planning (liste de taches)</Check>
 
 
-* **Conceptions**
+* **Conceptions** (comment?)
 <Check state="false">Maquettes </Check>
 <Check state="false">Algos</Check>
 
