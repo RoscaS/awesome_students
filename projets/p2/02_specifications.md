@@ -7,15 +7,15 @@ sidebar: auto
 
 ### Elements du jeu et règles
 
-#### Céllule
-L'élément de base du jeu est la céllule. Chaque céllule a deux états possibles: "Vivante" ou "Morte". Elles ne se déplacent pas mais affectent les cases adjacentes en fonction en fonction de leur état courant et donne l'impression de se déplacer.
+#### Cellule
+L'élément de base du jeu est la cellule. Chaque cellule a deux états possibles: "Vivante" ou "Morte". Elles ne se déplacent pas mais affectent les cases adjacentes en fonction en fonction de leur état courant et donne l'impression de se déplacer.
 
 * Il est nécessaire qu'elles puissent mémoriser leur position ainsi que leur état
 * Elles doivent être capable de changer d'état à la suite d'un clique
 * Elles nécessitent une couleur différente pour chaque état
 
 #### Grille
-L'ensemble des cellules forment une grille. La grille implémente la logique qui régit les céllules et définit si une céllule est vivante ou morte.
+L'ensemble des cellules forment une grille. La grille implémente la logique qui régit les cellules et définit si une céllule est vivante ou morte.
 
 Les règles sont les suivantes:
 1. Toute cellule avec moins de deux cellules adjacentes meurt de "solitude"

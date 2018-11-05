@@ -36,9 +36,9 @@ MVP ainsi que les points suivants:
 
 * Mode deux joueurs en local
     * Chaque joueur possède des céllules vivantes
-    * Les céllules de chaque joueur ont une couleur spécifique
+    * Les cellules de chaque joueur ont une couleur spécifique
     * Au tour par tour, un joueur **doit** :
-        * Tuer une céllule adverse
+        * Tuer une cellule adverse
         * Donner la vie à une cellule morte (peut être la cellule adverse qu'il vient de tuer)
     * Après le tour d'un joueur, l'univers avance d'un cycle
     * Un joueur gagne la partie lorsque le joueur adverse n'a plus de céllules vivantes
@@ -46,9 +46,9 @@ MVP ainsi que les points suivants:
 ## Fonctionnalités supplémentaires
 * Mode deux joueurs en reseau
 * Mode multi joueurs (> 2)
-* Races: Possibilité de choisir une règle parmis une sélection de règles supplémentaires prédéfinies pour les céllules d'un joueur
+* Races: Possibilité de choisir une règle parmis une sélection de règles supplémentaires prédéfinies pour les cellules d'un joueur
 * Obstacles
     * ajout d'obstacles entravant l'expansion 
         * mur: infranchissable
-        * ocean, desert, forets,... (chaque biome à une règle supplémentaire spécifique)
+        * océan, désert, forêt,... (chaque biome à une règle supplémentaire spécifique)
 

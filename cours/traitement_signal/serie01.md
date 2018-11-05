@@ -49,9 +49,12 @@ Cela va diminuer l'amplitude des valeurs.
 
 **c)**
 
+original - median - moyenne
+
+![Image](https://i.imgur.com/omM8Lk0.png)
 
 **d)**
 
 ### Exercice 1.2: Estimation, filtrage
 
-![image alt](https://i.imgur.com/D82CMOm.png)
+![Image](https://i.imgur.com/PoeRWpK.png)
