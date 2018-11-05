@@ -41,19 +41,51 @@ La partie est terminée lorsque les cellules ne peuvent plus changer d'état.
 Pour le multijoueurs, la partie se termine lorsque les cellules d'un des deux joueurs ne peuvent plus changer d'état ou lorsqu'un certain nombre de tour est atteint (le gagnant de ce cas de figure est celui qui possède le plus de cellules vivantes).
 
 ### Interface
-L'interface de base contient :  
 
-* la grille contenant les cellules
-* une sidebar avec les différentes intéractions possibles avec le jeu
-    * Un champ (modifiable) qui gère la taille de la grille (bornes à définir)
-    * Miniatures sélectionnables pour choisir une situation initiale
-    * Un bouton pour lancer, arrêter et reset la simulation
-    * Un champ pour modifier la fréquence du timer gérant la simulation
-    * Un bouton permettant de charger une configuration (taille de la grille, fréquence, règles)
-    * Un bouton permettant de sauvegarder la configuration actuelle
-    * Un bouton de configuration qui appelle un dialogue permettant de modifier les règles de bases
-        * Un bouton reset permettant de revenir à la configuration initiale du jeu
-* Une case à cocher débloquant les options d'une partie à deux joueurs
-    * Bouton donnant accès à la sélection d'une couleur pour chaque joueur
-    * Un bouton start particulier à ce mode de jeu (l'autre bouton est grisé si la case "multijoueurs" est cochée)
-    * Un champ affichant les actions à effectuer par le joueur concerné
+#### SpinBox gérant la taille de la grille
+Lorsqu'on modifie la valeur de la SpinBox, la taille de la grille est mise à jour. Les bornes de la SpinBox sont à définir.
+
+#### Liste de miniatures contenant des scénarios de départ
+Une miniature est sélectionnée par défaut. Chaque miniature contient une grille prédéfinie. L'utilisateur peut sélectionner une miniature à la fois. Lorsqu'il modifie la sélection, la grille est mise à jour en fonction de cette sélection.
+
+#### Bouton start/stop
+Par défaut le bouton permet de lancer la simulation (start).
+* Lorsque la simulation est arrêtée et que l'utilisateur appuie sur ce bouton, la simulation commence et le bouton change en "stop"
+* Lorsque la simulation est lancée et que l'utilisateur appuie sur ce bouton, la simulation s'arrête et le bouton repasse en bouton "start"
+
+#### Bouton reset
+Lorsque le bouton est activé, le jeu complet (grille et settings) revient à sa configuration par défaut
+
+#### Case à cocher settings
+Par défault la case est décochée. Lorsque la case est cochée, elle débloque les 3 sliders suivants (bornes : [0-8]):
+* Solitude : lorsqu'il change, modifie le nombre de cellules adjacentes de la règle n°1
+* Surpopulation : lorsqu'il change, modifie le nombre de cellules adjacentes de la règle n°3
+* Reproduction : lorsqu'il change, modifie le nombre de cellules adjacentes de la règle n°4
+
+La règle n°2 découle des autres règles et n'a donc pas besoin d'un slider.
+
+#### Case à cocher "mode 2 joueurs"
+Par défaut, la case est décochée (mode solo). Lorsque l'utilisateur coche cette case, le bouton start/stop est grisé et le jeu passe en mode deux-joueurs débloquant ainsi les éléments d'interface qui vont suivre.
+
+#### SpinBox nombre de tours
+Par défault 0, signifie qu'il n'y a pas de limite. Borne supérieur à définir. La valeur du spinbox définit le nombre de tours que les joueurs auront à disposition avant la fin de la partie.
+
+#### ColorPicker joueur 1
+Par défaut noir. Lorsque la couleur est modifiée, la couleur des cellules vivantes du joueurs 1 sera modifiée
+
+#### ColorPicker joueur 2
+Par défaut Gris. Lorsque la couleur est modifiée, la couleur des cellules vivantes du joueurs 1 sera modifiée. La couleur ne peut pas être la même que celle du joueur 1.
+
+#### Bouton start
+Le bouton lance la simulation tour par tour et active les champs "instructions" et "données de jeu".
+
+#### Champ instructions
+Affiche en fonction du tour, les instructions de jeu pour le joueur concerné (ex : tuer une cellule adverse, donner vie à une cellule, etc.)
+
+#### Champ données de jeu
+Affiche :
+* le nombre de cellules vivantes de chaque joueur
+* le nombre de cellules créées et tuées par chaque joueur
+* le tour actuel
+* le nombre de tours restants si celui-ci à été défini
+Lorsque la partie est terminée, affiche le gagnant ainsi que la condition de victoire (ex : "joueur 1 a gagné grâce à 20 cellules vivantes de plus que joueur 2")
