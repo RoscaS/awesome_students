@@ -21,7 +21,7 @@ sidebar: auto
 
 * **Analyse** (quoi?)
 <Check state="true">Besoins (cahier des charges)</Check>
-<Check state="false">Spécifications détaillées</Check>
+<Check state="true">Spécifications détaillées</Check>
 <Check state="false">Planning (liste de taches)</Check>
 
 
