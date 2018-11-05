@@ -70,10 +70,10 @@ Par défaut, la case est décochée (mode solo). Lorsque l'utilisateur coche cet
 #### SpinBox nombre de tours
 Par défault 0, signifie qu'il n'y a pas de limite. Borne supérieur à définir. La valeur du spinbox définit le nombre de tours que les joueurs auront à disposition avant la fin de la partie.
 
-#### ColorPicker joueur 1
+#### Bouton ColorPicker joueur 1
 Par défaut noir. Lorsque la couleur est modifiée, la couleur des cellules vivantes du joueurs 1 sera modifiée
 
-#### ColorPicker joueur 2
+#### Bouton ColorPicker joueur 2
 Par défaut Gris. Lorsque la couleur est modifiée, la couleur des cellules vivantes du joueurs 1 sera modifiée. La couleur ne peut pas être la même que celle du joueur 1.
 
 #### Bouton start
