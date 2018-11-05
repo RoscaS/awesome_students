@@ -1,7 +1,7 @@
 ---
 title: "Exercice 2: liste de risques"
 date: 2018-11-2
-author:  ton prénom
+author:  Sol
 sidebar: auto
 ---
 

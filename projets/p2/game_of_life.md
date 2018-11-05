@@ -1,5 +1,5 @@
 ---
-title: "Game of life: Analyse du projet"
+title: "P2: Game of life"
 date: 2018-10-22
 author: Michael, Nathan, Sol
 sidebar: auto
@@ -28,8 +28,6 @@ sidebar: auto
 * **Conceptions**
 <Check state="false">Maquettes </Check>
 <Check state="false">Algos</Check>
-
-----
 
 ## 1. Cahier des charges
 
