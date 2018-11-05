@@ -36,12 +36,17 @@ Au moment de la mise à jour de $t_n$ vers $t_{n+1}$ les changements doivent s'e
 
 </container>
 
+#### Fin de partie
+La partie est terminée lorsque les cellules ne peuvent plus changer d'état.
+Pour le multijoueurs, la partie se termine lorsque les cellules d'un des deux joueurs ne peuvent plus changer d'état ou lorsqu'un certain nombre de tour est atteint (le gagnant de ce cas de figure est celui qui possède le plus de cellules vivantes).
+
 ### Interface
 L'interface de base contient :  
 
 * la grille contenant les cellules
 * une sidebar avec les différentes intéractions possibles avec le jeu
     * Un champ (modifiable) qui gère la taille de la grille (bornes à définir)
+    * Miniatures sélectionnables pour choisir une situation initiale
     * Un bouton pour lancer, arrêter et reset la simulation
     * Un champ pour modifier la fréquence du timer gérant la simulation
     * Un bouton permettant de charger une configuration (taille de la grille, fréquence, règles)
@@ -51,4 +56,4 @@ L'interface de base contient :
 * Une case à cocher débloquant les options d'une partie à deux joueurs
     * Bouton donnant accès à la sélection d'une couleur pour chaque joueur
     * Un bouton start particulier à ce mode de jeu (l'autre bouton est grisé si la case "multijoueurs" est cochée)
-    * miniatures sélectionnables pour choisir une situation initiale
+    * Un champ affichant les actions à effectuer par le joueur concerné
