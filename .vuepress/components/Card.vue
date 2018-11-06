@@ -14,6 +14,7 @@
     props: {
       maxWidth: {type: String, default: '250'},
       header: {type: String},
+      center: {type: String, default: "false"}
     },
     name: 'Card',
     computed: {
