@@ -24,6 +24,7 @@ Le modèle logique décrit un modèle conceptuel qui sera directement utilisé p
 * [igm.univ](http://www-igm.univ-mlv.fr/~cdavid/fr/cours/2015-bdL2/cours2.pdf)
 * [ingo.univ-angers](http://www.info.univ-angers.fr/~gh/Pluripass/Db/ea.pdf)
 * [wikipedia](https://wikipedia.com)
+* [dbdiagram.io](https://dbdiagram.io/)
 
 ## Modèle relationnel
 
@@ -116,3 +117,12 @@ Ces identifients deviennent des **Clés étrangères (FK)** de cette nouvelle re
 #### Etape 3 (optimisation)
 
 Toute association reliée à une entité avec une cardinalité de type **0,1** ou **1,1** peut être fusionnée avec l'entité. Dans ce cas on déplace les attributs de l'association vers ceux de la relation (table) traduisant l'entité.
+
+
+
+<Media
+    src="https://i.imgur.com/o9MoQ0o.png"
+    center="true"
+    width=450
+/>
+
