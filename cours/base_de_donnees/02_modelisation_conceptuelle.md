@@ -15,6 +15,13 @@ Une modélisation conceptuelle **décrit les données et ses liens naturels**, s
     link="http://www.nomnoml.com/#view/%0A%23direction%3A%20down%0A%23lineWidth%3A%202%0A%23.current%3A%20fill%3D%238f8%20center%20bold%0A%0A%5B%3Cframe%3E%20Overview%7C%0A%20%20%5BInterview%5D%20traitement%20-%3E%20%20%5B%3Ccurrent%3EMod%C3%A9lisation%3B%20Entit%C3%A9%20association%5D%0A%20%20%5B%3Ccurrent%3EMod%C3%A9lisation%3B%20Entit%C3%A9%20association%5D%20r%C3%A9sultat%20-%3E%20%5B%3Cstate%3E%20Sch%C3%A9ma%3BEntit%C3%A9-Association%5D%0A%20%20%5B%3Cstate%3E%20Sch%C3%A9ma%3BEntit%C3%A9-Association%5D%20traitement%20-%3E%20%5BTransformation%3B%20en%20relationnel%5D%0A%20%20%5BTransformation%3B%20en%20relationnel%5D%20r%C3%A9sultat%20-%3E%20%5B%3Cstate%3E%20Sch%C3%A9ma%20logique%3B%20relationnel%5D%0A%20%20%5B%3Cstate%3E%20Sch%C3%A9ma%20logique%3B%20relationnel%5D%20-%3E%20%5B%3Cdatabase%3E%20Base%20de%20donn%C3%A9es%5D%0A%5D"
 />
 
+## Sources
+
+* Cours du Prof. Marcelo Pasin (HE-Arc, Neuchâtel)
+* [igm.univ](http://www-igm.univ-mlv.fr/~cdavid/fr/cours/2015-bdL2/cours2.pdf)
+* [ingo.univ-angers](http://www.info.univ-angers.fr/~gh/Pluripass/Db/ea.pdf)
+* [wikipedia](https://wikipedia.com)
+
 ## Modèle entité-association (EA)
 
 C'est un type de modélisation conceptuelle au même titre que Unified Modeling Language (UML). Le modèle EA permet d'esquisser les composants clés de la base de donnée de façon naturelle.

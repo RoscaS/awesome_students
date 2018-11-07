@@ -17,6 +17,13 @@ Le modèle logique décrit un modèle conceptuel qui sera directement utilisé p
 
 />
 
+## Sources
+
+* Cours du Prof. Marcelo Pasin (HE-Arc, Neuchâtel)
+* [igm.univ](http://www-igm.univ-mlv.fr/~cdavid/fr/cours/2015-bdL2/cours2.pdf)
+* [ingo.univ-angers](http://www.info.univ-angers.fr/~gh/Pluripass/Db/ea.pdf)
+* [wikipedia](https://wikipedia.com)
+
 ## Modèle relationnel
 
 
