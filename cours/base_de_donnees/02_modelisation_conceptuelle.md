@@ -1,9 +1,13 @@
 ---
-title: Modèle entité-association
+title: Modélisation conceptuelle
 date: 2018-10-22
 author: Sol
 sidebar: auto
 ---
+
+Une modélisation conceptuelle **décrit les données et ses liens naturels**, sans prendre en compte la représentation logique de ces dernières. D'un **niveau d'abstraction plus haut** que la modélisation logique (souvent relationnelle mais pas toujours), c'est la première étape vers la création d'une base de données.
+
+<br>
 
 <Diagram 
     center="true" 
@@ -11,62 +15,63 @@ sidebar: auto
     link="http://www.nomnoml.com/#view/%0A%23direction%3A%20down%0A%23lineWidth%3A%202%0A%23.current%3A%20fill%3D%238f8%20center%20bold%0A%0A%5B%3Cframe%3E%20Overview%7C%0A%20%20%5BInterview%5D%20traitement%20-%3E%20%20%5B%3Ccurrent%3EMod%C3%A9lisation%3B%20Entit%C3%A9%20association%5D%0A%20%20%5B%3Ccurrent%3EMod%C3%A9lisation%3B%20Entit%C3%A9%20association%5D%20r%C3%A9sultat%20-%3E%20%5B%3Cstate%3E%20Sch%C3%A9ma%3BEntit%C3%A9-Association%5D%0A%20%20%5B%3Cstate%3E%20Sch%C3%A9ma%3BEntit%C3%A9-Association%5D%20traitement%20-%3E%20%5BTransformation%3B%20en%20relationnel%5D%0A%20%20%5BTransformation%3B%20en%20relationnel%5D%20r%C3%A9sultat%20-%3E%20%5B%3Cstate%3E%20Sch%C3%A9ma%20logique%3B%20relationnel%5D%0A%20%20%5B%3Cstate%3E%20Sch%C3%A9ma%20logique%3B%20relationnel%5D%20-%3E%20%5B%3Cdatabase%3E%20Base%20de%20donn%C3%A9es%5D%0A%5D"
 />
 
-## Recap
+## Modèle entité-association (EA)
 
-| Élément                | Grammaire       |
-|------------------------|-----------------|
-| Association d'entités  | nom commun      |
-| Entités                | nom propre      |
-| Attribut d'Entités     | adjectif        |
-| Association            | verbe transitif |
-| Attribut d'association | adverbe         |
-
-
-## But du modèle
-
-Le modèle **entité-association (EA)** (Entity-relationship: **ER**) permet d'esquisser le schéma d'une base de donneées. Souvent, les clients ont besoin d'une bdd mais ne savent pas vraiment ce qu'ils veulent y garder. Le modèle EA permet d'esquisser les composants clés de la base de donnée.
+C'est un type de modélisation conceptuelle au même titre que Unified Modeling Language (UML). Le modèle EA permet d'esquisser les composants clés de la base de donnée de façon naturelle.
 
 <br>
 
-* Inclut les contraintes
-* N'inclut pas les opérations
-* Possibilité de convertir un modèle EA en modèle relationnel automatiquement
+* Langage graphique
+* Concepts simples:
+    * Choses (objets) <Fa fa="arrow-right"/> **entités**
+    * Liens entre les choses <Fa fa="arrow-right"/> **associations**
+    * Regroupement des choses de même nature <Fa fa="arrow-right"/> **ensemble** d'entités/associations
+* Inclut les contraintes naturelles
 
-## Entité, ensemble d'Entités et Attributs
+## Entité
+
+* **Entité** (<st c="b">nom propre</st>): Un objet, un événement, un lieu, une personne, ..., **une chose identifiable sans ambiguité**
+    * Exemples:
+        * Le cinéma GAUMONT
+        * L'acteur Bruce Willis
+        * Le film Carnet de voyage
 
 <br>
 
-<Col proportions="7/5" vAlign="0">
-<template slot="left">
+* **Ensemble d'entités** (<st c="b">nom commun</st>): Regroupement d'entités de même nature
+    * Exemples:
+        * Cinéma
+        * Acteurs
+        * Films
+    * Représenté par un rectangle contenant le nom de l'ensemble d'entités
 
-* **Entité** 
-    * Une chose
-    * Un objet
+<br>
 
-</template>
-<template slot="right">
 
-![Image](https://i.imgur.com/egNke11.png)
+<Media
+    src="https://i.imgur.com/egNke11.png"
+    center="true"
+/>
 
-</template>
-</Col>
+<Container type="warning">
 
-* **Ensemble d'entité**:
-    * Abstraction d'une entité ("classe" de l'entité)
-    * Représenté par un **rectangle**
-
-<Container type="info">
-
-Par abus de langage, quand on parle d'une entité on fait souvent référence à un ensemble d'entités.
+Une entité est une valeur particulière d'une classe d'entités et par abus de langage, quand on parle d'une entité on fait souvent référence à un ensemble d'entités.
 
 </Container>
 
-* **Attribut**
-    * Propriété des entités
-    * Représenté par une **élipse liée par une ligne**
-    * Peut être une valeur simple, complexe ou composée
+## Attributs (1)
+
+**Donnée élémentaire** que l'on perçoit sur une entité ou une assocation et est représenté par le nom de la propriété dans une élipse liée par une ligne à son entité ou association.
+
+<br>
+
+* Dans le cas d'une entité
+    * nom, prénom titre, age, adresse, ...
+* Dans le cas d'une association, les propriétés doivent obligatoirement relier les entités:
+    * Le rôle d'un acteur relie un acteur et le film dans lequel il a joué
 
 #### Exemple:
+<br>
 
 <Col proportions="6/6" vAlign="0">
 <template slot="left">
@@ -75,7 +80,7 @@ Par abus de langage, quand on parle d'une entité on fait souvent référence à
     * Nom
     * Producteur
 
-* Chaque entité du type **Bière** a des valeurs différentes pour ces deux attributs
+* Chaque entité du type **Bière** a normalement des valeurs différentes pour ces deux attributs
 
 </template>
 <template slot="right">
@@ -87,28 +92,24 @@ Par abus de langage, quand on parle d'une entité on fait souvent référence à
 
 ## Associations
 
+* **Association**: C'est un lien entre deux ou plusieurs entités et représente une activité, une action, une interaction, ...
+    * Exemples:
+        * Bruce Willis a joué dans "L'armée des 12 singes"
+        * Tannenbaum a écrit le libre "Réseaux informatique"
+
 <br>
 
-<Col proportions="6/6" vAlign="0">
-<template slot="left">
+* **Ensemble d'assocations** (<st c="b">verbe</st>): C'est le lien entre deux ou plusieurs ensembles d'entités:
+    * Exemples:
+        * `Jouer` entre **Films** et **Acteurs**
+        * `Affiche` entre **Cinéma** et **Films**
+        * `Realise` entre **Réalisateur** et **Films**
+* Est représenté par un **losange** contenant le nom de l'ensemble d'associations et chaque entité joue un **rôle** dans une association représenté par le lien qui unit l'ensemble d'entités à l'ensemble d'associations
 
-* Association:
-    * Une activité
-    * Une action
-    * Une interaction
-
-</template>
-<template slot="right">
-
-![Image](https://i.imgur.com/R6Wh9Wv.png)
-
-</template>
-</Col>
-
-* Existe entre deux ou plusieurs entités
-* Un **losange** représente une association liée par des lignes à des ensembles d'entités
-* Peut avoir des attributs
-
+<Media
+    src="https://i.imgur.com/R6Wh9Wv.png"
+    center="true"
+/>
 
 #### Exemple:
 
@@ -119,35 +120,6 @@ Par abus de langage, quand on parle d'une entité on fait souvent référence à
 <Media
     src="https://i.imgur.com/iRU4cpe.png"
     center="true"
-/>
-
-## Ensembles d'entités
-
-* La "valeur" d'un ensemble d'entités est donnée par ses entités (lignes, n-uplets)
-    * ex: _les bistros de notre base de données_
-* La "valeur" d'une association est un ensemble aussi formé par des n-uplets
-    * Un n-uplet pour chaque combinaison des ensembles d'entités liés
-
-<Media
-    src="https://i.imgur.com/boTbszW.png"
-    center="true"
-/>
-
-Ce shéma pourrait représenter les associations suivantes:
-
-<Media
-    src="https://i.imgur.com/enxfOph.png"
-    center="true"
-    width=350
-/>
-
-Si on revient à notre exemple, `vend` pourrait avoir un ensemble d'associations comme le suivant:
-
-
-<Media
-    src="https://i.imgur.com/E64z2Qi.png"
-    center="true"
-    width=350
 />
 
 ## Associations multiples
@@ -177,10 +149,9 @@ Un autre exemple sertait celui d'une banque:
 
 </Container>
 
-
 ## Cardinalité des associations
 
-La cardinatlité définit des restrictions sur le nombre d'associations possibles entre deux entités.
+Une association permet de relier, une ou plusieurs entités. La cardinalité des rôle détermine la façon dont les entités sont reliées en définissant des restrictions sur le nombre d'associations possibles entre elles.
 
 ### One to One (1x1)
 
@@ -255,6 +226,20 @@ Une entité d'un des ensembles peut être liée à plusieurs entités de l'autre
 
 ### Représentation de la cardinalité (Look-here)
 
+Le rôle d'une associtation est défini apr deux nombres (min, max) représentant le nombre de fois minimum et le nombre de fois maximum qu'une entité participe à une association.
+
+<br>
+
+* Les valeurs possible sont: (0, 1); (1, 1); (1, $n$); ($n$, $n$)
+* **min**: Correspond à la résponse à la question:
+    * Combien de fois au **moins** une entité A est reliée à une entité de B
+* **max**: Correspond à la résponse à la question:
+    * Combien de fois au **plus** une entité A est reliée à une entité de B
+* Ces questions se posent dans les deux sens: 
+    * De A vers B
+    * Puis B vers A
+
+
 #### Associations simples
 
 
@@ -295,9 +280,7 @@ Un **contrat** de cinéma définissant des rôles est `signé` par _un_ **studio
 
 </Spoiler>
 
-## Attributs
-
-### Entités
+## Attributs (2)
 
 * Une entité est définie par un ensemble d'attributs
 * Chaque attribut a une valeur
@@ -312,28 +295,7 @@ Un **contrat** de cinéma définissant des rôles est `signé` par _un_ **studio
     center="true"
 />
 
-### Association
-
-<Col proportions="5/7" vAlign="0">
-<template slot="left">
-
-* Certaines associations peuvent avoir des attributs
-* C'est une propriété de l'association elle-même
-
-
-</template>
-<template slot="right">
-
-![Image](https://i.imgur.com/i41xy4w.png)
-
-</template>
-</Col>
-
-* **Exemple**:
-    * Un bistro vend une bière à un prix particulier
-
-
-## Rôles
+## Rôles particuliers
 
 <Col proportions="6/6" vAlign="0">
 <template slot="left">
@@ -383,14 +345,23 @@ La position des attributs dans les entités est la clé d'une généralisation c
 
 </Container>
 
-## Identifiants (key)
-Un identifiant est un **attribut** ou **un groupe d'attributs** permetant de repérer une entité de manière unique et sans ambiguité parmi toutes les entité d'un ensemble d'entités.
+## Identifiant
+
+Chaque occurence doit pouvoir être repérée de manière unique et sans ambiguité, pour être distinguée de toutes les autres. Un **identifiant** est donc **une** propriété ou **groupe de propriétés** dont la valeur identifie sans ambiguité une entité ou une association.
 
 <br>
 
-* Chaque ensemble d'entités a un identifiant
-* Il n'y a pas deux entités pour lesquelles cet attribut ou ce groupe d'attributs est identique
-* Les identifiants sout <u>**soulignés**</u>
+* Identifiant d'un ensemble d'entités:
+    * Attribut ou groupe d'attributs qui permet de repérer une occurrence de manière unique
+    * Un seul identifiant
+    * On privilégie l'identifiant le plus court ou le plus naturel 
+        * numéro de bon de commande
+        * numéro d'étudiant
+    * On peut créer un identifiant artificiel par commodité (ID).
+    * Un identifiant est **non variable dans le temps**
+    * Les identifiants sout <u>**soulignés**</u>
+
+<br>
 
 ![Image](https://i.imgur.com/zjthl8g.png)
 
@@ -510,24 +481,18 @@ Le producteur apparait deux fois
 
 ## Exemple réel: Galerie d'art
 
-* La **galerie** maintient des informations sur ses **artistes** (_noms, dates de naissance et style d'art_).
-* Pour chaque **oeuvres** d'art, la **galerie** prend note de l'**artiste**, de l'_année_ de production, du _titre_ du _type_ (penture, lithographie, sculpture, photo) et du _prix_.
-* Les **oeuvres**, la **galerie** sont classifiées en **groupes** et chaque **groupe** a un _nom_.
-* Les **oeuvres** peuvent `appartenir` à plusieurs **groupes**.
-* La **galerie** garde aussi les _noms_, _adresses_ et _total dépensé_ par chacun de ses **clients**, ainsi que ses `préférences` (**Groupes** et *Aartistes**)
+
+Une **galerie** maintient des informations sur ses **artistes** (_noms, dates de naissance et style d'art_). Pour chaque **oeuvres** d'art, la **galerie** prend note de l'**artiste**, de l'_année_ de production, du _titre_ du _type_ (penture, lithographie, sculpture, photo) et du _prix_. Les **oeuvres**, la **galerie** sont classifiées en **groupes** et chaque **groupe** a un _nom_. Les **oeuvres** peuvent `appartenir` à plusieurs **groupes**. La **galerie** garde aussi les _noms_, _adresses_ et _total dépensé_ par chacun de ses **clients**, ainsi que ses `préférences` (**Groupes** et **Artistes**)
+
+### Démarche
 
 <br>
 
-<Center>
+1. Identifier les **entités** les plus naturelles (<st c="b">sujets, compléments</st>)
+2. Identifier les `associations` entre ces entités (<st c="b">verbes</st> n'exprimant pas de dépendance fonctionnelles)
+3. Identifier les _attributs_ et les identifiants de ces entités et de ces associations (<st c="b">compléments de verbe</st> exprimant des dépendances fonctionnelles)
+4. Exprimer les cardinalités et les rôles (<st c="b">distinguer le singulier du pluriel</st>)
 
-| noms         | attributs                                |
-|--------------|------------------------------------------|
-| **Artistes** | _noms, dates de naissance, style d'art_  |
-| **Oeuvres**  | _année de production, titre, type, prix_ |
-| **Groupes**  | _nom_                                    |
-| **Clients**  | _noms, adresses, total dépensé_          |
-
-</Center>
 
 <Container type="danger">
 
