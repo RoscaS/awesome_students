@@ -129,7 +129,7 @@
           <entry key="json" value="1" />
           <entry key="md" value="2529" />
           <entry key="scss" value="86" />
-          <entry key="styl" value="748" />
+          <entry key="styl" value="1006" />
           <entry key="vue" value="27756" />
         </counts>
       </usages-collector>
@@ -140,7 +140,7 @@
           <entry key="Markdown" value="1715" />
           <entry key="PLAIN_TEXT" value="850" />
           <entry key="SCSS" value="86" />
-          <entry key="Stylus" value="748" />
+          <entry key="Stylus" value="1006" />
           <entry key="Vue.js" value="27756" />
         </counts>
       </usages-collector>
@@ -201,11 +201,11 @@
           </split-first>
           <split-second>
             <leaf>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/theme.styl">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="1518">
-                      <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
+                    <state relative-caret-position="728">
+                      <caret line="182" column="9" selection-start-line="182" selection-start-column="9" selection-end-line="182" selection-end-column="9" />
                     </state>
                   </provider>
                 </entry>
@@ -219,7 +219,7 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/.vuepress/components/Center.vue">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="138">
@@ -231,8 +231,8 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/.vuepress/components/Diagram.vue">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="759">
-                      <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+                    <state relative-caret-position="1058">
+                      <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
                     </state>
                   </provider>
                 </entry>
@@ -278,7 +278,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>assembly</find>
       <find>```pro</find>
       <find>famil</find>
       <find>flex</find>
@@ -308,6 +307,7 @@
       <find>u</find>
       <find>padding</find>
       <find>padding-top</find>
+      <find>child</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;Container type=&quot;danger&quot;&gt;</replace>
@@ -370,9 +370,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.vuepress/components/Ui.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/Diagram.vue" />
-        <option value="$PROJECT_DIR$/.vuepress/theme/styles/theme.styl" />
         <option value="$PROJECT_DIR$/.vuepress/components/Card.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/Center.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/theme/styles/theme.styl" />
       </list>
     </option>
   </component>
@@ -392,9 +392,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1922" />
+    <option name="x" value="7" />
     <option name="y" value="-8" />
-    <option name="width" value="1911" />
+    <option name="width" value="3826" />
     <option name="height" value="2161" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -588,12 +588,12 @@
       <workItem from="1541001998601" duration="3730000" />
       <workItem from="1541025895693" duration="8914000" />
       <workItem from="1541425039282" duration="6079000" />
-      <workItem from="1541513819759" duration="5732000" />
+      <workItem from="1541513819759" duration="9785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="318475000" />
+    <option name="totallyTimeSpent" value="322528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="7" y="-8" width="3826" height="2161" extended-state="6" />
@@ -898,20 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/Diagram.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/theme.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1518">
-          <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/Card.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -923,6 +909,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="6" column="11" lean-forward="true" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/Diagram.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1058">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/theme.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="182" column="9" selection-start-line="182" selection-start-column="9" selection-end-line="182" selection-end-column="9" />
         </state>
       </provider>
     </entry>

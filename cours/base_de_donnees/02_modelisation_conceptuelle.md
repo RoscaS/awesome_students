@@ -26,33 +26,26 @@ Une modélisation conceptuelle **décrit les données et ses liens naturels**, s
 
 C'est un type de modélisation conceptuelle au même titre que Unified Modeling Language (UML). Le modèle EA permet d'esquisser les composants clés de la base de donnée de façon naturelle.
 
-<br>
-
 * Langage graphique
 * Concepts simples:
+* Inclut les contraintes naturelles
     * Choses (objets) <Fa fa="arrow-right"/> **entités**
     * Liens entre les choses <Fa fa="arrow-right"/> **associations**
     * Regroupement des choses de même nature <Fa fa="arrow-right"/> **ensemble** d'entités/associations
-* Inclut les contraintes naturelles
 
 ## Entité
 
-* **Entité** (<st c="b">nom propre</st>): Un objet, un événement, un lieu, une personne, ..., **une chose identifiable sans ambiguité**
-    * Exemples:
+* **Entité** (<st c="b">nom propre</st>): Un objet, un événement, un lieu, une personne, ..., 
+    * **une chose identifiable sans ambiguité**
         * Le cinéma GAUMONT
         * L'acteur Bruce Willis
         * Le film Carnet de voyage
-
-<br>
-
 * **Ensemble d'entités** (<st c="b">nom commun</st>): Regroupement d'entités de même nature
     * Exemples:
         * Cinéma
         * Acteurs
         * Films
     * Représenté par un rectangle contenant le nom de l'ensemble d'entités
-
-<br>
 
 
 <Media
@@ -70,15 +63,12 @@ Une entité est une valeur particulière d'une classe d'entités et par abus de 
 
 **Donnée élémentaire** que l'on perçoit sur une entité ou une assocation et est représenté par le nom de la propriété dans une élipse liée par une ligne à son entité ou association.
 
-<br>
-
 * Dans le cas d'une entité
     * nom, prénom titre, age, adresse, ...
 * Dans le cas d'une association, les propriétés doivent obligatoirement relier les entités:
     * Le rôle d'un acteur relie un acteur et le film dans lequel il a joué
 
 #### Exemple:
-<br>
 
 <Col proportions="6/6" vAlign="0">
 <template slot="left">
@@ -86,8 +76,8 @@ Une entité est une valeur particulière d'une classe d'entités et par abus de 
 * Une **bière** a deux attributs:
     * Nom
     * Producteur
-
 * Chaque entité du type **Bière** a normalement des valeurs différentes pour ces deux attributs
+
 
 </template>
 <template slot="right">
@@ -100,17 +90,12 @@ Une entité est une valeur particulière d'une classe d'entités et par abus de 
 ## Associations
 
 * **Association**: C'est un lien entre deux ou plusieurs entités et représente une activité, une action, une interaction, ...
-    * Exemples:
-        * Bruce Willis a joué dans "L'armée des 12 singes"
-        * Tannenbaum a écrit le libre "Réseaux informatique"
-
-<br>
-
+    * Bruce Willis a joué dans "L'armée des 12 singes"
+    * Tannenbaum a écrit le libre "Réseaux informatique"
 * **Ensemble d'assocations** (<st c="b">verbe</st>): C'est le lien entre deux ou plusieurs ensembles d'entités:
-    * Exemples:
-        * `Jouer` entre **Films** et **Acteurs**
-        * `Affiche` entre **Cinéma** et **Films**
-        * `Realise` entre **Réalisateur** et **Films**
+    * `Jouer` entre **Films** et **Acteurs**
+    * `Affiche` entre **Cinéma** et **Films**
+    * `Realise` entre **Réalisateur** et **Films**
 * Est représenté par un **losange** contenant le nom de l'ensemble d'associations et chaque entité joue un **rôle** dans une association représenté par le lien qui unit l'ensemble d'entités à l'ensemble d'associations
 
 <Media
@@ -130,11 +115,10 @@ Une entité est une valeur particulière d'une classe d'entités et par abus de 
 />
 
 ## Associations multiples
-* Parfois, il est nécessaire d'établir des associations multiples qui **trois ensembles d'entités**. Par exemple:
-
-Les personnes ne boivent certaines bières que dans des bistros particuliers:
-* Les trois associations `Apprécie`, `Vend` et `Fréquente` ne sont pas suffisante
-* On a besoin d'une association à trois entités
+* Parfois, il est nécessaire d'établir des associations multiples qui **trois ensembles d'entités**.
+    * Les personnes ne boivent certaines bières que dans des bistros particuliers:
+        * Les trois associations `Apprécie`, `Vend` et `Fréquente` ne sont pas suffisante
+        * On a besoin d'une association à trois entités
 
 <br>
 
@@ -167,8 +151,6 @@ Une association permet de relier, une ou plusieurs entités. La cardinalité des
 
 Dans une association 1x1, chaque entité des deux ensembles est liée **au maximum** avec une entité de l'autre.
 
-<br>
-
 **Exemple**:
 * **BestSeller** entre Bières et Producteurs
     * Chaque **bière** est `produite` par _un seul_ **producteur**
@@ -188,8 +170,6 @@ Dans une association 1x1, chaque entité des deux ensembles est liée **au maxim
 <template slot="left">
 
 Une entité du second ensemble peut être liée à 0, 1 ou $n$ entités du premier ensemble. 
-
-<br>
 
 **Exemple**:
 
@@ -215,8 +195,6 @@ Une entité du second ensemble peut être liée à 0, 1 ou $n$ entités du premi
 
 Une entité d'un des ensembles peut être liée à plusieurs entités de l'autre ensemble.
 
-<br>
-
 **Exemple**:
 
 * **Vend**
@@ -233,9 +211,7 @@ Une entité d'un des ensembles peut être liée à plusieurs entités de l'autre
 
 ### Représentation de la cardinalité (Look-here)
 
-Le rôle d'une associtation est défini apr deux nombres (min, max) représentant le nombre de fois minimum et le nombre de fois maximum qu'une entité participe à une association.
-
-<br>
+Le rôle d'une associtation est défini par deux nombres (min, max) représentant le nombre de fois minimum et le nombre de fois maximum qu'une entité participe à une association.
 
 * Les valeurs possible sont: (0, 1); (1, 1); (1, $n$); ($n$, $n$)
 * **min**: Correspond à la résponse à la question:
@@ -323,16 +299,12 @@ Il se peut qu'un ensemble d'entités figurent plus d'une fois dans un associatio
 
 Une sous-classe est un sous-ensemble d'entités qui étendent les attributs de l'ensemble d'entités mère.
 
-<br>
-
 <Col proportions="5/7" vAlign="0">
 <template slot="left">
 
 * Relation spéciale entre entités
 * Les "sous entités" héritent des propriétés des "super-entités"
 * Relation de type **ISA** (is a)
-
-<br>
 
 **Exemple:**
 * Les voitures **sont des** véhicules (Car **is a** véhicle)
@@ -356,8 +328,6 @@ La position des attributs dans les entités est la clé d'une généralisation c
 
 Chaque occurence doit pouvoir être repérée de manière unique et sans ambiguité, pour être distinguée de toutes les autres. Un **identifiant** est donc **une** propriété ou **groupe de propriétés** dont la valeur identifie sans ambiguité une entité ou une association.
 
-<br>
-
 * Identifiant d'un ensemble d'entités:
     * Attribut ou groupe d'attributs qui permet de repérer une occurrence de manière unique
     * Un seul identifiant
@@ -368,7 +338,6 @@ Chaque occurence doit pouvoir être repérée de manière unique et sans ambigui
     * Un identifiant est **non variable dans le temps**
     * Les identifiants sout <u>**soulignés**</u>
 
-<br>
 
 ![Image](https://i.imgur.com/zjthl8g.png)
 
@@ -387,10 +356,8 @@ Chaque occurence doit pouvoir être repérée de manière unique et sans ambigui
     * Suivre une (ou plusieurs) de ses associations
     * Utiliser la clé d'une entité associée
 
-<br>
-
 **Exemple:**
-<br>
+
 On pourrait penser que _Nom_ et _Prénom_, ensemble forment une clé pour une entité **joueur de foot**. Mais il existe des joueurs avec le même nom et prénom dans les équipes du monde entier. Le numéro d'un joueur n'est certainement pas une clé comme des joueurs de deux équipes peuvent avoir le même. Le **nom de l'équipe** ainsi que le **numéro du joueur** identifient de façon unique un joueur.
 
 <Media
@@ -419,7 +386,6 @@ Donc dans cet exemple, comme on utilise le <u>_nom_</u> de l'équipe (qui est la
 
 #### Bonne conception:
 
-<br>
 
 ![Image](https://i.imgur.com/qklmbGW.png)
 
@@ -428,8 +394,6 @@ Donc dans cet exemple, comme on utilise le <u>_nom_</u> de l'équipe (qui est la
 <br>
 
 #### Mauvaise conception:
-
-<br>
 
 ![Image](https://i.imgur.com/bnn8K3Q.png)
 
@@ -441,8 +405,6 @@ Le producteur apparait deux fois
 
 #### Mauvaise conception:
 
-<br>
-
 ![Image](https://i.imgur.com/PZ1XNi1.png)
 
 * L'adresse du producteur est répétée pour chaque bière
@@ -451,8 +413,6 @@ Le producteur apparait deux fois
 <br>
 
 #### Bonne conception:
-
-<br>
 
 ![Image](https://i.imgur.com/wbIRSen.png)
 
@@ -465,8 +425,6 @@ Le producteur apparait deux fois
 
 #### Bonne conception:
 
-<br>
-
 ![Image](https://i.imgur.com/ZWjFUDh.png)
 
 * Producteur ne mérite pas d'être un ensemble d'entités dans ce cas
@@ -474,8 +432,6 @@ Le producteur apparait deux fois
 <br>
 
 #### Mauvaise conception:
-
-<br>
 
 ![Image](https://i.imgur.com/OWEQRCT.png)
 
@@ -492,8 +448,6 @@ Le producteur apparait deux fois
 Une **galerie** maintient des informations sur ses **artistes** (_noms, dates de naissance et style d'art_). Pour chaque **oeuvres** d'art, la **galerie** prend note de l'**artiste**, de l'_année_ de production, du _titre_ du _type_ (penture, lithographie, sculpture, photo) et du _prix_. Les **oeuvres**, la **galerie** sont classifiées en **groupes** et chaque **groupe** a un _nom_. Les **oeuvres** peuvent `appartenir` à plusieurs **groupes**. La **galerie** garde aussi les _noms_, _adresses_ et _total dépensé_ par chacun de ses **clients**, ainsi que ses `préférences` (**Groupes** et **Artistes**)
 
 ### Démarche
-
-<br>
 
 1. Identifier les **entités** les plus naturelles (<st c="b">sujets, compléments</st>)
 2. Identifier les `associations` entre ces entités (<st c="b">verbes</st> n'exprimant pas de dépendance fonctionnelles)
