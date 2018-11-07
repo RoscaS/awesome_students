@@ -1,6 +1,6 @@
 ---
 title: "Exercice 2: liste de risques"
-date: 2018-11-2
+date: 2018-11-02
 author:  Sol
 sidebar: auto
 ---
