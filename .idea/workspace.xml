@@ -79,7 +79,7 @@
     <session id="672386787">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="57" />
+          <entry key="project.closed" value="58" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.10" value="3" />
@@ -200,8 +200,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/.vuepress/components/Team.vue">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="964">
-                      <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+                    <state relative-caret-position="596">
+                      <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
                       <folding>
                         <element signature="e#781#833#0" expanded="true" />
                       </folding>
@@ -619,16 +619,15 @@
       <workItem from="1541025895693" duration="8914000" />
       <workItem from="1541425039282" duration="6079000" />
       <workItem from="1541513819759" duration="11557000" />
-      <workItem from="1541677041990" duration="28122000" />
+      <workItem from="1541677041990" duration="28725000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="352422000" />
+    <option name="totallyTimeSpent" value="353025000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1531" y="-8" width="2302" height="2161" extended-state="6" />
-    <editor active="true" />
+    <frame x="1786" y="-8" width="2047" height="2161" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24973711" />
@@ -646,7 +645,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.091383815" />
+      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.10279001" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -957,8 +956,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/Team.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="964">
-          <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+        <state relative-caret-position="596">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#781#833#0" expanded="true" />
           </folding>

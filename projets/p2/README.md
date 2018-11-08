@@ -29,9 +29,5 @@
 <Check state="false">Algos</Check>
 
 
-:members='[{name: "Vergois Tristan", class: "INF2B"}, "Rosca Sol"]'
-
-
-
 <Posts/>
 
