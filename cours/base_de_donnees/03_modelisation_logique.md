@@ -118,8 +118,6 @@ Ces identifients deviennent des **Clés étrangères (FK)** de cette nouvelle re
 
 Toute association reliée à une entité avec une cardinalité de type **0,1** ou **1,1** peut être fusionnée avec l'entité. Dans ce cas on déplace les attributs de l'association vers ceux de la relation (table) traduisant l'entité.
 
-
-
 <Media
     src="https://i.imgur.com/o9MoQ0o.png"
     center="true"
