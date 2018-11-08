@@ -3,14 +3,11 @@ title: "Exercice 2: Total Bio Control"
 date: 2018-10-10
 author:  "Nathan, Michael, Sol"
 sidebar: auto
+project: true
 ---
 
-## Meta
-> * Nathan Latino
-> * Michael Kneuss
-> * Sol Rosca
+## Consigne
 
->### Consigne
 >Rédiger (par groupe de 3-4) une proposition de projet au sein de la société TotalBioControl ([model](https://www.biocontrol.ch/fr_bc/)) sur le modèle de la proposition CDSelection. La société produit et commercialise pour le moment des pièges traditionnels avec papier collant, relevé et comptage manuel. Elle équipe 75% des vignobles du canton et réalise un chiffre d’affaire annuel de 500’000SFR, (40%) par la vente du papier autocollant, 40% (vente du parfum), 20% vente des pièges. Ses ventes diminuent car les vignerons achètent de plus en plus papier et parfum sur Internet. 
 >
 >Votre proposition sera constituée de deux documents:

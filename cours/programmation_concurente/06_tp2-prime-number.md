@@ -1,14 +1,10 @@
 ---
 title: "TP-2: Nombres premiers"
 date: 2018-10-31
-author:  "Latino Nathan, Kneuss Michael, Rosca Sol"
+author:  "Nathan, Michael, Sol"
 sidebar: auto
+project: true
 ---
-
-
-## Meta
-* Élèves: Latino Nathan, Kneuss Michael, Rosca Sol
-* Classe: INF2B
 
 ## Objectifs
 * Vérifier si un nombre est premier de manière sequentielle et multi-threadée.

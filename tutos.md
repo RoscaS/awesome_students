@@ -224,188 +224,73 @@ Dans le <Def def="markdown.json">document qui vient de s'ouvrir</Def> effacez to
 
 ```json
 {
-	"meta": {
-		"prefix": "meta",
-		"body": "---\ntitle: ${1:titre de l'article affiché}\ndate: ${2:YYYY-MM-DD}\nauthor: ${3: ton prénom}\nsidebar: auto\n---\n\n## ${4: Premier sous-titre}\n\n"
-  },
-  "columns": {
-		"prefix": "col",
-		"body": "<Col spacer=\"1\">\n<template slot=\"left\">\n\n${1:Colonne de gauche (ne pas supprimer les lignes vides!)}\n\n</template>\n<template slot=\"right\">\n\n${2:Collonne de droite (ne pas supprimer les lignes vides!)}\n\n</template>\n</Col>"
+	"underline": {
+		"prefix": "underline",
+		"body": "<u>$1</u>"
 	},
-	"code": {
-		"prefix": "code",
-		"body": "```${1:language}\n${2:contenu}\n```\n"
-  },
-  "check": {
+	"breakLine": {
+		"prefix": "br",
+		"body": "<br>"
+	},
+	"center": {
+		"prefix": "center",
+		"body": "<Center>\n\n${1:content}\n\n</Center>"
+	},
+	"fontAwesome": {
+		"prefix": "fa",
+		"body": "<Fa fa=\"${1:arrow-right}\"/> ",
+	},
+	"check": {
 		"prefix": "check",
-		"body": "<Check state=\"false\">${1:label}</Check>\n",
+		"body": "<Check state=\"false\">${1:label}</Check>",
+	},
+	"style": {
+		"prefix": "style",
+		"body": "<st c=\"${2:rgb}\">$1</st>"
+	},
+	"columns": {
+		"prefix": "col",
+		"body": "<Col proportions=\"${3:6/6}\" vAlign=\"${4:0}\">\n<template slot=\"left\">\n\n${1:Colonne de gauche (ne pas supprimer les lignes vides!)}\n\n</template>\n<template slot=\"right\">\n\n${2:Collonne de droite (ne pas supprimer les lignes vides!)}\n\n</template>\n</Col>"
 	},
 	"container": {
 		"prefix": "container",
 		"body": "<Container type=\"${1:info-warning-danger}\">\n\n${2:contenu (ne pas supprimer les lignes vides!)}\n\n</Container>"
 	},
-  "style": {
-		"prefix": "style",
-		"body": "<st c=\"${2:rgb}\">$1</st>"
+	"card": {
+		"prefix": "card",
+		"body": "<Card header=\"${1:titre}\" ${2:max-width=\"${3:270}\"}>\n\n${4:contenu (ne pas supprimer les lignes vides!)}\n\n</Card>"
 	},
-	"def": {
+	"meta": {
+		"prefix": "meta",
+		"body": "---\ntitle: ${1:titre de l'article affiché}\ndate: ${2:YYYY-MM-DD}\nauthor: ${3: \"Nathan, Michael, Sol, <george rogé; INF2C>\"}\nsidebar: auto\nproject: false\n---\n\n## ${4: Premier sous-titre}\n\n"
+	},
+	"code": {
+		"prefix": "code",
+		"body": "```${1:language}\n${2:contenu}\n```\n"
+	},
+	"definition": {
 		"prefix": "def",
 		"body": "<Def def=\"${2:définition}\">${1:mot}</Def>"
 	},
 	"spoiler": {
 		"prefix": "spoiler",
-		"body": "<Spoiler>\n\n${1:contenu (ne pas supprimer les lignes vides)}\n\n</Spoiler>\n"
+		"body": "<Spoiler>\n\n${1:contenu (ne pas supprimer les lignes vides!)}\n\n</Spoiler>\n"
 	},
 	"media": {
 		"prefix": "media",
 		"body": "\n<Media\n\tsrc=\"$1\"\n\turl=\"${2:supprimer cette ligne si pas de contenu}\"\n\tcaption=\"${3:supprimer cette ligne si pas de contenu}\"\n\tcenter=\"${4:true}\"\n\twidth=${5:450}\n/>\n\n"
+	},
+	"diagram": {
+		"prefix": "diag",
+		"body": "\n<Diagram \n\tcenter=\"true\" \n\turl=\"${2:image url}\" \n\tlink=\"${3:diagram link}\"\n/>\n\n "
 	}
 }
 ```
 
 </Spoiler>
 
-À la suite de cette manipulation, dans n'importe quel fichier markdown les mot clés suivants seront disponible et vont trigger l'autocompletion:
+À la suite de cette manipulation, dans n'importe quel fichier markdown les mot clés précédés de `prefix` vont trigger l'autocompletion.
 
-* `meta`: frontmater
-* `def`
-* `spoiler`
-* `code`: balises de code
-* `tip`: highlight vert
-* `warning`: highlight jaune
-* `danger`: highlight rouge
-
-
-## Format d'un nouvel article
-**Merci de respecter ce format (noter la date) pour ne pas casser l'affichage et les mécanismes du site.**
-* Tout nouvel article créé est mirror sur le site après un push
-* Le titre spécifé dans `title` est automatiquement affiché en haut de la page donc pas besoin de le réécrire
-
-```md
----
-title: J'aime la viande
-date: 2018-09-22
-author: George
-sidebar: auto
----
-
-## Sous Titre
-
-Se retrouve dans le menu de gauche
-
-## Sous titre principal
-
-Se retrouve dans le menu de gauche aussi
-```
-
-* Les lignes 1 à 6 sont le **frontmatter** (les méta données de l'article). L'ordre n'est pas important mais le format des données l'est. Le field `sidebar: auto` permet d'afficher ou non la table des matières dynamique dans le menu de gauche.
-
-Pour le reste c'est comme d'habitude. Les header de `##` à `##` sont repris dans le menu de gauche automatiquement.
-
-
-## Répo
-`git clone https://github.com/RoscaS/awesome_students`
-
-### Folder tree
-
-<Spoiler>
-
-```shell
-├── articles
-│   ├── algo
-│   │    ├── README.md
-│   │    ├── recursivite.md
-│   │    ├── algo_tri.md
-│   │    └── ...
-│   └── ...
-├── cours
-│   ├── base_de_donnees
-│   │    ├── README.md
-│   │    ├── tables.md
-│   │    ├── sql.md
-│   │    └── ...
-│   └── ...
-├── projets
-│   ├── p2
-│   │    ├── README.md
-│   │    ├── plan.md
-│   │    ├── echeances.md
-│   │    └── ...
-│   └── ...
-├── .git
-│   └── ...
-├── .gitignore
-├── package.json
-├── package-lock.json
-├── README.md
-├── tutos.md
-└── .vuepress
-    └── ...
-```
-
-</Spoiler>
-
-
-### Publication
-Pour publier un article il suffit de choisir le folder approprié et d'y créér un fichier `*.md` (**nom en minuscules**) dans la sous branche appropriée. Pour le publier il suffit de push sur le répo. Il se retrouvera en ligne dans les minutes qui suivent (tout est géré automatiquement).
-
-### Nouvelle sous-branche
-
-<Container type="danger">
-
-Dans le doute, demandez moi de créér la nouvelle sous-branche !
-
-</Container>
-
-Disons que je veux une nouvelle sous branche popotte pour le **cours** de popotte.
-```bash
-$ pwd
-/home/vanessa/blog/AwesomeStudents
-$ cd cours
-$ mkdir popotte
-$ cd popotte
-$ printf "# Popotte\n<Categories/>\n" > README.md
-$ touch poulet_aux_herbes.md
-```
-
-Il faut maintenant dire au site qu'on veut que cette nouvelle branche soit indexée:
-```bash
-$ pwd
-/home/vanessa/blog/AwesomeStudents
-$ nano .vuepress/config.js
-```
-Tout en bas dans `themeConfig.sideBar` se trouve une ramification similaire à celle du site.
-Trouvez l'objet qui a pour `title` **cours**. Sous le meme format que le reste, ajoutez  dans son children une entrée `popotte`:
-
-```javascript{19}
-// ../AwesomeStudents/.vuepress/config.js
-
-// ...
-sidebar: [
-  {
-    title: 'Cours',
-    collapsable: true,
-    children: [
-      '/cours/qt/',
-      '/cours/java/',
-      '/cours/algo/',
-      '/cours/programmation_concurente/',
-      '/cours/genie_logiciel/',
-      '/cours/traitement_signal/',
-      '/cours/base_de_donnees/',
-      '/cours/protocoles_reseaux/',
-      '/cours/developpement_web/',
-      '/cours/analyse/',
-      '/cours/popotte/',
-    ],
-  },
-//  ...
-```
-<Container type="danger">
-
-* Ne pas oublier le `/` à la fin de la string et la `,` en fin de ligne
-* Ne rien changer d'autre
-* Dans le doute, demandez moi de créér la nouvelle sous-branche
 
 </Container>
 

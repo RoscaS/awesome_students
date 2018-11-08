@@ -88,7 +88,7 @@
 
       .title {
         font-family: 'Montserrat', sans-serif;
-        font-size: 16px;
+        font-size: 20px;
         margin-left: 8px;
       }
     }

@@ -16,14 +16,15 @@
             <span class="number">{{articles.length - key}}</span>
           </vs-col>
           <vs-col :vs-w="pages ? '12' : '11'">
-              <vs-col  vs-w="7" vs-xs="12" vs-type="flex">
-                <span class="title">{{article.title}}</span>
-              </vs-col>
+            <vs-col vs-w="7" vs-xs="12" vs-type="flex">
+              <span class="title">{{article.title}}</span>
+            </vs-col>
 
             <vs-col class="category" vs-w="5" vs-xs="12" vs-type="flex">
               <div v-if="pages" class="tag">
                 <div class="chip" style="color: #5B3CC4;">
-                  <i v-if="article.tag === 'cours'" class="fal fa-fw fa-pen"></i>
+                  <i v-if="article.tag === 'cours'"
+                     class="fal fa-fw fa-pen"></i>
                   <i v-else class="fal fa-fw fa-newspaper"></i>
                   <span class="cat-text">{{ dict[article.category] }}</span>
                 </div>
@@ -34,7 +35,7 @@
               <small class="date-author">
                 <span class="date">{{article.date}}&nbsp;</span>
                 <span>par</span>
-                <span class="author">{{article.author}}</span>
+                <span class="author">{{author(article.author)}}</span>
               </small>
             </vs-col>
           </vs-col>
@@ -53,27 +54,29 @@
 </template>
 
 <script>
-  import { dict } from '../../utils';
-  import { DateTime, Settings } from 'luxon'
-  Settings.defaultLocale = 'fr'
+  import { firstNamesOnly } from '../utils';
+  import { branchesFullName } from '../data';
+  import { DateTime, Settings } from 'luxon';
+
+  Settings.defaultLocale = 'fr';
 
   export default {
     props: {
       pages: {type: String},
     },
     data: () => ({
-      dict: dict,
+      dict: branchesFullName,
     }),
     computed: {
       articles () {
-        let articles = []
+        let articles = [];
         let allPosts = this.$site.pages.filter(x => {
           return x.path.includes(this.pages ? this.pages : this.$page.path)
-            && x.path.endsWith('.html')
-        })
+            && x.path.endsWith('.html');
+        });
         let sortedPosts = allPosts.sort((a, b) => {
-          return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
-        })
+          return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
+        });
         sortedPosts.forEach(i => {
           articles.push({
             author: i.frontmatter.author,
@@ -81,23 +84,26 @@
             category: i.path.split('/')[2],
             title: i.frontmatter.title,
             path: i.path,
-            date: this.getDate(i.frontmatter.date),
-          })
-        })
-        return articles
+            date: this.date(i.frontmatter.date),
+          });
+        });
+        return articles;
       },
     },
     methods: {
-      getDate (date) {
-        return DateTime.fromISO(date).toLocaleString(DateTime.DATE_FULL)
+      date (date) {
+        return DateTime.fromISO(date).toLocaleString(DateTime.DATE_FULL);
       },
       getCategory (path) {
         let cat = path.split('/')[2];
         cat = cat.replace(/_/gi, ' ');
-        return cat[0].toUpperCase() + cat.slice(1, cat.length)
+        return cat[0].toUpperCase() + cat.slice(1, cat.length);
       },
+      author(author) {
+        return firstNamesOnly(author);
+      }
     },
-  }
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -187,7 +193,7 @@
     font-size: 10px;
     background-color: #eeeeee;
     padding: 5px 10px 5px 10px;
-    i{
+    i {
       margin-right: 5px;
     }
   }

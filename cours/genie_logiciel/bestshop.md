@@ -1,16 +1,12 @@
 ---
 title: "Exercice 1: BestShop"
 date: 2018-09-27
-sidebar: auto
 author: "Nathan, Michael, Sol"
+sidebar: auto
+project: true
 ---
 
-## Meta
-> * Nathan Latino
-> * Michael Kneuss
-> * Sol Rosca
-
->### Consigne
+## Consigne
 >* Le magasin de CD «BestShop» a décidé de se lancer dans le e-commerce en mettant à disposition de ses clients un site de vente en ligne (web).
 >* Votre groupe a été retenu comme prestataire potentiel pour soumettre une offre de réalisation de l’application en question.
 >* Aguerri en matière de projets informatiques et en génie logiciel, le responsable informatique de «BestShop» évaluera la consistance des différentes offres en essayant d’identifier le degré de maturité et d’expertise du prestataires à travers le contenu de l’offre.

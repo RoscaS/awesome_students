@@ -1,14 +1,12 @@
 ---
 title: "TP-1:  Librairie POSIX"
 date: 2018-10-19
-author:  "Latino Nathan, Kneuss Michael, Rosca Sol"
+author:  "Nathan, Michael, Sol"
 sidebar: auto
+project: true
 ---
 
-https://www.intra.jrosk.ch/cours/programmation_concurente/05_tp1-posix.html
-
-## Meta
-* Élèves: Kneuss Michael, Latino Nathan, Rosca Sol
+## liens
 * [Répo git](https://github.com/RoscaS/prog-conc_Labo1)
 
 
