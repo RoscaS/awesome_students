@@ -49,8 +49,14 @@
     },
     data() {
       return {
-        width: 46,
-        height: 40,
+        width: 30,
+        height: 29,
+
+        // width: 30,
+        // height: 20,
+
+        // width: 10,  //mobile
+        // height: 55, //mobile
         gridList: [],
         // Stats that get passed down to the app-stats component
         currentTick: 0,
@@ -87,6 +93,7 @@
     },
     created() {
       this.cellCalc();
+      this.randomSeed();
     },
     methods: {
       /**
@@ -283,8 +290,8 @@
 
 <style lang="scss">
   .grid {
-    border-top: 1px solid #1a0707;
-    border-left: 1px solid #1a0707;
+    /*border-top: 1px solid #1a0707;*/
+    /*border-left: 1px solid #1a0707;*/
     display: flex;
     flex: 1;
     justify-content: center;

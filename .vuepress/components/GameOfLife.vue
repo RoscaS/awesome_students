@@ -1,33 +1,36 @@
 <template>
-  <section class="wrapper">
-    <div class="container">
-      <transition mode="out-in" name="fade">
-        <keep-alive>
-          <app-grid :message="message"
-                    :import-token="importToken"
-                    :current-speed="speed"
-                    @exportToken="exportSession($event)">
-          </app-grid>
-        </keep-alive>
-      </transition>
-    </div>
-    <footer class="footer">
+  <div class="wrapper">
+    <section class="controller-wrapper">
       <div class="container">
         <app-controller :is-running="isRunning"
                         :main-component="mainComponent"
                         @send="delegate($event)">
         </app-controller>
       </div>
-    </footer>
-  </section>
+    </section>
+    <section class="grid-wrapper">
+      <div class="container">
+        <transition mode="out-in" name="fade">
+          <keep-alive>
+            <app-grid :message="message"
+                      :import-token="importToken"
+                      :current-speed="speed"
+                      @exportToken="exportSession($event)">
+            </app-grid>
+          </keep-alive>
+        </transition>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
   import Vue from 'vue';
   import Controller from './GOL/Controller.vue';
   import Grid from './GOL/Grid.vue';
+
   export default {
-    name: 'App',
+    name: 'GameOfLife',
     components: {
       'app-grid': Grid,
       'app-controller': Controller,
@@ -46,11 +49,15 @@
         isImport: false,
         isExport: false,
         // Used to determine the speed the application runs at
-        speed: 100,
-        intervalID: 0,
+        speed: 200,
+        intervalID: 1,
+
+        // speed: 100,
+        // intervalID: 0,
         // Variables to determine which page/scenario to show
         mainComponent: 'gamePage',
-        selectedScenario: 'scenario',
+        // selectedScenario: 'scenario',
+        selectedScenario: 'gosper',
       };
     },
     watch: {
@@ -77,7 +84,9 @@
         }
       },
     },
-    created() {},
+    created() {
+      this.delegate('play');
+    },
     methods: {
       /**
        * Gets called whenever a button is pressed
@@ -194,19 +203,32 @@
 
 <style lang="scss">
 
-  .footer {
-    padding: 1rem;
+  .controller-wrapper {
+    position: fixed;
+    /*top: 75px;*/
+    top: 18px;
+    left: 325px;
+    z-index: 100;
+  }
+
+  .grid-wrapper {
     background-color: transparent;
+    /*background-color: whitesmoke;*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /*left: 10px;*/
   }
 
 
   /*.fade-enter-active,*/
   /*.fade-leave-active {*/
-    /*transition: opacity 0.35s linear;*/
+  /*transition: opacity 0.35s linear;*/
   /*}*/
 
   /*.fade-enter,*/
   /*.fade-leave-active {*/
-    /*opacity: 0;*/
+  /*opacity: 0;*/
   /*}*/
 </style>

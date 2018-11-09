@@ -6,4 +6,7 @@ sidebar: auto
 project: false
 ---
 
-<GameOfLife/>
+<!-- <GameOfLife/> -->
+
+
+<div style="height: 1000px"></div>

@@ -1,4 +1,18 @@
-# Projet P2: H-GameOfLife
+<style scoped>
+@font-face {
+    font-family: "PressStart"; 
+    src: url('../PressStart2P.ttf');
+}
+h1 {
+    padding-bottom: 40px;
+    font-size: 40px !important;
+}
+h1, h2, h3, h4, h5, a {
+    font-family: "PressStart" !important;
+}
+</style>
+
+# P2: H-GameOfLife
 
 <Team/>
 
@@ -30,4 +44,6 @@
 
 
 <Posts/>
+
+
 

@@ -62,6 +62,7 @@
     /*border-right: 1px solid #1a0707;*/
     /*border-bottom: 1px solid #1a0707;*/
     padding-bottom: 100%;
+    z-index: -1;
   }
 
   .cell:hover {
@@ -69,6 +70,10 @@
   }
 
   .alive {
-    background-color: #bb4747 !important;
+    /*background-color: #bb4747 !important;*/
+
+    /*background-color: rgba(0, 0, 0, 0.25) !important;*/
+    background-color: rgba(41, 115, 183, 0.07) !important;
+    /*transition: all .1s;*/
   }
 </style>
