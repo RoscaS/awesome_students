@@ -11,7 +11,7 @@ author: "Sol"
 * `sudo pacman -S php apache php-apache`
 * [Instructions](https://wiki.archlinux.org/index.php/Apache_HTTP_Server)
 
-### Usage
+#### Usage
 * session: `systemctl start httpd`
 * perma: `systemctl enable httpd`
 * restart: `sudo systemctl restart httpd.service`
@@ -23,7 +23,23 @@ author: "Sol"
 * `sudo pacman -S mariadb`
 * [Instructions](https://wiki.archlinux.org/index.php/MySQL)
 
-### Usage
+#### Usage
 * session: `systemctl start mysqld`
 * perma: `systemctl enable mysqld`
 * setup: `mysql_secure_installation`
+
+
+### xDebug
+
+* `pacman -S xdebug`
+* in `/etc/php/conf.d/xdebug.ini` uncomment:
+
+```
+;zend_extension=xdebug
+;xdebug.remote_enable=on
+;xdebug.remote_host=127.0.0.1
+;xdebug.remote_port=9000
+;xdebug.remote_handler=dbgp
+```
+
+* `systemctl restart httpd`
