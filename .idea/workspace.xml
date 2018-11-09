@@ -130,7 +130,7 @@
           <entry key="md" value="2529" />
           <entry key="scss" value="86" />
           <entry key="styl" value="1054" />
-          <entry key="vue" value="34818" />
+          <entry key="vue" value="34827" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -141,7 +141,7 @@
           <entry key="PLAIN_TEXT" value="850" />
           <entry key="SCSS" value="86" />
           <entry key="Stylus" value="1054" />
-          <entry key="Vue.js" value="34818" />
+          <entry key="Vue.js" value="34827" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -156,11 +156,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.588775">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.vuepress/theme/Layout.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3633">
-                  <caret line="173" column="28" selection-start-line="173" selection-start-column="28" selection-end-line="173" selection-end-column="28" />
+                <state relative-caret-position="1512">
+                  <caret line="137" column="37" selection-start-line="137" selection-start-column="37" selection-end-line="137" selection-end-column="37" />
                   <folding>
                     <element signature="e#941#963#0" expanded="true" />
                   </folding>
@@ -223,7 +223,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/GOL/Grid.vue">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="1092">
@@ -430,10 +430,10 @@
         <option value="$PROJECT_DIR$/.vuepress/components/GOL/Cell.vue" />
         <option value="$PROJECT_DIR$/.vuepress/theme/styles/theme.styl" />
         <option value="$PROJECT_DIR$/.vuepress/components/ArticleContent.vue" />
-        <option value="$PROJECT_DIR$/.vuepress/theme/Layout.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/GOL/Controller.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/GameOfLife.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/GOL/Grid.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/theme/Layout.vue" />
       </list>
     </option>
   </component>
@@ -664,12 +664,12 @@
       <workItem from="1541425039282" duration="6079000" />
       <workItem from="1541513819759" duration="11557000" />
       <workItem from="1541677041990" duration="28725000" />
-      <workItem from="1541707240471" duration="18792000" />
+      <workItem from="1541707240471" duration="18890000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="371817000" />
+    <option name="totallyTimeSpent" value="371915000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1509" y="-8" width="2324" height="2161" extended-state="6" />
@@ -989,16 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/theme/Layout.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3633">
-          <caret line="173" column="28" selection-start-line="173" selection-start-column="28" selection-end-line="173" selection-end-column="28" />
-          <folding>
-            <element signature="e#941#963#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/GameOfLife.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1061,6 +1051,16 @@
             <element signature="e#6439#6695#0" expanded="true" />
             <element signature="e#7070#7223#0" expanded="true" />
             <element signature="e#7561#7702#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/theme/Layout.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="137" column="37" selection-start-line="137" selection-start-column="37" selection-end-line="137" selection-end-column="37" />
+          <folding>
+            <element signature="e#941#963#0" expanded="true" />
           </folding>
         </state>
       </provider>

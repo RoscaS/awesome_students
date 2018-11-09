@@ -135,7 +135,7 @@ export default {
   methods: {
 
     checkP2() {
-      this.GOL = this.$page.path.includes('/projets/p2');
+      this.GOL = (this.$page.path === '/projets/p2/');
     },
 
 
