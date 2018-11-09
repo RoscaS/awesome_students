@@ -50,7 +50,7 @@
     data() {
       return {
         width: 30,
-        height: 29,
+        height: 25,
 
         // width: 30,
         // height: 20,

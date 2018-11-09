@@ -14,7 +14,6 @@ h1, h2, h3, h4, h5, a {
 
 # P2: H-GameOfLife
 
-<Team/>
 
 
 ## Liens
@@ -38,12 +37,26 @@ h1, h2, h3, h4, h5, a {
 <Check state="true">Spécifications détaillées</Check>
 <Check state="false">Planning (liste de taches)</Check>
 
+
 * **Conceptions** (comment?)
 <Check state="false">Maquettes </Check>
 <Check state="false">Algos</Check>
 
+## Analyse
+[Cahier des charges](/projets/p2/01_cahier_des_charges.html)
+<br>
+[Specifications](/projets/p2/02_specifications.html)
+<br>
+[Planning](/projets/p2/03_planning.html)
+<br>
 
-<Posts/>
+
+## Conception
+
+[Maquettes](/projets/p2/04_maquettes.html)
+<br>
+[Algorithmes](/projets/p2/05_algos.html)
+
 
 
 
