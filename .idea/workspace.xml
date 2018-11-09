@@ -79,7 +79,7 @@
     <session id="672386787">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="58" />
+          <entry key="project.closed" value="59" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.10" value="3" />
@@ -159,7 +159,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.vuepress/theme/Layout.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1512">
+                <state relative-caret-position="691">
                   <caret line="137" column="37" selection-start-line="137" selection-start-column="37" selection-end-line="137" selection-end-column="37" />
                   <folding>
                     <element signature="e#941#963#0" expanded="true" />
@@ -664,16 +664,15 @@
       <workItem from="1541425039282" duration="6079000" />
       <workItem from="1541513819759" duration="11557000" />
       <workItem from="1541677041990" duration="28725000" />
-      <workItem from="1541707240471" duration="18890000" />
+      <workItem from="1541707240471" duration="19473000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="371915000" />
+    <option name="totallyTimeSpent" value="372498000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1509" y="-8" width="2324" height="2161" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24973711" />
@@ -1057,7 +1056,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/theme/Layout.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
+        <state relative-caret-position="691">
           <caret line="137" column="37" selection-start-line="137" selection-start-column="37" selection-end-line="137" selection-end-column="37" />
           <folding>
             <element signature="e#941#963#0" expanded="true" />
