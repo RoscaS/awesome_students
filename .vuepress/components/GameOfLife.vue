@@ -1,13 +1,13 @@
 <template>
   <div class="wrapper">
-    <section class="controller-wrapper">
-      <div class="container">
-        <app-controller :is-running="isRunning"
-                        :main-component="mainComponent"
-                        @send="delegate($event)">
-        </app-controller>
-      </div>
-    </section>
+    <!--<section class="controller-wrapper">-->
+      <!--<div class="container">-->
+        <!--<app-controller :is-running="isRunning"-->
+                        <!--:main-component="mainComponent"-->
+                        <!--@send="delegate($event)">-->
+        <!--</app-controller>-->
+      <!--</div>-->
+    <!--</section>-->
     <section class="grid-wrapper">
       <div class="container">
         <transition mode="out-in" name="fade">
@@ -206,7 +206,7 @@
   .controller-wrapper {
     position: fixed;
     /*top: 75px;*/
-    top: 18px;
+    top: 14px;
     left: 325px;
     z-index: 100;
   }

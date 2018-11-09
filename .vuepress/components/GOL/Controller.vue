@@ -1,90 +1,48 @@
 <template>
 
-  <div class="box">
-    <div class="field has-addons has-addons-centered is-marginless">
-      <!--<p class="control">-->
-      <vs-button :disabled="mainComponent !== 'gamePage'"
+  <div class="controller">
+      <vs-button class="control-button"
                  color="primary"
-                 type="border"
+                 type="line"
                  title="slow down"
+                 icon="fast_rewind"
                  @click="send('slowDown')">
-        <i class="fas fa-backward"></i>
       </vs-button>
-      <!--</p>-->
-      <!--<p class="control">-->
-      <vs-button :disabled="mainComponent !== 'gamePage'"
-                 color="primary"
-                 type="border"
-                 :class="isRunning ? 'green' : 'red'"
-                 title="play"
+      <vs-button class="control-button"
+                 :color="isRunning ? 'danger' : 'success'"
+                 type="line"
+                 :title="isRunning ? 'pause' : 'start'"
+                 :icon="isRunning ? 'pause' : 'play_arrow'"
                  @click="send('play')">
-        <i :class="isRunning ? 'fa-pause-circle' : 'fa-play-circle'"
-           class="far"></i>
       </vs-button>
-      <!--</p>-->
-      <!--<p class="control">-->
-      <vs-button :disabled="mainComponent !== 'gamePage'"
+      <vs-button class="control-button"
                  color="primary"
-                 type="border"
-                 title="clear grid"
+                 type="line"
+                 icon="clear"
+                 title="clear"
                  @click="send('redoSession')">
-        <i class="fas fa-redo"></i>
       </vs-button>
-      <!--</p>-->
-      <!--<p class="control">-->
-      <vs-button :disabled="mainComponent !== 'gamePage'"
+      <vs-button class="control-button"
                  color="primary"
-                 type="border"
-                 title="next step"
+                 type="line"
+                 title="step forward"
+                 icon="skip_next"
                  @click="send('nextStep')">
-        <i class="fas fa-step-forward"></i>
       </vs-button>
-      <!--</p>-->
-      <!--<p class="control">-->
-      <vs-button :disabled="mainComponent !== 'gamePage'"
+      <vs-button class="control-button"
                  color="primary"
-                 type="border"
-                 title="speed up"
+                 type="line"
+                 title="faster"
+                 icon="fast_forward"
                  @click="send('speedUp')">
-        <i class="fas fa-forward"></i>
       </vs-button>
-      <!--</p>-->
-      <!--<p class="control">-->
-      <vs-button :disabled="mainComponent !== 'gamePage'"
+      <vs-button class="control-button"
                  color="primary"
-                 type="border"
+                 type="line"
+                 title="restart"
+                 icon="repeat"
                  @click="send('randomSeed')">
-          <span class="icon">
-            <i class="fas fa-random"></i>
-          </span>
-        <b>Random</b>
       </vs-button>
-      <!--</p>-->
-    </div>
-    <!--<div class="field has-addons has-addons-centered is-marginless">-->
-    <!--<p class="control">-->
-    <!--<button-->
-    <!--:disabled="mainComponent !== 'gamePage'"-->
-    <!--class="button"-->
-    <!--@click="send('importSession')">-->
-    <!--<span class="icon">-->
-    <!--<i class="far fa-edit"></i>-->
-    <!--</span>-->
-    <!--<b>Import</b>-->
-    <!--</button>-->
-    <!--</p>-->
-    <!--<p class="control">-->
-    <!--<button-->
-    <!--:disabled="mainComponent !== 'gamePage'"-->
-    <!--class="button"-->
-    <!--@click="send('exportSession')">-->
-    <!--<span class="icon">-->
-    <!--<i class="far fa-save"></i>-->
-    <!--</span>-->
-    <!--<b>Export</b>-->
-    <!--</button>-->
-    <!--</p>-->
-    <!--</div>-->
   </div>
 
 </template>
@@ -118,18 +76,17 @@
   };
 </script>
 
-<style scoped>
-  .box {
+<style lang="scss" scoped>
+
+  .controller {
     padding: 0;
     display: flex;
     flex-direction: row;
+
+    .control-button {
+      margin-right: 5px;
+      /*padding-right: 5px;*/
+    }
   }
 
-  .green {
-    background-color: hsla(120, 77%, 26%, 0.6);
-  }
-
-  .red {
-    background-color: hsla(0, 67%, 31%, 0.6);
-  }
 </style>

@@ -32,6 +32,6 @@
     "vue-chartjs": "^3.4.0",
     "vue-slide-toggle": "^1.1.0",
     "vuepress": "^0.14.4",
-    "vuesax": "^3.5.6"
+    "vuesax": "^3.7.1"
   }
 }
