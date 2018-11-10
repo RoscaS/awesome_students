@@ -5,21 +5,31 @@ author: "Michael, Nathan, Sol"
 sidebar: auto
 ---
 
-### Elements du jeu et règles
+## Elements du jeu et règles
 
-#### Cellule
-L'élément de base du jeu est la cellule. Chaque cellule a deux états possibles: "Vivante" ou "Morte". Elles ne se déplacent pas mais affectent les cases adjacentes (8 voisines) en fonction de leur état courant et donne l'impression de se déplacer.
+### Cellule
 
-* Il est nécessaire qu'elles puissent mémoriser leur position ainsi que leur état
-* L'utilisateur peut forcer un changement d'état d'une cellule en cliquant sur cette dernière
-* Elles nécessitent une couleur différente pour chaque état
-* Une cellule vivante est affectée par les règles n°1, n°2 et n°3 (règles définies ci-dessous)
-* Une cellule morte est affectée seulement par la règle n°4
+#### Description
+L'élément de base du jeu est la cellule. Chaque cellule a deux états possibles: "Vivante" ou "Morte". Elles affectent les cases adjacentes (8 voisines) en fonction de leur état courant.
 
-#### Grille
+#### État
+L'état d'une cellule est définit par une couleur. Par exemple, une cellule "vivante" peut-être blanche et une "morte" peut-être noire.
+Chaque état a donc une couleur différente.
+
+#### Attributs
+Une cellule connait sa position ainsi que son état.
+
+#### Interaction
+L'utilisateur peut forcer un changement d'état d'une cellule en cliquant sur cette dernière.
+Une cellule vivante est affectée par les règles n°1, n°2 et n°3 (règles définies ci-dessous).
+Une cellule morte est affectée seulement par la règle n°4.
+
+### Grille
+
+#### Description
 L'ensemble des cellules forment une grille. La grille implémente la logique qui régit les cellules et définit si une cellule est vivante ou morte.
 
-Les règles sont les suivantes:
+#### Règles
 1. Toute cellule avec moins de deux cellules adjacentes meurt de "solitude"
 2. Toute cellule avec 2 ou 3 cellules adjacentes survit une génération de plus
 3. Une cellule avec plus de trois cellules adjacentes vivantes meurt de "surpopulation"
@@ -27,6 +37,9 @@ Les règles sont les suivantes:
 
 #### Tours
 Une fois la simulation activée, une mise à jour de l'état de la grille se fait à interval régulier et chaque mise à jour applique les règles du jeu à chacune des cellules qui forment la grille.
+
+#### Interval de mise à jour
+L'interval est définit par un timer et l'utilisateur peut modifier la valeur de se timer (bornes à définir).
 
 <Container type="warning" header="Point chaud">
 
@@ -41,6 +54,9 @@ La partie est terminée lorsque les cellules ne peuvent plus changer d'état.
 Pour le multijoueurs, la partie se termine lorsque les cellules d'un des deux joueurs ne peuvent plus changer d'état ou lorsqu'un certain nombre de tour est atteint (le gagnant de ce cas de figure est celui qui possède le plus de cellules vivantes).
 
 ### Interface
+
+#### Widget affichant la grille et les cellules
+Par défaut, le widget affiche une situation initiale. Ce widget est mis à jour à chaque interval ou changement de situation initiale.
 
 #### SpinBox gérant la taille de la grille
 Lorsqu'on modifie la valeur de la SpinBox, la taille de la grille est mise à jour. Les bornes de la SpinBox sont à définir.
