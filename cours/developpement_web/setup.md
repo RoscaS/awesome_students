@@ -43,3 +43,11 @@ author: "Sol"
 ```
 
 * `systemctl restart httpd`
+
+### JetBrain LiveEdit
+
+* [in phpstorm](https://confluence.jetbrains.com/display/PhpStorm/Live+Edit+in+PhpStorm)
+
+#### Disable the debbuging ribbon on chrome
+
+* [nice neat and easy](https://www.gamefromscratch.com/post/2014/07/13/Permanently-turning-off-the-Chrome-debugging-message.aspx)
