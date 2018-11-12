@@ -89,19 +89,19 @@ Lorsque le bouton est activé, le jeu complet (grille et settings) revient à sa
 ### mode 2 joueurs
 Par défaut, la case est décochée (mode solo). Lorsque l'utilisateur coche cette case, le bouton start/stop est grisé et le jeu passe en mode deux-joueurs débloquant ainsi les éléments d'interface qui vont suivre.
 
-##### meta
+#### meta
 * La grille est divisée en deux région de même taille chacune.
 * Choix du nombres de cellules de départ.
 * Lors de l'initialisation chaque joueur place ses cellules de son côté de la grille.
 * Possibilité d'ajouter une zone tampon, qui empêche la création de cellules dans cette zone (dosage de l'aggressivité en début de partie).
 
-##### nombre de tours
+#### nombre de tours
 Par défault 0, signifie qu'il n'y a pas de limite. Borne supérieur à définir. La valeur du spinbox définit le nombre de tours que les joueurs auront à disposition avant la fin de la partie.
 
-##### ColorPicker joueur 1
+#### ColorPicker joueur 1
 Par défaut noir. Lorsque la couleur est modifiée, la couleur des cellules vivantes du joueurs 1 sera modifiée
 
-##### ColorPicker joueur 2
+#### ColorPicker joueur 2
 Par défaut Gris. Lorsque la couleur est modifiée, la couleur des cellules vivantes du joueurs 1 sera modifiée. La couleur ne peut pas être la même que celle du joueur 1.
 
 
