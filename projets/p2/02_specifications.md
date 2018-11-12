@@ -39,7 +39,7 @@ L'ensemble des cellules forment une grille.
 
 ##### Forme et taille de la grille :
 
-La grille peut être de forme carrée, rectangulaire.
+La grille peut être de forme rectangulaire.
 
 </container>
 
@@ -90,6 +90,12 @@ La règle n°2 découle des autres règles et n'a donc pas besoin d'un slider.
 
 #### mode 2 joueurs
 Par défaut, la case est décochée (mode solo). Lorsque l'utilisateur coche cette case, le bouton start/stop est grisé et le jeu passe en mode deux-joueurs débloquant ainsi les éléments d'interface qui vont suivre.
+
+#### règles 2 joueurs
+* Une cellule vivante avec moins de deux voisines **alliées** vivantes meurt (solitude)
+* Une cellule vivante avec deux ou trois voisines **alliées** vivantes vit la génération suivante
+* Une cellule vivante avec plus de trois voisines vivantes meurt (surpopulation)
+* Une cellule morte avec exactement trois voisines **alliées** vivantes devient vivante a la génération suivante(reproduction)
 
 ##### nombre de tours
 Par défault 0, signifie qu'il n'y a pas de limite. Borne supérieur à définir. La valeur du spinbox définit le nombre de tours que les joueurs auront à disposition avant la fin de la partie.
