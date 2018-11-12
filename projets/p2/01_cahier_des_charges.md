@@ -5,50 +5,52 @@ author: "Michael, Nathan, Sol"
 sidebar: auto
 ---
 
-## MVP
-* **Interface graphique** :
-    * Affichage de la grille (univers)
-    * Bouton de lancement
-    * Bouton de reset
-    * Personnalisation de l'univers de départ (placement des cellules vivantes à la souris)
-* **Fonctionnalités de base** :
-    * Deux états possible pour les cellules (Vivant/Mort respectivement Blanc/Noir)
-    * Choix de la taille de l'univers
-    * Gestion des cycles de jeu (mise à jour de l'état des céllules en fonction des règles qui suivent)
-* **Règles** :
-    * Une cellule vivante avec moins de deux voisinnes vivantes meurt (solitude)
-    * Une cellule vivante avec deux ou trois voisinnes vivantes vit la génération suivante
-    * Une cellule vivante avec plus de trois voisinnes vivantes meurt (surpopulation)
-    * Une cellule morte avec exactement trois voisinnes vivantes devient vivante a la génération suivante(reproduction)
-
+<br>
+<br>
+<br>
 
 ## Objectif
-MVP ainsi que les points suivants:
 
-* Interaction avec les cellules via le curseur
-    * Possibilité durant l'exécution du jeu de donner vie à des cellules
-    * Possibilité durant l'exécution du jeu de tuer des cellules
+### Deux modes
+* **Simulation** (classic Conway's Game of life)
+* **Mode deux joueurs** (sur la même machine)
 
-* Modification des règles
-    * Modification des règles existantes
 
-* Selection parmis plusieurs scénarios de départ prédéfinis
+#### Simulation
+* Deux états possible pour les cellules (Vivant/Mort respectivement Blanc/Noir)
+* Choix de la taille de la grille
+* Mise à jour de l'état des céllules (cycles de jeu) en fonction des règles qui suivent:
+    * Une cellule vivante avec deux ou trois voisinnes vivantes reste en vie
+    * Une cellule vivante avec moins de deux voisinnes vivantes meurt 
+    * Une cellule vivante avec plus de trois voisinnes vivantes meurt
+    * Une cellule morte avec exactement trois voisinnes vivantes devient vivante
 
-* Mode deux joueurs en local
-    * Chaque joueur possède des cellules vivantes
-    * Les cellules de chaque joueur ont une couleur spécifique
-    * Au tour par tour, un joueur **doit** :
-        * Tuer une cellule adverse
-        * Donner la vie à une cellule morte (peut être la cellule adverse qu'il vient de tuer)
-    * Après le tour d'un joueur, l'univers avance d'un cycle
-    * Un joueur gagne la partie lorsque le joueur adverse n'a plus de cellules vivantes
+#### Deux joueurs
+* Chaque joueur possède des cellules vivantes
+* Les cellules de chaque joueur ont une couleur spécifique
+* Au tour par tour, un joueur **doit** :
+    * Tuer une cellule adverse
+    * Donner la vie à une cellule morte (peut être la cellule adverse qu'il vient de tuer)
+* Après le tour d'un joueur, l'univers avance d'un cycle
+* Un joueur gagne la partie lorsque le joueur adverse n'a plus de cellules vivantes
+
+### Interface graphique
+* Grille comprenant les cellules
+* Paneau de controle comprenant les controles et options spécifique aux deux modes
+* Interaction avec la grille via le curseur
+* (multi) "Guide de jeu" basique pour indiquant à qui le tour et quel type d'action est attendu
+* (multi) Curseur "intélligent" en fonction de l'action attendue (multi)
 
 ## Fonctionnalités supplémentaires
-* Obstacles
-    * ajout d'obstacles entravant l'expension 
-        * mur: infranchissable
-        * océan, désert, forêt,... (chaque biome à une règle supplémentaire spécifique)
+* "Guide de jeu" avancé:
+    * animations des fenêtres de dialogue comprenant les actions à effectuer 
+    * variations dans le type de message (le même message mais exprimé différament donnant petit coté "RP")
+    * bruitages à l'apparition des fenêtres de dialogue
+    * bruitage en fonction de l'état du joueur (gagne/perd)
 * Mode deux joueurs en reseau
 * Mode multi joueurs (> 2)
-* Races: Possibilité de choisir une règle parmis une sélection de règles supplémentaires prédéfinies pour les cellules d'un joueur
+* (Sim & multi) Obstacles entravant l'expension des cellules sur la grille (quelques idées:)
+    * mur (infranchissable)
+    * océan, désert, forêt, ... (chaque "biome" aurait une règle spécifique)
+* Système de races pour les cellules: Possibilité de choisir une règle parmis une sélection de règles supplémentaires prédéfinies pour les cellules d'un joueur
 

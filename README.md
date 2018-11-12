@@ -30,6 +30,11 @@
 #### Web
 * [ninjamock](https://ninjamock.com) quick mockups
 
+<br>
+
+#### Presentations
+* [eagleJS](https://github.com/zulko/eagle.js/) Reveal.js + Vue 
+
 
 
 </Card>

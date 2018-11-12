@@ -45,7 +45,7 @@
       isNavbar: false,
       isImport: false,
       isExport: false,
-      speed: 200,
+      speed: 100,
       intervalID: 1,
 
       mainComponent: 'gamePage',

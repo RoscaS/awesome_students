@@ -9,14 +9,10 @@ sidebar: auto
 
 ### Cellule
 
-#### Description
-L'élément de base du jeu est la cellule. Chaque cellule a deux états possibles: "Vivante" ou "Morte". Elles affectent les cases adjacentes (8 voisines) en fonction de leur état courant.
+L'élément de base du jeu est la cellule. Elle représente une "case" de la grille et a deux états possibles: "Vivante" **ou** "Morte". L'état de chaque cellule de le grille est affecté par l'état des cellules adjacentes (8 voisines).
 
 #### État
-L'état est définie par une couleur. 
-Deux états : 
-* vivant
-* mort
+Une couleur particulière renseigne sur l'état de la cellule.
 
 #### Attributs
 Une cellule connait :
@@ -24,7 +20,7 @@ Une cellule connait :
 * son état
 
 ### Grille
-L'ensemble des cellules forment une grille. Chaque extremité est le prolongement de son opposé.
+L'ensemble des cellules forment une grille de forme rectangulaire. Chaque extremité communique avec le coté opposé.
 
 ## Mode simulation
 
@@ -36,15 +32,15 @@ L'ensemble des cellules forment une grille. Chaque extremité est le prolongemen
 
 ### Interaction
 L'utilisateur peut forcer un changement d'état d'une cellule en cliquant sur cette dernière.
-Une cellule vivante est affectée par les règles n°1, n°2 et n°3 (règles définies ci-dessus).
-Une cellule morte est affectée seulement par la règle n°4.
+* Une cellule vivante est affectée par les règles 1, 2 et 3.
+* Une cellule morte est affectée par la règle 4.
 
 
 <Container type="warning" header="Point chaud">
 
 ##### Forme et taille de la grille :
 
-La grille est de forme rectangulaire.
+Implications et contraintes qu'impose le fait d'avoir des grilles de formes diverses.
 
 </container>
 
