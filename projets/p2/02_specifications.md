@@ -64,7 +64,7 @@ La simulation s'arrête lorsque les cellules ne peuvent plus changer d'état ou 
 ### Règles
 1. Une cellule vivante avec moins de deux cellules adjacentes **alliées** vivantes meurt (**solitude**)
 2. Une cellule vivante avec deux ou trois cellules adjacentes **alliées** vivantes vit la génération suivante (**survie**)
-3. Une cellule vivante avec plus de trois cellules adjacentes (**alliées ou énnemies) vivantes meurt (**surpopulation**)
+3. Une cellule vivante avec plus de trois cellules adjacentes (**alliées ou ennemies**) vivantes meurt (**surpopulation**)
 4. Une cellule morte avec exactement trois cellules adjacentes **alliées** vivantes devient vivante (**reproduction**)
 
 ### Grille
@@ -76,13 +76,13 @@ La simulation s'arrête lorsque les cellules ne peuvent plus changer d'état ou 
 * Choix d'une éventuelle limite de tours avant la fin de la partie
 * Choix de la taille de la grille
 * Choix du nombre de cellules de départ.
-* Possibilité d'ajouter une zone tampon entre les deux jours, qui empêche la création de cellules dans cette zone:
+* Possibilité d'ajouter une zone tampon entre les deux joueurs, qui empêche la création de cellules dans cette zone:
     * Permet le dosage de l'aggressivité en début de partie.
     * Si le tampon est nul, il n'y a plus de région de départ spécifique (les joueurs peuvent poser des cellules sur toute la carte)
 * Choix concernant la méthode d'initialisation des cellules des joueurs
     * Manuel (chaque joueur place ses cellules comme il le souhaite) 
     * Aléatoire
-    * Scénario de départ prédéfinit 
+    * Scénario de départ prédéfini
 
 <Container type="warning" header="Point chaud">
 
@@ -94,7 +94,7 @@ Dans le cas d'un placement manuel, il faut trouver un système pour ne pas qu'un
 
 ### Phase jeu
 Au tour par tour les joueurs sont guidés par le "guide de jeu" qui leur spécifie:
-* Le joueur qui doit éffectuer une action
+* Le joueur qui doit effectuer une action
 * L'action à effectuer
 
 #### Déroulement d'un tour
@@ -106,13 +106,13 @@ Le joueur qui a la main doit:
 La partie se termine soit:
 * Quand un des deux joueurs n'a plus de cellules 
     * Le joueur à qui il reste des cellules gagne
-* Un certain nombre de tours prédéfinit en début de partie est atteint
+* Un certain nombre de tours prédéfini en début de partie est atteint
     * Le joueur ayant le plus de cellules gagne
 
 ## Interface
 
 * Grille
-* Panneau de controle:
+* Panneau de contrôle:
     * **Commun au deux modes**:
         * Selection du mode (simulation ou multijoueurs)
         * Modification des règles de base :
@@ -121,23 +121,23 @@ La partie se termine soit:
             * Surpopulation : Lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle 3
             * Reproduction: Lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle 4
     * **Simulation**:
-        * Controle de la simulation (start/pause, reset)
+        * Contrôle de la simulation (start/pause, reset)
         * Choix d'une situation de départ
         * Taille de la grille (longueur et largeur)
-        * Couleur des cellule vivante
+        * Couleur des cellules vivante
     * **Multijoueur**:
         * Lancement de la partie
             * Entraine les actions nécessaire à l'initialisation d'une partie        
 * (multi) Guide de jeu: 
     * Indication concernant la prochaine action attendue ainsi que le joueur qui doit l'effectuer
-    * Informations clé concernant la partie
-        * Partie commence
+    * Informations clés concernant la partie
+        * Partie commencée
         * Partie terminée
         * Vainqueur ainsi que la raison de la victoire
 * (multi) Curseur intelligent: En fonction de l'action attendue, le curseur highlight les cases d'une façon et/ou d'une couleur spécifique
-* (multi) Metrics de la partie
+* (multi) Données de la partie
     * Nombre de cellules vivantes de chaque joueur
     * Nombre de cellules créées par chaque joueur
     * Nombre de cellules tuées par chaque joueur
     * Le numéro du tour courant
-    * Le nombre de tours restants (si définit)
+    * Le nombre de tours restants (si défini)
