@@ -13,27 +13,32 @@ sidebar: auto
 L'élément de base du jeu est la cellule. Chaque cellule a deux états possibles: "Vivante" ou "Morte". Elles affectent les cases adjacentes (8 voisines) en fonction de leur état courant.
 
 #### État
-L'état d'une cellule est définie par une couleur. Il existe deux états : vivant et mort.
-Par exemple, une cellule "vivante" peut-être blanche et une "morte" peut-être noire.
+L'état est définie par une couleur. 
+Deux états : 
+* vivant
+* mort
 
 #### Attributs
-Une cellule connait sa position ainsi que son état.
-
-#### Interaction
-L'utilisateur peut forcer un changement d'état d'une cellule en cliquant sur cette dernière.
-Une cellule vivante est affectée par les règles n°1, n°2 et n°3 (règles définies ci-dessous).
-Une cellule morte est affectée seulement par la règle n°4.
+Une cellule connait :
+* sa position
+* son état
 
 ### Grille
-
-#### Description
 L'ensemble des cellules forment une grille.
+
+### Mode simulation
 
 #### Règles
 1. Toute cellule avec moins de deux cellules adjacentes meurt de "solitude"
 2. Toute cellule avec 2 ou 3 cellules adjacentes survit une génération de plus
 3. Une cellule avec plus de trois cellules adjacentes vivantes meurt de "surpopulation"
 4. Une cellule morte devient vivante si elle a exactement trois cellules vivantes adjacentes
+
+#### Interaction
+L'utilisateur peut forcer un changement d'état d'une cellule en cliquant sur cette dernière.
+Une cellule vivante est affectée par les règles n°1, n°2 et n°3 (règles définies ci-dessus).
+Une cellule morte est affectée seulement par la règle n°4.
+
 
 <Container type="warning" header="Point chaud">
 
@@ -58,18 +63,21 @@ Au moment de la mise à jour de $t_n$ vers $t_{n+1}$ les changements doivent s'e
 </container>
 
 #### Fin de partie
-La partie est terminée lorsque les cellules ne peuvent plus changer d'état.
-Pour le multijoueurs, la partie se termine lorsque les cellules d'un des deux joueurs ne peuvent plus changer d'état ou lorsqu'un certain nombre de tour est atteint (le gagnant de ce cas de figure est celui qui possède le plus de cellules vivantes).
+La simulation s'arrête lorsque les cellules ne peuvent plus changer d'état.
 
 ### Interface
 
-#### grille
-Par défaut, le widget affiche une situation initiale. Ce widget est mis à jour à chaque interval ou changement de situation initiale.
+* grille
 
-#### settings
-* Solitude : lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle n°1
-* Surpopulation : lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle n°3
-* Reproduction 
+* settings
+    * Modification des règles de base :
+        * Solitude : lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle n°1
+        * Surpopulation : lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle n°3
+        * Reproduction
+    * Couleur de la cellule
+    * Taille de la grille
+    * Mode simulation ou multijoueurs
+    * Choix d'une situation de départ
 
 ### mode 2 joueurs
 Par défaut, la case est décochée (mode solo). Lorsque l'utilisateur coche cette case, le bouton start/stop est grisé et le jeu passe en mode deux-joueurs débloquant ainsi les éléments d'interface qui vont suivre.
@@ -106,6 +114,9 @@ Par défaut Gris. Lorsque la couleur est modifiée, la couleur des cellules viva
 
 ##### déroulement d'un tour
 Le joueur place une cellule **alliée** dans une case "vide" et en tue une **adverse**.
+
+##### Fin de partie
+La partie se termine lorsque les cellules d'un des deux joueurs ne peuvent plus changer d'état ou lorsqu'un certain nombre de tour est atteint (le gagnant de ce cas de figure est celui qui possède le plus de cellules vivantes).
 
 #### Champ instructions
 Affiche en fonction du tour, les instructions de jeu pour le joueur concerné (ex : tuer une cellule adverse, donner vie à une cellule, etc.)
