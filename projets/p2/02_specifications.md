@@ -63,28 +63,13 @@ Pour le multijoueurs, la partie se termine lorsque les cellules d'un des deux jo
 
 ### Interface
 
-#### Widget affichant la grille et les cellules
+#### grille
 Par défaut, le widget affiche une situation initiale. Ce widget est mis à jour à chaque interval ou changement de situation initiale.
 
-#### Widget gérant la taille de la grille
-Lorsqu'on modifie les valeurs du widget, la taille de la grille est mise à jour.
-
-#### Liste de miniatures contenant des scénarios de départ
-Une miniature est sélectionnée par défaut. Chaque miniature contient une grille prédéfinie. L'utilisateur peut sélectionner une miniature à la fois. Lorsqu'il modifie la sélection, la grille est mise à jour en fonction de cette sélection.
-
-#### start/stop
-Par défaut le bouton permet de lancer la simulation (start).
-* Lorsque la simulation est arrêtée et que l'utilisateur appuie sur ce bouton, la simulation commence et le bouton change en "stop". L'utilisateur peut modifier la situation actuelle
-* Lorsque la simulation est lancée et que l'utilisateur appuie sur ce bouton, la simulation s'arrête et le bouton repasse en bouton "start"
-
-#### reset
-Lorsque le bouton est activé, le jeu complet (grille et settings) revient à sa configuration par défaut
-
 #### settings
-
 * Solitude : lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle n°1
 * Surpopulation : lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle n°3
-* Reproduction : lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle n°4
+* Reproduction 
 
 ### mode 2 joueurs
 Par défaut, la case est décochée (mode solo). Lorsque l'utilisateur coche cette case, le bouton start/stop est grisé et le jeu passe en mode deux-joueurs débloquant ainsi les éléments d'interface qui vont suivre.
