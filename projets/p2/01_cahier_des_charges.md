@@ -17,13 +17,13 @@ sidebar: auto
 
 
 #### Simulation
-* Deux états possible pour les cellules (Vivant/Mort respectivement Blanc/Noir)
+* Deux états possible pour les cellules (Vivant/Mort)
 * Choix de la taille de la grille
-* Mise à jour de l'état des céllules (cycles de jeu) en fonction des règles qui suivent:
-    * Une cellule vivante avec deux ou trois voisinnes vivantes reste en vie
-    * Une cellule vivante avec moins de deux voisinnes vivantes meurt 
-    * Une cellule vivante avec plus de trois voisinnes vivantes meurt
-    * Une cellule morte avec exactement trois voisinnes vivantes devient vivante
+* Mise à jour de l'état des cellules (cycles de jeu) en fonction des règles qui suivent:
+    * Une cellule vivante avec deux ou trois voisines vivantes reste en vie
+    * Une cellule vivante avec moins de deux voisines vivantes meurt 
+    * Une cellule vivante avec plus de trois voisines vivantes meurt
+    * Une cellule morte avec exactement trois voisines vivantes devient vivante
 
 #### Deux joueurs
 * Chaque joueur possède des cellules vivantes
@@ -32,25 +32,25 @@ sidebar: auto
     * Tuer une cellule adverse
     * Donner la vie à une cellule morte (peut être la cellule adverse qu'il vient de tuer)
 * Après le tour d'un joueur, l'univers avance d'un cycle
-* Un joueur gagne la partie lorsque le joueur adverse n'a plus de cellules vivantes
+* Un joueur gagne la partie lorsque le joueur adverse n'a plus de cellules vivantes ou qu'il a plus de cellules vivantes que son opposant à la fin d'un certain nombre de tours
 
 ### Interface graphique
 * Grille comprenant les cellules
-* Paneau de controle comprenant les controles et options spécifique aux deux modes
+* Paneau de contrôle comprenant les contrôles et options spécifiques aux deux modes
 * Interaction avec la grille via le curseur
-* (multi) "Guide de jeu" basique pour indiquant à qui le tour et quel type d'action est attendu
-* (multi) Curseur "intélligent" en fonction de l'action attendue (multi)
+* (multi) "Guide de jeu" basique indiquant qui doit jouer et quel type d'action est attendu
+* (multi) Curseur "intelligent" en fonction de l'action attendue (multi)
 
 ## Fonctionnalités supplémentaires
+* (Sim & multi) Obstacles entravant l'expension des cellules sur la grille
 * "Guide de jeu" avancé:
     * animations des fenêtres de dialogue comprenant les actions à effectuer 
-    * variations dans le type de message (le même message mais exprimé différament donnant petit coté "RP")
+    * variations dans le type de message (le même message mais exprimé différemment donnant un petit coté "RP")
     * bruitages à l'apparition des fenêtres de dialogue
     * bruitage en fonction de l'état du joueur (gagne/perd)
+* Système de races pour les cellules: Possibilité de choisir parmi des races prédéfinies
+    * Chaque race à son propre set de règles et d'interactions avec les cellules adverses
 * Mode deux joueurs en reseau
 * Mode multi joueurs (> 2)
-* (Sim & multi) Obstacles entravant l'expension des cellules sur la grille (quelques idées:)
-    * mur (infranchissable)
-    * océan, désert, forêt, ... (chaque "biome" aurait une règle spécifique)
-* Système de races pour les cellules: Possibilité de choisir une règle parmis une sélection de règles supplémentaires prédéfinies pour les cellules d'un joueur
+* Mode PvE (contre IA)
 
