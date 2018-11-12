@@ -44,10 +44,6 @@
         type: Number,
       },
     },
-    data() {
-      return {};
-    },
-    methods: {},
   };
 </script>
 

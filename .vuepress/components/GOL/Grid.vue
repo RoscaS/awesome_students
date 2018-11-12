@@ -1,14 +1,16 @@
 <template>
   <div>
     <!--<app-stats :current-tick="currentTick"-->
-               <!--:cell-count="cellCount"-->
-               <!--:cells-alive="cellsAlive"-->
-               <!--:cells-created="cellsCreated"-->
-               <!--:current-speed="currentSpeed"/>-->
+    <!--:cell-count="cellCount"-->
+    <!--:cells-alive="cellsAlive"-->
+    <!--:cells-created="cellsCreated"-->
+    <!--:current-speed="currentSpeed"/>-->
+
     <div class="grid columns"
          @mousedown="isMouseDown = true"
          @mouseup="isMouseDown = false"
          @mouseleave="isMouseDown = false">
+
       <div v-for="(col, indexX) in gridList"
            :key="indexX"
            class="column">
@@ -26,12 +28,10 @@
 
 <script>
   import Cell from './Cell.vue';
-  // import Stats from './Stats.vue';
 
   export default {
     components: {
       'app-cell': Cell,
-      // 'app-stats': Stats,
     },
     props: {
       message: {
@@ -47,36 +47,37 @@
         type: Number,
       },
     },
-    data() {
-      return {
-        width: 30,
-        height: 25,
+    data: () => ({
+      width: 30,
+      height: 25,
 
-        // width: 30,
-        // height: 20,
+      // width: 30,
+      // height: 20,
 
-        // width: 10,  //mobile
-        // height: 55, //mobile
-        gridList: [],
-        // Stats that get passed down to the app-stats component
-        currentTick: 0,
-        cellCount: 0,
-        cellsAlive: 0,
-        cellsCreated: 0,
-        // A prop that gets used by the app-cell component (drag)
-        isMouseDown: false,
-      };
+      // width: 10,  //mobile
+      // height: 55, //mobile
+      gridList: [],
+
+      currentTick: 0,
+      cellCount: 0,
+      cellsAlive: 0,
+      cellsCreated: 0,
+      isMouseDown: false,
+    }),
+    mounted() {
+    },
+    created() {
+      this.initHeight();
+      this.cellCalc();
+      this.randomSeed();
+
+    },
+    destroyed() {
+
     },
     computed: {},
     watch: {
-      /**
-       * Watches for changes in the message prop
-       * that gets passed down from the App component
-       * and then handles the input on a specific tick.
-       *
-       * @param {string} val - the value
-       */
-      message: function (val) {
+      message(val) {
         if (val === 'nextStep') {
           this.update();
           this.currentTick++;
@@ -91,16 +92,22 @@
         }
       },
     },
-    created() {
-      this.cellCalc();
-      this.randomSeed();
-    },
     methods: {
-      /**
-       * Creates a 2D-Array during runtime for
-       * the website to use for most operations.
-       */
-      cellCalc: function () {
+
+      initHeight() {
+        let width = window.innerWidth;
+        // console.log(`h: ${totalHeight}\tw: ${width}`);
+        if (width < 600) {
+          this.height = 120;
+        } else if (width < 1000) {
+          this.height = 62;
+        } else {
+          this.height = 25;
+        }
+      },
+
+
+      cellCalc() {
         for (let i = 0; i < this.width; i++) {
           this.gridList[i] = [];
           for (let j = 0; j < this.height; j++) {
@@ -109,16 +116,7 @@
         }
         this.cellCount = this.width * this.height;
       },
-      /**
-       * Changes the 'isAlive' object property
-       * of a specific cell to the one requested
-       * in the param.
-       *
-       * @param {number} x - the x position
-       * @param {number} y - the y position
-       * @param {boolean} bool - the new boolean
-       */
-      setCell: function (x, y, bool) {
+      setCell(x, y, bool) {
         if (this.gridList[x][y].isAlive != bool) {
           this.gridList[x][y].isAlive = bool;
           this.updateCellCount(bool);
@@ -127,11 +125,7 @@
         // row.splice(y, 1, {isAlive: true});
         // this.gridList.splice(x, 1, row);
       },
-      /**
-       * The main function that updates the grid
-       * every tick based on the game of life rules.
-       */
-      update: function () {
+      update() {
         let tempArr = [];
         for (let i = 0; i < this.width; i++) {
           tempArr[i] = [];
@@ -139,34 +133,30 @@
             let status = this.gridList[i][j].isAlive;
             let neighbours = this.getNeighbours(i, j);
             let result = false;
-            // Rule 1:
-            // Any live cell with fewer than two live neighbours dies,
-            // as if by under population
+            // Regle 1:
+            // Une cellule vivante avec moins de deux voisinnes vivantes meurt
             if (status && neighbours < 2) {
               result = false;
             }
-            // Rule 2:
-            // Any live cell with two or three neighbours lives on
-            // to the next generation
+            // Regle 2:
+            // Une cellule vivante avec deux ou trois voisinnes vivantes vit la génération suivante
             if ((status && neighbours == 2) || neighbours == 3) {
               result = true;
             }
-            // Rule 3:
-            // Any live cell with more than three live neighbours dies,
-            // as if by overpopulation
+            // Regle 3:
+            // Une cellule vivante avec plus de trois voisinnes vivantes meurt
             if (status && neighbours > 3) {
               result = false;
             }
-            // Rule 4:
-            // Any dead cell with exactly three live neighbours becomes
-            // a live cell, as if by reproduction
+            // Regle 4:
+            // Une cellule morte avec exactement trois voisinnes vivantes devient vivante
             if (!status && neighbours == 3) {
               result = true;
             }
             tempArr[i][j] = result;
           }
         }
-        // set new gridList content
+        // set contenu de gridList
         for (let i = 0; i < this.width; i++) {
           for (let j = 0; j < this.height; j++) {
             this.setCell(i, j, tempArr[i][j]);
@@ -174,23 +164,21 @@
         }
       },
       /**
-       * Returns the amount of neighbours for
-       * a specific cell on the grid.
+       * Retourne le nombre de cellules voisines pour
+       * une cellule spécifique repérée par ses coordonées
        *
-       * @param {number} posX - the x position
-       * @param {number} posY - the Y position
-       * @return {number} neighbours - amount of neighbours
+       * @param {number} posX - x
+       * @param {number} posY - y
+       * @return {number} neighbours - nombre de cellules voisines
        */
-      getNeighbours: function (posX, posY) {
+      getNeighbours(posX, posY) {
         let neighbours = 0;
         if (posX <= this.width && posY <= this.height) {
           for (let offsetX = -1; offsetX < 2; offsetX++) {
             for (let offsetY = -1; offsetY < 2; offsetY++) {
               let newX = posX + offsetX;
               let newY = posY + offsetY;
-              // check if offset is:
-              // on current cell, out of bounds and if isAlive
-              // for cell true
+
               if (
                 (offsetX != 0 || offsetY != 0) &&
                 newX >= 0 &&
@@ -206,11 +194,7 @@
         }
         return neighbours;
       },
-      /**
-       * Resets all gridList cells back to the
-       * start value.
-       */
-      reset: function () {
+      reset() {
         this.currentTick = 0;
         this.cellsAlive = 0;
         this.cellsCreated = 0;
@@ -220,10 +204,7 @@
           });
         });
       },
-      /**
-       * Populates and overwrites gridList with cells.
-       */
-      randomSeed: function () {
+      randomSeed() {
         for (let i = 0; i < this.width; i++) {
           for (let j = 0; j < this.height; j++) {
             let rand = Math.random();
@@ -235,15 +216,7 @@
           }
         }
       },
-      /**
-       * Resets and then imports new cells into the gridList
-       * based on the importToken prop that gets passed down
-       * App.vue.
-       * The importToken is a string and its syntax looks
-       * like this:
-       * '[xPos,yPos],[xPos,yPos]...'.
-       */
-      importSession: function () {
+      importSession() {
         this.reset();
         let regex = /\[\d+,\d+\]/gm;
         let tempArr = this.importToken.match(regex);
@@ -255,12 +228,7 @@
           });
         }
       },
-      /**
-       * Uses gridList to create an exportToken and
-       * emits it up to App.vue for the user to copy.
-       * Same format as in importToken().
-       */
-      exportSession: function () {
+      exportSession() {
         let exportToken = '';
         for (let i = 0; i < this.width; i++) {
           for (let j = 0; j < this.height; j++) {
@@ -271,12 +239,7 @@
         }
         this.$emit('exportToken', exportToken);
       },
-      /**
-       * Updates the current cellcount on each new tick.
-       *
-       * @param {boolean} bool - boolean based on cell isAlive status
-       */
-      updateCellCount: function (bool) {
+      updateCellCount(bool) {
         if (bool) {
           this.cellsAlive++;
           this.cellsCreated++;
@@ -289,6 +252,16 @@
 </script>
 
 <style lang="scss">
+
+  .controller-wrapper {
+    margin-top: 35px;
+    /*position: relative;*/
+    /*top: 75px;*/
+    /*top: 23px;*/
+    /*right: 20px;*/
+    left: 725px;
+  }
+
   .grid {
     /*border-top: 1px solid #1a0707;*/
     /*border-left: 1px solid #1a0707;*/

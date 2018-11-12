@@ -59,17 +59,8 @@
         type: String,
       },
     },
-    data() {
-      return {};
-    },
     methods: {
-      /**
-       * emits the action that is requested
-       * by the client up to the App component.
-       *
-       * @param {string} event - the event
-       */
-      send: function (event) {
+      send (event) {
         this.$emit('send', event);
       },
     },

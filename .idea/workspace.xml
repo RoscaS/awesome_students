@@ -91,8 +91,8 @@
           <entry key="project.open.time.6" value="16" />
           <entry key="project.open.time.7" value="8" />
           <entry key="project.open.time.8" value="9" />
-          <entry key="project.open.time.9" value="6" />
-          <entry key="project.opened" value="62" />
+          <entry key="project.open.time.9" value="7" />
+          <entry key="project.opened" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -106,7 +106,7 @@
           <entry key="rnc" value="1" />
           <entry key="scss" value="8" />
           <entry key="styl" value="19" />
-          <entry key="vue" value="156" />
+          <entry key="vue" value="157" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -119,7 +119,7 @@
           <entry key="RNG Compact" value="1" />
           <entry key="SCSS" value="8" />
           <entry key="Stylus" value="19" />
-          <entry key="Vue.js" value="156" />
+          <entry key="Vue.js" value="157" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -130,7 +130,7 @@
           <entry key="md" value="2529" />
           <entry key="scss" value="86" />
           <entry key="styl" value="1054" />
-          <entry key="vue" value="34827" />
+          <entry key="vue" value="36977" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -141,7 +141,7 @@
           <entry key="PLAIN_TEXT" value="850" />
           <entry key="SCSS" value="86" />
           <entry key="Stylus" value="1054" />
-          <entry key="Vue.js" value="34827" />
+          <entry key="Vue.js" value="36977" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -153,13 +153,13 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.588775">
+    <splitter split-orientation="horizontal" split-proportion="0.5364857">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.vuepress/theme/Layout.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2625">
+                <state relative-caret-position="2250">
                   <caret line="134" column="12" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="12" />
                 </state>
               </provider>
@@ -168,8 +168,11 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/GameOfLife.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="651">
-                  <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+                <state relative-caret-position="1152">
+                  <caret line="64" selection-start-line="64" selection-end-line="64" />
+                  <folding>
+                    <element signature="e#832#854#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -177,8 +180,11 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/ArticleContent.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="462">
-                  <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+                <state relative-caret-position="270">
+                  <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+                  <folding>
+                    <element signature="e#491#531#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -186,7 +192,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/Posts.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1197">
+                <state relative-caret-position="956">
                   <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
                 </state>
               </provider>
@@ -195,44 +201,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/GOL/Cell.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1470">
-                  <caret line="77" column="3" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="3" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.vuepress/components/GOL/Grid.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1092">
-                  <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.vuepress/components/GOL/Controller.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="17" selection-start-line="17" selection-end-line="37" selection-end-column="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/package.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="777">
-                  <caret line="37" selection-start-line="37" selection-end-line="37" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.vuepress/components/GOL/Stats.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="693">
-                  <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+                <state relative-caret-position="342">
+                  <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
                 </state>
               </provider>
             </entry>
@@ -240,13 +210,22 @@
         </leaf>
       </split-first>
       <split-second>
-        <splitter split-orientation="vertical" split-proportion="0.5481132">
+        <splitter split-orientation="vertical" split-proportion="0.76035506">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/.vuepress/components/GOL/Grid.vue">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="426">
+                      <caret line="106" column="8" lean-forward="true" selection-start-line="106" selection-start-column="8" selection-end-line="106" selection-end-column="8" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/theme.styl">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="1036">
+                    <state relative-caret-position="294">
                       <caret line="63" column="11" selection-start-line="63" selection-start-column="11" selection-end-line="63" selection-end-column="11" />
                     </state>
                   </provider>
@@ -255,7 +234,7 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/config.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="231">
+                    <state>
                       <caret line="11" column="19" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="19" />
                     </state>
                   </provider>
@@ -265,19 +244,19 @@
           </split-first>
           <split-second>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/.vuepress/utils.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="210">
+                    <state relative-caret-position="180">
                       <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/.vuepress/data.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="705">
+                    <state relative-caret-position="238">
                       <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
                     </state>
                   </provider>
@@ -302,10 +281,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>_.object</find>
-      <find>_</find>
-      <find>'nomnom</find>
-      <find>v-html</find>
       <find>choice</find>
       <find>katex</find>
       <find>cpp</find>
@@ -332,6 +307,10 @@
       <find>font</find>
       <find>ici</find>
       <find>log(</find>
+      <find>cu</find>
+      <find>height</find>
+      <find>emit</find>
+      <find>export</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;Container type=&quot;danger&quot;&gt;</replace>
@@ -389,14 +368,14 @@
         <option value="$PROJECT_DIR$/.vuepress/components/Team.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/Cell.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/GOL/AppInfo.vue" />
-        <option value="$PROJECT_DIR$/.vuepress/components/GOL/Stats.vue" />
-        <option value="$PROJECT_DIR$/.vuepress/components/GOL/Cell.vue" />
         <option value="$PROJECT_DIR$/.vuepress/theme/styles/theme.styl" />
+        <option value="$PROJECT_DIR$/.vuepress/theme/Layout.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/ArticleContent.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/components/GOL/Cell.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/GOL/Controller.vue" />
+        <option value="$PROJECT_DIR$/.vuepress/components/GOL/Stats.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/GameOfLife.vue" />
         <option value="$PROJECT_DIR$/.vuepress/components/GOL/Grid.vue" />
-        <option value="$PROJECT_DIR$/.vuepress/theme/Layout.vue" />
       </list>
     </option>
   </component>
@@ -416,10 +395,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1067" />
+    <option name="x" value="7" />
     <option name="y" value="-8" />
-    <option name="width" value="1491" />
-    <option name="height" value="2161" />
+    <option name="width" value="1906" />
+    <option name="height" value="1054" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -631,14 +610,15 @@
       <workItem from="1541809958897" duration="85000" />
       <workItem from="1541816403042" duration="472000" />
       <workItem from="1541964500933" duration="34000" />
+      <workItem from="1542013398795" duration="6108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="373089000" />
+    <option name="totallyTimeSpent" value="379197000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1067" y="-8" width="1491" height="2161" extended-state="6" />
+    <frame x="489" y="-8" width="1424" height="1054" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -657,7 +637,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.09952925" />
+      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.13309859" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -879,94 +859,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/theme/Layout.vue">
+    <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/theme.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2625">
-          <caret line="134" column="12" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/ArticleContent.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/Posts.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1197">
-          <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/GOL/Cell.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="77" column="3" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/GOL/Grid.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/GOL/Controller.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" selection-start-line="17" selection-end-line="37" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/components/GOL/Stats.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        <state relative-caret-position="294">
+          <caret line="63" column="11" selection-start-line="63" selection-start-column="11" selection-end-line="63" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/config.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
+        <state>
           <caret line="11" column="19" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
+        <state relative-caret-position="238">
           <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.vuepress/theme/styles/theme.styl">
+    <entry file="file://$PROJECT_DIR$/.vuepress/theme/Layout.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1036">
-          <caret line="63" column="11" selection-start-line="63" selection-start-column="11" selection-end-line="63" selection-end-column="11" />
+        <state relative-caret-position="2250">
+          <caret line="134" column="12" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/GOL/Stats.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/GOL/Controller.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1098">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/GOL/Cell.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/Posts.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="956">
+          <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/ArticleContent.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding>
+            <element signature="e#491#531#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/GameOfLife.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+        <state relative-caret-position="1152">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="e#832#854#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.vuepress/components/GOL/Grid.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="106" column="8" lean-forward="true" selection-start-line="106" selection-start-column="8" selection-end-line="106" selection-end-column="8" />
         </state>
       </provider>
     </entry>

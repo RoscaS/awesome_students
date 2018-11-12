@@ -1,13 +1,14 @@
 <template>
   <div class="wrapper">
     <!--<section class="controller-wrapper">-->
-      <!--<div class="container">-->
-        <!--<app-controller :is-running="isRunning"-->
-                        <!--:main-component="mainComponent"-->
-                        <!--@send="delegate($event)">-->
-        <!--</app-controller>-->
-      <!--</div>-->
+    <!--<div class="container">-->
+    <!--<app-controller :is-running="isRunning"-->
+    <!--:main-component="mainComponent"-->
+    <!--@send="delegate($event)">-->
+    <!--</app-controller>-->
+    <!--</div>-->
     <!--</section>-->
+
     <section class="grid-wrapper">
       <div class="container">
         <transition mode="out-in" name="fade">
@@ -15,6 +16,7 @@
             <app-grid :message="message"
                       :import-token="importToken"
                       :current-speed="speed"
+                      @quickPause="quickPause()"
                       @exportToken="exportSession($event)">
             </app-grid>
           </keep-alive>
@@ -35,38 +37,36 @@
       'app-grid': Grid,
       'app-controller': Controller,
     },
-    data() {
-      return {
-        // The message that gets send down to app-grid at a steady interval
-        message: '',
-        // Export and import tokens that either get send down / come up
-        // from app-grid
-        importToken: '',
-        exportToken: '',
-        // Booleans to determine what to show to the client
-        isRunning: false,
-        isNavbar: false,
-        isImport: false,
-        isExport: false,
-        // Used to determine the speed the application runs at
-        speed: 200,
-        intervalID: 1,
+    data: () => ({
+      message: '',
+      importToken: '',
+      exportToken: '',
+      isRunning: false,
+      isNavbar: false,
+      isImport: false,
+      isExport: false,
+      speed: 200,
+      intervalID: 1,
 
-        // speed: 100,
-        // intervalID: 0,
-        // Variables to determine which page/scenario to show
-        mainComponent: 'gamePage',
-        // selectedScenario: 'scenario',
-        selectedScenario: 'gosper',
-      };
+      mainComponent: 'gamePage',
+      selectedScenario: 'gosper',
+    }),
+    computed: {
+      gridHeight: {
+        get() {
+          return Grid.data().height;
+        },
+        set(value) {
+          console.log(value);
+          console.log(Grid.data().height);
+        },
+      },
+    },
+    created() {
+      this.delegate('play');
     },
     watch: {
-      /**
-       * Changes the importToken based on param.
-       *
-       * @param {string} scenario - the new scenario
-       */
-      selectedScenario: function (scenario) {
+      selectedScenario(scenario) {
         if (scenario === 'scenario') {
           this.importToken = '';
         } else if (scenario === 'gosper') {
@@ -84,19 +84,12 @@
         }
       },
     },
-    created() {
-      this.delegate('play');
-    },
     methods: {
-      /**
-       * Gets called whenever a button is pressed
-       * from the Controller component and delegates the
-       * appropriate action based on param.
-       *
-       * @param {string} event - the event
-       */
-      delegate: function (event) {
+
+      delegate(event) {
+        console.log('event caught');
         if (event === 'play') {
+          console.log('is play');
           this.isRunning = !this.isRunning;
           this.restartInterval();
         } else if (event === 'importSession') {
@@ -113,29 +106,14 @@
           this.updateMessage(event);
         }
       },
-      /**
-       * Updates  message  that gets passed
-       * down to the grid component as a prop and
-       * then resets the message on the next tick.
-       *
-       * @param {string} newMessage - the new message to be set
-       */
-      updateMessage: function (newMessage) {
+      updateMessage(newMessage) {
         this.message = newMessage;
         Vue.nextTick(this.resetMessage);
       },
-      /**
-       * Resets the current message to an
-       * empty string.
-       */
-      resetMessage: function () {
+      resetMessage() {
         this.message = '';
       },
-      /**
-       * Restarts the current interval that
-       * is used to call the updateMessage method.
-       */
-      restartInterval: function () {
+      restartInterval() {
         clearInterval(this.intervalID);
         if (this.isRunning) {
           this.intervalID = setInterval(
@@ -145,13 +123,7 @@
           );
         }
       },
-      /**
-       * Changes the current speed for
-       * the game.
-       *
-       * @param {number} speed - the new speed
-       */
-      changeSpeed: function (speed) {
+      changeSpeed(speed) {
         this.speed += speed;
         if (this.speed < 20) {
           this.speed = 20;
@@ -159,42 +131,22 @@
           this.speed = 500;
         }
       },
-      /**
-       * Sets the message for one tick
-       * as 'importSession'.
-       */
-      importSession: function () {
+      importSession() {
         this.updateMessage('importSession');
         this.isImport = false;
       },
-      /**
-       * Changes the exportToken based on param.
-       *
-       * @param {string} exportToken - the exportToken
-       */
-      exportSession: function (exportToken) {
+      exportSession(exportToken) {
         this.exportToken = exportToken;
         this.isExport = true;
       },
-      /**
-       * Copies the text in the #copystring input
-       * to the users clipboard. May not work for
-       * some clients.
-       */
-      toClipboard: function () {
+      toClipboard() {
         this.isExport = false;
         let copyString = document.querySelector('#copystring');
         copyString.setAttribute('type', 'text');
         copyString.select();
         document.execCommand('copy');
       },
-      /**
-       * Swaps out the current mainCompoment that
-       * is seen on the screen.
-       *
-       * @param {string} component - the new component
-       */
-      swapComponent: function (component) {
+      swapComponent(component) {
         this.mainComponent = component;
       },
     },
@@ -203,13 +155,13 @@
 
 <style lang="scss">
 
-  .controller-wrapper {
-    position: fixed;
-    /*top: 75px;*/
-    top: 14px;
-    left: 325px;
-    z-index: 100;
-  }
+  /*.controller-wrapper {*/
+  /*position: fixed;*/
+  /*!*top: 75px;*!*/
+  /*top: 14px;*/
+  /*left: 325px;*/
+  /*z-index: 100;*/
+  /*}*/
 
   .grid-wrapper {
     background-color: transparent;
@@ -217,10 +169,9 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    /*z-index: 1;*/
     /*left: 10px;*/
   }
-
 
   /*.fade-enter-active,*/
   /*.fade-leave-active {*/

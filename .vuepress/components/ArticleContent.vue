@@ -1,10 +1,5 @@
 <template>
   <div>
-
-    <!--<transition mode="out-in" name="fade">-->
-      <!--<GameOfLife/>-->
-    <!--</transition>-->
-
     <div class="content article-header" v-if="$page.frontmatter.date">
       <h1>{{ $page.title }}</h1>
       <ArticleData class="date" :frontmatter="$page.frontmatter"/>
@@ -13,7 +8,6 @@
       </div>
     </div>
     <Content class="spacer" :custom="false"/>
-
   </div>
 </template>
 
