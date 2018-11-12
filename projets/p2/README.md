@@ -7,16 +7,18 @@ h1 {
     padding-bottom: 40px;
     font-size: 40px !important;
 }
-h1, h2, h3, h4, h5, a {
+h1, h2, h3, h4, h5 {
     font-family: "PressStart" !important;
 }
 </style>
 
-# P2: H-GameOfLife
+# P2: Fight for the game of life
+
+<br>
+
+Fight for the game of life est une adaptation multijoueur du célèbre automate céllulaire [Jeu de la vie](https://fr.wikipedia.org/wiki/Jeu_de_la_vie) (Game of life) imaginé en 1970 par [John Horton Conway](https://fr.wikipedia.org/wiki/John_Horton_Conway).  Dans cette version, deux joueurs s'affrontent pour assurer la pérénité de leur collonie de céllules.
 
 <Team/>
-
-
 
 ## Liens
 
