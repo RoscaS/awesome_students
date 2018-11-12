@@ -19,7 +19,7 @@ Par exemple, une cellule "vivante" peut-être blanche et une "morte" peut-être 
 #### Attributs
 Une cellule connait sa position ainsi que son état.
 
-#### Intéraction
+#### Interaction
 L'utilisateur peut forcer un changement d'état d'une cellule en cliquant sur cette dernière.
 Une cellule vivante est affectée par les règles n°1, n°2 et n°3 (règles définies ci-dessous).
 Une cellule morte est affectée seulement par la règle n°4.
@@ -81,21 +81,19 @@ Par défaut le bouton permet de lancer la simulation (start).
 Lorsque le bouton est activé, le jeu complet (grille et settings) revient à sa configuration par défaut
 
 #### settings
-Par défault la case est décochée. Lorsque la case est cochée, elle débloque les 3 sliders suivants (bornes : [0-8]):
-* Solitude : lorsqu'il change, modifie le nombre de cellules adjacentes de la règle n°1
-* Surpopulation : lorsqu'il change, modifie le nombre de cellules adjacentes de la règle n°3
-* Reproduction : lorsqu'il change, modifie le nombre de cellules adjacentes de la règle n°4
 
-La règle n°2 découle des autres règles et n'a donc pas besoin d'un slider.
+* Solitude : lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle n°1
+* Surpopulation : lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle n°3
+* Reproduction : lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle n°4
 
-#### mode 2 joueurs
+### mode 2 joueurs
 Par défaut, la case est décochée (mode solo). Lorsque l'utilisateur coche cette case, le bouton start/stop est grisé et le jeu passe en mode deux-joueurs débloquant ainsi les éléments d'interface qui vont suivre.
 
-#### règles 2 joueurs
-* Une cellule vivante avec moins de deux voisines **alliées** vivantes meurt (solitude)
-* Une cellule vivante avec deux ou trois voisines **alliées** vivantes vit la génération suivante
-* Une cellule vivante avec plus de trois voisines vivantes meurt (surpopulation)
-* Une cellule morte avec exactement trois voisines **alliées** vivantes devient vivante a la génération suivante(reproduction)
+##### meta
+* La grille est divisée en deux région de même taille chacune.
+* Choix du nombres de cellules de départ.
+* Lors de l'initialisation chaque joueur place ses cellules de son côté de la grille.
+* Possibilité d'ajouter une zone tampon, qui empêche la création de cellules dans cette zone (dosage de l'aggressivité en début de partie).
 
 ##### nombre de tours
 Par défault 0, signifie qu'il n'y a pas de limite. Borne supérieur à définir. La valeur du spinbox définit le nombre de tours que les joueurs auront à disposition avant la fin de la partie.
@@ -106,8 +104,23 @@ Par défaut noir. Lorsque la couleur est modifiée, la couleur des cellules viva
 ##### ColorPicker joueur 2
 Par défaut Gris. Lorsque la couleur est modifiée, la couleur des cellules vivantes du joueurs 1 sera modifiée. La couleur ne peut pas être la même que celle du joueur 1.
 
-#### start
-Le bouton lance la simulation tour par tour et active les champs "instructions" et "données de jeu".
+
+#### Initialisation du jeu
+* Choix de la taille de la grille
+* Possibilité de zone tampon
+* Placement des cellules
+    * Chaque joueur pose ses cellules de son côté de la grille
+
+#### Phase jeu
+
+##### cellules
+* Une cellule vivante avec moins de deux voisines **alliées** vivantes meurt (solitude)
+* Une cellule vivante avec deux ou trois voisines **alliées** vivantes vit la génération suivante
+* Une cellule vivante avec plus de trois voisines vivantes meurt (surpopulation)
+* Une cellule morte avec exactement trois voisines **alliées** vivantes devient vivante a la génération suivante(reproduction)
+
+##### déroulement d'un tour
+Le joueur place une cellule **alliée** dans une case "vide" et en tue une **adverse**.
 
 #### Champ instructions
 Affiche en fonction du tour, les instructions de jeu pour le joueur concerné (ex : tuer une cellule adverse, donner vie à une cellule, etc.)
