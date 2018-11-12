@@ -72,7 +72,7 @@ Lorsqu'on modifie les valeurs du widget, la taille de la grille est mise à jour
 #### Liste de miniatures contenant des scénarios de départ
 Une miniature est sélectionnée par défaut. Chaque miniature contient une grille prédéfinie. L'utilisateur peut sélectionner une miniature à la fois. Lorsqu'il modifie la sélection, la grille est mise à jour en fonction de cette sélection.
 
-#### bouton start/stop
+#### start/stop
 Par défaut le bouton permet de lancer la simulation (start).
 * Lorsque la simulation est arrêtée et que l'utilisateur appuie sur ce bouton, la simulation commence et le bouton change en "stop". L'utilisateur peut modifier la situation actuelle
 * Lorsque la simulation est lancée et que l'utilisateur appuie sur ce bouton, la simulation s'arrête et le bouton repasse en bouton "start"
