@@ -67,7 +67,7 @@ La simulation s'arrête lorsque les cellules ne peuvent plus changer d'état.
 
 ### mode 2 joueurs
 
-#### meta
+#### description
 * La grille est divisée en deux région de même taille chacune.
 * Choix du nombre de cellules de départ.
 * Lors de l'initialisation chaque joueur place ses cellules de son côté de la grille.
