@@ -65,15 +65,15 @@ Au moment de la mise à jour de $t_n$ vers $t_{n+1}$ les changements doivent s'e
 ### Fin de partie
 La simulation s'arrête lorsque les cellules ne peuvent plus changer d'état.
 
-## mode 2 joueurs
+## Mode 2 joueurs
 
-### description
+### Description
 * La grille est divisée en deux région de même taille chacune.
 * Choix du nombre de cellules de départ.
 * Lors de l'initialisation chaque joueur place ses cellules de son côté de la grille.
 * Possibilité d'ajouter une zone tampon, qui empêche la création de cellules dans cette zone (dosage de l'aggressivité en début de partie).
 
-### grille
+### Grille
 Contrairement au mode simulation, les bords ne sont pas communiquants.
 
 
@@ -91,7 +91,7 @@ Contrairement au mode simulation, les bords ne sont pas communiquants.
 * Une cellule vivante avec plus de trois voisines vivantes meurt (surpopulation)
 * Une cellule morte avec exactement trois voisines **alliées** vivantes devient vivante a la génération suivante(reproduction)
 
-#### déroulement d'un tour
+#### Déroulement d'un tour
 Le joueur place une cellule **alliée** dans une case "vide" et en tue une **adverse**.
 
 #### Fin de partie
