@@ -39,7 +39,7 @@ L'ensemble des cellules forment une grille.
 
 ##### Forme et taille de la grille :
 
-La grille peut être de forme rectangulaire.
+La grille est de forme rectangulaire.
 
 </container>
 
