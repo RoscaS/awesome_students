@@ -23,14 +23,27 @@ author: "Sol"
 * `sudo pacman -S mariadb`
 * [Instructions](https://wiki.archlinux.org/index.php/MySQL)
 
-#### Usage
+#### Init
 * session: `systemctl start mysqld`
 * perma: `systemctl enable mysqld`
 * setup: `mysql_secure_installation`
 
+#### Usage
+* Import DB from file: `mysql < mysql-creation -u root -p`
+* Start MQSQL prompt: `mysql -u root -p`
+    * `USE simple`
+
+```
+CREATE TABLE Tasks (id INTEGER, description VARCHAR(1024), completed BIT, deadline VARCHAR(100));
+
+
+
+INSERT INTO Tasks(id, description, completed, deadline) VALUES (1, 'Study for the next control', 0, '08-12-2018');
+INSERT INTO Tasks(id, description, completed, deadline) VALUES (1, 'Costume for Halloween', 1, '31-10-2018');
+INSERT INTO Tasks(id, description, completed, deadline) VALUES (1, 'Do not forget to sleep', 0, '08-12-2018');
+```
 
 ### xDebug
-
 * `pacman -S xdebug`
 * in `/etc/php/conf.d/xdebug.ini` uncomment:
 
