@@ -22,6 +22,7 @@ author: "Sol"
 
 * `sudo pacman -S mariadb`
 * [Instructions](https://wiki.archlinux.org/index.php/MySQL)
+* [CRUD cheatsheet](https://gist.github.com/hofmannsven/9164408)
 
 #### Init
 * session: `systemctl start mysqld`
