@@ -30,7 +30,7 @@ L'ensemble des cellules forment une grille de forme rectangulaire.
 3. Une cellule avec plus de trois cellules adjacentes vivantes meurt de "surpopulation"
 4. Une cellule morte devient vivante si elle a exactement trois cellules vivantes adjacentes
 
-### grille
+### Grille
 Chaque extremité communique avec le coté opposé.
 
 
@@ -71,7 +71,7 @@ Au moment de la mise à jour de $t_n$ vers $t_{n+1}$ les changements doivent s'e
 * Une cellule vivante avec plus de trois voisines vivantes meurt (surpopulation)
 * Une cellule morte avec exactement trois voisines **alliées** vivantes devient vivante a la génération suivante(reproduction)
 
-### grille
+### Grille
 * Contrairement au mode simulation, les bords ne sont pas communiquants.
 * La grille est divisée en deux régions de même taille chacune
 
