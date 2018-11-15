@@ -36,6 +36,9 @@ Chaque bord communique avec le coté opposé.
 
 Implications et contraintes imposées par des grilles de formes diverses.
 
+##### Héritage de propriétés de base :
+Se documenter sur la meilleur façon d'implémenter la grille
+
 </container>
 
 ### Phase simulation
