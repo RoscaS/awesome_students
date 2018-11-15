@@ -9,6 +9,7 @@
 
 <Card header="CheatSheets" max-width="270">
 
+* [cht.sh](https://github.com/chubin/cheat.sh) cmd CheatSheets query
 * [devhints.io](https://devhints.io/) TL;DR for developers
 * [learnxiny.com](https://learnxinyminutes.com) Gold
 * [tldrlegal.com](https://tldrlegal.com/) Legal overview

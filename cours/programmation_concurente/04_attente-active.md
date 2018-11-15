@@ -1,5 +1,5 @@
 ---
-title: Exclusion mutuelle (attente active)
+title: "Exclusion mutuelle: attente active (polling)"
 date: 2018-10-17
 author: Sol
 sidebar: auto

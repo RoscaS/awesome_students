@@ -5,33 +5,29 @@ author: "Michael, Nathan, Sol"
 sidebar: auto
 ---
 
-## Elements de base
+## Elements communs aux deux modes
 
 ### Cellule
 
-L'élément de base du jeu est la cellule. Elle représente une "case" de la grille et a deux états possibles: "Vivante" **ou** "Morte". L'état de chaque cellule de le grille est affecté par l'état des cellules adjacentes (8 voisines).
-
-#### État
-Une couleur particulière indique l'état de la cellule.
-
-#### Attributs
-
-* position
-* état
+* L'élément de base du jeu est la cellule. Elle représente une "case" de la grille et a deux états possibles: "Vivante" ou "Morte". 
+* L'état de chaque cellule de le grille est affecté par l'état des cellules adjacentes (8 cellules voisines).
+* L'état est représenté par une couleur spécifique
 
 ### Grille
-L'ensemble des cellules forment une grille de forme rectangulaire.
+* L'ensemble des cellules forment une grille 
+* La grille est de forme rectangulaire 
+* La taille de la grille est variable
 
 ## Mode simulation
 
 ### Règles
-1. Toute cellule avec moins de deux cellules adjacentes meurt de "solitude"
-2. Toute cellule avec 2 ou 3 cellules adjacentes survit une génération de plus
-3. Une cellule avec plus de trois cellules adjacentes vivantes meurt de "surpopulation"
-4. Une cellule morte devient vivante si elle a exactement trois cellules vivantes adjacentes
+1. Une cellule avec moins de deux cellules adjacentes meurt (**solitude**) 
+2. Une cellule avec 2 ou 3 cellules adjacentes survit une génération de plus (**survie**)
+3. Une cellule avec plus de trois cellules adjacentes vivantes meurt de "surpopulation" (**surpopulation**)
+4. Une cellule morte avec exactement trois cellules vivantes adjacentes devient vivante (**reproduction**)
 
 ### Grille
-Chaque extremité communique avec le coté opposé.
+Chaque bord communique avec le coté opposé.
 
 
 <Container type="warning" header="Point chaud">
@@ -46,14 +42,7 @@ Implications et contraintes imposées par des grilles de formes diverses.
 Une fois la simulation activée, une mise à jour de l'état de la grille se fait à interval régulier et chaque mise à jour applique les règles du jeu à chacune des cellules qui forment la grille.
 
 #### Interval de mise à jour
-L'interval est défini par un timer et l'utilisateur peut modifier la valeur de ce timer (bornes à définir).
-
-#### Fin de simulation
-La simulation s'arrête lorsque les cellules ne peuvent plus changer d'état ou lorsque l'utilisateur décide de la stopper.
-
-### Interactions
-* L'utilisateur peut mettre en pause ou réinitaliser la simulation
-* L'utilisateur peut forcer un changement d'état d'une cellule en cliquant sur cette dernière (quel que soit l'état de la simulation)
+L'interval est défini par un timer règlable par l'utilisateur (bornes limitées)
 
 <Container type="warning" header="Point chaud">
 
@@ -63,58 +52,92 @@ Au moment de la mise à jour de $t_n$ vers $t_{n+1}$ les changements doivent s'e
 
 </container>
 
+#### Fin de simulation
+La simulation s'arrête lorsque les cellules ne peuvent plus changer d'état ou lorsque l'utilisateur décide de la stopper.
+
+### Interactions
+* L'utilisateur peut mettre en pause ou réinitaliser la simulation
+* L'utilisateur peut forcer un changement d'état d'une cellule en cliquant sur cette dernière (quel que soit l'état de la simulation)
+
 ## Mode 2 joueurs
 
 ### Règles
-* Une cellule vivante avec moins de deux voisines **alliées** vivantes meurt (solitude)
-* Une cellule vivante avec deux ou trois voisines **alliées** vivantes vit la génération suivante
-* Une cellule vivante avec plus de trois voisines vivantes meurt (surpopulation)
-* Une cellule morte avec exactement trois voisines **alliées** vivantes devient vivante a la génération suivante(reproduction)
+1. Une cellule vivante avec moins de deux cellules adjacentes **alliées** vivantes meurt (**solitude**)
+2. Une cellule vivante avec deux ou trois cellules adjacentes **alliées** vivantes vit la génération suivante (**survie**)
+3. Une cellule vivante avec plus de trois cellules adjacentes (**alliées ou ennemies**) vivantes meurt (**surpopulation**)
+4. Une cellule morte avec exactement trois cellules adjacentes **alliées** vivantes devient vivante (**reproduction**)
 
 ### Grille
 * Contrairement au mode simulation, les bords ne sont pas communiquants.
-* La grille est divisée en deux régions de même taille chacune
+* La grille est divisée en deux régions de même taille.
 
-
-### Initialisation du jeu
-* Choix de couleur pour chaque joueur
-* Choix du nombre de tours max avant la fin de la partie
+### Initialisation de la partie
+* Choix de nom et couleur pour chaque joueur
+* Choix d'une éventuelle limite de tours avant la fin de la partie
 * Choix de la taille de la grille
-* Possibilité d'ajouter une zone tampon, qui empêche la création de cellules dans cette zone (dosage de l'aggressivité en début de partie).
 * Choix du nombre de cellules de départ.
-* Chaque joueur place ses cellules de son côté de la grille.
+* Possibilité d'ajouter une zone tampon entre les deux joueurs, qui empêche la création de cellules dans cette zone:
+    * Permet le dosage de l'aggressivité en début de partie.
+    * Si le tampon est nul, il n'y a plus de région de départ spécifique (les joueurs peuvent poser des cellules sur toute la carte)
+* Choix concernant la méthode d'initialisation des cellules des joueurs
+    * Manuel (chaque joueur place ses cellules comme il le souhaite) 
+    * Aléatoire
+    * Scénario de départ prédéfini
+
+<Container type="warning" header="Point chaud">
+
+Dans le cas d'un placement manuel, il faut trouver un système pour ne pas qu'un des joueurs attende des heures pour que l'autre se décide. Quelques idées:
+* Timer
+* "Pièce touchée pièce bougée", un joueur qui place une cellule ne peut pas changer d'avis
+
+</Container>
 
 ### Phase jeu
+Au tour par tour les joueurs sont guidés par le "guide de jeu" qui leur spécifie:
+* Le joueur qui doit effectuer une action
+* L'action à effectuer
 
 #### Déroulement d'un tour
-Le joueur place une cellule **alliée** dans une case "vide" et en tue une **adverse**.
+Le joueur qui a la main doit:
+* Donner la vie à une **cellule morte**
+* Tuer une cellule **adverse**
 
 #### Fin de partie
-La partie se termine lorsque les cellules d'un des deux joueurs ne peuvent plus changer d'état ou lorsqu'un certain nombre de tour est atteint (le gagnant de ce cas de figure est celui qui possède le plus de cellules vivantes).
+La partie se termine soit:
+* Quand un des deux joueurs n'a plus de cellules 
+    * Le joueur à qui il reste des cellules gagne
+* Un certain nombre de tours prédéfini en début de partie est atteint
+    * Le joueur ayant le plus de cellules gagne
 
 ## Interface
 
-* grille
-
-* settings
-    * Modification des règles de base :
-        * Solitude : lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle n°1
-        * Surpopulation : lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle n°3
-        * Reproduction
-    * Couleur de la cellule
-    * Taille de la grille
-    * Mode simulation ou multijoueurs
-    * Choix d'une situation de départ
-
-
-
-### Champ instructions (2 joueurs)
-Affiche en fonction du tour, les instructions de jeu pour le joueur concerné (ex : tuer une cellule adverse, donner vie à une cellule, etc.)
-
-### Champ données de jeu (2 joueurs)
-Affiche :
-* le nombre de cellules vivantes de chaque joueur
-* le nombre de cellules créées et tuées par chaque joueur
-* le tour actuel
-* le nombre de tours restants si celui-ci à été défini.
-Lorsque la partie est terminée, affiche le gagnant ainsi que la condition de victoire (ex : "joueur 1 a gagné grâce à 20 cellules vivantes de plus que joueur 2")
+* Grille
+* Panneau de contrôle:
+    * **Commun au deux modes**:
+        * Selection du mode (simulation ou multijoueurs)
+        * Modification des règles de base :
+            * Solitude : Lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle 1
+            * Survie : Lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle 2
+            * Surpopulation : Lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle 3
+            * Reproduction: Lorsqu'elle change, modifie le nombre de cellules adjacentes de la règle 4
+    * **Simulation**:
+        * Contrôle de la simulation (start/pause, reset)
+        * Choix d'une situation de départ
+        * Taille de la grille (longueur et largeur)
+        * Couleur des cellules vivante
+    * **Multijoueur**:
+        * Lancement de la partie
+            * Entraine les actions nécessaire à l'initialisation d'une partie        
+* (multi) Guide de jeu: 
+    * Indication concernant la prochaine action attendue ainsi que le joueur qui doit l'effectuer
+    * Informations clés concernant la partie
+        * Partie commencée
+        * Partie terminée
+        * Vainqueur ainsi que la raison de la victoire
+* (multi) Curseur intelligent: En fonction de l'action attendue, le curseur highlight les cases d'une façon et/ou d'une couleur spécifique
+* (multi) Données de la partie
+    * Nombre de cellules vivantes de chaque joueur
+    * Nombre de cellules créées par chaque joueur
+    * Nombre de cellules tuées par chaque joueur
+    * Le numéro du tour courant
+    * Le nombre de tours restants (si défini)

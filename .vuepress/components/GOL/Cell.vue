@@ -61,7 +61,7 @@
     /*background-color: #bb4747 !important;*/
 
     /*background-color: rgba(0, 0, 0, 0.25) !important;*/
-    background-color: rgba(41, 115, 183, 0.04) !important;
+    background-color: rgba(41, 115, 183, 0.03) !important;
     /*transition: all .1s;*/
   }
 </style>

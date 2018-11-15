@@ -5,10 +5,6 @@ author: "Michael, Nathan, Sol"
 sidebar: auto
 ---
 
-<br>
-<br>
-<br>
-
 ## Objectif
 
 ### Deux modes
@@ -18,6 +14,7 @@ sidebar: auto
 
 #### Simulation
 * Deux états possible pour les cellules (Vivant/Mort)
+* Choix de la taille de la grille (longueur/largeur)
 * Choix de la taille de la grille
 * Mise à jour de l'état des cellules (cycles de jeu) en fonction des règles qui suivent:
     * Une cellule vivante avec deux ou trois voisines vivantes reste en vie
@@ -52,5 +49,5 @@ sidebar: auto
     * Chaque race à son propre set de règles et d'interactions avec les cellules adverses
 * Mode deux joueurs en reseau
 * Mode multi joueurs (> 2)
-* Mode PvE (contre IA)
+* Mode multi joueur contre IA (PVE)
 

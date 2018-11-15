@@ -5,6 +5,51 @@ sidebar: auto
 author: Sol
 ---
 
+<Card header="Tests" max-width="270">
+
+* CP1: 5 decembre 2018 (320)
+  * <st c="r">cstr de copie + clone</st>
+
+</Card>
+
+## Object Object
+Toutes les classes héritent de object (`extend class object` implicite)
+
+
+Concepte étrange de l'implémentation des methodes de `Object`.
+Necessaire de les redéfinir. Entre autres:
+* `toString`
+* `clone`
+* `equals`
+* `hashcode` (hashcode de `object` fonctionne bien de base. <st c="r"> SAUF si `equals` est redéfinit.</st>)
+
+
+Pour clone, une combine consiste à implémenter une méthode avec un nom proche de `clone` comme `cloneOf` comme ça si elle est déjà redéfinie, on override pas. Permet de ne pas faire un **try catch** pour vérifier si la methode `clone` retourne un objet de type `object` (<Fa fa="arrow-right"/> elle n'est pas réimplémentée dans la classe qu'on utilise)
+
+
+## Hashcode
+* "Identifiant numérique d'un objet" sous la forme d'un `int`.
+* Si deux objets sont égaux, ils ont le même hashcode.
+
+## Copie
+Classe inalterable <Fa fa="arrow-right"/>  copie supperficielle <br>
+
+<Container type="danger">
+
+Pour un membre inalterable, si qqun construit un setter pour le membre, il devient alterable et donc la shallow copy est dangereuse.
+
+<st c="r">Trouver théorie pour les constructeurs de copie en Java</st>
+
+</Container>
+
+
+## Type de classes
+* Pojo
+* Runnable
+* pleine
+* classic (mélange des autres)
+
+
 ## Idee
 **Comme pour les classes containeurs (Pojo != classe container) une fois que les attributs sont définits, le reste est générable automatiquement. Pourquoi ne pas pas créér un petit soft pour générér ça. Ou éventuellement un template.**
 
