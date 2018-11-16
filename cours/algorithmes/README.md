@@ -35,3 +35,22 @@
 </Col>
 
 
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+<Card header="Tutos">
+
+* [programiz](https://www.programiz.com/)
+
+</Card>
+
+</template>
+<template slot="right">
+
+
+
+</template>
+</Col>
+
+
