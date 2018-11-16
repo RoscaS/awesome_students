@@ -36,13 +36,16 @@ Chaque bord communique avec le coté opposé.
 
 Implications et contraintes imposées par des grilles de formes diverses.
 
+##### Héritage de propriétés de base :
+Se documenter sur la meilleur façon d'implémenter la grille
+
 </container>
 
 ### Phase simulation
 Une fois la simulation activée, une mise à jour de l'état de la grille se fait à interval régulier et chaque mise à jour applique les règles du jeu à chacune des cellules qui forment la grille.
 
 #### Interval de mise à jour
-L'interval est défini par un timer règlable par l'utilisateur (bornes limitées)
+L'interval est défini par un timer réglable par l'utilisateur (bornes limitées)
 
 <Container type="warning" header="Point chaud">
 
