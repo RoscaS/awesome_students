@@ -130,7 +130,7 @@
           <entry key="md" value="2529" />
           <entry key="scss" value="86" />
           <entry key="styl" value="1126" />
-          <entry key="vue" value="47122" />
+          <entry key="vue" value="47141" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -141,7 +141,7 @@
           <entry key="PLAIN_TEXT" value="850" />
           <entry key="SCSS" value="86" />
           <entry key="Stylus" value="1126" />
-          <entry key="Vue.js" value="47122" />
+          <entry key="Vue.js" value="47141" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -177,8 +177,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/ExoDomo.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="92">
-                  <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+                <state relative-caret-position="207">
+                  <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
                   <folding>
                     <element signature="e#138#209#0" expanded="true" />
                   </folding>
@@ -211,8 +211,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.vuepress/components/GenieLog/Exercice_domotique/Question.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="18" column="31" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="31" />
+                <state relative-caret-position="483">
+                  <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
@@ -234,13 +234,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>button</find>
       <find>shadow</find>
       <find>u</find>
       <find>padding-top</find>
       <find>child</find>
       <find>.css</find>
-      <find>v-for</find>
       <find>includes</find>
       <find>dict</find>
       <find>string</find>
@@ -264,6 +262,8 @@
       <find>counter</find>
       <find>pop</find>
       <find>question.tex</find>
+      <find>Question</find>
+      <find>v-for</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;Container type=&quot;danger&quot;&gt;</replace>
@@ -595,19 +595,19 @@
       <workItem from="1542106021469" duration="11163000" />
       <workItem from="1542216461037" duration="6761000" />
       <workItem from="1542271007451" duration="6009000" />
-      <workItem from="1542366074092" duration="12891000" />
+      <workItem from="1542366074092" duration="13663000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="419692000" />
+    <option name="totallyTimeSpent" value="420464000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1138" y="-8" width="2695" height="2161" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.24973711" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.24972129" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32971698" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32959244" />
       <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
@@ -622,7 +622,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.08063917" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.08063917" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -920,6 +920,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="1" />
+          <folding>
+            <element signature="e#1737#1779#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -953,15 +956,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/GenieLog/Exercice_domotique/Question.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="31" />
+        <state relative-caret-position="483">
+          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.vuepress/components/ExoDomo.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="207">
+          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
           <folding>
             <element signature="e#138#209#0" expanded="true" />
           </folding>

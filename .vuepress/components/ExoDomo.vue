@@ -6,9 +6,8 @@
     <vs-list>
 
       <vs-list-header icon="assignment" title="Evaluez les systèmes suivants:" color="#3EAF7C">
-
       </vs-list-header>
-      <Question v-for="i in questions" :question="i"/>
+      <Question v-for="(i, idx) in questions" :key="idx" :question="i"/>
 
     </vs-list>
 
