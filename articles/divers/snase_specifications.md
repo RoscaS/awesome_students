@@ -8,26 +8,30 @@ project: false
 
 <br><br>
 
-## Divers
+## Utilisateur
 
 ### Arrivée sur la page d'acceuil
 Sur le modèle du [site de la section du tessin](http://www.ergoterapia.ch/)
 
 <Container type="danger">
 
-* Précisions requises concernant les différentes pages statiques.
 * Précisions requises concernant le contenu de la page d'acceuil.
 
 </Container>
 
-* En tant qu'utilisateur:
+* En tant que visiteur:
     * **Je veux:**
         * Arriver sur la page d'acceuil quand j'entre l'adresse du site.
     * **Pour:**
-        * Accéder à la fonction de recherche.
+        * Consulter les Pages du site réparties dans des Sections
+        * Accéder à la fonction de [recherche](#recherche)
 * En tant que membre:
     * **Je veux:**
+        * Arriver sur la page d'acceuil quand j'entre l'adresse du site.
+    * **Pour:**
         * Avoir accès aux différentes fonctionnalités qui concerne mon type de compte.
+        * Consulter les Pages du site réparties dans des Sections
+        * Accéder à la fonction de [recherche](#recherche)
 
 <br><br>
 
@@ -50,7 +54,7 @@ Sur le modèle du [site de la section du tessin](http://www.ergoterapia.ch/)
 ### Admin crée un Groupe
 * En tant qu'Admin
     * **Je veux:**
-        * Avoir accès à la page de gestion des Groupes, cliquer sur le bouton `nouveau groupe` et remplir un formulaire.
+        * Avoir accès à la page de gestion des <Def def="Association d'Ergothérapeutes">Groupes</Def>, cliquer sur le bouton `nouveau groupe` et remplir un formulaire.
     * **Pour:**
         * Créér un Groupe
 * Contraintes:
@@ -314,6 +318,78 @@ Précisions requises
 * Contraintes:
     * Les champs sont modifiés dans la base de donnée
     * Seul Admin peut modifier une Zone géographique
+
+<br><br>
+
+## Pages "Statiques"
+
+### Admin crée section
+* En tant qu'Admin
+    * **Je veux:**
+        * Avoir accès à la page de gestion des Sections du site, cliquer sur le bouton `Nouvelle section` et remplir le formulaire.
+    * **Pour:**
+        * Créér une nouvelle Section
+* Contraintes:
+    * La Section est ajoutée à la base de données
+    * Seul Admin peut créér une Section
+
+### Admin manage Section
+* En tant qu'Admin
+    * **Je veux:**
+        * Avoir accès à la page de gestion des Sections, y choisir une Section et cliquer sur `Modifier section`.
+    * **Pour:**
+        * Modifier les champs de la Section
+* Contraintes:
+    * Dialogue de confirmation des changements validé
+    * Les champs sont modifiés dans la base de donnée
+    * Seul Admin peut modifier une Section
+
+### Admin supprime Section
+* En tant qu'Admin
+    * **Je veux:**
+        * Avoir accès à la page de gestion des Sections, y choisir une Section et cliquer sur `Supprimer section`.
+    * **Pour:**
+        * Supprimer une Section
+* Contraintes:
+    * Si la Section contient des Pages, les Pages sont automatiquement relocalisées dans une Section spéciale ne s'affichant pas sur le site
+    * Dialogue de confirmation des changements validé
+    * La Section est supprimée de la base de données
+    * Seul Admin peut supprimer une Section
+
+### Admin crée Page
+* En tant qu'Admin
+    * **Je veux:**
+        * Avoir accès à la page de gestion des Sections, y choisir une Section et cliquer sur le bouton `Nouvelle Page` et remplir le formulaire.
+    * **Pour:**
+        * Créér une nouvelle Page liée à une Section
+* Contraintes:
+    * La Page est ajoutée à la base de données
+    * Si c'est la première page d'une Section, la Section s'affiche dans la barre de navigation du site et affiche un liens vers la nouvelle Page
+    * Un lien vers la Page apparait dans la Section appropriée dans la barre de navigation du site
+    * Seul Admin peut créér une Page
+
+### Admin manage Page
+* En tant qu'Admin
+    * **Je veux:**
+        * Avoir accès à la page de gestion des Sections, y choisir une Section et cliquer sur `Modifier Page` de la Page concernée.
+    * **Pour:**
+        * Modifier les champs de la Page
+* Contraintes:
+    * Dialogue de confirmation des changements validé
+    * Les champs sont modifiés dans la base de donnée
+    * Seul Admin peut modifier une Page
+
+### Admin supprime Page
+* En tant qu'Admin
+    * **Je veux:**
+        * Avoir accès à la page de gestion des Sections, y choisir une Section et cliquer sur `Supprimer Page` de la Page concernée.
+    * **Pour:**
+        * Supprimer une Page
+* Contraintes:
+    * Dialogue de confirmation de la suppression validé* 
+    * La Page est supprimée à la base de données
+    * Si c'est l'unique page d'une Section, la Section ne s'affiche plus dans la barre de navigation du site
+    * Seul Admin peut supprimer une Page
 
 <br><br>
 
