@@ -10,7 +10,7 @@ project: false
 
 ## Utilisateur
 
-### Arrivée sur la page d'acceuil
+### Page d'acceuil 
 Sur le modèle du [site de la section du tessin](http://www.ergoterapia.ch/)
 
 <Container type="danger">
@@ -19,7 +19,7 @@ Sur le modèle du [site de la section du tessin](http://www.ergoterapia.ch/)
 
 </Container>
 
-* En tant que visiteur:
+* En tant qu'utilisateur:
     * **Je veux:**
         * Arriver sur la page d'acceuil quand j'entre l'adresse du site.
     * **Pour:**
@@ -30,26 +30,87 @@ Sur le modèle du [site de la section du tessin](http://www.ergoterapia.ch/)
         * Arriver sur la page d'acceuil quand j'entre l'adresse du site.
     * **Pour:**
         * Avoir accès aux différentes fonctionnalités qui concerne mon type de compte.
-        * Consulter les Pages du site réparties dans des Sections
-        * Accéder à la fonction de [recherche](#recherche)
+
+### Ergothérapeute s'inscrit sur le site
+* En tant qu'utilisateur du site
+    * **Je veux:**
+        * Avoir accès à la page d'inscription et y remplire de formulaire d'inscription en tant que Ergothérapeute.
+    * **Pour:**
+        * Créér un nouveau compte Ergothérapeute.
+* Contraintes:
+    * Si l'utilisateur choisi un Groupe dans le menu déroulant `Groupe` une confirmation du Modérateur du Groupe spécifié est requise avant son ajout au Groupe.
+    * L'érgothérapeute est ajouté à la base de données.
+
+### Recherche d'Ergothérapeute/Groupe
+* En tant que utilisateur du site:
+    * **Je veux:**
+        * Trouver un Ergothérapeute spécialisé en un domaine particulier en recherchant par critère (nom, zone géographique, spécialisation, ambulatoire(ou pas))
+    * **Pour:**
+        * Avoir un résultat cohérent avec ma recheche
+* Contraintes:
+    * Un Ergothérapeute appartenant à un Groupe est retourné en résultat de recherche dans la carte de son Groupe.
+    * Un Ergothérapeute n'appartenant pas à un Groupe est retourné en résultat de recherche dans sa propre carte.
+
+### Version malvoyant
+* En tant qu'utilisateur
+    * **Je veux:**
+        * Cliquer sur le bouton `Version malvoyant` dans la barre de navigation.
+    * **Pour:**
+        * Afficher la version du site simplifiée et optimisée pour les malvoyants.
+
+### Augmenter la taille du texte
+* En tant qu'utilisateur
+    * **Je veux:**
+        * Cliquer sur le bouton `+`.
+    * **Pour:**
+        * Augmenter d'un certain nombre de points la taille des caractères de la page courante.
+* Contraintes:
+    * La taille max n'est pas déjà atteinte.
+
+### Réduire la taille du texte
+* En tant qu'utilisateur
+    * **Je veux:**
+        * Cliquer sur le bouton `-`
+    * **Pour:**
+        * Réduire d'un certain nombre de points la taille des caractères de la page courante.
+* Contraintes:
+    * La taille min n'est pas déjà atteinte.
+
+### Réinitialiser la taille du texte
+* En tant qu'utilisateur
+    * **Je veux:**
+        * Cliquer sur le bouton `=`
+    * **Pour:**
+        * Revenir à la taille par défaut des caractères de la page courante.
 
 <br><br>
 
 ## Super Admin
 
-### Super Admin crée utilisateur Admin
+### Super Admin crée Admin
 * En tant que Super Admin
     * **Je veux:**
         * Avoir accès à la page de gestion des Admins, cliquer sur le bouton `ajouter nouvel admin` et remplir un formulaire
     * **Pour:**
-        * Créér un utilisateur Admin
+        * Créér un Admin
 * Contraintes:
     * L'Admin est créé dans la base de données
-    * Seul Super Admin peut créér un utilisateur Admin.
+    * Seul Super Admin peut créér un Admin.
 
 <br><br>
 
 ## Admin
+
+### Admin crée un Ergothérapeute
+* En tant qu'Admin
+    * **Je veux:**
+        * Avoir accès à la page de gestion des Ergothérapeutes, cliquer sur le bouton `ajouter Ergothérapeute` et remplir un formulaire.
+    * **Pour:**
+        * Créér un Ergothérapeute
+* Contraintes:
+    * L'Ergothérapeute est créé dans la base de donneées.
+    * Une invitation est envoyée à l'email spécifié
+    * Seul Admin peut créér un Ergothérapeute.
 
 ### Admin crée un Groupe
 * En tant qu'Admin
@@ -61,18 +122,6 @@ Sur le modèle du [site de la section du tessin](http://www.ergoterapia.ch/)
     * Le groupe est créé dans la base de donneées.
     * Seul Admin peut créér un nouveau Groupe.
 
-
-### Admin crée un utilisateur Ergothérapeute
-* En tant qu'Admin
-    * **Je veux:**
-        * Avoir accès à la page de gestion des Ergothérapeutes, cliquer sur le bouton `nouveau groupe` et remplir un formulaire.
-    * **Pour:**
-        * Créér un utilisateur Ergothérapeute
-* Contraintes:
-    * L'Ergothérapeute est créé dans la base de donneées.
-    * Seul Admin peut créér un utilisateur Ergothérapeute.
-
-
 ### Admin crée un Subscriber
 Un Subscriber est un professionnel qui n'est pas forcément un ergothérapeute. Entité nécessaire dans le contexte des MailingLists.
 
@@ -80,10 +129,10 @@ Un Subscriber est un professionnel qui n'est pas forcément un ergothérapeute. 
     * **Je veux:**
         * Avoir accès à la page de gestion des Subscriber, cliquer sur le bouton `nouveau Subscriber` et remplir un formulaire.
     * **Pour:**
-        * Créér un utilisateur Subscriber.
+        * Créér un Subscriber.
 * Contraintes:
     * Le Subscriber est créé dans la base de donneées.
-    * Seul Admin peut créér un utilisateur Subscriber.
+    * Seul Admin peut créér un Subscriber.
 
 
 ### Admin ajoute Ergothérapeute à un Groupe
@@ -178,17 +227,6 @@ Un Subscriber est un professionnel qui n'est pas forcément un ergothérapeute. 
 <br><br>
 
 ## Ergothérapeutes
-
-### Ergothérapeute s'inscrit sur le site
-* En tant qu'érgothérapeute (de profession) parcourant le site:
-    * **Je veux:**
-        * Avoir accès à la page d'inscription et y remplire de formulaire d'inscription en tant que Ergothérapeute.
-    * **Pour:**
-        * Créér un nouveau compte Ergothérapeute.
-* Contraintes:
-    * Si l'utilisateur choisi un Groupe dans le menu déroulant `Groupe` une confirmation du Modérateur du Groupe spécifié est requise avant son ajout au Groupe.
-    * Si l'utilisateur choisi un Groupe dans le menu déroulant `Groupe` et qu'il en est le seul membre il devient automatiquement Modérateur de ce Groupe.
-    * L'érgothérapeute est ajouté à la base de données.
 
 ### Admin valide l'inscription d'Ergothérapeute
 * En tant qu'Admin
@@ -393,14 +431,4 @@ Précisions requises
 
 <br><br>
 
-## Recherche
 
-### Recherche d'Ergothérapeute/Groupe
-* En tant que utilisateur du site:
-    * **Je veux:**
-        * Trouver un Ergothérapeute spécialisé en un domaine particulier en recherchant par critère (nom, zone géographique, spécialisation, ambulatoire(ou pas))
-    * **Pour:**
-        * Avoir un résultat cohérent avec ma recheche
-* Contraintes:
-    * Un Ergothérapeute appartenant à un Groupe est retourné en résultat de recherche dans la carte de son Groupe.
-    * Un Ergothérapeute n'appartenant pas à un Groupe est retourné en résultat de recherche dans sa propre carte.
