@@ -1,7 +1,12 @@
 <template>
   <div class="wrapper">
-    <h4>{{ header }}</h4>
+    <h4 v-if="!title">{{ header }}</h4>
     <vs-card :style="setMaxWidth">
+      <div slot="header" v-if="title">
+        <h3>
+          {{ header }}
+        </h3>
+      </div>
       <div class="body">
         <slot></slot>
       </div>
@@ -14,7 +19,8 @@
     props: {
       maxWidth: {type: String, default: '250'},
       header: {type: String},
-      center: {type: String, default: "false"}
+      center: {type: String, default: "false"},
+      title: {type: Boolean, default: false}
     },
     name: 'Card',
     computed: {
