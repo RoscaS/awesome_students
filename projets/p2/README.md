@@ -28,23 +28,24 @@ Fight for the game of life est une adaptation multijoueur du célèbre automate 
 ## Échéances
 
 ### 1 octobre 2018
-
-
 <Check state="true">Création des groupes</Check>
 <Check state="true">Choix du projet</Check>
 <Check state="true">Mise en place forge</Check>
 
 ### 12 novembre 2018
-
-* **Analyse** (quoi?)
 <Check state="true">Besoins (cahier des charges)</Check>
 <Check state="true">Spécifications détaillées</Check>
 <Check state="false">Planning (liste de taches)</Check>
 
-
-* **Conceptions** (comment?)
+### 17 decembre 2018
 <Check state="false">Maquettes </Check>
-<Check state="false">Algos</Check>
+<Check state="false">MVP</Check>
+
+### 21 janvier 2019
+<Check state="false">Objectif atteint</Check>
+<Check state="false">Rapport</Check>
+<Check state="false">Présentation</Check>
+
 
 ## Analyse
 [Cahier des charges](/projets/p2/01_cahier_des_charges.html)

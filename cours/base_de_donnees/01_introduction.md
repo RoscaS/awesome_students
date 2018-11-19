@@ -5,15 +5,18 @@ sidebar: auto
 author: "Sol"
 ---
 
+## Docker
+
+* [jetbrain docker tool](https://www.jetbrains.com/help/idea/running-a-dbms-image.html)
+
+
+
 # BDD
 
 ## Tools
 * PostgresSQL
 * Pgadmin
   
-## Tests
-* 5 novembre: écrit et théorique
-
 ## TPs
 * 19 novembre
 * 17 décembre
