@@ -20,9 +20,11 @@ Fight for the game of life est une adaptation multijoueur du célèbre automate 
 
 <Team/>
 
+
 ## Liens
 
 * [Répo: Forge he-arc](https://forge.ing.he-arc.ch/gitlab/inf/1819/p2-qt/h-gameoflife)
+* [Planning](https://live.ganttlab.org/?l=project)
 * [Directives P2](https://forge.ing.he-arc.ch/gitlab/dgr/Ressources/wikis/directives-p2)
 
 ## Échéances
@@ -41,9 +43,11 @@ Fight for the game of life est une adaptation multijoueur du célèbre automate 
 <Check state="false">Maquettes </Check>
 <Check state="false">MVP</Check>
 
-### 21 janvier 2019
+### 20 janvier 2019
 <Check state="false">Objectif atteint</Check>
 <Check state="false">Rapport</Check>
+
+### 21/22 janvier 2019
 <Check state="false">Présentation</Check>
 
 

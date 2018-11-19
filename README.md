@@ -2,19 +2,6 @@
 
 <SiteTitle />
 
-
-
-|   Nom                                         |     Date    |   Temps   |
-|-----------------------------------------------|-------------|-----------|
-| modifications spécifications                  | 10.11.2018  |     1h    |
-| plusieurs ajouts dans les spécifications      | 12.11.2018  |     1h30  |
-| refonte cahier de charge et spécifications    | 12.11.2018  |     2h    |
-| issues sur papier(voir Pv)                    | 15.11.2018  |     1h15  |
-| issues sur gitlab                             | 16.11.2018  |     30min |
-|**Temps total**                                |             |  **6h15** |
-
-
-
 ## Spotlight
 
 <Col proportions="6/6" vAlign="0">

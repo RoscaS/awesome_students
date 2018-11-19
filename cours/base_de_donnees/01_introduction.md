@@ -10,7 +10,6 @@ author: "Sol"
 * [jetbrain docker tool](https://www.jetbrains.com/help/idea/running-a-dbms-image.html)
 
 
-
 # BDD
 
 ## Tools
