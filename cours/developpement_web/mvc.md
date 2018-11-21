@@ -69,11 +69,7 @@ $router->direct($uri);
 ```
 
 * Ligne 3: `require 'core/bootstrap.php`: importe le contenu du fichier `bootstrap.php`:
-    ```php
-    require 'config.php';
-    require 'core/Router.php';
-    require 'core/Request.php';
-    ```
+
 
 * Ligne 4: `$uri = Request::uri();`
     * set la variable `$uri` avec l'uri passée dans le champ url du navigateur trimée
@@ -84,12 +80,4 @@ $router->direct($uri);
     
     
 
-<CodeHover>
 
-```php
-require 'config.php';
-require 'core/Router.php';
-require 'core/Request.php';
-```
-
-</CodeHover>

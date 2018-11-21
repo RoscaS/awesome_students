@@ -23,7 +23,7 @@ Le poids en bit du résultat de la compression est tout simplement le nombre de 
 | ---------------- | --------- | ------ |
 | 124 B            | 63 B      | 199 B  |
 | 4.2 KB           | 1.8 KB    | 1.7 KB |
-| 39.1 KB          | 21.419 kB | 3.5 KB |
+| 39.1 KB          | 21.419 KB | 3.5 KB |
 
 Sur de très petits fichiers, notre implémentation de Huffman a l'avantage mais cette différence n'est pas pertinente vu la taille du fichier. Gz est très clairement plus performant et c'est normal. La différence s'[explique](https://en.wikipedia.org/wiki/Gzip) par le fait que Gzip utilise Huffman en combinaison avec [Lempel–Ziv–Welch](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch) pour compresser (intra et inter-symboles).
 
@@ -41,9 +41,5 @@ Nous avons fait plusieurs tests dont l'exercice 3 :
     * `k: 10000`
 
 * Texte compressé : `111110000001111101`
-
-<Container type="info">
-
-</Container>
 
 
