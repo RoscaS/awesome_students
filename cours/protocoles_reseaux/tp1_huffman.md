@@ -6,16 +6,26 @@ sidebar: auto
 project: true
 ---
 
+## Liens
+
+* [repo](https://github.com/RoscaS/php_huffman)
+
+## Structure de données
+Le code de huffman lie un caractère (clé) à une combinaison binaire (valeur) et il n'y aura jamais de valeur sans clé. L'utilisation de baleaux associatifs nous semble donc parfaitement adaptée.
 
 ## Entête fichier bin
 Dans un fichier binaire il n'y a pas besoin d'entête mais le format de 8 Blocs de 4 bits par ligne doit être respecté.
-Sous linux nous pouvons convertir dans un format binaire grâce à la commande :
-* `xxd -r -p text > binary`
 
+## Comparaison d'efficacité 
+Le poids en bit du resultat de la compression est tout simplement le nombre de caractères qui composent la string "compressée" (sous forme de 0 et de 1 textuels). Avec cette information nous testons 3 fichiers texte avec notre algorithme et Gzip:
 
-## Comparaison d'éfficacité 
-* **comparaison** : Gzip réduit la taille, même d'un petit fichier alors que notre huffman l'agrandi.
-* **explications** : Notre algorithme ne fait que remplacer les lettres du texte par leur code binaire (huffman) ce qui donne des fichiers plus grands. Gzip par exemple, utilise lempel-ziv pour compresser et est donc bien plus performant (intra et inter-symboles).
+| Sans compression | Huffman   | Gz     |
+| ---------------- | --------- | ------ |
+| 124 B            | 63 B      | 199 B  |
+| 4.2 KB           | 1.8 KB    | 1.7 KB |
+| 39.1 KB          | 21.419 kB | 3.5 KB |
+
+Sur de très petits fichiers notre implémentation de Huffman à l'avantage mais cette différence n'est pas pertinente vu la taille du fichier. Gz est très clairement plus performant et c'est normal. La différence s'[explique](https://en.wikipedia.org/wiki/Gzip) par le fait que Gzip utilise Huffman en combinaison avec [Lempel–Ziv–Welch](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch) pour compresser (intra et inter-symboles).
 
 ## Tests :
 Nous avons fait plusieurs tests dont l'exercice 3 :
@@ -31,6 +41,11 @@ Nous avons fait plusieurs tests dont l'exercice 3 :
     * `k: 10000`
 
 * Texte compressé : `111110000001111101`
-* Lorsqu'il y a un espace dans le texte à compresser, l'espace doit être codé et est nommé *ASC 32* dans la table de codage.
+
+<Container type="info">
+
+Lorsqu'il y a un espace dans le texte à compresser, l'espace doit être codé et est nommé *ASC 32* dans la table de codage.
+
+</Container>
 
 
