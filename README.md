@@ -1,5 +1,4 @@
 
-
 <SiteTitle />
 
 ## Spotlight

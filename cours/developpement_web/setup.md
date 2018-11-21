@@ -44,6 +44,11 @@ INSERT INTO Tasks(id, description, completed, deadline) VALUES (1, 'Costume for 
 INSERT INTO Tasks(id, description, completed, deadline) VALUES (1, 'Do not forget to sleep', 0, '08-12-2018');
 ```
 
+## Phpmyadmin
+* [http://localhost/phpmyadmin/index.php](http://localhost/phpmyadmin/index.php)
+* username: root
+* pw: _the colorfull one_
+
 ### xDebug
 * `pacman -S xdebug`
 * in `/etc/php/conf.d/xdebug.ini` uncomment:
