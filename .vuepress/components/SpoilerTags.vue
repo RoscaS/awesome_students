@@ -2,7 +2,7 @@
   <div class="tags" :title="title" @click="$emit('open')">
     <i class="fas fa-fw chevron fa-chevron-left"></i>
     <span class="inside close" v-if="close">/</span>
-    <span class="inside text">spoiler</span>
+    <span class="inside text">{{tag}}</span>
     <i class="fas fa-fw chevron fa-chevron-right"></i>
   </div>
 </template>
@@ -13,6 +13,7 @@
     props: {
       close: Boolean,
       title: String,
+      tag: String
     },
   }
 </script>

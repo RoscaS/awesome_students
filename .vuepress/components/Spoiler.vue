@@ -1,12 +1,12 @@
 <template>
   <div class="spoiler">
     <div class="open">
-      <Tags class="tags" :title="title" @open="show()"/>
+      <Tags class="tags" :tag="tag" :title="title" @open="show()"/>
       <VueSlideToggle :open="open" :duration="1000">
         <div class="tags-content">
           <slot></slot>
         </div>
-        <Tags class="tags" :title="title" :close="true" @open="show()"/>
+        <Tags class="tags" :tag="tag" :title="title" :close="true" @open="show()"/>
       </VueSlideToggle>
     </div>
   </div>
@@ -20,7 +20,7 @@
     name: 'Spoiler',
     components: {VueSlideToggle, Tags},
     props: {
-      default: {type: String},
+      tag: {type: String, default: "spoiler"},
     },
     data: () => ({
       open: false,

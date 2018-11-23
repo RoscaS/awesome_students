@@ -3,6 +3,8 @@
 
 ## Spotlight
 
+<br>
+
 <Col proportions="6/6" vAlign="0">
 <template slot="left">
 

@@ -45,17 +45,18 @@
   @require '../theme/styles/wrapper.styl'
 
   .article-header
-    margin-bottom -120px !important
+    margin-bottom -100px !important
 
     h1
       margin-bottom 5px !important
+
 
   .spacer
     margin-top 30px !important
 
   .team
     padding-top 30px !important
-    padding-bottom 30px !important
+    /*padding-bottom 30px !important*/
 
 
 </style>
