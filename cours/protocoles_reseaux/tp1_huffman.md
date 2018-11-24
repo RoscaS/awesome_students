@@ -14,7 +14,7 @@ project: true
 Le code de huffman lie un caractère (clé) à une combinaison binaire (valeur) et il n'y aura jamais de valeur sans clé. L'utilisation de tableaux associatifs nous semble donc parfaitement adaptée.
 
 ## Entête fichier bin
-Dans un fichier binaire il n'y a pas besoin d'entête mais le format de 8 Blocs de 4 bits par ligne doit être respecté.
+Dans un fichier binaire il n'y a pas besoin d'entête mais le format de 8 Blocs de 4 bits par ligne doit être respecté. 
 
 ## Comparaison d'efficacité 
 Le poids en bit du résultat de la compression est tout simplement le nombre de caractères qui composent la string "compressée" (sous forme de 0 et de 1 textuels). Avec cette information, nous testons 3 fichiers texte avec notre algorithme et Gzip:
