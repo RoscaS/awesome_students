@@ -10,8 +10,6 @@ sidebar: auto
 
 <br>
 
-![Image](https://i.imgur.com/dU8Esrt.png)
-
 > Claude Shannon, des laboratoires <Def def="Connu pour l'invention du transistor ainsi que d'UNIX ! Fait aujourd'hui partie du groupe Lucent.">Bell</Def> décrit en 1948 les bases de la théorie de l'information en communication électronique.
 
 ## Sources
@@ -328,7 +326,14 @@ En général utilisé pour l'audio et la vidéo mais aussi l'étape de quantific
 
 <Container type="danger">
 
-Deux compressions successives **avec deux algorithmes de la même classe** (du même type) ne sont en général pas meilleures que le meilleur des deux algorithmes (penser aussi à la table de compression qui doit être stockée). En pratique le fichier résultant va même augmenter de taille. **Dans tous les cas l'entropie est la borne minimale** de compression.
+* Deux compressions successives **avec deux algorithmes de la même classe** (du même type) ne sont en général pas meilleures que le meilleur des deux algorithmes (penser aussi à la table de compression qui doit être stockée). En pratique le fichier résultant va même augmenter de taille. **Dans tous les cas l'entropie est la borne minimale** de compression.
+
+<br>
+
+* **AVI** et **Quicktime** sont des **conteneurs** (des wrappers) et non pas des algorithmes de compression.
+    * L'Audio Video Interleave ou **`**AVI**`**, est un format d'empaquetage conçu pour stocker des données audio et vidéo. Dans un fichier AVI, **différents codecs peuvent être encapsulés**, 
+        * Pour la vidéo : DivX, Xvid, DV, Mpeg2/4, etc., 
+        * Pour l'audio : AC3, mp3, PCM, etc.
 
 </Container>
 
