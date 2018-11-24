@@ -10,6 +10,8 @@ sidebar: auto
 
 <br>
 
+![Image](https://i.imgur.com/dU8Esrt.png)
+
 > Claude Shannon, des laboratoires <Def def="Connu pour l'invention du transistor ainsi que d'UNIX ! Fait aujourd'hui partie du groupe Lucent.">Bell</Def> décrit en 1948 les bases de la théorie de l'information en communication électronique.
 
 ## Sources
@@ -196,17 +198,18 @@ La compression (sans perte) vise à baisser la redondance
 
 ### Sans perte
 
-**De manière à diminiuer la redondance de symboles** (p.ex. parce que leur répartition est connue généralement ou localement pour le fichier ou le tambon d'entrées/sortie considéré), on peut compresser sans perte de différentes manières:
-* **Compression entropique classique**: En considérant la répartition statistique locale ou globale de chaque symbole pris indépendamment (Huffman, Shannon-Fano, ...)
-* **Compression différentielle**: En considérant que les données ne changent que très lentement (périférique de mesure, différence entre deux images fixes, ...)
-* **Compression RLE (Run Length Encoding)**: En considérant que certains symboles peuvent se répéter.
-* **Compression Lempel-Ziv**: En Considèrant la répartition de sous-chaines ou de sous-textes.
+
+Une compression **sans perte** signifie que la **décompression** produit un fichier **égale à l'original non compressé**. Cette compression vise à **diminiuer la redondance de symboles** (p.ex. parce que leur répartition est connue généralement ou localement pour le fichier ou le tambon d'entrées/sortie considéré), on peut compresser sans perte de différentes manières:
+* **Compression entropique classique**: En considérant la répartition de chaque symbole pris indépendamment (Huffman, Shannon-Fano, ...)
+* **Compression différentielle**: Considère les différences entre deux états et se base sur le fait que les données ne changent que très lentement (périférique de mesure, différence entre deux images fixes, ...)
+* **Compression RLE (Run Length Encoding)**: Considère que certains symboles peuvent se répéter.
+* **Compression Lempel-Ziv**: Considère la répartition de sous-chaines ou de sous-textes.
 
 <Container type="info">
 
 * La seule de ces mèthodes qui n'utilise **pas** de dépendance entre les symboles est la **compression entropique**.
-* Atteindre une redondance de $0$ n'est en général pas possible (car on code souvent sur un nombre entier de bits).
-* En pratique de combinaisons de ces techniques sont souvent employées.
+* En pratique des combinaisons de ces techniques sont souvent employées.
+* Atteindre une redondance $R$ de $0$ n'est en général pas possible (car on code sur un nombre entier de bits et que la quantité de décision $D$ n'est pas forcément entière. $R = D - H$).
 
 </Container>
 
