@@ -196,8 +196,7 @@ La compression (sans perte) vise à baisser la redondance
 
 ## Compression
 
-### Sans perte
-
+### Sans perte (données informatiques)
 
 Une compression **sans perte** signifie que la **décompression** produit un fichier **égale à l'original non compressé**. Cette compression vise à **diminiuer la redondance de symboles** (p.ex. parce que leur répartition est connue généralement ou localement pour le fichier ou le tambon d'entrées/sortie considéré), on peut compresser sans perte de différentes manières:
 * **Compression entropique classique**: En considérant la répartition de chaque symbole pris indépendamment (Huffman, Shannon-Fano, ...)
@@ -276,9 +275,9 @@ Dans la plupart des cas Huffman est le meilleur algorithme **pour les sources sa
 
 
 
-### Avec perte
+### Avec perte (multimedia)
 
-Procédé de compression qui à la décompression ne restitue pas l'ensemble des informations du départ. Il mêne à une **perte irréversible**. L'application principale de la compression avec perte est pour le stockage et la **transmission de données multimedia destinées à la restitution humaine** (fichiers audio, image, vidéo).
+Une compression **avec perte** signifie que la **décompression** ne restitue pas l'ensemble des informations <Def def="avant compression">initiales</Def>. Il mêne à une **perte irréversible**. L'application principale de la compression avec perte sont le **stockage** et la **transmission de données multimedia destinées à la restitution humaine** (fichiers audio, image, vidéo).
 
 * Compression obtenue beaucoup plus importante que celle obtenue par une compression sans perte et s'applique à des sources avec mémoire.
 
@@ -287,4 +286,52 @@ Procédé de compression qui à la décompression ne restitue pas l'ensemble des
 La compréhension de la façon dont les sens perçoivent les informations est indispensable pour ne supprimer que les éléments difficilement différentiables. Il est aussi important de comprendre que le processus de compression/décompression ajoute du bruit qui peut nuire à la resitution (**artéfacts**)
 
 </Container>
+
+### Culture générale
+
+#### Sans pertes
+
+* Concerne généralement les données informatiques:
+    * `gzip`: **LZW** suivi d'un **Huffman** (<st c="r">Deflate donc?</st>)
+    * `rar`/`7zip`: Lempel-Ziv-Markov (**LZMA**)
+* Des formats d'image:
+    * `PNG`: Deflate (**LZW** puis **Huffman**)
+* Certains formats audio (dits _lossless_):
+    * `FLAC`: Commence par une compression avec perte (prédiction de signal), suivie d'une suppression des erreurs par encodage de la **différence** avec le signal produit en plus d'un **RLE**
+
+<Container type="info">
+
+Certains logiciels de compression sans perte combinent un algorithme de classe **source avec mémoire** et un algorithme de classe **source sans mémoire (entropiques)** car ces deux types d;algorithmes sont complémentaires:
+* `gzip` p.ex. commence par supprimer la redondance inter-symboles (source AVEC mémoire, symboles NON indépendants) avec **Lempel-Ziv**, puis les chaînes résultantes sont compressées avec un **Huffman** pour supprimer la redondance intra-symboles.
+
+</Container>
+
+#### Avec pertes
+
+En général utilisé pour l'audio et la vidéo mais aussi l'étape de quantification de la conversion A/D.
+* Les formats <Def def=" Moving Picture Experts Group: groupe de travail ISO en charge des normes pour la compression">MPEG</Def> en général:
+    * `MPEG-[1, 2, 3, 4, 7, 21]`
+        * Norme de compression vidéo (layer2) **et** audio (layer3)
+        * layer vidéo est **idéale pour la diffusion**:
+            * Compression **inter-images**
+            *  **Predictive coded frames**: Les images sont décrites **par différence** avec les images précédentes
+            *  **Bidirectionally predictive**: Les images sont décrites **par différence** avec l'image précédente et l'image suivante
+            *  **DC Coded frames**: les images sont décodées en faisant des moyennes par bloc
+        * layer audio `MPEG-1 layer 3`
+            * dont est issu le fameux format `mp3`
+* `MJPEG` (motion JPEG), **ideal pour l'édition vidéo**:
+    * Des `JPEG` à la suite 
+    * Compression **intra-images** uniqument.
+* `ogg` (<Def def="Format de compression vidéo open source">Theora</Def>)
+
+<br> 
+
+<Container type="danger">
+
+Deux compressions successives **avec deux algorithmes de la même classe** (du même type) ne sont en général pas meilleures que le meilleur des deux algorithmes (penser aussi à la table de compression qui doit être stockée). En pratique le fichier résultant va même augmenter de taille. **Dans tous les cas l'entropie est la borne minimale** de compression.
+
+</Container>
+
+
+
 
