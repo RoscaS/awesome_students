@@ -5,12 +5,17 @@ author: Sol, Michael
 sidebar: auto
 ---
 
-* [Cour](https://ssl.horus.ch/~schaefer/bin/view/HEArc/InformationEtCodage)
+* [Cours](https://ssl.horus.ch/~schaefer/bin/view/HEArc/InformationEtCodage)
 * [Exercices](https://ssl.horus.ch/~schaefer/bin/view/HEArc/CorrigeExerciceTheorieInfo)
 
 <br>
 
-> Claude Shannon, des laboratoires <Def def="Connu pour l'invention du transistor ainsi que d'UNIX ! Fait aujourd'hui partie du groupe Lucent.">Bell</Def> décrit en 1948 les bases de la théorie de l'information en communication électronique
+> Claude Shannon, des laboratoires <Def def="Connu pour l'invention du transistor ainsi que d'UNIX ! Fait aujourd'hui partie du groupe Lucent.">Bell</Def> décrit en 1948 les bases de la théorie de l'information en communication électronique.
+
+## Sources
+
+* Cours prof. Shaefer (He-arc)
+* [Wikipedia](https://wikipedia.org)
 
 ## Information
 
@@ -210,6 +215,8 @@ La compression (sans perte) vise à baisser la redondance
 
 <br>
 
+
+
 #### Code de Huffman
 1. Classer les symboles par ordre de probabilité descendante
 2. Attribuer aux deux symboles de probabilité moindre les symboles 1 et 0
@@ -244,10 +251,9 @@ Ceci crée un arbre. On attribue des mots de longueurs variables aux caractères
 </vs-tabs>
 
 * Chaque code doit être unique
-* Chaque code doit être <Def def="Voir app algo">intantanné</Def>
-    * <Fa fa="arrow-right"/> Aucun code n'est similaire au début d'un autre
-
+* Chaque code doit être <Def def="Aucun code ne doit être le même que le début d'un autre">instantanné</Def>
 L'algorithme d'Huffman nous permet de facilement créér un codage qui répond à ces critères.
+
 
 <Container type="info">
 
