@@ -14,10 +14,10 @@ project: true
 Le code de huffman lie un caractère (clé) à une combinaison binaire (valeur) et il n'y aura jamais de valeur sans clé. L'utilisation de tableaux associatifs nous semble donc parfaitement adaptée.
 
 ## Entête fichier bin
-Dans un fichier binaire il n'y a pas besoin d'entête mais le format de 8 Blocs de 4 bits par ligne doit être respecté. 
+Dans un fichier binaire il n'y a pas besoin d'entête mais le format de 8 Blocs de 4 bits par ligne doit être respecté.
 
 ## Comparaison d'efficacité 
-Le poids en bit du résultat de la compression est tout simplement le nombre de caractères qui composent la string "compressée" (sous forme de 0 et de 1 textuels). Avec cette information, nous testons 3 fichiers texte avec notre algorithme et Gzip:
+Le poids en bits du résultat de la compression est tout simplement le nombre de caractères qui composent la string "compressée" (sous forme de 0 et de 1 textuels). Avec cette information, nous testons 3 fichiers texte entre notre algorithme et Gzip:
 
 | Sans compression | Huffman   | Gz     |
 | ---------------- | --------- | ------ |
@@ -25,7 +25,7 @@ Le poids en bit du résultat de la compression est tout simplement le nombre de 
 | 4.2 KB           | 1.8 KB    | 1.7 KB |
 | 39.1 KB          | 21.419 KB | 3.5 KB |
 
-Sur de très petits fichiers, notre implémentation de Huffman a l'avantage mais cette différence n'est pas pertinente vu la taille du fichier. Gz est très clairement plus performant et c'est normal. La différence s'[explique](https://en.wikipedia.org/wiki/Gzip) par le fait que Gzip utilise Huffman en combinaison avec [Lempel–Ziv–Welch](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch) pour compresser (intra et inter-symboles).
+Sur de très petits fichiers, notre implémentation de Huffman a l'avantage mais cette différence n'est pas pertinente vu la taille du fichier. Gz est plus performant car avant d'utiliser **Huffman** (qui s'occupe de la redondance intra-symboles) il utilise **Lempel–Ziv–Welch** qui supprime la redondance inter-symboles.
 
 ## Tests :
 Nous avons fait plusieurs tests dont l'exercice 3 :
