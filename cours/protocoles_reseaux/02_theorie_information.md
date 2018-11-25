@@ -53,13 +53,19 @@ Le mode analogique s'oppose au mode **numérique** qui suppose une **quantificat
 ### Domaine de valeurs de la source
 
 * **Sources continues (analogiques)**
+    * La voix
+    * Une vidéo analogique
+    * Les informations issues de capteurs
     * Un courant $A$, une tension $V$, une intensité lumineuse, ...
     * Peuvent se convertir en sources discrètes par [conversion A/D](https://ssl.horus.ch/~schaefer/bin/view/HEArc/DemoCodecsTelephonie)
 
 <br>
 
 * **Sources discrètes (numériques)**
-    * alphabet fini (lettres, chiffres, bits, groupes de bits...)
+    * Alphabet fini (lettres, chiffres, bits, groupes de bits...)
+    * Les données informatiques
+    * Les données multimedia (après conversion A/D)
+
 
 ### Dépendances statistiques des symboles émis par la source
 

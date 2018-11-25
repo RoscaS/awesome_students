@@ -69,4 +69,3 @@ Toutes les séquences de lettres sont-elles équiprobables ?
 Intuitivement sur 8 bits. Mais chaque lettre a une probabilité différente: On peut faire comme le Morse ou comme sous source 5 (→ cours: les symboles les plus fréquents doivent être codés sur moins de bits; sources sans mémoire, réduction de la redondance intra-symbole).
 
 De plus, on peut aussi réduire la redondance **inter-symbole** en tenant compte du fait que certaines lettres sont plus probables après d'autres (→ cours: réduction de la redondance inter-symbole: sources avec mémoire, algorithme de Lempel-Ziv).
-
