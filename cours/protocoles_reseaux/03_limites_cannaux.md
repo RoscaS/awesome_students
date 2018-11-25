@@ -27,6 +27,35 @@ Le **débit binaire** du canal dépend à la fois de:
 
 </Container>
 
+## Rappel log
+
+* Si $y = a^x$ alors $log_a(y) = x$
+
+Propriétés (pour toute base $a$):
+* $log_a(1) = 0$
+* $log_a(x\cdot y) = log_a(x) + log_a(y)$
+* $log_a(x) = log_b(x) / log_b(a)$
+
+
+## Unité logarithmique: Bel
+* $10log_{10}(x)$ est la quantité $x$ exprimée en décibel ($dB$)
+* Un rapport à une valeur de référence est souvent utilisée
+    * $L_x = 10log_{10}(P_x / P_{ref})$
+    * **Exemple**: $0 \; dBm$ correspond à un milliwatt ($mW$)
+    * On parle alors, dans le cas d'une puissance, de niveau (level) du signal exprimé en $dBm$
+* On peut sommer les valeurs en $dB$ ou $dBm$ (Ce qui correspond à une multiplication des valeurs originales), mais on ne peut reconvertir qque si l'on connait la référence utilisée
+
+<Container type="info" header="Exemple de calcul de liaison">
+
+* Au point $A$ le signal vaut $100 mW$ (un niveau de $20 dBm$)
+* La liaison de $A$ à $B$ atténue d'un facteur 10 (divisé par 10) la puissance du signal ($-10dB$)
+* La liaison de $b$ à $C$ divise par 10 la puissance du signal ($-10dB$)
+* Le signal en $C$ vaut donc $1mW$ ($0 dBm = 20 - 10 - 10$)
+* La liaison de $C$ à $D$ divise par 2 la puissance du signal ($\approx -3dB$)
+* Le signal en $D$ vaut ($-3dBm = 0.5mW$)
+
+</Container>
+
 
 ##  Qu'est-ce qu'un canal
 
@@ -60,7 +89,7 @@ $$\dot{M} = 2B$$
 
 Et donc:
 
-$$\dot{D} = 2B log_2(m)$$
+$$\dot{D_{max}} = C = 2B \cdot log_2(m)$$
 
 <Container type="info">
 
@@ -71,14 +100,14 @@ Cette seconde formule donne l'impression que $m$ peut être augmenté autant que
 ### Limite d'un canal réel
 L'influance du bruit (température, interférences, bruits parasites, ...) est déterminante:
 
-$$\dot{D} = B log_2(1+\frac{S}{N}) $$
+$$\dot{D_{max}} = C = B \cdot log_2(1+\frac{S}{N}) $$
 
 * $S$: Puissance du signal (W)
 * $N$: Puissance du bruit (W)
 
 La qualité du signal est souvent mesuré par le rapport **signal sur bruit**:
 
-$$ SNR = 10 log_10(\frac{S}{N}) \; dB$$
+$$ SNR = 10 log_{10}(\frac{S}{N}) \; dB$$
 
 <Container type="info">
 
