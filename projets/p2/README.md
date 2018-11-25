@@ -37,10 +37,10 @@ Fight for the game of life est une adaptation multijoueur du célèbre automate 
 ### 12 novembre 2018
 <Check state="true">Besoins (cahier des charges)</Check>
 <Check state="true">Spécifications détaillées</Check>
-<Check state="false">Planning (liste de taches)</Check>
+<Check state="true">Planning (liste de taches)</Check>
 
 ### 17 decembre 2018
-<Check state="false">Maquettes </Check>
+<Check state="true">Maquettes </Check>
 <Check state="false">MVP</Check>
 
 ### 20 janvier 2019
