@@ -8,9 +8,7 @@ project: false
 
 ## En vrac
 
-### Variable _SERVER
-
-<Spoiler>
+<Spoiler tag="Variable _SERVER">
 
 ```php
 array (size=25)
@@ -79,5 +77,9 @@ $router->direct($uri);
     * set la variable `$router` avec un objet de type `Router` contenant un array qui contient les valeurs du fichier `routes.php` (spécifié en argument lors du call de `Router::load`)
     
     
+## Fonctionnement du Router
 
-
+| Sémantique      | URL externe                    | Chemin local | contrôleur     | méthode  |
+|-----------------|--------------------------------|--------------|----------------|----------|
+| Lister les Task | http://localhost:8082/tasks    | tasks        | TaskController | index    |
+| Créer une Task  | http://localhost:8082/add_task | add_task     | TaskController | add_task |

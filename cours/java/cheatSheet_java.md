@@ -12,6 +12,32 @@ author: Sol
 
 </Card>
 
+## Technique de la page blanche
+ Page blanche: Qu'est-ce que je sais sur Java.
+* élément importan: nouvelle page blanche, qu'est-ce que je sais sur ce point important
+  * ...
+Une fois bloqué <Fa fa="arrow-right"/> check le workspace, pas avant.
+
+## Eclipse project in Intelliji
+* [howto](https://stackoverflow.com/questions/13876752/how-to-import-eclipse-projects-to-intellij-idea)
+
+## Types de polymorphisme en Java
+* Polymorphisme objet
+* Polymorphisme interface
+
+
+## Contrats
+* Comment faire un contrat? **faire une interface**
+* Comment valider un contrat **implementer le contrat**
+
+
+## Boxing 
+À revoir !!!!
+
+## Classes inalterable
+À revoir !!!
+
+
 ## Object Object
 Toutes les classes héritent de object (`extend class object` implicite)
 
