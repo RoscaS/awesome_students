@@ -1,6 +1,6 @@
 ---
 title: Traitement des erreurs
-date: 2018-15-04
+date: 2018-11-04
 author: Sol
 sidebar: auto
 project: false
