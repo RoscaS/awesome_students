@@ -14,6 +14,7 @@ GraphicsView est un framework optimisé et basé sur le parardigme MVC. Le déve
 
 Mêeme si au final le rendu de la view est fait avec les mêmes outils que pour les widgets (`QPainter`, `QPaintDevice`, ...), cette architecture permet d'optimiser les rendus et donc d'afficher et animer un plus grand nombre d'objets. Le framework fournit également des outils supplémentaires pour l'animation, la gestion de la collision, le drag'n dro, ...
 
+
 ##  Comparaison Widgets/GraphicsView Items
 
 | Widget                 | Item                                   |
