@@ -5,246 +5,6 @@ sidebar: auto
 author: Sol
 ---
 
-<Card header="Tests" max-width="270">
-
-* CP1: 5 decembre 2018 (320)
-  * <st c="r">cstr de copie + clone</st>
-
-</Card>
-
-## Technique de la page blanche
- Page blanche: Qu'est-ce que je sais sur Java.
-* élément importan: nouvelle page blanche, qu'est-ce que je sais sur ce point important
-  * ...
-Une fois bloqué <Fa fa="arrow-right"/> check le workspace, pas avant.
-
-## Eclipse project in Intelliji
-* [howto](https://stackoverflow.com/questions/13876752/how-to-import-eclipse-projects-to-intellij-idea)
-
-## Types de polymorphisme en Java
-* Polymorphisme objet
-* Polymorphisme interface
-
-
-## Contrats
-* Comment faire un contrat? **faire une interface**
-* Comment valider un contrat **implementer le contrat**
-
-
-## Boxing 
-À revoir !!!!
-
-## Classes inalterable
-À revoir !!!
-
-## Tests unitaires
-À revoir !!!
-
-
-## Object Object
-Toutes les classes héritent de object (`extend class object` implicite)
-
-
-Concepte étrange de l'implémentation des methodes de `Object`.
-Necessaire de les redéfinir. Entre autres:
-* `toString`
-* `clone`
-* `equals`
-* `hashcode` (hashcode de `object` fonctionne bien de base. <st c="r"> SAUF si `equals` est redéfinit.</st>)
-
-
-Pour clone, une combine consiste à implémenter une méthode avec un nom proche de `clone` comme `cloneOf` comme ça si elle est déjà redéfinie, on override pas. Permet de ne pas faire un **try catch** pour vérifier si la methode `clone` retourne un objet de type `object` (<Fa fa="arrow-right"/> elle n'est pas réimplémentée dans la classe qu'on utilise)
-
-
-## Hashcode
-* "Identifiant numérique d'un objet" sous la forme d'un `int`.
-* Si deux objets sont égaux, ils ont le même hashcode.
-
-## Copie
-Classe inalterable <Fa fa="arrow-right"/>  copie supperficielle <br>
-
-<Container type="danger">
-
-Pour un membre inalterable, si qqun construit un setter pour le membre, il devient alterable et donc la shallow copy est dangereuse.
-
-<st c="r">Trouver théorie pour les constructeurs de copie en Java</st>
-
-</Container>
-
-
-## Type de classes
-* Pojo
-* Runnable
-* pleine
-* classic (mélange des autres)
-
-
-## Idee
-**Comme pour les classes containeurs (Pojo != classe container) une fois que les attributs sont définits, le reste est générable automatiquement. Pourquoi ne pas pas créér un petit soft pour générér ça. Ou éventuellement un template.**
-
-
-
-## Attention
-
-```java
-return "ax^2 + bx + c = 0 /n a =" + a + "\nb = " + b + "\nc = \n";
-```
-Ici on a 13 instantiations.
-* Chaque string est une instance
-* chaque conversion de int à string
-* à chaque `+` un nouvel object est instancié qui est le resultat de la concatenation
-
-
-
-## autoToString
-
-```java
-@Override
-public String toString()
-    {
-    final StringBuilder sb = new StringBuilder("Linear{");
-    sb.append("a=").append(a);
-    sb.append(", b=").append(b);
-    sb.append(", x=").append(x);
-    sb.append('}');
-    return sb.toString();
-    }
-```
-Généré automatiquement par Eclipse ou Inteliji (insert)
-
-## Tests unitaires
-Analogie du casque:
-* Tant qu'on met pas de casque on se demande à quoi ça sert
-* Une fois qu'on en met un 
-
-
-## Todo:
-
-```
-
------------------------------------
-Commandes
------------------------------------
-
-sysout
-syserr
-sysexit
-
------------------------------------
-Instructions
------------------------------------
-
-fori0
-fori1
-
-forj0
-forj1
-
-forij0
-forij1
-
-whilec
-
-ife
-
------------------------------------
-Methodes
------------------------------------
-
-cmain
-cseria
-cclasse
-
-cloneOf
-isEquals
-
-paintj2d
-
------------------------------------
-Canvas Atome
------------------------------------
-
-cc		Constructeur
-cmpu	methode publique
-cmpr	methode private
-ca		attribut
-
-cma		methode abstraite
-
-cg		get
-cs		set
-ci		is
-
-csa		static
-
-cxx			custom
-cxx_small	custom small
-
------------------------------------
-Canvas Full
------------------------------------
-
-cjunit
-
-cjframe
-cjpanel
-cboxv
-cboxh
-cj2d
-
-csingleton
-csingleton_init
-
------------------------------------
-Memo
------------------------------------
-
-cjvm
-
------------------------------------
-end
------------------------------------
-```
-
-#### En vrac
-
-##### Assurer qu'on sait import un jar
-
-##### Bin
-* Après les tests, effacer le folder `bin`
-* Les build ne fonctionnent plus
-* `ctrl` `shift` `p`: clean
-* build
-
-##### Asserts
-* Si on fait un assert automatiquement on ajoute un doc à la classe
-* Thumb rule: À chaque fois qu'on assume qqch, on ajoute un assert
-
-##### Erreurs (Epsilon)
-
-En informatique, mis à part quand on teste des entiers, tester les égalités sont tricky.
-Il faut trouver des façons adaptées pour tester les égalités.
-par exemple:
-
-> Une machine calcule faux dans une certaine mesure c'est au dev de compenser
-
-* `a = b`
-* $\frac{a-b}{a} \leq E$
-* avec $E$ = 1e-6: en informatique
-
-
-##### Import statique
-```java
-import static org.junit.Assert.assertTrue;
-// permet de call assertTrue sans sa classe:
-assertTrue(test);
-```
-
-
-### import jar
-
-![Image](https://i.imgur.com/NOpeOSH.png)
-
 ## Utils
 
 <Col proportions="7/5" vAlign="0">
@@ -270,13 +30,13 @@ assertTrue(test);
 </template>
 <template slot="right">
 
-<Card header="Shortcuts" max-width="270">
+<Card header="Completion" max-width="270">
 
 * `cmain`: Create main methodes
 * `cmpu`: Public method component
-* `cmpr`: Private methods comment
-* `ci`: IS-methods comment
-* `csa`: Static methods comment
+* `cmpr`: Private methods component
+* `ci`: IS-methods component
+* `csa`: Static methods component
 * `sysout`: Print line
 * `cjunit`: Create Junit Canvas
 
@@ -293,41 +53,44 @@ assertTrue(test);
 
 </Card>
 
-## En vrac
+<br>
 
-### Lexique
+```java
+System.out.println(Double.valueOf("12.4")); // => 12.4
+```
+
+## Lexique
 |          |                           |
-| -------- | ------------------------- |
+|----------|---------------------------|
 | **JRE**  | Java Runtime Environement |
 | **JDK**  | Java Development Kit      |
 | **JVM**  | Java Virtual Machine      |
 | **.jar** | Java Archive              |
 
-* **Jar**: Java ARchive
-Container qui contient des fichiers compilés. Un jar est facile à décompiler pour retrouver les sources. On peut réutiliser tous les jar qu'on trouve.
 
-### Types primitfs
+* **Jar** (Java ARchive): Container qui contient des fichiers compilés. Un **.jar** est facile à décompiler pour retrouver les sources.
 
-|         |               |         |
-| ------- | ------------- | ------- |
-| byte    | number        | 1 byte  |
-| short   | number        | 2 bytes |
-| int     | number        | 4 bytes |
-| long    | number        | 8 bytes |
-| float   | float number  | 4 bytes |
-| double  | float number  | 8 bytes |
-| char    | a character   | 2 bytes |
-| boolean | true or false | 1 byte  |
+## Flux de sorties
+
+* `System.out.println()`: print avec retour à la ligne
+* `System.out.print()`: Ecriture sans retour à la ligne
+* `System.err.println()`: Ecriture sur le flux d'erreur
 
 
-### Tableaux
+## Tableaux
 
-#### Déclaration
+### Déclaration
 ```java
-type[] tabName = new type[size];
-int[] intTab = new int[5];
+int[] tab1 = new int[5];
+int[] tab2 = {2, 3, 9, 2, 5};
 ```
-#### Opérations
+
+### Accès
+```java
+tab2[1] = 3;
+```
+
+### Opérations
 
 * `static void sort(type[] tab)`: Trie un tableau in place
 
@@ -343,130 +106,186 @@ int[] tab = {1, 2, 3, 7};
 String s = Arrray.toString(tab); // s = "[1, 2, 3, 7]"
 ```
 
-* `static void fill(type[] tab, type v)`: Templi tab avec la valeur v
+* `static void fill(type[] tab, type v)`: Remplit `tab` avec la valeur `v`
 
 ```java
 float[]tab = new float[3];
 Arrays.fill(tab, (float)3.14); // tab = {3.14, 3.14, 3.14}
 ```
 
-### Base template
+## Collections
+
+<br>
+
+![Image](https://i.imgur.com/kDt0RjF.png)
+
+<br>
+
+
+### List
+
+_Collection linéaire_
+* **Interface**: `List`
+* **Implémentations**:
+  * `LinkedList`
+  * `ArrayList`
+
+Privilégier `LinkedList` pour de nombreuses insertions/suppressions.
 
 ```java
-package ch.hearc.coursjava.kitbase.hello;
-public class Hello
-  {
-  public static void main(String[] args)
-    {
-    main();
-    }
-
-  public static void main()
-    {
-    System.out.println("Hello");
-    }
-  }
+List<Integer> arrayList = new ArrayList<>();
+List<Integer> linkedList = new LinkedList<>();
 ```
 
-### Flux de sorties
+### Set
 
-* `System.out.println()`: print avec retour à la ligne
-* `System.out.print()`: Ecriture sans retour à la ligne
-* `System.err.println(): Ecriture sur le flux d'erreur
+_Unicité des éléments_
+* **Interface**: `Set`
+* **Implémentations**:
+  * `HashSet`
+  * `TreeSet`
 
-### Collections
+`TreeSet` garanti également l'**ordre** des éléments.
+
+```java
+Set<Integer> treeSet = new TreeSet<>();
+Set<Integer> hashSet = new HashSet<>();
+```
+
+### Map
+
+_Key value pair_
+* **Interface**: `map`
+* **Implémentations**:
+  * `HashMap<k,v>`
+  * `TreeMap<k,v>`
+
+`TreeMap` garanti également l'**ordre** des éléments.
+
+```java
+Map<String, Integer> hashMap = new HashMap<>();
+Map<String, Integer> treeMap = new TreeMap<>();
+```
 
 <br>
-
-<img src="https://i.imgur.com/vNObpHV.png" style="border: 1px solid black">
-
 <br>
 
-| Collection      | Spécialité                                                      |
-| --------------- | --------------------------------------------------------------- |
-| **LinkedList**  | performant pour les manipulations (insertion, suppression, ...) |
-| **ArrayList**   | performant pour les parcours (accès aléatoire)                  |
-| **Set**         | garantit l’unicité des éléments                                |
-| **Map**         | comme un dictionnaire (tableau à deux colonne, clé-valeur)      |
-| **HashMap/Set** | pas de relation d’ordre entre les éléments (pas ordonnée)      |
-| **TreeMap/Set** | relation d’ordre entre les éléments (ordonnée)                 |
+<Container type="info" header="Choix entre Hash et Tree">
 
-<br>
-
-<Container type="info">
-
-**Choix entre Hash et Tree**
-* **HashMap ou HashSet**: pas de relation d'ordre, performant
+* **Hash**Map/Set: pas de relation d'ordre, performant
   * <Fa fa="arrow-right"/> À privilégier
-* **TreeMap ou TreeSet**: relation d'ordre, peu performant   
+* **Tree**Map/Set: relation d'ordre, peu performant   
   * <Fa fa="arrow-right"/> À éviter si l'ordre n'est pas important
 
 </Container>
 
+## Boxing
 
-### Syntaxe tableaux
-```cpp
-// cpp
-double* tab = new double[2];
-```
+Classe _wrapper_ qui permet d'instancier un type simple sous forme d'objet. 
+
+| Type    | Wrapper     | size    |
+|---------|-------------|---------|
+| int     | `Integer`   | 4 bytes |
+| char    | `Character` | 2 bytes |
+| byte    | `Byte`      | 1 byte  |
+| short   | `Short`     | 2 bytes |
+| long    | `Long`      | 8 bytes |
+| float   | `Float`     | 4 bytes |
+| double  | `Double`    | 8 bytes |
+| boolean | `Boolean`   | 1 byte  |
+
+<br>
+
+<Container type="danger">
+
+Les collections ne sont pas utilisable avec les types simples !
+
+</Container>
+
+
+## Itération
+
+### Itérateur
+```java
+ListIterator<Integer> it = list.listIterator();
+
+while (it.hasNext()) {
+  it.next(); // On place l'itérateur avant d'accéder à l'élément
+  it.set(2);
+}
+```     
+
+### Foreach
 
 ```java
-double[] tab = new double[2];
-tab[1] = 2;
+for (Integer i : list) {
+  System.out.println(i);
+}
 ```
+<st c="r">En parcourant avec une forEach, la modification de la collection n'est pas possible.</st>
+
+### For classique
+```java
+for(int i = i; i <= liste.size(); i++) {
+  System.out.println(list.get(i));
+}
+```
+<st c="rgb">À éviter: complexité $O(n^2)$. Utiliser `collection.get(idx)` uniquement pour des accès uniques.</st>
 
 
-### Use class
+
+
+## Use class
 Si une classe est préfixée par `Use` comme dans `UseNomDeClass` c'est une classe qui possède un `main` et qui sert à utiliser `NomDeClass`.
 
-### Ramification 
+## Ramification 
 ```shell
 └── Wxxxx (workspace)
       └── Pxxxx (projet)
             └──  nomDePackage
 ```
 
-### Garbage collector
+## Garbage collector
 * Clean les objets sans références
 * Défragmente (les adresses des objets encore référencés changent)
   
 
-### Get Set
+## Get Set
 * Get
   * on retourne un attribut, jamais de calcule!
 
-### Wrappers de types simples
+## Wrappers de types simples
 > Lié à la notion de boxing
 Il n'est pas possible d'utiliser les types simples dans les conteneurs. Java implémente des variantes de tous les types simples:
 * **int -> Integer**
 * string -> String
 * double -> Double
 
-### Programmation par contract
+## Programmation par contract
 Lié aux <Def def="Classe purement abstraite">interfaces</Def>. Les methodes de l'interface ne sont pas implémentées. Le contract veut dire qu'on s'engage à les implémenter pour satisfaire le standard.
 
-### List & LinkedList
+## List & LinkedList
 * LinkedList: performant quand on a beaucoup d'insertions suppressions
 * ArrayList: performant si on doit souvent itérer dessus
 
 
-### HashSet & TreeSet
+## HashSet & TreeSet
 Les sets contiennent une collection d'objets uniques.
 * HashSet: unordered, le plus performant des deux
 * TreeSet: ordered 
 
-### Maps
+## Maps
 Collection de couples `Key` `Value` dont la `key` et unique.
 
 * Quand on y pense, toutes les entrées d'un dictionnaire forment un set de clés **uniques** qui pointent sur des valeurs.
 
-### Type effectif et type local
+## Type effectif et type local
 
 `Set s = new TriSet<Double>()`
 * Le type de `s` effectif est `TriSet`
 * Le type local de `s` est `Set` mais égallement `Object` qui est la classe dont tous les objects en java dérivent.
 
-### Inférence de type
+## Inférence de type
 
 ```java {2}
 private static List<Double> create(int n) {
@@ -476,7 +295,7 @@ private static List<Double> create(int n) {
 
 En ligne 2 on pourrait préciser le type entre chevrons mais ce n'est pas nécéssaire comme le compilateur est capable d'**inférer** tout seul le type grace à la signature de la méthode.
 
-### Passage d'argument en Java
+## Passage d'argument en Java
 
 <Container type="warning">
 
@@ -502,7 +321,7 @@ De la même façon qu'en C/C++
 * A chaque fois qu'on veut modifier un contenu, on passe par des méthode.
 * Quand on travail sans méthodes on fait de l'algèbre de référence.
 
-### Algèbre de référence vs algèbre sur les contenus
+## Algèbre de référence vs algèbre sur les contenus
 Faite avec des opérateurs simples (==, +, -,...) et sur des références. Pour oppérer sur le contenu des références on utilise des méthodes.
 
 ```java
@@ -517,7 +336,7 @@ C1 = C2
 C1 == C2 // => True (comparaison des adresses où se trouve l'objet référencé)
 ```
 
-### Fonctions et méthodes
+## Fonctions et méthodes
 
 D'après le prof de Java:
 * **methode**: une "fonction" sans valeur de retour
@@ -528,20 +347,14 @@ Donc rien à voir avec le fait d'être déclaré dans le corp d'une classe. (A V
 En gros (en java du moins) on peut toujours appeler toutes les procédures (méthode)
 
 
-### JAR
+## JAR
 * Fichiers compilés
-* Enemble de classes compilés (Java est né objet, on n'y fait que des classes)
-* Analogue à un zip,
+* Enemble de classes compilés
+* Analogue à un zip
 
-Des classes compilées zipées et renommées en JAR. A la place d'avoir des tas de fichiers à déplacé. Équivalent d'un dll ou d'un SO.
+Des classes compilées zipées et renommées en JAR. A la place d'avoir des tas de fichiers à déplacer. Équivalent d'un **dll** ou d'un **so**.
 
-<Container type="danger">
-
-Equivalent de **DLL** en linux **SO**
-
-</Container>
-
-### Tableaux multiD
+## Tableaux multiD
 * Java est un language **row major**
 * N'est pas forcément consistant au niveau de la longueur des sous tableaux
   * permet de stoquer des matrices symétriques, creuses ou pleine

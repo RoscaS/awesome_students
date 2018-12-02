@@ -1,7 +1,7 @@
 ---
 title: "BestShop: Architecture logicielle et matérielle"
 date: 2018-11-29
-author: Nathan Michael Sol
+author: Nathan, Michael, Sol
 sidebar: auto
 project: true
 ---
