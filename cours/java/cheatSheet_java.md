@@ -5,6 +5,72 @@ sidebar: auto
 author: Sol
 ---
 
+## En vrac
+
+```java
+System.out.println(Double.valueOf("12.4")); // => 12.4
+```
+
+----------
+
+Les méthodes pour oppérer sur les tableaux sont regroupées dans la classe `Arrays`:
+```java
+int tab[] = {1,2,3,4,5};
+System.out.println(Arrays.toString(tab));
+System.out.println(Arrays.toString(Arrays.copyOfRange(tab, 0, 2)));
+```
+
+----------
+Pour tester un double (`0.9999 == 1`) il est nécessaire de définir une certaine précision ($E$). 
+$$ E \geq |\frac{a-b}{a}| $$
+
+----------
+
+* Préfixer les classes de test par "Test"
+* Préfixer les classes contenant un main par "Use"
+
+----------
+
+Types de classes:
+
+* Pojo (Plain Old Java Object, n'implémente pas d'interface spécifique)
+* Runnable (potentiel délai entre le call et la fin de l'éxecution des méthodes)
+* Pleine
+* classic (mélange des autres)
+
+----------
+
+Contrats:
+
+* Comment faire un contrat? **faire une interface**
+* Comment valider un contrat **implementer le contrat**
+
+----------
+
+Types de polymorphisme en Java:
+
+* Polymorphisme objet
+* Polymorphisme interface
+
+----------
+
+Ramification:
+
+```shell
+└── Wxxxx (workspace)
+      └── Pxxxx (projet)
+            └──  nomDePackage
+```
+
+----------
+
+
+Type effectif et type local:
+
+`Set s = new TriSet<Double>()`
+* Le type de `s` effectif est `TriSet`
+* Le type local de `s` est `Set` mais égallement `Object` qui est la classe dont tous les objects en java dérivent.
+
 ## Utils
 
 <Col proportions="7/5" vAlign="0">
@@ -54,10 +120,6 @@ author: Sol
 </Card>
 
 <br>
-
-```java
-System.out.println(Double.valueOf("12.4")); // => 12.4
-```
 
 ## Lexique
 |          |                           |
@@ -273,151 +335,103 @@ for(int i = i; i <= liste.size(); i++) {
 
 ## Garbage Collector
 * Il s'active automatiquement et de façon imprévisible pour nettoyer la mémoire des objets qui n'ont plus de références. 
-* Il défragmente la mémoire (<st c="r">les adresses des objets encore référencés changent !</st>).
+* Il défragmente le tas (<st c="r">les adresses des objets encore référencés changent !</st>).
 
 
 ## Références
 En Java <Def def="Du moins de façon visible">les pointeurs n'existent pas</Def>. À cause du **GC**, les variables peuvent changer de place dans la mémoire en cours d;exécution. **En Java, on parle de références**.
 
-En Java, tout objet est 
+En Java, **tout objet est référence**, on ne peut jamais toucher l'objet lui même.
 
+<Container type="info" header="Rappel">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Use class
-Si une classe est préfixée par `Use` comme dans `UseNomDeClass` c'est une classe qui possède un `main` et qui sert à utiliser `NomDeClass`.
-
-## Ramification 
-```shell
-└── Wxxxx (workspace)
-      └── Pxxxx (projet)
-            └──  nomDePackage
-```
-
-## Garbage collector
-* Clean les objets sans références
-* Défragmente (les adresses des objets encore référencés changent)
-  
-
-## Get Set
-* Get
-  * on retourne un attribut, jamais de calcule!
-
-## Wrappers de types simples
-> Lié à la notion de boxing
-Il n'est pas possible d'utiliser les types simples dans les conteneurs. Java implémente des variantes de tous les types simples:
-* **int -> Integer**
-* string -> String
-* double -> Double
-
-## Programmation par contract
-Lié aux <Def def="Classe purement abstraite">interfaces</Def>. Les methodes de l'interface ne sont pas implémentées. Le contract veut dire qu'on s'engage à les implémenter pour satisfaire le standard.
-
-## List & LinkedList
-* LinkedList: performant quand on a beaucoup d'insertions suppressions
-* ArrayList: performant si on doit souvent itérer dessus
-
-
-## HashSet & TreeSet
-Les sets contiennent une collection d'objets uniques.
-* HashSet: unordered, le plus performant des deux
-* TreeSet: ordered 
-
-## Maps
-Collection de couples `Key` `Value` dont la `key` et unique.
-
-* Quand on y pense, toutes les entrées d'un dictionnaire forment un set de clés **uniques** qui pointent sur des valeurs.
-
-## Type effectif et type local
-
-`Set s = new TriSet<Double>()`
-* Le type de `s` effectif est `TriSet`
-* Le type local de `s` est `Set` mais égallement `Object` qui est la classe dont tous les objects en java dérivent.
-
-## Inférence de type
-
-```java {2}
-private static List<Double> create(int n) {
-		return new ArrayList<>(n); // equivalent à return new ArrayList<Double>(n)
-}
-```
-
-En ligne 2 on pourrait préciser le type entre chevrons mais ce n'est pas nécéssaire comme le compilateur est capable d'**inférer** tout seul le type grace à la signature de la méthode.
-
-## Passage d'argument en Java
-
-<Container type="warning">
-
-En Java tout se passe par **COPIE** de référence (tout se retourne aussi par **COPIE** de référence).
+* **Pointeur**: Adresse
+* **Référence**: Valeur permettant l'accès à une donnée (Information sur la localisation de la donnée).
 
 </Container>
-
-
-* Une seul façon: **passage par COPIE** (de référence, 4 bytes) pour tous les types (simples et complexes). Le retour de la même façon se fait par **COPIE** (de référence, 4 bytes)
-* `b = new B()`: `b` est une référence vers l'objet `B`
-En Java le GC passe et fait deux chose, il `delete` les objets qui n'ont plus de référence **et** défragmente le tas (heap). Après défragmentation, l'adresse de l'objet change et donc on ne peux pas dire que `b` est un pointeur car un pointeur par définition est une adresse. En conclusion **En Java tout est Référence**
-
-
-<Container type="info">
-
-De la même façon qu'en C/C++
-* `b` se retrouvera souvent sur la pile (stack)
-* `B` se retrouvera toujours sur le tas (heap)
-
-</Container>
-
-
-* A chaque fois qu'on veut modifier un contenu, on passe par des méthode.
-* Quand on travail sans méthodes on fait de l'algèbre de référence.
-
-## Algèbre de référence vs algèbre sur les contenus
-Faite avec des opérateurs simples (==, +, -,...) et sur des références. Pour oppérer sur le contenu des références on utilise des méthodes.
 
 ```java
 Integer C1 = 1000;
 Integer C2 = 1000;
 
-C1 == C2 // => False (comparaison des adresses où se trouve l'objet référencé)
+C1 == C2 // => False (comparaison des références)
 C1.equals(C2) // => True (comparaison des contenus)
 
 C1 = C2 
 
-C1 == C2 // => True (comparaison des adresses où se trouve l'objet référencé)
+C1 == C2 // => True (comparaison des références)
 ```
 
-## Fonctions et méthodes
+### Exemples
 
-D'après le prof de Java:
-* **methode**: une "fonction" sans valeur de retour
-* **fonction**: Domaine de départ et d'arrivée (input output)
-* **procédure**: monde procédural (non objet), désigne une fonction
+#### 1. Algèbre de références
+Via des opérateurs simples (`==`, `+`, `-`, ...)
 
-Donc rien à voir avec le fait d'être déclaré dans le corp d'une classe. (A VERIFIER)
-En gros (en java du moins) on peut toujours appeler toutes les procédures (méthode)
+```java
+String a = new String("A");
+String b = new String("A");
+
+System.out.println(a == b); // => false
+```
+`false` car les deux objets de type String n'ont **pas la même référence**.
+
+<br>
+
+```java
+String a = new String("A");
+String b = a;
+
+System.out.println(a == b); // => true
+```
+`true` car en ligne 2 on assigne à la variable `b` la référence vers `a` donc les deux variables contiennent la même références.
+
+#### 2. Algèbre de contenu
+Via des méthodes.
+
+```java
+String a = new String("A");
+String b = new String("A");
+
+System.out.println(a.equals(b)); // => true
+```
+`true` car la méthode `equals` nous permet de faire une **comparaison de contenu** (des objets référencés). Même si les références sont différentes, le contenu de l'objet pointé est égale.
+
+## Passage d'arguments
+
+<Container type="danger">
+
+En java tous les passages d'arguments se font par **valeur**.
+
+</Container>
+
+* Les types simples se passent par valeur
+* Les références se passent par valeur
+
+Tous les passages par valeur font une **copie** de la valeur à passer.
 
 
-## JAR
-* Fichiers compilés
-* Enemble de classes compilés
-* Analogue à un zip
+## Copies et Clones
 
-Des classes compilées zipées et renommées en JAR. A la place d'avoir des tas de fichiers à déplacer. Équivalent d'un **dll** ou d'un **so**.
+Deux types de copie:
+1. **Copie superficielle** (light): Ce type de copie **porte uniquement sur la référence** de l'objet à copier. Après une copie superficielle, la référence initiale et la référence copiée pointent sur le même objet.
 
-## Tableaux multiD
-* Java est un language **row major**
-* N'est pas forcément consistant au niveau de la longueur des sous tableaux
-  * permet de stoquer des matrices symétriques, creuses ou pleine
+```java
+String a = new String("a");
+String b = a;
+
+System.out.println(a == b);      // => true
+System.out.println(a.equals(b)); // => true
+```
+
+<br>
+
+2. **Copie profonde** (deep): Ce type de copie sert à **cloner un élément en mémoire**. Contrairement à la copie superficielle, la copie prodonfe clone le contenu de l'objet référencé.
+
+```java
+String a = new String("a");
+String b = new String(a);
+
+System.out.println(a == b);      // => false
+System.out.println(a.equals(b)); // => true
+```
+
