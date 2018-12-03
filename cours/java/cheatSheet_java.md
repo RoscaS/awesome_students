@@ -137,6 +137,14 @@ List<Integer> arrayList = new ArrayList<>();
 List<Integer> linkedList = new LinkedList<>();
 ```
 
+<br>
+
+<Container type="info" header="Inférence de type">
+
+Le compilateur est capable de déduire le type dans les chevrons à droite du signe `=`. Il n'est pas nécessaire de l'écrire une seconde fois.
+
+</Container>
+
 ### Set
 
 _Unicité des éléments_
@@ -178,6 +186,37 @@ Map<String, Integer> treeMap = new TreeMap<>();
   * <Fa fa="arrow-right"/> À éviter si l'ordre n'est pas important
 
 </Container>
+
+### Tableaux 2D
+Les tableaux 2D n'existent pas en tant que structure de donnée mais il est possible de les utiliser comme en C et Cpp via de simples tableaux où chaque case du tableau contient une référence vers un autre tableau. 
+
+<Spoiler tag="Exemples">
+
+```java
+public class Tab2D {
+    public static double[][] regular(int n, int m) {
+        return new double[n][m];
+    }
+
+    public static double[][] triangle(int n) {
+        double[][] tabExterne = new double[n][];
+        for (int i = 0; i < n; i++) {
+            tabExterne[i] = new double[i + 1];
+        }
+        return tabExterne;
+    }
+
+    public static double[][] heterogenous(int[] colPerLine) {
+        double[][] tabExterne = new double[colPerLine.length][];
+        for (int i = 0; i < n; i++) {
+            tabExterne[i] = new double[colPerLine[i]];
+        }
+        return tabExterne;
+    }
+}
+```
+
+</Spoiler>
 
 ## Boxing
 
@@ -231,6 +270,30 @@ for(int i = i; i <= liste.size(); i++) {
 }
 ```
 <st c="rgb">À éviter: complexité $O(n^2)$. Utiliser `collection.get(idx)` uniquement pour des accès uniques.</st>
+
+## Garbage Collector
+* Il s'active automatiquement et de façon imprévisible pour nettoyer la mémoire des objets qui n'ont plus de références. 
+* Il défragmente la mémoire (<st c="r">les adresses des objets encore référencés changent !</st>).
+
+
+## Références
+En Java <Def def="Du moins de façon visible">les pointeurs n'existent pas</Def>. À cause du **GC**, les variables peuvent changer de place dans la mémoire en cours d;exécution. **En Java, on parle de références**.
+
+En Java, tout objet est 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
