@@ -257,3 +257,12 @@ Avec Qt, un objet `QPainter` permettra de dessiner sur n'importe quel périphér
 
 * Modifications:
     * Méthode `setViewport` et `setWindow`: Permettent de déplacer l'origine, adapter le facteur d'échelle.
+
+## Poo
+
+### Construction d'une classe
+1. Attributs
+2. Constructeur
+3. **Si nécessaire** Setters et getters
+4. methode `toString()`
+5. methode `cloneOf()`
