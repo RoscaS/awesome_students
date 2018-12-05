@@ -10,6 +10,7 @@ export default ({Vue, options, router}) => {
   Vue.use(VTooltip);
   Vue.use(Vuesax);
   Vue.prototype.$auth = auth;
+
   router.addRoutes([
     {path: '/callback', component: Callback},
     {path: '/login', component: Login},

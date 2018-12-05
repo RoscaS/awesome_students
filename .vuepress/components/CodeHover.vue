@@ -42,7 +42,6 @@
     }
   }
 
-
   .tooltip {
     display: block !important;
     z-index: 10;
