@@ -6,7 +6,6 @@ author: Sol
 ---
 
 ## En vrac
-
 Importer *.jar: `ctrl+shift+p` <Fa fa="arrow-right"/> project structure <Fa fa="arrow-right"/> modules <Fa fa="arrow-right"/> +
 --------
 
