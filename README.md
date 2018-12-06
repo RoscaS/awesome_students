@@ -31,6 +31,7 @@
 
 #### Web
 * [ninjamock](https://ninjamock.com) quick mockups
+* [infographics](https://www.genial.ly/) modern infographics
 
 <br>
 

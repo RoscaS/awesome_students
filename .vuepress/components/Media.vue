@@ -4,11 +4,12 @@
       <div :class="{shadow: url}">
         <a v-if="url"
            :title="url"
-           :href="url"
+           @click="fullScreen = true"
            target="_blank">
+           <!--:href="url"-->
           <img :src="src" :style="setWidth"/>
         </a>
-        <img  v-else :src="src" :style="setWidth"/>
+        <img v-else :src="src" :style="setWidth" @click="fullScreen = true"/>
       </div>
         <blockquote v-if="caption"
                     :style="`max-width:${width}px;`"
@@ -16,6 +17,13 @@
             {{caption}}
         </blockquote>
     </div>
+    <vs-popup fullscreen
+              :title="caption? caption : ''"
+              :active.sync="fullScreen">
+      <div class="full-image">
+        <img :src="src" alt="">
+      </div>
+    </vs-popup>
   </div>
 </template>
 
@@ -29,6 +37,9 @@
       caption: {type: String},
     },
     name: 'Media',
+    data: () => ({
+      fullScreen: false,
+    }),
     computed: {
       setWidth() {
         if (this.width) { return `width: ${this.width}px; `}
@@ -53,6 +64,19 @@
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  .full-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+
+  }
+
+  img {
+    cursor: pointer;
+
   }
 
 

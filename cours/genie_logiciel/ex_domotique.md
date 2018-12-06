@@ -8,7 +8,7 @@ project: true
 
 ## Enquête satisfaction: <br> Système domotique CA2-NE
 
-<ExoDomo/>
+<GENLOG_ExoDomo/>
 
 ## Interview 1
 
