@@ -1,5 +1,5 @@
 ---
-title: "BestShop: Architecture logicielle et matérielle"
+title: "BestShop: Architecture et UI"
 date: 2018-11-29
 author: Nathan, Michael, Sol
 sidebar: auto
