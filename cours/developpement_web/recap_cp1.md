@@ -24,6 +24,8 @@ project: false
 
 <br>
 
+
+
 * Le client envoie en premier le verbe (la methode) HTTP et l'URL, suivi de la version du protocole, puis ses entêtes HTTP clients, **puis une ligne vide**.
 * Ensuite, le serveur, envoie le code de status du serveur, ses entêtes serveur, **une ligne vide** et finalement le contenu demandé (Html, Css, image, pdf, ...).
 
