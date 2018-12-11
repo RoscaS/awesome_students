@@ -6,8 +6,11 @@
     padding 0.25rem 0.5rem
     margin 0
     font-size 0.85em
-    background-color rgba(27,31,35,0.05)
+    background-color rgba(27, 31, 35, 0.05)
     border-radius 3px
+
+    @media print
+      font-size 8px
 
 .content
   pre, pre[class*="language-"]
@@ -22,6 +25,10 @@
       padding 0
       background-color transparent
       border-radius 0
+
+    @media print
+      margin 0
+      padding 0
 
 div[class*="language-"]
   position relative
@@ -48,26 +55,39 @@ div[class*="language-"]
     right 1em
     font-size 0.75rem
     color rgba(255, 255, 255, 0.4)
+
+  @media print
+    font-size 8px
+
   &:not(.line-numbers-mode)
     .line-numbers-wrapper
       display none
   &.line-numbers-mode
+
     .highlight-lines .highlighted
-        position relative
-        &:before
-          content ' '
-          position absolute
-          z-index 3
-          left 0
-          top 0
-          display block
-          width $lineNumbersWrapperWidth
-          height 100%
-          background-color rgba(0, 0, 0, 66%)
+      position relative
+      &:before
+        content ' '
+        position absolute
+        z-index 3
+        left 0
+        top 0
+        display block
+        width $lineNumbersWrapperWidth
+        height 100%
+        background-color rgba(0, 0, 0, 66%)
     pre
       padding-left $lineNumbersWrapperWidth + 1 rem
+
+      @media print
+        padding-left 2.4rem
+
       vertical-align middle
     .line-numbers-wrapper
+
+      @media print
+        display none
+
       position absolute
       top 0
       width $lineNumbersWrapperWidth
@@ -82,6 +102,10 @@ div[class*="language-"]
         z-index 4
         user-select none
         font-size 0.85em
+
+    @media print
+      font-size 8px
+
     &::after
       content ''
       position absolute
@@ -93,7 +117,6 @@ div[class*="language-"]
       border-radius 6px 0 0 6px
       border-right 1px solid rgba(0, 0, 0, 66%)
       background-color $codeBgColor
-
 
 for lang in $codeLang
   div{'[class~="language-' + lang + '"]'}

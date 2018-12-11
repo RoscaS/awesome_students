@@ -21,6 +21,9 @@ body
   font-size 16px
   color $textColor
 
+  @media print
+    font-size 10px
+
 .page
   padding-left $sidebarWidth
 
@@ -34,6 +37,9 @@ body
   background-color #fff
   box-sizing border-box
   border-bottom 1px solid $borderColor
+
+  @media print
+    display none
 
 .sidebar-mask
   position fixed
@@ -133,6 +139,8 @@ h1, h2, h3, h4, h5, h6
 
 h1
   font-size 2.2rem
+  @media print
+    font-size 16px
 
 h2
   font-size 1.65rem
@@ -142,9 +150,18 @@ h2
   border-image linear-gradient(to right, rgba(178, 178, 178, 0.45) 0%,#ffffff 100%)
   border-image-slice 1
 
+  @media print
+    font-size 14px
+
 
 h3
   font-size 1.35rem
+  @media print
+    font-size 12px
+
+h4
+  @media print
+    font-size 11px
 
 a.header-anchor
   font-size 0.85em

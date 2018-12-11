@@ -42,7 +42,9 @@ project: false
 
 </Container>
 
+
 ## Php
+
 
 ### Variables Scope
 
@@ -202,7 +204,7 @@ A superglobal is a predefined variable that is **always accessible, regardless o
 is an array that includes information such as headers, paths, and script locations. The entries in this array are created by the web server. 
 
 | Element                      | Description                                               |
-| ---------------------------- | --------------------------------------------------------- |
+|------------------------------|-----------------------------------------------------------|
 | `$_SERVER['PHP_SELF']        | Returns **filename** of the currently executing script    |
 | `$_SERVER['SERVER_ADDR']     | Returns **IP** of the host server                         |
 | `$_SERVER['SERVER_NAME']     | Returns **name** og the host server                       |
