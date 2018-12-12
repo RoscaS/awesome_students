@@ -14,11 +14,9 @@ project: true
 
 <br>
 
-
-
 <Media
   caption="Architecture logicielle et matérielle"
-  src="https://i.imgur.com/3VUA6Mg.png"
+  src="https://i.imgur.com/QRsJw3s.png"
 />
 
 

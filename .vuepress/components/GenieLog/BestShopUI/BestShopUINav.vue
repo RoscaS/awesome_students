@@ -48,9 +48,9 @@
         {img: 'https://i.imgur.com/wXAb6lE.png', title: 'Apropos'},
         {img: 'https://i.imgur.com/Pt3akUN.png', title: 'Recherche'},
         {img: 'https://i.imgur.com/g7FdZUg.png', title: 'Player'},
-        {img: 'https://i.imgur.com/osrtnbh.png', title: 'Caddy'},
-        {img: 'https://i.imgur.com/osrtnbh.png', title: 'Article'},
-        {img: 'https://i.imgur.com/osrtnbh.png', title: 'Profile'},
+        {img: 'https://i.imgur.com/mOYLFE0.png', title: 'Caddy'},
+        {img: 'https://i.imgur.com/u08DtMk.png', title: 'Article'},
+        {img: 'https://i.imgur.com/Twz1Jlq.png', title: 'Profile'},
       ],
     }),
     computed: {
