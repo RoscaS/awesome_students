@@ -44,7 +44,7 @@
       views: [
         {img: 'https://i.imgur.com/osrtnbh.png', title: 'Home'},
         {img: 'https://i.imgur.com/eCsdR08.png', title: 'Login'},
-        {img: 'https://i.imgur.com/v3xpKEH.png', title: 'Suport'},
+        {img: 'https://i.imgur.com/v3xpKEH.png', title: 'Support'},
         {img: 'https://i.imgur.com/wXAb6lE.png', title: 'Apropos'},
         {img: 'https://i.imgur.com/Pt3akUN.png', title: 'Recherche'},
         {img: 'https://i.imgur.com/g7FdZUg.png', title: 'Player'},
