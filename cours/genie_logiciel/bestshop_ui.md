@@ -109,18 +109,18 @@ project: true
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 <Media
   caption="Structure de l'Interface"
   src="https://i.imgur.com/l3L6h7y.png"
 />
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
