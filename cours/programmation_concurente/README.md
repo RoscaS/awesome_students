@@ -12,6 +12,7 @@
 
 <Card header="Tutos">
 
+* [the little book of semaphores](http://greenteapress.com/semaphores/LittleBookOfSemaphores.pdf)
 * [developpez.com](https://franckh.developpez.com/tutoriels/posix/pthreads/)
 * [computing.llnl](https://computing.llnl.gov/tutorials/pthreads/)
 
