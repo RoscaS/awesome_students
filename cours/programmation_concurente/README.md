@@ -1,8 +1,12 @@
 # Programmation concurente
 
-<h2>Test</h2>
+<br>
 
-* 19 decembre 2018
+> Two events are **concurrent** if we cannot tell by looking at the program
+which will happen first. 
+><br><span style="float: right">Little Book Of Semaphores</span>
+
+<br>
 
 <Posts/>
 
