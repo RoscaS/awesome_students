@@ -359,3 +359,112 @@ multiplex.signal()
 What happens if the critical section is occupied and more than one thread arrives? Of course, what we want is for all the arrivals to wait. This solution does exactly that. Each time an arrival joins the queue, the semaphore is decremented, so that the value of the semaphore (negated) represents the number of threads in queue. When a thread leaves, it signals the semaphore, incrementing its value and
 allowing one of the waiting threads to proceed.
 Thinking again of metaphors, in this case I f
+
+### Barriere
+
+Generalize the rendez vous solution so that every thread should run the following code:
+
+```
+rendezvous
+critical point
+```
+
+* The synchronization requirement is that no thread executes `critical point` until after all threads have executed `rendezvous`.
+* We can assume that there are $n$ threads and that this value is stored in a variable `n` that is accessible from all threads.
+* When the first ($n-1$) threads arrive they should block until the $n$th arrives, at which point all the threads may proceed.
+
+```py
+rendezvous
+
+mutex.wait()
+    count = count + 1
+mutex.signal()
+
+if count == n: barrier.signal()
+
+barrier.wait()
+barrier.signal()
+```
+
+* `mutex` is initialized at 0/1
+* `barrier` is initialized at 1/1
+
+<Spoiler tag="implementation">
+
+```c
+const int nThreads = 4;
+int count = nThreads;
+
+sem_t mutex;
+sem_t barrier;
+
+
+void *T1(void *arg) {
+    int id = (int*)arg;
+
+    printf("t%d \tinside\n", id);
+    sem_wait(&mutex);
+
+    count--;
+    sem_post(&mutex);
+
+    if (count == 0) {
+        printf("\nUn-locking...\n\n");
+        sleep(1);
+        sem_post(&barrier);
+    }
+
+    sem_wait(&barrier);
+    sem_post(&barrier);
+    printf("t%d \tgoing out\n", id);
+}
+
+int main(int argc, char *argv[]) {
+    pthread_t *t_tab = malloc(sizeof(pthread_t) * nThreads);
+
+    sem_init(&mutex, 0, 1);
+    sem_init(&barrier, 0, 0);
+
+    for (int i = 0; i < nThreads; i++) {
+        pthread_create(&t_tab[i], NULL, T1, i);
+        sleep(1);
+    }
+
+    for (int i = 0; i < nThreads; i++) {
+        pthread_join(t_tab[i], NULL);
+    }
+    return 0;
+}
+```
+
+**Output:**
+```
+t0 	inside
+t1 	inside
+t2 	inside
+t3 	inside
+
+Un-locking...
+
+t3 	going out
+t1 	going out
+t0 	going out
+t2 	going out
+```
+
+</Spoiler>
+
+* `count` keep track of the number of threads that pass. The first ($n-1$) threads wait when they get to the `barrier`, which is initially locked. When the $n$th thread arrives, it unlocks the barrier.
+
+* Once unlocked, as each thread passes, it **signals** the semaphore so that the next thread can also pass.
+
+<Container type="info" header="Turnstile">
+
+This pattern, a `wait` and a `signal` in rapid succession, occurs often enough that it has a name. It's called a **turnstile**, because it allows one thread to pass at a time, and it can be locked to bar all the threads.
+
+In its initial state (zero), the turnstile is locked. The $n$th thread unlocks it and then all $n$ threads go through.
+
+</Container>
+
+### Queue
+
