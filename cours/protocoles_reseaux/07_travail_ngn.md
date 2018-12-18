@@ -19,7 +19,7 @@ Suite au [texte](https://ssl.horus.ch/~schaefer/pub/HEArc/NextGenerationNetworks
 et la mobilité continue (handover) offertes par les réseaux mobiles de communication. Il n’existe pas de mécanisme dans l’Internet banalisé permettant d’assurer que la communication ne sera pas interrompue lors du passage d’un point d’accès WiFi ou WiMAX public à un autre. 
 
 
-### 3. Décrivez l'architecture générale d'un réseau de type NGN par rapport à celui d'un réseau d'accès Internet classique.
+### 2. Décrivez l'architecture générale d'un réseau de type NGN par rapport à celui d'un réseau d'accès Internet classique.
 
 
 
@@ -41,16 +41,16 @@ Les réseaux de prochaine génération présentent une **structure horizontale**
 </template>
 </Col>
 
-### 5. Quel protocole est utilisé pour la signalisation générale (p.ex. établissement d'appel) dans les NGNs ?
+### 3. Quel protocole est utilisé pour la signalisation générale (p.ex. établissement d'appel) dans les NGNs ?
 
 ><Def def="Session Initiation Protocol">SIP</Def>: Protocole standard ouvert de gestion de sessions souvent utilisé dans les télécommunications multimédia (son, image, etc.) Il est depuis 2007 le plus courant pour la téléphonie par internet (la VoIP). SIP n'est pas seulement destiné à la VoIP mais aussi à de nombreuses autres applications telles que la visiophonie, la messagerie instantanée, la réalité virtuelle ou même les jeux vidéo en ligne.
 > <span style="float: right"><a href="https://fr.wikipedia.org/wiki/Session_Initiation_Protocol">Wikipedia</a></span>
 
-### 7. Quels autres protocoles classiques sont utilisés ?
+### 4. Quels autres protocoles classiques sont utilisés ?
 
 * RADIUS (via <Def def="il assure l’échange des informations relatives aux souscriptions des usagers">Diameter</Def>)
 
-### 9. Décrivez la procédure nécessaire pour utiliser un NGN
+### 5. Décrivez la procédure nécessaire pour utiliser un NGN
 
 Avant de pouvoir établir une communication avec d’autres usagers,
 un terminal NGN doit remplir une série de conditions préalables:
@@ -60,7 +60,7 @@ un terminal NGN doit remplir une série de conditions préalables:
 * Le terminal lance ensuite la procédure de découverte du serveur P-CSCF&, qui sera son point d’entrée dans le réseau et son serveur Proxy SIP pour toute la durée du futur enregistrement au niveau du NGN. Cette procédure est initiée, typiquement, lorsqu’on allume le terminal.
 * Ensuite, le terminal s’enregistre dans le NGN, au niveau SIP. Le NGN est maintenant en mesure d’authentifier l’usager, de mettre en place des tun
 
-### 11. Expliquez la notion de zone de sécurité en NGN
+### 6. Expliquez la notion de zone de sécurité en NGN
 
 ![Image](https://i.imgur.com/xZnFL8A.png)
 
@@ -71,7 +71,7 @@ un terminal NGN doit remplir une série de conditions préalables:
 Oui
 
 
-### 14. Comment fonctionne l'abonnement à des ressources payantes ?
+### 7. Comment fonctionne l'abonnement à des ressources payantes ?
 
 
-### 15. Question subsidiaire: Quelle interaction entre un développement global des NGN et la neutralité du réseau ?
+### 8. Question subsidiaire: Quelle interaction entre un développement global des NGN et la neutralité du réseau ?
