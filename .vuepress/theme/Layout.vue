@@ -1,9 +1,5 @@
 <template>
   <div>
-    <transition name="custom-fade">
-      <GameOfLife v-if="GOL"/>
-    </transition>
-
     <div class="theme-container"
          :class="pageClasses"
          @touchstart="onTouchStart"
@@ -47,11 +43,9 @@
   import SWUpdatePopup from './SWUpdatePopup.vue';
   import { resolveSidebarItems } from './util';
 
-  import GameOfLife from '../components/GameOfLife';
-
   export default {
     components: {
-      Home, Page, Sidebar, Navbar, SWUpdatePopup, GameOfLife,
+      Home, Page, Sidebar, Navbar, SWUpdatePopup,
     },
 
     data() {
