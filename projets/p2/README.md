@@ -1,3 +1,6 @@
++++
+
++++
 * <st c="r">Ajouter que les tests mémoire sont faits et concluants au carnet de travail</st>
 * <st c="r">Ainsi que les tests de perf</st>
 
@@ -44,7 +47,7 @@ Fight for the game of life est une adaptation multijoueur du célèbre automate 
 
 ### 17 decembre 2018
 <Check state="true">Maquettes </Check>
-<Check state="false">MVP</Check>
+<Check state="true">MVP</Check>
 
 ### 20 janvier 2019
 <Check state="false">Objectif atteint</Check>
@@ -68,7 +71,3 @@ Fight for the game of life est une adaptation multijoueur du célèbre automate 
 [Maquettes](/projets/p2/04_maquettes.html)
 <br>
 [Algorithmes](/projets/p2/05_algos.html)
-
-
-
-
