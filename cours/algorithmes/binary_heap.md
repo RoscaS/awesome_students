@@ -5,6 +5,8 @@ author:  Sol
 sidebar: auto
 ---
 
+
+
 ## Fourre tout temp
 
 * deph = $floor(log_2(n))$
