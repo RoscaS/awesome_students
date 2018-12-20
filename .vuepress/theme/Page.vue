@@ -78,7 +78,7 @@ export default {
     lastUpdated () {
       if (this.$page.lastUpdated) {
         let date = this.$page.lastUpdated;
-        return DateTime.fromMillis(date).toLocaleString(DateTime.DATETIME_MED)
+        return DateTime.fromHTTP(date).ts.toLocaleString(DateTime.DATETIME_MED);
       }
     },
 

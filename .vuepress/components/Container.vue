@@ -6,7 +6,7 @@
       <vs-card class="card" :class="`card-${type}`">
         <span class="header">
           <span class="icon" :class="`icon-${type}`">
-            <i :class="`far ${icons[type]}`"></i>
+            <i :class="`fas ${icons[type]}`"></i>
           </span>
           <span class="title">
             {{ title[type] }}

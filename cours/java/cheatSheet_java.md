@@ -6,8 +6,6 @@ author: Sol
 ---
 
 ## En vrac
-Importer *.jar: `ctrl+shift+p` <Fa fa="arrow-right"/> project structure <Fa fa="arrow-right"/> modules <Fa fa="arrow-right"/> +
---------
 
 
 ```java
@@ -205,6 +203,22 @@ List<Integer> linkedList = new LinkedList<>();
 <br>
 
 <Container type="info" header="Inférence de type">
+
+Le compilateur est capable de déduire le type dans les chevrons à droite du signe `=`. Il n'est pas nécessaire de l'écrire une seconde fois.
+
+</Container>
+
+<br>
+
+<Container type="warning" header="Inférence de type">
+
+Le compilateur est capable de déduire le type dans les chevrons à droite du signe `=`. Il n'est pas nécessaire de l'écrire une seconde fois.
+
+</Container>
+
+<br>
+
+<Container type="danger" header="Inférence de type">
 
 Le compilateur est capable de déduire le type dans les chevrons à droite du signe `=`. Il n'est pas nécessaire de l'écrire une seconde fois.
 
