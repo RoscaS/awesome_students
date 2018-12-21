@@ -26,13 +26,13 @@ project: false
 La différence porte sur la façon dont l'utilisateur peut interagire avec le programme et par extension sur la façon de concevoir le programme.
 
 
-|Programmation séquentielle|Pogrammation événementielle|
-| --- | --- |
-|Programme piloté par le code|Programme piloté par l'utilisateur|
-|Interaction possible à certains moments spécifiques|Interaction possible à tout moment|
-|Le programme attend les entrées de l'utilisateur|l'OS reçoit les entrées de l'utilisateur et les transmet au programme|
-|Déroulement prévisible, détérminé par l'ordre des instructions|Déroulement déterminé par les actions de l'utilisateur|
-|Le dévéloppeur prévoit le moment où l'utilisateur peut intervenir en plus du traitement|Indique à l'OS quel traitement effectuer pour chaque type d'intervention|
+| Programmation séquentielle                                                              | Pogrammation événementielle                                              |
+|-----------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| Programme piloté par le code                                                            | Programme piloté par l'utilisateur                                       |
+| Interaction possible à certains moments spécifiques                                     | Interaction possible à tout moment                                       |
+| Le programme attend les entrées de l'utilisateur                                        | l'OS reçoit les entrées de l'utilisateur et les transmet au programme    |
+| Déroulement prévisible, détérminé par l'ordre des instructions                          | Déroulement déterminé par les actions de l'utilisateur                   |
+| Le dévéloppeur prévoit le moment où l'utilisateur peut intervenir en plus du traitement | Indique à l'OS quel traitement effectuer pour chaque type d'intervention |
 
 ### Exécution d'un programme événementielle
 
