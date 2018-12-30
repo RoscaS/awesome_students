@@ -14,3 +14,4 @@ project: true
   * Travailler dans le repo GIT et faire souvent des commit/push avec des messages de commit utiles
 
 Détail des consignes [ici](https://ssl.horus.ch/~schaefer/bin/view/HEArc/RenduMVCPOOPHP)
+
