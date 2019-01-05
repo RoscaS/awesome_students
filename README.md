@@ -26,6 +26,7 @@
 
 #### Code
 * [python tutor](http://www.pythontutor.com/) but not only python
+* [over the wire](http://overthewire.org/wargames/bandit/) hacking wargame
 
 <br>
 
