@@ -1,15 +1,5 @@
 <style scoped>
-@font-face {
-    font-family: "PressStart"; 
-    src: url('../PressStart2P.ttf');
-}
-h1 {
-    padding-bottom: 40px;
-    font-size: 40px !important;
-}
-h1, h2, h3, h4, h5 {
-    font-family: "PressStart" !important;
-}
+
 </style>
 
 # P2: Fight for the game of life
@@ -52,16 +42,17 @@ Fight for the game of life est une adaptation multijoueur du célèbre automate 
 
 
 ## Analyse
-[Cahier des charges](/projets/p2/01_cahier_des_charges.html)
-<br>
-[Specifications](/projets/p2/02_specifications.html)
-<br>
-[Planning](/projets/p2/03_planning.html)
-<br>
+* [Cahier des charges](/projets/p2/01_cahier_des_charges.html)
+* [Specifications](/projets/p2/02_specifications.html)
+* [Planning](/projets/p2/03_planning.html)
 
 
 ## Conception
 
-[Maquettes](/projets/p2/04_maquettes.html)
-<br>
-[Algorithmes](/projets/p2/05_algos.html)
+* [Maquettes](/projets/p2/04_maquettes.html)
+* [Algorithmes](/projets/p2/05_algos.html)
+
+## Finalisation
+
+* [Rapport](/projets/p2/07_rapport.html)
+* [Présentation](#)
