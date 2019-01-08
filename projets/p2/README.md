@@ -1,9 +1,3 @@
-+++
-
-+++
-* <st c="r">Ajouter que les tests mémoire sont faits et concluants au carnet de travail</st>
-* <st c="r">Ainsi que les tests de perf</st>
-
 <style scoped>
 @font-face {
     font-family: "PressStart"; 
