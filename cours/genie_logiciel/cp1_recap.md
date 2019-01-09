@@ -110,16 +110,16 @@ Cette phase permet de **prendre conscience de l'envergure du projet**. On va **e
 * **Ne** représente **pas** la productivité
   * Ne prend pas en compte le nombre de personnes
 
-### Répartition du temps
+#### Répartition du temps
 
-#### Par analogie
-Repose sur les expériences passées et est une variante de la méthode <Def def="Prévisions réalisées par des experts">Delphi</Def>.
+* **Par analogie**
+  * Repose sur les expériences passées et est une variante de la méthode <Def def="Prévisions réalisées par des experts">Delphi</Def>.
+* **Par points fonctionnels**
+  * Estimation de la taille du projet en se basant sur:
+    * Le nombre et la complexité des entrées/sorties
+    * Les requêtes
+    * Les interfaces utilisateur
+  * On calcule ensuite un facteur d'ajustement basé sur la complexité
+  * Un tableau de correspondance permet de définir le nombre de lignes de code en prenant en compte le langage et le nombre de points donctionnels identifiés.
 
-#### Points fonctionnels
-
-* Estimation de la taille du projet en se basant sur:
-  * Le nombre et la complexité des entrées/sorties
-  * Les requêtes
-  * Les interfaces utilisateur
-* On calcule ensuite un facteur d'ajustement basé sur la complexité
-* Un tableau de correspondance permet de définir le nombre de lignes de code en prenant en compte le langage et le nombre de points donctionnels identifiés.
+#### PERT
