@@ -445,4 +445,92 @@ Sous forme de cahier des charges qui peut être rédigé de plusieurs façons:
 
 ### 2.3.1 Tâches de la phase de conception
 
-Évolution des modèles d’analyse, conceptualisation de l’architecture, des interfaces utilisateurs, et des données persistantes et on détaille les classes
+_Passage de la description du quoi à la description du comment. Comment mettre en oeuvre les modèles définis dans l'analyse._
+
+* **Principales activités:**
+  * Évolution des modèles d'analyse (découpage, factorisation)
+  * Conception des architectures (software, hardware, réseau, ...)
+  * Conception des interfaces utilisateur
+  * Conception des données persistantes (DB)
+  * Conception détaillée des classes (OOP)
+
+### 2.3.2 Stratégies de conception
+
+#### Développement interne
+_Concevoir et développer le système par l'équipe du projet_
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+* <st c="g">Meilleure controle sur le projet</st>
+* <st c="g">Meilleure connaissance des spécs</st>
+* <st c="g">Flexibilité dans les solutions des problèmes métier</st>
+* <st c="g">Acquisition d'expérience</st>
+* <st c="g">Plus de maitrise lors de la maintenance</st>
+
+</template>
+<template slot="right">
+
+* <st c="r">Nécessite et monopolise des ressources</st>
+* <st c="r">Difficulté d'accumuler les différents profils</st>
+* <st c="r">Tendance aux débordements, distractions</st>
+
+</template>
+</Col>
+
+#### Achat de logiciel "packagé"
+_Acheter un logiciel générique qui répond aux spécifications générales pour l'adapter._
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+<st c="g">Minimise les risques</st>
+<st c="g">Couts plus abordables</st>
+<st c="g">Temps de réponse très courts</st>
+<st c="g">Choix entre plusieurs variantes</st>
+
+</template>
+<template slot="right">
+
+<st c="r">Accepter ce qui existe sur le marché</st>
+<st c="r">Apprentissage</st>
+<st c="r">Configuration, parametrages</st>
+<st c="r">Problèmes d'integration</st>
+
+</template>
+</Col>
+
+#### Sous-traitement du developpement (outsourcing)
+_Laisser des société de services développer le système à votre place_
+
+* Nécessite des spécifications claires des besoins et un choix rigoureux des prestatires de service.
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+<st c="g">Profiter de l'expérence du prestataire</st>
+<st c="g">Apporte une vision externe</st>
+<st c="g">Gestion des détailles</st>
+
+</template>
+<template slot="right">
+
+<st c="r">Risque selon le prestataire</st>
+<st c="r">Difficulté à transmettre les spécifications</st>
+<st c="r">Dépendance pour la maintenance</st>
+
+</template>
+</Col>
+
+### 2.3.3 Architecture logiciel
+
+<br>
+
+>Une architecture logicielle d’un programme ou d’un système d’information est la structure ou les structures de ce système qui inclut les composants logiciels, leurs interfaces visibles et les relations qui les relient.
+<div style="float: right">George Washington</div>
+
+L'architecture logicielle implique la définition des trois apsects principaux suivants:
+
+* **Decomposition logicielle:** paquetages, couches, frameworks, librairies
+* **Organisation materielle**: Postes de travail, serveurs, composants matériels, capteurs, ...
+* **Structure réseau:** connexions, quantité de service, ...
