@@ -1,6 +1,6 @@
 ---
 title: Next Generation Networks
-date: 2018-16-12
+date: 2018-12-16
 author:  "Michael, Sol"
 sidebar: auto
 project: true
