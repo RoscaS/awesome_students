@@ -12,7 +12,7 @@ project: false
 
 C'est l'**application des principes d'ingénierie** à la conception de logiciels; l'établissement et l'application d'approches **méthodiques** et **quantifiables** au développement, à l'opération et à la maintenance des logiciels dnas le but d'**obtenir des systèmes logiciels économiques, fiables et efficaces** dans un **contexte de fonctionnement pratique**.
 
-<!-- <Spoiler tag="Matière"> -->
+<Spoiler tag="Matière">
 
 <br>
 
@@ -73,7 +73,7 @@ _le développement proprement dit_
 * Capture de besoins
 * ...
 
-<!-- </Spoiler> -->
+</Spoiler>
 
 # 1. Gestion de projet logiciel
 
@@ -534,3 +534,99 @@ L'architecture logicielle implique la définition des trois apsects principaux s
 * **Decomposition logicielle:** paquetages, couches, frameworks, librairies
 * **Organisation materielle**: Postes de travail, serveurs, composants matériels, capteurs, ...
 * **Structure réseau:** connexions, quantité de service, ...
+
+#### Exemples d'architectures
+
+![Image](https://i.imgur.com/4M3IF3H.png)
+
+#### Architectures distribuées
+_Les architectures distribuées veulent dire être disponibles sur plusieurs plateformes._
+
+* **Types de distribution:**
+  * Traitements
+  * Données
+  * Données et traitements
+  * Centralisées et décentralisées
+
+<br><br>
+
+* **Client-Serveur**
+
+
+![Image](https://i.imgur.com/rOz5jgC.png)
+
+<br>
+<br>
+
+* **3-tiers**
+
+![Image](https://i.imgur.com/vMYYGtK.png)
+
+<br>
+
+* **n-tiers**
+  * Une étape de plus vers la modularisation
+  * La logique applicative n'est plus centralisée mais répartie
+
+<br>
+<br>
+
+![Image](https://i.imgur.com/VxtyxuT.png)
+
+<br>
+<br>
+
+* **Invocation à distance (RPC: Remote procedure call)**
+
+
+![Image](https://i.imgur.com/ccuZ0zt.png)
+
+<br>
+<br>
+
+* **Web services (SOA: Service Oriented Architecture)**
+
+
+![Image](https://i.imgur.com/5PeD8n4.png)
+
+<br>
+
+#### Choix d'une architecture
+
+Le choix d’une architecture dépend de plusieurs facteurs :
+* Le coût de l’infrastructure
+* Le coût de développement
+* La facilité de développement
+* Possibilités d’interaction
+* Contrôle et sécurité
+* Le niveau d’exploitation (scalability)
+
+### 2.3.4 infrastructure
+
+Les systèmes informatiques développés sont généralement destinés à s’intégrer
+dans des environnement existant :
+
+* Infrastructure réseau
+* Infrastructure matérielle
+* Infrastructure logicielle
+* Politique de sécurité
+* Support
+* ...
+
+La conception doit permettre de situer le système au sein de cet environnement et
+préciser les structure de communication, la structure matérielle et la structure
+logicielle du système, ainsi que son intégration dans l’environnement existant.
+
+### 2.3.5 Interface
+
+Une interface système est l’interaction de ce dernier avec son environnement. La partie entre le système et les humains se nomme l’interface utilisateur. Les différents aspects sont:
+* l’affichage (Layout)
+* l’interaction (clavier , souris, pad)
+* l’esthétique (rendu graphique)
+* l’expérience utilisateur (ergonomie)
+* la consistance et la cohérence de ce qu’on présente (qu’un lien soit bien affiché comme un lien).
+
+#### Conception
+
+![Image](https://i.imgur.com/Vh4pQ3N.png)
+
