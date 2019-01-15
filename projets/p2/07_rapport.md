@@ -56,9 +56,22 @@ Game of life génère ce que l'informaticien Stephen Wolfram catégorise comme u
 ### Conception
 #### Architecture logicielle
 
-L'architecture est basée sur une division entre la partie logique (backend) et présentation (frontend).
+Pour permettre la mitigation du manque initial de connaissances techniques du framework Qt, la logique de l'application est séparée de sa présentation. Cette architecture présente plusieurs autres avantages notables:
+
+* Une facilitation de la répartition des Tâches.
+* Une plus forte modularité.
+* Un code plus facilement maintenable.
+
+La logique écrite en C++ pure est totalement découplée de la présentation et expose des méthodes de haut niveau sous forme d'une API qui peut être consommée par un autre programme qui se charge de la présentation. Dans le cadre de ce projet la présentation utilise Qt mais cette architecture présente l'avantage de pouvoir utiliser la logique avec n'importe quels outils graphiques de l'écosystème C++. On peut également imager une utilisation purement statistique sans framework graphique dans le cadre d'une étude des d'automates cellulaires.
+
+> Pour faciliter la communication interne, l'utilisation abusive des terme **backend** et **frontend** a été faite pour décrire respectivement la partie logique et présentation du projet en référence aux similitudes avec le développement web. Pour la suite de ce document le même abus de langage sera utilisé.
 
 ##### Backend
+
+Le moteur du jeu est implémenté dans la classe `Game` qui a pour vocation d'abstraire tous les éléments de logique du jeu pour exposer des méthodes 
+La logique se trouve principalement dans la classe `Game` qui 
+
+
 
 Cette partie du code est écrite en C++ pure. 
 
