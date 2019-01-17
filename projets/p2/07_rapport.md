@@ -64,12 +64,32 @@ Pour permettre la mitigation du manque initial de connaissances techniques du fr
 
 La logique écrite en C++ pure est totalement découplée de la présentation et expose des méthodes de haut niveau sous forme d'une API qui peut être consommée par un autre programme qui se charge de la présentation. Dans le cadre de ce projet la présentation utilise Qt mais cette architecture présente l'avantage de pouvoir utiliser la logique avec n'importe quels outils graphiques de l'écosystème C++. On peut également imager une utilisation purement statistique sans framework graphique dans le cadre d'une étude des d'automates cellulaires.
 
+<br>
+
 > Pour faciliter la communication interne, l'utilisation abusive des terme **backend** et **frontend** a été faite pour décrire respectivement la partie logique et présentation du projet en référence aux similitudes avec le développement web. Pour la suite de ce document le même abus de langage sera utilisé.
+
+<br>
 
 ##### Backend
 
-Le moteur du jeu est implémenté dans la classe `Game` qui a pour vocation d'abstraire tous les éléments de logique du jeu pour exposer des méthodes 
-La logique se trouve principalement dans la classe `Game` qui 
+
+
+Le moteur du jeu est implémenté dans la classe `Game` qui a pour vocation d'abstraire tous les éléments logiques du jeu. Cette classe est totalement générique et ne fait fi d'aucune présentation.
+
+ pour exposer des méthodes haut niveau à usage du frontend. 
+
+Deux spécialisations de cette classe existent. `GameSim` et `GameMulti` 
+
+![Image](https://i.imgur.com/65OQAZC.png)
+
+<div style="display: none">
+
+```
+[<frame> [<package>Backend| [Game]<:-[GameSim]; [Game]<:-[GameMulti]; [Grid]-+[Game]; [Grid]+-[Cell]] ]
+```
+
+</div>
+
 
 
 
