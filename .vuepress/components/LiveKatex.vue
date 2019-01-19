@@ -22,7 +22,8 @@
     <!--</div>-->
 
     <!--<div class="render">-->
-    <!--</div>livekatex-->
+    <!--</div>-->
+    <!--livekatex-->
     <!--<br>-->
     <!--<br>-->
 
@@ -39,20 +40,20 @@
     <!--}),-->
     <!--computed: {-->
       <!--mdString: {-->
-        <!--get () { return this.str },-->
-        <!--set (value) {-->
+        <!--get() { return this.str; },-->
+        <!--set(value) {-->
 
           <!--let md = require('markdown-it'),-->
-            <!--mk = require('markdown-it-katex')-->
+            <!--mk = require('markdown-it-katex');-->
 
-          <!--md.use(mk)-->
+          <!--md.use(mk);-->
 
-          <!--this.str = value-->
-          <!--this.parsed = md.render(value)-->
+          <!--this.str = value;-->
+          <!--this.parsed = md.render(value);-->
         <!--},-->
       <!--},-->
     <!--},-->
-  <!--}-->
+  <!--};-->
 <!--</script>-->
 
 <!--<style scoped>-->

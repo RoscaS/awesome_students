@@ -1,19 +1,23 @@
 ---
 title: Rapport
 date: 2019-08-02
-author: "Nathan, Michael, Sol, <george rogé; INF2C>"
+author: "Nathan, Michael, Sol"
 sidebar: auto
 project: true
 ---
 
-## Abstract
 
+
+## Abstract
 
 ## Introduction
 
 Fight for the game of life est une adaptation multijoueur du célèbre automate cellulaire "Game of life imaginé en 1970 par John Horton Conway. C'est dans le cadre du projet P2 que nous vous proposons cette nouvelle version du jeu où deux joueurs s'affrontent pour assurer la pérennité de leur colonie de cellules. Cette implémentation est écrite en C++ couplé au framework Qt.
 
+Ces règles modélisent un processus de cycle de vie basique et justifient le nom du jeu. La règle 1 représente la mort de solitude, la règle 2 la continuation de la vie, la règle 3 la mort par surpopulation et la règle 4 représente la naissance. L'état initial de la partie est la genèse après quoi chaque cellule est mise à jour en lui appliquant les règles. Un tour de jeu peut être vu comme une génération.
+
 ## Inspiration
+
 ### Game of life
 
 Game Of Life est une automation cellulaire et un jeu sans joueurs. Le cadre de jeu est une grille en deux dimensions de taille variable et potentiellement infinie dans laque les cases (cellules) peuvent être "vivantes" ou "mortes". Un set de règles définit l'état d'une cellule en fonction des cellules adjacentes. Une fois une paterne mise en place et lancée, la grille évolue automatiquement sans nécessiter d'interaction supplémentaire. Popularisé dans les années 1970 le jeu est un succès dans la communauté scientifique car il exemplifie à merveille le concept de "comportement spontané d'auto organisation". Malgré que les règles simples au nombre de trois soient spécifiées au plus bas niveau c'est à dire au niveau de la cellule, il en résulte des arrangements complexes à plus haut niveau.
@@ -44,6 +48,18 @@ Game of life génère ce que l'informaticien Stephen Wolfram catégorise comme u
 
 ### Nouveautés apportées
 
+Fight For The Game Of Life (FFTGOL) reprend le cadre du jeu original pour lui apporter une dimension multijoueurs qui se joue au tour par tour entre deux joueurs. L'initialisation de la partie commence par le placement d'un nombre arbitraire mais équivalent de cellules par chaque joueur de son coté de la grille. Une zone tampon centrale de taille arbitraire sépare les deux camps et permet de doser l'agressivité en début de partie. Une fois la partie initialisée, alternativement chaque joueur doit:
+
+1. Amener une cellule à la vie
+2. Tuer une cellule adverse
+
+Une fois qu'un joueur a fait ses deux actions, la simulation avance d'une génération avant de passer la main au joueur adverse. Dans ce mode de jeu, les r
+
+la partie se termine quand:
+
+
+
+
 ## Planification
 ### Analyse
 #### Objectifs
@@ -66,19 +82,17 @@ La logique écrite en C++ pure est totalement découplée de la présentation et
 
 <br>
 
-> Pour faciliter la communication interne, l'utilisation abusive des terme **backend** et **frontend** a été faite pour décrire respectivement la partie logique et présentation du projet en référence aux similitudes avec le développement web. Pour la suite de ce document le même abus de langage sera utilisé.
+>Pour faciliter la communication interne, l'utilisation abusive des terme **backend** et **frontend** a été faite pour décrire respectivement la partie logique et présentation du projet en référence aux similitudes avec le développement web. Pour la suite de ce document le même abus de langage sera utilisé.
 
 <br>
 
 ##### Backend
 
+Le moteur du jeu est implémenté dans la classe abstraite `Game`. Cette classe a pour vocation d'abstraire tous les éléments logiques du jeu et d'exposer une API accessible via ses spécialisations `GameMulti`et `GameSim`. Ces deux spécialisations permettent de renforcer l'aspect générique de leur mère en se chargeant de surcharger certains de ses comportements pour les adapter à des besoins plus spécifique. En l’occurrence, `GameMulti` se charge de modifier le traitement de la logique qui implémente l'application des règles du jeu pour adapter ce dernier à une version multijoueurs. `GameSim` quant à elle est la concrétisation instanciable de `Game`. 
 
+Ce sont les deux spécialisations actuellement implémentés mais de part la généricité de l'architecture il est aisé d'imaginer d'autres variantes qui pourraient combler des besoins spécifiques à d'autres utilisation. Par exemple, sur une branche du répo git se trouve l'ébauche d'une spécialisation qui a vocation à analyser en profondeur de nombreuses simulations afin de dresser des collections de données statistiques. Un autre cas envisageable serait celui d'une spécialisation dédiée à interfacer avec un autre langage. Cette spécialisation pourrait par exemple utiliser la bibliothèque Boost et ainsi permettre à Python via Boost.python de profiter de la rapidité de traitement de C++ pour afficher une grande quantité de données statistiques du jeu sur une page web via Django. _Et tout cela pour seulement 4.95$ par mois si vous commandez maintenant_ !
 
-Le moteur du jeu est implémenté dans la classe `Game` qui a pour vocation d'abstraire tous les éléments logiques du jeu. Cette classe est totalement générique et ne fait fi d'aucune présentation.
-
- pour exposer des méthodes haut niveau à usage du frontend. 
-
-Deux spécialisations de cette classe existent. `GameSim` et `GameMulti` 
+Cet accent sur la généricité du moteur du jeu a été initié par le désire de pouvoir aisément implémenter des éléments de gameplay dans la version multijoueurs du programme.
 
 ![Image](https://i.imgur.com/65OQAZC.png)
 
@@ -93,7 +107,9 @@ Deux spécialisations de cette classe existent. `GameSim` et `GameMulti`
 
 
 
-Cette partie du code est écrite en C++ pure. 
+
+
+
 
 ##### Frontend
 #### Diagramme de classes
@@ -121,5 +137,35 @@ Cette partie du code est écrite en C++ pure.
 ### Interface graphique
 
 
+
+
+* Strategiquement les situation compactes sont avantageuses
+* Strategiquement les situation statiques sont avantageuses
+
+
+
+
+* Memoriser les patternes semi complexes qui disparaissent au tour suivant
+
+```
+    #
+# # #
+    #
+
+```
+
+
+
+* Petite partie dynamique sur 5 tours. Le gagnant est celui qui a le plus de de cellules à la fin
+
+
+### A observer
+* Où la prochaine génération va poser des cellules pour le joueur adverse (tenter de contrer)
+
+
+
+### Notes
+
+* fondamentalement une cellule adverse est considéré comme un obstacle pour nos cellules
 
 
