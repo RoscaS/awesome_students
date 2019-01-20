@@ -371,7 +371,7 @@ Après discussion en interne, il ressort que cette étape pourrait avantageuseme
 > Une telle répartition couplée à ce travail de fondation permettrait de naturellement faire émerger les tâches prioritaires et donc permettre de dresser un ordre de priorité.
 
 
-## 7. Conclusion <b class="r">(A faire)</b> <b class="s">Sol</b>
+## 7. Conclusion
 
 De manière générale, nous sommes (partiellement) satisfaits du résultat. Nous avons certes atteint tous nos objectifs mais nous espérions pouvoir ajouter des fonctionnalités supplémentaires. La mauvaise gestion des tâches a malheureusement entravé notre progression dans la réalisation du projet.
 
