@@ -11,6 +11,8 @@ $ systemctl start mysqld
 $ php -S localhost:8082
 ```
 
+* Apache conf: `/etc/httpd/conf/httpd.conf`
+
 ## Arch
 
 ### Apache
