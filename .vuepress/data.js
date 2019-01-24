@@ -16,7 +16,7 @@ let branchesFullName = {
   programmation: "Prog",
   linux: "Linux",
   cpp: "Cpp",
-  // java: 'java',
+  ksp: 'Ksp',
   java_script: "JS",
   vuejs: "VueJS",
   // developpement_web: 'developpement_web',

@@ -5,6 +5,12 @@ sidebar: auto
 author: "Sol"
 ---
 
+```
+$ systemctl start httpd
+$ systemctl start mysqld
+$ php -S localhost:8082
+```
+
 ## Arch
 
 ### Apache

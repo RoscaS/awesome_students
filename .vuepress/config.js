@@ -55,6 +55,7 @@ module.exports = {
           '/articles/dev_ops/',
           '/articles/reseaux/',
           '/articles/divers/',
+          '/articles/ksp/',
         ],
       },
       {
