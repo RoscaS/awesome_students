@@ -8,6 +8,11 @@ project: true
 
 ![Image](https://i.imgur.com/ufYG9X8.png)
 
+## Repos
+
+* [Pthread](https://github.com/RoscaS/prog_conc_lab3)
+* [QThread](https://github.com/nathanlatino/QThreadLabo3)
+
 ## Introduction
 
 Une fractale de Mandelbrot demande un grand nombre d’opérations ce qui se prête particulièrement à un laboratoire dans le cadre du cours de programmation concurente.
