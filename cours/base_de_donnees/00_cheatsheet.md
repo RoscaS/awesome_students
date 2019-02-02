@@ -1,31 +1,11 @@
 ---
-title: Utils
-date: 2018-08-29
-author:  "Sol"
+title: CheatSheet
+date: 2018-09-01
+author: Sol
 sidebar: auto
-project: false
 ---
 
-
-## Postgres (Arch)
-
-* Connect as postgres user: `$ sudo -iu postgres`
-  * Create new DB: `$[postgres] createdb dbname`
-  * Connect to specific DB: `$[postgres] psql -d dbname`
-  * Drop db: `$[postgres] dropdb dbname`
-
-
-## Strapi
-
-* [tutorial](https://blog.strapi.io/cooking-a-deliveroo-clone-with-nuxt-vue-js-graphql-strapi-and-stripe-setup-part-1-7/)
-
-* install `$ npm i strapi@alpha -g`
-* new project `$strapi new projectName`
-* start server: `$strapi start`
-
-## CheatSheet
-
-### Creation & edition
+## Creation & edition
 
 * `CREATE TABLE`: creates a new table.
 * `INSERT INTO`: adds a new row to a table.
@@ -34,7 +14,7 @@ project: false
 * `UPDATE edits`: a row in a table.
 * `DELETE FROM`: deletes rows from a table.
 
-### Query
+## Query
 
 * `SELECT` is the clause we use every time we want to query information from a database.
 * `AS` renames a column or table.
@@ -53,7 +33,7 @@ project: false
 * `LIMIT` specifies the maximum number of rows that the query will return.
 * `CASE` creates different outputs.
 
-### Aggregate functions
+## Aggregate functions
 
 Aggregate functions perform calculations on data, they combine multiple rows together to form a single value of more meaningful information.
 
@@ -63,7 +43,7 @@ Aggregate functions perform calculations on data, they combine multiple rows tog
 * `AVG()`: the average of the values in a column
 * `ROUND()`: round the values in the column
 
-#### Group By
+### Group By
 
 `GROUP BY` is a clause used with **aggregate functions** to combine data from one or more columns.
 
@@ -100,7 +80,7 @@ The `GROUP BY` statement comes **after** andy `WHERE` statements, but **before**
 
 </Container>
 
-##### Exemples
+#### Exemples
 
 Soit le schéma **apps**: [id, name, category, downloads, price].
 
