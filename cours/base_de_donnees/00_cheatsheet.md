@@ -47,6 +47,9 @@ Aggregate functions perform calculations on data, they combine multiple rows tog
 
 `GROUP BY` is a clause used with **aggregate functions** to combine data from one or more columns.
 
+
+<Spoiler tag="more">
+
 We might want to know the mean IMDB ratings for **all** movies **each** year. We could calculate each number by a series of queries with different `WHERE` statements, like so:
 
 ```sql
@@ -76,7 +79,7 @@ ORDER BY year;
 
 <Container type="danger">
 
-The `GROUP BY` statement comes **after** andy `WHERE` statements, but **before** `ORDER BY` or `LIMIT`.
+The `GROUP BY` statement comes **after** and `WHERE` statements, but **before** `ORDER BY` or `LIMIT`.
 
 </Container>
 
@@ -161,9 +164,15 @@ Cette requête est équivalente à la précédente.
 
 </Container>
 
+</Spoiler>
+
+
 ### Having
 
  `HAVING` limits the results of a query based on an aggregate property. It's very similar to `WHERE` but it's used for *groups* made with `GROUP BY`.
+
+
+<Spoiler tag="more">
 
 #### Examples
 
@@ -188,3 +197,16 @@ HAVING COUNT(*) > 10;
 
 </template>
 </Col>
+
+</Spoiler>
+
+
+## Multiple tables
+
+* `JOIN` will combine rows from different tables if the join condition is true.
+* `LEFT JOIN` will return every row in the left table, and if the join condition is not met, NULL values are used to fill in the columns from the right table.
+  * **Primary key** is a column that serves a unique identifier for the rows in the table.
+  * **Foreign key** is a column that contains the primary key to another table.
+* `CROSS JOIN` lets us combine all rows of one table with all rows of another table.
+* `UNION` stacks one dataset on top of another.
+* `WITH` allows us to define one or more temporary tables that can be used in the final query.
