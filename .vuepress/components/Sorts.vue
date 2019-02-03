@@ -6,6 +6,8 @@
 
 
   import HeapSort from './Sorts/HeapSort';
+  import randint from '../helpers'
+
   export default {
     name: 'Sorts',
     components: {HeapSort},
@@ -23,13 +25,10 @@
     methods: {
       randomTab() {
         let a = [...Array(this.size).keys()];
-        return a.map(i => this.randInt(10, 100));
+        return a.map(i => randint(10, 100));
       },
       cloneTab(tab) {
         return tab.slice(0);
-      },
-      randInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
       },
       floor(value) {
         let result = Math.floor(value);

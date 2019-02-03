@@ -1,4 +1,4 @@
-let branchesFullName = {
+const branchesFullName = {
   // Cours
   qt: "Qt5",
   java: "Java",
@@ -26,13 +26,13 @@ let branchesFullName = {
   divers: "Divers"
 };
 
-let knownAuthors = [
+const knownAuthors = [
   { name: "Sol Rosca", GHID: "22873101", class: "INF2B" },
   { name: "Michael Kneuss", GHID: "41299903", class: "INF2B" },
   { name: "Nathan Latino", GHID: "42647776", class: "INF2B" }
 ];
 
-let groups = {
+const groups = {
   snm: [knownAuthors[0], knownAuthors[1], knownAuthors[2]],
   sm: [knownAuthors[0], knownAuthors[1]],
   sn: [knownAuthors[0], knownAuthors[2]],

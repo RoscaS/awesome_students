@@ -3,7 +3,11 @@
 
 ## Spotlight
 
-<br>
+<br> <br>
+
+<Quotes/>
+
+<br> <br>
 
 <Col proportions="6/6" vAlign="0">
 <template slot="left">
@@ -47,15 +51,6 @@
 
 </template>
 </Col>
-
-<br>
-
-<br>
-
-> When you <st c="b">define</st> a function, the variables that represent the values that will be passed to it for processing are called <st c="b">parameters</st>. However, when you <st c="g">call</st> a function, the value you pass to it is called an <st c="g">argument</st>. 
-> <br> <span style="float: right">Napoleon Bonaparte</span>
-
-<br>
 
 
 ## Derniers articles
