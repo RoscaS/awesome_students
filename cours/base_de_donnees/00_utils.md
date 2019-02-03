@@ -22,4 +22,11 @@ project: false
 * install `$ npm i strapi@alpha -g`
 * new project `$strapi new projectName`
 * start server: `$strapi start`
-* 
+
+
+<Container type="info" header="Relation issue">
+
+* [discussion](https://github.com/strapi/strapi/issues/2396)
+* [fix](https://github.com/strapi/strapi/pull/2687/commits/8e2169f005d075d3c046a1af67091b541240261a)
+
+</Container>
