@@ -6,7 +6,7 @@
 
 
   import HeapSort from './Sorts/HeapSort';
-  import randint from '../helpers'
+  import { randint } from '../helpers'
 
   export default {
     name: 'Sorts',
