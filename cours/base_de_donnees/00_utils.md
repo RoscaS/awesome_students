@@ -24,9 +24,12 @@ project: false
 * start server: `$strapi start`
 
 
-<Container type="info" header="Relation issue">
+### Relation issue
 
 * [discussion](https://github.com/strapi/strapi/issues/2396)
 * [fix](https://github.com/strapi/strapi/pull/2687/commits/8e2169f005d075d3c046a1af67091b541240261a)
 
-</Container>
+### Binding issue
+
+* [discussion](https://stackoverflow.com/questions/54357814/undefined-bindings-detected-when-compiling-select-query)
+* [fix ?](https://github.com/strapi/strapi/pull/2687) 

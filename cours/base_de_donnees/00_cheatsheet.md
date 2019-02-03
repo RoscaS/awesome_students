@@ -5,6 +5,42 @@ author: Sol
 sidebar: auto
 ---
 
+## Théorie
+
+### Modélisation conceptuelle et logique
+La différence entre les deux est le niveau d'abstraction.
+* Modélisation **conceptuelle**: plus abstraite, elle décrit les données et les liens qui les unit.
+* Modélisation **Logique**: décrit un modèle conceptuel.
+
+### Transaction
+
+* Permet de **grouper plusieurs requêtes**, lesquelles seront validées (`COMMIT`) ou annulées (`ROLLBACK`) toutes en même temps.
+* Tous les changements de données (insertion, suppression, modification) faites par les requêtes à l'intérieur d'une transaction sont **invisibles pour les autres sessions tant que la transaction n'est pas validée**
+* Les transactions permettent d'**executer un traitement nécessitant plusieurs requêtes en une seule fois**, ou de l'annuler complètement si une des requête pose problème ou si la transaction est interrompue.
+* Ceraines commandes SQL provoquent une **validation implicite des transactions**.
+* Les critères **ACID** sont les critères qu'un système appliquant les transactions doit respecter pour être fiable: **Atomicité, Cohérence, Isolation, Durabilité.**
+
+### Procédure stockée
+
+* **Ensemble d'instructions** que l'on peut exécuter sur commande.
+* Objet de la base de données **stockée de manière durable** au même titre qu'une table. Elle n'est pas supprimée à la fin de la session comme l'est une requête préparée.
+* Permet d'utiliser des directives (conditionnels, boucles,...)
+* Encapsulation du SQL
+* Séparation de la logique d'accès BDD de la logique métier de l'application
+* Code SQL précompilé
+* Permet de **gagner en performance** en diminuant les allers-retours entre le client et le serveur. 
+* Permet de **sécuriser une BDD** et à s'assurer que les traitements sensibles sont toujours exécutés de la même façon.
+* **Ajoute de la charge serveur**.
+* **Syntaxe pas portable** d'un SGBD à l'autre.
+
+**Exemples dans lesquels une procédure stockée est préférable à une séquence de requètes SQL:**
+* Si on veut pouvoir utiliser des conditionnels ou des boucles
+* Pour abstraire certaines taches. 
+  * L'utilisateur n'a pas accès aux commandes SQL et ne peut qu'appeler des procédure ce qui permet de controler les commandes utilisées. Cela donne un effet d'encapsulation de la BDD en n'autorisant que certaines oppérations.
+* Pour augmenter les performances: Le SGBD compile et optimise à l'avance les commandes de la procédure à le place de le faire à chaque séquence de commandes.
+
+
+
 ## Creation & edition
 
 * `CREATE TABLE`: creates a new table.
