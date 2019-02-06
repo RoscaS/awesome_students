@@ -45,12 +45,12 @@ $ php -S localhost:8082
 ```
 CREATE TABLE Tasks (id INTEGER, description VARCHAR(1024), completed BIT, deadline VARCHAR(100));
 
-
-
 INSERT INTO Tasks(id, description, completed, deadline) VALUES (1, 'Study for the next control', 0, '08-12-2018');
 INSERT INTO Tasks(id, description, completed, deadline) VALUES (1, 'Costume for Halloween', 1, '31-10-2018');
 INSERT INTO Tasks(id, description, completed, deadline) VALUES (1, 'Do not forget to sleep', 0, '08-12-2018');
 ```
+
+* dump: `mysqldump -u root -p dbName > file.sql`
 
 ## Phpmyadmin
 * [http://localhost/phpmyadmin/index.php](http://localhost/phpmyadmin/index.php)
