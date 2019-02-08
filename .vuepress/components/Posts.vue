@@ -78,14 +78,18 @@
           return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
         });
         sortedPosts.forEach(i => {
-          articles.push({
-            author: i.frontmatter.author,
-            tag: i.path.split('/')[1],
-            category: i.path.split('/')[2],
-            title: i.frontmatter.title,
-            path: i.path,
-            date: this.date(i.frontmatter.date),
-          });
+
+          if (!i.frontmatter.hide) {
+            articles.push({
+              author: i.frontmatter.author,
+              tag: i.path.split('/')[1],
+              category: i.path.split('/')[2],
+              title: i.frontmatter.title,
+              path: i.path,
+              date: this.date(i.frontmatter.date),
+            });
+          }
+
         });
         return articles;
       },
