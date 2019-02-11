@@ -433,12 +433,21 @@ Une collection regroupe dans une unité un groupe d'objets. Java fournit le fram
 
 <br>
 
-* Typiquement, Java fournit une interface comme `List` et une ou plusieurs implémentations pour ces interfaces:
-* Une classe ou une interface dont la déclaration à un ou plusieurs 
+Typiquement, Java fournit une interface comme `List` et une ou plusieurs implémentations pour ces interfaces:
 
 <br>
 
 ![Image](https://i.imgur.com/kDt0RjF.png)
+
+La classe statique `Collections` nous fournit 4 méthodes particulièrement utiles:
+
+| Methode                        | Description                         |
+| ------------------------------ | ----------------------------------- |
+| `Collections.copy(list, list)` | Copie une collection dans une autre |
+| `Collections.reverse(list)`    | Flip une collection                 |
+| `Collections.shuffle(list)`    | Melange une collection              |
+| `Collections.sort(list)`       | Trie une collection                 |
+
 
 ### List
 
@@ -517,6 +526,39 @@ IntStream.range(0, 5).forEach(i -> {
 System.out.println(lst); // => [0, -1, 4, -1, 8]
 ```
 
+##### Trier une liste
+
+```java
+// Tri in-place simple
+String source[] = {"B", "c", "a", "A", "b", "C"};
+List<String> lst = new ArrayList<>(Arrays.asList(source));
+lst.sort(null);
+System.out.println(lst); // => [A, B, C, a, b, c]
+
+// Tri in-place via lambda
+String source[] = {"B", "c", "a", "A", "b", "C"};
+List<String> lst = new ArrayList<>(Arrays.asList(source));
+lst.sort((a, b) -> a.compareToIgnoreCase(b));
+System.out.println(lst); // => [a, A, B, b, c, C]
+
+// Equivalent avec reference de methode
+String source[] = {"B", "c", "a", "A", "b", "C"};
+List<String> lst = new ArrayList<>(Arrays.asList(source));
+lst.sort(String::compareToIgnoreCase);
+```
+
+##### Retirer des éléments particuliers
+
+```java
+String source[] = {"Poule", "Cochon", "Poney", "Meuh"};
+List<String> lst = new ArrayList<>(Arrays.asList(source));
+
+lst.removeIf(s -> s.toLowerCase().contains("po"));
+System.out.println(lst); // => [Cochon, Meuh]
+
+lst.removeIf(s -> s.length() < 5);
+System.out.println(lst); // => [Cochon]
+```
 
 ### Set
 
@@ -854,41 +896,8 @@ lst.iterator().forEachRemaining(j -> System.out.println(j));
 lst.iterator().forEachRemaining(System.out::println)
  ```
 
-## Cas pratiques
 
-### Trier une liste
 
-```java
-// Tri in-place simple
-String source[] = {"B", "c", "a", "A", "b", "C"};
-List<String> lst = new ArrayList<>(Arrays.asList(source));
-lst.sort(null);
-System.out.println(lst); // => [A, B, C, a, b, c]
-
-// Tri in-place via lambda
-String source[] = {"B", "c", "a", "A", "b", "C"};
-List<String> lst = new ArrayList<>(Arrays.asList(source));
-lst.sort((a, b) -> a.compareToIgnoreCase(b));
-System.out.println(lst); // => [a, A, B, b, c, C]
-
-// Equivalent avec reference de methode
-String source[] = {"B", "c", "a", "A", "b", "C"};
-List<String> lst = new ArrayList<>(Arrays.asList(source));
-lst.sort(String::compareToIgnoreCase);
-```
-
-### Retirer des éléments particuliers
-
-```java
-String source[] = {"Poule", "Cochon", "Poney", "Meuh"};
-List<String> lst = new ArrayList<>(Arrays.asList(source));
-
-lst.removeIf(s -> s.toLowerCase().contains("po"));
-System.out.println(lst); // => [Cochon, Meuh]
-
-lst.removeIf(s -> s.length() < 5);
-System.out.println(lst); // => [Cochon]
-```
 
 
 
@@ -946,27 +955,3 @@ System.out.println("v1: " + d2.getV1() + "\tv2: " + d2.getV2());
 
 
 ## En vrac
-
-### Python like range
-
-```java
-List<Integer> l2 = new ArrayList<>();
-IntStream.range(0, 10).forEach(i -> l2.add(i));
-l2.forEach(i -> System.out.println(i));
-```
-
-
-### Usefull collection methodes
-```java
-// Copy a collection to another
-Collections.copy(list, list)
-
-// Reverse the order of the list
-Collections.reverse(list)
-
-// Shuffle the list
-Collections.shuffle(list)
-
-// Sort the list
-Collections.sort(list)
-```
