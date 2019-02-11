@@ -16,12 +16,18 @@ author: Sol
 
 ## Liens
 
+* [Baeldung](https://www.baeldung.com/start-here)
 * [Développons en Java](https://www.jmdoudoux.fr/java/dej/index.htm)
 * [JavaPoint](https://www.javatpoint.com)
 * [GeeksForGeeks](https://www.geeksforgeeks.org)
 * [Comprehension de la JVM](https://soat.developpez.com/tutoriels/java/jvm/decouverte-machine-virtuelle-java/)
 * [Comprendre le fonctionnement de la JVM 1/2](https://blog.xebia.fr/2013/05/27/comprendre-le-fonctionnement-de-la-jvm-article-1/)
 * [Wikipedia Jar](https://en.wikipedia.org/wiki/JAR_(file_format))
+* [maps](https://www.testingexcellence.com/4-different-ways-iterate-map-java/)
+* [Collections overview](https://www.journaldev.com/1260/collections-in-java-tutorial)
+* [Collections practical](http://www.vogella.com/tutorials/JavaCollections/article.html)
+* [iterators](https://www.baeldung.com/java-iterator)
+* [zip](https://www.baeldung.com/java-collections-zip)
 
 ## Culture générale
 
@@ -49,7 +55,7 @@ Java est un langage haut niveau, orienté objet, avec un typage statique et fort
 ### C++ vs Java
 
 | Comparaison                 | C++                                              | Java                                                                                                                                         |
-|-----------------------------|--------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| --------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | Dépendant de la plateforme  | oui                                              | non                                                                                                                                          |
 | Utilisation principale      | Programmation système                            | Programmation d'applications                                                                                                                 |
 | `goto`                      | oui                                              | non                                                                                                                                          |
@@ -262,7 +268,7 @@ On peut renommer les .jar avec l'extension .zip et les manipuler avec les outils
 
 </Container>
 
-## Langage
+## Base du Langage
 
 ### Variables
 
@@ -290,8 +296,6 @@ Identifiée par un nom, elle permet d'accéder à la valeur contenue dans l'adre
 />
 
 
-
-
 ### Types de données
 
 <Media
@@ -312,11 +316,22 @@ Spécifie la taille et la valeur qui peuvent être stockées dans une variable.
 Transforme automatiquement une variable de type primitf en un objet du type wrapper correspondant:
 
 | Wrapper correspondant | type primitif |
-|-----------------------|---------------|
+| --------------------- | ------------- |
 | Integer               | int           |
 | Long                  | long          |
 | Float                 | float         |
 | Double                | double        |
+
+```java
+int i = new Integer(12);         //Est équivalent à int i = 12
+double d = new Double(12.2586);  //Est équivalent à double d = 12.2586
+Double d = 12.0;
+Character c = 'C';
+al = new ArrayList();
+//Avant Java 5 il fallait faire al.add(new Integer(12))
+//Depuis Java 5 il suffit de faire
+al.add(12); 
+```
 
 </Container>
 
@@ -398,60 +413,48 @@ public class Tab2D {
 }
 ```
 
-### Collections
+### Boucles
 
-Une collection regroupe dans une entité un groupe d'objets. Java fournit le framework `Collection` qui définit un certain nombre de classes et d'interfaces qui permettent ce regroupement.
-* Les deux principales interfaces pour manipuler les classes de `Collection` sont `java.util.Collection` et `java.util.Map`. 
-* L'avantage de cette hiérarchie est de fournir une utilisation (syntaxe) unifiée pour manipuler ces objets.
 
-<Spoiler tag="Collections: sous le capot">
+## Collections
+
+Une collection regroupe dans une unité un groupe d'objets. Java fournit le framework `Collection` qui définit un certain nombre de classes et d'interfaces qui standardise l'utilisation de ses collections. Ce framework est constitué des élements suivants:
+
+1. **Interfaces**: Fournissent le type de données abstrait pour représenter des collections.
+2. **Classes qui implémentent les interfaces**
+3. **Algorithmes**: Des methodes pour des actions mondaines comme chercher une valeur, trier ou mélanger une collection, ...
+
 
 <Media
     src="https://i.imgur.com/l4z5cQB.png"
-    caption="https://www.javatpoint.com/collections-in-java"
+    caption="Framework Collection. https://www.javatpoint.com/collections-in-java"
     center="true"
 />
 
-
-#### Interface: Iterable
-
-* Racine de toutes les classes de `Collection`.
-* `Collection` _extends_ l'interface `Iterable` et donc toutes les sous-classes de `Collection` implémentent l'interface `Iterable`.
-* `Iterable` ne contient qu'une seul méthode abstraite: `Iterator<T> iterator()` qui retourne un itérateur sur l'élément de type `T`.
-
 <br>
 
-#### Interface: Collection
-
-* Interface qu'implémentent toutes les classes du framework collection.
-* Déclare les methodes que toutes les collections exposent.
-
-<br>
-
-* [Plus d'informations sur les methodes et imlpémentations du framework](https://www.javatpoint.com/collections-in-java)
-
-<br>
-
-</Spoiler>
-
-
-
-### Collections usuelles
+* Typiquement, Java fournit une interface comme `List` et une ou plusieurs implémentations pour ces interfaces:
+* Une classe ou une interface dont la déclaration à un ou plusieurs 
 
 <br>
 
 ![Image](https://i.imgur.com/kDt0RjF.png)
 
+### List
 
-#### List
+L'interface `List` est l'interface de base pour des collections qui nous permettent de **stocker des objets dans un conteneur de taille dynamique**.
 
-_Collection linéaire_
+_Collection linéaire_, "tableaux" à taille dynamique. on y récupère une valeur via son indice.
 * **Interface**: `List`
 * **Implémentations**:
   * `LinkedList`
   * `ArrayList`
 
-Privilégier `LinkedList` pour de nombreuses insertions/suppressions.
+#### ArrayList & LinkedList
+
+* Contrairement aux `LinkedList`, les `ArrayList` sont rapides en lecture mais cependant plus lentes si on veut ajouter ou supprimer des données en milieu de liste.
+* <st c="g">Privilégier `LinkedList` pour de nombreuses insertions/suppressions.</st>
+
 
 ```java
 List<Integer> arrayList = new ArrayList<>();
@@ -460,37 +463,110 @@ List<Integer> linkedList = new LinkedList<>();
 
 <br>
 
-<Container type="info" header="Inférence de type">
+| Methode                    | Description                                                       |
+| -------------------------- | ----------------------------------------------------------------- |
+| `add()`                    | Ajouter un élément                                                |
+| `get(int index)`           | Retourne l'élément à l'indice `index`                             |
+| `remove(int index)`        | Efface l'entrée à l'indice `index`                                |
+| `isEmpty()`                | Retourne `true` si l'objet est vide                               |
+| `removeAll()`              | Efface tout le contenu de la liste                                |
+| `contains(Object element)` | Retourne `true` si l'élément passé en paramètre est dans la liste |
 
-Le compilateur est capable de déduire le type dans les chevrons à droite du signe `=`. Il n'est pas nécessaire de l'écrire une seconde fois.
 
-</Container>
+#### Special tactics
 
-#### Set
+##### Arrays.asList()
+```java
+List<Integer> l1 = new ArrayList<>();
+l1.add(3);
+l1.add(2);
+l1.add(21);
+System.out.println(l1); // => [3, 2, 21]
+l1.add(12)
+System.out.println(l1); // => [3, 2, 21, 12]
 
-_Unicité des éléments_
+// Equivalent à :
+List<Integer> l2 = new ArrayList<>();
+l2.addAll(Arrays.asList(3, 2, 21));
+System.out.println(l2); // => [3, 2, 21]
+l1.add(12)
+System.out.println(l2); // => [3, 2, 21, 12]
+
+// N'est PAS équivalent à :
+List<Integer> l3 = Arrays.asList(3, 2, 21);
+l3.add(3); // => Erreur !
+```
+
+##### Python like Range, LC, LCIE
+```java
+// Basic
+List<Integer> lst = new ArrayList<>();
+IntStream.range(0, 5).forEach(lst::add); // method reference
+System.out.println(lst); // => [0, 1, 2, 3, 4]
+
+// List comprehension
+List<Integer> lst = new ArrayList<>();
+IntStream.range(0, 5).forEach(i -> lst.add(i*i));
+System.out.println(lst); // => [0, 1, 4, 9, 16]
+
+// LCIE
+List<Integer> lst = new ArrayList<>();
+IntStream.range(0, 5).forEach(i -> {
+    lst.add(i % 2 == 0 ? i * 2 : -1);
+});
+System.out.println(lst); // => [0, -1, 4, -1, 8]
+```
+
+
+### Set
+
+Cette interface nous fournit des collections qui garantissent l'**unicité des éléments** contenus. Particulièrement adaptés à la manipulation de grandes quantité de données malgré des performances amoindries en insertion.
+
+
+_unicité des éléments_, _pas d'accès aléatoire_
 * **Interface**: `Set`
 * **Implémentations**:
   * `HashSet`
   * `TreeSet`
 
-`TreeSet` garanti également l'**ordre** des éléments.
+#### HashSet & TreeSet
+
+* <st c="g">Privilégier `TreeSet` si la collaction a besoin d'être constament triée. Autrement utiliser `HashSet` qui a un meilleur temps d'acces.</st>
 
 ```java
 Set<Integer> treeSet = new TreeSet<>();
 Set<Integer> hashSet = new HashSet<>();
 ```
 
+<br>
 
-#### Map
+| Methode                  | Description                                 |
+| ------------------------ | ------------------------------------------- |
+| `add()`                  | ajoute un élément                           |
+| `contains(Object value)` | retourne `true` si l'objet contient `value` |
+| `isEmpty()`              | retourne `true` si l'objet est vide         |
+| `iterator()`             | renvoie un objet de type Iterator           |
+| `remove(Object o)`       | retire l'objet o de la collection           |
+| `toArray()`              | retourne un tableau d'Object                |
 
-_Key value pair_
+<br>
+
+
+### Map
+
+L'interface `Map` est l'interface de base pour des collections qui **associent une valeur à une clé**. La clé qui sert à identifier une entrée est unique. La valeur, peut être associée à plusieurs clés. Comme les objets de type `Map` gardent en mémoire une donnée supplémentaire par enrigistrement ce qui fait qu'elles sont moins mémory efficient que les autres structures de données présentées.
+
+
+_Paire clé valeur_, _unicité des clés_, n'hérite pas de `Collection`
 * **Interface**: `Map`
 * **Implémentations**:
   * `HashMap<k,v>`
   * `TreeMap<k,v>`
 
-`TreeMap` garanti également l'**ordre** des éléments.
+#### HashMap & TreeMap
+
+* <st c="g">TreeMap garanti également l'ordre des éléments.</st>
+* À éviter (fort) si l'ordre n'est pas important.
 
 ```java
 Map<String, Integer> hashMap = new HashMap<>();
@@ -499,14 +575,398 @@ Map<String, Integer> treeMap = new TreeMap<>();
 
 <br>
 
-<Container type="info" header="Choix entre Hash et Tree">
+| Methode                              | Description                                                                   |
+| ------------------------------------ | ----------------------------------------------------------------------------- |
+| `isEmpty()`                          | retourne `true` si l'objet est vide                                           |
+| `contains(value)`                    | retourne `true` si la valeur est présente. Identique à `containsValue(value)` |
+| `containsKey(key)`                   | retourne `true` si la clé passée en paramètre est présente dans la Hashtable  |
+| `put(key, value)`                    | ajoute le couple `key`,`value` dans l'objet                                   |
+| `keys()`                             | retourne la liste des clés sous forme d'énumération                           |
+| `getOrDefault(key, value)`           | si `key` exite retourne sa valeur, else retourne `value` (int)                |
+| `computeIfPresent(key, lambda(k,v))` | applique `lambda` si `key` existe                                             |
+| `computeIfAbsent(key, i -> value)`   | si `key` n'existe pas, ajoute l'ajoute et l'initialise à `value`              |
 
-* **Hash**Map/Set: pas de relation d'ordre, performant
-  * <Fa fa="arrow-right"/> À privilégier
-* **Tree**Map/Set: relation d'ordre, peu performant   
-  * <Fa fa="arrow-right"/> À éviter si l'ordre n'est pas important
+<br>
+
+```java
+Map<String, Integer> map = new HashMap<>();
+map.put("Un", 1);
+map.put("deux", 2);
+map.put("trois", 3);
+
+System.out.println(map.get("Un")); // => 1
+
+System.out.println(map); // => {trois=3, Un=1, deux=2}
+System.out.println(map.keySet()); // => [trois, Un, deux]
+System.out.println(map.values()); // => [3, 1, 2]
+
+List<String> keys = new ArrayList<>(map.keySet());
+List<Integer> values = new ArrayList<>(map.values());
+System.out.println(keys);    // => [trois, Un, deux]
+System.out.println(values);  // => [3, 1, 2]
+
+
+System.out.println(map.getOrDefault("Dix", -1)); // => -1
+
+map.computeIfAbsent("Dix", i -> 1);
+System.out.println(map); // => {Dix=1, trois=1, Un=1, deux=1}
+
+map.computeIfPresent("Un", (k, v) -> v + 1);
+System.out.println(map); // => {Dix=1, trois=1, Un=2, deux=1}
+
+// Attention, la ligne suivante ne fonctionne pas !
+map.computeIfPresent("Un", (k, v) -> v++);
+System.out.println(map); // => {Dix=1, trois=1, Un=2, deux=1}
+
+map.remove("deux");
+System.out.println(map); // => {Dix=1, trois=1, Un=2}
+```
+
+<br>
+
+<Container type="danger">
+
+`Map` n'hérite pas de l'interface `Collection` ce qui implique qu'il n'hérite pas non plus de `Iterable` et que l'utilisation d'itérateurs (voir prochain chapitre) sur ce type de collection est particulier.
+
+```java
+Map<String, Integer> map = new HashMap<>();
+map.put("Un", 1);
+map.put("deux", 2);
+map.put("trois", 3);
+
+Iterator<Entry<String, Integer>> i = map.entrySet().iterator();
+```
+
+**Noter l'utilisation de l'interface `Map.Entry` en générique de `Iterator`**
+
+Le déplacement du curseur d'itération utilise également `Map.Entry`:
+
+```java
+while (map.hasNext()) {
+    Entry<String, Integer> kv = i.next();
+    System.out.println(
+        "Key: " + kv.getKey() + 
+        "\tValue: " + kv.getValue()
+    );
+}
+```
+
+On favorisera l'utilisation de la `foreach` Js arrow function style pour ce genre d'opérations:
+
+```java
+map.forEach((k,v) -> System.out.println(
+    "Key: " + k + "\tValue: " + v
+));
+```
 
 </Container>
 
-### Boucles
+#### Special tactics
 
+##### Initialisation
+
+```java
+Map<String, Integer> map = Stream.of(new Object[][] {
+    {"Un", 1}, {"Deux", 1}, {"Trois", 1}, 
+}).collect(Collectors.toMap(i -> (String)i[0], i->(Integer)i[1]));
+```
+
+##### Split k, v into lists
+
+```java
+Map<String, Integer> map = new HashMap<>();
+map.put("Un", 1);
+map.put("deux", 2);
+map.put("trois", 3);
+
+List<String> keys = new ArrayList<>(map.keySet());
+List<Integer> values = new ArrayList<>(map.values());
+System.out.println(keys);   // => [trois, Un, deux]
+System.out.println(values); // => [3, 1, 2]
+```
+
+##### Sorted display
+
+```java
+// by keys
+Map<String, Integer> map = new HashMap<>();
+map.put("deux", 2);
+map.put("Un", 1);
+map.put("trois", 3);
+
+map.entrySet()
+    .stream()
+    .sorted(Map.Entry.<String, Integer>comparingByKey())
+    .forEach(System.out::println);
+
+// by value
+Map<String, Integer> map = new HashMap<>();
+map.put("deux", 2);
+map.put("Un", 1);
+map.put("trois", 3);
+
+map.entrySet()
+    .stream()
+    .sorted(Map.Entry.comparingByValue())
+    .forEach(System.out::println);
+```
+
+
+
+## Itérateurs
+
+En Java, un itérateur est un objet qui nous permet de traverser (itérer sur) une collection qui implémente l'interface `Iterable` (C'est le cas de tous les éléments du framework `Collection`).
+
+L'utilisation d'un itérateur a le grand avantage de donner la **possibilité d'altérer/supprimer des objets de la collection en cours d'itération** ce qui **n'est pas le cas de la boucle** `for(Object i: Collection)`.
+
+
+### Interface Iterator
+
+Pour utiliser un itérateur, on commence par obtenir un `Itérateur` spécifique à la collection que l'on veut itérer:
+
+```java {4}
+List<Integer> lst = new ArrayList<>();
+IntStream.range(0, 10).forEach(i -> lst.add(i));
+
+Iterator<Integer> i = lst.iterator();
+```
+
+L'iterface `Iterator` a trois methodes principales: `hasNext()`, `next()` et `remove()`
+
+#### hasNext()
+
+Généralement utilisé avec une boucle `while`, `hasNext()` nous permet de vérifier si il reste des éléments sur lequels itérer:
+
+```java
+while (i.hasNext()) {
+    // ...
+}
+```
+
+#### next()
+
+Permet de déplacer le curseur sur l'élément suivant pour le récupérer.
+
+```java
+Integer next = i.next()
+```
+
+<br>
+
+<Container type="warning">
+
+* Utiliser `hasNext()` avant d'appeler `next()`
+
+</Container>
+
+#### remove()
+
+Pour [éviter tout risque d'exception](https://www.baeldung.com/java-iterator), la methode `remove()` est la façon privilégiée de retirer l'élément courant:
+
+```java
+i.remove()
+```
+
+Tout ensemble:
+
+```java
+List<String> lst = new ArrayList<>();
+lst.add("One");
+lst.add("Two");
+lst.add("Three");
+
+while (i.hasNext()) {
+    String next = i.next();
+    System.out.println(next);
+  
+    if( "TWO".equals(next)) {
+        i.remove();              
+    }
+}
+```
+
+### Interface ListIterator
+
+`ListIterator` est une extension qui rend les itérateurs plus flexibles:
+
+```java
+ListIterator<String> i = lst.listIterator(lst.size());
+```
+
+Noter qu'un argument (optionnel) spécifiant un indice de départ est passé à la methode `listIterator`.
+
+#### hasPrevious() & previous()
+
+`ListIterator` permet de traverser la collection en commençant par le cul en plus des methodes normales `hasNext()` et `next()`:
+
+```java
+while (i.hasPrevious()) {
+    String previous = i.previous()
+}
+```
+
+#### nextIndex() and previousIndex()
+
+Il est égallement possible de récupérer les indices des éléments:
+
+```java
+while (i.hasNext()) {
+    String s = i.next();
+    Integer idx = i.nextIndex() - 1;
+}
+```
+
+#### add()
+
+Permet d'ajouter un élément **avant l'élément qui serait retourné par `next()` et après celui retourné par `previous()`:
+
+```java
+i.add("Poule");
+```
+ 
+ #### set()
+
+ Permet de remplacer la valeur de l'élément courant:
+
+ ```java
+i.set("Poney");
+ ```
+
+<br>
+
+ <Container type="info">
+ 
+ `set()` ne peut être call que si lors de l'itération courante, aucun call de `add()` ou de `remove()` n'a été fait.
+ 
+ </Container>
+
+ ### Itérer avec des lambda
+
+ L'utilisation de `Iterator` ou `ListIterator` est particulièrement verbeuse. Il est possible de simplifier la syntaxe **si il n'est pas nécessaire de modifier les éléments** en utilisant une `foreach` spéciale:
+
+ ```java {4,7}
+List<Integer> lst = new ArrayList<>();
+IntStream.range(0, 10).forEach(i -> lst.add(i));
+
+lst.iterator().forEachRemaining(j -> System.out.println(j));
+
+// Ou encore plus simplement en utilisant les references de fonction:
+lst.iterator().forEachRemaining(System.out::println)
+ ```
+
+## Cas pratiques
+
+### Trier une liste
+
+```java
+// Tri in-place simple
+String source[] = {"B", "c", "a", "A", "b", "C"};
+List<String> lst = new ArrayList<>(Arrays.asList(source));
+lst.sort(null);
+System.out.println(lst); // => [A, B, C, a, b, c]
+
+// Tri in-place via lambda
+String source[] = {"B", "c", "a", "A", "b", "C"};
+List<String> lst = new ArrayList<>(Arrays.asList(source));
+lst.sort((a, b) -> a.compareToIgnoreCase(b));
+System.out.println(lst); // => [a, A, B, b, c, C]
+
+// Equivalent avec reference de methode
+String source[] = {"B", "c", "a", "A", "b", "C"};
+List<String> lst = new ArrayList<>(Arrays.asList(source));
+lst.sort(String::compareToIgnoreCase);
+```
+
+### Retirer des éléments particuliers
+
+```java
+String source[] = {"Poule", "Cochon", "Poney", "Meuh"};
+List<String> lst = new ArrayList<>(Arrays.asList(source));
+
+lst.removeIf(s -> s.toLowerCase().contains("po"));
+System.out.println(lst); // => [Cochon, Meuh]
+
+lst.removeIf(s -> s.length() < 5);
+System.out.println(lst); // => [Cochon]
+```
+
+
+
+## Généricité en Java
+
+* [openClassRoom](https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/22404-la-genericite-en-java)
+
+Le principe de la généricité est de faire des classes qui n'acceptent qu'un certain type d'objets ou de données de façon dynamique.
+
+
+### Simple
+```java
+public class Solo<T> {
+
+    private T value;
+
+    public Solo(T val) { this.value = val; }
+    public T getValue() { return this.value; }
+}
+
+// Dans le main:
+Solo<Integer> s1 = new Solo<>(12);
+System.out.println(s1.getValue()); // => 12
+
+Solo<String> s2 = new Solo<>("Poule");
+System.out.println(s2.getValue()); // => Poule
+```
+
+### Double
+
+```java
+public class Duo<T, S> {
+
+    private T v1;
+    private S v2;
+
+    public Duo(T v1, S v2) {
+        this.v1 = v1;
+        this.v2 = v2;
+    }
+
+    public T getV1() { return v1; }
+    public S getV2() { return v2; }
+}
+
+// Dans le main:
+Duo<String, Boolean> d1 = new Duo<>("Poule", true);
+System.out.println("v1: " + d1.getV1() + "\tv2: " + d1.getV2());
+// => v1: Poule	v2: true
+
+Duo<Double, Character> d2 = new Duo<>(12.231, 'c');
+System.out.println("v1: " + d2.getV1() + "\tv2: " + d2.getV2());
+// => v1: 12.231	v2: c
+```
+
+
+## En vrac
+
+### Python like range
+
+```java
+List<Integer> l2 = new ArrayList<>();
+IntStream.range(0, 10).forEach(i -> l2.add(i));
+l2.forEach(i -> System.out.println(i));
+```
+
+
+### Usefull collection methodes
+```java
+// Copy a collection to another
+Collections.copy(list, list)
+
+// Reverse the order of the list
+Collections.reverse(list)
+
+// Shuffle the list
+Collections.shuffle(list)
+
+// Sort the list
+Collections.sort(list)
+```

@@ -26,3 +26,8 @@ hide: false
   * TeamViewer
 * **Documentation**:
   * Zeal
+
+
+
+#0E9FD3 darkblue
+#FDA5FF pink
