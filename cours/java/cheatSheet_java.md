@@ -268,6 +268,11 @@ On peut renommer les .jar avec l'extension .zip et les manipuler avec les outils
 
 </Container>
 
+### Lexique
+
+* Iterable
+* Immutable
+
 ## Base du Langage
 
 ### Variables
@@ -414,6 +419,89 @@ public class Tab2D {
 ```
 
 ### Boucles
+
+Les boucles `while` et `do while` sont les mêmes que celles du C. La famille des `for` a quelques particularités interessantes:
+
+#### for
+
+For classique similaire à celle du C:
+
+```java
+String[] lst = {"Poule", "Cochon", "Poney", "Meuh"};
+List<String> arr = new ArrayList<>(Arrays.asList(lst));
+
+for (int i = 0; i < lst.length; i++) {
+    lst[i] = lst[i] + "POW";
+    arr.set(i, arr.get(i) + "POW");
+}
+System.out.println(Arrays.toString(lst));
+// => [PoulePOW, CochonPOW, PoneyPOW, MeuhPOW]
+System.out.println(arr);
+// => [PoulePOW, CochonPOW, PoneyPOW, MeuhPOW]
+```
+
+<br>
+
+<Container type="info">
+
+Java permet d'initialiser plusieurs variables (du même type) dans la même `for`:
+
+```java
+for (int i = 0, j = 10; i < 10; i++, j += 10) {
+    // du code
+}
+```
+
+</Container>
+
+#### for each
+
+Simplifie le parcours d'un iterable en permetant de directement utiliser une référence vers l'objet courant.
+
+* **Methode privilégiée pour parcourir un iterable qui ne doit pas être modifié.**
+
+##### Syntaxe:
+
+```java
+for (Type element: collection) {
+    // du code qui utilise la variable `element`
+}
+```
+
+##### Est équivalent à:
+
+```java
+for (int i = 0; i < collection.length; i++) {
+    Type element = collection[i];
+    // du code qui utilise la variable `element`
+}
+```
+
+Il en découle les limitations suivantes:
+
+1. **Une for each ne permet pas de modifier l'iterable parcouru**
+2. Une for each ne donne pas l'indice de l'élément courant
+3. Il n'est pas possible de modifier le sens de l'itération ou le pas (step)
+
+#### Iterable.forEach()
+
+Java 8 (celui utilisé en cours) permet de parcourir un iterable avec une syntaxe similaire à celle de la `forEach` JavaScript:
+
+##### Syntaxe:
+
+```java
+iterable.forEach(e -> System.out.println(e));
+```
+
+##### Est équivalent à:
+
+```java
+for (Type e: iterable) {
+    System.out.println(e)
+}
+```
+
+**Les limitations sont les mêmes que pour la for each.**
 
 
 ## Collections
@@ -757,75 +845,140 @@ map.entrySet()
 
 ## Itérateurs
 
-En Java, un itérateur est un objet qui nous permet de traverser (itérer sur) une collection qui implémente l'interface `Iterable` (C'est le cas de tous les éléments du framework `Collection`).
+En Java, un itérateur est un objet qui nous permet de traverser (itérer sur) une collection qui implémente l'interface `Iterable` (c'est le cas de tous les éléments du framework `Collection`).
 
-L'utilisation d'un itérateur a le grand avantage de donner la **possibilité d'altérer/supprimer des objets de la collection en cours d'itération** ce qui **n'est pas le cas de la boucle** `for(Object i: Collection)`.
-
+L'utilisation d'un itérateur a le grand avantage de donner la **possibilité d'altérer/supprimer des objets de la collection en cours d'itération** ce qui **n'est pas le cas de la forEach**.
 
 ### Interface Iterator
 
 Pour utiliser un itérateur, on commence par obtenir un `Itérateur` spécifique à la collection que l'on veut itérer:
 
-```java {4}
-List<Integer> lst = new ArrayList<>();
-IntStream.range(0, 10).forEach(i -> lst.add(i));
-
+```java {2}
+List<Integer> lst = // ...
 Iterator<Integer> i = lst.iterator();
 ```
 
-L'iterface `Iterator` a trois methodes principales: `hasNext()`, `next()` et `remove()`
+L'iterface `Iterator` a trois methodes principales: 
 
-#### hasNext()
+| methode     | description                                                    |
+| ----------- | -------------------------------------------------------------- |
+| `hasNext()` | permet de vérifier si il reste des éléments sur lequels itérer |
+| `next()`    | fait "avancer" l'itérateur                                     |
+| `remove()`  | retire l'élément courant de la collection                      |
 
-Généralement utilisé avec une boucle `while`, `hasNext()` nous permet de vérifier si il reste des éléments sur lequels itérer:
+
+**Une façon de voir un itérateur est comme un curseur qui se déplace entre les indices d'un itérable.** Cette façon de voir les choses simplifie la compréhension du choix du nom des methodes. 
+
+Sur les schéma suivants, la première ligne représente l'itérateur, la seconde ligne les indices de l'itérable et la dernière la valeurs des éléments. La situation initiale est celle qui suit les déclarations suivantes:
 
 ```java
+List<Integer> lst = new ArrayList<>(Arrays.asList(7, 4, 8));
+Iterator<Integer> i = lst.iterator();
+```
+
+<Col proportions="4/8" vAlign="20">
+<template slot="left">
+
+```
+|
+ [0] [1] [2] 
+  7   4   8  
+```
+
+</template>
+<template slot="right">
+
+* `i.hasNext()` retourne `true`
+* `i.next()` déplace le curseur et retourne `7`
+
+</template>
+</Col>
+
+
+<Col proportions="4/8" vAlign="20">
+<template slot="left">
+
+```
+    |
+ [0] [1] [2] 
+  7   4   8  
+```
+
+</template>
+<template slot="right">
+
+* `i.hasNext()` retourne `true`
+* `i.next()` déplace le curseur et retourne `4`
+
+</template>
+</Col>
+
+
+<Col proportions="4/8" vAlign="20">
+<template slot="left">
+
+```
+        |
+ [0] [1] [2] 
+  7   4   8  
+```
+
+</template>
+<template slot="right">
+
+* `i.hasNext()` retourne `true`
+* `i.next()` déplace le curseur et retourne `8`
+
+</template>
+</Col>
+
+
+<Col proportions="4/8" vAlign="20">
+<template slot="left">
+
+```
+            |
+ [0] [1] [2] 
+  7   4   8  
+```
+
+</template>
+<template slot="right">
+
+* `i.hasNext()` retourne `false`
+* `i.next()` déclanche une exception "NoSuchElementException"
+
+</template>
+</Col>
+
+
+Les itérateurs sont généralement utilisés avec une boucle `while` de la façon suivante:
+
+```java {5}
+String a[] = {"One", "Two", "Three"};
+List<String> lst = new ArrayList<>(Arrays.asList(a))
+Iterator<String> i = lst.iterator();
+
 while (i.hasNext()) {
-    // ...
+    String s = i.next();
+    System.out.print(s + " ");
 }
+// => One Two Three
 ```
 
-#### next()
+Il est aussi possible de les utiliser avec une `for` ainsi le code qui suit est équivalent au précédent:
 
-Permet de déplacer le curseur sur l'élément suivant pour le récupérer.
+```java {4}
+String a[] = {"One", "Two", "Three"};
+List<String> lst = new ArrayList<>(Arrays.asList(a));
 
-```java
-Integer next = i.next()
-```
-
-<br>
-
-<Container type="warning">
-
-* Utiliser `hasNext()` avant d'appeler `next()`
-
-</Container>
-
-#### remove()
-
-Pour [éviter tout risque d'exception](https://www.baeldung.com/java-iterator), la methode `remove()` est la façon privilégiée de retirer l'élément courant:
-
-```java
-i.remove()
-```
-
-Tout ensemble:
-
-```java
-List<String> lst = new ArrayList<>();
-lst.add("One");
-lst.add("Two");
-lst.add("Three");
-
-while (i.hasNext()) {
-    String next = i.next();
-    System.out.println(next);
-  
-    if( "TWO".equals(next)) {
-        i.remove();              
-    }
+for (Iterator<String> i = lst.iterator(); i.hasNext(); ) {
+    String s = i.next();
+    System.out.print(s + " ");
 }
+// => One Two Three
 ```
+
 
 ### Interface ListIterator
 
@@ -835,44 +988,18 @@ while (i.hasNext()) {
 ListIterator<String> i = lst.listIterator(lst.size());
 ```
 
-Noter qu'un argument (optionnel) spécifiant un indice de départ est passé à la methode `listIterator`.
+Noter qu'un argument (optionnel) spécifiant un indice de départ a été passé à la methode `listIterator`.
 
-#### hasPrevious() & previous()
+L'interface `ListIterator` donne accès aux mehtodes suivantes:
 
-`ListIterator` permet de traverser la collection en commençant par le cul en plus des methodes normales `hasNext()` et `next()`:
-
-```java
-while (i.hasPrevious()) {
-    String previous = i.previous()
-}
-```
-
-#### nextIndex() and previousIndex()
-
-Il est égallement possible de récupérer les indices des éléments:
-
-```java
-while (i.hasNext()) {
-    String s = i.next();
-    Integer idx = i.nextIndex() - 1;
-}
-```
-
-#### add()
-
-Permet d'ajouter un élément **avant l'élément qui serait retourné par `next()` et après celui retourné par `previous()`:
-
-```java
-i.add("Poule");
-```
- 
- #### set()
-
- Permet de remplacer la valeur de l'élément courant:
-
- ```java
-i.set("Poney");
- ```
+| methode           | description                                                                                                 |
+| ----------------- | ----------------------------------------------------------------------------------------------------------- |
+| `hasPrevious()`   | équivalent de `hasNext()` mais pour une itération inversée                                                  |
+| `previous()`      | équivalent de `next()` mais pour une itération inversée                                                     |
+| `nextIndex()`     | permet de récupérer l'indice qui suit                                                                       |
+| `previousIndex()` | permet de récupérer l'indice précédent                                                                      |
+| `add()`           | ajoute un élément avant l'élément qui serait retourné par `next()` et après celui retourné par `previous()` |
+| `set()`           | remplace la valeur de l'élément courant                                                                     |
 
 <br>
 
@@ -884,7 +1011,7 @@ i.set("Poney");
 
  ### Itérer avec des lambda
 
- L'utilisation de `Iterator` ou `ListIterator` est particulièrement verbeuse. Il est possible de simplifier la syntaxe **si il n'est pas nécessaire de modifier les éléments** en utilisant une `foreach` spéciale:
+ L'utilisation de `Iterator` ou `ListIterator` est particulièrement verbeuse. Il est possible de simplifier la syntaxe **si il n'est pas nécessaire de modifier les éléments** en utilisant une `forEach` spéciale:
 
  ```java {4,7}
 List<Integer> lst = new ArrayList<>();
@@ -895,6 +1022,8 @@ lst.iterator().forEachRemaining(j -> System.out.println(j));
 // Ou encore plus simplement en utilisant les references de fonction:
 lst.iterator().forEachRemaining(System.out::println)
  ```
+
+ ### Iterateur Vs Foreach
 
 
 
