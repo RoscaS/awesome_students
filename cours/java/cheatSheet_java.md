@@ -26,8 +26,13 @@ author: Sol
 * [maps](https://www.testingexcellence.com/4-different-ways-iterate-map-java/)
 * [Collections overview](https://www.journaldev.com/1260/collections-in-java-tutorial)
 * [Collections practical](http://www.vogella.com/tutorials/JavaCollections/article.html)
-* [iterators](https://www.baeldung.com/java-iterator)
-* [zip](https://www.baeldung.com/java-collections-zip)
+* [Iterator](https://www.baeldung.com/java-iterator)
+* [Looping, performances analysis](https://www.geeksforgeeks.org/iterator-vs-foreach-in-java/)
+
+## Lexique
+
+* Iterable
+* Immutable
 
 ## Culture générale
 
@@ -250,9 +255,6 @@ Lors de l'exécution les étapes suivantes s'enchainent:
   * Un compilateur **JIT** (Just In Time): Sert à améliorer les performances. Tout au long de l’exécution d’une application, la JVM maintient des compteurs qui lui permettent de détecter le code souvent exécuté. C’est sur ce code que les optimisations vont être le plus utiles.
 * **Java Native Interface (JNI)**: Framework qui fournit une interface pour communiquer avec une autre application écrite dans un autre langage comme C, C++, Assembleur, ... Java se sert du JNI pour écrire sur les flux de sortie ou interagir avec les librairies de l'OS.
 
-
-
-
 </Spoiler>
 
 
@@ -268,12 +270,46 @@ On peut renommer les .jar avec l'extension .zip et les manipuler avec les outils
 
 </Container>
 
-### Lexique
-
-* Iterable
-* Immutable
-
 ## Base du Langage
+
+### Import
+
+* Importer une classe spécifique:
+
+```java
+import java.util.ArrayList;
+```
+
+* Importer toutes les classes qui se trouvent dans un package:
+
+```java
+import java.util.*
+```
+
+### Sorties et entrées
+
+* Afficher du texte dans la console:
+
+```java
+// Retour à la ligne automatique:
+System.out.println("Bonjour monde !");
+System.out.println("Qtité: " + 10 + "\nPrix: " + 9.99 + "chf");
+
+// Sans retour à la ligne:
+System.out.print("Bonjour");
+System.out.print(" monde !");
+
+// Formater les données:
+System.out.printf("pi = %.5f", Math.PI); // => pi = 3.14159
+```
+
+* Capturer une entrée au clavier:
+
+```java
+Scanner scanner = new Scanner(System.in);
+
+String s = scanner.next();
+```
 
 ### Variables
 
@@ -283,6 +319,8 @@ Identifiée par un nom, elle permet d'accéder à la valeur contenue dans l'adre
 * Le contenu d'une variable peut être changé en cours d'exécution
 
 <Container type="danger">
+
+**Le chapitre suivant explique ce qu'est un type primitif et un type non-primitif**
 
 * Pour un type primitif, on peut simplement effectuer une opération sur la variable pour affecter la valeur.
 * Pour un type non-primitif, une opération effectuée sur la variable affecte l'adresse mémoire et non l'objet contenu à cette adresse.
@@ -300,6 +338,30 @@ Identifiée par un nom, elle permet d'accéder à la valeur contenue dans l'adre
     center="true"
 />
 
+#### Déclaration et initialisation
+
+```java
+// Déclaration:
+int x;
+int a, b, c;
+
+// Initialisation:
+x = 5;
+a = b = c = 2;
+
+// Déclaration + initialisation:
+int y = 12;
+```
+
+#### Variables final
+
+Une variable `final` ressemble à une variable `const` en c++ à la différence qu'en Java, il n'est pas obligatoire de lui assigner une valeur lors de la déclaration:
+
+```java
+final int VALEUR_CONSTANTE = 100;
+final int VALEUR_ETRANGE;
+VALEUR_ETRANGE = 12;
+```
 
 ### Types de données
 
@@ -342,20 +404,18 @@ al.add(12);
 
 ### Tableaux
 
-* Un tableau Java est un objet qui contient un nombre définit d'éléments de même type arrangé de façon contigue en mémoire. On accède à ces éléments par leur index.
+* Un tableau Java est un objet qui contient un nombre définit d'éléments de même type arrangés de façon contigue en mémoire. On accède à ces éléments par leur index.
 * Un tableau peut être 1D ou $n$D
 
 #### Déclaration, instanciation, initialisation
 ```java
-int[] tab1 = new int[5];
+int[] tab1 = new int[3];
 tab1[0] = 2;
 tab1[1] = 3;
-tab1[2] = 9;
-tab1[3] = 2;
-tab1[4] = 5;
+tab1[2] = 91;
 
 // Shortcut
-int[] tab2 = {2, 3, 9, 2, 5};
+int[] tab2 = {2, 3, 91};
 ```
 
 #### Opérations usuelles
@@ -418,6 +478,39 @@ public class Tab2D {
 }
 ```
 
+### Conditions
+
+Identiques à celles du C:
+
+```java
+int x = 10;
+if (x == 10) {
+    System.out.println("J'aime la viande");
+} else if (x > 10) {
+    System.out.println("Je n'aime pas la viande");
+} else {
+    System.out.println("Où suis-je ?");
+}          
+```
+
+Le switch-case existe aussi:
+
+```java
+int mois = 3;
+String s;
+switch (mois) {
+    case 1: s = "Janvier";
+            break;
+    case 2: s = "Fevrier";
+            break;
+    case 3: s = "Mars";
+            break;
+    default: s = "Un autre mois";
+            break;
+}
+```
+
+
 ### Boucles
 
 Les boucles `while` et `do while` sont les mêmes que celles du C. La famille des `for` a quelques particularités interessantes:
@@ -454,7 +547,7 @@ for (int i = 0, j = 10; i < 10; i++, j += 10) {
 
 </Container>
 
-#### for each
+#### for-each
 
 Simplifie le parcours d'un iterable en permetant de directement utiliser une référence vers l'objet courant.
 
@@ -479,8 +572,8 @@ for (int i = 0; i < collection.length; i++) {
 
 Il en découle les limitations suivantes:
 
-1. **Une for each ne permet pas de modifier l'iterable parcouru**
-2. Une for each ne donne pas l'indice de l'élément courant
+1. **Une for-each ne permet pas de modifier l'iterable parcouru**
+2. Une for-each ne donne pas l'indice de l'élément courant
 3. Il n'est pas possible de modifier le sens de l'itération ou le pas (step)
 
 #### Iterable.forEach()
@@ -501,7 +594,7 @@ for (Type e: iterable) {
 }
 ```
 
-**Les limitations sont les mêmes que pour la for each.**
+**Les limitations sont les mêmes que pour la for-each.**
 
 
 ## Collections
@@ -695,7 +788,7 @@ _Paire clé valeur_, _unicité des clés_, n'hérite pas de `Collection`
 
 #### HashMap & TreeMap
 
-* <st c="g">TreeMap garanti également l'ordre des éléments.</st>
+* <st c="g">TreeMap garanti l'ordre des éléments.</st>
 * À éviter (fort) si l'ordre n'est pas important.
 
 ```java
@@ -966,7 +1059,7 @@ while (i.hasNext()) {
 // => One Two Three
 ```
 
-Il est aussi possible de les utiliser avec une `for` ainsi le code qui suit est équivalent au précédent:
+Il est également possible de les utiliser avec une `for`. Ainsi le code qui suit est équivalent au précédent:
 
 ```java {4}
 String a[] = {"One", "Two", "Three"};
@@ -1023,16 +1116,69 @@ lst.iterator().forEachRemaining(j -> System.out.println(j));
 lst.iterator().forEachRemaining(System.out::println)
  ```
 
- ### Iterateur Vs Foreach
+ ### Iterator Vs for-each
+
+ #### Contexte
+
+* **Iterator** est l'interface du framework collection qui permet de parcourir une collection en fournissant un accès séquentiel aux éléments de la collection:
+
+```java
+// iteration sur la collection `c` avec Iterator
+for (Iterator i = c.iterator(); i.hasNext; ) {
+    System.out.println(i.next);
+}
+```
+
+* La **for-each**: est fait pour parcourir les objets d'une collection:
+
+```java
+// iteration sur la collection `c` avec une for-each
+for (Element e: c) {
+    System.out.println(e);
+}
+
+// equivalent à:
+c.forEach( e -> System.out.println(e) );
+```
+
+#### Différences
+
+ Dans une for-each, il n'est pas possible de modifier la collection contrairement à une itération faite avec un itérateur. Modifier une collection veut dire:
+
+ * Retirer un élément de la collection
+ * Ajouter un élément à la collection
+ * Changer le contenu d'un objet (ou la valeur d'un élément primitif) de la collection 
+
+Même si la boucle for-each crée implicitement un itérateur en interne, ce dernier **n'est pas** exposé à l'utilisateur et il n'est donc pas possible de modifier l'élément courant.
+
+#### Utilisation optimale
+
+* Pour modifier une collection <Fa fa="arrow-right"/> **itérateur**
+* Tous les autres cas <Fa fa="arrow-right"/> **for-each**
+
+#### Performances Vs For classique
+
+* Les temps pour parcourir une liste avec une for-each ou un itérateur sont identiques. 
+
+* En fonction du type collection, un parcours avec une for classique est sensiblement plus long:
+
+```java
+// iteration sur la collection `c`
+for (int i = 0; i < c.length; i++) {
+    System.out.println(c.get(i))
+}
+```
+
+* Si `c` est de type `ArrayList` (comme pour un tableau classique, les éléments sont contigus en mémoire) la complexité temporelle en accès est $O(1)$
+* Si `c` est de type `LinkedList`, comme l'accès direct à un élément quelconque n'est pas possible (les éléments ne sont pas contigus en mémoire), il est toujours nécessaire de traverser une partie de la liste avant d'accéder à un élément particulier, la complexité temporelle en accès est de $O(n)$.
+
+**Les itérateurs et les for-each sont plus rapides que les for classiques pour les collections où les éléments ne sont pas contigus en mémoire.**
+
+**Si les éléments d'une collection sont contigus en mémoire, alors les itérateurs, for-each et for classique ont des performances comparables.**
 
 
 
-
-
-
-## Généricité en Java
-
-* [openClassRoom](https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/22404-la-genericite-en-java)
+## Généricité
 
 Le principe de la généricité est de faire des classes qui n'acceptent qu'un certain type d'objets ou de données de façon dynamique.
 
@@ -1082,5 +1228,187 @@ System.out.println("v1: " + d2.getV1() + "\tv2: " + d2.getV2());
 // => v1: 12.231	v2: c
 ```
 
+* Plus d'info: [openClassRoom](https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/22404-la-genericite-en-java)
+
+## OOP en bref
+
+Tiré de [learn x in y](https://learnxinyminutes.com/docs/java/)
+
+* Déclaration d'une classe: 
+  * `<public/private/protected> class <Nom de la classe> { }`
+
+```java
+public class Bicycle {
+    // Attributs et variables de la classe Bicycles
+    public int cadence; // public: accessible depuis n'importe où
+    private int speed;  // private: accessible depuis la classe
+    protected int gear; // protected: accessible depuis la classe et sous ses sous-classes
+    String name;        // default: Uniquement accessible depuis le package
+    static String className; // variable de classe
+
+    // Bloc static:
+    // Java ne possède pas d'implémentation pour les constructeurs statiques mais
+    // possède le bloc static qui peut être utilisé pour initialiser les 
+    // variables de classe qui est appelé lors du chargement de la classe.
+    static {
+        className = "Bicycle";
+    }
+
+    // Les constructeurs servent à l'initialisation de l'objet courant
+    public Bicycle() {
+        gear = 1;
+        cadence = 50;
+        speed = 5;
+        name = "Bontrager";
+    }
+
+    // On peut surcharger un constructeur
+    public Bicycle(int cadence, int speed, int gear, String name) {
+        this.gear = gear;
+        this.cadence = cadence;
+        this.speed = speed;
+        this.name = name;
+    }
+
+    // Syntaxe d'une méthode:
+    // <public/private/protected> <type de retour> <nom de la methode>(<arguments>)
+
+    // Accesseurs: (getters et mutators) servent à retourner/changer les valeurs
+    // des attributs d'une instance:
+
+    public int getCadence() {
+        return cadence;
+    }
+
+    // Les méthodes void ne retournent aucune valeur
+    public void setCadence(int newValue) {
+        cadence = newValue;
+    }
+    public void setGear(int newValue) {
+        gear = newValue;
+    }
+    public void speedUp(int increment) {
+        speed += increment;
+    }
+    public void slowDown(int decrement) {
+        speed -= decrement;
+    }
+    public void setName(String newName) {
+        name = newName;
+    }
+    public String getName() {
+        return name;
+    }
+
+    // Methode pour afficher la valeur des attributs de l'instance.
+
+    @Override
+    public String toString() {
+        return "gear: " + gear + 
+        " cadence: " + cadence + 
+        " speed: " + speed +
+        " name: " + name;
+    }
+}
+```
+
+### Héritage
+
+<Def def="Les Penny Farthings sont des bicyclette avec une grande roue avant. Il n'y a pas de roue libre, le cycliste est obligé de pédaler en permanence.">PennyFarthing</Def> est une sous-classe de Bicycle:
+
+```java
+class PennyFarthing extends Bicycle {
+    public PennyFarthing(int cadence, int speed) {
+        // super() sert ici à call le constructeur parent
+        super(cadence, speed, 0, "PennyFarthing");
+    }
+
+    // Override de la methode setGear() de la classe mère
+    @Override
+    public void setGear(int gear) {
+        this.gear = 0;
+    }
+}
+```
+
+### Polymorphisme
+
+Comme la classe `PennyFarthing` héritent de la classe `Bicycle`, on peut dire qu'un `PennyFarthing` est un `Bicycle` et écrire : `Bicycle bicycle = new PennyFarthing();`. **Le polymorphisme est la capacité d'un objet de se faire passer pour un autre**.
+
+
+### Interfaces
+
+* Déclaration d'une interface: 
+  * `<nivea d'accès> interface <nom interface> extends <nom de l'éventuelle interface mère {}`
+
+
+Toute nourriture peut être mangée et digérée différemment, l'interface `Edible` (comestible) décrit l'action de manger:
+
+```java
+public interface Edible {
+    // Toute classe qui implémente cette interface doit implémenter
+    // cette méthoed:
+    public void eat(); 
+}
+```
+
+L'interface Digestible décrit l'action de digérer:
+
+```java
+public interface Digestible {
+    public void digest();
+
+    // Les interfaces peuvent avoir des methodes par défaut
+    public void defaultMethod() {
+        System.out.println("Salut d'une methode par défaut");
+    }
+}
+```
+
+Il est possible de maintenant créer une classe qui implémente chacune de ces interfaces:
+
+```java
+public class Fruit implements Edible, Digestible {
+    @Override
+    public void eat() {
+        // ...
+    }
+
+    @Override
+    public void digest() {
+        // ...
+    }
+}
+```
+
+<st c="r">En Java on peut hériter d'une unique classe mais on peut implémenter plusieurs interfaces:</st>
+
+```java
+public class ExampleClass extends ExempleClassParent implements InterfaceOne {
+    @Override
+    public void InterfaceOneMethod() {
+        // ...
+    }
+}
+```
+
+### Classes abstraites
+
+* Une classe abstraite contient au moins une méthode abstraite qui doit être définee dans la classe fille. Comme les interfaces, 
+* les classes abstraites ne peuvent pas être instanciées mais doivent être étendues avec les méthodes abstraites implémentées. 
+* À la différence des interfaces, une classe abstraite peut contenir des méthodes abstraites ou non-abstraites. 
+* Les méthodes dans le corp d'une interfaces ne peuvent pas être implémentées à l'exception des méthodes static. 
+* Les variables d'une classe abstraite sont déclarées comme final par défaut à l'opposé des interfaces. 
+* Les classes abstraites peuvent avoir une méthode main.
+
 
 ## En vrac
+
+* Chaque fichier .java doit contenir une classe public portant le même nom que le fichier.
+
+* Pour exécuter un programme Java, ce dernier doit posséder une methode `main` qui fournit un point d'entrée
+
+* `String.format()` permet de formater du texte:
+  * `String.format("%d poules %s", 4, "rouge");`
+
+
