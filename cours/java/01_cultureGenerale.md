@@ -123,7 +123,6 @@ Type effectif et type local:
 
 * `git clone ssh://javab@157.26.83.27/home/javab/git/WCoursJava.git`
 * **basel2018**
-*  Formatter original setting: BibiEclipseFormatter
 
 </Card>
 
@@ -391,7 +390,7 @@ String b = a;
 
 System.out.println(a == b); // => true
 ```
-`true` car en ligne 2 on assigne à la variable `b` la référence vers `a` donc les deux variables contiennent la même références.
+`true` car en ligne 2 on assigne à la variable `b` la référence de `a`. Les deux variables contiennent donc la même références.
 
 #### 2. Algèbre de contenu
 Via des méthodes.

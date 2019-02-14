@@ -1,5 +1,5 @@
 ---
-title: CheatSheet Java
+title: "Notes: cours de Java"
 date: 2018-09-25
 sidebar: auto
 author: Sol
@@ -12,11 +12,20 @@ author: Sol
   width=250
 />
 
+<br>
+
+<Card header="Workspace" max-width="550">
+
+* `git clone ssh://javab@157.26.83.27/home/javab/git/WCoursJava.git`
+* **capitaleEnDe2018**
+
+</Card>
 
 
-## Liens
+## Sources
 
 * [Baeldung](https://www.baeldung.com/start-here)
+* [Learn x in y](https://learnxinyminutes.com/docs/java/)
 * [Développons en Java](https://www.jmdoudoux.fr/java/dej/index.htm)
 * [JavaPoint](https://www.javatpoint.com)
 * [GeeksForGeeks](https://www.geeksforgeeks.org)
@@ -595,7 +604,6 @@ for (Type e: iterable) {
 ```
 
 **Les limitations sont les mêmes que pour la for-each.**
-
 
 ## Collections
 
@@ -1401,6 +1409,233 @@ public class ExampleClass extends ExempleClassParent implements InterfaceOne {
 * Les variables d'une classe abstraite sont déclarées comme final par défaut à l'opposé des interfaces. 
 * Les classes abstraites peuvent avoir une méthode main.
 
+```java
+public abstract class Animal {
+    public abstract void makeSound();
+
+    // Les methodes peuvent avoir une implémentation dans 
+    // une classe abstraite.
+    public void eat() {
+        age = 30;
+        System.out.println("I'm eating.");
+    }
+
+    // On n'a pas besoin d'initialiser les variables dans une
+    // classe abstraite. Cependant, dans une interface, les variables
+    // sont implicitement déclarées comme final et doivent être
+    // initialisées.
+    private int age;
+
+    public void printAge() {
+        System.out.println(age);
+    }
+
+    // Les classes abstraites peuvent avoir une fonction main.
+    public static void main(String[] args) {
+        System.out.println("I'm abstract");
+    }
+}
+
+public class Dog extends Animal {
+    // On doit utiliser l'annotation @Override lors de l'override
+    // d'une methode abstraite d'une classe abstraite.
+    @Override
+    public void makeSound() {
+        System.out.println("Bark");
+    }
+}
+```
+
+### Class finale
+
+Les classes déclarées comme `final` ne peuvent pas avoir de classes fille.
+
+* Déclaration d'une classe finale:
+  * `<niveau d'accès> final <nom de la classe finale> {}`
+
+```java
+public final class SaberToothedCat extends Animal {
+    @Overried
+    public void makeSound() {
+        System.out.println("Roar");
+    }
+}
+```
+
+### Methode finale
+
+Les methodes déclarées comme `final` ne peuvent pas être override par une classe fille et en sont donc l'implémentation finale.
+
+```java
+public abstract class Mammal() {
+    public final boolean isWarmBlooded() {
+        return true;
+    }
+}
+```
+
+### Classe à double représentation
+
+<st c="r">TODO</st>
+
+## Tests JUnit
+
+<st c="r">TODO</st>
+
+## Deploy
+
+<st c="r">TODO</st>
+
+## Notions importantes
+
+### Garbage Collector
+
+* Il s'active automatiquement et de façon imprévisible pour nettoyer la mémoire des objets qui n'ont plus de références. 
+* Il défragmente le tas (<st c="r">les adresses des objets encore référencés changent !</st>).
+
+
+### Références
+
+En Java <Def def="Du moins de façon visible">les pointeurs n'existent pas</Def>. À cause du **GC**, les variables peuvent changer de place dans la mémoire en cours d;exécution. **En Java, on parle de références**.
+
+Quand on dit qu'en Java "tout est objet" ce n'est pas tout à fait la vérité. **En Java tout est référence sur un "objet"** est plus approprié.
+
+<Container type="info" header="Rappel">
+
+* **Pointeur**: Adresse
+* **Référence**: Valeur permettant l'accès à une donnée (Information sur la localisation de la donnée).
+
+</Container>
+
+```java
+Integer C1 = 1000;
+Integer C2 = 1000;
+
+C1 == C2 // => False (comparaison des références)
+C1.equals(C2) // => True (comparaison des contenus)
+
+C1 = C2 
+
+C1 == C2 // => True (comparaison des références)
+```
+
+#### Algèbre de références
+Via des opérateurs simples (`==`, `+`, `-`, ...)
+
+```java
+String a = new String("A");
+String b = new String("A");
+
+System.out.println(a == b); // => false
+```
+`false` car les deux objets de type String n'ont **pas la même référence**.
+
+<br>
+
+```java
+String a = new String("A");
+String b = a;
+
+System.out.println(a == b); // => true
+```
+`true` car en ligne 2 on assigne à la variable `b` la référence de `a`. Les deux variables contiennent donc la même références.
+
+**Dans les deux cas, nous travaillons uniquement sur les références des variables `s1` et `s2` et non pas sur leur contenu.**
+
+#### Algèbre de contenu
+Via des méthodes.
+
+```java
+String a = new String("A");
+String b = new String("A");
+
+System.out.println(a.equals(b)); // => true
+```
+`true` car la méthode `equals` nous permet de faire une **comparaison de contenu** (des objets référencés). Même si les références sont différentes, le contenu de l'objet pointé est égale.
+
+#### Passage d'arguments
+
+<Container type="danger">
+
+En java tous les passages d'arguments se font par **valeur**.
+
+</Container>
+
+* Les types simples se passent par valeur
+* Les références se passent par valeur
+
+Tous les passages par valeur font une **copie** de la valeur à passer.
+
+
+### Copies et Clones
+
+Deux types de copie:
+
+1. **Copie superficielle** (light): Ce type de copie **porte uniquement sur la référence** de l'objet à copier. Après une copie superficielle, la référence initiale et la référence copiée pointent sur le même objet.
+
+```java
+String a = new String("a");
+String b = a;
+
+System.out.println(a == b);      // => true
+System.out.println(a.equals(b)); // => true
+```
+
+<br>
+
+2. **Copie profonde** (deep): Ce type de copie sert à **cloner un élément en mémoire**. Contrairement à la copie superficielle, la copie prodonfe clone le contenu de l'objet référencé.
+
+```java
+String a = new String("a");
+String b = new String(a);
+
+System.out.println(a == b);      // => false
+System.out.println(a.equals(b)); // => true
+```
+
+
+### Types des références
+
+Une référence possède deux types:
+* **Effectif**: définit à l'instanciation et ne change jamais
+* **Local**: donné par le typage local vu par le compilateur
+
+```java
+`Set s = new TriSet<Double>()`
+```
+* Le type de `s` effectif est `TriSet`
+* Le type local de `s` est `Set` mais égallement `Object` qui est la classe dont tous les objects en java dérivent.
+
+### Classe Object
+
+En Java, toutes les classes héritent automatiquement de la classe `Object` qui implémente entre autres les methodes suivantes:
+* `equals`: Comparaison **superficielle** (comparaison de références)
+* `clone`: Copie **superficielle** (copie les références)
+* `toString`: Implémentation de base qui affiche dans la console le nom de la classe ainsi que sa référence.
+
+Ces comportements ne sont généralement pas les comportements souhaités et la meilleure chose à faire est de définir des **nouvelles methodes** (avec un nom différent) qui font le travail souhaité. Suggestions:
+* `isEqual()`
+* `cloneOf()`
+
+De cette façon, si on utilise `isEqual()` ou `cloneOf`, on est certain qu'elle a été ré implémentée correctement. La méthode `toString` peut être override car elle n'a pas de comortement autre que cosmétique.
+
+<Container type="info">
+
+On peut également override `equals()` et `clone()` pour les faire appeller `isEquals()` et `cloneOf()` pour leur donner le bon comportement.
+
+</Container>
+
+### mot clé "final"
+
+Le mot clé final peut être utilisé devant:
+
+| quoi            | comportement                                                                            |
+| --------------- | --------------------------------------------------------------------------------------- |
+| classe          | La classe ne peut pas être dérivée                                                      |
+| attribut        | L'attribut devient une constante et doit être définit au plus tard dans le constructeur |
+| variable locale | Constante                                                                               |
+| methode         | La methode ne peut pas être redéfinie dans une classe enfant                            |
+
 
 ## En vrac
 
@@ -1411,4 +1646,46 @@ public class ExampleClass extends ExempleClassParent implements InterfaceOne {
 * `String.format()` permet de formater du texte:
   * `String.format("%d poules %s", 4, "rouge");`
 
+* Un objet est dit **inaltérable** quand il ne peut plus changer de valeur après instanciation (String, Wrapper,...)
 
+* Les blocs **if** sont le marteau du developpeur, en utiliser le moins possible est un gage de qualité du code.
+
+* En C, C++ et Java, il y a un **double déréférencement** entre la mémoire logique et physique: Pointeur sur un secteur de mémoire _logique_, Si le système swap, le pointeur garde la même valeur, mais l'emplacement est différent. Double déréférencement entre la mémoire logique et physique. <st c="r">A compléter</st>.
+
+* Pour tester un double (`0.9999 == 1`) il est nécessaire de définir une certaine précision ($E$). 
+$$ E \geq |\frac{a-b}{a}| $$
+
+
+<br>
+
+* Types de classes:
+  * **Pojo** (Plain Old Java Object, n'implémente pas d'interface spécifique)
+  * **Runnable** (potentiel délai entre le call et la fin de l'éxecution des méthodes)
+  * **Plain**
+  * **classic** (mélange des autres)
+
+<br>
+
+* Types de polymorphisme en Java:
+  * Polymorphisme objet
+  * Polymorphisme interface
+
+<br>
+
+* Contrats:
+  * Comment faire un contrat? **faire une interface**
+  * Comment valider un contrat **implementer le contrat**
+
+## Special tactics
+
+```java
+System.out.println(Double.valueOf("12.4")); // => 12.4
+```
+
+Les méthodes pour oppérer sur les tableaux sont regroupées dans la classe `Arrays`:
+
+```java
+int tab[] = {1,2,3,4,5};
+System.out.println(Arrays.toString(tab));
+System.out.println(Arrays.toString(Arrays.copyOfRange(tab, 0, 2)));
+```
