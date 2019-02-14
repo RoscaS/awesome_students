@@ -50,7 +50,7 @@
 
   .section {
     margin-top: 20px !important;
-    margin-bottom: 20px !important;
+    // margin-bottom: 20px !important;
   }
 
   .card-info {

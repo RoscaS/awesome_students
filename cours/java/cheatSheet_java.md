@@ -42,16 +42,17 @@ author: Sol
 
 * Iterable
 * Immutable
+* **Inaltérable:** Un objet qui ne peut plus changer de valeur après instanciation (String, Wrappers, ...)
 
 ## Culture générale
 
 ### Introduction
 
-Java est un langage haut niveau, orienté objet, avec un typage statique et fort dont la syntaxe est proche du C++. Il est multi-plateformes et guidé par le principe du WORA (Write once, Run Anywhere). 
+Java est un langage haut niveau, orienté objet, avec un typage statique fort dont la syntaxe est proche du C++. Il est multi-plateformes et guidé par le principe du WORA (Write once, Run Anywhere). 
 
 ### Déclinaisons de Java
 
-1. Java SE (Standard Edition)
+1. **Java SE** (Standard Edition)
 2. Java EE (entreprise Edition)
 3. Java ME (Micro Edition)
 4. Java FX (Orienté web)
@@ -60,31 +61,31 @@ Java est un langage haut niveau, orienté objet, avec un typage statique et fort
 
 1. Applications Standalone: Des applications de bureau comme des lecteurs vidéo, des éditeurs de texte, des logiciels de retouche d'image, antivirus, ... Les frameworkds **AWT** et **Swing** sont spécialisés dans ce domaine.
 
-2. Applications Web: Une application qui tourne coté serveur et crée une page dynamique est appellée application web. Les frameworks **Servlet**, **JSP**, **Struts**, **Spring**, **Hibernate** sont les plus utilisés pour ce domaine.
+2. Applications Web: Des application qui tournent coté serveur et créent des pages dynamiques. Les frameworks **Servlet**, **JSP**, **Struts**, **Spring**, **Hibernate** sont les plus utilisés pour ce domaine.
 
-3. Applications d'entreprise: Une application qui est dite "distribuée", comme une application de banque, gestion de personnel, ... Dans ce domaine le framework **EJB** est la référence.
+3. Applications d'entreprise: Une application qui est dite _distribuée_, comme une application de banque, gestion de personnel, ... Dans ce domaine le framework **EJB** est la référence.
 
 4. Applications Mobiles: Pour ce type d'applications, c'est principalement **Android** (Davlik JVM) et **Java ME** qui sont utilisés.
 
 ### C++ vs Java
 
-| Comparaison                 | C++                                              | Java                                                                                                                                         |
-| --------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Dépendant de la plateforme  | oui                                              | non                                                                                                                                          |
-| Utilisation principale      | Programmation système                            | Programmation d'applications                                                                                                                 |
-| `goto`                      | oui                                              | non                                                                                                                                          |
-| Héritage multiple           | oui                                              | Pas via classe mais via interface                                                                                                            |
-| Surcharge d'oppérateurs     | oui                                              | non                                                                                                                                          |
-| Pointeurs                   | oui (explicites)                                 | oui (implicite, on ne les écrit pas)                                                                                                         |
-| Compilateur et interpreteur | seulement compilateur                            | Compilateur et interpreteur, Le code source Java est converti en bytecode au moment de la compilation et un interpreteur exécute ce bytecode |
-| Appel par valeur/référence  | les deux                                         | Par valeur uniquement                                                                                                                        |
-| Threading                   | via third-party                                  | built-in                                                                                                                                     |
-| Doc                         | non                                              | oui (`/** ... */`)                                                                                                                           |
-| `virtual`                   | oui, permet d'autoriser l'override d'une methode | non. On peut override toutes les methodes non statiques par défaut                                                                           |
-| Inheritance tree            | non                                              | toutes les classes sont descendantes de la classe `Object`                                                                                   |
+| Comparaison                 | C++                                              | Java                                                                                                                                          |
+| --------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Dépendant de la plateforme  | Oui                                              | Non                                                                                                                                           |
+| Utilisation principale      | Programmation système                            | Programmation d'applications                                                                                                                  |
+| `goto`                      | Oui                                              | Non                                                                                                                                           |
+| Héritage multiple           | Oui                                              | Pas via classes mais via interfaces                                                                                                           |
+| Surcharge d'oppérateurs     | Oui                                              | Non                                                                                                                                           |
+| Pointeurs                   | Oui (explicites)                                 | Oui (<Def def="Le programmeur ne s'en charge pas.">implicite</Def>)                                                                           |
+| Compilateur et interpreteur | Seulement compilateur                            | Compilateur et interpreteur, Le code source Java est converti en bytecode au moment de la compilation et un interpreteur exécute ce bytecode. |
+| Appel par valeur/référence  | Les deux                                         | **Par valeur uniquement**                                                                                                                     |
+| Threading                   | Via third-party                                  | Built-in                                                                                                                                      |
+| Doc                         | Non                                              | Oui (`/** ... */`)                                                                                                                            |
+| `virtual`                   | Oui, permet d'autoriser l'override d'une methode | Non. Override de toutes les methodes non statiques est le comportement par défaut.                                                            |
+| Arbre d'héritage            | Non                                              | Toutes les classes sont descendantes de la classe `Object`                                                                                    |
 
 * Java ne supporte pas les arguments par défaut contrairement à C++
-* Java n'utilise pas de fichiers headers comme C++, Java utilise le mot clé `import` pour inclure différentes classes et methodes
+* Java n'utilise pas de fichiers headers comme C++, et utilise le mot clé `import` pour inclure différentes classes et methodes
 
 ### JDK, JRE et JVM
 
@@ -93,7 +94,7 @@ Java est un langage haut niveau, orienté objet, avec un typage statique et fort
 C'est un environment de développement et d'exécution pour des programmes Java. Ce kit (ou package) inclut deux choses:
 * Le JRE (Java Runtime Environment) 
 * Des outils de développement 
-  * Un interpreteur (Java)
+  * Un interpreteur (java)
   * Un compilateur (javac)
   * Un compresseur (jar)
   * Un générateur de documents (Javadoc)
@@ -113,7 +114,7 @@ Fournit l'environment minimum nécessaire à uniquement faire tourner des applic
 * Une JVM (Java Virtual Machine)
 * Les classes core de Java
 
-<br>
+<br><br>
 <vs-card class="cardx java-diag-card">
 <vs-row> 
 <vs-col vs-type="flex" vs-align="center" vs-w="6"> 
@@ -187,7 +188,7 @@ Il est possible d'avoir plusieurs classes dans le même fichier comme l'illustre
 
 Le bytecode est ensuite utilisé par la JVM et transformée en code natif. Cette séparation entre le langage et la plateforme à de nombreux bénéfices:
 * L'optimisation du code Java s'améliore sans avoir à recompiler le code
-* Des langages existants ont été réimplémentés pour utiliser la JVM pour profiter de ces optimisations (Jython, JRuby)
+* Des langages existants ont été réimplémentés pour utiliser la JVM pour profiter de ces optimisations (Jython, JRuby, ...)
 * De nouveaux langages ont été développés pour combler les lacunes de Java (Clojure, Scala)
 
 ![Image](https://i.imgur.com/xksEoUp.png)
@@ -322,7 +323,7 @@ String s = scanner.next();
 
 ### Variables
 
-Identifiée par un nom, elle permet d'accéder à la valeur contenue dans l'adresse mémoire sur laquelle elle pointe. 
+Identifiée par un nom, elle permet d'accéder à la valeur contenue dans l'adresse mémoire qu'elle référence. 
 
 * Une variable est **le nom d'une adresse en mémoire**
 * Le contenu d'une variable peut être changé en cours d'exécution
@@ -1185,62 +1186,160 @@ for (int i = 0; i < c.length; i++) {
 **Si les éléments d'une collection sont contigus en mémoire, alors les itérateurs, for-each et for classique ont des performances comparables.**
 
 
+## Notions importantes
 
-## Généricité
+### Garbage Collector
 
-Le principe de la généricité est de faire des classes qui n'acceptent qu'un certain type d'objets ou de données de façon dynamique.
+* Il s'active automatiquement et de façon imprévisible pour nettoyer la mémoire des objets qui n'ont plus de références. 
+* Il défragmente le tas (<st c="r">les adresses des objets encore référencés changent !</st>).
 
 
-### Simple
-```java
-public class Solo<T> {
+### Références
 
-    private T value;
+En Java <Def def="Du moins de façon visible">les pointeurs n'existent pas</Def>. À cause du **GC**, les variables peuvent changer de place dans la mémoire en cours d;exécution. **En Java, on parle de références**.
 
-    public Solo(T val) { this.value = val; }
-    public T getValue() { return this.value; }
-}
+Quand on dit qu'en Java "tout est objet" ce n'est pas tout à fait la vérité. **En Java tout est référence sur un "objet"** est plus approprié.
 
-// Dans le main:
-Solo<Integer> s1 = new Solo<>(12);
-System.out.println(s1.getValue()); // => 12
+<Container type="info" header="Rappel">
 
-Solo<String> s2 = new Solo<>("Poule");
-System.out.println(s2.getValue()); // => Poule
-```
+* **Pointeur**: Adresse
+* **Référence**: Valeur permettant l'accès à une donnée (Information sur la localisation de la donnée).
 
-### Double
+</Container>
 
 ```java
-public class Duo<T, S> {
+Integer C1 = 1000;
+Integer C2 = 1000;
 
-    private T v1;
-    private S v2;
+C1 == C2 // => False (comparaison des références)
+C1.equals(C2) // => True (comparaison des contenus)
 
-    public Duo(T v1, S v2) {
-        this.v1 = v1;
-        this.v2 = v2;
-    }
+C1 = C2 
 
-    public T getV1() { return v1; }
-    public S getV2() { return v2; }
-}
-
-// Dans le main:
-Duo<String, Boolean> d1 = new Duo<>("Poule", true);
-System.out.println("v1: " + d1.getV1() + "\tv2: " + d1.getV2());
-// => v1: Poule	v2: true
-
-Duo<Double, Character> d2 = new Duo<>(12.231, 'c');
-System.out.println("v1: " + d2.getV1() + "\tv2: " + d2.getV2());
-// => v1: 12.231	v2: c
+C1 == C2 // => True (comparaison des références)
 ```
 
-* Plus d'info: [openClassRoom](https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/22404-la-genericite-en-java)
+#### Algèbre de références
+Via des opérateurs simples (`==`, `+`, `-`, ...)
 
-## OOP en bref
+```java
+String a = new String("A");
+String b = new String("A");
 
-Tiré de [learn x in y](https://learnxinyminutes.com/docs/java/)
+System.out.println(a == b); // => false
+```
+`false` car les deux objets de type String n'ont **pas la même référence**.
+
+<br>
+
+```java
+String a = new String("A");
+String b = a;
+
+System.out.println(a == b); // => true
+```
+`true` car en ligne 2 on assigne à la variable `b` la référence de `a`. Les deux variables contiennent donc la même références.
+
+**Dans les deux cas, nous travaillons uniquement sur les références des variables `s1` et `s2` et non pas sur leur contenu.**
+
+#### Algèbre de contenu
+Via des méthodes.
+
+```java
+String a = new String("A");
+String b = new String("A");
+
+System.out.println(a.equals(b)); // => true
+```
+`true` car la méthode `equals` nous permet de faire une **comparaison de contenu** (des objets référencés). Même si les références sont différentes, le contenu de l'objet pointé est égale.
+
+#### Passage d'arguments
+
+<Container type="danger">
+
+En java tous les passages d'arguments se font par **valeur**.
+
+</Container>
+
+* Les types simples se passent par valeur
+* Les références se passent par valeur
+
+Tous les passages par valeur font une **copie** de la valeur à passer.
+
+
+### Copies et Clones
+
+Deux types de copie:
+
+1. **Copie superficielle** (light): Ce type de copie **porte uniquement sur la référence** de l'objet à copier. Après une copie superficielle, la référence initiale et la référence copiée pointent sur le même objet.
+
+```java
+String a = new String("a");
+String b = a;
+
+System.out.println(a == b);      // => true
+System.out.println(a.equals(b)); // => true
+```
+
+<br>
+
+2. **Copie profonde** (deep): Ce type de copie sert à **cloner un élément en mémoire**. Contrairement à la copie superficielle, la copie prodonfe clone le contenu de l'objet référencé.
+
+```java
+String a = new String("a");
+String b = new String(a);
+
+System.out.println(a == b);      // => false
+System.out.println(a.equals(b)); // => true
+```
+
+
+### Types des références
+
+Une référence possède deux types:
+* **Effectif**: définit à l'instanciation et ne change jamais
+* **Local**: donné par le typage local vu par le compilateur
+
+```java
+`Set s = new TriSet<Double>()`
+```
+* Le type de `s` effectif est `TriSet`
+* Le type local de `s` est `Set` mais égallement `Object` qui est la classe dont tous les objects en java dérivent.
+
+### Classe Object
+
+En Java, toutes les classes héritent automatiquement de la classe `Object` qui implémente entre autres les methodes suivantes:
+* `equals`: Comparaison **superficielle** (comparaison de références)
+* `clone`: Copie **superficielle** (copie les références)
+* `toString`: Implémentation de base qui affiche dans la console le nom de la classe ainsi que sa référence.
+
+Ces comportements ne sont généralement pas les comportements souhaités et la meilleure chose à faire est de définir des **nouvelles methodes** (avec un nom différent) qui font le travail souhaité. Suggestions:
+* `isEqual()`
+* `cloneOf()`
+
+De cette façon, si on utilise `isEqual()` ou `cloneOf`, on est certain qu'elle a été ré implémentée correctement. La méthode `toString` peut être override car elle n'a pas de comortement autre que cosmétique.
+
+<Container type="info">
+
+On peut également override `equals()` et `clone()` pour les faire appeller `isEquals()` et `cloneOf()` pour leur donner le bon comportement.
+
+</Container>
+
+### mot clé "final"
+
+Le mot clé final peut être utilisé devant:
+
+| quoi            | comportement                                                                            |
+| --------------- | --------------------------------------------------------------------------------------- |
+| classe          | La classe ne peut pas être dérivée                                                      |
+| attribut        | L'attribut devient une constante et doit être définit au plus tard dans le constructeur |
+| variable locale | Constante                                                                               |
+| methode         | La methode ne peut pas être redéfinie dans une classe enfant                            |
+
+
+## OOP
+
+### Base
 
 * Déclaration d'une classe: 
   * `<public/private/protected> class <Nom de la classe> { }`
@@ -1252,6 +1351,9 @@ public class Bicycle {
     private int speed;  // private: accessible depuis la classe
     protected int gear; // protected: accessible depuis la classe et sous ses sous-classes
     String name;        // default: Uniquement accessible depuis le package
+
+    private Wheel[] wheels;
+    
     static String className; // variable de classe
 
     // Bloc static:
@@ -1271,11 +1373,24 @@ public class Bicycle {
     }
 
     // On peut surcharger un constructeur
-    public Bicycle(int cadence, int speed, int gear, String name) {
+    public Bicycle(int cadence, int speed, int gear, String name, Wheel[] wheels) {
         this.gear = gear;
         this.cadence = cadence;
         this.speed = speed;
         this.name = name;
+        this.wheels = wheels;
+    }
+
+    // Constructeur de copie
+    // this doit nécessairement être la 1ere ligne du constructeur de copie
+    public Bicycle(Bicycle source) {
+        this(
+            source.gear,
+            source.cadence,
+            source.speed,
+            source.name,
+            clone(source.wheels),
+        )
     }
 
     // Syntaxe d'une méthode:
@@ -1308,8 +1423,7 @@ public class Bicycle {
         return name;
     }
 
-    // Methode pour afficher la valeur des attributs de l'instance.
-
+    // Override de la methode `toString` de la classe Object 
     @Override
     public String toString() {
         return "gear: " + gear + 
@@ -1317,6 +1431,49 @@ public class Bicycle {
         " speed: " + speed +
         " name: " + name;
     }
+
+    // Pour cloner un objet qui a pour attribut un tableau, il faut implémenter une
+    // méthode statique `clone()` qui va parcourir le tableau et
+    // cloner chaque case du tableau.
+    // Statique car elle est appellée durant la construction d'un objet qui
+    // n'existe pas encore.
+    private static Wheel[] clone(Wheel[] wheels) {
+        int n = wheels.length;
+        Wheel[] wheelsClone = new Wheel[n];
+
+        for (int i = 0; i < n; i++) {
+            wheelsClone[i] = new Wheel(wheels[i]);
+        }
+        return wheelsClone;
+    }
+
+	public Bicycle cloneOf() {
+        // return new Bicycle(this);
+		return this; // Autorisé tant que Bicycle est inaltérable
+    }
+
+    // Override de la methode `clone` de la classe Object 
+	@Override
+	protected Bicycle clone() throws CloneNotSupportedException {
+		return cloneOf();
+    }
+
+    // Override de la methode `equals` de la classe Object 
+    @Override
+    public boolean equals(Object source) {
+        return source instanceof Bicycle ? isEquals((Bicycle) source) : false;
+    }
+
+    // Override de la methode `hashCode` de la classe Object 
+    @Override
+    public int hashCode() {
+        // Attention : a.equals(b) => a.hascode() == b.hascode() mais pas reciproque
+        return name.hashCode() + wheels.hashCode();
+    }
+
+
+
+
 }
 ```
 
@@ -1478,6 +1635,58 @@ public abstract class Mammal() {
 
 <st c="r">TODO</st>
 
+## Généricité
+
+Le principe de la généricité est de faire des classes qui n'acceptent qu'un certain type d'objets ou de données de façon dynamique.
+
+
+### Simple
+```java
+public class Solo<T> {
+
+    private T value;
+
+    public Solo(T val) { this.value = val; }
+    public T getValue() { return this.value; }
+}
+
+// Dans le main:
+Solo<Integer> s1 = new Solo<>(12);
+System.out.println(s1.getValue()); // => 12
+
+Solo<String> s2 = new Solo<>("Poule");
+System.out.println(s2.getValue()); // => Poule
+```
+
+### Double
+
+```java
+public class Duo<T, S> {
+
+    private T v1;
+    private S v2;
+
+    public Duo(T v1, S v2) {
+        this.v1 = v1;
+        this.v2 = v2;
+    }
+
+    public T getV1() { return v1; }
+    public S getV2() { return v2; }
+}
+
+// Dans le main:
+Duo<String, Boolean> d1 = new Duo<>("Poule", true);
+System.out.println("v1: " + d1.getV1() + "\tv2: " + d1.getV2());
+// => v1: Poule	v2: true
+
+Duo<Double, Character> d2 = new Duo<>(12.231, 'c');
+System.out.println("v1: " + d2.getV1() + "\tv2: " + d2.getV2());
+// => v1: 12.231	v2: c
+```
+
+* Plus d'info: [openClassRoom](https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/22404-la-genericite-en-java)
+
 ## Tests JUnit
 
 <st c="r">TODO</st>
@@ -1485,157 +1694,6 @@ public abstract class Mammal() {
 ## Deploy
 
 <st c="r">TODO</st>
-
-## Notions importantes
-
-### Garbage Collector
-
-* Il s'active automatiquement et de façon imprévisible pour nettoyer la mémoire des objets qui n'ont plus de références. 
-* Il défragmente le tas (<st c="r">les adresses des objets encore référencés changent !</st>).
-
-
-### Références
-
-En Java <Def def="Du moins de façon visible">les pointeurs n'existent pas</Def>. À cause du **GC**, les variables peuvent changer de place dans la mémoire en cours d;exécution. **En Java, on parle de références**.
-
-Quand on dit qu'en Java "tout est objet" ce n'est pas tout à fait la vérité. **En Java tout est référence sur un "objet"** est plus approprié.
-
-<Container type="info" header="Rappel">
-
-* **Pointeur**: Adresse
-* **Référence**: Valeur permettant l'accès à une donnée (Information sur la localisation de la donnée).
-
-</Container>
-
-```java
-Integer C1 = 1000;
-Integer C2 = 1000;
-
-C1 == C2 // => False (comparaison des références)
-C1.equals(C2) // => True (comparaison des contenus)
-
-C1 = C2 
-
-C1 == C2 // => True (comparaison des références)
-```
-
-#### Algèbre de références
-Via des opérateurs simples (`==`, `+`, `-`, ...)
-
-```java
-String a = new String("A");
-String b = new String("A");
-
-System.out.println(a == b); // => false
-```
-`false` car les deux objets de type String n'ont **pas la même référence**.
-
-<br>
-
-```java
-String a = new String("A");
-String b = a;
-
-System.out.println(a == b); // => true
-```
-`true` car en ligne 2 on assigne à la variable `b` la référence de `a`. Les deux variables contiennent donc la même références.
-
-**Dans les deux cas, nous travaillons uniquement sur les références des variables `s1` et `s2` et non pas sur leur contenu.**
-
-#### Algèbre de contenu
-Via des méthodes.
-
-```java
-String a = new String("A");
-String b = new String("A");
-
-System.out.println(a.equals(b)); // => true
-```
-`true` car la méthode `equals` nous permet de faire une **comparaison de contenu** (des objets référencés). Même si les références sont différentes, le contenu de l'objet pointé est égale.
-
-#### Passage d'arguments
-
-<Container type="danger">
-
-En java tous les passages d'arguments se font par **valeur**.
-
-</Container>
-
-* Les types simples se passent par valeur
-* Les références se passent par valeur
-
-Tous les passages par valeur font une **copie** de la valeur à passer.
-
-
-### Copies et Clones
-
-Deux types de copie:
-
-1. **Copie superficielle** (light): Ce type de copie **porte uniquement sur la référence** de l'objet à copier. Après une copie superficielle, la référence initiale et la référence copiée pointent sur le même objet.
-
-```java
-String a = new String("a");
-String b = a;
-
-System.out.println(a == b);      // => true
-System.out.println(a.equals(b)); // => true
-```
-
-<br>
-
-2. **Copie profonde** (deep): Ce type de copie sert à **cloner un élément en mémoire**. Contrairement à la copie superficielle, la copie prodonfe clone le contenu de l'objet référencé.
-
-```java
-String a = new String("a");
-String b = new String(a);
-
-System.out.println(a == b);      // => false
-System.out.println(a.equals(b)); // => true
-```
-
-
-### Types des références
-
-Une référence possède deux types:
-* **Effectif**: définit à l'instanciation et ne change jamais
-* **Local**: donné par le typage local vu par le compilateur
-
-```java
-`Set s = new TriSet<Double>()`
-```
-* Le type de `s` effectif est `TriSet`
-* Le type local de `s` est `Set` mais égallement `Object` qui est la classe dont tous les objects en java dérivent.
-
-### Classe Object
-
-En Java, toutes les classes héritent automatiquement de la classe `Object` qui implémente entre autres les methodes suivantes:
-* `equals`: Comparaison **superficielle** (comparaison de références)
-* `clone`: Copie **superficielle** (copie les références)
-* `toString`: Implémentation de base qui affiche dans la console le nom de la classe ainsi que sa référence.
-
-Ces comportements ne sont généralement pas les comportements souhaités et la meilleure chose à faire est de définir des **nouvelles methodes** (avec un nom différent) qui font le travail souhaité. Suggestions:
-* `isEqual()`
-* `cloneOf()`
-
-De cette façon, si on utilise `isEqual()` ou `cloneOf`, on est certain qu'elle a été ré implémentée correctement. La méthode `toString` peut être override car elle n'a pas de comortement autre que cosmétique.
-
-<Container type="info">
-
-On peut également override `equals()` et `clone()` pour les faire appeller `isEquals()` et `cloneOf()` pour leur donner le bon comportement.
-
-</Container>
-
-### mot clé "final"
-
-Le mot clé final peut être utilisé devant:
-
-| quoi            | comportement                                                                            |
-| --------------- | --------------------------------------------------------------------------------------- |
-| classe          | La classe ne peut pas être dérivée                                                      |
-| attribut        | L'attribut devient une constante et doit être définit au plus tard dans le constructeur |
-| variable locale | Constante                                                                               |
-| methode         | La methode ne peut pas être redéfinie dans une classe enfant                            |
-
 
 ## En vrac
 
