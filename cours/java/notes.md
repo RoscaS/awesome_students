@@ -1,8 +1,9 @@
 ---
 title: "Notes: cours de Java"
 date: 2018-09-25
+author: "Sol"
 sidebar: auto
-author: Sol
+project: false
 ---
 
 

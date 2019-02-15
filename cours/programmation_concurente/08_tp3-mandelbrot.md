@@ -1,7 +1,7 @@
 ---
 title: "TP-3: Mandelbrot"
 date: 2019-01-25
-author:  "Nathan, Sol"
+author: "Nathan, Sol"
 sidebar: auto
 project: true
 ---

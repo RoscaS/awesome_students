@@ -1,7 +1,7 @@
 ---
 title: Culture générale
 date: 2018-12-03
-author: Sol
+author: "Sol"
 sidebar: auto
 project: false
 ---
