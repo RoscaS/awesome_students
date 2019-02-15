@@ -31,6 +31,8 @@ author: Sol
 * [GeeksForGeeks](https://www.geeksforgeeks.org)
 * [Comprehension de la JVM](https://soat.developpez.com/tutoriels/java/jvm/decouverte-machine-virtuelle-java/)
 * [Comprendre le fonctionnement de la JVM 1/2](https://blog.xebia.fr/2013/05/27/comprendre-le-fonctionnement-de-la-jvm-article-1/)
+* [openclassRoom](https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java)
+* [developpez.net](https://www.developpez.net/forums/d881739/java)
 * [Wikipedia Jar](https://en.wikipedia.org/wiki/JAR_(file_format))
 * [maps](https://www.testingexcellence.com/4-different-ways-iterate-map-java/)
 * [Collections overview](https://www.journaldev.com/1260/collections-in-java-tutorial)
@@ -40,9 +42,9 @@ author: Sol
 
 ## Lexique
 
-* Iterable
-* Immutable
-* **Inaltérable:** Un objet qui ne peut plus changer de valeur après instanciation (String, Wrappers, ...)
+* **Immutable:** Un objet qui ne peut être modifier. Par exemple si on change la valeur d'un objet de type `Long` affecté à une variable, en réalité un nouvel objet est créé et est assigné à cette variable. Si l'objet initial était affecté à d'autres variables, elles référencent toujours l'objet initial. Les objets de type `String` et les Wrappers sont des exemples d'objets immutables. [Plus d'info](https://www.developpez.net/forums/d881739/java/general-java/langage/c-quoi-objet-immutable/)
+* **Inaltérable:** dans le contexte, synonyme d'immutable ou encore immuable.
+* **Iterable**: Collection qui implémente l'interaface `Iterable`.
 
 ## Culture générale
 
@@ -1190,7 +1192,7 @@ for (int i = 0; i < c.length; i++) {
 
 ### Garbage Collector
 
-* Il s'active automatiquement et de façon imprévisible pour nettoyer la mémoire des objets qui n'ont plus de références. 
+* Il s'active automatiquement et **de façon imprévisible** pour nettoyer la mémoire des objets qui n'ont plus de références. Il n'est donc pas nécessaire en Java de `delte` à la main (comme en C++) pour libérer la mémoire qu'occupe un objet.
 * Il défragmente le tas (<st c="r">les adresses des objets encore référencés changent !</st>).
 
 
@@ -1321,7 +1323,7 @@ De cette façon, si on utilise `isEqual()` ou `cloneOf`, on est certain qu'elle 
 
 <Container type="info">
 
-On peut également override `equals()` et `clone()` pour les faire appeller `isEquals()` et `cloneOf()` pour leur donner le bon comportement.
+On peut également override `equals()` et `clone()` pour les faire appeller `isEqual()` et `cloneOf()` pour leur donner le bon comportement.
 
 </Container>
 
@@ -1432,24 +1434,32 @@ public class Bicycle {
         " name: " + name;
     }
 
-    // Pour cloner un objet qui a pour attribut un tableau, il faut implémenter une
-    // méthode statique `clone()` qui va parcourir le tableau et
-    // cloner chaque case du tableau.
-    // Statique car elle est appellée durant la construction d'un objet qui
-    // n'existe pas encore.
-    private static Wheel[] clone(Wheel[] wheels) {
-        int n = wheels.length;
-        Wheel[] wheelsClone = new Wheel[n];
-
-        for (int i = 0; i < n; i++) {
-            wheelsClone[i] = new Wheel(wheels[i]);
-        }
-        return wheelsClone;
-    }
-
 	public Bicycle cloneOf() {
         // return new Bicycle(this);
 		return this; // Autorisé tant que Bicycle est inaltérable
+    }
+
+    public Boolean isEqual(Bicycle source) {
+        if (this == source) {
+            return true;
+        } else if (!this.cadence.equals(source.cadence)) {
+            return false;
+        } else if (!this.cadence.gear(source.gear)) {
+            return false;
+        } else if (!this.cadence.speed(source.speed)) {
+            return false;
+        } else if (!this.cadence.name(source.name)) {
+            return false;
+        } else if (this.wheels.length != source.wheels.length) {
+            return false;
+        } else {
+            for (int i = 0; i < this.wheels; i++) {
+                if (!this.wheels[i].isEqual(source.wheels[i])) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     // Override de la methode `clone` de la classe Object 
@@ -1461,7 +1471,7 @@ public class Bicycle {
     // Override de la methode `equals` de la classe Object 
     @Override
     public boolean equals(Object source) {
-        return source instanceof Bicycle ? isEquals((Bicycle) source) : false;
+        return source instanceof Bicycle ? isEqual((Bicycle) source) : false;
     }
 
     // Override de la methode `hashCode` de la classe Object 
@@ -1471,13 +1481,35 @@ public class Bicycle {
         return name.hashCode() + wheels.hashCode();
     }
 
+    // Pour cloner un objet qui a pour attribut une collection, 
+    // il faut implémenter une méthode statique `clone()` qui 
+    // va parcourir la collection et cloner chaque case de la collection.
+    // Statique car elle est appellée durant la construction d'un objet qui
+    // n'existe pas encore.
+    private static Wheel[] clone(Wheel[] wheels) {
+        int n = wheels.length;
+        Wheel[] wheelsClone = new Wheel[n];
 
-
-
+        for (int i = 0; i < n; i++) {
+            wheelsClone[i] = new Wheel(wheels[i]);
+        }
+        return wheelsClone;
+    }
 }
 ```
 
 ### Héritage
+
+* Une classe hérite d'une autre classe via le mot clé `extends`.
+* Une classe ne peut hériter que d'une seule classe.
+* Si aucun constructeur n'est défini dans la classe fille, la JVM en créera un et appellera automatiquement le constructeur de la classe mère.
+* La classe fille hérite de toutes les propriétés et méthodes `public` et `protected` de la classe mère.
+* Les propriétés et méthodes `private` d'une classe mère ne sont pas accessibles dans la classe fille.
+* On peut redéfinir (override) une méthode héritée, c'est à dire changer son comportement (mais pas sa signature).
+* **Si on change la signature d'une methode héritée, ce n'est pas de l'override mais de la surcharge.**
+* On peut utiliser le comportement d'une classe mère via `super()`.
+
+<br>
 
 <Def def="Les Penny Farthings sont des bicyclette avec une grande roue avant. Il n'y a pas de roue libre, le cycliste est obligé de pédaler en permanence.">PennyFarthing</Def> est une sous-classe de Bicycle:
 
@@ -1498,73 +1530,33 @@ class PennyFarthing extends Bicycle {
 
 ### Polymorphisme
 
+Le polymorphisme complète l'héritage, il permet de manipuler des objets sans en connaitre le type.
+
+<Container type="danger">
+
+Attention à ne pas confondre **surcharge de méthode** avec une **méthode polymorphe**:
+* **Une méthode surchargée** diffère de la méthode originale par le nombre ou le type de paramètres qu'elle prend en entrée.
+* **Une méthode polymorphe** prend les mêmes paramètres que la méthode de base mais traite les choses différemment. Cette methode se trouve dans une autre classe (et donc dans une autre isntance de cette autre classe).
+
+</Container>
+
 Comme la classe `PennyFarthing` héritent de la classe `Bicycle`, on peut dire qu'un `PennyFarthing` est un `Bicycle` et écrire : `Bicycle bicycle = new PennyFarthing();`. **Le polymorphisme est la capacité d'un objet de se faire passer pour un autre**.
 
 
-### Interfaces
 
-* Déclaration d'une interface: 
-  * `<nivea d'accès> interface <nom interface> extends <nom de l'éventuelle interface mère {}`
-
-
-Toute nourriture peut être mangée et digérée différemment, l'interface `Edible` (comestible) décrit l'action de manger:
-
-```java
-public interface Edible {
-    // Toute classe qui implémente cette interface doit implémenter
-    // cette méthoed:
-    public void eat(); 
-}
-```
-
-L'interface Digestible décrit l'action de digérer:
-
-```java
-public interface Digestible {
-    public void digest();
-
-    // Les interfaces peuvent avoir des methodes par défaut
-    public void defaultMethod() {
-        System.out.println("Salut d'une methode par défaut");
-    }
-}
-```
-
-Il est possible de maintenant créer une classe qui implémente chacune de ces interfaces:
-
-```java
-public class Fruit implements Edible, Digestible {
-    @Override
-    public void eat() {
-        // ...
-    }
-
-    @Override
-    public void digest() {
-        // ...
-    }
-}
-```
-
-<st c="r">En Java on peut hériter d'une unique classe mais on peut implémenter plusieurs interfaces:</st>
-
-```java
-public class ExampleClass extends ExempleClassParent implements InterfaceOne {
-    @Override
-    public void InterfaceOneMethod() {
-        // ...
-    }
-}
-```
 
 ### Classes abstraites
 
-* Une classe abstraite contient au moins une méthode abstraite qui doit être définee dans la classe fille. Comme les interfaces, 
-* les classes abstraites ne peuvent pas être instanciées mais doivent être étendues avec les méthodes abstraites implémentées. 
-* À la différence des interfaces, une classe abstraite peut contenir des méthodes abstraites ou non-abstraites. 
-* Les méthodes dans le corp d'une interfaces ne peuvent pas être implémentées à l'exception des méthodes static. 
-* Les variables d'une classe abstraite sont déclarées comme final par défaut à l'opposé des interfaces. 
-* Les classes abstraites peuvent avoir une méthode main.
+* Une classe peut hériter d'une classe abstraite (`extends`).
+* Une classe abstraite **ne peut pas** être instanciée.
+* Une classe abstraite n'est pas obligée de contenir de méthodes abstraites.
+* Si une classe contient une méthode abstraite, cette classe doit alors être déclarée abstraite.
+* Une methode abstraite n'a pas de corp.
+* Les méthodes abstraites d'une classe abstraite dont hérite une classe fille doivent être implémentées.
+* Une classe abstraites peut avoir une méthode main.
+* Les variables d'une classe abstraite sont implicitement (par défaut) déclarées comme final. 
+* Déclaration d'une classe abstraite: 
+  * `<niveau d'accès> abstract class <nom classe> {}`
 
 ```java
 public abstract class Animal {
@@ -1602,6 +1594,76 @@ public class Dog extends Animal {
     }
 }
 ```
+
+### Interfaces
+
+
+* Une interface est une classe 100% abstraite (aucune de ses methodes n'a de corp).
+* Une interface sert à définir un _super-type_ et à permettre le polymorphisme.
+* Les méthodes dans le corp d'une interfaces ne peuvent pas être implémentées à l'exception des méthodes static. 
+* Une classe peut implémenter ("hériter de") plusieurs interfaces.
+* Une classe qui implémente une interface doit en implémenter toutes les methodes.
+* Déclaration d'une interface: 
+  * `<niveau d'accès> interface <nom interface> extends <éventuelle interface mère> {}`
+
+
+Toute nourriture peut être mangée et digérée différemment, l'interface `Edible` (comestible) décrit l'action de manger:
+
+```java
+public interface Edible_I {
+    // Toute classe qui implémente cette interface doit implémenter
+    // cette méthoed:
+    public void eat(); 
+}
+```
+
+L'interface Digestible décrit l'action de digérer:
+
+```java
+public interface Digestible_I {
+    public void digest();
+
+    // Les interfaces peuvent avoir des methodes par défaut
+    public void defaultMethod() {
+        System.out.println("Salut d'une methode par défaut");
+    }
+}
+```
+
+Il est possible de maintenant créer une classe qui implémente chacune de ces interfaces:
+
+```java
+public class Fruit implements Edible_I, Digestible_I {
+    @Override
+    public void eat() {
+        // ...
+    }
+
+    @Override
+    public void digest() {
+        // ...
+    }
+}
+```
+
+<st c="r">En Java on peut hériter d'une unique classe mais on peut implémenter plusieurs interfaces:</st>
+
+```java
+public class ExampleClass extends ExempleClassParent implements Interface_I {
+    @Override
+    public void interfaceMethod() {
+        // ...
+    }
+}
+```
+
+<br>
+
+<Container type="info" header="Nommage d'interface">
+
+On suffixe le nom de l'interface avec `_I` (underscore "i" majuscule).
+
+</Container>
 
 ### Class finale
 
