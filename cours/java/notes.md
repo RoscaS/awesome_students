@@ -24,6 +24,7 @@ author: Sol
 
 ## Sources
 
+* Quelques points de java (Recap cours Java He-Arc)
 * [Baeldung](https://www.baeldung.com/start-here)
 * [Learn x in y](https://learnxinyminutes.com/docs/java/)
 * [Développons en Java](https://www.jmdoudoux.fr/java/dej/index.htm)
@@ -1209,18 +1210,6 @@ Quand on dit qu'en Java "tout est objet" ce n'est pas tout à fait la vérité. 
 
 </Container>
 
-```java
-Integer C1 = 1000;
-Integer C2 = 1000;
-
-C1 == C2 // => False (comparaison des références)
-C1.equals(C2) // => True (comparaison des contenus)
-
-C1 = C2 
-
-C1 == C2 // => True (comparaison des références)
-```
-
 #### Algèbre de références
 Via des opérateurs simples (`==`, `+`, `-`, ...)
 
@@ -1254,6 +1243,7 @@ String b = new String("A");
 System.out.println(a.equals(b)); // => true
 ```
 `true` car la méthode `equals` nous permet de faire une **comparaison de contenu** (des objets référencés). Même si les références sont différentes, le contenu de l'objet pointé est égale.
+
 
 #### Passage d'arguments
 
