@@ -36,6 +36,7 @@ project: false
 * [openclassRoom](https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java)
 * [developpez.net](https://www.developpez.net/forums/d881739/java)
 * [Wikipedia Jar](https://en.wikipedia.org/wiki/JAR_(file_format))
+* [List initialization (oneliners)](https://www.baeldung.com/java-init-list-one-line)
 * [maps](https://www.testingexcellence.com/4-different-ways-iterate-map-java/)
 * [Collections overview](https://www.journaldev.com/1260/collections-in-java-tutorial)
 * [Collections practical](http://www.vogella.com/tutorials/JavaCollections/article.html)
@@ -1469,7 +1470,7 @@ public class Bicycle {
     @Override
     public int hashCode() {
         // Attention : a.equals(b) => a.hascode() == b.hascode() mais pas reciproque
-        return name.hashCode() + wheels.hashCode();
+        return Objects.hash(gear, cadence, speed, name, wheels);
     }
 
     // Pour cloner un objet qui a pour attribut une collection, 
