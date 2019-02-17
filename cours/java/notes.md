@@ -1592,20 +1592,21 @@ public class Dog extends Animal {
 
 * Une interface est une classe 100% abstraite (aucune de ses methodes n'a de corp).
 * Une interface sert à définir un _super-type_ et à permettre le polymorphisme.
-* Les méthodes dans le corp d'une interfaces ne peuvent pas être implémentées à l'exception des méthodes static. 
+* Les méthodes dans le corp d'une interfaces n'ont pas de corp à l'exception des méthodes static. 
 * Une classe peut implémenter ("hériter de") plusieurs interfaces.
 * Une classe qui implémente une interface doit en implémenter toutes les methodes.
+* Le niveau d'accès d'une methodes d'interface est implicitement `public`.
 * Déclaration d'une interface: 
-  * `<niveau d'accès> interface <nom interface> extends <éventuelle interface mère> {}`
+  * `<niveau d'accès> interface <nom interface> extends <éventuelles interfaces mères> {}`
 
 
 Toute nourriture peut être mangée et digérée différemment, l'interface `Edible` (comestible) décrit l'action de manger:
 
 ```java
 public interface Edible_I {
-    // Toute classe qui implémente cette interface doit implémenter
-    // cette méthoed:
-    public void eat(); 
+    // Toute classe qui implémente cette interface 
+    // doit implémenter cette méthoed:
+    void eat(); 
 }
 ```
 
@@ -1613,10 +1614,10 @@ L'interface Digestible décrit l'action de digérer:
 
 ```java
 public interface Digestible_I {
-    public void digest();
+    void digest();
 
     // Les interfaces peuvent avoir des methodes par défaut
-    public void defaultMethod() {
+    void defaultMethod() {
         System.out.println("Salut d'une methode par défaut");
     }
 }
@@ -1685,11 +1686,7 @@ public abstract class Mammal() {
 }
 ```
 
-### Classe à double représentation
-
-<st c="r">TODO</st>
-
-## Généricité
+### Généricité
 
 Le principe de la généricité est de faire des classes qui n'acceptent qu'un certain type d'objets ou de données de façon dynamique.
 
@@ -1740,6 +1737,362 @@ System.out.println("v1: " + d2.getV1() + "\tv2: " + d2.getV2());
 ```
 
 * Plus d'info: [openClassRoom](https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/22404-la-genericite-en-java)
+
+
+
+### Classe à representation multiple
+
+Certaines classes peuvent avoir deux ou plusieurs représentations. Par exemple, la classe `Complex` possède deux jeux d'attributs distincts. Un jeu d'attributs pour la version cartésiènne d'un nombre complexe et un jeu d'attributs pour la version polaire du même nombre.
+
+Une façon de gérer la création d'un nouvel objet de ce type est de ne pas utiliser `new` pour instancier un nouvel objet `Complex` mais de faire appel à une methode statique qui porte le nom de la représentation souhaitée. C'est cette dernière qui se chargera d'appeller le constructeur (qui est `private`) tout en fournissant les attributs de l'autre représentation en plus de ceux entrés par l'utilisateur.
+
+Dans les traitements de la classe, il est important de s'assurer que toutes les représentations changent à chaque modification d'attribut. L'encapsulation se révèle ici très pratique. À chaque appel d'un setter, on assure que les autres représentations restent cohérentes.
+
+```java
+public class Complex {
+	/*------------------------------------------------------------*\
+	|*							Constructors					  *|
+	\*------------------------------------------------------------*/
+    private Complex(double re, double im, double mod, double arg) {
+        this.re = re;
+        this.im = im;
+        this.mod = mod;
+        this.arg = arg;
+    }
+	/*------------------------------------------------------------*\
+	|*						Static cstr wrappers    			  *|
+	\*------------------------------------------------------------*/
+    public static Complex createPolar(double mod, double arg) {
+        return new Complex(toRe(mod, arg), toIm(mod, arg), mod, arg);
+    }
+
+    public static Complex createCartesian(double re, double im) {
+        return new Complex(re, im, toMod(re, im), toArg(re, im));
+    }
+	/*------------------------------------------------------------*\
+	|*							Public Methods					  *|
+	\*------------------------------------------------------------*/
+    public Complex add(Complex z) {
+        return createCartesian(re + z.re, im + z.im);
+    }
+
+    public Complex multiply(double angle) {
+        return createCartesian(re * angle, im * angle);
+    }
+
+    public Complex multiply(Complex z) {
+        return createPolar(mod * z.mod, arg + z.arg);
+    }
+
+    public Complex sub(Complex z) {
+        return add(z.multiply(-1));
+    }
+
+    public Complex div(double value) {
+        return multiply(1 / value);
+    }
+
+    public Complex pow(int n) {
+        return createPolar(Math.pow(mod, n), n * arg);
+    }
+    /*------------------------------*\
+    |*			  Equals  		    *|
+    \*------------------------------*/
+    public boolean isEqual(Complex source) {
+        boolean reCond = Helpers.isEquals(re, source.re);
+        boolean imCond = Helpers.isEquals(im, source.im);
+        return this == source || reCond && imCond;
+    }
+	/*------------------------------*\
+	|*				Setters			*|
+	\*------------------------------*/
+    public void setRe(double re) {
+        this.re = re;
+        updateCartesian();
+    }
+
+    public void setIm(double im) {
+        this.im = im;
+        updateCartesian();
+    }
+
+    public void setMod(double mod) {
+        this.mod = mod;
+        updatePolaire();
+    }
+
+    public void setArg(double arg) {
+        this.arg = arg;
+        updatePolaire();
+    }
+	/*------------------------------------------------------------*\
+	|*							Private Methods					  *|
+	\*------------------------------------------------------------*/
+	private void updatePolaire() {
+	    arg = toArg(re, im);
+	    mod = toMod(re, im);
+    }
+
+    private void updateCartesian() {
+	    re = toRe(mod, arg);
+	    im = toIm(mod, arg);
+    }
+	/*------------------------------*\
+	|*			  Static  		    *|
+	\*------------------------------*/
+    private static double toRe(double mod, double arg) {
+        return mod * Math.cos(arg);
+    }
+
+    private static double toIm(double mod, double arg) {
+        return mod * Math.sin(arg);
+    }
+
+    private static double toMod(double re, double im) {
+        return Math.sqrt((re * re) + (im * im));
+    }
+
+    private static double toArg(double re, double im) {
+        return Math.atan2(im, re);
+    }
+	/*------------------------------------------------------------*\
+	|*							Attrs       					  *|
+	\*------------------------------------------------------------*/
+    // Représentation cartésienne
+    private double re;
+    private double im;
+
+    // Représentation polaire
+    private double mod;
+    private double arg;
+}
+```
+
+### Classes anonymes
+
+Une classe anonyme permet de créer une classe qui doit nécessairement hériter d'une interface ou d'une classe abstraite sans être obligé de créer cette classe de façon explicite (elle n'a pas de nom, pas de fichier, elle est créée à la vollée). L'héritage se produit implicitement. Cette façon de faire est le plus souvent utilisées pour la gestion d'actions ponctuelles, lorsque créér une classe pour un seul traitement est trop lourd. L'exemple qui suit donnera peut être un peu plus de sens à cette explication.
+
+Soit une classe `Personnage` qui a un attribut `comportement` qui est un objet qui hérite de la classe abstraite `Comportement`:
+
+```java
+// Personnage.java
+
+public class Personnage {
+    public Personnage(String nom, Comportement comp) {
+        this.nom = nom;
+        this.comportement = comp;
+    }
+
+    public void print() {
+        System.out.print("La devise de " + nom + " est: ");
+        comportement.devise();
+    }
+
+    private String nom;
+	private Comportement comportement;
+}
+```
+
+```java
+// Comportement.java
+
+public abstract class Comportement {
+    protected abstract void devise();
+}
+```
+
+Avant de pouvoir instancier des objets de type `Personnage` il faut créér les différents comportements souhaités:
+
+```java
+// Diplomate.java
+
+public class Diplomate extends Comportement {
+    @Override
+    public void devise() {
+        System.out.println("Salut, ça va ?");
+    }
+}
+```
+
+```java
+// Guerrier.java
+
+public class Guerrier extends Comportement {
+    @Override
+    public void devise() {
+        System.out.println("Tapeeeeeer !");
+    }
+}
+```
+
+Avec ces comportements créés, il est maintenant possible d'instancier des objets `Personnage`:
+
+```java
+Personnage p1 = new Personnage("George", new Diplomate());
+Personnage p2 = new Personnage("Claude", new Guerrier());
+p1.print(); // => La devise de George est: Salut, ça va ?
+p2.print(); // => La devise de Claude est: Tapeeeeeer !
+```
+
+Rien d'anonyme dans tout ça, ça fait beaucoup de fichiers et c'est un peu pénible. Dans cette exemple, une classe anonyme permettrait de ne pas avoir à déclarer une nouvelle classe pour chaque nouveau comportement:
+
+```java {2,3,4,5,6,7}
+// définition d'une classe anonyme:
+Comportement toubib = new Comportement() {
+    @Override
+    public void devise() {
+        System.out.println("Qui dois-je soigner ?");
+    }
+};
+
+Personnage p1 = new Personnage("George", toubib);
+p1.print(); // => La devise de George est: Qui dois-je soigner ?
+```
+
+Ce nouveau comportement n'est définit que pour cet objet. Pour utiliser une classe anonyme, il suffit d'override la (ou les) méthode(s) de l'**interface** ou de la **classe abstraite** dans un <Def def="délimité par des accolades">bloc d'instruction</Def>. 
+
+Les classes anonymes peuvent être utilisées inline, ainsi le code suivant est équivalent du précédent:
+
+```java
+Personnage p1 = new Personnage("George", new Comportement() {
+    @Override
+    public void devise() {
+        System.out.println("Qui dois-je soigner ?");
+    }
+});
+
+p1.print(); // => La devise de George est: Qui dois-je soigner ?
+```
+
+Les classes anonymes sont soumises aux mêmes règles que les classes normales:
+
+* Utilisation des methodes non override de la classe mère
+* Obligation de redéfinir toutes les méthodes d'une interface
+* Obligation de redéfinir les méthodes abstraites d'une classe abstraite
+
+Les classes anonymes possèdent certaines restrictions assez logiques:
+
+* Elles ne peuvent pas définir de constructeur
+* Elles sont implicitement `final`
+
+### Interfaces fonctionnelles
+
+Une interface fonctionnelle est une **interface n'ayant qu'une seule et unique méthode abstraite**. Cela permet de réduire la syntaxe des classes abstraites grace à l'utilisation de fonctions lambda. Si on reprend l'exemple précédent mais en transformant la classe abstraite `Comportement` en une interface `Comportement_I` on se retrouve avec:
+
+```java
+// Personnage.java
+public class Personnage {
+
+    public Personnage(String nom, Comportement_I comp) {
+        this.nom = nom;
+        this.comportement = comp;
+    }
+
+    public void print() {
+        System.out.print("La devise de " + nom + " est: ");
+        comportement.devise();
+    }
+
+    private String nom;
+	private Comportement_I comportement;
+}
+```
+
+```java
+// Comportement_I.java
+
+public interface Comportement_I {
+    void devise();
+}
+```
+
+Comme cette interface n'a qu'une unique méthode à override, la JVM sait automatiquement que si on crée une classe anonyme de super-type `Comportement_I` c'est cette methode qui sera à override et on peut maintenant utiliser la syntaxe lambda pour définir une classe anonyme:
+
+```java
+Personnage p1 = new Personnage(
+    "George", 
+    () -> System.out.println("Qui dois-je soigner ?")
+);
+p1.print(); // => La devise de George est: Qui dois-je soigner ?
+```
+
+Pour faire ressortir le coté singulier de ce genre d'interfaces, Java met à disposition une annotation `@FunctionalInterface` qu'il est de bonne pratique d'utiliser:
+
+```java
+// Comportement_I.java
+
+@FunctionalInterface
+public interface Comportement_I {
+    void devise();
+}
+```
+
+<Container type="warning">
+
+* Une interface fonctionnelle n'a qu'une unique methode abstraite.
+* Une interface fonctionnelle peut avoir en plus de sa methode abstraite des methodes par défaut ou des methodes statiques.
+
+</Container>
+
+### Lambdas
+
+> Bien que les fonctions anoymes soient plus du monde de la programmation fonctionnelle que de l'orienté objet, je place se chapitre ici car il se trouve dans le prolongement du précédent et introduit le suivant.
+
+Les classes anonymes et les lambdas sont le 3e type de référence possible en Java (les autres étant les **valeurs primitives** et les **objets**). Dans dantres langages, ce genre de références s'appellent **closures**. Ce sont des références sur des morceaux de code anonyme qui peuvent prendre des arguments et retourner un résultat.
+
+En Java, pour faire simple, une lambda est la redéfinition d'une methode d'une interface fonctionnelle sans avoir à faire une classe anonyme (comme vu dans le point précédent). Elle permettent donc un gain de temps d'écriture ainsi qu'une meilleur visibilité.
+
+L'oppérateur d'une lambda est `->` et comme le but d'une lambda est de redéfinir une methode abstraite d'une interface fonctionnelle, elle doit répondre à la signature de la methode concernée. Si la lambda tient sur une ligne il n'est pas nécessaire de l'enfermer dans des accolades et le `return` est implicite.
+
+#### Syntaxe
+
+* One liner:
+  * `() -> une action;` 
+    * ex: `() -> "poule";` retourne "poule"
+  * `(arg1, arg2) -> une action;` 
+    * ex: `(a, b) -> a + b;` retourne (a + b)
+* Multi line:
+  * `() -> { traitements; return valeur; };`
+    *  ex: `(a) { System.out.println("Poule"); return a + 1; };` print `"poule" et retourne a + 1
+
+Pour faire un cas pratique il faut commencer par définir une interface fonctionnelle:
+
+```java
+@FunctionalInterface
+public interface Additionner_I {
+    int add(int x, int y);
+}
+```
+
+Et voici comment l'utiliser avec une lambda:
+
+```java
+Additionner_I a = (x, y) -> x + y;
+System.out.println(a.add(2, 3)); // => 5
+```
+
+À titre de comparaison l'équivalent mais avec une classe anonyme:
+
+```java
+Additionner_I b = new Additionner_I() {
+    @Override
+    public int add(int x, int y) {
+        return x + y;
+    }
+};
+
+System.out.println(b.add(2, 3)); // => 5
+```
+
+Un traitement plus complexe sur plusieurs lignes:
+
+```java
+Additionner_I c = (x, y) -> {
+    System.out.println(x + y);
+    return x + y;
+};
+c.add(2, 3); // => 5
+```
 
 ## Tests JUnit
 

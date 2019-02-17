@@ -28,6 +28,8 @@ hide: false
   * Zeal
 
 
+## Install other Linux distro beside Arch
 
-#0E9FD3 darkblue
-#FDA5FF pink
+* [Average Linux User: install](https://www.youtube.com/watch?v=lOg_u5R0si4)
+* [Average Linux User: Grub](https://www.youtube.com/watch?v=KU6QC8UDyoI)
+
