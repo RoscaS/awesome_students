@@ -20,7 +20,6 @@ const branchesFullName = {
   ksp: 'Ksp',
   java_script: "JS",
   vuejs: "VueJS",
-  // developpement_web: 'developpement_web',
   web_design: "Web",
   dev_ops: "Dev Ops",
   reseaux: "Reseaux",
@@ -30,7 +29,8 @@ const branchesFullName = {
 const knownAuthors = [
   { name: "Sol Rosca", GHID: "22873101", class: "INF2B" },
   { name: "Michael Kneuss", GHID: "41299903", class: "INF2B" },
-  { name: "Nathan Latino", GHID: "42647776", class: "INF2B" }
+  { name: "Nathan Latino", GHID: "42647776", class: "INF2B" },
+  { name: "Edwin Claude", GHID: "", class: "INF2A" }
 ];
 
 const groups = {

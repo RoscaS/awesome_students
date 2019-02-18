@@ -391,10 +391,7 @@ Play Game of life est l'implémentation du *Game of Life par John Conway et un j
 
 ## 8. Bibliographie
 
-Contributeurs à Wikipedia, "Qt",  Wikipédia, l'encyclopédie libre, 27 novembre 2018, 13:08 UTC, [voir la page](https://fr.wikipedia.org/w/index.php?title=Qt&oldid=154305718), 20.01.2019
-
-THE QT COMPANY, "Linking to Static Builds of Qt", Qt documentation, [voir la page](http://doc.qt.io/QtForDeviceCreation/qtee-static-linking.html), 17.01.2019
-
-THE QT COMPANY,  "Qt for Linux/X11 - Deployment", Qt documentation, [voir la page](http://doc.qt.io/qt-5/linux-deployment.html), 17.01.2019
-
-Contributeurs à Wikipedia, 'Jeu de la vie',  Wikipédia, l'encyclopédie libre, 7 janvier 2019, 19:21 UTC, [voir la page](https://fr.wikipedia.org/w/index.php?title=Jeu_de_la_vie&oldid=155593783), 29.10.18 
+* Contributeurs à Wikipedia, "Qt",  Wikipédia, l'encyclopédie libre, 27 novembre 2018, 13:08 UTC, [voir la page](https://fr.wikipedia.org/w/index.php?title=Qt&oldid=154305718), 20.01.2019
+* THE QT COMPANY, "Linking to Static Builds of Qt", Qt documentation, [voir la page](http://doc.qt.io/QtForDeviceCreation/qtee-static-linking.html), 17.01.2019
+* THE QT COMPANY,  "Qt for Linux/X11 - Deployment", Qt documentation, [voir la page](http://doc.qt.io/qt-5/linux-deployment.html), 17.01.2019
+* Contributeurs à Wikipedia, 'Jeu de la vie',  Wikipédia, l'encyclopédie libre, 7 janvier 2019, 19:21 UTC, [voir la page](https://fr.wikipedia.org/w/index.php?title=Jeu_de_la_vie&oldid=155593783), 29.10.18 

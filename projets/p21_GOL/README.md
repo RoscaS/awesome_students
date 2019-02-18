@@ -1,8 +1,4 @@
-<style scoped>
-
-</style>
-
-# P2: Fight for the game of life
+# P2.1: Fight for the game of life
 
 <br>
 
@@ -11,13 +7,15 @@ Fight for the game of life est une adaptation multijoueur du célèbre automate 
 <Team/>
 
 
-## Liens
+<h2>Liens</h2>
 
 * [Répo: Forge he-arc](https://forge.ing.he-arc.ch/gitlab/inf/1819/p2-qt/h-gameoflife)
 * [Planning](https://live.ganttlab.org/?l=project)
 * [Directives P2](https://forge.ing.he-arc.ch/gitlab/dgr/Ressources/wikis/directives-p2)
 
-## Échéances
+<Posts header="Documents" order="-1"/>
+
+<h2>Échéances</h2>
 
 ### 1 octobre 2018
 <Check state="true">Création des groupes</Check>
@@ -34,25 +32,12 @@ Fight for the game of life est une adaptation multijoueur du célèbre automate 
 <Check state="true">MVP</Check>
 
 ### 20 janvier 2019
-<Check state="false">Objectif atteint</Check>
-<Check state="false">Rapport</Check>
+<Check state="true">Objectif atteint</Check>
+<Check state="true">Rapport</Check>
 
 ### 21/22 janvier 2019
-<Check state="false">Présentation</Check>
+<Check state="true">Présentation</Check>
 
 
-## Analyse
-* [Cahier des charges](/projets/p2/01_cahier_des_charges.html)
-* [Specifications](/projets/p2/02_specifications.html)
-* [Planning](/projets/p2/03_planning.html)
 
 
-## Conception
-
-* [Maquettes](/projets/p2/04_maquettes.html)
-* [Algorithmes](/projets/p2/05_algos.html)
-
-## Finalisation
-
-* [Rapport](/projets/p2/07_rapport.html)
-* [Présentation](#)

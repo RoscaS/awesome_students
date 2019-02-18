@@ -1,7 +1,7 @@
 <template>
 
   <div class="wrapper">
-    <h2 v-if="!pages">Articles</h2>
+    <h2 v-if="!pages">{{ header }}</h2>
 
     <section class="section" v-if="articles.length">
       <router-link class="box"
@@ -13,7 +13,7 @@
         <vs-row vs-w="12">
           <vs-col class="enumerate" vs-w="1" v-if="!pages">
             <span class="diez">#</span>
-            <span class="number">{{articles.length - key}}</span>
+            <span class="number">{{enumeration(key)}}</span>
           </vs-col>
           <vs-col :vs-w="pages ? '12' : '11'">
             <vs-col vs-w="7" vs-xs="12" vs-type="flex">
@@ -45,7 +45,7 @@
     </section>
     <section class="section" v-else>
       <span class="empty">
-        Aucun article pour le moment...
+        Aucun {{singularArticleType}} pour le moment...
       </span>
     </section>
   </div>
@@ -54,31 +54,34 @@
 </template>
 
 <script>
-  import { firstNamesOnly } from '../utils';
-  import { branchesFullName } from '../data';
-  import { DateTime, Settings } from 'luxon';
+  import { firstNamesOnly } from '../utils'
+  import { branchesFullName } from '../data'
+  import { DateTime, Settings } from 'luxon'
 
-  Settings.defaultLocale = 'fr';
+  Settings.defaultLocale = 'fr'
 
   export default {
     props: {
       pages: {type: String},
+      header: {type: String, default: 'Articles'},
+      order: {type: String, default: '1'},
     },
     data: () => ({
       dict: branchesFullName,
     }),
     computed: {
-      articles () {
-        let articles = [];
-        let allPosts = this.$site.pages.filter(x => {
+      articles() {
+        let articles = []
+        let rawArticles = this.$site.pages.filter(x => {
           return x.path.includes(this.pages ? this.pages : this.$page.path)
-            && x.path.endsWith('.html');
-        });
-        let sortedPosts = allPosts.sort((a, b) => {
-          return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
-        });
-        sortedPosts.forEach(i => {
+            && x.path.endsWith('.html')
+        })
+        let sortedArticles = rawArticles.sort((a, b) => {
+          return parseInt(this.order) *
+            (new Date(b.frontmatter.date) - new Date(a.frontmatter.date))
+        })
 
+        sortedArticles.forEach(i => {
           if (!i.frontmatter.hide) {
             articles.push({
               author: i.frontmatter.author,
@@ -87,27 +90,36 @@
               title: i.frontmatter.title,
               path: i.path,
               date: this.date(i.frontmatter.date),
-            });
+            })
           }
-
-        });
-        return articles;
+        })
+        return articles
+      },
+      singularArticleType() {
+        let lastLetterIdx = this.header.length - 1;
+        let trimPlural = this.header[lastLetterIdx] === 's'
+                         ? this.header.slice(0, lastLetterIdx)
+                         : this.header
+        return trimPlural.toLowerCase()
       },
     },
     methods: {
-      date (date) {
-        return DateTime.fromISO(date).toLocaleString(DateTime.DATE_FULL);
+      date(date) {
+        return DateTime.fromISO(date).toLocaleString(DateTime.DATE_FULL)
       },
-      getCategory (path) {
-        let cat = path.split('/')[2];
-        cat = cat.replace(/_/gi, ' ');
-        return cat[0].toUpperCase() + cat.slice(1, cat.length);
+      enumeration(key) {
+        return parseInt(this.order) < 0 ? key + 1 : this.articles.length - key
+      },
+      getCategory(path) {
+        let cat = path.split('/')[2]
+        cat = cat.replace(/_/gi, ' ')
+        return cat[0].toUpperCase() + cat.slice(1, cat.length)
       },
       author(author) {
-        return firstNamesOnly(author);
-      }
+        return firstNamesOnly(author)
+      },
     },
-  };
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -135,7 +147,7 @@
     transition: .5s ease;
     background-color: white;
     border-radius: 6px;
-    border: 1px solid #f1f1f1;
+    border: 1px solid #F1F1F1;
     display: block;
     padding: 5px 20px 5px 20px;
     margin-top: 6px;
@@ -175,7 +187,7 @@
 
   .category {
     margin-left: auto;
-    color: #2c3e50;
+    color: #2C3E50;
     font-family: 'Open Sans', sans-serif;
     @media (max-width: $MQMobile) {
       margin-left: inherit;
@@ -195,7 +207,7 @@
   .chip {
     border-radius: 5px;
     font-size: 10px;
-    background-color: #eeeeee;
+    background-color: #EEEEEE;
     padding: 5px 10px 5px 10px;
     i {
       margin-right: 5px;

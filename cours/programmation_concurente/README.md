@@ -12,8 +12,6 @@ which will happen first.
 
 <h2>Liens utiles</h2>
 
-
-
 <Card header="Tutos">
 
 * [the little book of semaphores](http://greenteapress.com/semaphores/LittleBookOfSemaphores.pdf)

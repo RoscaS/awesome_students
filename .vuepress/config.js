@@ -64,7 +64,8 @@ module.exports = {
         collapsable: true,
         children: [
           '/projets/archives/',
-          '/projets/p2/',
+          '/projets/p21_GOL/',
+          '/projets/p22_RTS/',
         ],
       },
     ],

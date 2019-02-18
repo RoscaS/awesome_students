@@ -1,12 +1,15 @@
 # Qt
 
-```cpp
-QString s = "value";
-qDebug() << "abc" << s << "def";
-```
+<Posts/>
 
 ## Tests
 * 19 mars
 * 30 avril
 
-<Posts/>
+```cpp
+QString s = "value";
+qDebug() << "abc" << s << "def";
+```
+
+
+
