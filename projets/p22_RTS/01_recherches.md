@@ -14,8 +14,6 @@ Dans un premier temps il est nécessaire de rechercher des compléments d'inform
 
 ## Liens
 
-* [Entity component system (fr)](http://guillaume.belz.free.fr/doku.php?id=ecs)
-    * Super introduction mais incomplet.
 * [Game programming pattern (en)](http://www.gameprogrammingpatterns.com/)
     * Semble agréable à lire et fort interessant mais peut être un peu trop généraliste.
 * [Overview création de jeux (fr)](http://conquerirlemonde.com/blog/index-des-articles/)
@@ -28,6 +26,9 @@ Dans un premier temps il est nécessaire de rechercher des compléments d'inform
 * Architecture
     * Game programming pattern
     * Entity component system
+      * [Introduction](https://www.youtube.com/watch?v=2rW7ALyHaas)
+      * [Entity component system (fr)](http://guillaume.belz.free.fr/doku.php?id=ecs) Super introduction mais incomplet
+      * [PLayliste YT](https://www.youtube.com/watch?v=5KugyHKsXLQ) Prometteur mais long
 * IA
   * Path finding
   * Gestion du stacking des unités
