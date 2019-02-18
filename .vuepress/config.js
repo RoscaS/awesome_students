@@ -37,6 +37,7 @@ module.exports = {
           '/cours/protocoles_reseaux/',
           '/cours/developpement_web/',
           '/cours/analyse/',
+          '/cours/design_patterns/',
         ],
       },
       {

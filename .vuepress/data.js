@@ -10,6 +10,7 @@ const branchesFullName = {
   protocoles_reseaux: "Res",
   developpement_web: "Web",
   analyse: "Analyse",
+  design_patterns: "Design patterns",
 
   // Articles
   algo: "Algo",
