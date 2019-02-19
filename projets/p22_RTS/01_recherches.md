@@ -62,6 +62,7 @@ Dans un premier temps il est nécessaire de rechercher des compléments d'inform
 * Actions
     * Selection
     * Curseur
+    * Mouvement camera
 * Layout
 
 ### Liens utiles
