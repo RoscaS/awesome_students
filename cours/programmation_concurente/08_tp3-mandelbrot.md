@@ -1,6 +1,6 @@
 ---
 title: "TP-3: Mandelbrot"
-date: 2019-01-25
+date: 2018-02-13
 author: "Nathan, Sol"
 sidebar: auto
 project: true
@@ -74,7 +74,7 @@ Le projet mandelbrot codé séquentiellement prend 1 seconde pour executer le co
 
 <br> <br>
 
-> Temps en fonction des threads utilisés pour 16 blocs (Qthread)
+> Temps en// fonction des threads utilisés pour 16 blocs (Qthread)
 
 
 <Charts :x="y" :y="x4" :height="200" label="temps (ms)"/>

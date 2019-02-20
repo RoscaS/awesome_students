@@ -7,7 +7,95 @@ project: false
 hide: false
 ---
 
+## Rappel
+
+<Card header="Vocabulaire" :title="true" max-width="170">
+
+* 1 octet = 8 bits
+
+| fr      | en     |
+| ------- | ------ |
+| "Octet" | "byte" |
+| "Bit"   | "bit"  |
+
+</Card>
+
+<Card header="Sur 1 byte" :title="true" max-width="450">
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+**En valeur absolue signée**
+
+| value | bin         |
+| ----- | ----------- |
+| -127  | `1111 1111` |
+| -1    | `1000 0001` |
+| -0    | `1000 0000` |
+| 0     | `0000 0000` |
+| 1     | `0000 0001` |
+| 127   | `0111 1111` |
+
+</template>
+<template slot="right">
+
+**Complément signé**
+
+| value | bin         |
+| ----- | ----------- |
+| -127  | `1111 1111` |
+| -1    | `1000 0001` |
+| -0    | `1000 0000` |
+| 0     | `0000 0000` |
+| 1     | `0000 0001` |
+| 127   | `0111 1111` |
+
+</template>
+</Col>
+
+</Card>
+
+<Card header="Endian (2 bytes)" :title="true" max-width="">
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+**Little endian**
+
+| value   | adresse     | adresse +1  |
+| ------- | ----------- | ----------- |
+| -32 768 | `1000 0000` | `0000 0000` |
+| -1      | `1111 1111` | `1111 1111` |
+| -0      | `0000 0000` | `0000 0000` |
+| -1      | `0000 0000` | `0000 0001` |
+| -32 767 | `0111 1111` | `1111 1111` |
+
+
+</template>
+<template slot="right">
+
+**Big endian**
+
+| value   | adresse     | adresse +1  |
+| ------- | ----------- | ----------- |
+| -32 768 | `0000 0000` | `1000 0000` |
+| -1      | `1111 1111` | `1111 1111` |
+| -0      | `0000 0000` | `0000 0000` |
+| -1      | `0000 0001` | `0000 0000` |
+| -32 767 | `1111 1111` | `0111 1111` |
+
+</template>
+</Col>
+
+</Card>
+
 ## Types de base
+
+### Entiers
+
+
+
+<br>
 
 | Type            |                Bytes                 |                                                      Range                                                       |
 | --------------- | :----------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
@@ -19,23 +107,8 @@ hide: false
 | **u int**       | 2 (cpu 16 bits) <br> 4 (cpu 32 bits) |          0 <Fa fa="arrow-right"/>  65 535 <br> <st c="b"> 0 <Fa fa="arrow-right"/> 4 294 967 295 </st>           |
 | **long int**    |                  4                   |                      <st c="r"> -2 147 483 648 <Fa fa="arrow-right"/>  2 147 483 647 </st>                       |
 | **u long int**  |                  4                   |                             <st c="b"> 0 <Fa fa="arrow-right"/>  4 294 967 295 </st>                             |
-|                 |                                      |                                                                                                                  |
-| **float**       |                  4                   |                                      -3.4E-38 <Fa fa="arrow-right"/> 3.4E38                                      |
-| **double**      |                  8                   |                                     -1.7E-308 <Fa fa="arrow-right"/> 1.7E308                                     |
-| **long double** |                  10                  |                                    -3.4E-4932 <Fa fa="arrow-right"/> 3.4E4932                                    |
 
-
-* Pour les types entiers (de **char** à **u long int** dans le tableau), on parle de range dans le sens plage de valeur (et de façon discrète).
-* Pour les types à virgule flotante (**float**, **double** et **long double**), on parle de range dans le sens portée (de précision).
-
-
-<br>
-
-<Container type="warning">
-
-On remarque que le **long int** n'a de sens que sur les architectures 16 bits.
-
-</Container>
+* Pour les types entiers on parle de range dans le sens plage de valeur (et de façon discrète).
 
 <br>
 
@@ -48,6 +121,19 @@ On remarque que le **long int** n'a de sens que sur les architectures 16 bits.
 | **double**      |   8   |  -1.7E-308 <Fa fa="arrow-right"/> 1.7E308  | 15  valeurs significatives |
 | **long double** |  10   | -3.4E-4932 <Fa fa="arrow-right"/> 3.4E4932 | 19  valeurs significatives |
 
+<br>
+
+* Pour les types à virgule flotante on parle de range dans le sens portée (de précision).
+
+<br>
+
+<Container type="warning">
+
+On remarque que le **long int** n'a de sens que sur les architectures 16 bits.
+
+</Container>
+
+<br>
 
 <Col proportions="6/6" vAlign="0">
 <template slot="left">
@@ -79,8 +165,6 @@ On remarque que le **long int** n'a de sens que sur les architectures 16 bits.
 
 </template>
 </Col>
-
-<br>
 
 <style>
 .cell { background-color: white; border: white;}
