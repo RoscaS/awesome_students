@@ -11,6 +11,7 @@ const branchesFullName = {
   developpement_web: "Web",
   analyse: "Analyse",
   design_patterns: "Design patterns",
+  algonum: "Algo num",
 
   // Articles
   algo: "Algo",
