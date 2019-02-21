@@ -1,14 +1,15 @@
 ---
 title: Recap CP2
-date: "2019-01-22"
-author:  "Sol"
+date: 2019-01-22
+author:  Sol
 sidebar: auto
 project: false
+hide: true
 ---
 
 ## Theorie
 
-*[wiki](https://ssl.horus.ch/~schaefer/bin/view/HEArc/ProtocolesEtReseauxExercicesRevisionControlePrincipalIICorrige)
+* [wiki](https://ssl.horus.ch/~schaefer/bin/view/HEArc/ProtocolesEtReseauxExercicesRevisionControlePrincipalIICorrige)
 
 ## Exercices
 
