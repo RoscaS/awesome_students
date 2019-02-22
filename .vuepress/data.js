@@ -12,6 +12,7 @@ const branchesFullName = {
   analyse: "Analyse",
   design_patterns: "Design patterns",
   algonum: "Algo num",
+  python: "Python",
 
   // Articles
   algo: "Algo",

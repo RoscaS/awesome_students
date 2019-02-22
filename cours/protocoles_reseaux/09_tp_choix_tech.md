@@ -7,6 +7,16 @@ project: false
 hide: false
 ---
 
+## Commentaires
+* <Check state="false">MPLS supporte la QoS</Check>
+* <Check state="false">ISDN/DDI/BRI: bientôt mort, remplacé par VoIP</Check>
+* <Check state="true">PABX: peut être en VoIP aussi</Check>
+* <Check state="false">référencer les illustrations si pas faites par vous</Check>
+* <Check state="false">aspect haute fiabilité de la méthode avec une seule connexion VoIP externe?</Check>
+* <Check state="false">comparer aussi: un central indépendant par succursale, avec connexion VoIP multiples + interne via MPLS</Check>
+* <Check state="false">solution clé en main d'opérateur?</Check>
+
+objectif: créer un tableau comparatif avec p.ex. coût install|exploitation, compétences externes, haute fiabilité, indépendance des fournisseurs, etc.
 
 ## Introduction
 
@@ -23,6 +33,7 @@ hide: false
   * Integrated Services Digital Network ou Réseau Numérique à Intégration de Services (RNIS en français).
   * Architecture 
   * Évolution entièrement numérique des réseaux téléphoniques analogiques conçue pour associer la voix, les données, la vidéo et toute autre application ou service.
+  * Service historique
   * [DDI](https://www.voip-info.org/ddi/): 
     * Direct Dial In (numbers) 
     * Des numéros additionnels pouvant être associés avec un numéro principal sur une ligne **ISDN** 
@@ -30,14 +41,20 @@ hide: false
     * Généralement utilisé avec un switch/PBX.
   * [BRI](https://en.wikipedia.org/wiki/Basic_Rate_Interface) Basic Rate Interface ou Basic Access (BRI/BA): Interface d'accès à un réseau ISDN.
 * [PABX](https://infologo.ch/central-telephonique-pbx/changer-de-central-telephonique-pabx-ou-ipbx/): 
+  * Ou **PBX** (Private Branche eXchange).
   * Autocommutateur téléphonique privé. 
   * Assure les connexions téléphoniques entre appelé et appélant au sein d'une entreprise et à l'extérieur. 
   * Limitée au lignes de téléphone classique.
+  * Version VoIP: 
+    * **IPBX** (Internet Private Branche eXchange): Solution hardware
+    * **VPBX** (Virtual Private Branch eXchange): Solution cloud
 
 ## VoIP
 
 ### C'est quoi ?
-Element central du présent rapport, **Voice over Internet Protocol** est une methodologie ainsi qu'un groupe de technologies permettant de faire passer la voix ainsi que des sessions multimedia sur des réseaux IP. On parle de de téléphonie sur internet et de <Def def="Broadband telephony">téléphonie à large bande</Def> pour désigner des services de communication (voix, téléphone, fax mais aussi SMS ainsi) sur le réseau Internet à la place des réseaux de télécommunication traditionnel ([PSTN](https://en.wikipedia.org/wiki/Public_switched_telephone_network) ou encore POTS, Plain Old Telephone System qui se trduirait par "Le bon vieux système de téléphonique").
+Element central du présent rapport, **Voice over Internet Protocol** est une methodologie ainsi qu'un groupe de technologies permettant de faire passer la voix ainsi que des sessions multimedia sur des réseaux IP. 
+
+On parle de de téléphonie sur internet et de <Def def="Broadband telephony">téléphonie à large bande</Def> pour désigner des services de communication (voix, téléphone, fax mais aussi SMS ainsi) sur le réseau Internet à la place des réseaux de télécommunication traditionnel ([PSTN](https://en.wikipedia.org/wiki/Public_switched_telephone_network) ou encore POTS, Plain Old Telephone System qui se trduirait par "Le bon vieux système de téléphonique").
 
 ### Comment ?
 Dans la pratique, la voix étant un source analogique et donc continue il est premièrement nécessaire de la numériser pour pouvoir la transporter sous forme de paquets discrets pouvant circuler sur un réseau informatique. En fonction du protocole utilisé pour le transport, un encodage spécifique peut être appliqué pour compresser le signal numérisé.
@@ -50,7 +67,7 @@ Dans la pratique, la voix étant un source analogique et donc continue il est pr
   * Dans le cadre d'une entreprise aussi bien qu'un foyer, les réseaux numériques sont déjà en place, la VoIP permet de libérer le budget dédié au réseau traditionnel.
 * **Aspects logistiques**:
   * La nature numérique de la technologie ne la limite pas à des terminaux spécifiques
-  * Les adaptateurs **ATA** (Analog Telephone Adapter) permettent de connecter certains terminaux analogiques au réseau numérique
+  * Les adaptateurs <Def def="Analog Telephone Adapter">ATA</Def> permettent de connecter certains terminaux analogiques au réseau numérique
   * Les terminaux analogiques peuvent être remplacés par des terminaux numériques qui mimiquent esthétiquement et fonctionnelement le matériel classique ce qui réduit les problèmes d'adaptation des utilisateurs.
   * Simplicité d'installation et de maintient d'un réseau unique à la place de deux distincts.
 
@@ -86,7 +103,7 @@ Il existe une troisième variante qui est un mélange des deux axes principaux. 
 
 <div style="padding-left: 15px;">
 
-Un **IPBX** (Internet Protocol Branch eXchange) est un standard téléphonique privé lié au réseau Internet. Les communications se font via le protocole IP et non sur les lignes analogiques comme dans le cas de **PABX** traditionnel.
+Un <Def def="Internet Protocol Branch eXchange">IPBX</Def> est un standard téléphonique privé lié au réseau Internet. Les communications se font via le protocole IP et non sur les lignes analogiques comme dans le cas de **PABX** traditionnel.
 
 Une centrale téléphonique située au siège de l'entreprise reliée à Internet et utilisant le réseau **MPLS** pour relier les succursales externes. Dans cette configuration, le système de gestion des communications est interne à l'entreprise et les communications internes ne sortent pas de l'entrprise.
 
@@ -115,7 +132,7 @@ Une centrale téléphonique située au siège de l'entreprise reliée à Interne
 
 <div style="padding-left: 15px;">
 
-Un **VPBX** (Virtual Private Branch eXchange) est l'équivalent cloud d'un PBX traditionnel. Un prestataire externe se charge de la gestion des communications. Dans cette configuration, les communications interne sont gérées à l'extérieur de l'entreprise. On parle ici d'une **solution clés en main**.
+Un <Def def="Virtual Private Branch eXchange">VPBX</Def> est l'équivalent cloud d'un **PBX** traditionnel. Un prestataire externe se charge de la gestion des communications. Dans cette configuration, les communications interne sont gérées à l'extérieur de l'entreprise. On parle ici d'une **solution clés en main**.
 
 </div>
 
