@@ -39,6 +39,7 @@ module.exports = {
           '/cours/analyse/',
           '/cours/design_patterns/',
           '/cours/algonum/',
+          '/cours/python/',
         ],
       },
       {

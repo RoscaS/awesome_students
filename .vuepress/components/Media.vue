@@ -11,11 +11,11 @@
         </a>
         <img v-else :src="src" :style="setWidth" @click="fullScreen = true"/>
       </div>
-        <blockquote v-if="caption"
-                    :style="`max-width:${width}px;`"
-                    class="caption">
-            {{caption}}
-        </blockquote>
+      <blockquote v-if="caption"
+                  :style="`max-width:${width}px;`"
+                  class="caption">
+          {{caption}}
+      </blockquote>
     </div>
     <vs-popup fullscreen
               :title="caption? caption : ''"
@@ -71,12 +71,14 @@
     align-items: center;
     justify-content: center;
     margin-top: 5%;
+  }
 
+  .caption {
+    border-left: none;
   }
 
   img {
     cursor: pointer;
-
   }
 
 
