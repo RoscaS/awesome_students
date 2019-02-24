@@ -1,5 +1,5 @@
 ---
-title: "Choix de technologie: Téléphonie d'entrprise" 
+title: "Choix de technologie: Téléphonie d'entreprise" 
 date: 2019-02-19
 author: Sol
 sidebar: auto
