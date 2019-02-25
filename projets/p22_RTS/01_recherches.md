@@ -52,6 +52,7 @@ Dans un premier temps il est nécessaire de rechercher des compléments d'inform
 
 ### Liens utiles
 * [La programmation réseau Java](https://openclassrooms.com/fr/courses/2654601-java-et-la-programmation-reseau)
+* [rts server architecture](https://www.gamedev.net/forums/topic/668816-rts-server-architecture/)
 * Rechercher Kryonet
 
 ## Présentation
