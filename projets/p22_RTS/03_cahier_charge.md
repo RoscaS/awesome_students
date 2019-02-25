@@ -7,9 +7,8 @@ project: true
 hide: false
 ---
 
-## Description
-Dans le cadre du P2.2 nous souhaitons réaliser un jeu de stratégie en temps réel. 
-
+## introduction
+Dans le cadre du cours de projet P2.2 à l'HE-Arc, le developpement d'un projet en Java est demandé. Ce projet doit contenir de l'animation et/ou gestion d'image. Le choix se porte sur un jeu de stratégie en temps réel (RTS).
 
 ## Objectifs
 
