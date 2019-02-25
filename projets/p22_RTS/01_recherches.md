@@ -18,6 +18,7 @@ Dans un premier temps il est nécessaire de rechercher des compléments d'inform
     * Semble agréable à lire et fort interessant mais peut être un peu trop généraliste.
 * [Overview création de jeux (fr)](http://conquerirlemonde.com/blog/index-des-articles/)
     * La partie sur les erreurs à ne pas faire me semble particulièrement interessante.
+* [LibGDX: tuto](https://www.gamefromscratch.com/page/LibGDX-Tutorial-series.aspx)
 
 ## Logique
 
@@ -51,7 +52,7 @@ Dans un premier temps il est nécessaire de rechercher des compléments d'inform
 
 ### Liens utiles
 * [La programmation réseau Java](https://openclassrooms.com/fr/courses/2654601-java-et-la-programmation-reseau)
-
+* Rechercher Kryonet
 
 ## Présentation
 
