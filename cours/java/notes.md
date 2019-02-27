@@ -2094,6 +2094,19 @@ Additionner_I c = (x, y) -> {
 c.add(2, 3); // => 5
 ```
 
+## Threading
+
+Deux façons de créér un thread:
+* créer une classe héritant de la classe `Thread`.
+* créer une implémentation de l'interface `Runnable` et instancier un objet `Thread` avec l'implémentation de cette interface.
+  * suggestion: classe anonyme ou lambda.
+
+
+
+
+
+
+
 ## Tests JUnit
 
 <st c="r">TODO</st>
@@ -2103,6 +2116,8 @@ c.add(2, 3); // => 5
 <st c="r">TODO</st>
 
 ## En vrac
+
+* Avec une classe anonyme, on peut aussi bien implémenter une interface que redéfinir une classe (voir MouseAdapter)
 
 * Chaque fichier .java doit contenir une classe public portant le même nom que le fichier.
 

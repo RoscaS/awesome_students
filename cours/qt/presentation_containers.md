@@ -41,7 +41,6 @@ QVector<QString> strings;
 
 // Déclaration + initialisation
 QVector<int> valeurs {1, 2, 3};
-
 ```
 
 ---

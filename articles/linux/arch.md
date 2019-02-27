@@ -30,6 +30,16 @@ hide: false
 
 ## Install other Linux distro beside Arch
 
+1. Mount the partition with the new system.
+  * List the partitions of your system:
+    * `lsblk`
+  * Mount it:
+  * `sudo mound /dev/sdXx /mnt`
+2. Install OS prober:
+  * `sudo pacman -S os-prober`
+3. Update GRUB:
+  * `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+
 * [Average Linux User: install](https://www.youtube.com/watch?v=lOg_u5R0si4)
 * [Average Linux User: Grub](https://www.youtube.com/watch?v=KU6QC8UDyoI)
 
