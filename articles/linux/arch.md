@@ -27,6 +27,11 @@ hide: false
 * **Documentation**:
   * Zeal
 
+## Print screen
+
+* `sudo pacman -S xclip maim `
+* add `bindsym Print exec  maim -s --format=png /dev/stdout | tee ~/Downloads/last_screen.png | xclip -selection clipboard -t image/png -i` in conf file
+
 
 ## Install other Linux distro beside Arch
 
