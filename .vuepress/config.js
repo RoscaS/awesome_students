@@ -40,6 +40,7 @@ module.exports = {
           '/cours/design_patterns/',
           '/cours/algonum/',
           '/cours/python/',
+          '/cours/stats/',
         ],
       },
       {
