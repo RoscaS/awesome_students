@@ -35,7 +35,7 @@ hide: false
 
 
 ## Cas continu
-Lorsqu'il y a trop de valeurs discrètes, ou lorsque le caractère de la population est de nature continue, on regroupe les valeurs en classes de même amplitude.
+Lorsqu'il y a **trop de valeurs discrètes**, ou lorsque le **caractère de la population est de nature continue**, on regroupe les valeurs en classes de même amplitude.
 
 |Temps (s) <br> _classes_|Centre des classes <br> $x_i$|Effectifs <br> $n_i$|
 |:------:|:------:|:------:|
