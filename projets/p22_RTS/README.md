@@ -29,8 +29,8 @@ Rien à faire ici mais comme ça je suis certain qu'on va tomber dessus. Il faut
 <Check state="true">Choix du projet</Check>
 
 ### 4 mars 2019
-<Check state="false">Mise en place forge</Check>
-<Check state="false">cahier des charges</Check>
+<Check state="true">Mise en place forge</Check>
+<Check state="true">cahier des charges</Check>
 
 ### 11 mars 2019
 <Check state="false">Spécifications détaillées</Check>
