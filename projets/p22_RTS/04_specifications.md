@@ -15,6 +15,5 @@ hide: false
 
 Deux joueurs s'affrontent sur une carte cachée par un brouillard de guère. Le jeu est symètrique, autrement dit les factions qu'incarnent les joueurs sont les mêmes.
 
-##  Air de jeu
 
 
