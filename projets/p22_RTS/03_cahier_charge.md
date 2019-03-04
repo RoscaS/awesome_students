@@ -54,7 +54,7 @@ L'objectif principal est d'avoir un moteur fonctionnel. Dans un premier temps le
   * exit
 * **Network**
   * 1v1 (pvp)
-  * client**s** <Fa fa="arrow-right"/> serveur
+  * client**s** / serveur
 
 
 ## Objectifs secondaires
