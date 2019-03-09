@@ -20,7 +20,8 @@
 * [tldrlegal.com](https://tldrlegal.com/) Legal overview
 * [dodgy-blog.com](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/) Stay safe
 * [toptal.com](https://www.toptal.com/developers/sorting-algorithms) Sorting comparaison
-* [htmlcheatsheet.com](https://htmlcheatsheet.com/css/) interactive html & css cheatsheet
+* [htmlcheatsheet.com](https://htmlcheatsheet.com/css/) Interactive html & css cheatsheet
+* [css-tricks.com](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) Flexbox cheastsheet
 
 </Card>
 
