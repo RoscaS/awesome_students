@@ -20,7 +20,7 @@ Rien à faire ici mais comme ça je suis certain qu'on va tomber dessus. Il faut
 * [Répo: Forge he-arc](https://forge.ing.he-arc.ch/gitlab/inf/1819/p2-java/yarts.git)
 * TODO: [Directives](#)
 
-<Posts header="Documents" order="-1"/>
+<Posts header="Documents"/>
 
 <h2>Échéances</h2>
 
