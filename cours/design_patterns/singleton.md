@@ -20,7 +20,7 @@ hide: false
 />
 
 
-1. Une classe **Singleton** déclare une méthode statique `getInstance` qui retourne la même instance de sa propre classe.
+1. Une classe **Singleton** déclare une méthode s`tatique `getInstance` qui retourne la même instance de sa propre classe.
 
 Le constructeur d'un Singleton ne devrait pas être accessible au client et l'appel de la methode `getInstance` la seul façon de récupérer l'instance.
 
@@ -28,11 +28,11 @@ Le constructeur d'un Singleton ne devrait pas être accessible au client et l'ap
 
 S'utilise lorsqu'une classe ne doit avoir qu'une seul instance disponible pour tous les clients. Par exemple, un seul objet `Database` partagé entre différents composants d'un même programme.
 
-* Cette patterne emmpèche le constructeur d'une classe de construire un objet. Ainsi, il est nécessaire de créer une methode pour l'instanciation initiale. L'appel de cette methode doit soit instancier un objet, soit retourner l'objet si il existe déja.
+* Cette paterne emmpèche le constructeur d'une classe de construire un objet. Ainsi, il est nécessaire de créer une methode pour l'instanciation initiale. L'appel de cette methode doit soit instancier un objet, soit retourner l'objet si il existe déja.
 
 S'utilise lorsqu'il est nécessaire d'avoir un controle stricte sur les variables globales.
 
-* Contrairement au variables globales, la patterne Singleton assure qu'il n'existe qu'une instance d'une classe Singleton. Rien, à l'exception de la classe Singleton ne peut remplacer l'objet qu'elle garde.
+* Contrairement au variables globales, la paterne Singleton assure qu'il n'existe qu'une instance d'une classe Singleton. Rien, à l'exception de la classe Singleton ne peut remplacer l'objet qu'elle garde.
 
 <Container type="info">
 
@@ -60,7 +60,7 @@ Il est possible de doser la précédente limitation et de donner la possibilité
 </template>
 <template slot="right">
 
-* <st c="r">Viole le principe de _résponsabilité unique_ (cette patterne résoud deux problèmes à la fois)</st>
+* <st c="r">Viole le principe de _résponsabilité unique_ (cette paterne résoud deux problèmes à la fois)</st>
 * <st c="r">Nécessite d'être adapté à une utilisation multi thread</st>
 
 </template>

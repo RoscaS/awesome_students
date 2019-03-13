@@ -182,7 +182,7 @@ public class Machine extends CompositeComponent {
 
 <br>
 
-Pour assurér que la classe `Config` ne sera instanciée qu'une seul fois, nous pouvons utiliser la patterne **Singleton**. Pour ce faire un attribut `instance` privé et statique est ajouté à la classe qui contiendra l'unique instance de `Config`, nous pouvons nous débarasser du constructeur par défaut et rendre privé celui qui prenait une String en argument.
+Pour assurér que la classe `Config` ne sera instanciée qu'une seul fois, nous pouvons utiliser la paterne **Singleton**. Pour ce faire un attribut `instance` privé et statique est ajouté à la classe qui contiendra l'unique instance de `Config`, nous pouvons nous débarasser du constructeur par défaut et rendre privé celui qui prenait une String en argument.
 
 Une methode `getInstance()` statique et publique qui implémente une _lazy initialization_ est ajoutée:
 
@@ -242,4 +242,4 @@ private static void createConfigFile() {
 
 <br>
 
-L'utilisation de la patterne **Singleton** assure qu'une seul instance de `Config` sera créé et offre un point d'entrée pour y accéder (`getInstance()`).
+L'utilisation de la paterne **Singleton** assure qu'une seul instance de `Config` sera créé et offre un point d'entrée pour y accéder (`getInstance()`).

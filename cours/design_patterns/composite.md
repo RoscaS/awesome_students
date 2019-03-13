@@ -40,12 +40,12 @@ hide: false
 ## Application
 
  S'utilise lorsqu'il est nécessaire d'implémenter une structure d'objets hierarchique **sous forme d'arbre**.
-* Le patterne Composite fournit deux types élémentaires qui partagent une interface commune: Des **feuilles simples** et des **conteneurs complexes**. Le conteneur peut être composé aussi bien de feuilles que d'autres conteneurs ce qui permet la construction d'une structure imbriquée recursive qui ressemble à un arbre.
+* Le paterne Composite fournit deux types élémentaires qui partagent une interface commune: Des **feuilles simples** et des **conteneurs complexes**. Le conteneur peut être composé aussi bien de feuilles que d'autres conteneurs ce qui permet la construction d'une structure imbriquée recursive qui ressemble à un arbre.
 
 <br>
 
 S'utilise lorsqu'il est souhaité que le code client traite** de la même façon** les éléments simples et complexes.
-* Tous les éléments du champ d'application de la patterne Composite **partagent une interface commune**. En utilisant cette interface, le client ne se soucie pas du type concret des objets avec lesquel il travail.
+* Tous les éléments du champ d'application de la paterne Composite **partagent une interface commune**. En utilisant cette interface, le client ne se soucie pas du type concret des objets avec lesquel il travail.
 
 ## Imlpémentation
 
