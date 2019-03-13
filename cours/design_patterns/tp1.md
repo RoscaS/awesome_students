@@ -11,6 +11,7 @@ hide: false
 
 ##  Partie 1: Composite
 
+<br>
 
 <Diagram 
     center="true" 
@@ -18,6 +19,7 @@ hide: false
     link="https://bit.ly/2UBi5Wq"
 />
 
+<br>
 
 * `Component` décrit les oppérations communes de `Part` `AssembledPart` et `Machine`.
 * `Part` est un **composant simple** qui implémente l'interface `Component`.
@@ -25,7 +27,7 @@ hide: false
 * `AssembledPart` et `Machine` héritent toutes les deux de _`CompositeComponent`_ et sont les **composants complexes** de la hierarchie.
 * Un `Client` travail avec tous les éléments à travers l'interface `Component`. Ainsi, ce dernier utilise de la même façon les objets simples et complexes de l'arbre.
 
-Cette construction utilisant le patterne Composite ne casse pas le code originale utilisant l'ensemble de classes. Le code tire profit du polymorphisme et exploite le principe ouvert/fermé.
+Le code structuré de cette façon exploite le principe <Def def="ouverte (à l'extension) et fermée (à la modification)"> ouvert/fermé </Def> en tirant profit du polymorphisme. De plus, cette modification est transparent pour les clients. En effet, malgré la restructuration, aucune régression n'est constatée dans le code original qui utilisait l'ensemble de classes à modifier.
 
 ### Code
 
@@ -170,3 +172,74 @@ public class Machine extends CompositeComponent {
 
 ## Partie 2: Singleton
 
+<br>
+
+<Diagram 
+    center="true" 
+    url="https://i.imgur.com/a4fQWjt.png" 
+    link="https://bit.ly/2CkeRiH"
+/>
+
+<br>
+
+Pour assurér que la classe `Config` ne sera instanciée qu'une seul fois, nous pouvons utiliser la patterne **Singleton**. Pour ce faire un attribut `instance` privé et statique est ajouté à la classe qui contiendra l'unique instance de `Config`, nous pouvons nous débarasser du constructeur par défaut et rendre privé celui qui prenait une String en argument.
+
+Une methode `getInstance()` statique et publique qui implémente une _lazy initialization_ est ajoutée:
+
+<br>
+
+**Config.java**:
+```java
+// ...
+private static Config instance = null;
+
+// public Config() {
+//     this("config.properties");
+// }
+
+private Config(String file) {
+    propertyFileName = file;
+    load();
+
+public static Config getInstance() {
+    if (instance == null) {
+        instance = new Config("config.properties");
+    }
+    return instance;
+}
+// ...
+```
+
+Cette façon de faire assure que `getInstance()` va créér un nouvel objet lors de son premier appel et le rangera dans l'attribut `instance`. Ainsi, chaque appel à cette methode retournera la même instance.
+
+Finalement il est nécessaire de remplacer les appels des clients au constructeur de `Config` par des appels à la methode statique `getInstance()`:
+
+<br>
+
+**Storage.java**:
+
+```java
+// ...
+public Storage() {
+    // Config config = new Config();
+    Config config = Config.getInstance();
+    // ...
+```
+
+<br>
+
+**CreateMachine.java**:
+
+```java
+// ...
+private static void createConfigFile() {
+    System.out.println("Creating configuration file...");
+
+    // Config c = new Config();
+    Config c = Config.getInstance();
+    // ...
+```
+
+<br>
+
+L'utilisation de la patterne **Singleton** assure qu'une seul instance de `Config` sera créé et offre un point d'entrée pour y accéder (`getInstance()`).

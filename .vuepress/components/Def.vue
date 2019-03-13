@@ -1,6 +1,6 @@
 <template>
   <span class="definition" v-tooltip.auto="def">
-    <slot></slot>
+    <i><slot></slot></i>
     <i class="far fa-info-circle info-icon"></i>
   </span>
 </template>

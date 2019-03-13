@@ -68,7 +68,7 @@ Les oppérations permettant d'ajouter et de retirer des éléments peuvent être
 
 </Container>
 
-### Pour et contres
+### Pour et contre
 
 <Col proportions="6/6" vAlign="0">
 <template slot="left">
