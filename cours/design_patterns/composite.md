@@ -1,5 +1,6 @@
 ---
 title: Composite
+type: Structure
 date: 2019-03-12
 author: Sol
 sidebar: auto

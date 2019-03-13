@@ -54,16 +54,17 @@
 </template>
 
 <script>
-  import { firstNamesOnly } from '../utils'
-  import { branchesFullName } from '../data'
-  import { DateTime, Settings } from 'luxon'
+  import { firstNamesOnly } from '../utils';
+  import { branchesFullName } from '../data';
+  import { DateTime, Settings } from 'luxon';
 
-  Settings.defaultLocale = 'fr'
+  Settings.defaultLocale = 'fr';
 
   export default {
     props: {
       pages: {type: String},
       header: {type: String, default: 'Articles'},
+      type: {type: String, default: undefined},
       order: {type: String, default: '1'},
     },
     data: () => ({
@@ -71,18 +72,17 @@
     }),
     computed: {
       articles() {
-        let articles = []
+        let articles = [];
         let rawArticles = this.$site.pages.filter(x => {
           return x.path.includes(this.pages ? this.pages : this.$page.path)
-            && x.path.endsWith('.html')
-        })
+            && x.path.endsWith('.html');
+        });
         let sortedArticles = rawArticles.sort((a, b) => {
           return parseInt(this.order) *
-            (new Date(b.frontmatter.date) - new Date(a.frontmatter.date))
-        })
-
+            (new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+        });
         sortedArticles.forEach(i => {
-          if (!i.frontmatter.hide) {
+          if (!i.frontmatter.hide && i.frontmatter.type === this.type) {
             articles.push({
               author: i.frontmatter.author,
               tag: i.path.split('/')[1],
@@ -90,36 +90,36 @@
               title: i.frontmatter.title,
               path: i.path,
               date: this.date(i.frontmatter.date),
-            })
+            });
           }
-        })
-        return articles
+        });
+        return articles;
       },
       singularArticleType() {
         let lastLetterIdx = this.header.length - 1;
         let trimPlural = this.header[lastLetterIdx] === 's'
                          ? this.header.slice(0, lastLetterIdx)
-                         : this.header
-        return trimPlural.toLowerCase()
+                         : this.header;
+        return trimPlural.toLowerCase();
       },
     },
     methods: {
       date(date) {
-        return DateTime.fromISO(date).toLocaleString(DateTime.DATE_FULL)
+        return DateTime.fromISO(date).toLocaleString(DateTime.DATE_FULL);
       },
       enumeration(key) {
-        return parseInt(this.order) < 0 ? key + 1 : this.articles.length - key
+        return parseInt(this.order) < 0 ? key + 1 : this.articles.length - key;
       },
       getCategory(path) {
-        let cat = path.split('/')[2]
-        cat = cat.replace(/_/gi, ' ')
-        return cat[0].toUpperCase() + cat.slice(1, cat.length)
+        let cat = path.split('/')[2];
+        cat = cat.replace(/_/gi, ' ');
+        return cat[0].toUpperCase() + cat.slice(1, cat.length);
       },
       author(author) {
-        return firstNamesOnly(author)
+        return firstNamesOnly(author);
       },
     },
-  }
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -152,6 +152,7 @@
     padding: 5px 20px 5px 20px;
     margin-top: 6px;
     cursor: pointer;
+
     &:hover {
       transition: .5s ease;
       border-color: $StyleBlue;
@@ -169,6 +170,7 @@
       font-style: italic;
       margin-left: -10px;
     }
+
     .number {
       color: black;
       font-weight: 400;
@@ -209,6 +211,7 @@
     font-size: 10px;
     background-color: #EEEEEE;
     padding: 5px 10px 5px 10px;
+
     i {
       margin-right: 5px;
     }
@@ -217,6 +220,7 @@
   .date-author {
     color: #858585;
     font-family: 'Open Sans', sans-serif;
+
     .author {
       color: $StyleBlue;
     }

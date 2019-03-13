@@ -1,6 +1,10 @@
 # Design patterns
 
-<Posts/>
+<Posts header="Travaux"/>
+
+<Posts header="Création" type="Création"/>
+
+<Posts header="Structure" type="Structure"/>
 
 ## Sources
 
