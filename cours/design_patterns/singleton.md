@@ -20,7 +20,7 @@ hide: false
 />
 
 
-1. Une classe **Singleton** déclare une méthode s`tatique `getInstance` qui retourne la même instance de sa propre classe.
+1. Une classe **Singleton** déclare une méthode statique `getInstance` qui retourne une unique instance de sa propre classe.
 
 Le constructeur d'un Singleton ne devrait pas être accessible au client et l'appel de la methode `getInstance` la seul façon de récupérer l'instance.
 
