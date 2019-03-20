@@ -7,6 +7,12 @@ project: false
 ---
 
 
+## Test 27/03
+
+* Rechecker interface Sortable
+* Revoir (sur papier) classe interne anonyme
+* Deploiement (Résumé d'une feuille A4)
+
 <Media
   src="https://i.imgur.com/5SIneKH.png"
   center="true"
@@ -2156,12 +2162,48 @@ MyClass t = new MyClass();
 t.start()
 ```
 
+### Multithreading
+```java
+public class MyThread implements Runnable {
 
+    String name;
+    Thread t;
 
+    MyThread(String thread) {
+        name = thread;
+        t = new Thread(this, name);
+        System.out.println("New thread: " + t);
+        t.start();
+    }
 
+    @Override
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(name + ": " + i);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(name + " exiting.");
+    }
+}
 
-
-
+class MultiThread {
+    public static void main(String args[]) {
+        new MyThread("One");
+        new MyThread("Two");
+        new MyThread("three");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Main thread exiting");
+    }
+}
+```
 
 
 
