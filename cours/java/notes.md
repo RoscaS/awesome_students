@@ -42,6 +42,7 @@ project: false
 * [Collections practical](http://www.vogella.com/tutorials/JavaCollections/article.html)
 * [Iterator](https://www.baeldung.com/java-iterator)
 * [Looping, performances analysis](https://www.geeksforgeeks.org/iterator-vs-foreach-in-java/)
+* [Java thread](https://dzone.com/articles/java-thread-tutorial-creating-threads-and-multithr)
 
 ## Lexique
 
@@ -2096,10 +2097,67 @@ c.add(2, 3); // => 5
 
 ## Threading
 
-Deux façons de créér un thread:
-* créer une classe héritant de la classe `Thread`.
-* créer une implémentation de l'interface `Runnable` et instancier un objet `Thread` avec l'implémentation de cette interface.
-  * suggestion: classe anonyme ou lambda.
+### Java Thread Model
+
+Les threads de Java peuvent avoir plusieurs états:
+* **New**: lors de l'instanciation d'une instance de `Thread`
+* **Running**: lors de son utilisation
+* **Suspended**: un thread en activité peut être suspendu. Par la suite il peut être remis au travail et il reprend là où il en était avant la suspension.
+* **Blocked**: peut être bloqué en attendant une ressource
+* **Terminated**: peut avoir son activitée stoppée. UNe fois dans cet état, il ne peut être relancé.
+
+![Image](https://i.imgur.com/CoPfwZa.png)
+
+### Classe Thread et interface Runnable
+
+Le système de multithreading de Java est construit sur la classe `Thread` ainsi que son interface compagnon `Runnable`. Pour créér un nouveau thread, un programme Java va soit dériver `Thread` ou implémenter l'interface `Runnable`. La classe `Thread` définit les méthodes utiles suivantes:
+
+* `getName`: retourne le nomm du thread
+* `getPriority`: retorne la priorité du thread
+* `isAlive`: détermine si le thread tourne toujours
+* `join`: attend la fin d'un thread
+* `run`: point d'entrée du thread
+* `sleep`: suspend un thread pour une période de temps (ms)
+* `start`: lance un thread en appelant sa methode `run`
+
+#### Interface Runnable
+La façon la plus facile de créér un thread est la création d'une classe qui implémente l'interface `Runnable`. Pour ce faire il est uniquement nécessaire d'implémter une unique methode `run()`. Dans cette methode se trouvera le code qui constitue le nouveau thread:
+
+```java
+public class MyClass implements Runnable {
+    public void run() {
+        System.out.println("MyClass running")
+    }
+}
+```
+
+Pour faire exécuter la methode `run` à un tread, il est nécessaire de passer une instance de `MyClass` lors de l'instanciation d'un Thread:
+
+```java
+Thread t = new Thread(new MyClass());
+t.start();
+```
+
+Au démarage du thread, la methode `run` de `MyClass` sera exécutée.
+
+#### Extension de Thread
+
+La seconde façon de faire un thread en Java, est de dériver la classe `Thread` et d'override la methode `run`. La methode `run` de l'isntance de cette classe sera exécutée par le thread après appel de la methode `start`.
+
+```java
+public class MyClass extends Thread {
+    public void run() {
+        System.out.println("MyClass running");
+    }
+}
+// ...
+
+MyClass t = new MyClass();
+t.start()
+```
+
+
+
 
 
 

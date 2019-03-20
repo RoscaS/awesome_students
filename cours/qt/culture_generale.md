@@ -8,7 +8,31 @@ project: false
 
 
 
+## Flux
+
+* Un ensemble d'informations à transférer, échelonnées dans le temps. Données transmises séquentiellement, une après l'autre de la première à la dernière.
+* On peut représenter de façon logique un système informatique qui communique avec des périphériques. **Les informations échangées portent alors le nom de flux** et les périphériques sont alors la source ou la destination du flux: fichiers, socket, base de données, programme, strings, ...
+* L'interet de cette représentation est que du point de vue du programmeur, envoyer des informations vers la console, sur le réseau ou dans un fichier seront des opérations similaires. **Le périphérique change mais le flux de données envoyé reste le même**.
+
+<Container header="Sérialisation" type="info">
+ 
+ * Transformer un objet en mémoire en un flux de données séquentiel. Permet de transférer les membres d'un objet vers un flux de données (sauvegarde dans un fichier, envoie par le réseau...).
+
+* La **désérialisation** est l'oppération inverse. A partir de données séquentielles, il faut remonter un objet.
+ 
+ </Container>
+
+* Un flux de données ne dépend pas de la plateforme utilisée
+* En générale, l'utilisation d'un flux se fait en 3 étapes:
+  1. Création/ouverture d'un flux
+  2. Lecture ou écriture
+  3. Fermeture
+
+
+
+
 ## En vrac
+
 
 * **API**: Application Programming Interface
 * **Framework**: "Logiciel à trou". Le déroulement des opérations est dirigé par le framework.
