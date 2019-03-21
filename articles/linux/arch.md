@@ -26,6 +26,8 @@ hide: false
   * TeamViewer
 * **Documentation**:
   * Zeal
+* **Clavier**:
+  * xdotool
 
 ## Print screen
 
