@@ -37,6 +37,28 @@ En statistique, lorsqu'on étudie les paramêtres des dispersion d'une série, l
 
 </Container>
 
+## Milieu
+* **Mesure de dispersion d'une série statistique.**
+* La différence entre la plus grande et la plus petite des valeurs divisées par 2.
+
+## Écart moyen
+* **Mesure de dispersion d'une série statistique.**
+* Moyenne arithmétique des valeurs absolues des écarts à la moyenne d'une série statistique.
+
+
+<Media
+    src="https://i.imgur.com/gtnjeEr.png"
+    center="true"
+    width=150
+/>
+
+1. On calcule la moyenne de la série.
+2. On calcule la valeur absolue de la différence entre chacune des valeurs de la série et la moyenne.
+3. On les somme.
+4. On divise cette somme par l'effectif de la série
+
+
+
 ## Écart type
 * **Mesure de la dispersion d'une série statistique autour de sa moyenne.** 
 * Notée $\sigma$ sigma.
