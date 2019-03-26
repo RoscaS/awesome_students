@@ -13,7 +13,7 @@ project: false
 * Revoir (sur papier) classe interne anonyme
 * Deploiement (Résumé d'une feuille A4)
 
-* Swing, entièrement géré par java (dessiné par Java) contrairement à ABT qui est géré par l'os
+* Swing, entièrement géré par java (dessiné par Java) contrairement à awt qui est géré par l'os
 
 <Media
   src="https://i.imgur.com/5SIneKH.png"
@@ -1535,7 +1535,7 @@ Le polymorphisme complète l'héritage, il permet de manipuler des objets sans e
 
 <Container type="danger">
 
-Attention à ne pas confondre **surcharge de méthode** avec une **méthode polymorphe**:
+Attention à ne pas confondre **surcharge de méthode** avec une **méthode polymorphe (ou méthode redéfinie/override)**:
 * **Une méthode surchargée** diffère de la méthode originale par le nombre ou le type de paramètres qu'elle prend en entrée.
 * **Une méthode polymorphe** prend les mêmes paramètres que la méthode de base mais traite les choses différemment. Cette methode se trouve dans une autre classe (et donc dans une autre isntance de cette autre classe).
 
@@ -1700,7 +1700,7 @@ public abstract class Mammal() {
 Le principe de la généricité est de faire des classes qui n'acceptent qu'un certain type d'objets ou de données de façon dynamique.
 
 
-### Simple
+#### Simple
 ```java
 public class Solo<T> {
 
@@ -1718,7 +1718,7 @@ Solo<String> s2 = new Solo<>("Poule");
 System.out.println(s2.getValue()); // => Poule
 ```
 
-### Double
+#### Double
 
 ```java
 public class Duo<T, S> {
@@ -1876,6 +1876,91 @@ public class Complex {
     private double arg;
 }
 ```
+
+### Enum
+
+* Une énumération est une classe contenant une liste de **constantes**.
+* Une énumération se définit via le mot clé `enum`.
+* Chaque élément d'une énumération est un objet à part entière.
+* Il est possible de compléter les comportements des objets d'une énumération en ajoutant des méthodes.
+* Le constructeur d'une `enum` est implicitement `privé`.
+* Les éléments d'une `enum` sont `public static final` et ne peuvent pas être changés.
+* On ne peut pas instancier de nouvel objet que ceux initialement déclarés.
+* Une `enum` ne peut pas hériter **mais elle peut implémenter des interfaces**.
+
+On peut déclarer une énumération dans une classe et l'utiliser directement:
+
+```java
+public class Volume {
+    enum Niveau {
+        FORT,
+        MOYEN,
+        FAIBLE;
+    }
+    public Niveau niveau;
+
+    public Volume() { 
+        niveau = Niveau.FAIBLE;
+    }
+}
+
+// ... Dans une classe use:
+Volume v = new Volume();
+System.out.println(v.niveau) // => FAIBLE
+
+```
+
+Il est possible de faire des énumérations plus complexes qui possède des attributs un constructeur et des methodes. La différence avec un objet classique c'est principalement le fait que les éléments qui la compose sont les uniques éléments de cette énumération qui seront instanciés:
+
+
+```java
+public enum Pays {
+    // Seuls et uniques objets qui seront construits:
+    BELGIQUE("Bruxelles", 472836418),
+    SUISSE("Bern", 23414513 ),
+    RUSSIE("Moscou", 4537436273),
+    AUSTRALIE("Cambera", 23515315);   // noter le ;
+
+    // Attributs:
+    private String capitale;
+    private int population;
+
+    // Constructeur (implicitement private)
+    Pays(String capitale, int population) {
+        this.capitale = capitale;
+        this.population = population;
+    }
+
+    public String getCapitale() { return capitale; }
+    public int getPopulation() { return population; }
+
+    // ...
+    @Override
+    public String tostring() { /*...*/ }
+}
+```
+
+On peut itérer sur les éléments d'une énumération:
+
+```java
+enum Niveau {
+    FORT,
+    MOYEN,
+    FAIBLE;
+}
+
+for (Niveau i : Niveau.values()) {
+    System.out.println(i);
+}
+```
+
+Exemples de cas où une énumération est la structure à utiliser:
+* noms des jours
+* noms des mois
+* couleurs
+* jeu de cartes
+* ...
+
 
 ### Classes anonymes
 
@@ -2045,7 +2130,7 @@ public interface Comportement_I {
 
 ### Lambdas
 
-> Bien que les fonctions anoymes soient plus du monde de la programmation fonctionnelle que de l'orienté objet, je place se chapitre ici car il se trouve dans le prolongement du précédent et introduit le suivant.
+> Bien que les fonctions anoymes soient plus du monde de la programmation fonctionnelle que de l'orienté objet, je place ce chapitre ici car il se trouve dans le prolongement du précédent et sera utile à la suite.
 
 Les classes anonymes et les lambdas sont le 3e type de référence possible en Java (les autres étant les **valeurs primitives** et les **objets**). Dans dantres langages, ce genre de références s'appellent **closures**. Ce sont des références sur des morceaux de code anonyme qui peuvent prendre des arguments et retourner un résultat.
 
@@ -2055,7 +2140,7 @@ L'oppérateur d'une lambda est `->` et comme le but d'une lambda est de redéfin
 
 #### Syntaxe
 
-* One liner:
+* Oneliner:
   * `() -> une action;` 
     * ex: `() -> "poule";` retourne "poule"
   * `(arg1, arg2) -> une action;` 
@@ -2102,6 +2187,56 @@ Additionner_I c = (x, y) -> {
 };
 c.add(2, 3); // => 5
 ```
+
+## Interfaces
+
+### Comparator (sort)
+
+Soit un tableau d'objets `Item`, objet qui possède les attributs public `name` de type String et `width` de type int, alors les 5 façons suivantes de le trier sont équivalentes:
+
+```java
+// Classe anonyme:
+Comparator<Item> compareWidth = new Comparator<Item>() {
+    @Override
+    public int compare(Item a, Item b) {
+        return Integer.compare(a.width, b.width);
+    }
+};
+Arrays.sort(items, compareWidth);
+
+
+// Classe anonyme inline:
+Arrays.sort(items, new Comparator<Item>() {
+    @Override
+    public int compare(Item a, Item b) {
+        return Integer.compare(a.width, b.width);
+    }
+})
+
+
+// Lambda long:
+Arrays.sort(items, (a, b) -> {
+    return Integer.compare(a.width, b.width);
+});
+
+
+// Lambda inline:
+Arrays.sort(items, (a, b) -> Integer.compare(a.width, b.width));
+
+
+// Interface fonctionnelle:
+Arrays.sort(items, Comparator.comparingInt(a -> a.width));
+```
+
+La dernière version est non seulement la plus courte mais elle est aussi particulièrement explicite. En effet, l'interface utilisée y apparait (contrairement à l'élégante lambda) et il n'est pas utile de déclarer deux paramètres, on ne spécifie que le caractère à trier. Pour trier sur autre chose que sur un type primitif on utilise la methode `comparing` à la place de `comparingInt`. Par exemple pour trier par nom (String):
+
+```java
+Arrays.sort(items, Comparator.comparing(a -> a.name));
+```
+
+En plus de ces 5 façons de faire, il aurait été possible de déclarer une classe traditionnelle (dans son propre fichier). Une 6e et dernière façon de faire, qui implique que la classe `Item` implémente l'interface `Comparable` et définisse la methode `int compareTo(<T>)` nous permettrait d'utiliser la methode statique `Arrays.sort(items)`. Mais cette façon de faire est à éviter et n'a fondamentalement aucun sens à moins de trier un simple tableau d'entiers.
+
+
 
 ## Threading
 

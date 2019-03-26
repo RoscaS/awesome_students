@@ -50,3 +50,9 @@ hide: false
 * [Average Linux User: install](https://www.youtube.com/watch?v=lOg_u5R0si4)
 * [Average Linux User: Grub](https://www.youtube.com/watch?v=KU6QC8UDyoI)
 
+## ArcoLinux
+
+* `super` `escape`: kill the application now
+* `ctrl` `alt` `backspace`: kill xserver – back to login screen
+* `ctrl` `shift` `escape`: taskmanager
+
