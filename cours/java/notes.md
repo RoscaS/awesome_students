@@ -55,8 +55,8 @@ project: false
 
 ## Lexique
 
-* **Immutable:** Un objet qui ne peut être modifier. Par exemple si on change la valeur d'un objet de type `Long` affecté à une variable, en réalité un nouvel objet est créé et est assigné à cette variable. Si l'objet initial était affecté à d'autres variables, elles référencent toujours l'objet initial. Les objets de type `String` et les Wrappers sont des exemples d'objets immutables. [Plus d'info](https://www.developpez.net/forums/d881739/java/general-java/langage/c-quoi-objet-immutable/)
-* **Inaltérable:** dans le contexte, synonyme d'immutable ou encore immuable.
+* **Immutable:** Un objet qui ne peut être modifier. Par exemple si on change la valeur d'un objet de type `Long` affecté à une variable, en réalité, un nouvel objet est créé et est assigné à cette variable. Si l'objet initial était affecté à d'autres variables, elles référencent toujours l'objet initial. Les objets de type `String` et les Wrappers sont des exemples d'objets immutables. Une classe qui suit le principe de l'encapsulation (les attributs sont privés) et qu'il n'a pas de setter est un objet immutable. [Plus d'info](https://www.developpez.net/forums/d881739/java/general-java/langage/c-quoi-objet-immutable/)
+* **Inaltérable:** synonyme d'immutable ou encore immuable.
 * **Iterable**: Collection qui implémente l'interaface `Iterable`.
 
 ## Culture générale
@@ -1305,7 +1305,7 @@ Une référence possède deux types:
 * **Local**: donné par le typage local vu par le compilateur
 
 ```java
-`Set s = new TriSet<Double>()`
+Set s = new TriSet<Double>();
 ```
 * Le type de `s` effectif est `TriSet`
 * Le type local de `s` est `Set` mais égallement `Object` qui est la classe dont tous les objects en java dérivent.
