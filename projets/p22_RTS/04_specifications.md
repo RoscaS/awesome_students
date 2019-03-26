@@ -7,6 +7,18 @@ project: false
 hide: false
 ---
 
+## TO UPDATE
+
+* Joueur selectionne worker
+  * unité append liste des entités selectionnées dans `Joueur`
+* Joueur clique droit sur une ressource
+  * le clique droit retourne le pixel cliqué
+  * appel de la methode `Entity Map.test_appartenance(pixel)`
+    * `test_appartenance` itère sur toutes les entités et vérifie si le pixel appartient à une entité
+    * Si oui, alors retourne l'entité
+    * Si non, retourne `nullptr` (et donc un déplacement sera fait)
+  * appelle la methode `right_click(entité_retournée_par_test_appartenance)` des entités dans la liste des entités selectionnés de joueur.
+
 ## Introduction
 
 Le jeu de stratégie en temps réel (STR ou RTS pour la dénomination du genre en anglais : real-time strategy) est un type de jeu vidéo de stratégie particulier qui notamment et par opposition au jeu de stratégie au tour par tour n’utilise pas un découpage arbitraire du temps en tours de jeu, ce n’est toutefois pas le seul élément qui fait d’un jeu de stratégie un STR.

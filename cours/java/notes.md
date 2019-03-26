@@ -12,8 +12,63 @@ project: false
 * Rechecker interface Sortable
 * Revoir (sur papier) classe interne anonyme
 * Deploiement (Résumé d'une feuille A4)
-
 * Swing, entièrement géré par java (dessiné par Java) contrairement à awt qui est géré par l'os
+
+
+## Deploy
+
+### Linux
+
+* `$ sudo add-apt-repository ppa:linuxuprising/java`
+* `$ sudo apt-get update`
+* `$ sudo apt-get install oracle-java11-installer`
+* `$ sudo apt-get install oracle-java11-set-default`
+
+**makejar.sh**
+```shell
+#!/bin/bash
+
+set -e
+set -u
+
+7z a -tzip Deploy/PCoursJava.jar ../PCoursJava/bin/ch
+```
+
+**runQadra.shell**
+```shell
+#!/bin/bash
+
+set -e
+set -u
+java -cp .:./*:./ext/* ch.hearc.cours_01.kitbase.quadratique.UseQuadratiqueArgs $1 $2 $3
+
+```
+
+
+### Windows
+
+**makejar.cmd**
+```batch
+set PATH_7Z=C:\Soft\sevenZip
+set PATH=%PATH%;%PATH_7z%
+7z a -tzip Deploy/PCoursJava.jar ../PCoursJava/bin/ch
+```
+
+**run.cmd**
+```batch
+set JRE_PATH=./jre/bin
+rem set JRE_PATH=c:\Soft\java64\jre\bin
+set PATH=%JRE_PATH%;%PATH%
+
+
+java -cp .;./*;./ext/* ch.hearc.cours_01.kitbase.quadratique.UseQuadratiqueArgs 4 2 -1
+
+echo.
+pause
+```
+
+
+
 
 <Media
   src="https://i.imgur.com/5SIneKH.png"
