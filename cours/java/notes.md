@@ -7,15 +7,6 @@ project: false
 ---
 
 
-## Test 27/03
-
-* Rechecker interface Sortable
-* Revoir (sur papier) classe interne anonyme
-* Deploiement (Résumé d'une feuille A4)
-* Swing, entièrement géré par java (dessiné par Java) contrairement à awt qui est géré par l'os
-
-
-
 <Media
   src="https://i.imgur.com/5SIneKH.png"
   center="true"
