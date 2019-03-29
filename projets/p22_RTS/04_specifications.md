@@ -19,6 +19,18 @@ hide: false
     * Si non, retourne `nullptr` (et donc un déplacement sera fait)
   * appelle la methode `right_click(entité_retournée_par_test_appartenance)` des entités dans la liste des entités selectionnés de joueur.
 
+
+### Points chauds
+
+* File de priorité des actions: bouge jusque là, une fois que tu y est, fais cette action
+* Range: circulaire? (donc la hitbox peut l'être aussi)
+
+### Idées
+
+* Entity, Map et leur relation avec le client pourrait être une magnifique mise en pratique du patterne composite
+* Map et Game serait interessant sous forme de Singleton (global) ?
+  * `checkPixelInClickables()` devrait être statique pour pouvoir être call depuis player
+
 ## Introduction
 
 Le jeu de stratégie en temps réel (STR ou RTS pour la dénomination du genre en anglais : real-time strategy) est un type de jeu vidéo de stratégie particulier qui notamment et par opposition au jeu de stratégie au tour par tour n’utilise pas un découpage arbitraire du temps en tours de jeu, ce n’est toutefois pas le seul élément qui fait d’un jeu de stratégie un STR.
