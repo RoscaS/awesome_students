@@ -7,7 +7,106 @@ project: false
 hide: false
 ---
 
-## TO UPDATE
+
+## Définitions haut niveau
+
+### Classe Map
+
+`Clickable checkPixelInClickables(Position position)`:
+```py
+for clickable in this.allClickables:
+  if position fait partie de clickable:
+    # Dans ce cas clickable est une Entity
+    return clickable 
+  else:
+    # la map se retourne elle même
+    return this
+```
+
+### Classe Joueur
+
+`void leftClickEvent(Event e)`
+
+```py
+pos = new Position(e.coords.x, e.coords.y)
+clicked = Map.checkPixelInClickables(pos)
+
+if clicked est une Entity:
+  this.selectedEntities.add(clicked)
+else:
+  this.selectedEntities.clear()
+```
+
+`void rightClickEvent(Event e)`
+
+```py
+pos = new Position(e.coords.x, e.coords.y)
+clickable_qui_subit = Map.checkPixelInClickables(pos)
+
+for entity in this.selectedEntities:
+  entity.priorityList.add(new ActionMove(clickable_qui_subit))
+```
+
+
+### Classe Entity et ses dérivées
+
+* `watchProximity()` (via lbgdx: ContactListener)
+  * Si `qqch` est dans ta range:
+    * en fonction de ce `qqch`, ajoute l'action liée à ce que tu dois faire vis à vis de ce `qqch` dans ta liste d'actions à effectuer.
+
+<br>
+    
+* `watchActions()`
+  * il y a qqch dans ta `priorityList` ?
+    * si oui, fais la première action
+    * si non, `self.WatchActions()`
+
+## Use case
+
+### Joueur clique gauche sur un point de la carte
+
+#### Le point appartient à une entité
+* alors: `selectedEntities` de `Joueur` contient une `Entity`
+
+#### Le point n'appartient à aucune `Entity`
+* alors: `selectedEntities` de `Joueur` est vidée
+
+
+### Joueur clique gauche sur un collecteur puis clique droit sur une ressource
+
+**A REFAIRE**
+
+
+* **Joueur clique gauche sur un collecteur puis clique droit sur une ressource**
+  * **Joueur clique gauche sur un collecteur**:
+    * Dans `Joueur`
+      * `joueur.selectedEntities.add(Collecteur)`
+* **Joueur clique droit sur une ressource**:
+  * Dans `Joueur`:
+    * `pos = new Position(mouse_right_click_event.coords.x, mouse_right_click_event.coords.y)`
+    * `entité_qui_subit = Map.checkPixelInClickables(pos)`
+    * Dans `Map`:
+      * `Clickable checkPixelInClickables(Position)`
+        * itère sur `Map.allClickables` à la recherche de `Position`
+        * si `Position` appartient à un `Clickable`
+          * alors, retourne `Clickable`
+        * si non
+          * retourne `self`
+  * **Dans `Joueur`:
+    * nous avons maintenant les deux oppérandes de l'action:
+      * Celle qui effectue (admétons qu'il n'y a qu'une unite dans la liste `selectedEntities`)
+      * Celle qui subit
+    * `selectedEntities.at(0).priorityList.add(new ActionMove(entité_qui_subit))`
+  * **Dans `Worker`:
+    * la methode `Entity.watchActions()` va call l'action `ActionMove(entité_qui_subit).doAction()`
+
+
+<br>
+<br>
+
+
+
+## En vrac
 
 * Joueur selectionne worker
   * unité append liste des entités selectionnées dans `Joueur`
@@ -30,6 +129,10 @@ hide: false
 * Entity, Map et leur relation avec le client pourrait être une magnifique mise en pratique du patterne composite
 * Map et Game serait interessant sous forme de Singleton (global) ?
   * `checkPixelInClickables()` devrait être statique pour pouvoir être call depuis player
+
+
+
+
 
 ## Introduction
 
