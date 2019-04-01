@@ -14,7 +14,7 @@ hide: false
 
 `Clickable checkPixelInClickables(Position position)`:
 ```py
-for clickable in this.allClickables:
+for clickable in this.allEntities:
   if position fait partie de clickable:
     # Dans ce cas clickable est une Entity
     return clickable 
@@ -65,17 +65,16 @@ for entity in this.selectedEntities:
 
 ### Joueur clique gauche sur un point de la carte
 
-#### Le point appartient à une entité
+#### <Fa fa="arrow-right"/>  Le point appartient à une entité
 * alors: `selectedEntities` de `Joueur` contient une `Entity`
 
-#### Le point n'appartient à aucune `Entity`
+#### <Fa fa="arrow-right"/>  Le point n'appartient à aucune `Entity`
 * alors: `selectedEntities` de `Joueur` est vidée
 
 
 ### Joueur clique gauche sur un collecteur puis clique droit sur une ressource
 
 **A REFAIRE**
-
 
 * **Joueur clique gauche sur un collecteur puis clique droit sur une ressource**
   * **Joueur clique gauche sur un collecteur**:

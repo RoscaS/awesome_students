@@ -19,5 +19,4 @@
     * L'utilisation des design patterns est un plus (attention, sans exagérer et il faut signaler)
 
 
-
 <Posts/>
