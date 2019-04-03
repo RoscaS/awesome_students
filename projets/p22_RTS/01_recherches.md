@@ -20,6 +20,7 @@ Dans un premier temps il est nécessaire de rechercher des compléments d'inform
     * La partie sur les erreurs à ne pas faire me semble particulièrement interessante.
 * [LibGDX: tuto](https://www.gamefromscratch.com/page/LibGDX-Tutorial-series.aspx)
 * [LibGDX: tuto 2](https://github.com/libgdx/libgdx/wiki/A-simple-game)
+* [LibGDX: tuto 3](http://williammora.com/a-running-game-with-libgdx-part-1)
 
 ## Logique
 
