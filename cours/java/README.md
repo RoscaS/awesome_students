@@ -8,7 +8,7 @@
 * Interface factory
 * Pas abuser sur l'algo fibbo
 * Limites de calcul: Limites de la machine
-* Fibbo est un pretexte
+* Fibbo est un prétexte
 * Accent mis sur la strcture
 
 

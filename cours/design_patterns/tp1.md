@@ -1,5 +1,5 @@
 ---
-title: "Tp1: Composite et Singleton"
+title: "Tp1: Composite & Singleton"
 date: "2019-03-13"
 author:  "Nathan, Edwin, Sol"
 sidebar: auto
