@@ -7,6 +7,8 @@ project: true
 hide: false
 ---
 
+* Code complet: [github](https://github.com/RoscaS/design-pattern_tp2)
+
 ## Partie 1: Décorated composite
 
 <br>
