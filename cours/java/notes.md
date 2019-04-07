@@ -2407,6 +2407,55 @@ echo.
 pause
 ```
 
+### Intellij
+
+* [jetbrains.com](https://www.jetbrains.com/help/idea/working-with-artifacts.html)
+* [Packaging a module into a JAR](https://www.jetbrains.com/help/idea/packaging-a-module-into-a-jar-file.html)
+* [exemple](https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html)
+
+#### Procédure
+
+1. Avoir un code qui compile et un point d'entrée (`UseXXX`)
+2. Package JAR: 
+   * **Project Structure > Artifacts > + > JAR > From module with dependencies**
+   * Set **Main Class**
+3. Build du JAR:
+   * **Build Artifacts**
+   * **YYY.jar > Build**
+   * Après cette étape **YYY.jar** se trouve dans `out.artifacts.YYY_jar.YYY.jar`
+
+
+* Run interne à l'IDE: 
+  * **Edit configuration > + > JAR Application**
+  * Set a name "YYYjar"
+  * Set path to jar
+  * **Before launche > + > Build Artifacts**
+* CLI:
+  * `$ cd out/artifacts/YYY_jar`
+  * `$ java -jar YYY.jar`
+
+#### Arguments
+
+* Traditionnel: 
+  * `$ java -jar YYY.jar [arg] [arg2] ...`
+  * se récupère via l'attribut `String[] args`
+* Propriété système:
+  * `$ java -jar -D<key>=<value> YYY.jar`
+  * se récupère via `System.getProperty("key")`
+
+
+
+#### Artifacts
+
+Un _artifact_ est un assemblage des assets d'un projet mis ensemble pour tester, deployer ou distribuer un logiciel **ou une partie d'un logiciel**. Un exemple est une collection de classes java compilées packagées dans une archive **jar**.
+
+#### Artifact configurations
+
+> Artifacts are generated according to artifact configurations. The artifact configurations are managed in the Project Structure dialog (**File | Project Structure | Artifacts**).
+>
+>The key part of configuring an artifact is specifying the artifact structure and contents on the [Output Layout tab](https://www.jetbrains.com/help/idea/output-layout-tab.html).
+
+
 ## En vrac
 
 * Avec une classe anonyme, on peut aussi bien implémenter une interface que redéfinir une classe (voir MouseAdapter)
