@@ -1,5 +1,9 @@
 # Design patterns
 
+## Échéances
+* **test**: 29/04
+* **tp3**: 22/04
+
 <Posts header="Travaux"/>
 
 <Posts header="Création" type="Création"/>
