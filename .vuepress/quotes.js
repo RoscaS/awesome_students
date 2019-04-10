@@ -11,6 +11,6 @@ export default [
 
   {
     author: `Jean-Claude Van Damme`,
-    quote: `"First, make code work, then make it right, then make it fast <b>if</b> it isn’t fast enough.<span style="float: right; margin-top: 10px">Jean-Claude Van Damme</span>"`,
+    quote: `"First, make code work, then make it right, then make it fast <b>if</b> it isn’t fast enough." <br> <span style="float: right; margin-top: 10px">Jean-Claude Van Damme</span>`,
   }
 ]
