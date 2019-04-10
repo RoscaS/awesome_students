@@ -1207,3 +1207,24 @@ https://github.com/arestivo/AsteroidArena/tree/sprites
 https://github.com/arestivo/AsteroidArena/tree/physics
 
 
+## Extract md
+
+<Spoiler tag="spoiler">
+
+* [f12](https://web.fe.up.pt/~arestivo/presentation/libgdx)
+
+```js
+let path = 'https://web.fe.up.pt/~arestivo/presentation/assets/libgdx/'
+let content = '';
+slideshow.getSlides().forEach(i => content += `${i.content[3]}\n\n`);
+
+content = content.replace(/~~~/g, '```');
+content = content.replace(/# /g, '## ');
+content = content.replace(/..\/assets\/libgdx\//g, path);
+
+$('body').empty();
+$('.remark-container').css('overflow', 'scroll');
+$('body').append($('<pre></pre>').text(content));
+```
+
+</Spoiler>
