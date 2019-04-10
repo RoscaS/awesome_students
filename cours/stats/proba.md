@@ -4,7 +4,7 @@ date: 2019-04-01
 author: Sol
 sidebar: auto
 project: false
-hide: false
+hide: true
 ---
 
 > La probabilité est une **fraction** dont le numérateur est le nombre de cas favorables, et dont le dénominateur est le nombre de tous les cas possibles. <br> <span style="float: right">Pierre-Simon Laplace 1749 - 1827</span>

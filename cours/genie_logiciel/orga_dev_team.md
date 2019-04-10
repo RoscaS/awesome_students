@@ -7,24 +7,12 @@ project: true
 hide: false
 ---
 
-<Container header="format" type="info">
-
-* Principe 
-* Objectif
-* Avis
-
-</Container>
-
-
 ## Pratiques
 
 ### Espace partagé
 
-* **Principe:**
-* **Objectif:**
-* **Avis:** 
-  * L'espace partagé semble ne pas être une façon de procéder qui correspond à tout le monde. Cela dit, sur papier le concepte semble plein de bon sens. Dans un cas idéal où tous les membres de l'équipe jouent le jeu et que personne ne souffre de troubles de l'attention, l'espace partagé semble être un clair plus.
-  Un compromis pourrait être d'avoir un espace commun pour pouvoir travailler en groupe mais qui ne serait pas la norme imposée. Malheureusement les avantages de la pratique viennent principalement du fait que justement, c'est la norme imposée.
+L'espace partagé semble ne pas être une façon de procéder qui correspond à tout le monde. Cela dit, sur papier le concepte semble plein de bon sens. Dans un cas idéal où tous les membres de l'équipe jouent le jeu et que personne ne souffre de troubles de l'attention, l'espace partagé semble être un clair plus.
+Un compromis pourrait être d'avoir un espace commun pour pouvoir travailler en groupe mais qui ne serait pas la norme imposée. Malheureusement les avantages de la pratique viennent principalement du fait que justement, c'est la norme imposée.
 
 ### Pair-programming
 

@@ -44,6 +44,31 @@ project: false
 * [Looping, performances analysis](https://www.geeksforgeeks.org/iterator-vs-foreach-in-java/)
 * [Java thread](https://dzone.com/articles/java-thread-tutorial-creating-threads-and-multithr)
 
+## À classer
+
+### Types des références
+
+* <code><st c="b">TypeLocal</st> ma_variable = new <st c="g">TypeEffectif</st>();</code>
+* <code><st c="b">List</st>&lt;Integer&gt; entiers = new <st c="g">ArrayList</st>&lt;&gt;();</code>
+
+Une référence possède deux types:
+* <st c="b">Local</st>: donné par le typage local vu par le compilateur
+* <st c="g">Effectif</st>: définit à l'instanciation et ne change jamais
+
+<br>
+
+<Container type="info">
+
+```java
+Set s = new TriSet<Double>();
+```
+* Le type <st c="b">local</st> de `s` est `Set` mais égallement `Object` qui est la classe dont tous les objects en java dérivent.
+* Le type de `s` <st c="g">effectif</st> est `TriSet`
+
+</Container>
+
+
+
 ## Lexique
 
 * **Immutable:** Un objet qui ne peut être modifier. Par exemple si on change la valeur d'un objet de type `Long` affecté à une variable, en réalité, un nouvel objet est créé et est assigné à cette variable. Si l'objet initial était affecté à d'autres variables, elles référencent toujours l'objet initial. Les objets de type `String` et les Wrappers sont des exemples d'objets immutables. Une classe qui suit le principe de l'encapsulation (les attributs sont privés) et qu'il n'a pas de setter est un objet immutable. [Plus d'info](https://www.developpez.net/forums/d881739/java/general-java/langage/c-quoi-objet-immutable/)
