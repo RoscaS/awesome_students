@@ -1,5 +1,6 @@
 module.exports = {
   title: 'Awesome Students',
+  ga: 'UA-99742998-2',
   markdown: {
     lineNumbers: true,
     config: md => {
