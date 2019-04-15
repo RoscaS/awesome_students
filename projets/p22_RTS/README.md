@@ -2,15 +2,6 @@
 
 <br><br>
 
-<Container type="danger">
-
-Rien à faire ici mais comme ça je suis certain qu'on va tomber dessus. Il faut impérativement qu'on s'inscrive à l'examen d'anglais [ici](https://registration.cambridgeenglish-bern.ch/bern-region?gclid=EAIaIQobChMItKOR9ojl2wIVAUMZCh0YUgJsEAAYAiAAEgLZ7_D_BwE)
-
-</Container>
-
-<br><br>
-
-<br>
 
 <Team :members="['Nathan', 'Edwin', 'Sol']"/>
 
@@ -19,6 +10,36 @@ Rien à faire ici mais comme ça je suis certain qu'on va tomber dessus. Il faut
 * [PVs des réunions](/projets/p22_RTS/00_PVs.html)
 * [Répo: Forge he-arc](https://forge.ing.he-arc.ch/gitlab/inf/1819/p2-java/yarts.git)
 * TODO: [Directives](#)
+
+<h2>Todo</h2>
+
+
+* Edwin
+    * <Check state="false">Path finding</Check>
+    * <Check state="false">Rectangle de selection</Check>
+    * <Check state="false">Documenter Path finding</Check>
+
+* Nathan
+    * <Check state="false">Bound map camera</Check>
+    * <Check state="false">Resolution</Check>
+    * <Check state="false">Minimap</Check>
+    * <Check state="false">ping clique droit</Check>
+    * <Check state="false">Grande map</Check>
+    * <Check state="false">Planning</Check>
+* Sol
+    * <Check state="false">Feedback visuel selection unités</Check> 
+    * <Check state="false">Hud</Check>
+    * <Check state="false">sounds</Check>
+    * <Check state="false">curseur intelligent</Check>
+    * <Check state="false">Trello</Check>
+
+* <Check state="false">Mechanisme Construction</Check>
+* <Check state="false">Mechanisme Sorts</Check>
+* <Check state="false">fog of war</Check>
+* <Check state="false">Sprite sheet unités</Check>
+* <Check state="false">Particules</Check>
+* <Check state="false">Dynamic Lightning</Check>
+
 
 <Posts header="Documents"/>
 

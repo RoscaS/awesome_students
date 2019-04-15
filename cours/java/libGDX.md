@@ -1,6 +1,6 @@
 ---
 title: libGDX
-date: 2019-04-10
+date: "2019-04-10"
 author: AndréRestivo
 sidebar: auto
 project: false
@@ -522,7 +522,7 @@ circle.setRadius(0.11f);
 
 ### Polygon Shape
 
- * Polygon shapes must be convex and can have 8 vertexes at most.
+ * Polygon shapes must be <Def def="Un polygone convexe est un polygone simple dont l'intérieur est un ensemble convexe.">convex</Def> and can have 8 <Def def="Sommet">vertexes</Def> at most.
  * They can be combined to create more complex shapes.
 
 ```java
