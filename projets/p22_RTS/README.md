@@ -18,7 +18,6 @@
     * <Check state="false">Path finding</Check>
     * <Check state="false">Rectangle de selection</Check>
     * <Check state="false">Documenter Path finding</Check>
-
 * Nathan
     * <Check state="false">Bound map camera</Check>
     * <Check state="false">Resolution</Check>
@@ -32,6 +31,8 @@
     * <Check state="false">sounds</Check>
     * <Check state="false">curseur intelligent</Check>
     * <Check state="false">Trello</Check>
+
+<br>
 
 * <Check state="false">Mechanisme Construction</Check>
 * <Check state="false">Mechanisme Sorts</Check>
