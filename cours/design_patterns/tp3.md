@@ -15,7 +15,13 @@ Dans le présent contexte, l’interêt principal du pattern Abstract Factory es
 
 ## Schéma
 
-![](https://i.imgur.com/z1pkU1G.png)
+
+<Media
+    src="https://i.imgur.com/z1pkU1G.png"
+    center="true"
+/>
+
+
 
 Ci-dessus le diagramme de classe avec la structure de l’Abstract Factory et ses 4
 implémentations.
