@@ -9,38 +9,6 @@
 * [Répo: Forge he-arc](https://forge.ing.he-arc.ch/gitlab/inf/1819/p2-java/yarts.git)
 * [Trello](https://trello.com/b/mmgJb6m7/yarts-master-backlog)
 
-<h2>Todo</h2>
-
-![Image](https://i.imgur.com/J5YAkMM.png)
-
-* Edwin
-    * <Check state="false">Path finding</Check>
-    * <Check state="false">Rectangle de selection</Check>
-    * <Check state="false">Documenter Path finding</Check>
-* Nathan
-    * <Check state="false">Bound map camera</Check>
-    * <Check state="false">Resolution</Check>
-    * <Check state="false">Minimap</Check>
-    * <Check state="false">ping clique droit</Check>
-    * <Check state="false">Grande map</Check>
-    * <Check state="false">Planning</Check>
-* Sol
-    * <Check state="false">Feedback visuel selection unités</Check> 
-    * <Check state="false">Hud</Check>
-    * <Check state="false">sounds</Check>
-    * <Check state="false">curseur intelligent</Check>
-    * <Check state="false">Trello</Check>
-
-<br>
-
-* <Check state="false">Mechanisme Construction</Check>
-* <Check state="false">Mechanisme Sorts</Check>
-* <Check state="false">fog of war</Check>
-* <Check state="false">Sprite sheet unités</Check>
-* <Check state="false">Particules</Check>
-* <Check state="false">Dynamic Lightning</Check>
-
-
 <Posts header="Documents"/>
 
 <h2>Échéances</h2>
@@ -68,5 +36,7 @@
 <Check state="false">Guide d'utilisateur</Check>
 <Check state="false">Guide développeur</Check>
 <Check state="false">Présentation ? </Check>
+
+
 
 
