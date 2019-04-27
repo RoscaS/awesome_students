@@ -11,8 +11,12 @@ hide: false
 > déctrit un **problème** récurent au sein d'un environement, <br> décrit le **le coeur des solutions** pour ce problème, <br> de façon à ce que cette solution soit **réutilisable**. <br>
 > <span style="float: right">Chris Alexander</span>
 
-<br> <br> <br>
+<br> <br>
 
 > Une paterne est une description d'objets communiquant et de classes structurés de façon à résoudre un problème de design commun dans un contexte spécifique. <br>
 > <span style="float: right">gang of four</span>
 
+
+## Liens
+
+* Relation entre objets: [ici](/articles/programmation/recap_relations_objets.html) et [la](https://roscas.github.io/prog/Prog-composition-aggregation.html) 

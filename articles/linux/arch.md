@@ -1,6 +1,6 @@
 ---
 title: Arch Linux
-date: 2019-02-98
+date: 2019-02-18
 author: Sol
 sidebar: auto
 project: false

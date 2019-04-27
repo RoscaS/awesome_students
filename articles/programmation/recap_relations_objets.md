@@ -123,9 +123,7 @@ Un objet $a$ est dépendant d'une classe $B$ quand l'objet $a$ utilise une fonct
 
 **Généralisation** est le terme utilisé pour dénoter l'abstraction de propriétés communes dans une nouvelle classe <st c="r">en langage UML</st>. Lorsqu'une généralisation est implémentée dans un langage de programmation, on parle d'**héritage**.
 
-
 <br>
-
 
 <Media
     src="https://i.imgur.com/Y3f2RHf.png"
