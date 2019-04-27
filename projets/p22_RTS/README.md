@@ -2,14 +2,12 @@
 
 <br><br>
 
-
 <Team :members="['Nathan', 'Edwin', 'Sol']"/>
 
 <h2>Liens</h2>
 
-* [PVs des réunions](/projets/p22_RTS/00_PVs.html)
 * [Répo: Forge he-arc](https://forge.ing.he-arc.ch/gitlab/inf/1819/p2-java/yarts.git)
-* TODO: [Directives](#)
+* [Trello](https://trello.com/b/mmgJb6m7/yarts-master-backlog)
 
 <h2>Todo</h2>
 
