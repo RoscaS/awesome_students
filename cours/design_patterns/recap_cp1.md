@@ -100,9 +100,12 @@ Il existe 23 paternes réparties en trois catégories:
 
 ## Factory method
 
-### Objectif
+* [refactoring.guru](https://refactoring.guru/design-patterns/factory-method)
 
 Paterne de <st c="b">création</st> qui fournit une façon de déléguer la logique d'instanciation aux classes enfant.
+
+### Objectif
+
 
 ### Pour et contre
 
@@ -142,7 +145,10 @@ Paterne de <st c="b">création</st> qui fournit une façon de déléguer la logi
 
 </Container>
 
+
 ## Abstract factory
+
+* [refactoring.guru](https://refactoring.guru/design-patterns/abstract-factory)
 
 ### Objectif
 
@@ -202,7 +208,12 @@ Paterne de <st c="b">création</st> qui offre un moyen d'encapsuler un groupe de
 
 </Container>
 
+
+
+
 ## Prototype
+
+* [refactoring.guru](https://refactoring.guru/design-patterns/prototype)
 
 Paterne de <st c="b">création</st> qui permet de créer un objet sur base d'un objet déja existant.
 
@@ -248,7 +259,9 @@ Paterne de <st c="b">création</st> qui permet de créer un objet sur base d'un 
 
 ## Builider
 
-Builder is a <st c="b">creational</st> design pattern that lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
+* [refactoring.guru](https://refactoring.guru/design-patterns/builder)
+
+Buil der is a <st c="b">creational</st> design pattern that lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
 
 ### Objectif
 
@@ -319,7 +332,9 @@ Builder is a <st c="b">creational</st> design pattern that lets you construct co
 
 ## Proxy
 
-Proxy is a <st c="g">structural</st> design pattern that lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
+* [refactoring.guru](https://refactoring.guru/design-patterns/proxy)
+
+Prox y is a <st c="g">structural</st> design pattern that lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
 
 ### Objectif
 
@@ -400,6 +415,8 @@ Collonne de droite (ne pas supprimer les lignes vides!)
 
 ## Command
 
+* [refactoring.guru](https://refactoring.guru/design-patterns/command)
+
 Command is a <st c="r">behavioral</st> design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you parameterize methods with different requests, delay or queue a request’s execution, and support undoable operations.
 
 ### Objectif
@@ -429,6 +446,20 @@ Lancer une requête sans rien connaitre sur comment la gestion de la requête es
 * **Client** crée le **ConcreteCommand** (et y rajoute la référence au **Receiver**)
 * **Invoker** est celui qui appelle des **Commands** sans savoir ce qu'elles font
 
+<Spoiler tag="Complément">
+
+![Image](https://i.imgur.com/djAe5NH.png)
+
+1. The **Sender** class (aka **invoker**) is responsible for initiating requests. This class must have a field for storing a reference to a command object. The sender triggers that command instead of sending the request directly to the receiver. Note that the sender isn’t responsible for creating the command object. Usually, it gets a pre-created command from the client via the constructor.
+2. The **Command** interface usually declares just a single method for executing the command.
+3. **Concrete Commands** implement various kinds of requests. A concrete command isn’t supposed to perform the work on its own, but rather to pass the call to one of the business logic objects. However, for the sake of simplifying the code, these classes can be merged.
+4. Parameters required to execute a method on a receiving object can be declared as fields in the concrete command. You can make command objects immutable by only allowing the initialization of these fields via the constructor.
+5. The **Receiver** class contains some business logic. Almost any object may act as a receiver. Most commands only handle the details of how a request is passed to the receiver, while the receiver itself does the actual work.
+6. The **Client** creates and configures concrete command objects. The client must pass all of the request parameters, including a receiver instance, into the command’s constructor. After that, the resulting command may be associated with one or multiple senders.
+
+</Spoiler>
+
+
 ### Conséquences
 
 * Déconnection de l'objet qui déclenche une action de celui qui l'exécute
@@ -444,6 +475,10 @@ Lancer une requête sans rien connaitre sur comment la gestion de la requête es
 * Pour supporter undo et redo:
   * Le **Command** doit enregistrer l'état du **Receiver** après chaque commande
   * Garder une liste historique des Commandes exécutées (associées à un état dans le Reciever)
+
+### Exemple
+
+![Image](https://i.imgur.com/g9TDjQY.png)
 
 
 ### Pour et contre
@@ -469,8 +504,6 @@ Lancer une requête sans rien connaitre sur comment la gestion de la requête es
 
 ### Relations avec d'autres paternes
 
-
-
 <Container type="warning">
 
 **Chain of Responsibility**, **Command**, **Mediator** and **Observer** address various ways of connecting senders and receivers of requests:
@@ -495,28 +528,94 @@ Lancer une requête sans rien connaitre sur comment la gestion de la requête es
 * **Prototype** can help when you need to save copies of **Commands** into history.
 * You can treat **Visitor** as a powerful version of the **Command** pattern. Its objects can execute operations over various objects of different classes.
 
-## Titre
+
+## Memento
+
+* [refactoring.guru](https://refactoring.guru/design-patterns/memento)
+
+Memento is a <st c="r">behavioral</st> design pattern that lets you save and restore the previous state of an object without revealing the details of its implementation.
+
+<br>
+
+>The Memento pattern delegates creating the state snapshots to the actual owner of that state, the originator object. Hence, instead of other objects trying to copy the editor’s state from the “outside,” the editor class itself can make the snapshot since it has full access to its own state.
+
+<br>
 
 ### Objectif
 
+* Externaliser l'état d'un objet pour (éventuellement) le remettre plus tard, sans pour autant exposer cet état
+
 ### Motivation
+
+* L'état d'un objet ne doit pas être visible de l'extérieur
 
 ### Cas d'utilisation
 
+* When you want to produce snapshots of the object's state to be able to restore a previous state of the object.
+  * The Memento pattern lets you make full copies of an object’s state, including private fields, and store them separately from the object. While most people remember this pattern thanks to the “undo” use case, **it’s also indispensable when dealing with transactions** (i.e., if you need to roll back an operation on error).
+* When direct access to the object's fields/getters/setters violates its encapsulation.
+  * The Memento **makes the object itself responsible for creating a snapshot of its state**. No other object can read the snapshot, making the original object’s state data safe and secure.
+
 ### Schéma
 
-### Pour et contre
+![Image](https://i.imgur.com/1piTv9d.png)
 
+* Participants:
+  * **Memento** stocke un état
+  * **Originator** a un état à stocker/récupérer
+  * **CareTaker** décide quels états stocker/récupérer
+* Collaboration
+  * **Memento** Stocke l'état de l'**Originator**
+  * **Originator**
+    * Crée un Memento pour stocker son état
+    * Récupère son état du Memento
+  * **Caretaker**:
+    * Décide quand récupérer un Memento de l'Originator
+    * Ne regarde jamais le contenu du Memento
+
+<Spoiler tag="Complément">
+
+![Image](https://i.imgur.com/T3Mm3GI.png)
+
+1. The **Originator** class can produce snapshots of its own state, as well as restore its state from snapshots when needed.
+2. The **Memento** is a value object that acts as a snapshot of the originator’s state. It’s a common practice to make the memento immutable and pass it the data only once, via the constructor.
+3. The **Caretaker** knows not only “when” and “why” to capture the originator’s state, but also when the state should be restored. A caretaker can keep track of the originator’s history by storing a stack of mementos. When the originator has to travel back in history, the caretaker fetches the topmost memento from the stack and passes it to the originator’s restoration method.
+4. In this implementation, the memento class is nested inside the originator. This lets the originator access the fields and methods of the memento, even though they’re declared private. On the other hand, the caretaker has very limited access to the memento’s fields and methods, which lets it store mementos in a stack but not tamper with their state.
+
+</Spoiler>
+
+### Conséquences
+
+* L'encapsulation de l'Originator est préservée
+* L'Originator debient plus simple
+  * Sauvegarde / récupération a une interface bien définie
+* Mementos peuvent être très couteux
+* Il peut être implssible de cacher le Memento du Caretaker
+* Caretaker n'a pas le moyen de savoir si un Memento est grand ou petit
+
+<Container type="warning">
+
+* Plusieurs implémentations possible en fonction d'à quel point le langage est dynamique.
+* Pour toutes les implémentations on peut utiliser deux types d'interfaces
+  * Ample: stocke l'état en entier
+  * Restreinte: stocke des "delta" de l'état
+
+</Container>
+
+### Pour et contre
 
 <Col proportions="6/6" vAlign="0">
 <template slot="left">
 
-Colonne de gauche (ne pas supprimer les lignes vides!)
+ * <st c="g">You can produce snapshots of the object’s state without violating its encapsulation.</st>
+ * <st c="g">You can simplify the originator’s code by letting the caretaker maintain the history of the originator’s state.</st>
 
 </template>
 <template slot="right">
 
-Collonne de droite (ne pas supprimer les lignes vides!)
+ * <st c="r">The app might consume lots of RAM if clients create mementos too often.</st>
+ * <st c="r">Caretakers should track the originator’s lifecycle to be able to destroy obsolete mementos.</st>
+ * <st c="r">Most dynamic programming languages, such as PHP, Python and JavaScript, can’t guarantee that the state within the memento stays untouched.</st>
 
 </template>
 </Col>
@@ -524,10 +623,9 @@ Collonne de droite (ne pas supprimer les lignes vides!)
 
 ### Relations avec d'autres paternes
 
-
-
-
-
+* You can use **Command** and **Memento** together when implementing “undo”. In this case, commands are responsible for performing various operations over a target object, while mementos save the state of that object just before a command gets executed.
+* You can use **Memento** along with **Iterator** to capture the current iteration state and roll it back if necessary.
+* Sometimes **Prototype** can be a simpler alternative to **Memento**. This works if the object, the state of which you want to store in the history, is fairly straightforward and doesn’t have links to external resources, or the links are easy to re-establish.
 
 
 ## Titre
