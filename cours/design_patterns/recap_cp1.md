@@ -193,10 +193,403 @@ Paterne de <st c="b">création</st> qui offre un moyen d'encapsuler un groupe de
 
 * **Abstract factory** est souvent basé sur un groupe de **Factory methods**  mais pas nécessairement, **Prototype** peut être utilisé à la place.
 * **Abstract factory** est une bonne alternative à **Facade** quand le but recherché n'est que de cacher la façon dont les objets du sous-système sont créés au client.
-* **Abstract factory** se mélange bien avec **Bridge** quand certaines abstractions définies par **Bridge** ne peuvent fonctionner qu'avec des implémentations spécifiques. Dans ce cas, **Abstract factory** encapsule les relations et cache la complexité au code client.
+* **Abstract factory** se mélange bien avec **Bridge** quand certaines abstractions définies par **Bridge** ne peuvent fonctionner qu'avec des implémentations spécifiques. Dans ce cas, 
+* **Abstract factory** encapsule les relations et cache la complexité au code client.
 
 <Container type="warning">
 
 **Abstract factory**, **Builders** et **Prototypes** peuvent tous trois être implémentés sous forme de **Singleton**.
 
 </Container>
+
+## Prototype
+
+Paterne de <st c="b">création</st> qui permet de créer un objet sur base d'un objet déja existant.
+
+### Objectif
+
+* Créer des objets à partir d’un exemple
+
+## Motivation
+
+* Définition des nouveaux objets en fonction de leur état ou de leur composition (et non pas en fonction de la classe)
+* Moins d'héritage
+* Définition plus dynamique
+
+### Schéma
+
+![Image](https://i.imgur.com/L8qTQav.png)
+
+
+### Pour et contre
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+* <st c="g">Création d'objets sans avoir accès à la classe de l'objet (couplage faible)</st>
+* <st c="g">Possibilité de ne plus répéter des constructions d'objets "standards" (clonage d'un objet prototypé pré construit)</st>
+* <st c="g">Facilite la création d'objets complexes</st>
+* <st c="g">You get an alternative to inheritance when dealing with configuration presets for complex objects.</st>
+
+</template>
+<template slot="right">
+
+* <st c="r">Clonage d'objet complexes avec des références circulaires est tricky</st>
+
+</template>
+</Col>
+
+### Relations avec d'autres paternes
+
+* Designs that make heavy use of **Composite** and **Decorator** can often benefit from using **Prototype**. Applying the pattern lets you clone complex structures instead of re-constructing them from scratch.
+* **Prototype** isn’t based on inheritance, so it doesn’t have its drawbacks. On the other hand, **Prototype** requires a complicated initialization of the cloned object. Factory Method is based on inheritance but doesn’t require an initialization step.
+* Sometimes **Prototype** can be a simpler alternative to **Memento**. This works if the object, the state of which you want to store in the history, is fairly straightforward and doesn’t have links to external resources, or the links are easy to re-establish.
+
+
+## Builider
+
+Builder is a <st c="b">creational</st> design pattern that lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
+
+### Objectif
+
+* Séparer la construction d’un objet de sa représentation
+
+### Motivation
+
+* Un objet a une façon très compliquée de se construire
+* La construction n’a rien à voir avec le métier
+
+### Cas d'utilisation
+
+* L’algo de création est indépendant des parties qui forment l’objet
+* L’algo de création supporte plusieurs représentations de l’objet
+
+### Schéma
+
+![Image](https://i.imgur.com/IXvmT6e.png)
+
+* **Builder**: Spécifie une interface abstraite pour créer l'objet
+* **ConcreteBuilder**:
+  * Construit (assemble) le Produit
+  * Implémente Builder
+  * Retourne le Product
+* **Director**: Construit (via Builder) le Porduct
+* **Product**: Représente l'objet complexe en construction
+
+1. Le client crée le Director et le configure
+2. Director intéragit avec le Builder pour construire le Product
+3. Le client récupère le Product
+
+### Conséquences
+
+* **Product** peut avoir plusieurs structures très différentes
+* Isole la construction de la représentation
+* Donne un contrôle plus fin au processus de création
+
+### Pour et contre
+
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+ * <st c="g">You can construct objects step-by-step, defer construction steps or run steps recursively.</st>
+ * <st c="g">You can reuse the same construction code when building various representations of products.</st>
+ * <st c="g">Single Responsibility Principle. You can isolate complex construction code from the business logic of the product.</st>
+
+</template>
+<template slot="right">
+
+* <st c="r"> The overall complexity of the code increases since the pattern requires creating multiple new classes.</st>
+
+</template>
+</Col>
+
+
+### Relations avec d'autres paternes
+
+* **Builder** focuses on constructing complex objects step by step. **Abstract Factory** specializes in creating families of related objects. **Abstract Factory** returns the product immediately, whereas **Builder** lets you run some additional construction steps before fetching the product.
+* You can use **Builder** when creating complex **Composite** trees because you can program its construction steps to work recursively.
+* You can combine **Builder** with **Bridge**: the director class plays the role of the abstraction, while different builders act as implementations.
+
+
+
+
+
+
+
+## Proxy
+
+Proxy is a <st c="g">structural</st> design pattern that lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
+
+### Objectif
+
+Fournir un objet qui représente un autre objet.
+
+### Motivation
+
+Le vrai objet n’est pas accessible directement
+* Pas encore crée
+* Distant (réseau)
+* Ajouter du traitement avant et/ou après l'appel d'une methode de l'objet
+
+### Cas d'utilisation
+
+Cas d’utilisation
+* Protéger un objet
+* Simuler un objet (pour retarder sa création ou son accès)
+* Accéder à distance
+
+### Schéma
+
+![Image](https://i.imgur.com/wIrV4Am.png)
+
+* **Participants**
+  * **Proxy**
+    * Maintient une référence à l'objet représenté
+    * Offre la même interface
+    * Controle l'accès
+* **Subject**
+  * Définit l'interface de l'objet représenté
+* **RealSubject**
+  * L'objet représenté
+
+Le Proxy renvoie au RealSubject les appels (si nécessaire).
+
+## Conséquences
+
+* Création d'un niveau d'indirection
+* Optimisation (lazy creation, copy on write)
+
+## Implémentation
+
+* Surcharge de toutes les méthodes d'accès
+* On peut masquer ceraines méthodes (corp vide)
+* Proxy ne connait pas forcément le vrai type de l'objet représenté
+
+### Pour et contre
+
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+Colonne de gauche (ne pas supprimer les lignes vides!)
+
+</template>
+<template slot="right">
+
+Collonne de droite (ne pas supprimer les lignes vides!)
+
+</template>
+</Col>
+
+
+### Relations avec d'autres paternes
+
+<Container type="warning">
+
+* **Adapter** provides a different interface to the wrapped object.
+* **Proxy** provides it with the same interface.
+* **Decorator** provides it with an enhanced interface.
+
+</Container>
+
+* **Facade** is similar to **Proxy** in that both buffer a complex entity and initialize it on its own. Unlike **Facade**, **Proxy** has the same interface as its service object, which makes them interchangeable.
+
+* **Decorator** and **Proxy** have similar structures, but very different intents. Both patterns are built on the composition principle, where one object is supposed to delegate some of the work to another. The difference is that a **Proxy** usually manages the life cycle of its service object on its own, whereas the composition of **Decorators** is always controlled by the client.
+
+
+## Command
+
+Command is a <st c="r">behavioral</st> design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you parameterize methods with different requests, delay or queue a request’s execution, and support undoable operations.
+
+### Objectif
+
+* Encapsuler une requête dans un objet
+  * Construire des requêtes configurables
+  * Mettre des opérations dans une queue, temporiser leur exécution, les éxécuter de l'autre coté d'un réseau
+  * Implémenter un système d'undo
+
+### Motivation
+
+Lancer une requête sans rien connaitre sur comment la gestion de la requête est faite ni même sur qui la traite.
+
+### Cas d'utilisation
+
+* Enregistrer une opération quelque part qui sera appelée plus tard
+* Créer des queues de taches à exécuter
+* Généraliser la possiblité de "undo"
+
+### Schéma
+
+![Image](https://i.imgur.com/3yrl2sX.png)
+
+* **Command** déclare l'interface pour exécuter une opération
+* **ConcreteCommand** concrétise les opérations pour un type de **Receiver** donné
+* **Receiver** est l'objet sur lequel les opérations seront faites
+* **Client** crée le **ConcreteCommand** (et y rajoute la référence au **Receiver**)
+* **Invoker** est celui qui appelle des **Commands** sans savoir ce qu'elles font
+
+### Conséquences
+
+* Déconnection de l'objet qui déclenche une action de celui qui l'exécute
+* Les **Command** sont des objets parametrable et non plus juste des appels de methode
+* Un **Command** peut être un ensemble de commandes (**Composite pattern**)
+* Il est simple de rajouter de nouvelles **Command**
+
+### Implémentation
+
+* Le **Command** peut:
+  * Tout déléguer au **Receiver**
+  * Tout faire lui-même
+* Pour supporter undo et redo:
+  * Le **Command** doit enregistrer l'état du **Receiver** après chaque commande
+  * Garder une liste historique des Commandes exécutées (associées à un état dans le Reciever)
+
+
+### Pour et contre
+
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+ * <st c="g">Single Responsibility Principle. You can decouple classes that invoke operations from classes that perform these operations.</st>
+ * <st c="g">Open/Closed Principle. You can introduce new commands into the app without breaking existing client code.</st>
+ * <st c="g">You can implement undo/redo.</st>
+ * <st c="g">You can implement deferred execution of operations.</st>
+ * <st c="g">You can assemble a set of simple commands into a complex one.</st>
+
+</template>
+<template slot="right">
+
+* <st c="r">The code may become more complicated since you’re introducing a whole new layer between senders and receivers.</st>
+
+</template>
+</Col>
+
+
+### Relations avec d'autres paternes
+
+
+
+<Container type="warning">
+
+**Chain of Responsibility**, **Command**, **Mediator** and **Observer** address various ways of connecting senders and receivers of requests:
+* **Chain of Responsibility** passes a request sequentially along a dynamic chain of potential receivers until one of them handles it.
+* **Command** establishes unidirectional connections between senders and receivers.
+* **Mediator** eliminates direct connections between senders and receivers, forcing them to communicate indirectly via a mediator object.
+* **Observer** lets receivers dynamically subscribe to and unsubscribe from receiving requests.
+
+</Container>
+
+* You can use **Command** and **Memento** together when implementing “undo”. In this case, **commands** are responsible for performing various operations over a target object, while **mementos** save the state of that object just before a command gets executed.
+
+<Container type="warning">
+
+**Command** and **Strategy** may look similar because you can use both to parameterize an object with some action. However, they have very different intents.
+
+* You can use **Command** to convert any operation into an object. The operation’s parameters become fields of that object. The conversion lets you defer execution of the operation, queue it, store the history of commands, send commands to remote services, etc.
+* On the other hand, **Strategy** usually describes different ways of doing the same thing, letting you swap these algorithms within a single context class.
+
+</Container>
+
+* **Prototype** can help when you need to save copies of **Commands** into history.
+* You can treat **Visitor** as a powerful version of the **Command** pattern. Its objects can execute operations over various objects of different classes.
+
+## Titre
+
+### Objectif
+
+### Motivation
+
+### Cas d'utilisation
+
+### Schéma
+
+### Pour et contre
+
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+Colonne de gauche (ne pas supprimer les lignes vides!)
+
+</template>
+<template slot="right">
+
+Collonne de droite (ne pas supprimer les lignes vides!)
+
+</template>
+</Col>
+
+
+### Relations avec d'autres paternes
+
+
+
+
+
+
+
+## Titre
+
+### Objectif
+
+### Motivation
+
+### Cas d'utilisation
+
+### Schéma
+
+### Pour et contre
+
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+Colonne de gauche (ne pas supprimer les lignes vides!)
+
+</template>
+<template slot="right">
+
+Collonne de droite (ne pas supprimer les lignes vides!)
+
+</template>
+</Col>
+
+
+### Relations avec d'autres paternes
+
+
+
+
+
+
+
+## Titre
+
+### Objectif
+
+### Motivation
+
+### Cas d'utilisation
+
+### Schéma
+
+### Pour et contre
+
+
+<Col proportions="6/6" vAlign="0">
+<template slot="left">
+
+Colonne de gauche (ne pas supprimer les lignes vides!)
+
+</template>
+<template slot="right">
+
+Collonne de droite (ne pas supprimer les lignes vides!)
+
+</template>
+</Col>
+
+
+### Relations avec d'autres paternes
