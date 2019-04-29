@@ -122,7 +122,18 @@ Paterne de <st c="b">création</st> qui fournit une façon de déléguer la logi
 * <st c="rgb">Code complexe du à l'introduction des nombreuses sous classes nécessaires au paterne.</st>
 
 </template>
-</Col>      
+</Col>     
+
+
+### Schéma
+
+![Image](https://i.imgur.com/zuMqpTm.png)
+
+1. The **Product** declares the interface, which is common to all objects that can be produced by the creator and its subclasses.
+2. **Concrete Products** are different implementations of the product interface.
+3. The **Creator** class declares the factory method that returns new product objects. It’s important that the return type of this method matches the product interface. <br><br> You can declare the factory method as abstract to force all subclasses to implement their own versions of the method. As an alternative, the base factory method can return some default product type. <br><br> Note, despite its name, product creation is <st c="r">not</st> the primary responsibility of the creator. Usually, the creator class already has some core business logic related to products. The factory method helps to decouple this logic from the concrete product classes. Here is an analogy: a large software development company can have a training department for programmers. However, the primary function of the company as a whole is still writing code, not producing programmers.
+4. **Concrete Creators** override the base factory method so it returns a different type of product. <br><br> Note that the factory method doesn’t have to **create** new instances all the time. It can also return existing objects from a cache, an object pool, or another source.
+
 
 ### Exemple
 
@@ -336,6 +347,12 @@ Buil der is a <st c="b">creational</st> design pattern that lets you construct c
 
 Prox y is a <st c="g">structural</st> design pattern that lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
 
+<br>
+
+> Proxy is invaluable when you have to add some additional behaviors to a class which code you can’t change.
+
+<br>
+
 ### Objectif
 
 Fournir un objet qui représente un autre objet.
@@ -369,6 +386,18 @@ Cas d’utilisation
   * L'objet représenté
 
 Le Proxy renvoie au RealSubject les appels (si nécessaire).
+
+<Spoiler tag="Complément">
+
+![Image](https://i.imgur.com/m4paxoa.png)
+
+1. The **Service Interface** declares the interface of the Service. The proxy must follow this interface to be able to disguise itself as a service object.
+2. The **Service** is a class that provides some useful business logic.
+3. The **Proxy** class has a reference field that points to a service object. After the proxy finishes its processing (e.g., lazy initialization, logging, access control, caching, etc.), it passes the request to the service object. Usually, proxies manage the full lifecycle of their service objects.
+4. The **Client** should work with both services and proxies via the same interface. This way you can pass a proxy into any code that expects a service object.
+
+</Spoiler>
+
 
 ## Conséquences
 
@@ -411,6 +440,50 @@ Collonne de droite (ne pas supprimer les lignes vides!)
 * **Facade** is similar to **Proxy** in that both buffer a complex entity and initialize it on its own. Unlike **Facade**, **Proxy** has the same interface as its service object, which makes them interchangeable.
 
 * **Decorator** and **Proxy** have similar structures, but very different intents. Both patterns are built on the composition principle, where one object is supposed to delegate some of the work to another. The difference is that a **Proxy** usually manages the life cycle of its service object on its own, whereas the composition of **Decorators** is always controlled by the client.
+
+
+
+## Decorator
+
+* [refactoring.guru](https://refactoring.guru/design-patterns/decorator)
+
+Decorator is a <st c="b">structural</st> design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
+
+> A constructor that takes an instance of the same abstract class. That's the recognition key of the decorator pattern (this also applies to constructors taking an instance of the same interface).
+
+### Objectif 
+
+* Rajouter dynamiquement des responsabilités
+* Spécialisation dynamique
+
+### Motivation
+
+* Augmenter les repsponsabilités d'un objet **et non pas de toute la classe**
+
+### Cas d'utilisation
+
+* Rajouter des responsabilités à des objets individuels
+* Les responsabilités peuvent être supprimées
+* Les cas où la spécialisation n'est pas pratique
+
+### Structure 
+
+![Image](https://i.imgur.com/6KcANdW.png)
+
+
+1. The **Component** declares the common interface for both wrappers and wrapped objects.
+2. **Concrete Component** is a class of objects being wrapped. It defines the basic behavior, which can be altered by decorators.
+3. The **Base Decorator** class has a field for referencing a wrapped object. The field’s type should be declared as the component interface so it can contain both concrete components and decorators. The base decorator delegates all operations to the wrapped object.
+4. **Concrete Decorators** define extra behaviors that can be added to components dynamically. Concrete decorators override methods of the base decorator and execute their behavior either before or after calling the parent method.
+5. The **Client** can wrap components in multiple layers of decorators, as long as it works with all objects via the component interface.
+
+### Conséquences
+* Plus de flexibilité que l'héritage statique
+  * choix fait au moment de l'exécution
+* les classes élevées (dans la hierarchie) sont moins chargées
+* Le Décorator et le Component ne sont pas identiques
+  * Impossible de choisir un comportement en fonction de l'identité
+* Création de nombreux petits objets
 
 
 ## Command
