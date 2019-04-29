@@ -23,6 +23,10 @@ hide: false
 
 <br>
 
+>Les patterns sont des généralisations de solutions spécifiques, fréquemment utilisées.
+
+<br>
+
 En Bref les Design Patterns...
 * C'est...
   * Une description d'une solution classique à un problème récurent
@@ -69,6 +73,85 @@ En Bref les Design Patterns...
   * Le comportement peut changer en cours d'exécution
   * Les classes sont plus focalisées sur une tache
   * Reduction des dépendances d'implémentation
+
+## Q&A
+
+* Q: On dit que les design patterns sont une façon de réutiliser. Qu'est-ce qu'on réutilise?
+* A: Les associations d'objets (architecture et design).
+
+<br>
+
+* Q: Qu'est-ce qui fait que les objets des DP aient un couplement faible ?
+* A: Utilisation intensive des interfaces.
+
+<br>
+
+* Q: Exemple de stratégie orienté objet : "les composants doivent avoir forte cohésion et faible couplement". Expliquer pourquoi les design patterns ne sont pas des stratégies.
+* A: Les stratégies sont des idées générales. On les retrouve dans les patterns. Les patterns sont des généralisations de solutions spécifiques, fréquemment utilisées.
+
+<br>
+
+* Q: Est-ce qu’une table de hash (HasMap en Java) est un design pattern ?
+* A: Hash table est une structure de données, plus spécifique qu’un pattern.
+
+<br>
+
+* Q: Vous faites un nouveau programme qui contient une solution nouvelle et efficiente pour un problème de design. Est-ce que l'on peut dire que vous avez créé un nouveau pattern ?
+* A: Non. Un pattern est identifié par sa présence fréquente dans nos designs. Une solution utilisée une fois n’est pas un pattern.
+
+<br>
+
+* Q: Vous avez un ensemble de classes d'enregistrement de "logs" avec l'interface suivante :
+
+```java
+interface Logger {
+    void error(String message);
+    void warning(String message);
+    void info(String message);
+    void debug(String message);
+}
+```
+Selon le cas d’utilisation, vous avez besoin d'avoir plusieurs types de Logger, avec des
+différents formats de sortie (syslog, XML, simple). Pour chaque programme exécuté, vous
+n'avez qu'un Logger à utiliser, choisi au début de l'exécution selon un fichier de
+configuration. Quels patterns utiliseriez-vous dans ce contexte ?
+
+* A: Un Logger est un objet décoré par un Decorator. On créera des Loggers avec des AbstractFactory, selon la décoration souhaitée. Un seul Logger existe : c’est un Sigleton.
+
+<Spoiler tag="formats">
+
+```
+# Format syslog
+Mon May 9 22:35:13.037 <warning> AirPort_Brcm43xx::platformWoWEnable: WWEN[enable]
+Mon May 9 22:35:13.037 <error> AirPort_Brcm43xx::syncPowerState: WWEN[enabled]
+Mon May 9 22:35:14.212 <info> AirPort_Brcm43xx::platformWoWEnable: WWEN[disable]
+Mon May 9 22:47:26.523 <info> wl0: setup_keepalive: interval 900, retry_interval 30, retry_count 10
+Mon May 9 22:47:26.523 <warning> wl0: setup_keepalive: Local IP: 192.168.0.12
+
+# Format XML
+<log>
+<timestamp>Mon May 9 22:35:13.037</timestamp>
+<severity>warning</severity>
+<message>AirPort_Brcm43xx::platformWoWEnable: WWEN[enable]</message>
+</log>
+<log>
+<timestamp>Mon May 9 22:35:13.037</timestamp>
+<severity>error</severity>
+<message>AirPort_Brcm43xx::syncPowerState: WWEN[enabled]</message>
+</log>
+...
+
+# Format simple
+warning: AirPort_Brcm43xx::platformWoWEnable: WWEN[enable]
+error: AirPort_Brcm43xx::syncPowerState: WWEN[enabled]
+info: AirPort_Brcm43xx::platformWoWEnable: WWEN[disable]
+info: wl0: setup_keepalive: interval 900, retry_interval 30, retry_count 10
+warning: wl0: setup_keepalive: Local IP: 192.168.0.12
+```
+
+</Spoiler>
+
+
 
 ## Introduction
 
@@ -232,7 +315,7 @@ Paterne de <st c="b">création</st> qui permet de créer un objet sur base d'un 
 
 * Créer des objets à partir d’un exemple
 
-## Motivation
+### Motivation
 
 * Définition des nouveaux objets en fonction de leur état ou de leur composition (et non pas en fonction de la classe)
 * Moins d'héritage
@@ -399,12 +482,12 @@ Le Proxy renvoie au RealSubject les appels (si nécessaire).
 </Spoiler>
 
 
-## Conséquences
+### Conséquences
 
 * Création d'un niveau d'indirection
 * Optimisation (lazy creation, copy on write)
 
-## Implémentation
+### Implémentation
 
 * Surcharge de toutes les méthodes d'accès
 * On peut masquer ceraines méthodes (corp vide)
@@ -484,6 +567,13 @@ Decorator is a <st c="b">structural</st> design pattern that lets you attach new
 * Le Décorator et le Component ne sont pas identiques
   * Impossible de choisir un comportement en fonction de l'identité
 * Création de nombreux petits objets
+
+### Relations avec d'autres paternes
+
+* **Composite** and **Decorator** have similar structure diagrams since both rely on recursive composition to organize an open-ended number of objects.
+* A **Decorator** is like a **Composite** but only has one child component. There’s another significant difference: **Decorator** adds additional responsibilities to the wrapped object, while Composite just “sums up” its children’s results.
+* However, the patterns can also cooperate: you can use **Decorator** to extend the behavior of a specific object in the Composite tree.
+
 
 
 ## Command
@@ -701,7 +791,7 @@ Memento is a <st c="r">behavioral</st> design pattern that lets you save and res
 * Sometimes **Prototype** can be a simpler alternative to **Memento**. This works if the object, the state of which you want to store in the history, is fairly straightforward and doesn’t have links to external resources, or the links are easy to re-establish.
 
 
-## Titre
+<!-- ## Titre
 
 ### Objectif
 
@@ -728,39 +818,5 @@ Collonne de droite (ne pas supprimer les lignes vides!)
 </Col>
 
 
-### Relations avec d'autres paternes
+### Relations avec d'autres paternes -->
 
-
-
-
-
-
-
-## Titre
-
-### Objectif
-
-### Motivation
-
-### Cas d'utilisation
-
-### Schéma
-
-### Pour et contre
-
-
-<Col proportions="6/6" vAlign="0">
-<template slot="left">
-
-Colonne de gauche (ne pas supprimer les lignes vides!)
-
-</template>
-<template slot="right">
-
-Collonne de droite (ne pas supprimer les lignes vides!)
-
-</template>
-</Col>
-
-
-### Relations avec d'autres paternes
