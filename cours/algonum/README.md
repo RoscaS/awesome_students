@@ -1,5 +1,10 @@
 # Algorithmes numériques
 
+## Travail perso
+Envoyer un mail à nicolas.sommer@he-arc.ch
+* petit cahier charges
+* objectifs
+
 ## Consignes
 
 * Sur l'application
