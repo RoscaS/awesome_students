@@ -13,3 +13,12 @@ hide: false
 * RMI
 * Webcam & Sécurité
 
+## En vrac
+
+
+* <st c="r">Metrics du cours</st>
+* <st c="r">Nouveau projet</st>
+
+Osef de ce que le code permet de faire "en principe". Il faut que ça fonctionne.
+* Première itération fonctionnelle et qui marche
+* Par la suite on améliore
