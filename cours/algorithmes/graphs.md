@@ -85,7 +85,7 @@ Dans le cas d'un graphe orienté, on ne parle plus d'arête, mais d'**arc**. Cet
 * **Graphe complet**: Chaque noeud du graphe est relié à chaque autre noeud.
 
 * **Graphe orienté** de $N$ noeuds: Chaque noeud ne peut être relié qu'à ses $N - 1$ voisins au maximum soit un total de $N(N-1) = N^2-N$ arcs.
-* **Graphe non-orienté** de $N$ noeuds: $\frac{1}{2}(N^2-N)$ arcs.
+* **Graphe non-orienté** de $N$ noeuds: $\frac{1}{2}(N^2-N)$ arête.
 
 ### Degré d'un noeud
 
