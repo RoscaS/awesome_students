@@ -59,9 +59,13 @@ public class Dessinator {
         new ShapeActor(stage, rectangle);
     }
 
+    // ...
+
     /*---------------------------------------------------------*\
     |*							Private Methods
     \*---------------------------------------------------------*/
+
+    // ...
 
     private Sprite makeSpriteFromTexture(Texture texture, int width, int height) {
         Sprite sprite = new Sprite(texture);
@@ -81,6 +85,8 @@ public class Dessinator {
         pixmap.fillRectangle(x, y, width, height);
         return pixmap;
     }
+
+    // ...
 }
 ```
 
