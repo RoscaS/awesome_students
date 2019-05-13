@@ -7,7 +7,7 @@ project: false
 hide: false
 ---
 
-##  client
+## Client
 
 ```java
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -15,8 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 public class Client {
 
     public static void exemple(Stage stage) {
-
-        Dessinator dessinator = new Dessinator();
+        Dessinator dessinator = Dessinator.getInstance();
         dessinator.petitRectangleChou(stage);
     }
 }
@@ -33,13 +32,24 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 
 public class Dessinator {
 
-    // ...
+    private static Dessinator instance;
 
-    public Dessinator() { }
+    /*---------------------------------------------------------*\
+    |*							Constructors
+    \*---------------------------------------------------------*/
 
-    /*----------------------------------------------------------*\
+    private Dessinator() { }
+
+    /*---------------------------------------------------------*\
     |*							Public Methods
-    \*----------------------------------------------------------*/
+    \*---------------------------------------------------------*/
+
+    public static Dessinator getInstance() {
+        if (instance == null) {
+            instance = new Dessinator();
+        }
+        return instance;
+    }
 
     public void petitRectangleChou(Stage stage) {
 
@@ -49,11 +59,9 @@ public class Dessinator {
         new ShapeActor(stage, rectangle);
     }
 
-    /*----------------------------------------------------------*\
+    /*---------------------------------------------------------*\
     |*							Private Methods
-    \*----------------------------------------------------------*/
-
-    // ...
+    \*---------------------------------------------------------*/
 
     private Sprite makeSpriteFromTexture(Texture texture, int width, int height) {
         Sprite sprite = new Sprite(texture);
@@ -73,8 +81,6 @@ public class Dessinator {
         pixmap.fillRectangle(x, y, width, height);
         return pixmap;
     }
-
-    // ...
 }
 ```
 
