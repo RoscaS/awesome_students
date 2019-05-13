@@ -63,7 +63,7 @@ Le code initial n'était déjà pas très joli, mais à chaque feature ajoutée 
 
 Bref un jour, on décida de tout réfactor et la solution semblait évidente: "**Chain of responsability**".
 
-## Solution
+### Solution
 
 **Comme de nombreux autres designes pattern axés sur le comportement, COR transforme des comportements particuliers en objets "Stand-alone" appelés "Traitements" (Handlers).** 
 
@@ -73,6 +73,49 @@ Ces **traitements**, tel une chaine, sont liés les uns aux autres et le flux s'
 
 Dans cette première variante du pattern, la requète se propage de traitement en traitement jusqu'à ce qu'un maillon décide de la refuser car elle ne remplit pas ses conditions ou qu'elle atteigne le bout de la chaine.
 
-## Analogie monde réel
+### Analogie monde réel
 
 Dans la vrai vie du monde, quand on appelle un support technique, en fonction des informations qu'on donne on est aiguillé vers la personne qui peut nous aider... ou éventuellement dégagé à coup de "C'est pas à nous qu'il faut demander ça".
+
+### Structure
+
+Deux variantes:
+
+* Une première dans laquelle les classes dérivées de `Handler` savent comment satisfaire les requête. Si le traitement courant n'est pas disponible ou **suffisant**, alors il délêgue au prochain traitement et ainsi va la vie.
+
+* Une seconde qu'Edwin va vous illustrer dans laquelle une requête remonte le long d'une chaine de traitement passée de traitement en traitement jusqu'à ce qu'un traitement sache quoi faire de la requête.
+
+Dans les deux cas, CoR simplifie la connexion entre objets. À la place d'avoir des éméteurs de requête et des recveurs de requête qui gardent des références à tous les traitements possible, chaque éméteur n'a qu'une référence unique à la tête de la chaine et chaque traitement de la chaine référence son succésseur.
+
+Le nombre et le type de traitement n'est a priori pas connu, ils sont configurable dynamiquement. Et le mécanisme de propagation d'une requête se base sur une **composition récursive** permettant à un nombre potentiellement ilimité de traitements d'être liés.
+
+### Outro
+
+* CoR, **Command**, **Mediator** et **Observer** ont en commun le fait qu'ils donnent une **façon de découpler les émetteurs et récepteurs d'une requête**. 
+* CoR peut utiliser **Command** pour représenter une requête comme un objet.
+* CoR est souvent utilisé en même temps que **Composite** et dans ce cas un composant parent agit comme son succésseur.
+
+
+
+
+## Facade
+
+* Facade est une abstraction qui définit une interface de plus haut niveau qui rend un sous-système plus simple à utiliser.
+* Permet de **découpler** le sous-système du client.
+* <st c="r">Contrepartie</st> réduit le nombre de features et la flexibilité dont certains "power user" pourraitent avoir besoin.
+
+### Structure
+
+Ce qui se passe plus bas que la façade peut être vu comme de la magie et c'est très bien comme ça. On se fiche de savoir comment fait la petite boite noir pour faire ce qu'elle fait, tout ce qu'on veut c'est pouvoir l'utiliser.
+
+* Des Facades supplémentaires peuvent être crées pour prévenir le "syndrome de Dieu" dont risque de soufrir une façade. Une façade additionnelle peut être exposée par la première facade directement au client.
+
+* Les classes des sous-système n'ont aucune idée de l'existance de la facade. Elles font ce qu'elles ont à faire de la façon dont elles le font toujours.
+
+* Le client utilise l'interface offerte par la facade.
+
+### Mot de la fin
+
+* Facade définit une nouvelle interface alors qu'**Adapter** utilise une interface déja existante. (Adapter fait en sorte de faire fonctionner deux interfaces pré existante ensemble)
+* **Flyweight** nous montre comment créer de nombreux petits objets, **Facade** nous montre comment faire en sorte qu'un seul objet représente un système entier.
+* **Mediator** est similaire à **facade** en ce sens qu'il abstrait les fonctionnalités de classes déjà existantes. **Mediator** abstrait et centralise la communication entre objets et **ajoute de la valeur** à cette communication et est connu des objets à qui il permet la communication. Contrairement à **Facade** qui est anonyme au sous système.
