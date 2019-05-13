@@ -2,10 +2,7 @@
 
 <Posts/>
 
-<h2>Tests</h2>
-
-* **16 Novembre**
-    * Tous les tri vu
+<st c="r">Variante Priority queue de Djikstra</st>
 
 <h2>Liens utiles</h2>
 
