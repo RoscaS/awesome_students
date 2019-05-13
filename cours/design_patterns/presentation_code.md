@@ -52,7 +52,6 @@ public class Dessinator {
     }
 
     public void petitRectangleChou(Stage stage) {
-
         Pixmap rectanglePixmap = createProceduralPixmap(0, 0, 150, 200);
         Texture rectangleTexture = makeTextureFromPixmap(rectanglePixmap);
         Sprite rectangle = makeSpriteFromTexture(rectangleTexture, 150, 200);
@@ -108,7 +107,6 @@ public class ShapeActor extends Actor {
     \*----------------------------------------------------------*/
 
     public ShapeActor(Stage stage, Batch batch, Sprite shape) {
-
         this.batch = batch;
         this.shape = shape;
         stage.addActor(this);
