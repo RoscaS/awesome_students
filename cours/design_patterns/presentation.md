@@ -119,3 +119,12 @@ Ce qui se passe plus bas que la façade peut être vu comme de la magie et c'est
 * Facade définit une nouvelle interface alors qu'**Adapter** utilise une interface déja existante. (Adapter fait en sorte de faire fonctionner deux interfaces pré existante ensemble)
 * **Flyweight** nous montre comment créer de nombreux petits objets, **Facade** nous montre comment faire en sorte qu'un seul objet représente un système entier.
 * **Mediator** est similaire à **facade** en ce sens qu'il abstrait les fonctionnalités de classes déjà existantes. **Mediator** abstrait et centralise la communication entre objets et **ajoute de la valeur** à cette communication et est connu des objets à qui il permet la communication. Contrairement à **Facade** qui est anonyme au sous système.
+* **Abstract Factory** peut être utilisé comme une alternative à **facade** pour cacher des classes spécifiques à une platforme.
+* Les facades sont souvent des **Singleton** dans le sens où ce n'est que les methodes de l'objet qui sont nécessaires.
+
+
+### Question de merde
+
+So the way to tell the difference between the Adapter pattern and the Facade pattern is that the Adapter wraps one class and the Facade may represent many classes?
+
+No! Remember, the Adapter pattern changes the interface of one or more classes into one interface that a client is expecting. While most textbook examples show the adapter adapting one class, you may need to adapt many classes to provide the interface a client is coded to. Likewise, a Facade may provide a simplified interface to a single class with a very complex interface. The difference between the two is not in terms of how many classes they "wrap", it is in their intent
