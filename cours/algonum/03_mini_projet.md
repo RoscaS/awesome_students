@@ -24,3 +24,7 @@ hide: false
 * n corps
 * Collisions
 * Interaction avancé via curseur
+
+
+
+java -Dfile.encoding=UTF-8 -jar Java_Projet_Chat.jar
