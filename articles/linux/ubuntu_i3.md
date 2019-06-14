@@ -38,6 +38,11 @@ sudo apt install ulauncher
 sudo apt install git
 ```
 
+## Save credentials
+```
+git config credential.helper store
+```
+
 # Curl
 ```
 sudo apt install curl
@@ -320,3 +325,15 @@ Add in i3 config
 ```
 exec --no-startup-id clipit
 ```
+
+# NodeJS and npm
+```
+sudo apt-get install curl python-software-properties
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt install nodejs
+```
+
+# Jetbrains
+
+## Fix focus problem
+Create or add `suppress.focus.stealing=false` to *idea.properties* in the config folder, for PyCharm in : *~/.PyCharm2019.1/config*
