@@ -335,6 +335,22 @@ sudo apt install nodejs
 ```
 
 ## Jetbrains
+```
+wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.14.5179.tar.gz
+tar xf jetbrains-toolbox-1.14.5179.tar.gz
+cd jetbrains-toolbox-1.14.5179.tar.gz
+./jetbrains-toolbox
+```
 
 ### Fix focus problem
 Create or add `suppress.focus.stealing=false` to *idea.properties* in the config folder, for PyCharm in : *~/.PyCharm2019.1/config*
+
+## Feh
+```
+sudo apt install feh
+```
+
+Add in i3 config
+```
+exec_always --no-startup-id "sh -c 'sleep 2; feh --bg-fill ~/.wallpaper/background.jpg'"
+```
