@@ -9,12 +9,12 @@ hide: false
 
 
 
-# Tilix
+## Tilix
 ```
 sudo apt install tilix
 ```
 
-## VTE problem
+### VTE problem
 ```
 sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
 ```
@@ -26,29 +26,29 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 ```
 
-# Ulauncher
+## Ulauncher
 ```
 sudo add-apt-repository ppa:agornostal/ulauncher
 sudo apt update
 sudo apt install ulauncher
 ```
 
-# Git
+## Git
 ```
 sudo apt install git
 ```
 
-## Save credentials
+### Save credentials
 ```
 git config credential.helper store
 ```
 
-# Curl
+## Curl
 ```
 sudo apt install curl
 ```
 
-# i3-gaps
+## i3-gaps
 
 ```
 sudo apt remove i3-wm
@@ -74,7 +74,7 @@ make
 sudo make install
 ```
 
-# Polybar
+## Polybar
 ```
 sudo apt-get install cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto libxcb-xrm-dev libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libpulse-dev libxcb-composite0-dev xcb libxcb-ewmh2
 git clone https://github.com/jaagr/polybar.git
@@ -109,12 +109,12 @@ polybar --reload mainbar-i3 -c ~/.config/polybar/config &
 fi
 ```
 
-# Chromium
+## Chromium
 ```
 sudo apt install chromium-browserD
 ```
 
-# VS code
+## VS code
 ```
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -124,29 +124,29 @@ sudo apt-get update
 sudo apt-get install code # or code-insiders
 ```
 
-# Python alias
+## Python alias
 Add this in .zshrc
 ```
 alias python=python3
 ```
 
-# Pip
+## Pip
 ```
 sudo apt install python3-pip
 ```
 
-# Virtual env
+## Virtual env
 ```
 sudo pip3 install virtualenv virtualenvwrapper
 ```
 
-# ZSH
+## ZSH
 ```
 sudo apt install zsh
 chsf -s /bin/zsh <username>
 ```
 
-# ZSH autosuggest
+## ZSH autosuggest
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/
 ```
@@ -156,7 +156,7 @@ Source it in .zshrc
 source "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 ```
 
-# ZSH highlight
+## ZSH highlight
 ```
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/
 ```
@@ -166,7 +166,7 @@ Source it in .zshrc
 source "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 ```
 
-# Space ship
+## Space ship
 ```
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 ```
@@ -176,12 +176,12 @@ Source it in .zshrc
 source "$HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
 ```
 
-# Arandr
+## Arandr
 ```
 sudo apt install arandr
 ```
 
-# Autorandr
+## Autorandr
 ```
 sudo apt install autorandr
 ```
@@ -191,31 +191,31 @@ Add in i3 config
 exec_always --no-startup-id autorandr --change # Load detected config
 ```
 
-# Lxappearance
+## Lxappearance
 ```
 sudo apt install lxappearance
 ```
 
-# Arc Theme
+## Arc Theme
 ```
 sudo apt install arc-theme
 ```
 
-# Arc icon
+## Arc icon
 ```
 sudo add-apt-repository ppa:noobslab/icons
 sudo apt-get update
 sudo apt-get install arc-icons
 ```
 
-# Captain cursor
+## Captain cursor
 ```
 sudo add-apt-repository ppa:dyatlov-igor/la-capitaine
 sudo apt update
 sudo apt install la-capitaine-cursor-theme
 ```
 
-# Cursor size
+## Cursor size
 ```
 echo Xcursor.size: 16 >> ~/.Xresources
 ```
@@ -226,17 +226,17 @@ Add this to i3 config
 exec_always --no-startup-id xrdb .Xressources
 ```
 
-# Htop
+## Htop
 ```
 sudo apt install htop
 ```
 
-# S-tui
+## S-tui
 ```
 sudo pip3 install s-tui
 ```
 
-# Policykit
+## Policykit
 ```
 sudo apt install policykit-desktop-privileges policykit-1-gnome
 ```
@@ -247,7 +247,7 @@ Add in i3 config
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 ```
 
-# Pasystray
+## Pasystray
 ```
 sudo apt install pasystray
 ```
@@ -257,7 +257,7 @@ Add in i3 config
 exec --no-startup-id pasystray
 ```
 
-# Modmap, replace caps in control, PgUp in left, PgDown in Right
+## Modmap, replace caps in control, PgUp in left, PgDown in Right
 ~/.Xmodmap
 ```
 clear lock
@@ -274,7 +274,7 @@ Add in i3 config
 exec_always --no-startup-id "sh -c 'sleep 1; exec xmodmap ~/.Xmodmap'"
 ```
 
-# Light
+## Light
 ```
 cd /tmp
 wget https://github.com/haikarainen/light/tarball/master
@@ -291,7 +291,7 @@ bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 ```
 
-# Playerctl
+## Playerctl
 ```
 wget https://github.com/acrisci/playerctl/releases/download/v2.0.2/playerctl-2.0.2_amd64.deb
 sudo dpkg -i playerctl-2.0.2.amd64.deb
@@ -306,7 +306,7 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86AudioStop exec --no-startup-id playerctl pause
 ```
 
-# Printscreen
+## Printscreen
 ```
 sudo apt install maim xclip
 ```
@@ -317,7 +317,7 @@ bindsym Print exec  maim -s --format=png /dev/stdout | tee ~/Downloads/last_scre
 bindsym shift+Print exec  maim --format=png /dev/stdout | tee ~/Downloads/last_screen.png | xclip -selection clipboard -t image/png -i # Print screen all monitor
 ```
 
-# Clipit
+## Clipit
 ```
 sudo apt install clipit
 ```
@@ -327,14 +327,14 @@ Add in i3 config
 exec --no-startup-id clipit
 ```
 
-# NodeJS and npm
+## NodeJS and npm
 ```
 sudo apt-get install curl python-software-properties
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install nodejs
 ```
 
-# Jetbrains
+## Jetbrains
 
-## Fix focus problem
+### Fix focus problem
 Create or add `suppress.focus.stealing=false` to *idea.properties* in the config folder, for PyCharm in : *~/.PyCharm2019.1/config*
