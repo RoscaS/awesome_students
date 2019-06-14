@@ -354,3 +354,57 @@ Add in i3 config
 ```
 exec_always --no-startup-id "sh -c 'sleep 2; feh --bg-fill ~/.wallpaper/background.jpg'"
 ```
+
+## Postman
+```
+snap install postman
+```
+
+## VLC
+```
+sudo apt install vlc
+```
+
+## Caffeine
+Block screen lock
+```
+sudo apt install caffeine
+```
+
+## Gimp
+```
+sudo apt install gimp
+```
+
+## Franz
+Slack, WhatsApp, Discord, Messenger
+
+```
+wget https://github.com/meetfranz/franz/releases/download/v5.1.0/franz_5.1.0_amd64.deb
+sudo dpkg -i franz_5.1.0_amd64.deb
+sudo apt install -f
+```
+
+## Neofetch
+```
+sudo apt install neofetch
+```
+
+## Pinta
+Paint like
+```
+sudo apt install pinta
+```
+
+## Peek
+Record gif
+```
+sudo add-apt-repository ppa:peek-developers/stable
+sudo apt update
+sudo apt install peek
+```
+
+## Spotify
+```
+sudo snap install spotify
+```
