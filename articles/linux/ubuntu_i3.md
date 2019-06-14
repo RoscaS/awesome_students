@@ -313,7 +313,8 @@ sudo apt install maim xclip
 
 Add in i3 config
 ```
-bindsym Print exec  maim -s --format=png /dev/stdout | tee ~/Downloads/last_screen.png | xclip -selection clipboard -t image/png -i # Print screen
+bindsym Print exec  maim -s --format=png /dev/stdout | tee ~/Downloads/last_screen.png | xclip -selection clipboard -t image/png -i # Print screen selection
+bindsym shift+Print exec  maim --format=png /dev/stdout | tee ~/Downloads/last_screen.png | xclip -selection clipboard -t image/png -i # Print screen all monitor
 ```
 
 # Clipit
