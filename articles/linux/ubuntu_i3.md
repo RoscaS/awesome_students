@@ -408,3 +408,15 @@ sudo apt install peek
 ```
 sudo snap install spotify
 ```
+
+## Pandoc
+```
+wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb
+sudo dpkg -i pandoc-2.7.3-1-amd64.deb
+rm pandoc-2.7.3-1-amd64.deb
+sudo apt install texlive texlive-lang-french texlive-latex-extra texlive-fonts-extra
+mkdir ~/.pandoc
+mkdir ~/.pandoc/templates
+cd ~/.pandoc/templates
+wget https://raw.githubusercontent.com/steven-jeanneret/dotFiles/master/pandoc/eisvogel.latex
+```
