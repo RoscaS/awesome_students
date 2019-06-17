@@ -14,6 +14,13 @@ hide: false
 sudo apt install tilix
 ```
 
+### Newer version
+```
+sudo add-apt-repository ppa:webupd8team/terminix
+sudo apt-get update
+sudo apt install tilix # Will upgrade tilix
+```
+
 ### VTE problem
 ```
 sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
