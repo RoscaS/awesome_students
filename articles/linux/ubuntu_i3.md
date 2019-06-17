@@ -426,3 +426,8 @@ mkdir ~/.pandoc/templates
 cd ~/.pandoc/templates
 wget https://raw.githubusercontent.com/steven-jeanneret/dotFiles/master/pandoc/eisvogel.latex
 ```
+
+## Reboot without sudo
+```
+sudo ln -s /sbin/reboot /bin/reboot
+```
