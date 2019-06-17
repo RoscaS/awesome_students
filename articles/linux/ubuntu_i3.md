@@ -334,6 +334,9 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install nodejs
 ```
 
+### Problem global and permission denied
+[https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally](Source)
+
 ## Jetbrains
 ```
 wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.14.5179.tar.gz
@@ -344,6 +347,9 @@ cd jetbrains-toolbox-1.14.5179.tar.gz
 
 ### Fix focus problem
 Create or add `suppress.focus.stealing=false` to *idea.properties* in the config folder, for PyCharm in : *~/.PyCharm2019.1/config*
+
+### Inotify problem
+Add `fs.inotify.max_user_watches = 524288` to */etc/sysctl.conf* then run `sudo sysctl -p --system`
 
 ## Feh
 ```
