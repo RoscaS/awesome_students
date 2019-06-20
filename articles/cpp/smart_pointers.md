@@ -7,6 +7,16 @@ project: false
 hide: false
 ---
 
+Sources:
+* [learncpp.com](https://www.learncpp.com/cpp-tutorial/15-1-intro-to-smart-pointers-move-semantics/)
+* [inivoo](https://blog.invivoo.com/introduction-a-la-gestion-automatique-de-la-memoire-en-c11/)
+
+<br>
+
+
+
+---
+
 Considérons la fonctions suivante:
 
 ```cpp
