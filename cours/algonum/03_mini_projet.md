@@ -33,3 +33,5 @@ hide: false
 
 
 java -Dfile.encoding=UTF-8 -jar Java_Projet_Chat.jar
+
+![Image](https://i.imgur.com/XduAgBN.png)
