@@ -116,17 +116,6 @@ polybar --reload mainbar-i3 -c ~/.config/polybar/config &
 fi
 ```
 
-## Pasystray
-```
-sudo apt install pasystray
-```
-
-Add in i3 config
-
-```
-exec --no-startup-id pasystray
-```
-
 ## Chromium
 ```
 sudo apt install chromium-browserD
