@@ -344,6 +344,9 @@ sudo apt install nodejs
 ### Problem global and permission denied
 [https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally](Source)
 
+### Vuepress
+* `npm install -g vuepress@0.14.4` after the global permission issue is solved
+
 ## Jetbrains
 ```
 wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.14.5179.tar.gz
