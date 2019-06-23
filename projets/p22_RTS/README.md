@@ -7,6 +7,8 @@
 <h2>Liens</h2>
 
 * [Répo: Forge he-arc](https://forge.ing.he-arc.ch/gitlab/inf/1819/p2-java/yarts.git)
+* [Répo: Github](https://github.com/RoscaS/Java_Yarts)
+* [Rapport (RelaxedJS sources)](https://github.com/RoscaS/relaxedJS-rapport-p2-Yarts)
 * [Trello](https://trello.com/b/mmgJb6m7/yarts-master-backlog)
 
 <Posts header="Documents"/>

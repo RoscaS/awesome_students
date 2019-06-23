@@ -7,9 +7,10 @@ project: false
 hide: false
 ---
 
-<st c="rgb">Draft !</st>
+* <st c="rgb">Draft !</st>
 
 ## 1. Introduction
+
 
 Tout projet possède deux composantes principales. Une composante technique, c'est ce qui touche aux différentes phases du cycle de vie d'un projet et dont l'acteur principal est le projet lui même. La seconde composante qui semble généralement négligée dans ce genre de rapports est celle du ressenti humain qui exécute les diverses phases.
 

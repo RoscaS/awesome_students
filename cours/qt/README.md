@@ -1,11 +1,5 @@
 # Qt
 
-<Container type="warning">
-
-26/02/2019 Présentation "Containers"
-
-</Container>
-
 <Posts/>
 
 ## Tests
