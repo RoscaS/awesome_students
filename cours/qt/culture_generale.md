@@ -285,8 +285,6 @@ Sous linux:
 * Dossiers par défaut de l'OS (`usr/local/lib`, `usr/lib`) et les dossiers listés dans `etc/ld.so.conf`
 
 
-
-
 ## Flux
 
 * Un ensemble d'informations à transférer, échelonnées dans le temps. Des données transmises séquentiellement, une après l'autre de la première à la dernière.
@@ -306,6 +304,7 @@ Sous linux:
   1. Création/ouverture d'un flux
   2. Lecture ou écriture
   3. Fermeture
+
 
 
 ## Programmation événementielle

@@ -5,6 +5,23 @@ author: Sol
 sidebar: auto
 ---
 
+## Postgres on Ubuntu
+
+* [tuto](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)
+
+**Install:**
+```shell
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+```
+
+
+* `sudo -u postgres psql`: Access postgres prompt.
+* `\q`: exit postgres prompt.
+* `sudo -u postgres createdb myDb` create new db.
+
+
+
 ## Théorie
 
 ### Modélisation conceptuelle et logique
