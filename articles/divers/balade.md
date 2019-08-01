@@ -47,7 +47,18 @@ hide: false
 
 <Spoiler tag="Reservation Hotel Kreuz">
 
-Pas encore reçu.
+<br>
+
+<Media
+    src="https://i.imgur.com/UgArpnw.png"
+    width=450
+/>
+
+* [Hotel Kreuz](https://www.kreuzlenk.ch/en/hotel)
+* <st c="r">Réservation doit arriver par mail</st>
+
+<br>
+<br>
 
 </Spoiler>
 
@@ -77,6 +88,17 @@ Pas encore reçu.
 
 
 <Spoiler tag="Reservation Hotel Kurhaus">
+
+<br>
+
+<Media
+    src="https://i.imgur.com/hCmWiQV.png"
+    width=450
+/>
+
+
+
+* [Kurhaus Grimmialp](https://www.kurhaus-grimmialp.ch/)
 
 <Media
     src="https://i.imgur.com/f9IyCcq.png"
