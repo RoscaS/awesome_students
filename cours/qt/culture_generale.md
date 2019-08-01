@@ -8,7 +8,6 @@ project: false
 
 ## En vrac
 
-
 * **API**: Application Programming Interface
 * **Framework**: "Logiciel à trou". Le déroulement des opérations est dirigé par le framework.
 * Les signaux et les slots ne sont pas du C++. Il s'agit d'une extension propre à Qt qui sera convertie en C++ standard fans une étape préalable à la compilation par l'utilitaire **moc** (Meta Object Compiler).
