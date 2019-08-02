@@ -55,7 +55,14 @@ hide: false
 />
 
 * [Hotel Kreuz](https://www.kreuzlenk.ch/en/hotel)
-* <st c="r">Réservation doit arriver par mail</st>
+
+<Media
+    src="https://i.imgur.com/kWapxaY.png"
+    url="https://i.imgur.com/kWapxaY.png"
+    width=450
+/>
+
+
 
 <br>
 <br>
@@ -95,8 +102,6 @@ hide: false
     src="https://i.imgur.com/hCmWiQV.png"
     width=450
 />
-
-
 
 * [Kurhaus Grimmialp](https://www.kurhaus-grimmialp.ch/)
 
