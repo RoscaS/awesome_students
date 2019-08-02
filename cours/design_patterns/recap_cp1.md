@@ -220,7 +220,6 @@ Paterne de <st c="b">création</st> qui fournit une façon de déléguer la logi
 
 ### Exemple
 
-![](http://www.thejavageek.com/wp-content/uploads/2016/06/factory-method-implementation.png)
 
 ### Relations avec d'autres paternes
 
@@ -251,10 +250,6 @@ Paterne de <st c="b">création</st> qui offre un moyen d'encapsuler un groupe de
 ### Schéma
 
 
-<Media
-    src="http://www.thejavageek.com/wp-content/uploads/2016/07/DesignPatternClassDiagram.png"
-    url="http://www.thejavageek.com/wp-content/uploads/2016/07/DesignPatternClassDiagram.png"
-/>
 
 * **AbstractFactory**: Interface qui déclare la façon de créér des produits abstraits.
 * **ConcreteFactory**: Implémente les opérations de création des produits concrèts.
@@ -264,10 +259,6 @@ Paterne de <st c="b">création</st> qui offre un moyen d'encapsuler un groupe de
 ### Exemple
 
 
-<Media
-    src="http://www.thejavageek.com/wp-content/uploads/2016/07/BikeExampleDesignPattern-1.png"
-    url="http://www.thejavageek.com/wp-content/uploads/2016/07/BikeExampleDesignPattern-1.png"
-/>
 
 
 

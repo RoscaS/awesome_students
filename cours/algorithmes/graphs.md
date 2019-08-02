@@ -42,12 +42,6 @@ La représentation d'un graphe importe peu. Par exemple, les deux graphes qui su
 * **Connexe**: Il exsite un chemin entre toute paire de noeuds. 
 * **Composante connexe** (d'un graphe): Sous-graphe connexe de ce graphe.
 
-<Media
-    src="https://zestedesavoir.com/media/galleries/912/69efbede-6af0-49be-bf23-4d04310f355a.gif.960x960_q85.png"
-    url="https://zestedesavoir.com/media/galleries/912/69efbede-6af0-49be-bf23-4d04310f355a.gif.960x960_q85.png"
-    caption="Graphe simple avec 3 composantes connexes"
-    width=450
-/>
 
 * Un graphe ayant **plus** de $N-1$ arcs comporte au moins un circuit.
 * Un graphe ayant **moins** de de $N-1$ arcs n'est pas connexe.
