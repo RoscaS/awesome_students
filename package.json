@@ -28,7 +28,7 @@
     "node-sass": "^4.9.4",
     "sass-loader": "^7.1.0",
     "v-tooltip": "^2.0.0-rc.33",
-    "vue": "^2.5.17",
+    "vue": "^2.6.10",
     "vue-chartjs": "^3.4.0",
     "vue-slide-toggle": "^1.1.0",
     "vuepress": "^0.14.4",
