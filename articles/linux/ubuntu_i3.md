@@ -441,3 +441,16 @@ wget https://raw.githubusercontent.com/steven-jeanneret/dotFiles/master/pandoc/e
 ```
 sudo ln -s /sbin/reboot /bin/reboot
 ```
+
+## Configure Killer AX1650 (Dell XPS 15)
+[Source](https://support.killernetworking.com/knowledge-base/killer-ax1650-in-debian-ubuntu-16-04/)
+
+```
+sudo apt-get install git
+sudo apt-get install build-essential
+git clone https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git
+cd backport-iwlwifi
+make defconfig-iwlwifi-public
+make -j4
+sudo make install
+```
