@@ -150,12 +150,17 @@ sudo pip3 install virtualenv virtualenvwrapper
 ## ZSH
 ```
 sudo apt install zsh
-chsf -s /bin/zsh <username>
+chsh -s /bin/zsh <username>
+```
+
+## Oh my zsh
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
 ## ZSH autosuggest
 ```
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/
 ```
 
 Source it in .zshrc
@@ -165,7 +170,7 @@ source "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.
 
 ## ZSH highlight
 ```
-git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
 ```
 
 Source it in .zshrc
@@ -175,7 +180,7 @@ source "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highl
 
 ## Space ship
 ```
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt/"
 ```
 
 Source it in .zshrc
