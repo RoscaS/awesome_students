@@ -1,5 +1,5 @@
 ---
-title: "SNASE: Spécifications détaillées (fr)"
+title: "SNASE: Spécifications détaillées"
 date: 2018-11-16
 author:  Sol
 sidebar: auto
