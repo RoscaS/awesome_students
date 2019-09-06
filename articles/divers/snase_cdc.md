@@ -4,7 +4,7 @@ date: 2019-08-19
 author:  "Sol"
 sidebar: auto
 project: false
-hide: false
+hide: true
 ---
 
 ## Vue d'ensemble
