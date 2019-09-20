@@ -71,6 +71,7 @@ module.exports = {
           '/projets/archives/',
           '/projets/p21_GOL/',
           '/projets/p22_RTS/',
+          '/projets/SwipeD/',
           '/projets/TA_Stereo-vision/',
         ],
       },
