@@ -30,6 +30,7 @@ module.exports = {
         children: [
           '/cours/qt/',
           '/cours/java/',
+          '/cours/jee/',
           '/cours/android/',
           '/cours/algorithmes/',
           '/cours/programmation_concurente/',
