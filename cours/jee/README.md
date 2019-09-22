@@ -14,3 +14,9 @@
 * server setings: **/opt/tomcat/apache-tomcat-9.0.8/conf/server.xml**
 * `systemctl status tomcat`
   * if ok, runs on [http://localhost:8088](http://localhost:8088)
+
+### Intellij
+
+* File > new > project
+  * Java > Web Application
+* right click on `index.jsp` > `create index.jsp...` (tomcat)
