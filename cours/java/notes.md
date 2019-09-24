@@ -2659,3 +2659,23 @@ System.out.println(add3.apply(5, 3));
 BinaryOperator<Integer> add4 = Integer::sum;
 System.out.println(add4.apply(5, 3));
 ```
+
+## Streams
+
+```java
+var names = Arrays.asList("Adam", "Alexander", "John", "Tom");
+var hommes = Homme.list(5);
+
+var filtered = names.stream()
+    .filter(name -> name.startsWith("A"))
+    .collect(Collectors.toList());
+
+System.out.println(filtered);
+
+var list = hommes.stream()
+    .filter(h -> h.getHauteur() > 20)
+    .collect(Collectors.toList());
+    
+list.forEach(Homme::opposePoids);
+System.out.println(list);
+```
