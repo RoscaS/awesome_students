@@ -12,7 +12,8 @@
 * [install](https://www.liquidweb.com/kb/how-to-install-apache-tomcat-9-on-ubuntu-18-04/)
 * folder: **/opt/tomcat/apache-tomcat-9.0.8**
 * server setings: **/opt/tomcat/apache-tomcat-9.0.8/conf/server.xml**
-* `systemctl status tomcat`
+* `systemctl start tomcat`: start
+* `systemctl status tomcat`: status
   * if ok, runs on [http://localhost:8088](http://localhost:8088)
 
 ### Intellij
