@@ -2535,3 +2535,127 @@ int tab[] = {1,2,3,4,5};
 System.out.println(Arrays.toString(tab));
 System.out.println(Arrays.toString(Arrays.copyOfRange(tab, 0, 2)));
 ```
+
+## Programmation fonctionnelle
+
+### Interfaces fonctionnelles du packages java.util.function
+
+Le nom des interfaces du package `java.util.function` respecte une convention de nommage selon leur rôle :
+
+* **Function**: fonction unaire qui permet de réaliser une **transformation**. Elle attend un ou plusieurs paramètres et renvoie une valeur. La méthode se nomme `apply()`
+* **Consumer**: fonction qui permet de réaliser une **action**. Elle ne renvoie pas de valeur et attend un ou plusieurs paramètres. La méthode se nomme `accept()`
+* **Predicate**: fonction qui **attend un ou plusieurs paramètres et renvoie un boolée**n. La méthode se nomme `test()`
+* **Supplier**: fonction qui **renvoie une instance**. Elle **n'attend pas de paramètre** et renvoie une valeur. La méthode se nomme `get()`. Elle peut être utilisé comme une factory
+
+<br>
+
+* Le nom des interfaces fonctionnelles qui attendent en paramètre une ou plusieurs valeurs primitives sont préfixées par le type primitif.
+* Le nom des interfaces fonctionnelles qui renvoient une valeur primitive sont suffixées par toXXX.
+
+<Spoiler tag="Toutes les interfaces">
+
+|                           |                                                                                                                                      |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Interface fonctionnelle   | Description                                                                                                                          |
+| `BiConsumer<T,U>`         | Représente une opération qui requiert deux objets et ne renvoie aucun résultat                                                       |
+| `BiFunction<T,U,R>`       | Représente une opération qui requiert deux objets de type T et U et renvoie un résultat de type R                                    |
+| `BinaryOperator<T>`       | Représente une opération qui attend deux paramètres de type T et renvoie une instance de type T                                      |
+| `BiPredicate<T,U>`        | Représente un prédicat qui attend deux paramètres et renvoie un booléen                                                              |
+| `BooleanSupplier`         | Représente un fournisseur d'une valeur booléenne qui n'attend aucun paramètre                                                        |
+| `Consumer<T>`             | Représente un consommateur d'un unique paramètre qui ne renvoie aucune valeur                                                        |
+| `DoubleBinaryOperator`    | Représente une opération qui attend en paramètre deux valeurs de type double et renvoie une valeur de type double                    |
+| `DoubleConsumer`          | Représente un consommateur d'une valeur de type double                                                                               |
+| `DoubleFunction<R>`       | Représente une fonction qui attend en paramètre une valeur de type double et renvoie un résultat de type R                           |
+| `DoublePredicate`         | Représente un prédicat qui attend en paramètre un argument de type double et renvoie un booléen                                      |
+| `DoubleSupplier`          | Représente un fournisseur d'une valeur de type double                                                                                |
+| `DoubleToIntFunction`     | Représente une opération qui attend en paramètre un double et renvoie un int comme résultat                                          |
+| `DoubleToLongFunction`    | Représente une opération qui attend en paramètre un double et renvoie un long comme résultat                                         |
+| `DoubleUnaryOperator`     | Représente une opération qui attend en paramètre un double et renvoie un double comme résultat                                       |
+| `Function<T,R>`           | Représente une fonction qui attend un paramètre de type T et renvoie un résultat de type R                                           |
+| `IntBinaryOperator`       | Représente une opération qui attend en paramètres deux valeurs de type int et renvoie une valeur de type int                         |
+| `IntConsumer`             | Représente un consommateur d'une valeur de type int                                                                                  |
+| `IntFunction<R>`          | Représente une fonction qui attend en paramètre une valeur de type int et renvoie un résultat de type R                              |
+| `IntPredicate`            | Représente un prédicat qui attend en paramètre un argument de type int et renvoie un booléen                                         |
+| `IntSupplier`             | Représente un fournisseur de valeur qui n'attend aucun paramètre et renvoie un entier de type int                                    |
+| `IntToDoubleFunction`     | Représente une fonction qui attend en paramètre une valeur de type int et renvoie un double                                          |
+| `IntToLongFunction`       | Représente une fonction qui attend en paramètre une valeur de type int et renvoie un long                                            |
+| `IntUnaryOperator`        | Représente une opération qui attend en paramètre un int et renvoie un int comme résultat                                             |
+| `LongBinaryOperator`      | Représente une opération qui attend en paramètres deux valeurs de type long et renvoie une valeur de type long                       |
+| `LongConsumer`            | Représente un consommateur d'une valeur de type long                                                                                 |
+| `LongFunction<R>`         | Représente une fonction qui attend en paramètre une valeur de type long et renvoie un résultat de type R                             |
+| `LongPredicate`           | Représente un prédicat qui attend en paramètre un argument de type long et renvoie un booléen                                        |
+| `LongSupplier`            | Représente un fournisseur de valeur qui n'attend aucun paramètre et renvoie un entier de type long                                   |
+| `LongToDoubleFunction`    | Représente une fonction qui attend en paramètre une valeur de type long et renvoie un double                                         |
+| `LongToIntFunction`       | Représente une fonction qui attend en paramètre une valeur de type long et renvoie un int                                            |
+| `LongUnaryOperator`       | Représente une opération qui attend en paramètre un objet de type long et renvoie une valeur de type long                            |
+| `ObjDoubleConsumer<T>`    | Représente un consommateur qui attend en paramètres un objet de type T et un double                                                  |
+| `ObjIntConsumer<T>`       | Représente un consommateur qui attend en paramètres un objet de type T et un int                                                     |
+| `ObjLongConsumer<T>`      | Représente un consommateur qui attend en paramètres un objet de type T et un long                                                    |
+| `Predicate<T>`            | Représente un prédicat qui attend en paramètre un argument de type T et renvoie un booléen                                           |
+| `Supplier<T>`             | Représente un fournisseur de valeur qui n'attend aucun paramètre et renvoie une instance de type T                                   |
+| `ToDoubleBiFunction<T,U>` | Représente une fonction qui attend deux paramètres de type T et U et renvoie un double                                               |
+| `ToDoubleFunction<T>`     | Représente une fonction qui attend un paramètre de type T et renvoie un double                                                       |
+| `ToIntBiFunction<T,U>`    | Représente une fonction qui attend deux paramètres de type T et U et renvoie un int                                                  |
+| `ToIntFunction<T>`        | Représente une fonction qui attend un paramètre de type T et renvoie un int                                                          |
+| `ToLongBiFunction<T,U>`   | Représente une fonction qui attend un paramètre de type T et renvoie un long                                                         |
+| `ToLongFunction<T>`       | Représente une fonction qui attend un paramètre de type T et renvoie un long                                                         |
+| `UnaryOperator<T>`        | Représente une opération qui attend en paramètre un objet de type T et renvoie une instance de type T. Elle hérite de Function<T, T> |
+
+</Spoiler>
+
+### Predicate
+
+```java
+Predicate<Integer> biggerThanThree = i -> i > 3;
+Predicate<Integer> smallerThanFive = i -> i < 5;
+Predicate<String> containX = s -> s.contains("x");
+
+System.out.println(biggerThanThree.test(4)); // true
+System.out.println(biggerThanThree.negate().test(4)); // false
+System.out.println(smallerThanFive.test(4)); // true
+System.out.println(biggerThanThree.and(smallerThanFive).test(4)); // true
+System.out.println(biggerThanThree.or(smallerThanFive).test(1)); // true
+System.out.println(containX.test("six")); // true
+
+int tested = 10;
+BiPredicate<Integer, Integer> leq = (a, b) -> a >= b;
+BiPredicate<Integer, Integer> seq = (a, b) -> a <= b;
+System.out.println(leq.test(tested, 2)); // true
+System.out.println(leq.and(seq).test(tested, 12)); // false
+```
+
+### Consumer
+
+```java
+Consumer<String> brackets = x -> System.out.println("(" + x + ")");
+brackets.accept("hey");
+
+BiConsumer<Integer, Integer> add = (a, b) -> System.out.println(a + b);
+add.accept(5, 2);
+```
+
+### Function & BinaryOperator
+
+```java
+Function<Integer, Integer> triple = i -> i * 3;
+System.out.println(triple.apply(12));
+
+Function<Integer, Integer> addTwo = i -> i + 2;
+System.out.println(addTwo.apply(2));
+
+System.out.println(triple.andThen(addTwo).apply(2)); // 2 * 3 + 2 = 8
+System.out.println(triple.compose(addTwo).apply(2)); // (2 + 2) * 3 = 12
+
+
+BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
+System.out.println(add.apply(5, 3));
+
+BiFunction<Integer, Integer, Integer> add2 = Integer::sum;
+System.out.println(add2.apply(5, 3));
+
+BinaryOperator<Integer> add3 = (a, b) -> a + b;
+System.out.println(add3.apply(5, 3));
+
+BinaryOperator<Integer> add4 = Integer::sum;
+System.out.println(add4.apply(5, 3));
+```
