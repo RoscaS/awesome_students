@@ -16,6 +16,16 @@
 * `systemctl status tomcat`: status
   * if ok, runs on [http://localhost:8088](http://localhost:8088)
 
+<Container type="info">
+
+if:
+>Job for tomcat.service failed because the control process exited with error code. See "systemctl status tomcat.service" and "journalctl -xe" for details.
+
+* `$ sudo chown -R /opt/tomcat`
+
+
+</Container>
+
 ### Intellij
 
 * File > new > project
