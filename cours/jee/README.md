@@ -1,5 +1,9 @@
 # JEE
 
+## <st c="r">TODO</st>
+
+* Tester SimuGC (repo) et expliquer ce qui se passe.
+
 >In a distributed application, different pieces of the app are called “services”.
 
 >Services are really just “containers in production.” 
@@ -16,6 +20,8 @@
 * `systemctl status tomcat`: status
   * if ok, runs on [http://localhost:8088](http://localhost:8088)
 
+* [Intellij](https://www.jetbrains.com/help/idea/deploying-a-web-app-into-an-app-server-container.html)
+
 <Container type="info">
 
 if:
@@ -31,3 +37,16 @@ if:
 * File > new > project
   * Java > Web Application
 * right click on `index.jsp` > `create index.jsp...` (tomcat)
+
+
+## Architectures
+
+* Réparties
+* Distribuées
+* Centralisées
+
+### Couplage
+
+* couplage fort -> synchrone
+* couplage faible -> async
+

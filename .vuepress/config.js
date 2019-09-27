@@ -43,6 +43,9 @@ module.exports = {
           '/cours/design_patterns/',
           '/cours/algonum/',
           '/cours/stats/',
+          '/cours/crypto/',
+          '/cours/os/',
+          '/cours/ia/',
         ],
       },
       {

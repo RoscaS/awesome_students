@@ -17,6 +17,9 @@ const branchesFullName = {
 
   // Articles
   algo: "Algo",
+  crypto: "Crypto",
+  ia: "IA",
+  android: "Android",
   programmation: "Prog",
   linux: "Linux",
   cpp: "Cpp",
