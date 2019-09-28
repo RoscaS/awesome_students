@@ -19,6 +19,14 @@ Pourtant en page 48 dans la note du code 3.12, il est dit "En entrée une couleu
 
 
 * **Rasterisation**: discrétisation suivant une grille de pixel.
+* **Primitives**: triangles (mais pas uniquement, points, segments possibles aussi).
+
+
+<Media
+    src="https://i.imgur.com/Wfoh3Zq.png"
+/>
+
+
 
 ## Ch1 & 2: Introduction
 
