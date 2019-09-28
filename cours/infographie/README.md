@@ -1,0 +1,3 @@
+# Infographie
+
+<Posts/>
