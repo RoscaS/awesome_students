@@ -37,7 +37,7 @@ L'application web permet aux utilisateurs de consulter plusieurs classements "R�
 
 ## Notes
 * Il est évident qu'un travail de recherche concernant la confidentialité des données devra être fait. 
-* Concernant l'application Android, il existe des applications tournant en arrière plan et ayant accès aux données de swipe existent. Ces applications nécessite une autorisation particulière de l'utilisateur.
+* Concernant l'application Android, il existe des applications tournant en arrière plan et ayant accès aux données de swipe existent (Fluid Navigation Gestures). Ces applications nécessite une autorisation particulière de l'utilisateur.
 
 ## Prototypes
 
