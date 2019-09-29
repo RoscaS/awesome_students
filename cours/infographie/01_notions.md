@@ -20,6 +20,8 @@ Pourtant en page 48 dans la note du code 3.12, il est dit "En entrée une couleu
 
 * **Rasterisation**: discrétisation suivant une grille de pixel.
 * **Primitives**: triangles (mais pas uniquement, points, segments possibles aussi).
+* **GPGPU**: General Purpose Graphics Processor Unit. Utilisation des d'un GPU pour d'autres applications que le graphisme (voir CUDA).
+* **GLSL**: <st c="r">TODO</st>
 
 
 <Media
