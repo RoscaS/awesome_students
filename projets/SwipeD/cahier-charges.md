@@ -72,7 +72,9 @@ Pour cette première version, l'idée serait de faire en sorte d'avoir toutes le
 * L'application comporte une activité contenant des settings:
   * Update nickname
   * Options concernant les notifications
-* L'application met à jours les données sur le serveur lors de chaque connexion à internet et toutes les $x$ minutes à partir du moment de là.
+* Lors de chaque connexion à internet, l'app s'authentifie (JWT) avec le backend ensuite:
+    * L'application envoie les `Swipes` de l'utilisateur au backend
+    * Réitère toutes les $x$ minutes tant que l'appareil est connecté à internet
 * L'application notifie l'utilisateur lorsque ce dernier atteint un point d'interet.
 
 ##### Modèles
@@ -85,18 +87,21 @@ Pour cette première version, l'idée serait de faire en sorte d'avoir toutes le
 
 ## Web
 
-### Serveur
+### Backend
 
 Ne contient que des données et n'est en charge d'aucune logique autre que de la création automatique de certaines entités de la BDD (`City`, `Area`, `Country`) en fonction des données des champs `city`, `area`, `country` envoyées lors de la première utilisation de l'app par l'utilisateur et si les entités correspondantes à ces champs n'existent pas encore.
 
+Pour pouvoir tester correctement le projet, il serait interessant (nécessaire) de la déployer sur un serveur externe à la HE-Arc pour permettre aux Smartphones de contacter le serveur. Github For Education met à disposition 50$ de crédit Digital Ocean ainsi que plusieurs registrar pour des noms de domaines (1 an gratuit). 
+
 ##### Technologies
-* PHP
 * Laravel
+* Apache
 
 ##### Objectifs principaux
 
 * API REST exposant des données à l'usage de l'application mobile et du site web
 * Centralise les données des utilisateurs de l'application
+* Authentification simple (pas d'utilisation d'Auth0) mais sécurisée avec JWT pour les utilisateurs de l'application Android.
 * **Modèles**:
   * `User`
     * ID, km_swept, created_at, last_update, area(fk), city(fk), country(fk)
@@ -118,10 +123,13 @@ Ne contient que des données et n'est en charge d'aucune logique autre que de la
 
 <br>
 
+* **api/auth**:
+  * POST: <st c="r">Se renseigner sur l'auth à partir d'un téléphone</st>.
+    * retourne: SecretKey & Refresh
 * **api/users**
   * GET: `User` list
   * POST: Create `User` 
-    * Ne peut être appelé que de l'app Android
+    * Ne peut être appelé que de l'app Android ()
 * **api/users/pk**
   * GET: `User`
   * PATCH: Update `User` data 
@@ -154,6 +162,7 @@ Ne contient que des données et n'est en charge d'aucune logique autre que de la
 * **api/swipes/country/pk**
   * GET: `Swipe` list (<st c="r">À discuter, summary?, list?, both?</st>) 
 
+
 <br>
 
 </Spoiler>
@@ -168,3 +177,35 @@ Ne contient que des données et n'est en charge d'aucune logique autre que de la
 
 
 ### Application web
+
+Application qui met en forme les données récoltées sur le serveur.
+
+##### Technologies
+* [Nuxt](https://nuxtjs.org/) (framework VueJS)
+* [Vuetify](https://vuetifyjs.com/) (material design)
+* [ApexChartsJS](https://apexcharts.com/) (data visualization)
+
+##### Objectifs principaux
+
+* Site web de consultation des données 
+  * Pas de modification de l'état
+  * N'est pas axé sur un utilisateur
+* Landing:
+  * Bref présentation du concepte
+  * Mise en avant de certaines statistiques
+* Page des classements:
+  * Par: Villes / Régions / Pays / Monde
+  * Quantité de données: Journalier / Hebdomadaire / Mensuel / annuel
+* Page de statistiques (plots)
+  * Affiche la progression du total de swipe en fonction du temps pour:
+    * Utilisateur / Ville / Région / Pays / Monde
+    * Quantité de données: Journalier / Hebdomadaire / Mensuel / annuel
+
+##### Objectifs secondaires
+
+* Amener le concepte des points d'intéret au site web
+  * Point d'intéret "scale" sur la quantité d'utilisateurs
+    * "Aujourd'hui l'humanité a swipé jusqu'à Vénus"
+    * "Les habitants de Monbled ont traversé la Russie à coup de swipe"
+    * ...
+  * Infographies correspondantes
