@@ -5,6 +5,19 @@
 <br>
 <br>
 
+<h2>Échéances</h2>
+
+### 1 octobre 2019
+<Check state="true">Choix du projet (Android)</Check>
+<Check state="true">Cahier des charges (Android)</Check>
+
+### 12 novembre 2019
+<Check state="false">Rendu intermédiaire (Android)</Check>
+
+### 21 janvier 2020
+<Check state="false">Présentations et rendus</Check>
+
+
 ## In a nutshell
 SwipeD est une application Android qui a pour but de faire prendre conscience à l'utilisateur de la distance qu'il swipe sur son smartphone.
 
