@@ -9,8 +9,11 @@ hide: false
 
 ## Test
 
-<Pv date="12 mars 2019" odj="Calibrage" todo="Calibration précise" :people="['Francois Tièche', 'Sol Rosca']">
+<Pv date="12 mars 2019" odj="Calibrage" :todo="['Calibration des caméras',]" :people="['Francois Tièche', 'Sol Rosca']" id="1">
 
-contenu (ne pas supprimer les lignes vides!)
+* Discussion au sujet de l'avancement.
+* Explications concernant la théorie de la calibration.
+* Pistes de recheches concenrant la géométrie épipolaire.
 
 </Pv>
+

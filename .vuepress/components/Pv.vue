@@ -14,13 +14,17 @@
         {{ date }}
       </span>
       <span class="number" :class="`icon-${type}`">
-        12
+        {{ id }}
       </span>
     </span>
     <div class="body">
-      <ul>
-        <li><b>Ordre du jour:</b> {{ odj }}</li>
+      <ul class="elements">
+        
         <li>
+          <i class="fal fa-dot-circle small-icon" :class="`icon-${type}`"></i>
+          <b>Ordre du jour:</b> {{ odj }}</li>
+        <li>
+          <i class="fal fa-user-friends small-icon" :class="`icon-${type}`"></i>
           <b>Présents:</b>
           <span v-for="(i, idx) in people" :key="idx">
             {{ i }}<span v-if="idx < people.length - 1">, &nbsp;</span>
@@ -32,7 +36,7 @@
       <div class="footer">
         <b>Todo:</b>
         <ul>
-          <li>{{ todo }}</li>
+          <li v-for="(i, idx) in todo" :key="idx">{{ i }}</li>
         </ul>
       </div>
     </div>
@@ -49,7 +53,8 @@
       odj: { type: String },
       people: { type: Array },
       date: { type: String },
-      todo: { type: String },
+      todo: { type: Array },
+      id: { type: Number },
 
     },
     name: 'Container',
@@ -157,13 +162,25 @@
     
       /*font-family: 'Open Sans', sans-serif;*/
       font-size: 16px;
-    }
     
+      .elements {
+      
+        .small-icon {
+          margin-left: -15px;
+          margin-right: 10px;
+        }
+      
+        li {
+          list-style: none;
+        }
+      }
+    }
+  
     .separator {
       margin-top: 10px;
       margin-bottom: 10px;
     }
-    
+  
     .footer {
       margin-top: 20px;
     }

@@ -5,7 +5,10 @@
 <br>
 <br>
 
-<h2>Échéances</h2>
+## Liens
+* [Autre projets](https://github.com/HE-Arc/slides-devweb/wiki/Projets-2019-2020)
+
+## Échéances
 
 ### 1 octobre 2019
 <Check state="true">Choix du projet (Android)</Check>
