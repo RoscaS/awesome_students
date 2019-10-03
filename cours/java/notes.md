@@ -2542,9 +2542,9 @@ System.out.println(Arrays.toString(Arrays.copyOfRange(tab, 0, 2)));
 
 Le nom des interfaces du package `java.util.function` respecte une convention de nommage selon leur rôle :
 
-* **Function**: fonction unaire qui permet de réaliser une **transformation**. Elle attend un ou plusieurs paramètres et renvoie une valeur. La méthode se nomme `apply()`
-* **Consumer**: fonction qui permet de réaliser une **action**. Elle ne renvoie pas de valeur et attend un ou plusieurs paramètres. La méthode se nomme `accept()`
-* **Predicate**: fonction qui **attend un ou plusieurs paramètres et renvoie un boolée**n. La méthode se nomme `test()`
+* **Function (FAIT UNE TRANSFORMATION)**: fonction unaire qui permet de réaliser une **transformation**. Elle attend un ou plusieurs paramètres et renvoie une valeur. La méthode se nomme `apply()`
+* **Consumer (EXECUTER 'foreach')**: fonction qui permet de réaliser une **action**. Elle ne renvoie pas de valeur et attend un ou plusieurs paramètres. La méthode se nomme `accept()`
+* **Predicate (FILTRER)**: fonction qui **attend un ou plusieurs paramètres et renvoie un boolée**n. La méthode se nomme `test()`
 * **Supplier**: fonction qui **renvoie une instance**. Elle **n'attend pas de paramètre** et renvoie une valeur. La méthode se nomme `get()`. Elle peut être utilisé comme une factory
 
 <br>

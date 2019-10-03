@@ -1,6 +1,6 @@
 # Android: SwipeD
 
-<Team :members="['Nathan', 'Sol']"/>
+<Team :members="['Nathan', 'Sol', 'David']"/>
 
 <br>
 <br>

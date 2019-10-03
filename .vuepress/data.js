@@ -33,13 +33,15 @@ const branchesFullName = {
 };
 
 const knownAuthors = [
-  { name: "Sol Rosca", GHID: "22873101", class: "INF2B" },
-  { name: "Michael Kneuss", GHID: "41299903", class: "INF2B" },
-  { name: "Nathan Latino", GHID: "42647776", class: "INF2B" },
-  { name: "Edwin Claude", GHID: "", class: "INF2A" }
+  { name: "Sol Rosca", GHID: "22873101", class: "INF3B" },
+  { name: "Michael Kneuss", GHID: "41299903", class: "INF3B" },
+  { name: "Nathan Latino", GHID: "42647776", class: "INF3B" },
+  { name: "Edwin Claude", GHID: "", class: "INF3A" },
+  { name: "David Rhis", GHID: "55483278", class: "INF3A" },
 ];
 
 const groups = {
+  snd: [knownAuthors[0], knownAuthors[2], knownAuthors[4]],
   snm: [knownAuthors[0], knownAuthors[1], knownAuthors[2]],
   sm: [knownAuthors[0], knownAuthors[1]],
   sn: [knownAuthors[0], knownAuthors[2]],

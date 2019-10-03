@@ -14,5 +14,9 @@ hide: false
 * [full on tuto](https://erget.wordpress.com/2014/02/01/calibrating-a-stereo-camera-with-opencv/)
 * [newer tuto](https://becominghuman.ai/stereo-3d-reconstruction-with-opencv-using-an-iphone-camera-part-i-c013907d1ab5)
 
+## Admin
+
+* [directives](https://labinfo.ing.he-arc.ch/gitlab/inf/1920/doc)
+
 ##  Premier sous-titre
 
