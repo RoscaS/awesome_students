@@ -43,6 +43,7 @@ module.exports = {
           '/cours/design_patterns/',
           '/cours/infographie/',
           '/cours/algonum/',
+          '/cours/compilateur/',
           '/cours/stats/',
           '/cours/crypto/',
           '/cours/os/',
