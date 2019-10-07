@@ -44,6 +44,7 @@ module.exports = {
           '/cours/infographie/',
           '/cours/algonum/',
           '/cours/compilateur/',
+          '/cours/droit/',
           '/cours/stats/',
           '/cours/crypto/',
           '/cours/os/',
