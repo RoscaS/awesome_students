@@ -1,12 +1,14 @@
 # JEE
 
-## <st c="r">TODO</st>
-
-* Tester SimuGC (repo) et expliquer ce qui se passe.
-
 >In a distributed application, different pieces of the app are called “services”.
 
 >Services are really just “containers in production.” 
+
+
+
+## <st c="r">TODO</st>
+
+* Tester SimuGC (repo) et expliquer ce qui se passe.
 
 <Posts/>
 

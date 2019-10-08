@@ -190,7 +190,7 @@ Development Tools
 #### JVM (Java Virtual Machine)
 
 
-C'est une spécification qui décrit la la machine virtuelle où le bytecode Java peut interprété et éxécuté. Des implémentations existent pour de nombreuses plateformes. La JVM, contrairement à Java, est dépendante de la plateforme qui la fait tourner. La JVM s'occupe des actions suivantes:
+C'est une spécification qui décrit la la machine virtuelle où le bytecode Java est interprété et executé. Des implémentations existent pour de nombreuses plateformes. La JVM, contrairement à Java, est dépendante de la plateforme qui la fait tourner. La JVM s'occupe des actions suivantes:
 
 * Mise à disposition d'un environment d'exécution
 * Chargement du code
