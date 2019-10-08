@@ -85,5 +85,19 @@ Fonctionnalité de la JVM qui gère la mémoire notamment en libérant celle-ci 
 
 ##### Mark & Sweep
 
+* À Chaque cycle de GC:
+  * Phase **Mark**:
+    * Instanciation d'un objet <Fa fa="arrow-right"/> marqué `false`
+    * Parcours des instances et marquage des éléments atteignables <Fa fa="arrow-right"/> `true`
+  * Phase **Sweep**
+    * Parcours des éléments du Heap
+    * Suppression de tout ce qui est marqué `false`
+    * Les éléments restants sont marqués `false`
+
 ##### Stop & Copy
 
+* Espace du Heap est divisé en deux semi-espaces
+* Les objets sont alloués dans le semi-espace 1
+* Lors du GC, les objets référencés sont copiés dans le sous-espace 2
+
+![Image](https://i.imgur.com/4U81wHs.png)
