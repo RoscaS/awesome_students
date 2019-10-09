@@ -101,3 +101,19 @@ Fonctionnalité de la JVM qui gère la mémoire notamment en libérant celle-ci 
 * Lors du GC, les objets référencés sont copiés dans le sous-espace 2
 
 ![Image](https://i.imgur.com/4U81wHs.png)
+
+## Recap
+
+* Expliquez ce qu'est la Machine Virtuelle Java?
+  * Une **spécification** qui décrit la machine virtuelle.
+* Expliquez ce qu'est le Java Development Kit (JDK)?
+  * Un JRE plus des outils de développement
+* Expliquez ce qu'est le Java Runtime Environment (JRE)?
+  * Environement minimum nécessaire à faire tourner des applications Java.
+* Qu'est ce que JEE?
+  * Java Entreprise Edition
+  * **Spécification** pour la technique Java de Sun/Oracle
+  * Particulièrement destinée aux applications d'entreprise.
+  * Ensemble de spécifications définies par SunOracle
+* Qu'est ce qu'un serveur d'application JEE?
+  * Contient l'environement nécessaires aux services fournits par JEE

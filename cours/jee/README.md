@@ -2,7 +2,7 @@
 
 >In a distributed application, different pieces of the app are called “services”.
 
->Services are really just “containers in production.” 
+>Services are really just “containers in production.”
 
 
 
