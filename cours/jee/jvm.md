@@ -109,6 +109,7 @@ Fonctionnalité de la JVM qui gère la mémoire notamment en libérant celle-ci 
 * Expliquez ce qu'est le Java Development Kit (JDK)?
   * Un JRE plus des outils de développement
 * Expliquez ce qu'est le Java Runtime Environment (JRE)?
+  * **Implémentation de la JVM**
   * Environement minimum nécessaire à faire tourner des applications Java.
 * Qu'est ce que JEE?
   * Java Entreprise Edition
