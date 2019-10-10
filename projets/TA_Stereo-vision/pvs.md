@@ -9,11 +9,22 @@ hide: false
 
 ## Liste des PVs
 
-<Pv date="12 mars 2019" odj="Calibrage" :todo="['Calibration des caméras',]" :people="['Francois Tièche', 'Sol Rosca']" id="1">
+<Pv date="3 octobre 2019" odj="Calibrage" :todo="['Théorie calibration',]" :people="['Francois Tièche', 'Sol Rosca']" id="1">
 
 * Discussion au sujet de l'avancement.
 * Explications concernant la théorie de la calibration.
 * Pistes de recheches concenrant la géométrie épipolaire.
+
+</Pv>
+
+<br>
+<br>
+<br>
+
+<Pv date="10 octobre 2019" odj="" :todo="['Calibration sur cv2', 'utilisation des données de calibration']" :people="['Francois Tièche', 'Sol Rosca']" id="2">
+
+* Mise au point des détails mathématiques concernant la calibration et mise en coréalation avec les outils *cv2*.
+* Réflexion sur la façon d'utiliser la géométrie épipolaire pour en déduire des distances.
 
 </Pv>
 

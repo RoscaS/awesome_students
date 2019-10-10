@@ -32,6 +32,9 @@
         </li>
       </ul>
       <hr class="separator">
+      
+      <slot name="body"></slot>
+      
       <slot></slot>
       <div class="footer">
         <b>Todo:</b>
