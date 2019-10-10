@@ -1,5 +1,5 @@
 ---
-title: Jee
+title: Java Entreprise Edition
 date: 2019-10-09
 author: Sol
 sidebar: auto

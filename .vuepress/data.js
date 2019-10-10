@@ -29,7 +29,12 @@ const branchesFullName = {
   web_design: "Web",
   dev_ops: "Dev Ops",
   reseaux: "Reseaux",
-  divers: "Divers"
+  divers: "Divers",
+  jee: "Jee",
+  droit: "Droit",
+  compilateur: "Compilateur",
+  infographie: "Infographie",
+
 };
 
 const knownAuthors = [
