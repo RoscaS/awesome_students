@@ -11,7 +11,6 @@
 ## Tests
 
 * 11 decembre 2019
-  * 
 
 ## <st c="r">TODO</st>
 

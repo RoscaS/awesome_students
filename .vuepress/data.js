@@ -31,6 +31,7 @@ const branchesFullName = {
   reseaux: "Reseaux",
   divers: "Divers",
   jee: "Jee",
+  cs: "C#",
   droit: "Droit",
   compilateur: "Compilateur",
   infographie: "Infographie",
