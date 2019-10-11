@@ -438,10 +438,12 @@ Pour résoudre les conflits nous avons plusieurs possibilités:
 
 <br>
 
-Si les éléments au sommet de la pile correspondent à la partie de droite d'une règle:
-* <Fa fa="arrow-right"/> <b>REDUCE</b>
-Sinon
-* <Fa fa="arrow-right"/> <b>SHIFT</b>
+* (a) Les éléments au sommet de la pile correspondent à la partie droite d’une règle.
+* (b) Le sommet de la pile plus le look-ahead token (premier lexème de l’entrée) ne concernent aucune règle.
+  * Si (a) ET (b) sont vrais :
+    * <Fa fa="arrow-right"/>  on <b>REDUCE</b>
+  * Sinon :
+    * <Fa fa="arrow-right"/>  on <b>SHIFT</b>
 
 <br>
 
@@ -449,16 +451,16 @@ Sinon
 
 | Pile                | Entrée                                                             | LA Token |           | Décision                                          |
 | ------------------- | ------------------------------------------------------------------ | -------- | --------- | ------------------------------------------------- |
-|                     | <Fa fa="dot-circle" style="font-size:10px; color: red"/> 1 + 2 * 3 | 1        |           | AVANCE <Fa fa="arrow-right"/> 1                   |
-| `1`                 | 1 <Fa fa="dot-circle" style="font-size:10px; color: red"/> + 2 * 3 | +        |           | **A) REDUIT R3** (E <Fa fa="arrow-right"/> nb)    |
-| `E`                 | 1 <Fa fa="dot-circle" style="font-size:10px; color: red"/> + 2 * 3 | +        |           | AVANCE <Fa fa="arrow-right"/> +                   |
-| `E` `+`             | 1 + <Fa fa="dot-circle" style="font-size:10px; color: red"/> 2 * 3 | 2        |           | AVANCE <Fa fa="arrow-right"/> 2                   |
-| `E` `+` `2`         | 1 + 2 <Fa fa="dot-circle" style="font-size:10px; color: red"/> * 3 | *        |           | **B) REDUIT R3** (E <Fa fa="arrow-right"/> nb)    |
-| `E` `+` `E`         | 1 + 2 <Fa fa="dot-circle" style="font-size:10px; color: red"/> * 3 | *        | `*` > `+` | <st c="g">AVANCE <Fa fa="arrow-right"/> *</st>    |
-| `E` `+` `E` `*`     | 1 + 2 * <Fa fa="dot-circle" style="font-size:10px; color: red"/> 3 | 3        |           | AVANCE <Fa fa="arrow-right"/> 3                   |
-| `E` `+` `E` `*` `3` | 1 + 2 * 3 <Fa fa="dot-circle" style="font-size:10px; color: red"/> |          |           | **C) REDUIT R3** (E <Fa fa="arrow-right"/> nb)    |
-| `E` `+` `E` `*` `E` | 1 + 2 * 3 <Fa fa="dot-circle" style="font-size:10px; color: red"/> |          |           | **D) REDUIT R3** (E <Fa fa="arrow-right"/> nb)    |
-| `E` `+` `E`         | 1 + 2 * 3 <Fa fa="dot-circle" style="font-size:10px; color: red"/> |          |           | **E) REDUIT R2** (E <Fa fa="arrow-right"/> E * E) |
+|                     | <Fa fa="dot-circle" style="font-size:10px; color: red"/> 1 + 2 * 3 | 1        |           | SHIFT <Fa fa="arrow-right"/> 1                   |
+| `1`                 | 1 <Fa fa="dot-circle" style="font-size:10px; color: red"/> + 2 * 3 | +        |           | **A) REDUCE R3** (E <Fa fa="arrow-right"/> nb)    |
+| `E`                 | 1 <Fa fa="dot-circle" style="font-size:10px; color: red"/> + 2 * 3 | +        |           | SHIFT <Fa fa="arrow-right"/> +                   |
+| `E` `+`             | 1 + <Fa fa="dot-circle" style="font-size:10px; color: red"/> 2 * 3 | 2        |           | SHIFT <Fa fa="arrow-right"/> 2                   |
+| `E` `+` `2`         | 1 + 2 <Fa fa="dot-circle" style="font-size:10px; color: red"/> * 3 | *        |           | **B) REDUCE R3** (E <Fa fa="arrow-right"/> nb)    |
+| `E` `+` `E`         | 1 + 2 <Fa fa="dot-circle" style="font-size:10px; color: red"/> * 3 | *        | `*` > `+` | <st c="g">SHIFT <Fa fa="arrow-right"/> *</st>    |
+| `E` `+` `E` `*`     | 1 + 2 * <Fa fa="dot-circle" style="font-size:10px; color: red"/> 3 | 3        |           | SHIFT <Fa fa="arrow-right"/> 3                   |
+| `E` `+` `E` `*` `3` | 1 + 2 * 3 <Fa fa="dot-circle" style="font-size:10px; color: red"/> |          |           | **C) REDUCE R3** (E <Fa fa="arrow-right"/> nb)    |
+| `E` `+` `E` `*` `E` | 1 + 2 * 3 <Fa fa="dot-circle" style="font-size:10px; color: red"/> |          |           | **D) REDUCE R3** (E <Fa fa="arrow-right"/> nb)    |
+| `E` `+` `E`         | 1 + 2 * 3 <Fa fa="dot-circle" style="font-size:10px; color: red"/> |          |           | **E) REDUCE R2** (E <Fa fa="arrow-right"/> E * E) |
 | `E`                 | 1 + 2 * 3 <Fa fa="dot-circle" style="font-size:10px; color: red"/> |          |           |                                                   |
 
 <br>
