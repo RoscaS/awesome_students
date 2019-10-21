@@ -79,7 +79,7 @@ Set s = new TriSet<Double>();
 
 ### Introduction
 
-Java est un langage haut niveau, orienté objet, avec un typage statique fort dont la syntaxe est proche du C++. Il est multi-plateformes et guidé par le principe du WORA (Write once, Run Anywhere). 
+Java est un langage haut niveau, orienté objet, avec un typage statique fort dont la syntaxe est proche du C++. Il est multi-plateformes et guidé par le principe du WORA (Write once, Run Anywhere).
 
 ### Déclinaisons de Java
 
@@ -123,8 +123,8 @@ Java est un langage haut niveau, orienté objet, avec un typage statique fort do
 #### JDK (Java Development Kit)
 
 C'est un environment de développement et d'exécution pour des programmes Java. Ce kit (ou package) inclut deux choses:
-* Le JRE (Java Runtime Environment) 
-* Des outils de développement 
+* Le JRE (Java Runtime Environment)
+* Des outils de développement
   * Un interpreteur (java)
   * Un compilateur (javac)
   * Un compresseur (jar)
@@ -147,12 +147,12 @@ Fournit l'environment minimum nécessaire à uniquement faire tourner des applic
 
 <br><br>
 <vs-card class="cardx java-diag-card">
-<vs-row> 
-<vs-col vs-type="flex" vs-align="center" vs-w="6"> 
+<vs-row>
+<vs-col vs-type="flex" vs-align="center" vs-w="6">
 <span class="Java-diag-text">
 Java Runtime environment
-</span> 
-</vs-col> 
+</span>
+</vs-col>
 </vs-row>
 <vs-row>
 <vs-col vs-type="flex" vs-align="center" vs-w="8">
@@ -354,7 +354,7 @@ String s = scanner.next();
 
 ### Variables
 
-Identifiée par un nom, elle permet d'accéder à la valeur contenue dans l'adresse mémoire qu'elle référence. 
+Identifiée par un nom, elle permet d'accéder à la valeur contenue dans l'adresse mémoire qu'elle référence.
 
 * Une variable est **le nom d'une adresse en mémoire**
 * Le contenu d'une variable peut être changé en cours d'exécution
@@ -413,7 +413,7 @@ VALEUR_ETRANGE = 12;
 />
 
 Spécifie la taille et la valeur qui peuvent être stockées dans une variable.
-* Le type d'une variable peut être 
+* Le type d'une variable peut être
   * **primitif:** boolean, char, byte, short int, long, float et double
   * **non-primitif (objets):** les classes, interfaces et tableaux
 
@@ -438,7 +438,7 @@ Character c = 'C';
 al = new ArrayList();
 //Avant Java 5 il fallait faire al.add(new Integer(12))
 //Depuis Java 5 il suffit de faire
-al.add(12); 
+al.add(12);
 ```
 
 </Container>
@@ -493,7 +493,7 @@ Arrays.fill(tab, (float)3.14); // tab = {3.14, 3.14, 3.14}
 
 #### Tableaux 2D
 
-Les tableaux 2D n'existent pas en tant que structure de donnée mais il est possible de les utiliser comme en C et Cpp via de simples tableaux où chaque case du tableau contient une référence vers un autre tableau. 
+Les tableaux 2D n'existent pas en tant que structure de donnée mais il est possible de les utiliser comme en C et Cpp via de simples tableaux où chaque case du tableau contient une référence vers un autre tableau.
 
 ```java
 public class Tab2D {
@@ -531,7 +531,7 @@ if (x == 10) {
     System.out.println("Je n'aime pas la viande");
 } else {
     System.out.println("Où suis-je ?");
-}          
+}
 ```
 
 Le switch-case existe aussi:
@@ -908,7 +908,7 @@ Le déplacement du curseur d'itération utilise également `Map.Entry`:
 while (map.hasNext()) {
     Entry<String, Integer> kv = i.next();
     System.out.println(
-        "Key: " + kv.getKey() + 
+        "Key: " + kv.getKey() +
         "\tValue: " + kv.getValue()
     );
 }
@@ -930,7 +930,7 @@ map.forEach((k,v) -> System.out.println(
 
 ```java
 Map<String, Integer> map = Stream.of(new Object[][] {
-    {"Un", 1}, {"Deux", 1}, {"Trois", 1}, 
+    {"Un", 1}, {"Deux", 1}, {"Trois", 1},
 }).collect(Collectors.toMap(i -> (String)i[0], i->(Integer)i[1]));
 ```
 
@@ -991,7 +991,7 @@ List<Integer> lst = // ...
 Iterator<Integer> i = lst.iterator();
 ```
 
-L'iterface `Iterator` a trois methodes principales: 
+L'iterface `Iterator` a trois methodes principales:
 
 | methode     | description                                                    |
 | ----------- | -------------------------------------------------------------- |
@@ -1000,7 +1000,7 @@ L'iterface `Iterator` a trois methodes principales:
 | `remove()`  | retire l'élément courant de la collection                      |
 
 
-**Une façon de voir un itérateur est comme un curseur qui se déplace entre les indices d'un itérable.** Cette façon de voir les choses simplifie la compréhension du choix du nom des methodes. 
+**Une façon de voir un itérateur est comme un curseur qui se déplace entre les indices d'un itérable.** Cette façon de voir les choses simplifie la compréhension du choix du nom des methodes.
 
 Sur les schéma suivants, la première ligne représente l'itérateur, la seconde ligne les indices de l'itérable et la dernière la valeurs des éléments. La situation initiale est celle qui suit les déclarations suivantes:
 
@@ -1014,8 +1014,8 @@ Iterator<Integer> i = lst.iterator();
 
 ```
 |
- [0] [1] [2] 
-  7   4   8  
+ [0] [1] [2]
+  7   4   8
 ```
 
 </template>
@@ -1033,8 +1033,8 @@ Iterator<Integer> i = lst.iterator();
 
 ```
     |
- [0] [1] [2] 
-  7   4   8  
+ [0] [1] [2]
+  7   4   8
 ```
 
 </template>
@@ -1052,8 +1052,8 @@ Iterator<Integer> i = lst.iterator();
 
 ```
         |
- [0] [1] [2] 
-  7   4   8  
+ [0] [1] [2]
+  7   4   8
 ```
 
 </template>
@@ -1071,8 +1071,8 @@ Iterator<Integer> i = lst.iterator();
 
 ```
             |
- [0] [1] [2] 
-  7   4   8  
+ [0] [1] [2]
+  7   4   8
 ```
 
 </template>
@@ -1137,9 +1137,9 @@ L'interface `ListIterator` donne accès aux mehtodes suivantes:
 <br>
 
  <Container type="info">
- 
+
  `set()` ne peut être call que si lors de l'itération courante, aucun call de `add()` ou de `remove()` n'a été fait.
- 
+
  </Container>
 
  ### Itérer avec des lambda
@@ -1187,7 +1187,7 @@ c.forEach( e -> System.out.println(e) );
 
  * Retirer un élément de la collection
  * Ajouter un élément à la collection
- * Changer le contenu d'un objet (ou la valeur d'un élément primitif) de la collection 
+ * Changer le contenu d'un objet (ou la valeur d'un élément primitif) de la collection
 
 Même si la boucle for-each crée implicitement un itérateur en interne, ce dernier **n'est pas** exposé à l'utilisateur et il n'est donc pas possible de modifier l'élément courant.
 
@@ -1198,7 +1198,7 @@ Même si la boucle for-each crée implicitement un itérateur en interne, ce der
 
 #### Performances Vs For classique
 
-* Les temps pour parcourir une liste avec une for-each ou un itérateur sont identiques. 
+* Les temps pour parcourir une liste avec une for-each ou un itérateur sont identiques.
 
 * En fonction du type collection, un parcours avec une for classique est sensiblement plus long:
 
@@ -1371,7 +1371,7 @@ Le mot clé final peut être utilisé devant:
 
 ### Base
 
-* Déclaration d'une classe: 
+* Déclaration d'une classe:
   * `<public/private/protected> class <Nom de la classe> { }`
 
 ```java
@@ -1383,12 +1383,12 @@ public class Bicycle {
     String name;        // default: Uniquement accessible depuis le package
 
     private Wheel[] wheels;
-    
+
     static String className; // variable de classe
 
     // Bloc static:
     // Java ne possède pas d'implémentation pour les constructeurs statiques mais
-    // possède le bloc static qui peut être utilisé pour initialiser les 
+    // possède le bloc static qui peut être utilisé pour initialiser les
     // variables de classe qui est appelé lors du chargement de la classe.
     static {
         className = "Bicycle";
@@ -1453,11 +1453,11 @@ public class Bicycle {
         return name;
     }
 
-    // Override de la methode `toString` de la classe Object 
+    // Override de la methode `toString` de la classe Object
     @Override
     public String toString() {
-        return "gear: " + gear + 
-        " cadence: " + cadence + 
+        return "gear: " + gear +
+        " cadence: " + cadence +
         " speed: " + speed +
         " name: " + name;
     }
@@ -1490,27 +1490,27 @@ public class Bicycle {
         return true;
     }
 
-    // Override de la methode `clone` de la classe Object 
+    // Override de la methode `clone` de la classe Object
 	@Override
 	protected Bicycle clone() throws CloneNotSupportedException {
 		return cloneOf();
     }
 
-    // Override de la methode `equals` de la classe Object 
+    // Override de la methode `equals` de la classe Object
     @Override
     public boolean equals(Object source) {
         return source instanceof Bicycle ? isEqual((Bicycle) source) : false;
     }
 
-    // Override de la methode `hashCode` de la classe Object 
+    // Override de la methode `hashCode` de la classe Object
     @Override
     public int hashCode() {
         // Attention : a.equals(b) => a.hascode() == b.hascode() mais pas reciproque
         return Objects.hash(gear, cadence, speed, name, wheels);
     }
 
-    // Pour cloner un objet qui a pour attribut une collection, 
-    // il faut implémenter une méthode statique `clone()` qui 
+    // Pour cloner un objet qui a pour attribut une collection,
+    // il faut implémenter une méthode statique `clone()` qui
     // va parcourir la collection et cloner chaque case de la collection.
     // Statique car elle est appellée durant la construction d'un objet qui
     // n'existe pas encore.
@@ -1582,15 +1582,15 @@ Comme la classe `PennyFarthing` héritent de la classe `Bicycle`, on peut dire q
 * Une methode abstraite n'a pas de corp.
 * Les méthodes abstraites d'une classe abstraite dont hérite une classe fille doivent être implémentées.
 * Une classe abstraites peut avoir une méthode main.
-* Les variables d'une classe abstraite sont implicitement (par défaut) déclarées comme final. 
-* Déclaration d'une classe abstraite: 
+* Les variables d'une classe abstraite sont implicitement (par défaut) déclarées comme final.
+* Déclaration d'une classe abstraite:
   * `<niveau d'accès> abstract class <nom classe> {}`
 
 ```java
 public abstract class Animal {
     public abstract void makeSound();
 
-    // Les methodes peuvent avoir une implémentation dans 
+    // Les methodes peuvent avoir une implémentation dans
     // une classe abstraite.
     public void eat() {
         age = 30;
@@ -1628,11 +1628,11 @@ public class Dog extends Animal {
 
 * Une interface est une classe 100% abstraite (aucune de ses methodes n'a de corp).
 * Une interface sert à définir un _super-type_ et à permettre le polymorphisme.
-* Les méthodes dans le corp d'une interfaces n'ont pas de corp à l'exception des méthodes static. 
+* Les méthodes dans le corp d'une interfaces n'ont pas de corp à l'exception des méthodes static.
 * Une classe peut implémenter ("hériter de") plusieurs interfaces.
 * Une classe qui implémente une interface doit en implémenter toutes les methodes.
 * Le niveau d'accès d'une methodes d'interface est implicitement `public`.
-* Déclaration d'une interface: 
+* Déclaration d'une interface:
   * `<niveau d'accès> interface <nom interface> extends <éventuelles interfaces mères> {}`
 
 
@@ -1640,9 +1640,9 @@ Toute nourriture peut être mangée et digérée différemment, l'interface `Edi
 
 ```java
 public interface Edible_I {
-    // Toute classe qui implémente cette interface 
+    // Toute classe qui implémente cette interface
     // doit implémenter cette méthoed:
-    void eat(); 
+    void eat();
 }
 ```
 
@@ -1926,7 +1926,7 @@ public class Volume {
     }
     public Niveau niveau;
 
-    public Volume() { 
+    public Volume() {
         niveau = Niveau.FAIBLE;
     }
 }
@@ -2070,7 +2070,7 @@ Personnage p1 = new Personnage("George", toubib);
 p1.print(); // => La devise de George est: Qui dois-je soigner ?
 ```
 
-Ce nouveau comportement n'est définit que pour cet objet. Pour utiliser une classe anonyme, il suffit d'override la (ou les) méthode(s) de l'**interface** ou de la **classe abstraite** dans un <Def def="délimité par des accolades">bloc d'instruction</Def>. 
+Ce nouveau comportement n'est définit que pour cet objet. Pour utiliser une classe anonyme, il suffit d'override la (ou les) méthode(s) de l'**interface** ou de la **classe abstraite** dans un <Def def="délimité par des accolades">bloc d'instruction</Def>.
 
 Les classes anonymes peuvent être utilisées inline, ainsi le code suivant est équivalent du précédent:
 
@@ -2131,7 +2131,7 @@ Comme cette interface n'a qu'une unique méthode à override, la JVM sait automa
 
 ```java
 Personnage p1 = new Personnage(
-    "George", 
+    "George",
     () -> System.out.println("Qui dois-je soigner ?")
 );
 p1.print(); // => La devise de George est: Qui dois-je soigner ?
@@ -2168,9 +2168,9 @@ L'oppérateur d'une lambda est `->` et comme le but d'une lambda est de redéfin
 #### Syntaxe
 
 * Oneliner:
-  * `() -> une action;` 
+  * `() -> une action;`
     * ex: `() -> "poule";` retourne "poule"
-  * `(arg1, arg2) -> une action;` 
+  * `(arg1, arg2) -> une action;`
     * ex: `(a, b) -> a + b;` retourne (a + b)
 * Multi line:
   * `() -> { traitements; return valeur; };`
@@ -2441,7 +2441,7 @@ pause
 #### Procédure
 
 1. Avoir un code qui compile et un point d'entrée (`UseXXX`)
-2. Package JAR: 
+2. Package JAR:
    * **Project Structure > Artifacts > + > JAR > From module with dependencies**
    * Set **Main Class**
 3. Build du JAR:
@@ -2450,7 +2450,7 @@ pause
    * Après cette étape **YYY.jar** se trouve dans `out.artifacts.YYY_jar.YYY.jar`
 
 
-* Run interne à l'IDE: 
+* Run interne à l'IDE:
   * **Edit configuration > + > JAR Application**
   * Set a name "YYYjar"
   * Set path to jar
@@ -2461,7 +2461,7 @@ pause
 
 #### Arguments
 
-* Traditionnel: 
+* Traditionnel:
   * `$ java -jar YYY.jar [arg] [arg2] ...`
   * se récupère via l'attribut `String[] args`
 * Propriété système:
@@ -2498,7 +2498,7 @@ Un _artifact_ est un assemblage des assets d'un projet mis ensemble pour tester,
 
 * En C, C++ et Java, il y a un **double déréférencement** entre la mémoire logique et physique: Pointeur sur un secteur de mémoire _logique_, Si le système swap, le pointeur garde la même valeur, mais l'emplacement est différent. Double déréférencement entre la mémoire logique et physique. <st c="r">A compléter</st>.
 
-* Pour tester un double (`0.9999 == 1`) il est nécessaire de définir une certaine précision ($E$). 
+* Pour tester un double (`0.9999 == 1`) il est nécessaire de définir une certaine précision ($E$).
 $$ E \geq |\frac{a-b}{a}| $$
 
 
@@ -2663,6 +2663,31 @@ System.out.println(add4.apply(5, 3));
 ## Streams
 
 ```java
+// Container
+Integer[] tab = {1, 2, 3};
+List<Integer> list = List.of(4, 5, 6);
+Set<Integer> set = Set.of(7, 8, 9);
+
+// Stream
+Stream<Integer> streamTab = Stream.of(tab);
+Stream<Integer> streamList = list.stream();
+Stream<Integer> streamSet = set.stream();
+
+// Attention !
+Iterable<Integer> list = List.of(1, 2, 3);
+Stream<Integer> x = Streams.stream(list);
+
+// Concatenation
+Stream<Integer> streamTabList = Stream.concat(streamTab, streamList);
+Stream<Integer> streamAll = Stream.concat(streamTabList, streamSet);
+
+// Reduce
+List<Integer> lst = List.of(1, 2, 3, 4);
+int sum = lst.stream().reduce(0, (a, b) -> a + b);
+int product = lst.stream().reduce(1, (a, b) -> a * b);
+```
+
+```java
 var names = Arrays.asList("Adam", "Alexander", "John", "Tom");
 var hommes = Homme.list(5);
 
@@ -2673,9 +2698,18 @@ var filtered = names.stream()
 System.out.println(filtered);
 
 var list = hommes.stream()
-    .filter(h -> h.getHauteur() > 20)
+    .filter(h -> h.getTaille() > 20)
     .collect(Collectors.toList());
-    
+
 list.forEach(Homme::opposePoids);
 System.out.println(list);
 ```
+
+* `stream.count()`: terminal
+* `stream.skip(int)`: non-terminal
+* `stream.limit(int)`: non-terminal
+* `stream.forEach(Consumer)`: terminal (in-place)
+* `stream.filter(Predicat)`: non-terminal
+* `stream.reduce(neutral_element_add_or_mul, BinaryOperator)`: terminal
+* `stream.map(Function)`: non-terminal
+* `stram.collect(Collectors.toCollection_Type)`: terminal
