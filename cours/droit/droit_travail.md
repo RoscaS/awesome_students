@@ -55,6 +55,17 @@ _sans heures sup_
 * min 2x 1/2 journées
 * 22h-6h sans travail et dimanche/jours fériés <Fa fa="arrow-right"/> Sinon autorisation et salaires majorés 
 
+#### Maladie
+* Salaire pas assuré après "un certain temps" <Fa fa="arrow-right"/> dépend de son ancienneté
+
+#### Maternité
+* Commence à partir de l'accouchement
+* Avant, compté comme congé maladie
+
+### Vacances
+* min 4 semaines
+* Employé propose, employeur dispose avec raisons valables
+
 ### Heures supplémentaires
 * Rendues en vacances 1:1
 * Si accord bilatéral <Fa fa="arrow-right"/>  payées + 25%
