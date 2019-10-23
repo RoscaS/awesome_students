@@ -2662,6 +2662,16 @@ System.out.println(add4.apply(5, 3));
 
 ## Streams
 
+
+* `stream.count()`: terminal
+* `stream.skip(int)`: non-terminal
+* `stream.limit(int)`: non-terminal
+* `stream.forEach(Consumer)`: terminal (in-place)
+* `stream.filter(Predicat)`: non-terminal
+* `stream.reduce(neutral_element_add_or_mul, BinaryOperator)`: terminal
+* `stream.map(Function)`: non-terminal
+* `stram.collect(Collectors.toCollection_Type)`: terminal
+
 ```java
 // Container
 Integer[] tab = {1, 2, 3};
@@ -2704,12 +2714,3 @@ var list = hommes.stream()
 list.forEach(Homme::opposePoids);
 System.out.println(list);
 ```
-
-* `stream.count()`: terminal
-* `stream.skip(int)`: non-terminal
-* `stream.limit(int)`: non-terminal
-* `stream.forEach(Consumer)`: terminal (in-place)
-* `stream.filter(Predicat)`: non-terminal
-* `stream.reduce(neutral_element_add_or_mul, BinaryOperator)`: terminal
-* `stream.map(Function)`: non-terminal
-* `stram.collect(Collectors.toCollection_Type)`: terminal
