@@ -86,10 +86,102 @@ Autrement dit, **ne suréstime jamais le cout réel**
   * fonction score:
     * 2 pour une plaquette non centrale si elle n'est pas suivie par la bonne plaquette (pas la bonne séquence) et $0$ si non.
 
-$h3(n)$: $3+1+3+0+2+1+0+3+3\times(2+2+2+2+2+2+2+2) = 66 <st c="r">N'est pas admissible</st>.
+$h3(n)$: 3+1+3+0+2+1+0+3+3 $\times$(2+2+2+2+2+2+2+2) = 66 <st c="r">N'est pas admissible</st>.
 
 <Container type="warning">
 
 La complexité de la fonction heuristique peut nuire à l'efficacité de la recherche. Il faut trouver un bon compromis.
 
 </Container>
+
+## Recherche + Heuristique
+
+L'algorithme **Best-First search** permet d'explorer les noeuds dans l'ordre (meilleur-que) **de leurs valeurs heuristiques**.
+Les fonctions heuristiques classiques pour un problème <Def def="Traveling salesman problem">TSP</Def>:
+* distance de manhattan
+* distance à vol d'oiseau
+
+On utilise deux listes pour garder l'historique et permettre les retours-arrièresL
+* `frontier`: **Liste ordonnée** des noeuds à examiner
+* `history`: liste des noeuds déjà examinés
+
+<br>
+
+* Stratégie la plus simple des **best-first search**.
+* Utilise une fonction heuristique $h(n)$ qui équivaut à une estimation du cout du noeud $n$ jusqu'au but.
+* **Recherche avare**, elle minimise le cout estimé pour atteindre le but
+  * le noeud qui semble être le plus proche du but sera étendu en priorité
+  * en considérant uniquemen l'état actuel, pas l'historique des cours accumulés
+
+<br>
+
+* **Complétude**: <st c="r">Non</st> (si boucle)
+* **Optimalité**: <st c="r">Non</st> (on ne tient pas compte de l'histoire du noeud)
+* **Temps**: $O(b^m)$ (exponentiel en $m$ = profondeur maximum de l'espace recherché. Une heuristique peut drastiquement améliorer le temps)
+* **Espace**: $O(b^m)$ garde tous les noeuds en mémoire
+
+## Uniform cost search
+
+L'algorithme de **recherche en cout uniforme** minimise le cout $g(n)$ depuis l'état initial au noeud $n$
+
+
+<Spoiler tag="gif">
+
+<Media
+    src="https://i.imgur.com/XVzxde0.png"
+    center="true"
+    width=250
+/>
+
+<Media
+    src="https://i.imgur.com/nFvOoUF.png"
+    center="true"
+    width=250
+/>
+
+<Media
+    src="https://i.imgur.com/MmnUGcY.png"
+    center="true"
+    width=250
+/>
+
+<Media
+    src="https://i.imgur.com/pPGrvwG.png"
+    center="true"
+    width=250
+/>
+
+<Media
+    src="https://i.imgur.com/XymFe3m.png"
+    center="true"
+    width=250
+/>
+
+<Media
+    src="https://i.imgur.com/YKAZPjj.png"
+    center="true"
+    width=250
+/>
+
+</Spoiler>
+
+
+## A*
+
+* La recherche avare minimise le cout estimé $h(n)$ du noeud $n$ au but, réduisant ainsi considérablement le cout de la recherche, mais il n'est pas optimal et pas complet (en général)
+* L'algorithme de recherche en cout uniforme minimise le cout $g(n) depuis l'état initial au noeud $n$
+* **Idée**:
+  * Combiner les deux algorithmes et minimiser le cout total $f(n)$ du chemin en passant par le noeud $n$
+
+$$f(n) = g(n) + h(n)$$
+
+Si en plus $f(n)$ est telle que:
+* $g(n)$ = cout du meilleur hemin jusqu'à $n$
+* $h(n)$ = une fonction heuristique **admissible**
+
+<Fa fa="arrow-right"/> L'algorithme "recherche avare" avec la fonction f(n) est appelé algorithme A*
+
+* **Complétude**: <st c="g">Oui</st> Sauf si il y a un nombre infini de noeuds avec une valeur de $f\leq f(but)$
+* **Optimalité**: <st c="g">Oui</st> Si $h()$ est admissible (Le fait que A* trouve uniquement le chemin le plus court peut être facilement prouvé)
+* **Temps**: Exponentiel
+* **Espace**: Garde tous les noeuds en mémoire
