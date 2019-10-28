@@ -32,12 +32,3 @@ hide: false
   *  + de 10 ans <Fa fa="arrow-right"/> 3 mois à partir de la fin du mois courant
   *  Mis en pause durant une maladie ou grossesse
   *  Peuvent être modifiés dans le contrat mais délai de licenciement toujours supérieur ou égale à celui de la démission
-
-## Retraites
-1. <Def def="Assurance vieillesse et survivants">AVS</Def>
-   * Rente de veuve, d'orphelin
-   * 65 ans homme, 64 ans femme 
-   * min 1165, max 2350
-     * Max 45 ans de cotisation à 84'000.-/an en moyenne
-   * Redistributive
-2. 
