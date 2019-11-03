@@ -28,3 +28,9 @@ hide: false
 
 </Pv>
 
+<Pv date="17 octobre 2019" odj="" :todo="['Tidy up code', 'tenter de court-circuiter la génération de la depth map']" :people="['Francois Tièche', 'Sol Rosca']" id="2">
+
+* Tuning de l'image de la depth map.
+
+</Pv>
+

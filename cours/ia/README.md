@@ -7,6 +7,6 @@
 * [async js](https://easystarjs.com/)
 * [complex grid](https://www.growingwiththeweb.com/projects/pathfinding-visualiser/)
 * [mazes](https://clementmihailescu.github.io/Pathfinding-Visualizer/#)
-
+* [A* quad tree nodes](https://www.youtube.com/watch?v=95aHGzzNCY8)
 
 <Posts/>
