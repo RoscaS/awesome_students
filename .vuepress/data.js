@@ -31,6 +31,7 @@ const branchesFullName = {
   reseaux: "Reseaux",
   divers: "Divers",
   jee: "Jee",
+  tdp: "Traitement parallèle",
   cs: "C#",
   droit: "Droit",
   compilateur: "Compilateur",
