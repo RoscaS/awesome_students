@@ -58,7 +58,7 @@ reconnect to ssh and use the command :
 
 ## git dream team
 
-git : `git clone ssh://javab@157.26.83.27/home/javab/git/WCoursJava.git`
+git : `git clone ssh://lambda2019b@157.26.83.27/home/javab/git/WCoursJava.git`
 
 user - password :
 `lambda2019b` - `booking2019`
