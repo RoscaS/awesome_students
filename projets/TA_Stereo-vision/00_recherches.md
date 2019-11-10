@@ -18,5 +18,25 @@ hide: false
 
 * [directives](https://labinfo.ing.he-arc.ch/gitlab/inf/1920/doc)
 
-##  Premier sous-titre
+##  Later
+
+* Sift
+* Slam (simultanus Localisatoin and Mapping)
+* Feature point
+
+
+
+## Roadmap
+
+### Chap 1
+
+* Rapport -> Théorie + utilisation sur python.
+* Code clean + doc sommaire
+
+### Chap 2
+
+* Exploration d'applications
+  * Distances
+  * Reconstruction 3D
+
 
