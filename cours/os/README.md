@@ -4,6 +4,10 @@
 
 * 23 octobre 2019 (NE-144)
 
+## Rendu
+
+* kernel: phase 1 (2 decembre 2019)
+
 ## Overthewire Bandit
 
 * [Current level (13)](https://overthewire.org/wargames/bandit/bandit14.html)
