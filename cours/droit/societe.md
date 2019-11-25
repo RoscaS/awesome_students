@@ -63,4 +63,38 @@ hide: false
   * Nom
     * Pas d'injure
     * Libre dans le secteur d'activité et non-déposé
+    * Protégé dans toute la Suisse et dans le secteur d'activité
 * Propriétaire non-responsable en cas de faillite
+* Minimum 100'000.- comme un capital
+* Règles comptables strictes
+* Obligations de réserves
+* Direction
+  * Employés
+  * Gestion quotidienne
+* Assemblée générale
+  * Souveraine
+  * 1x par an
+  * Approbation des comptes 
+  * Élections
+    * Direction
+    * Vérificateur de comptes
+    * Conseil d'administrations
+      * 1x/mois
+      * Surveiller la direction
+      * Prorata de la possession de l'entreprise
+      * ~10 personnes
+* Unique entreprise pouvant être côté en bourse
+
+### <Def def="Société à responsabilité limitée">Sàrl</Def>
+* Sous-entendu *S.A. du pauvre*
+* Capital minimum de 20'000.-
+* Participation 1'000.- chacune
+  * Vendre -> Passer devant un notaire
+* Pas de vérificateur
+* Pas de C.A.
+
+### Coopérative
+* Propriétaire ne peuvent pas percevoir de bénéfice
+* Minimum 7 personnes
+  * 1 personne = 1 voix
+* Capital minimum 0.-
