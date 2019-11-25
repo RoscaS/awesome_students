@@ -2714,3 +2714,46 @@ var list = hommes.stream()
 list.forEach(Homme::opposePoids);
 System.out.println(list);
 ```
+
+### Collecors
+
+```
+//////////////////////////////////
+// Collector Debriefing:
+//////////////////////////////////
+//
+//	Avec collect(Collectors.XXX()) on sait faire:
+//
+//		Des Collections:
+//
+//			- toList()
+//			- toSet()
+//			- toMap(keyMapper,valueMapper)
+//
+//		De la reduction generale:
+//
+//			- reducing(init, mapper, binaryOperator)
+//			- reducing(init, binaryOperator)
+//			- reducing(binaryOperator)
+//
+//		De la reduction avec int
+//
+// 			- summingInt(mapper)
+//
+//		et aussi
+//
+//			- counting()
+//			- maxBy
+//
+//		Observation:
+//
+//			(O1) Toutes les methodes ci-dessus renvoie des Collector
+//
+//			(O2) collect a besoin d'un collector en input
+//
+//					collect(collector)
+//
+//////////////////////////////////
+// fin
+//////////////////////////////////
+```
