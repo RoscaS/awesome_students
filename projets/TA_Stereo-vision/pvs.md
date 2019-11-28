@@ -34,3 +34,13 @@ hide: false
 
 </Pv>
 
+<Pv date="28 novembre 2019" odj="" :todo="['Redéfinition du projet']" :people="['Francois Tièche', 'Sol Rosca']" id="2">
+
+**Projet pratique laissé de coté en faveur d'un axe plus pédagogique**
+* 2 decembre: Finir théorie géométrie épipolaire
+* 16 decembre: Expérimentations + code
+* 30 decembre: Triangulation de Delaunay
+* 6 janvier: ppt
+
+</Pv>
+
