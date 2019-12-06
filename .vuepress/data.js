@@ -14,6 +14,9 @@ const branchesFullName = {
   algonum: "Algorithmes numériques",
   python: "Python",
   stats: "Statistiques",
+  qualite_logiciel: "Qualité logiciel",
+  cs: "C#",
+
 
   // Articles
   algo: "Algo",
@@ -36,7 +39,6 @@ const branchesFullName = {
   droit: "Droit",
   compilateur: "Compilateur",
   infographie: "Infographie",
-
 };
 
 const knownAuthors = [
