@@ -12,12 +12,7 @@
 <br>
 
 ## Tests
-
-* 11 decembre 2019
-
-## <st c="r">TODO</st>
-
-* Tester SimuGC (repo) et expliquer ce qui se passe.
+* 11 decembre 2019 (jusque Maven (ch4), maven pas trop, juste les grandes lignes)
 
 <Posts/>
 
