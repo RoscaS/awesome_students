@@ -47,6 +47,7 @@ const knownAuthors = [
   { name: "Nathan Latino", GHID: "42647776", class: "INF3B" },
   { name: "Edwin Claude", GHID: "", class: "INF3A" },
   { name: "David Rhis", GHID: "55483278", class: "INF3A" },
+  { name: "Erwan Buesh", GHID: "", class: "INF3A" },
 ];
 
 const groups = {
