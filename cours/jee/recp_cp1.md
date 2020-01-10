@@ -4,7 +4,7 @@ date: 2019-12-06
 author: Sol
 sidebar: auto
 project: false
-hide: false
+hide: true
 ---
 
 ## Glossaire
