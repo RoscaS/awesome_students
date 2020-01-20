@@ -1,19 +1,5 @@
 # JEE
 
-## Test
-* jusque maven (ch4) maven pas trop, juste les grandes lignes
-
->In a distributed application, different pieces of the app are called “services”.
-
->Services are really just “containers in production.”
-
-<br>
-<br>
-<br>
-
-## Tests
-* 11 decembre 2019 (jusque Maven (ch4), maven pas trop, juste les grandes lignes)
-
 <Posts/>
 
 ## Install

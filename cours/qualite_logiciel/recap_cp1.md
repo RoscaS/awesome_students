@@ -4,7 +4,7 @@ date: 2019-12-05
 author:  "Collectif"
 sidebar: auto
 project: false
-hide: false
+hide: true
 ---
 
 <style>
