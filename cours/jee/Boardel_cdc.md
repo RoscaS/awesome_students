@@ -9,7 +9,6 @@ hide: false
 
 ##  Overview
 
-
 Notre projet est un forum de discussion (à l'ancienne). Un forum contient des catégories. Dans chaque **catégorie**, un **utilisateur** peut démarrer un fil de discussion en créant un **topic**. Dans chaque topic, d'autres utilisateurs peuvent poster une réponse au fil de discussion. Un **Admin** ou un **Staff** peuvent modérer les disccussions et Admin est le seul à pouvoir créér de nouvelles catégories.
 
 ## Architecture

@@ -1,13 +1,13 @@
 ---
-title: Presentation iGolf
-date: 2019-12-17
+title: TB: Generic website for all
+date: 2020-01-30
 author: Sol
 sidebar: auto
 project: false
 hide: false
 ---
 
-# Generic website for all
+## Generic website for all
 
 * Buzzwords: **générique**, **modulaire**, **rigide** dans la structure, **flexible** dans le contenu
 
@@ -55,58 +55,3 @@ L'Idée ultime serait de de pouvoir rendre le produit disponible en SaaS (Site a
 
 Les mises à jour et correction de bug du site doivent pouvoir se faire simultanément sur tous les sites issu de ce projet. Leur contenu est différent mais le moteur qui les fait tourner est le même et un bug sur l'un est un bug qui peut se manifester sur tous les autres. Il est donc nécessaire de garder tous les sites actifs synchronisés à un site "modèle" qui permette de répliquer et corriger un bug détecté sur une des instances.
 
-
-
-
-## Soucis
-
-* Refresh sur les pages `/courses/_id_` cassé
-* Modal de création de minigolfs/courses ne se ferme pas après validation
-
-## Fake
-* Messages & invite user: fake
-
-## Permissions
-
-* Trois rôles
-  * Guest
-    * Landing `/`
-    * Consultation des minigolfs et leurs courses
-      * `/minigolfs`, `/minigolfs/_slug_`
-      * `/courses`, `/courses/_id_`
-  * User
-    * Landing
-    * Consultation des minigolfs et leurs courses
-    * Consultation de ses parties
-    * Navigation des utilisateurs (email caché)
-    * Update des données personnelles
-      * Username
-      * City
-  * Staff
-    * Landing
-    * Consultation des minigolfs et leurs courses
-      * CRUD sur les minigolfs
-      * CRUD sur les courses
-    * Consultation de ses parties
-    * Navigation des utilisateurs
-      * CRUD sur les utilisateurs (édition limitée)
-    * Update des données personnelles
-      * Username
-      * City
-
-Comptes test:
-* user@test.com / toptal00
-* admin@test.com / toptal00
-
-
-## Ce qui est fake
-* pourquoi du fake
-
-
-## Ce qui va pas
-
-* Creation de course (modal dégage pas)
-* Creation de course pas auto refresh
-
-## uml
-![Image](https://i.imgur.com/vwipJMi.png)

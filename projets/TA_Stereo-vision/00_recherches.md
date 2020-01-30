@@ -7,6 +7,11 @@ project: false
 hide: false
 ---
 
+## Notes
+
+* Concernant le cahier des charges, expliquer le changement d'orientation et le fait que ça n'avait plus tant de sens. Vers l'intro.
+
+
 ## Links:
 * [opencv contrib](https://github.com/opencv/opencv_contrib)
 * [py stereo vision](https://github.com/erget/StereoVision)
