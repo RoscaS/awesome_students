@@ -4,10 +4,10 @@ date: 2020-01-30
 author: Sol
 sidebar: auto
 project: false
-hide: true
+hide: false
 ---
 
-* [résumé](https://hackmd.io/ssK1PrxiT6e-Pv5iGmkehQ?both)
+<Spoiler tag="spoiler">
 
 * Gru kiff bien quand vous expliquez les abréviations que vous utilisez pendant la présentation, même s'il vous interromp pas pour vous demander ce que ça veut dire c'est bien si vous le faites en premier
 * Gru: cadriciel au lieu de framework
@@ -47,3 +47,9 @@ hide: true
 
 
 Si jamais vous tombé sur http avec les verbes et tout le bordel... y va vous posez la question  : comment le serveur va gérer les requêtes post et get : 1. dire que le serveur c'est stateless donc a chaque fois faut tout renvoyer 2. le serveur a un systeme de log qui va garder toute les traces des requetes post et get (post il va juste garder l'url et get il va garder aussi les paramêtre)
+
+</Spoiler>
+
+
+* [résumé](https://hackmd.io/ssK1PrxiT6e-Pv5iGmkehQ?both)
+

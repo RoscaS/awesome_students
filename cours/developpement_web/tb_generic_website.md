@@ -1,5 +1,5 @@
 ---
-title: TB: Generic website for all
+title: "TB: Generic website for all"
 date: 2020-01-30
 author: Sol
 sidebar: auto

@@ -4,13 +4,11 @@ date: 2020-01-30
 author: Sol
 sidebar: auto
 project: false
-hide: true
+hide: false
 ---
 
-* [résumé](https://hackmd.io/C6sqAUv7QIO89qwQUqdCcA)
+<Spoiler tag="spoiler">
 
-
-## Questions
 * VF pétés et des trucs sur des intents, broadcasreceiver, et whatnot
 * Difference entre Application et Activity
 * Code avec une exception concurrente
@@ -53,3 +51,10 @@ hide: true
         * Faut dire que c'est pas possible de modifier lUI depuis les thread, il faut utiliser une asynctask
     * Schéma de messages échangés entre une activité, un intent, l'OS et un service lors de la création d'un service
         * Expliquer ce qui se passe et décrire à quoi correspond START_STICKY
+
+</Spoiler>
+
+
+* [résumé](https://hackmd.io/C6sqAUv7QIO89qwQUqdCcA)
+
+
