@@ -4,7 +4,7 @@ date: 2020-01-30
 author: Sol
 sidebar: auto
 project: false
-hide: true
+hide: false
 ---
 
 * analyse lexicale
@@ -36,7 +36,7 @@ hide: true
             * Java est nazi
 * Shift and reduce avec exemple à dérouler
     * a=b+c-d
-* Type d'erreur : sémantique/syntaxique ou lexicale* -> 9 questions
+* Type d'erreur : sémantique/syntaxique ou lexicale -> 9 questions
     1. constante qui est redifini -> sémantique
     2. mot clé utilisé dans identificateur -> syntaxique
     3. accès une case d'un tableau qui n'existe pas -> (piège) à l'exécution = runtime ATTENTION, peut aussi être détecté dans le sémantique que le tableau n'a pas été initialisé

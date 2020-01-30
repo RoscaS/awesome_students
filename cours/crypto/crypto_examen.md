@@ -4,7 +4,7 @@ date: 2020-01-30
 author: Sol
 sidebar: auto
 project: false
-hide: true
+hide: false
 ---
 
 - Hash
