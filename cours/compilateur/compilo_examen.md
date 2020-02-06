@@ -7,6 +7,63 @@ project: false
 hide: false
 ---
 
+![Image](https://i.imgur.com/yghWXuN.png)
+
+
+* [hackmd](https://hackmd.io/8RrV9_MUQnmVjDq6UNPkDQ)
+
+## Questions
+
+<br>
+
+* Interpréteur vs Compilateur
+* Expliquer machine à pile
+* Transformer un code en instructions svm
+* code avec if → Arbre + couture
+* On peut différencier "=" et "==" lors de l'analyse Lexical ? Sinon c'est ou ?
+
+<br><br>
+
+* Analyse lexicale
+* Comment lex détecte les lexèmes
+* 2 regexp un mot commence par "ab" ou finit par "xyz" et un mot commence par ab et finit par xyz
+* Un automate à états un langage commence par 011 ou finit par 011
+* Erreur détectée quand "3ZK4" identificateur mal formé, sin('a')
+
+<br><br>
+
+* C'est quoi l'analyse sémantique et donner des examples
+* C'est quoi la couture et comment on la fait (Parcours profondeur main gauche)
+* Do While : AST + couture
+*  Dans quelle partie l'erreur est trouvée:
+    * Commentaire pas fermé
+    * Parenthèse pas fermée
+    * Variable pas initialisée
+* Question sur un alphabet(Sigma) et une grammaire (G):
+    * Donner Sigma*
+    * Donner 2 mot de Sigma* qui sont correct selon G
+    * Donner 2 mot de Sigma* qui ne sont pas correct selon G
+    * Que veut dire Epsilon (signe vide)
+
+<br><br>
+
+* Analyse syntaxique
+* Shift reduce
+* ascendant / descandant
+* Language à disposition --> faut trouver des exemples de ce qui appartient au language et ce qui n'y appartient pas
+* Grammaire à dispo --> analyser la phrase donné
+
+<br><br>
+
+* diff machine a pile et registre
+* code svm d'addition
+* multiplication
+* ast
+* code svm d'un if
+
+<br><br>
+
+
 * analyse lexicale
     * Prend en entrée un suite de symboles et produit une suite de lexèmes.
     * Symbolique

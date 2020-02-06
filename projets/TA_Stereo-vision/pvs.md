@@ -17,10 +17,6 @@ hide: false
 
 </Pv>
 
-<br>
-<br>
-<br>
-
 <Pv date="10 octobre 2019" odj="" :todo="['Calibration sur cv2', 'utilisation des données de calibration']" :people="['Francois Tièche', 'Sol Rosca']" id="2">
 
 * Mise au point des détails mathématiques concernant la calibration et mise en coréalation avec les outils *cv2*.

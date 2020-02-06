@@ -7,6 +7,42 @@ project: false
 hide: false
 ---
 
+* [hackmd](https://hackmd.io/8RrV9_MUQnmVjDq6UNPkDQ)
+
+![Image](https://i.imgur.com/yghWXuN.png)
+
+
+
+## Sujets
+
+### Théorèmes et algorithmes
+- Fermat
+- Théorème d'euler
+- Génération de grand nombre premier
+- Algorithme d’Euclide et Euclide avancé
+- Génération de nombre aléatoire
+
+### Techniques
+- Onetime pad (XOR entre clé et message) avantages / désavantages
+- Vernam
+- Vigénère
+- Diffie & Hellman
+- RSA
+- DSA
+- AES
+- Block et stream cipher
+
+### Culture G
+- Authentification, Confidentialité Intégrité, non-répudiation,
+- Cryptographie et cryptanalyse
+- Cryptographic hash
+- Man in the middle
+
+<br> <br> <br>
+
+
+## Résumé
+
 - Hash
 
 Trouver un nombre via des données (empreinte), données de taille variable à hash de taille fixe, formule mathématique (Markle Domgard), éventuellement rainbow table pour faire l'opération inverse
@@ -167,3 +203,106 @@ XOR du message avec une clé de même longueur
     - **Denial of service (DDOS)** - spam de message
 
 En général les attaques passives sont plus dures à détecter mais plus faciles à prévenir.
+
+
+
+
+
+---
+
+- Authentification, Confidentialité Intégrité, non-répudiation,
+-  Algorithme d’Euclide et Euclide avancé
+- DSA
+
+---
+
+
+* Vernam
+* Diffie Hellman
+* Cryptographic hash
+
+
+---
+
+- cryptographie et crypto analyse
+- Théorème euler
+- Aes
+
+---
+
+
+* Block et stream cipher
+* Génération de grand nombre premier
+* RSA
+    * ce qu'il y a dans la clefs publique/privé + comment les définir,
+    * chier un peu les formules,
+    * comment tu crypte et décrypte
+    * La technique et les maths derrière ewe
+
+Apprenez un peut tout les acronyme de l'enfer des différents algo de cryptage que cela soit block ou stream et comment ils fonctionnent un peu, surtout pour la partie stream
+
+
+---
+
+
+## Crypto: oral 2018 - 2019
+
+* Block cipher vs Stream cipher
+* RSA
+* Génération de grand nombre premiers
+
+---
+
+* Onetime pad (XOR entre clé et message) avantages / désavantages j'ai confondu avec vigénère et le rot
+* Diffie Hellman avec 3 participants
+* Attack man in the middle
+
+---
+
+* Intégrité, non-repudiation,
+* Algorithme d'Euclide et Euclide avancé
+* DSA
+
+---
+
+* RSA
+* génération de nombre aléatoire
+* Vigénère
+
+---
+
+* aes
+* fermat
+* man in the middle
+
+
+## Questions
+
+* Block cipher vs Stream cipher
+* RSA
+* Génération de grand nombre premiers
+
+<br><br>
+
+* Onetime pad (XOR entre clé et message) avantages / désavantages j'ai confondu avec vigénère et le rot
+* Diffie Hellman avec 3 participants
+* Attack man in the middle
+
+<br><br>
+
+* Intégrité, non-repudiation,
+* Algorithme d'Euclide et Euclide avancé
+* DSA
+
+<br><br>
+
+* RSA
+* génération de nombre aléatoire
+* Vigénère
+
+<br><br>
+
+* aes
+* fermat
+* man in the middle
+
