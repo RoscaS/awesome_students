@@ -7,6 +7,10 @@ project: false
 hide: false
 ---
 
+## Refresh rate issue on multiple monitors
+
+* [reddit](https://www.reddit.com/r/Ubuntu/comments/cegacx/issues_with_dual_monitors_with_different_refresh/)
+
 
 
 ## Tilix
