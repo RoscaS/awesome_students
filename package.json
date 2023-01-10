@@ -22,7 +22,7 @@
     "asciitree": "^1.0.2",
     "auth0-js": "^9.7.3",
     "chart.js": "^2.7.2",
-    "luxon": "^1.3.3",
+    "luxon": "^1.28.1",
     "markdown-it-katex": "^2.0.3",
     "material-icons": "^0.2.3",
     "node-sass": "^4.9.4",
